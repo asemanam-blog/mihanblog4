@@ -1,0 +1,1222 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://tilki.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*754578*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[1544]='0';commentCnt[1545]='2';commentCnt[1547]='2';commentCnt[1549]='0';commentCnt[1551]='1';commentCnt[1552]='0';commentCnt[1553]='0';commentCnt[1554]='1';commentCnt[1556]='1';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[1544]='0';
+mihanblogDisLikeArrCnt[1544]='0';
+mihanblogLikeArrCnt[1545]='0';
+mihanblogDisLikeArrCnt[1545]='0';
+mihanblogLikeArrCnt[1547]='0';
+mihanblogDisLikeArrCnt[1547]='0';
+mihanblogLikeArrCnt[1549]='0';
+mihanblogDisLikeArrCnt[1549]='0';
+mihanblogLikeArrCnt[1551]='0';
+mihanblogDisLikeArrCnt[1551]='0';
+mihanblogLikeArrCnt[1552]='0';
+mihanblogDisLikeArrCnt[1552]='0';
+mihanblogLikeArrCnt[1553]='0';
+mihanblogDisLikeArrCnt[1553]='0';
+mihanblogLikeArrCnt[1554]='0';
+mihanblogDisLikeArrCnt[1554]='0';
+mihanblogLikeArrCnt[1556]='0';
+mihanblogDisLikeArrCnt[1556]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://tilki.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://tilki.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','1381');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','چهارشنبه 28 مرداد 1394');
+	
+	setStatVar('today_view','9');
+	setStatVar('yesterday_view','28');
+	
+	setStatVar('this_month_view','528');
+	setStatVar('last_month_view','2807');
+
+	setStatVar('total_view','296150');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (06:21)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://tilki.mihanblog.com/statupdate/?data[refereruri]=http://baran-nataly.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607830266&data[hash]=5eaf9516cc7186f655b8da8afdf15f58&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://tilki.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://tilki.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://tilki.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://tilki.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://tilki.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://tilki.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://tilki.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://tilki.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://tilki.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://tilki.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://tilki.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://tilki.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://tilki.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://tilki.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://tilki.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://tilki.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://tilki.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://tilki.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://tilki.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>ساحل تنهاییام</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="designer" content="mazloum">
+<meta name="author" content=" ">
+<meta name="language" content="Farsi">
+<meta name="designerUrl" content="http://www.Mazloum.ir">
+<meta name="description" content="ساحل تنهاییام - موفقیت در هدف گذاری است هر چیزی جز این فرع بر قضیه است.<br />
+تمام مردمان موفق به شدت هدف گرا هستند. <br />
+می دانند که چگونه و با تمام وجود و در هر روز زندگی برای دست یابی به خواسته هایشان تلاش می کنند. <br />
+<br />
+توانایی شما در هدف گذاری مهارت اصلی و تعیین کننده برای موفق شدن است.<br />
+با داشتن هدف، <br />
+ذهن مثبت شما به کار می افتد و نقطه نظرها و انرژی برای دستیابی به این اهداف آزاد می شوند. <br />
+بدون هدف تحت تأثیر جزر و مد زندگی به بالا و پایین می روید. <br />
+اما با داشتن هدف چون تیری از کمان در رفته به سوی هدفتان به حرکت در می آیید تا به آن اصابت کنید. <br />
+<br />
+<br />
+<br />
+آﺩﻣﺎﯼ ﺭﺍﺳﺘﮕﻮ .... <br />
+ ﺧﯿﻠﯽ ﺯﻭﺩ ﻭ ﺧﯿﻠﯽ ﺭﺍﺣﺖ ﻋﺎﺷﻖ ﻣﯽ ﺷﻦ ... <br />
+ ﺧﯿﻠﯽ ﺭﺍﺣﺖ ﺍﺣﺴﺎﺳﺸﻮﻥ ﺭﻭ ﺑُﺮﻭﺯ ﻣﯿﺪﻥ ..... <br />
+ ﺧﯿﻠﯽ ﺭﺍﺣﺖ ﺑﻬﺖ ﻣﯽ ﮔﻦ ﮐﻪ ﺩﻭﺳﺘﺖ ﺩﺍﺭﻥ .... <br />
+ ﺧﯿﻠﯽ ﺩﯾﺮ ﺩﻝ ﻣﯽ ﮐﻨﻦ .... <br />
+ ﺧﯿﻠﯽ ﺩﯾﺮ ﺗﻨﻬﺎﺕ ﻣﯽ ﺫﺍﺭﻥ .... <br />
+ ﺍﻣﺎ ..... <br />
+ ﻭﻗﺘﯽ ﺯﺧﻤﯽ ﺑﺸﻦ ... <br />
+ ﺳﺎﮐﺖ ﻣﯽ ﺷﻦ ... <br />
+ ﭼﯿﺰﯼ ﻧﻤﯽ ﮔﻦ .... <br />
+ ﺧﯿﻠﯽ ﺭﺍﺣﺖ ﻣﯿﺮﻥ .... <br />
+ ﻭ .... <br />
+ ﺩﯾﮕﻪ ﻫﻢ ﺑﺮ ﻧﻤﯽ ﮔﺮﺩﻥ ...<br />
+ <br />
+<br />
+برای ذهن هدفمند همه چیز روشن است.<br />
+<br />
+<br />
+<br />
+ - ساحل تنهاییام">
+<meta name="keywords" content="ساحل تنهاییام,tilki,عشق یعنی خدا ، و مرگ به معنای آن است که یک قطره از این عشق ؛ به سرچشمه اش باز گردد., Blog, Weblog, Persian,Iran, Farsi, Weblogs, mazloum">
+<link rel="alternate" type="application/rss+xml" title="ساحل تنهاییام" href="http://tilki.mihanblog.com/post/rss/" />
+<link rel="alternate" type="application/atom+xml" title="ساحل تنهاییام" href="http://tilki.mihanblog.com/post/atom/" />
+<link href="http://up-mazloum.ir/code/5/style_2.css" type="text/css" rel="stylesheet">
+<style>
+.top{background:url(http://up-mazloum.ir/code/5/top.jpg) no-repeat top right;height:271;width:100%}
+</style>
+<SCRIPT language="javascript">
+function checkform(){	
+if (blogskin.name.value =='')	{alert('لطفا نام خود را وارد كنید');	return false;	}
+if (blogskin.adres.value =='')	{alert('لطفا آدرس پست الكترونیك خود را وارد كنید');	return false;	}
+if (blogskin.msg.value =='')	{alert('لطفا متن ارسالی خود را وارد كنید');	return false;	}
+return true;}
+</SCRIPT>
+
+</head>
+
+<body>
+<div align=center id=ali><div style="width:1003">
+<div class=blogskin-bg><div class=blogskin-back>
+<div class=blogskin>
+
+<div class=top>
+<div class=top-blogskin><div style="float:right;width:780">
+<div style="padding-top:15">
+<div class=topskin></div>
+
+</div>
+
+</div>
+<div class=tarikh>
+
+</div>
+</div>
+
+<div class=titr></div><div class=des></div></div>
+
+<div class=top-link>
+<div class=top-blogskin2>
+<div style="float:right;width:710px;direction:rtl; height:20px">
+<div style="padding:3 20 0 0">
+<a href="index.html#postz">آخرین مطالب</a>
+<a href="index.html#linkz">صفحه اول</a>
+<a href="javascript:messageForm()" title="تماس با مدیران ">تماس با ما</a>
+<a href="http://www.Mazloum.ir">طراح قالب</a>
+</div></div>
+
+<form method="Get" action="http://google.com/search" class=sch><input name="sitesearch" value="tilki.mihanblog.com" type="hidden">
+	<a href="http://tilki.mihanblog.com/post/rss/" title="RSS"><img border="0" src="http://up-mazloum.ir/code/4/x.gif" width="25" height="20"></a>&nbsp;&nbsp;
+	<input type="text" name="q" size="21" class=txt>&nbsp;&nbsp;<input type="submit" value=" " class=but>
+</form>
+
+</div>
+</div>
+
+<div class=mainbg>
+
+<div class=mainr>
+
+<div class=menu> 
+
+<div class="tmenu b5"><div class=tmenu2>معرفی سایت</div></div>
+<div class=xmenu>
+<div class=xmenu2>
+<div style="text-align:center;"></div>
+<br>
+موفقیت در هدف گذاری است هر چیزی جز این فرع بر قضیه است.<br />
+تمام مردمان موفق به شدت هدف گرا هستند. <br />
+می دانند که چگونه و با تمام وجود و در هر روز زندگی برای دست یابی به خواسته هایشان تلاش می کنند. <br />
+<br />
+توانایی شما در هدف گذاری مهارت اصلی و تعیین کننده برای موفق شدن است.<br />
+با داشتن هدف، <br />
+ذهن مثبت شما به کار می افتد و نقطه نظرها و انرژی برای دستیابی به این اهداف آزاد می شوند. <br />
+بدون هدف تحت تأثیر جزر و مد زندگی به بالا و پایین می روید. <br />
+اما با داشتن هدف چون تیری از کمان در رفته به سوی هدفتان به حرکت در می آیید تا به آن اصابت کنید. <br />
+<br />
+<br />
+<br />
+آﺩﻣﺎﯼ ﺭﺍﺳﺘﮕﻮ .... <br />
+ ﺧﯿﻠﯽ ﺯﻭﺩ ﻭ ﺧﯿﻠﯽ ﺭﺍﺣﺖ ﻋﺎﺷﻖ ﻣﯽ ﺷﻦ ... <br />
+ ﺧﯿﻠﯽ ﺭﺍﺣﺖ ﺍﺣﺴﺎﺳﺸﻮﻥ ﺭﻭ ﺑُﺮﻭﺯ ﻣﯿﺪﻥ ..... <br />
+ ﺧﯿﻠﯽ ﺭﺍﺣﺖ ﺑﻬﺖ ﻣﯽ ﮔﻦ ﮐﻪ ﺩﻭﺳﺘﺖ ﺩﺍﺭﻥ .... <br />
+ ﺧﯿﻠﯽ ﺩﯾﺮ ﺩﻝ ﻣﯽ ﮐﻨﻦ .... <br />
+ ﺧﯿﻠﯽ ﺩﯾﺮ ﺗﻨﻬﺎﺕ ﻣﯽ ﺫﺍﺭﻥ .... <br />
+ ﺍﻣﺎ ..... <br />
+ ﻭﻗﺘﯽ ﺯﺧﻤﯽ ﺑﺸﻦ ... <br />
+ ﺳﺎﮐﺖ ﻣﯽ ﺷﻦ ... <br />
+ ﭼﯿﺰﯼ ﻧﻤﯽ ﮔﻦ .... <br />
+ ﺧﯿﻠﯽ ﺭﺍﺣﺖ ﻣﯿﺮﻥ .... <br />
+ ﻭ .... <br />
+ ﺩﯾﮕﻪ ﻫﻢ ﺑﺮ ﻧﻤﯽ ﮔﺮﺩﻥ ...<br />
+ <br />
+<br />
+برای ذهن هدفمند همه چیز روشن است.<br />
+<br />
+<br />
+<br />
+<br></div>
+		</div>
+<div class=bmenu></div>
+
+
+
+<div class="tmenu b1"><div class=tmenu2>منوی کاربری</div></div>
+<div class=xmenu>
+<div class=xmenu2>
+<div id="a" style="text-align:center">
+
+<center>
+<a href="index.html" title="صفحه ی نخست"><img src="http://up-mazloum.ir/image/qaleb/4/menu4.png" border="0" width="50px"></a>
+	<a href="http://tilki.mihanblog.com/post/rss/" title="rss"><img src="http://up-mazloum.ir/image/qaleb/4/menu2.png" border="0" width="50px"></a>
+	<a href="http://nasrtools.ir/tools/contact/e.php?email=<-BlogEmail->" title="ایمیل مدیر"><img src="http://up-mazloum.ir/image/qaleb/4/menu1.png" border="0" width="50px">
+</a>
+</center>
+</div>
+</div>
+</div>
+<div class=bmenu></div>
+
+
+
+
+<div class=tmenu><div class=tmenu2>موضوعات</div></div>
+<div class=xmenu>
+<div class=xmenu1><a href="http://tilki.mihanblog.com/post/category/10">امام عصر (1)</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/category/8">صفات خدا (2)</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/category/7">هم‌نشینی با ائمه اطهار (5)</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/category/5">مناجات با خدا (2)</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/category/9">گپ در مورد صفات مهربان‌ترین مهربان (1)</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/category/2">تاثیر قرآن در زندگی (2)</a></div></div>
+<div class=bmenu></div>
+<div class="tmenu b6"><div class=tmenu2>نویسندگان</div></div>
+<div class=xmenu>
+<div class=xmenu1><a href="http://tilki.mihanblog.com/post/author/419440"><img src="../static.mihanblog.com/public/user_data/user_photo/140/419440.jpg" style="width:16px;" /></a> <a href="http://tilki.mihanblog.com/post/author/419440"> </a></div></div>
+<div class=bmenu></div>
+
+<div class="tmenu b9"><div class=tmenu2>آمار سایت</div></div>
+<div class=xmenu>
+<div class=xmenu2>
+			بازدیدهای امروز : <span class=a><script>getStatVar('today_view');</script></span> نفر<br>
+بازدیدهای دیروز 
+			: <span class=a><script>getStatVar('yesterday_view');</script></span> نفر<br>
+			كل بازدیدها : <span class=a><script>getStatVar('total_view');</script></span> نفر<br>
+بازدید این ماه 
+			:<span class=a> <script>getStatVar('this_month_view');</script></span> نفر<br>
+بازدید ماه قبل 
+			: <span class=a><script>getStatVar('last_month_view');</script></span> نفر<br>
+تعداد نویسندگان 
+			: <span class=a><script>getStatVar('total_author');</script></span> عدد<br>
+كل مطالب ارسال شده: <span class=a><script>getStatVar('total_post');</script></span> عدد<br>
+آخرین بازدید : <span class=a><script>getStatVar('last_view_date');</script></span><br>
+آخرین بروز رسانی : <span class=a><script>getStatVar('modify_date');</script></span>
+</div>
+</div>
+<div class=bmenu></div>
+
+
+
+<div class="tmenu b2"><div class=tmenu2>حمایت می کنیم</div></div>
+<div class=xmenu>
+<div class=xmenu2>
+<div id="c" style="text-align:center">
+
+<center>
+<marquee direction="up" onmouseover="this.stop();" onmouseout="this.start();"style="width:px;height:px;background-color:" scrollamount="2" >
+
+
+
+
+<!-- start logo cod off http://mazloum.ir --><p align="center"><p align="center"><a href="http://mazloum.ir" target="_blank"><img border="0" src="http://up-mazloum.ir/image/mazloum/logo.png"  width="170" height="75" alt="پایگاه اینترنتی مقتدر مظلوم"></a></p><!--finish logo cod off http://mazloum.ir -->
+
+
+<p align="center">
+<center><a href="http://sayberi174.persianblog.ir/" target="_blank"><img src="http://sayberi174.persiangig.com/Logo/Logo-mabarsayberi.jpg" alt="معببر سایبری فندرسک" width="170" height="75" /></a></center></p>
+
+<!-- start logo cod off http://mazloum.ir --><p align="center"><p align="center"><a href="http://safiranenour.ir/" target="_blank"><img border="0" src="http://up-mazloum.ir/code/5/mazloum.ir.png"  width="170" height="75" alt="قرارگاه سایبری سفیران نور"></a></p><!--finish logo cod off http://mazloum.ir -->
+
+<!-- start logo cod off http://mazloum.ir --><p align="center"><p align="center"><a href="http://www.leader-khamenei.com" target="_blank"><img border="0" src="http://leader-khamenei.com/images/banners/logo3.jpg"  width="170" height="75" alt="پایگاه اینترنتی شناخت رهبری"></a></p><!--finish logo cod off http://mazloum.ir -->
+
+
+</marquee>
+</center>
+
+
+</div>
+</div>
+</div>
+<div class=bmenu></div>
+
+
+
+
+
+
+
+<div class="tmenu b2"><div class=tmenu2>امکانات جانبی</div></div>
+<div class=xmenu>
+<div class=xmenu2>
+<div id="c" style="text-align:center">
+
+
+
+<center><br><br><a href="http://blog2i.com" target="_blank"><img border="0" src="http://blog2i.com/rank.php?url=http://tilki.mihanblog.com/&s=4" title="http://tilki.mihanblog.com/"></a><br><br>
+<br><br>
+<!-- Begin 20Tools.com Hadis Message --><center><script type="text/javascript" src="http://www.20tools.com/java/hadis/04.js">
+<a href="http://www.razavi.tv" target="_blank" title="وب سایت پخش زنده تصاویر از حرم مطهر امام رضا علیه السلام _ www.razavi.tv"><img src="http://www.razavi.tv/index/uploads/ckfinder/images/www_razavi_tv.gif" alt="وب سایت پخش زنده تصاویر از حرم مطهر امام رضا علیه السلام _ www.razavi.tv"/></a>
+<br></br>
+<html><head>
+<STYLE> 
+#contextMenu { 
+  position: absolute; 
+  visibility: hidden; 
+  width: 110px; 
+  background-color: lightgrey; 
+  layer-background-color: lightgrey; 
+  border: 8px outset green; 
+} 
+
+.A:Menu { 
+   color: black; 
+   text-decoration: none; 
+  cursor: default; 
+   width: 100% 
+  } 
+
+ .A:MenuOn { 
+   color: red; 
+   text-decoration: none; 
+   background-color: darkblue; 
+  cursor: default; 
+   width: 100% 
+  } 
+</STYLE> 
+
+<SCRIPT> 
+var menu; 
+function showMenu (evt) { 
+  if (document.all) { 
+    document.all.contextMenu.style.pixelLeft = event.clientX; 
+    document.all.contextMenu.style.pixelTop = event.clientY; 
+    document.all.contextMenu.style.visibility = 'visible'; 
+    return false; 
+  } 
+  else if (document.layers) { 
+    if (evt.which == 3) { 
+      document.contextMenu.left = evt.x; 
+      document.contextMenu.top = evt.y; 
+      document.contextMenu.onmouseout = 
+        function (evt) { this.visibility = 'hide'; }; 
+      document.contextMenu.visibility = 'show'; 
+      return false; 
+    } 
+  } 
+  return true; 
+} 
+if (document.all) 
+  document.oncontextmenu =showMenu; 
+if (document.layers) { 
+  document.captureEvents(Event.MOUSEDOWN); 
+  document.onmousedown = showMenu; 
+} 
+</SCRIPT> 
+</head>
+
+<body>
+<DIV ID="contextMenu" 
+     ONMOUSEOUT="menu = this; this.tid = setTimeout 
+('menu.style.visibility = \'hidden\'', 20);" 
+     ONMOUSEOVER="clearTimeout(this.tid);" 
+> 
+<A href="http://آدرس وبلاگ یا وبسایت">صفحه نخست</a>
+<BR>
+<IMG src="http://blogfa.com/images/smileys/41.gif"><IMG src="http://blogfa.com/images/smileys/41.gif">
+<BR> 
+<A href="mailto:ایمیل وبلاگ یا وبسایت">پست الکترونیک</a>
+<br>
+<IMG src="http://blogfa.com/images/smileys/41.gif"><IMG src="http://blogfa.com/images/smileys/41.gif">
+<BR>
+<A href="http://آدرس وبلاگ یا وبسایت/archive.aspx">آرشیو مطالب</a>
+<br>
+<IMG src="http://blogfa.com/images/smileys/41.gif"><IMG src="http://blogfa.com/images/smileys/41.gif">
+<BR>
+<A href="http://آدرس وبلاگ یا وبسایت/rss">RSS blog</a>
+<BR>
+<IMG src="http://blogfa.com/images/smileys/41.gif"><IMG src="http://blogfa.com/images/smileys/41.gif">
+<br>
+<br>
+<A href="http://java-script.blhttp://s5.picofile.com/file/8105130118/Atr_E_Torbat.gifogfa.com">script by Manu</a> 
+</DIV> </body>
+</html><br>
+
+</div>
+</div>
+</div>
+<div class=bmenu></div>
+
+
+</div>
+</div>
+
+<div class=mainl>
+
+<div class=post>
+
+
+
+
+
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=tpost><div class=title><a href="http://tilki.mihanblog.com/post/1556">ساده باشیم....</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=tilki.mihanblog.com/post/1556&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : چهارشنبه 28 مرداد 1394</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+<span style="font-family: nasim; font-size: 16px; line-height: 26.1818161010742px; text-align: justify;">ساده باشیم: چه در باجهٔ یک بانک، چه در زیر درخت.</span><br style="box-sizing: border-box; font-family: nasim; font-size: 16px; line-height: 26.1818161010742px; text-align: justify;"><span style="font-family: nasim; font-size: 16px; line-height: 26.1818161010742px; text-align: justify;">زندگی رسم خوشایندی است.</span>
+
+
+<div><img src="http://www.hammihan.com/users/users2015/status/original/HamMihan-2015374749143900111439898295.8293.jpg"></div>
+
+				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط  </div></div>
+<div class=nz><a target="_self" href="javascript:newComment(1556)" > نظرات (<script>setCommentCnt(1556)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://tilki.mihanblog.com/post/1554">7 خواص اعجاب انگیز آیة الکرسی</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=tilki.mihanblog.com/post/1554&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : شنبه 16 خرداد 1394</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <div align="justify"><font size="4">1- حضرت 
+امام باقر(ع) فرمود : کسی که بعد از وضوء آیة الکرسی بخواند خداوند ثواب 
+چهل سال عبادت را به او عنایت می فرماید و چهل درجه او را بالا می برد و 
+چهل حورالعین را به تزویج او در می آورد.</font><br><br><font size="4">2-رسول خدا(ص)(علیه افضل 
+الصلوات) فرمودند : هر کس آیة الکرسی را بعد از هر نماز واجبی بخواند خدای 
+تعالی قابض روح او خواهد بود و مثل کسی است که جنگ کرده باشد با کفار در 
+خدمت انبیاء تا به شرف شهادت فایض شده باشد.</font><br><br><font size="4">3-اگر کسی آیة الکرسی را بخواند و به پاهایش بدمد در راه رفتن خسته نمی شود.</font><br><br><font size="4">4-اگر کسی در جایی بی آب باشد و از هلاکت بترسد 66 بار آیة الکرسی بخواند حاجتش برآورده می شود.</font><br><br><font size="4">5-
+ برداشتن عذاب قبر : اگر کسی مشتی خاک بردارد و 7 بار آیة الکرسی بخواند و 
+در قبر مرده ریزد آن مرده را کیفر نکنند و به رحمت الهی رسد.</font><br><br><font size="4">6-پیامبر
+ اکرم (ص) فرمودند : اگر کسی در شب یکشنبه دو رکعت نماز با حمد و آیة 
+الکرسی و توحید هر کدام یک بار بخواند فردای قیامت وقتی پا به عرصه ی قیامت
+ می نهد صورتش مثل ماه شب می درخشد و از طرفی هم پروردگار عالم در دنیا 
+عقلی به او عطا می کند که او را تا زمان مردن همراهی می کند.</font><br><br><font size="4">7-دوازده
+ مرتبه آیة الکرسی خواندن در سفر و حضر مانند این است که دوازده لشکر مجهز 
+برای حفاظت از هر حادثه از جانب خدا گماشته شده است.</font><br><br><font size="4">تذکر : این 7 
+مورد تنها 7 قطره از دریای پهناور آیة الکرسی می باشد . سوره ای کوچک در 
+قرآن که در دل بزرگترین سوره ی قرآن جای دارد و پیامبر (ص) خواندن مدام آن 
+را به امیر المومنین علی(ع) بی نهایت توصیه می فرمود. 
+
+
+</font></div>				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط  </div></div>
+<div class=nz><a target="_self" href="javascript:newComment(1554)" > نظرات (<script>setCommentCnt(1554)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://tilki.mihanblog.com/post/1553">عطای بهشت</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=tilki.mihanblog.com/post/1553&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : شنبه 16 خرداد 1394</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <p class="MsoNormal" dir="RTL" style="font-family: Tahoma, sans-serif; font-size: 8pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px; color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; margin-right: 28.25pt; text-align: center; text-indent: -23.5pt;" align="center"><br></p><p class="MsoNormal" dir="RTL" style="font-family: Tahoma, sans-serif; font-size: 8pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px; color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; margin-bottom: 0.0001pt;"><b style="font-family: Tahoma, sans-serif; font-size: 8pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px;"><span style="font-family: 'B Zar'; font-size: 16pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px; color: rgb(0, 176, 80);" lang="FA">رسول خدا<span class="Apple-converted-space">&nbsp;</span></span></b><b style="font-family: Tahoma, sans-serif; font-size: 8pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px;"><span style="font-family: 'B Fantezy'; font-size: 14pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px; color: rgb(0, 176, 80);" lang="FA">صلی الله علیه و آله و سلم<span class="Apple-converted-space">&nbsp;</span></span></b><b style="font-family: Tahoma, sans-serif; font-size: 8pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px;"><span style="font-family: 'B Zar'; font-size: 16pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px; color: rgb(0, 176, 80);" lang="FA">فرمود</span></b><b style="font-family: Tahoma, sans-serif; font-size: 8pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px;"><span style="font-family: 'B Zar'; font-size: 14pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px; color: rgb(0, 176, 80);" lang="FA">:</span></b></p><p class="MsoNormal" dir="RTL" style="font-family: Tahoma, sans-serif; font-size: 8pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px; color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: justify; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; margin-bottom: 0.0001pt;"><b style="font-family: Tahoma, sans-serif; font-size: 8pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px;"><span style="font-family: 'B Zar'; font-size: 14pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px; color: rgb(0, 176, 80);" lang="FA">هر كس نیاز مومنی را برآورد خدا نیازهای فراوانی را برای او تامین می كند كه كمترین آنها بهشت است.</span></b></p><p class="MsoNormal" dir="RTL" style="font-family: Tahoma, sans-serif; font-size: 8pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px; color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; margin-bottom: 0.0001pt; text-align: left;" align="right"><span style="font-family: 'B Zar'; font-size: 8pt; text-shadow: rgb(223, 233, 233) 0px 0px 1px; color: rgb(0, 176, 80);" lang="FA">(قرب الاسناد ، ص56)</span></p><br class="Apple-interchange-newline">
+
+
+				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط  </div></div>
+<div class=nz><a target="_self" href="javascript:newComment(1553)" > نظرات (<script>setCommentCnt(1553)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://tilki.mihanblog.com/post/1552">محبوب خدا شدن</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=tilki.mihanblog.com/post/1552&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : جمعه 15 خرداد 1394</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <font face="tahoma,arial,helvetica,sans-serif" size="4"><br>
+امام صادق <font color="#009900">علیه السلام </font>فرمود:<br>
+<br></font><div align="justify"><font face="tahoma,arial,helvetica,sans-serif" size="4">خدا می فرماید: مردم عیال من اند و محبوب ترین آنان كسانی اند كه در رفع نیازهای مردم بكوشند.</font><br></div><div align="left"><font face="tahoma,arial,helvetica,sans-serif" size="4">
+<font color="#990000"><br><font size="3">(مصادقه الاخوان ، ص71)
+                     
+
+
+</font></font></font></div>				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط  </div></div>
+<div class=nz><a target="_self" href="javascript:newComment(1552)" > نظرات (<script>setCommentCnt(1552)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://tilki.mihanblog.com/post/1551">..............</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=tilki.mihanblog.com/post/1551&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : جمعه 17 بهمن 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <P style="TEXT-ALIGN: right; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; MARGIN: 0px 0px 6px; FONT: 14px/15px 'lucida grande', tahoma, verdana, arial, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(20,24,35); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">تو که یک گوشه ی چشمت غم عالم ببرد</P>
+<P style="TEXT-ALIGN: right; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; MARGIN: 6px 0px; FONT: 14px/15px 'lucida grande', tahoma, verdana, arial, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(20,24,35); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">حیـف باشد که تو باشی و مرا غــم ببــرد</P>
+<P>
+<P style="TEXT-ALIGN: right; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; MARGIN: 6px 0px 0px; DISPLAY: inline; FONT: 14px/15px 'lucida grande', tahoma, verdana, arial, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(20,24,35); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px">یا مستغاث یا اباصالح المهدی ادرکنی...</P></P>
+<P align=center>
+<P style="TEXT-ALIGN: right; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; MARGIN: 6px 0px 0px; DISPLAY: inline; FONT: 14px/15px 'lucida grande', tahoma, verdana, arial, sans-serif; WHITE-SPACE: normal; LETTER-SPACING: normal; COLOR: rgb(20,24,35); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><IMG class=postimg alt="" src="http://www.hammihan.com/users/status/thumbs/thumb_HM-2013374747088605311423200065.1694.jpg"></P></P>				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط  </div></div>
+<div class=nz><a target="_self" href="javascript:newComment(1551)" > نظرات (<script>setCommentCnt(1551)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://tilki.mihanblog.com/post/1549">...</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=tilki.mihanblog.com/post/1549&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : سه شنبه 20 آبان 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> 
+
+آیت ا… بهجت (ره):<br>
+<br>
+با تمام وجود گناه كردیم، نه نعمتهایش را ازما گرفت و نه گناهانمان را فاش كرد،<br>
+<br>
+اگر بندگی اش را میكردیم چه میكرد؟<br><br><div align="center"><img class="stbigimg" src="http://www.hammihan.com/users/status/original/HM-20133747410667758171415722724.2312.jpg" title="آیت ا… بهجت(ره):
+
+با تمام وجود گناه كردیم، نه نعمتهایش را ازما گرفت و نه گناهانمان را فاش كرد،
+
+" alt="آیت ا… بهجت(ره):
+
+با تمام وجود گناه كردیم، نه نعمتهایش را ازما گرفت و نه گناهانمان را فاش كرد،
+
+" height="368" width="623"><br></div>
+
+
+
+
+
+
+				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط  </div></div>
+<div class=nz><a target="_self" href="javascript:newComment(1549)" > نظرات (<script>setCommentCnt(1549)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://tilki.mihanblog.com/post/1547">بغض...</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=tilki.mihanblog.com/post/1547&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : دوشنبه 20 مرداد 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <div align="center"><font size="4"><br><br>كنج گلویم قبرستانیست پُر از احساس‌هایی كه زنده به گور شده‌اند به نام بُغض!<br><br>&nbsp;</font><img alt="دلقک [Blue Eyes]" class="aligncenter size-full wp-image-1469" src="http://blueeyes.ir/wp-content/uploads/2013/09/%D8%AF%D9%84%D9%82%DA%A9-Blue-Eyes.jpg" title="بغض عشق   ﺧﯿﺎﻧﺖ عشق وفاداری در عشق نگاه عاشقانه لبخند عشق دلتنگی تنهایی بغض بازی با احساسات " height="600" width="599"></div>				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط  </div></div>
+<div class=nz><a target="_self" href="javascript:newComment(1547)" > نظرات (<script>setCommentCnt(1547)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://tilki.mihanblog.com/post/1545">((خیلی زیـــــــــــــباست حتـــــــــــــــــــــــما بخونید دوستان))</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=tilki.mihanblog.com/post/1545&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : دوشنبه 13 مرداد 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <div align="justify"><font face="tahoma,arial,helvetica,sans-serif"><font size="4"><span id="yui_3_16_0_1_1407135816507_1879" style="font-size: 10pt; color: black;" lang="FA">آیا میدانى چرا در گوش طفل تازه متولد شده أذان میگویند؟ رسول اكرم امر 
+فرموده است كه هنگام تولد طفل در گوش راست او اذان و در گوش چپ او اقامه 
+بگوییم! بعد از هر اذان و اقامه اى نمازى برپا میشود پس نماز این دو كجاست؟
+ نماز این اذان و اقامه همان نماز میتى است كه بعد
+ از مرگ هر انسان بر او خوانده میشود. آیا هیچوقت از خود پرسیده بودید كه 
+چرا نماز میت اذان و اقامه ندارد؟! ((چون هنگام تولدمان اذان و اقامه اش را
+ در گوشمان خوانده بودند تا در فرصتى كه به ما داده شده خود را براى چنین 
+روزى آماده كنیم))) پس عمر ما هر چند طولانی
+ باشد فاصله بین أذان است ونماز. خدایا عمرمان را با بركت كن</span></font><br><font size="4"><span id="yui_3_16_0_1_1407135816507_1879" style="font-size: 10pt; color: black;" lang="FA">
+هرگاه در میان مشکلات قرار گرفتید،سیل صلوات به راه اندازید؛زیرا آن سیل،حتما مشکلات را با خود می برد.(علامه طباطبایی)</span></font><br><font size="4"><span id="yui_3_16_0_1_1407135816507_1879" style="font-size: 10pt; color: black;" lang="FA"></span></font></font><br><div align="center"><font face="tahoma,arial,helvetica,sans-serif"><font size="4"><span id="yui_3_16_0_1_1407135816507_1879" style="font-size: 10pt; color: black;" lang="FA"><img src="http://axgig.com/images/59505228996525684270.jpg" style="margin-top: 119px;" id="irc_mi" height="317" width="394">نماز اول وقت</span></font></font><br></div><font face="tahoma,arial,helvetica,sans-serif"><font size="4"><span id="yui_3_16_0_1_1407135816507_1879" style="font-size: 10pt; color: black;" lang="FA">علامه طباطبایی و آیت الله بهجت از مرحوم آیت الله قاضی نقل می کردند:</span></font><br><font size="4"><span id="yui_3_16_0_1_1407135816507_1879" style="font-size: 10pt; color: black;" lang="FA">
+اگر کسی نماز واجبش را اول وقت بخواند و به مقامات عالیه نرسد مرا لعن کند.
+ نمازاول وقت فی نفسه آثار زیادی دارد، اگر چه حضور قلب هم نباشد.</span></font><br><font size="4"><span id="yui_3_16_0_1_1407135816507_1879" style="font-size: 10pt; color: black;" lang="FA">
+---</span></font><br><font size="4"><span id="yui_3_16_0_1_1407135816507_1879" style="font-size: 10pt; color: black;" lang="FA">
+پخش این پیام دینی صدقه جاریه است.</span>
+
+
+</font></font></div>				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط  </div></div>
+<div class=nz><a target="_self" href="javascript:newComment(1545)" > نظرات (<script>setCommentCnt(1545)</script>)</a></div></div>
+<div class=tpost><div class=title><a href="http://tilki.mihanblog.com/post/1544">***</a></div>
+<div class=tag><div class=tagz><script type="text/javascript" src="http://1abzar.ir/abzar/tools/post-view/stat2.php?amar=tilki.mihanblog.com/post/1544&color=888888&font=8"></script> مرتبه</div><div class=tagz2>تاریخ : دوشنبه 6 مرداد 1393</div></div></div>
+				
+<div class=xpost><div class=hid><div style="float:right"></div> <font size="4">در هر لحظه زندگی جدیدی برایمان ایجاد می‌شود.<br>
+بیایید شادمانه به استقبالش برویم.<br>
+اگر چشمانمان به جای نگاه به پشت سر، جلو را ببیند!! <br>بهتر قدم بر می‌داریم!!!<br><br></font><div align="center"><img class="stbigimg" src="http://www.hammihan.com/users/status/original/HM-2013431608588775911405933868.0928.jpg" title="(gol)  (gol)  (gol) 
+
+در هر لحظه زندگی جدیدی برایمان ایجاد می شود.
+بیایید شادمانه به استقبالش برو" alt="(gol)  (gol)  (gol) 
+
+در هر لحظه زندگی جدیدی برایمان ایجاد می شود.
+بیایید شادمانه به استقبالش برو"><br></div>				<br><br><b></b>
+				<font style="font-size:8pt;">									</font>
+
+</div></div>
+<div class=bpost>
+<div class=date><div>ارسال توسط  </div></div>
+<div class=nz><a target="_self" href="javascript:newComment(1544)" > نظرات (<script>setCommentCnt(1544)</script>)</a></div></div>
+
+<div id="postz">
+<div class=tpost-x >آخرین مطالب</div>
+<div class=xpost><div class=xpost2><a href="http://tilki.mihanblog.com/post/1556">ساده باشیم....</a></div>
+<div class=xpost2><a href="http://tilki.mihanblog.com/post/1554">7 خواص اعجاب انگیز آیة الکرسی</a></div>
+<div class=xpost2><a href="http://tilki.mihanblog.com/post/1553">عطای بهشت</a></div>
+<div class=xpost2><a href="http://tilki.mihanblog.com/post/1552">محبوب خدا شدن</a></div>
+<div class=xpost2><a href="http://tilki.mihanblog.com/post/1551">..............</a></div>
+<div class=xpost2><a href="http://tilki.mihanblog.com/post/1549">...</a></div>
+<div class=xpost2><a href="http://tilki.mihanblog.com/post/1547">بغض...</a></div>
+<div class=xpost2><a href="http://tilki.mihanblog.com/post/1545">((خیلی زیـــــــــــــباست حتـــــــــــــــــــــــما بخونید دوستان))</a></div>
+<div class=xpost2><a href="http://tilki.mihanblog.com/post/1544">***</a></div>
+</div><div class=bpost-x></div></div>
+
+
+<div class=ad1></div>
+<div class=xpost>
+<div class=page22>
+			(تعداد کل صفحات:154)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;			<a href="http://tilki.mihanblog.com/page/1">[<b>1</b>]</a>&nbsp;&nbsp;			<a href="http://tilki.mihanblog.com/page/2">[<span>2</span>]</a>&nbsp;&nbsp;			<a href="http://tilki.mihanblog.com/page/3">[<span>3</span>]</a>&nbsp;&nbsp;			<a href="http://tilki.mihanblog.com/page/4">[<span>4</span>]</a>&nbsp;&nbsp;			<a href="http://tilki.mihanblog.com/page/5">[<span>5</span>]</a>&nbsp;&nbsp;			<a href="http://tilki.mihanblog.com/page/6">[<span>6</span>]</a>&nbsp;&nbsp;			<a href="http://tilki.mihanblog.com/page/7">[<span>7</span>]</a>&nbsp;&nbsp;			<a href="http://tilki.mihanblog.com/page/8">[<i>...</i>]</a>&nbsp;&nbsp;</div>
+			</div><div class=ad3><br></div>
+<script src="http://up-mazloum.ir/code/4/code.js"></script>
+	
+<div class="tmenu b3"><div class=tmenu2>آرشیو مطالب</div></div>
+<div class=xmenu>
+<div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1394/5"> مرداد 1394</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1394/3"> خرداد 1394</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1393/11"> بهمن 1393</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1393/8"> آبان 1393</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1393/5"> مرداد 1393</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1393/4"> تیر 1393</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1393/3"> خرداد 1393</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1393/2"> اردیبهشت 1393</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1393/1"> فروردین 1393</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1392/11"> بهمن 1392</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1392/10"> دی 1392</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1392/9"> آذر 1392</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1392/8"> آبان 1392</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1392/7"> مهر 1392</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1392/6"> شهریور 1392</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1392/5"> مرداد 1392</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1392/4"> تیر 1392</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1392/3"> خرداد 1392</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1392/2"> اردیبهشت 1392</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1392/1"> فروردین 1392</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1391/12"> اسفند 1391</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1391/11"> بهمن 1391</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1391/10"> دی 1391</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1391/9"> آذر 1391</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1391/8"> آبان 1391</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1391/7"> مهر 1391</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1391/6"> شهریور 1391</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1391/5"> مرداد 1391</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1391/4"> تیر 1391</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1391/3"> خرداد 1391</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1391/2"> اردیبهشت 1391</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1391/1"> فروردین 1391</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1390/12"> اسفند 1390</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1390/11"> بهمن 1390</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1390/10"> دی 1390</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1390/9"> آذر 1390</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1390/8"> آبان 1390</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/post/archive/1390/7"> مهر 1390</a></div></div>
+<div class=bmenu></div>
+
+		
+
+<div class="tmenu b8"><div class=tmenu2>صفحات جانبی</div></div>
+<div class=xmenu><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/aramesh">چگونه انسان با یاد خدا آرامش پیدا می‌كند؟</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/marefat">بهترین راه توسل، معرفت و شناخت به امام حسین «‌علیه السلام»</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/khoda">صفات کسی که بهترین‌ها را برای ما می‌خواهد...</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/0011">آدم شو تا دعا در حقت مستجاب شود...</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/0000">درد و دل کبوتر بقیع با کبوتر حرم امام رضا علیه السلام</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/15">عجـب دلـمان خـوش است ما آدمـها ...</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/011">دوره پدران ما</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/010">قلب‌های شكسته</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/009">ساهی زیر چشمانت را دوست دارم</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/001">زندگی شهید باقری</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/008">عاشق</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/007">زندگی اواریست که رنجی زان چشیدم من</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/006">دوستت دارم‌</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/005">بی تو مهتاب شبی باز از آن كوچه گذشتم</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/004">درد من</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/003">گمشده ها</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/002">آنچه یک مسلمان باید بداند</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/bank">حساب بانکی</a></div><div class=xmenu1><a href="http://tilki.mihanblog.com/extrapage/01">جملات زیبا</a></div></div>
+<div class=bmenu></div>
+
+
+<div class="tmenu b4"><div class=tmenu2>دوستان</div></div>
+<div class=xmenu><div class=xmenu1><a target="_blank" href="http://shoor-ashoora.blogfa.com/" title="">شور عاشورا</a></div><div class=xmenu1><a target="_blank" href="http://moharramzanjan92.blogfa.com/" title="">زنجان پایتخت شور و شعور</a></div><div class=xmenu1><a target="_blank" href="http://http://atr-e-torbat.blogfa.com/" title="">عطر تربت</a></div><div class=xmenu1><a target="_blank" href="http://www.parsquran.com/" title="">پارس قرآن</a></div><div class=xmenu1><a target="_blank" href="http://www.ghorany.com/quran.htm" title="">قرآن آنلاین</a></div><div class=xmenu1><a target="_blank" href="http://www.tebyan.net/" title="">سایت تبیان</a></div><div class=xmenu1><a target="_blank" href="https://www.rasekhoon.net/" title="">راسخون</a></div><div class=xmenu1><a target="_blank" href="http://maarefquran.com/" title="">پایگاه معارف قرآنی</a></div><div class=xmenu1><a target="_blank" href="http://www.ghaemiyeh.com/" title="">مركز تحقیقات رایانه‌ای قائمیه</a></div><div class=xmenu1><a target="_blank" href="http://www.alvadossadegh.com/fa/index.php" title="">پایگاه تخصصی مهدویت، فرامانوسری و دشمن‌شناسی</a></div></div>
+
+<div class=bmenu></div>
+
+
+<div class="tmenu b4"><div class=tmenu2>پیوند های روزانه</div></div>
+<div class=xmenu><div class=xmenu1><a target="_blank" href="http://www.khodayemasih.blog.ir" title="با سلام....
+
+لطفاً این لینک را تایید کنید.">گفتگوی دینی با مسیحیان</a></div><div class=xmenu1><a target="_blank" href="http://montazeranhazrat.tk" title="با سلام....
+ 
+وبلاگ منتظران حضرت در راستای تحقق هدف ترویج فرهنگ های مذهبی و مهدوی قدم برداشته و مطالبی نیز در این موارد در وبلاگ گذاشته خوشحال میشویم که به ما سر بزیند در ضمن نظرات شما به ما کمک میکند تا بدانیم از کدام مطالب خوشتان آمده است تا در همان راستا مطلب بگذاریم .  یاد آوری ما آمادگی تبادل لوگو را نیز داریم در صورت تمایل خبرمان کنید.باتشکر یا علی مدد">پایگاه مذهبی و مهدوی منتظران حضرت</a></div><div class=xmenu1><a target="_blank" href="http://mortezamoomeny.blogfa.com/" title="">ائمه اطهار، شهدا </a></div><div class=xmenu1><a target="_blank" href="http://yadegarkhoda.blogfa.com/" title="">یادگار خدا</a></div><div class=xmenu1><a href="http://www.mazloum.ir" target="_blank">مقتدر مظلوم</a></div>
+<div class=xmenu1><a href="http://tilki.mihanblog.com/linkdaily/"><b>همه پیوندهای روزانه</b></a></div>
+<div class=xmenu1><a href="javascript:linkdailyForm()"><b>ارسال پیوند روزانه</b></a></div>
+</div>
+<div class=bmenu></div>
+
+
+
+<div class="tmenu b1"><div class=tmenu2>نوای وب</div></div>
+<div class=xmenu>
+<div class=xmenu2>
+<div id="c" style="text-align:center">
+
+﻿﻿﻿﻿﻿﻿﻿﻿﻿﻿<!--                    Coding Javascript By Mazloum :: Www.mazloum.ir                    -->
+<center><script language="javascript" src="http://up-mazloum.ir/nava/zohor/4/1.js"></script></center><div style='display:none'><h1><a title='مقتدر مظلوم :: نوای وبلاگ' href='http://www.mazloum.ir/'>مقتدر مظلوم :: نوای وبلاگ</a></h1></div>
+<!--                    Coding Javascript By Mazloum :: Www.mazloum.ir                    -->
+<center><a href="http://mazloum.ir/page/nava" style="text-decoration: none;font-size:14px;">کد موزیک آنلاین برای وبگاه</a></center>
+</div>
+</div>
+</div>
+<div class=bmenu></div>
+
+
+
+
+<!------------block ----------------------->
+<div class="tmenu b2"><div class=tmenu2>طراح قالب</div></div>
+<div class=xmenu><div class=xmenu2>
+
+<center><a href="http://mazloum.ir" target="_blank" title=" مقتدر مظلوم "><img src="http://up-mazloum.ir/image/mazloum/logo.png" alt="پایگاه اینترنتی مقتدر مظلوم" width="170" height="81" /></a></center>
+
+</div></div><div class=bmenu></div>
+<!------------block ----------------------->
+</div>
+</div>
+
+</div>
+
+
+<div class=footer>
+<div class=right>
+<div class=form></div>
+<div class=txt>
+
+</div>
+</div>
+<div class=left id="linkz">
+<div class=linkz>
+<div class=titrx></div>
+<div class=zz>
+
+
+</div>
+</div>
+<div class=rss><br><a href="index.html#ali" title="بالای صفحه"><img border="0" src="http://up-mazloum.ir/code/5/x.gif" width="70" height="60"></a></div>
+
+<div class=down><div class=ft>
+</div>
+</div></div>
+
+
+</div>
+</div></div></div></div><div id="seo">
+<h1><a title="ابزار وبلاگ" href="http://www.Mazloum.ir">مقتدر مظلوم</a></h1><h1><a href="http://www.Mazloum.ir/page/nava">نوای آنلاین</a></h1>
+
+
+
+</div>
+<script type=text/javascript>document.getElementById('s'+'e'+'o').style.display='none';</script> 
+</body></html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'tilki.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

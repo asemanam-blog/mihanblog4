@@ -1,0 +1,1692 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه بیست و سوم آذرماه سال 1399');
+		/*1648659*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[49]='5';commentCnt[78]='0';commentCnt[80]='7';commentCnt[138]='9';commentCnt[160]='1';commentCnt[297]='38';commentCnt[316]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[49]='6';
+mihanblogDisLikeArrCnt[49]='4';
+mihanblogLikeArrCnt[78]='7';
+mihanblogDisLikeArrCnt[78]='2';
+mihanblogLikeArrCnt[80]='6';
+mihanblogDisLikeArrCnt[80]='10';
+mihanblogLikeArrCnt[138]='8';
+mihanblogDisLikeArrCnt[138]='10';
+mihanblogLikeArrCnt[160]='3';
+mihanblogDisLikeArrCnt[160]='3';
+mihanblogLikeArrCnt[297]='7';
+mihanblogDisLikeArrCnt[297]='2';
+mihanblogLikeArrCnt[316]='6';
+mihanblogDisLikeArrCnt[316]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://thesixthclasses.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://thesixthclasses.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','368');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','شنبه سوم آبانماه سال 1399');
+	
+	setStatVar('today_view','39');
+	setStatVar('yesterday_view','598');
+	
+	setStatVar('this_month_view','12274');
+	setStatVar('last_month_view','18368');
+
+	setStatVar('total_view','698847');
+	setStatVar('last_view_date','یکشنبه بیست و سوم آذرماه سال 1399 (05:31)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://thesixthclasses.mihanblog.com/statupdate/?data[refereruri]=http://thesixthclasses.mihanblog.com/&data[postid]=&data[requesturi]=/post/category/5&data[sdate]=1607826098&data[hash]=2c86eafebd4995a261fc5edd0c21a084&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://thesixthclasses.mihanblog.com/post/category/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://thesixthclasses.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://thesixthclasses.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Theme Designer" content="www.MyTheme.ir">
+
+    <meta name="description" content=""/>
+    <meta name="keywords" content="کلاس ششمی ها , sixth class , نمونه سوال  ابتدایی نوبت اول و دوم  , دانلود فیلم اموزشی , بالابردن کیفیت اموزشی , دانلود نرم افزار کار و فناوری ششم"/>
+    <link rel="alternate" type="application/rss+xml" title="کلاس ششمی ها" href="../rss/index.html" />
+    <link rel="alternate" type="application/atom+xml" title="کلاس ششمی ها" href="../atom/index.html" />
+    <link href="http://mihanblog.com/public/public/user_data/template/2099932/style.css" type="text/css" rel="stylesheet">
+
+    <title>کلاس ششمی ها - مطالب بازی های اموزشی</title>
+<script type="text/javascript">var zarpop_user_id = 3009;</script>
+<script type="text/javascript" src="http://zarpop.com/website/js" async></script>
+</head>
+
+<body>
+
+<div align="center">
+<table border="0" width="100%" height="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td>&nbsp;</td>
+<td class=div2>
+<div class=div00>
+
+<div class=div60>
+    <div class=div101>
+        <div class=div10><font class=title>کلاس ششمی ها</font></div></div>
+    <div class=div11>
+        <div class=div12><font class=des>بالا بردن کیفیت اموزشی</font></div></div>
+</div>
+
+<div class=ss>
+    <div class=s1><form id="frm-16076523895fd2d4258de21" method="get" action="http://thesixthclasses.mihanblog.com/post/search/fid/16076523895fd2d4258de21"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+        <div class=s2>
+            <input type="text" name="search_text" size="20" style="border: 0px none; background: none; font-family:Tahoma; font-size:9pt; direction:ltr"></div>
+        <div class=s3><input type="image" src="http://mihanblog.com/public/public/user_data/template/2099932/blank.gif" width=22 height=21 value="جستجو"></div>
+    <input type="hidden" name="frm-id" value="16076523895fd2d4258de21" id="frm-id" /></form></div>
+
+    <div class=s4>
+        <div class=s5><font class=text10>
+            <a href="../../index.html">صفحه نخست</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="javascript:messageForm()">تماس با مدیر</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="mailto:esot2020@gmail.com">پست الکترونیک</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="../rss/index.html">RSS</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="../atom/index.html">ATOM</a></font></div></div>
+</div>
+
+<div class=mdiv17></div>
+
+<div class=mdiv170>
+
+    <div class=mdiv24>
+        <div class=mdiv35>
+            <div class=mdiv25><font class=text5>درباره وبلاگ</font></div></div>
+        <div class=sm></div>
+        <div class=mdiv341>
+            <div class=mdiv31><font class=text1><center><img src="../../../static.mihanblog.com/public/user_data/web_photo/550/1648659.jpg@6053"  /><br><br>
+                بیشتر مطالب این وبلاگ مربوط به پایه ششم است. امیدوارم از مطالب این وبلاگ خوشتون بیاد. </center><br>
+                <b>مدیر وبلاگ :</b> <a href="../author/1370808.html">ارکیده </a></font></div>
+        </div><div class=mdiv30></div>
+    </div>
+
+    <div class=mdiv24>
+        <div class=mdiv35>
+            <div class=mdiv25><font class=text5>مطالب اخیر</font></div></div>
+        <div class=sm></div>
+        <div class=mdiv341><font class=text1><ul>
+            <li><a href="../399.html">فیلم کشاورزی و باغداری</a></li><li><a href="../398.html">کتاب ورق زن هدیه های آسمان 400-99</a></li><li><a href="../397.html">کتاب ورق زن فارسی </a></li><li><a href="../396.html">فیلم شجاعت</a></li><li><a href="../395.html">گل کاغذی</a></li><li><a href="../394.html">نمونه سوال فصل 5 تا 7 ریاضی</a></li><li><a href="../393.html">نمونه سوال ریاضی فصل 1 تا 4</a></li><li><a href="../392.html">روز معلم مبارک</a></li><li><a href="../390.html">معنی درس میوه هنر</a></li><li><a href="../388.html">درس خیلی بزرگ خیلی کوچک</a></li><li><a href="../386.html">مناظره مست و هشیار از پروین اعتصامی</a></li><li><a href="../385.html">دهه فجر گرامی باد</a></li><li><a href="../384.html">سرفصل های درس هنر</a></li><li><a href="../383.html">ارزشیابی ریاضی نوبت اول 98</a></li><li><a href="../382.html">فصل زمستان</a></li>        </ul></font></div><div class=mdiv30></div>
+    </div>
+    <div class=mdiv24>
+        <div class=mdiv35>
+            <div class=mdiv25><font class=text5>آرشیو وبلاگ</font></div></div>
+        <div class=sm></div>
+        <div class=mdiv341><font class=text1><ul>
+            <li><a href="../archive/1399/8.html"> آبان 1399</a></li><li><a href="../archive/1399/7.html"> مهر 1399</a></li><li><a href="../archive/1399/6.html"> شهریور 1399</a></li><li><a href="../archive/1399/3.html"> خرداد 1399</a></li><li><a href="../archive/1399/2.html"> اردیبهشت 1399</a></li><li><a href="../archive/1398/12.html"> اسفند 1398</a></li><li><a href="../archive/1398/11.html"> بهمن 1398</a></li><li><a href="../archive/1398/10.html"> دی 1398</a></li><li><a href="../archive/1398/9.html"> آذر 1398</a></li><li><a href="../archive/1398/8.html"> آبان 1398</a></li><li><a href="../archive/1398/7.html"> مهر 1398</a></li><li><a href="../archive/1398/6.html"> شهریور 1398</a></li>            <li><b><a href="../archive.html">آرشیو كل مطالب</a></b></li>
+        </ul></font></div><div class=mdiv30></div>
+    </div>
+    <div class=mdiv24>
+        <div class=mdiv35>
+            <div class=mdiv25><font class=text5>نویسندگان</font></div></div>
+        <div class=sm></div>
+        <div class=mdiv341><font class=text1><ul>
+            <li><a href="../author/1370808.html">ارکیده  (368)</a></li>        </ul></font></div><div class=mdiv30></div>
+    </div>
+    
+		<form id="frm-16076523895fd2d4258e5f6" method="post" action="http://thesixthclasses.mihanblog.com/poll/new/fid/16076523895fd2d4258e5f6/atrty/1607652389/avrvy/0/key/7c8de75b41bcf2dca3c432889acf5d4c/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="379114" id="data[pollid]" />		<div class=mdiv24>
+        <div class=mdiv35>
+            <div class=mdiv25><font class=text5>نظرسنجی</font></div></div>
+        <div class=sm></div>
+        <div class=mdiv341>
+            <div class=mdiv32><font class=text1>
+                آیا شما آموزش را در مدارس حضوری دنبال می کنید؟<br>
+                <label><input type="radio" name="data[answer]" value="v1">بله</label><br><label><input type="radio" name="data[answer]" value="v2">خیر</label><br>                <div align="center"><br><input type="submit" value="ثبت" style="font-family: Tahoma; font-size: 9pt"><br><br></div>
+            </font></div></div><div class=mdiv30></div>
+    </div>
+		<input type="hidden" name="frm-id" value="16076523895fd2d4258e5f6" id="frm-id" /></form>
+    <div class=mdiv24>
+        <div class=mdiv35>
+            <div class=mdiv25><font class=text5>برچسبها</font></div></div>
+        <div class=sm></div>
+        <div class=mdiv341><font class=text1><ul>
+            <li><a href="../tag/دکتر+عالمیان.html">دکتر عالمیان</a></li><li><a href="../tag/حکایت.html">حکایت</a></li><li><a href="../tag/بازی+و+ریاضی.html">بازی و ریاضی</a></li><li><a href="../tag/ضمن+خدمت+هوشمند+سازی+مدارس.html">ضمن خدمت هوشمند سازی مدارس</a></li><li><a href="../tag/ریاضی+ششم.html">ریاضی ششم</a></li><li><a href="../tag/بخوانیم.html">بخوانیم</a></li><li><a href="../tag/راهنمای+تدریس.html">راهنمای تدریس</a></li><li><a href="../tag/یادداشت.html">یادداشت</a></li><li><a href="../tag/علوم+ششم.html">علوم ششم</a></li><li><a href="../tag/معنی+شعر.html">معنی شعر</a></li>        </ul></font></div><div class=mdiv30></div>
+    </div>
+</div>
+
+<div class=div20>
+
+    		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../316.html">بازی شلیک جوجه ای</a></font></div>
+            <div class=div58><font class=text7>دوشنبه بیست و هشتم آبانماه سال 1397 :: نویسنده : <a href="../author/1370808.html">ارکیده </a></font></div>
+
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+<div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="data:image/jpeg;base64,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" alt=""></div><div style="text-align: center;"><font face="Mihan-Koodak" size="3"><br></font></div><div style="text-align: center;"><font face="Mihan-Koodak" size="3">خبر خبر</font></div><div style="text-align: right;"><font face="Mihan-Koodak" size="3">&nbsp;در این پست بازی آموزشی و زیبای شلیک جوجه ای را برای شما عزیزان قرار داده ایم. این بازی یک فایل فلش می باشد و مرتبط با درس مطالعات اجتماعی پایه ششم است.</font></div><div style="text-align: right;"><font face="Mihan-Koodak" size="3">امیدوارم دانلود کرده و&nbsp; بازی با آن به یادگیری بهتر شما کمک کند.</font></div>
+
+
+
+
+
+
+
+                <BlogExtendedPost><br><br><b><a href='../316.html'>ادامه مطلب</a></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="12.html" class=text4>مطالعات اجتماعی ششم</a>،&nbsp;<a href="6.html" class=text4>نرم افزار های اموزشی</a>،&nbsp;<a href="5.html" class=text4>بازی های اموزشی</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%A8%D8%A7%D8%B2%DB%8C%20%D8%B4%D9%84%DB%8C%DA%A9%20%D8%AC%D9%88%D8%AC%D9%87%20%D8%A7%DB%8C" class=text4>بازی شلیک جوجه ای</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D9%87%D9%85%D8%B3%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20%D8%A7%DB%8C%D8%B1%D8%A7%D9%86" class=text4>همسایگان ایران</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%A8%D8%A7%D8%B2%DB%8C%20%D8%AF%D8%B1%D8%B3%20%D9%85%D8%B7%D8%A7%D9%84%D8%B9%D8%A7%D8%AA" class=text4>بازی درس مطالعات</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%A8%D8%A7%D8%B2%DB%8C%20%D9%88%20%D8%B3%D8%B1%DA%AF%D8%B1%D9%85%DB%8C" class=text4>بازی و سرگرمی</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%A8%D8%A7%D8%B2%DB%8C%20%D8%A2%D9%85%D9%88%D8%B2%D8%B4%DB%8C" class=text4>بازی آموزشی</a>،                 <br><font color="#c70900">لینک های مرتبط :</font>
+                <a href="http://thesixthclasses.mihanblog.com/post/30" class=text4>تولید محتوای درس همسایگان ما مطالعات اجتماعی ششم ابتدایی</a>، <a href="../49.html" class=text4>دانلود نرم افزار آموزش اوریگامی</a>، <a href="http://thesixthclasses.mihanblog.com/post/80" class=text4>همسایگان ایران</a>،             </font>
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../316.html#commentlist">نظرات (<script>setCommentCnt(316)</script>)</a></font>
+
+
+            </div>
+            <div style="float:left;margin-left: 111px; margin-top: 14px;"><script>mihanblogPostLike('316','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 13px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:520px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 25px; padding:0 0 10px 0;}
+            .com1{ width:502px; float:left; background:#0166aa; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:275px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:482px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:482px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:492px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://thesixthclasses.mihanblog.com/post/297">معمای چوب کبریت ها</a></font></div>
+            <div class=div58><font class=text7>چهارشنبه دوم اسفندماه سال 1396 :: نویسنده : <a href="../author/1370808.html">ارکیده </a></font></div>
+
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+
+
+<div><br></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://s8.picofile.com/file/8319964692/fu9941.jpg" alt=""></div>
+
+                <BlogExtendedPost><br><br><b><a href='http://thesixthclasses.mihanblog.com/post/297'>ادامه مطلب</a></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="5.html" class=text4>بازی های اموزشی</a>،&nbsp;<a href="21.html" class=text4>متفرقه</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                <a href="http://thesixthclasses.mihanblog.com/post/tag/%D9%85%D8%B9%D9%85%D8%A7%D9%87%D8%A7%DB%8C%20%D8%B4%DB%8C%D8%B1%DB%8C%D9%86" class=text4>معماهای شیرین</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D9%85%D8%B9%D9%85%D8%A7%DB%8C%20%DA%86%D9%88%D8%A8%20%DA%A9%D8%A8%D8%B1%DB%8C%D8%AA%20%D9%87%D8%A7" class=text4>معمای چوب کبریت ها</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%A8%D8%A7%D8%B2%DB%8C%20%D9%88%20%D8%B1%DB%8C%D8%A7%D8%B6%DB%8C" class=text4>بازی و ریاضی</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%B3%D8%B1%DA%AF%D8%B1%D9%85%DB%8C%20%D9%87%D8%A7%DB%8C%20%DA%A9%D9%88%D8%AF%DA%A9%D8%A7%D9%86" class=text4>سرگرمی های کودکان</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D9%85%D8%B9%D9%85%D8%A7%DB%8C%20%D9%87%D9%88%D8%B4%20%D8%A8%D8%B1%D8%A7%DB%8C%20%D8%AF%D8%A7%D9%86%D8%B4%20%D8%A2%D9%85%D9%88%D8%B2%D8%A7%D9%86" class=text4>معمای هوش برای دانش آموزان</a>،                 <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font>
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="http://thesixthclasses.mihanblog.com/post/297#commentlist">نظرات (<script>setCommentCnt(297)</script>)</a></font>
+
+
+            </div>
+            <div style="float:left;margin-left: 111px; margin-top: 14px;"><script>mihanblogPostLike('297','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 13px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:520px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 25px; padding:0 0 10px 0;}
+            .com1{ width:502px; float:left; background:#0166aa; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:275px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:482px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:482px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:492px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://thesixthclasses.mihanblog.com/post/160">بازی های کلاسی</a></font></div>
+            <div class=div58><font class=text7>شنبه یازدهم دیماه سال 1395 :: نویسنده : <a href="../author/1370808.html">ارکیده </a></font></div>
+
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><p dir="RTL" style="text-align:right;direction:rtl;unicode-bidi:embed"><b><span lang="FA" style="font-size:11.0pt;font-family:&quot;B Koodak&quot;;mso-ascii-font-family:
+Tahoma;mso-hansi-font-family:Tahoma;color:red"><br>
+1-</span></b><span class="apple-converted-space"><b><span lang="FA" style="font-size:11.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:Cambria;
+color:#333333">&nbsp;</span></b></span><b><span lang="FA" style="font-size:11.0pt;
+font-family:&quot;B Koodak&quot;;mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;
+color:#333333">نام بازی:</span></b><span class="apple-converted-space"><b><span lang="FA" style="font-size:11.0pt;font-family:&quot;Cambria&quot;,serif;mso-bidi-font-family:
+Cambria;color:#333333">&nbsp;</span></b></span><span lang="FA" style="font-size:
+11.0pt;font-family:&quot;B Koodak&quot;;mso-ascii-font-family:Tahoma;mso-hansi-font-family:
+Tahoma;color:#333333">من نفر بعدی ام</span><span dir="LTR" style="font-size:11.0pt;
+font-family:&quot;Tahoma&quot;,sans-serif;mso-bidi-font-family:&quot;B Koodak&quot;;color:#333333"><o:p></o:p></span></p>
+
+<p dir="RTL" style="text-align:right;direction:rtl;unicode-bidi:embed"><b><span lang="FA" style="font-size:11.0pt;font-family:&quot;B Koodak&quot;;mso-ascii-font-family:
+Tahoma;mso-hansi-font-family:Tahoma;color:#333333">اهداف پرورشی:</span></b><span class="apple-converted-space"><span lang="FA" style="font-size:11.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Cambria;color:#333333">&nbsp;</span></span><span lang="FA" style="font-size:11.0pt;font-family:&quot;B Koodak&quot;;mso-ascii-font-family:
+Tahoma;mso-hansi-font-family:Tahoma;color:#333333">تمرکز حواس و بهبود عکس العمل<o:p></o:p></span></p>
+
+<p dir="RTL" style="text-align:right;direction:rtl;unicode-bidi:embed"><b><span lang="FA" style="font-size:11.0pt;font-family:&quot;B Koodak&quot;;mso-ascii-font-family:
+Tahoma;mso-hansi-font-family:Tahoma;color:#333333">شرح بازی:</span></b><span class="apple-converted-space"><span lang="FA" style="font-size:11.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Cambria;color:#333333">&nbsp;</span></span><span lang="FA" style="font-size:11.0pt;font-family:&quot;B Koodak&quot;;mso-ascii-font-family:
+Tahoma;mso-hansi-font-family:Tahoma;color:#333333">مربی تعدادی از دانش آموزان
+را به محوطه باز کلاس دعوت کرده و به آنها</span><span class="apple-converted-space"><span lang="FA" style="font-size:11.0pt;font-family:
+&quot;Cambria&quot;,serif;mso-bidi-font-family:Cambria;color:#333333">&nbsp;</span></span><span lang="FA" style="font-size:11.0pt;font-family:&quot;B Koodak&quot;;mso-ascii-font-family:
+Tahoma;mso-hansi-font-family:Tahoma;color:#333333"> متذکر میشود که اگر از هریک
+از آنها سوالی پرسیده شد و یا اجرای عملی خواسته شد نفر بعدی موظف به پاسخ و یا اجرای
+آن میباشد. مسئولیت پاسخ گویی به سوالات و یا اعمال خواسته شده ازآخرین نفر به
+دلیل عدم وجود فردی بعد از او به عهده نفر اول خواهد بود.هراشتباه باعث اخراج شخص
+خاطی از بازی میشود و نفر نهایی کلاس به وسیله بازی در گروههای مختلف مشخص
+میگردد.مربی میتواند با طرح و تنظیم سوالات قبلی، اطلاعات دانش آموزان را در زمینه
+مورد نظر خود بالا ببرد.بطور مثال:شمشیر ذوالفقار از کیست؟نماز ظهر چند رکعت است؟و
+...<o:p></o:p></span></p>
+
+
+                <BlogExtendedPost><br><br><b><a href='http://thesixthclasses.mihanblog.com/post/160'>ادامه مطلب</a></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="5.html" class=text4>بازی های اموزشی</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%A8%D8%A7%D8%B2%DB%8C%20%D9%87%D8%A7%DB%8C%20%DA%A9%D9%84%D8%A7%D8%B3%DB%8C" class=text4>بازی های کلاسی</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%B3%D8%B1%DA%AF%D8%B1%D9%85%DB%8C" class=text4>سرگرمی</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%A8%D8%A7%D8%B2%DB%8C%20%D9%87%D8%A7%DB%8C%20%DA%AF%D8%B1%D9%88%D9%87%DB%8C" class=text4>بازی های گروهی</a>،                 <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font>
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="http://thesixthclasses.mihanblog.com/post/160#commentlist">نظرات (<script>setCommentCnt(160)</script>)</a></font>
+
+
+            </div>
+            <div style="float:left;margin-left: 111px; margin-top: 14px;"><script>mihanblogPostLike('160','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 13px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:520px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 25px; padding:0 0 10px 0;}
+            .com1{ width:502px; float:left; background:#0166aa; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:275px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:482px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:482px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:492px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://thesixthclasses.mihanblog.com/post/138">پانزده روش دست ورزی برای آموزش کسرها</a></font></div>
+            <div class=div58><font class=text7>شنبه ششم آذرماه سال 1395 :: نویسنده : <a href="../author/1370808.html">ارکیده </a></font></div>
+
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4><font face="Mihan-Iransans" size="2">در این قسمت فیلمی از روش های مختلف دست ورزی برا آموزش کسرها به دانش آموزان قرار داده شده است.</font><div><font face="Mihan-Iransans" size="2">امیدوارم فیلم را دانلود کرده و از تماشای آن لذت ببرید.</font></div><div><br></div>                <BlogExtendedPost><br><br><b><a href='http://thesixthclasses.mihanblog.com/post/138'>ادامه مطلب</a></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="9.html" class=text4>ریاضی ششم</a>،&nbsp;<a href="1.html" class=text4>مطالب اموزشی</a>،&nbsp;<a href="5.html" class=text4>بازی های اموزشی</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                <a href="../tag/ریاضی&#32;ششم.html" class=text4>ریاضی ششم</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%AF%D8%B3%D8%AA%20%D9%88%D8%B1%D8%B2%DB%8C" class=text4>دست ورزی</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%B1%D9%88%D8%B4%20%D8%AF%D8%B3%D8%AA%20%D9%88%D8%B1%D8%B2%DB%8C%20%D8%A7%D9%85%D9%88%D8%B2%D8%B4%20%DA%A9%D8%B3%D8%B1%D9%87%D8%A7" class=text4>روش دست ورزی اموزش کسرها</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%A8%D8%A7%D8%B2%DB%8C%20%D9%88%20%D8%B1%DB%8C%D8%A7%D8%B6%DB%8C" class=text4>بازی و ریاضی</a>،                 <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font>
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="http://thesixthclasses.mihanblog.com/post/138#commentlist">نظرات (<script>setCommentCnt(138)</script>)</a></font>
+
+
+            </div>
+            <div style="float:left;margin-left: 111px; margin-top: 14px;"><script>mihanblogPostLike('138','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 13px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:520px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 25px; padding:0 0 10px 0;}
+            .com1{ width:502px; float:left; background:#0166aa; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:275px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:482px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:482px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:492px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://thesixthclasses.mihanblog.com/post/80">همسایگان ایران</a></font></div>
+            <div class=div58><font class=text7>پنجشنبه بیست و هشتم مردادماه سال 1395 :: نویسنده : <a href="../author/1370808.html">ارکیده </a></font></div>
+
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+<div style="text-align: center;"><span style="font-family: Mihan-Iransans; font-size: small;">برای دانلود بازی اموزشی درس همسایگان ایران روی دانلود فایل کلیک کنید.</span></div><div style="text-align: center;"><br></div><div style="text-align: center;"><font size="3"><a href="http://s2.picofile.com/file/8264203850/hamsayegan.exe.html" target="_blank" title="بازی همسایگان ایران">دانلود فایل</a></font></div>
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="12.html" class=text4>مطالعات اجتماعی ششم</a>،&nbsp;<a href="8.html" class=text4>نکات مهم کتاب ها</a>،&nbsp;<a href="1.html" class=text4>مطالب اموزشی</a>،&nbsp;<a href="6.html" class=text4>نرم افزار های اموزشی</a>،&nbsp;<a href="5.html" class=text4>بازی های اموزشی</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                <a href="http://thesixthclasses.mihanblog.com/post/tag/%D9%87%D9%85%D8%B3%D8%A7%DB%8C%DA%AF%D8%A7%D9%86%20%D8%A7%DB%8C%D8%B1%D8%A7%D9%86" class=text4>همسایگان ایران</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%A8%D8%A7%D8%B2%DB%8C%20%D9%88%20%D8%B3%D8%B1%DA%AF%D8%B1%D9%85%DB%8C" class=text4>بازی و سرگرمی</a>، <a href="../tag/مطالعات&#32;اجتماعی&#32;ششم.html" class=text4>مطالعات اجتماعی ششم</a>،                 <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font>
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="http://thesixthclasses.mihanblog.com/post/80#commentlist">نظرات (<script>setCommentCnt(80)</script>)</a></font>
+
+
+            </div>
+            <div style="float:left;margin-left: 111px; margin-top: 14px;"><script>mihanblogPostLike('80','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 13px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:520px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 25px; padding:0 0 10px 0;}
+            .com1{ width:502px; float:left; background:#0166aa; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:275px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:482px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:482px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:492px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="http://thesixthclasses.mihanblog.com/post/78">محاسبه مضرب های عدد 9 با کمک انگشتان دست</a></font></div>
+            <div class=div58><font class=text7>دوشنبه بیست و پنجم مردادماه سال 1395 :: نویسنده : <a href="../author/1370808.html">ارکیده </a></font></div>
+
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+<div style="text-align: right;"><font face="Mihan-Iransans" size="2"><span class="Apple-tab-span" style="white-space:pre">					</span>دنیای شیرین ریاضی</font></div><div style="text-align: right;"><font face="Mihan-Iransans" size="2">در این ویدیو می بینیم که چگونه با کمک انگشتان دست به سادگی مضرب های عدد 9 را می توان محاسبه کرد.</font></div><div style="text-align: right;">[<div id="14712611484233721"><style>.h_iframe-aparat_embed_frame{position:relative;} .h_iframe-aparat_embed_frame .ratio {display:block;width:100%;height:auto;} .h_iframe-aparat_embed_frame iframe {position:absolute;top:0;left:0;width:100%; height:100%;}</style><div class="h_iframe-aparat_embed_frame"> <span style="display: block;padding-top: 56.2%"></span><iframe width="100%" height="100%" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" src="http://www.aparat.com/video/video/embed/videohash/746Hs/vt/frame"></iframe></div></div>]</div>
+
+                <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="9.html" class=text4>ریاضی ششم</a>،&nbsp;<a href="1.html" class=text4>مطالب اموزشی</a>،&nbsp;<a href="7.html" class=text4>فیلم اموزشی</a>،&nbsp;<a href="5.html" class=text4>بازی های اموزشی</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                <a href="http://thesixthclasses.mihanblog.com/post/tag/%D9%85%D8%AD%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA%20%D8%B1%DB%8C%D8%A7%D8%B6%DB%8C" class=text4>محاسبات ریاضی</a>،                 <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font>
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="http://thesixthclasses.mihanblog.com/post/78#commentlist">نظرات (<script>setCommentCnt(78)</script>)</a></font>
+
+
+            </div>
+            <div style="float:left;margin-left: 111px; margin-top: 14px;"><script>mihanblogPostLike('78','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 13px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:520px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 25px; padding:0 0 10px 0;}
+            .com1{ width:502px; float:left; background:#0166aa; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:275px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:482px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:482px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:492px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div class=div54>
+        <div class=div15>
+            <div class=div015></div>
+            <div class=div18><font class=text6><a href="../49.html">دانلود نرم افزار آموزش اوریگامی</a></font></div>
+            <div class=div58><font class=text7>چهارشنبه سیزدهم مردادماه سال 1395 :: نویسنده : <a href="../author/1370808.html">ارکیده </a></font></div>
+
+        </div>
+        <div class=div21>
+            <div class=div55></div>
+            <div class=div56><font class=text4>
+
+<font face="Mihan-Iransans" size="2">در ان قسمت برای شما دوستان نرم افزار آموزشی ساخت اوریگامی اشکال مختلف قرار داده شده است. این فایل با پسوند exe می باشد و مناسب برای اموزش در کلاس . خانه است.</font><div><font face="Mihan-Iransans" size="2">برای دانلود به ادامه مطلب مراجعه کنید.&nbsp;</font></div>
+
+
+
+                <BlogExtendedPost><br><br><b><a href='../49.html'>ادامه مطلب</a></b></BlogExtendedPost>
+                <br><br><font color="#c70900">نوع مطلب :</font>
+                <a href="13.html" class=text4>هنر</a>،&nbsp;<a href="6.html" class=text4>نرم افزار های اموزشی</a>،&nbsp;<a href="5.html" class=text4>بازی های اموزشی</a>،&nbsp;                <br><font color="#c70900">برچسب ها :</font>
+                <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%A8%D8%A7%D8%B2%DB%8C%20%D9%88%20%D8%B3%D8%B1%DA%AF%D8%B1%D9%85%DB%8C" class=text4>بازی و سرگرمی</a>، <a href="../tag/هنر.html" class=text4>هنر</a>، <a href="http://thesixthclasses.mihanblog.com/post/tag/%D8%A7%D9%88%D8%B1%DB%8C%DA%AF%D8%A7%D9%85%DB%8C" class=text4>اوریگامی</a>،                 <br><font color="#c70900">لینک های مرتبط :</font>
+                            </font>
+
+
+
+
+
+
+
+
+            </div></div>
+        <div class=div26>
+            <div class=div27><font class=text8><a href="../49.html#commentlist">نظرات (<script>setCommentCnt(49)</script>)</a></font>
+
+
+            </div>
+            <div style="float:left;margin-left: 111px; margin-top: 14px;"><script>mihanblogPostLike('49','like')</script></div>
+
+        </div>
+        <style>
+
+
+
+            .clearfix {display: inline-block;}
+            .clearfix:after {
+                content: ".";
+                display: block;
+                height: 0;
+                clear: both;
+                visibility: hidden;
+            }
+
+
+
+
+            .cblike{
+                margin:4px 13px;
+                float: left;
+            }
+            .cblike a {
+                float:left;
+                padding:3px;
+                text-align:center;
+                font-size:12px;
+                color:#FFF;
+                display:block;
+                line-height:15px;
+                text-decoration: none;
+            }
+
+
+
+
+            .cblike a.clike_plus {
+                background-color:#009900 ; /*green #039B03*/
+
+                border-radius: 5px ;
+
+                border-top-right-radius: 0px;
+                border-bottom-right-radius: 0px;
+
+                /*border:1px solid green;
+                border-right:0px;*/
+            }
+            .cblike a.clike_minus {
+                background-color:#CC0000;
+                border-radius: 5px ;
+                border-top-left-radius: 0px;
+                border-bottom-left-radius: 0px;
+
+                /*border:1px solid red;
+                border-left:0px;*/
+            }
+            .cblike a.clike_minus:hover {
+                background-color:red;
+                text-decoration: none;
+            }
+            .cblike a.clike_plus:hover {
+                background-color:green;
+                text-decoration: none;
+            }
+            .cblike a span{
+                font-weight:bold;
+                font-size:13px;
+
+                color:#fff;
+            }
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:520px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 0px 7px 0px 25px; padding:0 0 10px 0;}
+            .com1{ width:502px; float:left; background:#0166aa; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:275px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:482px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:482px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:492px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div>
+    <div class=div29></div>
+    <div class=div28><font class=text9>
+                <br><br>
+            </font>
+    </div>
+</div>
+
+<div class=div17>
+
+    <div class=div170>
+
+        <div class=div24>
+            <div class=div35>
+                <div class=div25><font class=mtext5>موضوعات</font></div></div>
+            <div class=sm2></div>
+            <div class=div341><font class=mtext1><ul>
+                <li><a href="19.html">کتاب های ورق زن (11)</a></li><li><a href="18.html">کتاب های راهنمای تدریس (44)</a></li><li><a href="15.html">قرآن ششم (13)</a></li><li><a href="14.html">هدیه های آسمان ششم (16)</a></li><li><a href="10.html">فارسی ششم (53)</a></li><li><a href="9.html">ریاضی ششم (45)</a></li><li><a href="11.html">علوم تجربی ششم (38)</a></li><li><a href="12.html">مطالعات اجتماعی ششم (29)</a></li><li><a href="16.html">کار و فناوری ششم (7)</a></li><li><a href="17.html">تفکر و پژوهش (13)</a></li><li><a href="13.html">هنر (10)</a></li><li><a href="8.html">نکات مهم کتاب ها (28)</a></li><li><a href="3.html">نمونه سوال (47)</a></li><li><a href="20.html">کتاب داستان (19)</a></li><li><a href="4.html">حکایت (40)</a></li><li><a href="1.html">مطالب اموزشی (71)</a></li><li><a href="7.html">فیلم اموزشی (15)</a></li><li><a href="6.html">نرم افزار های اموزشی (4)</a></li><li><a href="5.html">بازی های اموزشی (7)</a></li><li><a href="21.html">متفرقه (76)</a></li>            </ul></font></div><div class=div30></div>
+        </div>
+        <div class=div24>
+            <div class=div35>
+                <div class=div25><font class=mtext5>پیوندهای روزانه</font></div></div>
+            <div class=sm2></div>
+            <div class=div341><font class=mtext1><ul>
+                <li><a href="http://yon.ir/AA8ez" title="سلام. ممنونم که پرچم وبلاگ نویسی رو بالا نگه داشتید :)
+
+سایت نویسور راه اندازی شده تا پست های شما بیشتر خونده بشن،.
+
+باید اعلام کنم که بعد از دوماه فعالیت 1000 تایی شدیم.
+
+دعوت میکنم تشریف بیارید به لینک زیر و فصل نو ی وبلاگ نویسی تون رو شروع کنید.
+yon.ir/AA8ez
+
+منتظر پست هاتون در نویسور هستیم :)" target="_blank">ــ وبـلاگ نویسی بهـترــ</a></li><li><a href="http://e.nkhedu.ir/" title="دریافت فیش حقوقی و احکام فرهنگیان" target="_blank">سامانه فرم های الکترونیکی</a></li><li><a href="http://teaching.iranmodares.com/teaching-index.php" title="در سایت ایران مدرس مدرسین در زمینه خدمات تدریس ریاضی و سایر دروس فعالیت دارند." target="_blank">تدریس خصوصی</a></li><li><a href="../../../av1234.mihanblog.com/index.html" title="یک وبلاگ جذاب و باحال، دانستنی، علمی" target="_blank">علوم پدیا</a></li><li><a href="http://eskan.medu.ir/" title="" target="_blank">سامانه اسکان فرهنگیان</a></li><li><a href="http://www.parvaresheafkar.com/law-attraction" title="سلام سایت من درباره قانون جذب خوشحال میشم تایید کنید" target="_blank">قانون جذب </a></li><li><a href="http://uupload.ir" title="سلام ، خسته نباشید
+وبلاگ بسیار خوب و زیبایی دارید .
+پیشنهاد میکنم برای آپلود فایل و عکس از سایت یو آپلود استفاده کنید.
+به صورت رایگان ، دائمی و سرعت بالا 
+لطفا لینک رو تایید کنید تا هم آدرس سایت رو داشته باشید و هم یه حمایتی بشه از ما
+خیلی ممنون
+خدانگهدار" target="_blank">آپلود فایل</a></li><li><a href="http://molavi1.garmehsch.ir/portal/home.php" title="" target="_blank">دبستان مولوی شهرستان گرمه</a></li><li><a href="http://ltms.medu.ir/" title="" target="_blank">سامانه جامع مدیریت یادگیری و آمووزش فرهنگیان</a></li><li><a href="http://uupload.ir" title="سلام ، خسته نباشید
+وبلاگ بسیار خوب و زیبایی دارید .
+پیشنهاد میکنم برای آپلود فایل و عکس از سایت یو آپلود استفاده کنید.
+به صورت رایگان ، دائمی و سرعت بالا 
+لطفا لینک رو تایید کنید تا هم آدرس سایت رو داشته باشید و هم یه حمایتی بشه از ما
+خیلی ممنون
+خدانگهدار" target="_blank">آپلود</a></li>                <li><b><a href="../../linkdaily/index.html">همه پیوندهای روزانه</a></b></li>
+                <li><b><a href="javascript:linkdailyForm()">ارسال پیوند روزانه</a></b></li>
+            </ul></font></div><div class=div30></div>
+        </div>
+        <div class=div24>
+            <div class=div35>
+                <div class=div25><font class=mtext5>پیوندها</font></div></div>
+            <div class=sm2></div>
+            <div class=div341><font class=mtext1><ul>
+                <li><a href="http://wonder-land.rzb.ir/" title="ترفندهای وب" target="_blank">سرزمین عجایب</a></li><li><a href="http://profishop.ir" title="" target="_blank">تبادل لینک</a></li>                <li><a target="_blank" href="http://www.mytheme.ir">بهترین قالب های وبلاگ</a></li>
+                <li><b><a href="../../link/index.html">همه پیوندها</a></b></li>
+            </ul></font></div><div class=div30></div>
+        </div>
+        
+        <div class=div24>
+            <div class=div35>
+                <div class=div25><font class=mtext5>آمار وبلاگ</font></div></div>
+            <div class=sm2></div>
+            <div class=div341><font class=mtext1><ul>
+                <li>کل بازدید : <script>getStatVar('total_view');</script></li>
+                <li>بازدید امروز :<script>getStatVar('today_view');</script></li>
+                <li>بازدید دیروز : <script>getStatVar('yesterday_view');</script></li>
+                <li>بازدید این ماه : <script>getStatVar('this_month_view');</script></li>
+                <li>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li>
+                <li>تعداد نویسندگان : <script>getStatVar('total_author');</script></li>
+                <li>تعداد کل پست ها : <script>getStatVar('total_post');</script></li>
+                <li>آخرین بازدید : <script>getStatVar('last_view_date');</script></li>
+                <li>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></li>
+            </ul></font></div><div class=div30></div>
+        </div>
+        <div class=div024><center></center>
+            <style>
+                .mihan_logo {
+                    background: url("http://mihanblog.com/public/public/images/logo/poweredby.gif") no-repeat scroll center top transparent;
+                    height: 131px;
+                    margin-top: 10px;
+                    text-align: center;
+                }
+            </style>
+            <div class="mihan_logo"></div>
+
+        </div>
+    </div>
+
+</div>
+
+</div>
+</td>
+<td>&nbsp;</td>
+</tr>
+<tr>
+    <td class=b1>&nbsp;</td>
+    <td class=b2>
+        <div class=div6></div>
+        <div class=div7>
+            <a href="http://www.mytheme.ir" target="_blank">
+                <img src="http://mihanblog.com/public/public/user_data/template/2099932/blank.gif" border=0 width=182 height=35></a></div>
+    </td>
+    <td class=b1>&nbsp;</td>
+</tr>
+</table>
+</div>
+<style>
+    img{
+        max-width : 500px;
+    }
+</style>
+<script type="text/javascript">var pb_zarpop_user_id = 3009;</script>
+<script type="text/javascript" src="https://zarpop.com/popbox/js" async></script>
+</body>
+
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'thesixthclasses.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

@@ -1,0 +1,2826 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc%3Frsd.html" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*1726085*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[82]='-';commentCnt[83]='-';commentCnt[84]='0';commentCnt[85]='-';commentCnt[86]='-';commentCnt[87]='-';commentCnt[89]='-';commentCnt[90]='-';commentCnt[91]='-';commentCnt[92]='-';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[83]='0';
+mihanblogDisLikeArrCnt[83]='0';
+mihanblogLikeArrCnt[84]='0';
+mihanblogDisLikeArrCnt[84]='0';
+mihanblogLikeArrCnt[85]='0';
+mihanblogDisLikeArrCnt[85]='0';
+mihanblogLikeArrCnt[86]='0';
+mihanblogDisLikeArrCnt[86]='0';
+mihanblogLikeArrCnt[91]='0';
+mihanblogDisLikeArrCnt[91]='0';
+mihanblogLikeArrCnt[92]='0';
+mihanblogDisLikeArrCnt[92]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://salbinaz.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://salbinaz.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','41');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','دوشنبه 4 دی 1396');
+	
+	setStatVar('today_view','48');
+	setStatVar('yesterday_view','2');
+	
+	setStatVar('this_month_view','302');
+	setStatVar('last_month_view','195');
+
+	setStatVar('total_view','30241');
+	setStatVar('last_view_date','پنجشنبه 27 آذر 1399 (20:46)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://salbinaz.mihanblog.com/statupdate/?data[refereruri]=http://salbinaz.mihanblog.com/&data[postid]=&data[requesturi]=/post/author/1430129&data[sdate]=1608228569&data[hash]=a472a6e93281bde92b795134dbad3e52&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<!-.-.-Design By : pichak.net-.-.->
+<head>
+<script language="JavaScript1.2">
+<!--
+
+top.window.moveTo(0,0);
+if (document.all) {
+top.window.resizeTo(screen.availWidth,screen.availHeight);
+}
+else if (document.layers||document.getElementById) {
+if (top.window.outerHeight<screen.availHeight||top.window.outerWidth<screen.availWidth){
+top.window.outerHeight = screen.availHeight;
+top.window.outerWidth = screen.availWidth;
+}
+}
+
+//-->
+</script>
+<!-"-"-Design By : www.pichak.net-"-"->
+<title>بارقه ی شعر و نقد - مطالب سلبی ناز   رستمی </title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="keywords" content="بارقه ی شعر و نقد - مطالب سلبی ناز   رستمی ,salbinaz">
+      <META NAME="description" CONTENT="بارقه ی شعر و نقد - مطالب سلبی ناز   رستمی  - کلمه پذیرنده نبود ، پوشاننده بود">
+      <meta name="copyright" content="www.pichak.net">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="designer" content="http://pichak.net" />
+      <link rel="alternate" type="application/rss+xml" title="بارقه ی شعر و نقد" href="../rss/index.html" />
+<!-"-"-Design By : www.pichak.net-"-"->
+<style>
+<!--
+body{font-family:Tahoma;font-size:8pt;padding:0px;margin:0px;color:#d1dcf3;background:#fff}
+a, a:visited{color:#282d2f;text-decoration: none}a:hover{color:#364a51;text-decoration: none}
+body {
+	BACKGROUND: #ffffff url('http://pichak.net/themes/53/11/image/pichak.jpg') no-repeat top left ; 
+}
+
+#page{background:url() center repeat-y;width:780px}img{border:none}
+#uwrapper {margin:0;padding:0;text-align:center;background-image:url(); background-repeat:repeat-x; background-position-y:top;}
+#header{height:0px;background:url() no-repeat right; }
+#header div{color:#2C2215;font-family:verdana;font-size:21pt;font-weight:bold;text-align:center;padding-top:50px}
+#header div p{margin-top:5px;margin-bottom:0px;color:#2C2215;font-family:Tahoma;font-size: 9pt;font-weight:normal;text-align:center;direction:rtl}
+#headerb{height:0px}
+#content{padding:0px 7px}
+#main{background:  url() repeat center;float:right;width:530px;text-align:right;overflow:hidden}
+#main2{height:60px;background: url() top no-repeat;}
+#post{padding:0 0px;text-align:right}
+#posttitle{height:44px;background: url() center no-repeat;text-align:right;font-size:9pt;font-weight:42;direction:rtl;padding-top:14px;padding-right:30px}
+#posttitle a, #posttitle a:visited {color:#526065}#posttitle a:hover {color:#526065}
+#postbody{text-align: justify;padding:0px 10px 5px 3;font-size:8pt;color:#282d2f;line-height:1.5em;direction:rtl;}
+#postbody p{margin-top:10px;margin-bottom:0px}
+#postdesc{padding-top:15px;padding-right:22px;padding-left:7px;color:#606a6d;direction:rtl}
+#space{height:20px}
+#sidebar{float:left;background: url() no-repeat top center ;width:180px;padding-top:280px;color:#364a51;line-height:1.5em;text-align:right}
+#sidebar a, #sidebar a:visited {color:#606a6d}#sidebar a:hover {color:#364a51}
+#mmenu{width:170px;ine-height: 1.5em;text-align:center;direction:rtl;}
+#sidebar ul{font-size:8pt;list-style-type: none;margin: 0px;padding:0 5px 20px 5px}
+#sidebar li {font-size:8pt;padding-right:5px;padding-bottom:0px;line-height:1.5em;direction:rtl}
+#photo{width:170px;padding-top:5px;padding-bottom:2px;text-align:center}
+#about{width:170px;text-align: justify;font-size:8pt;padding:10px 7px 20px 7px;color:#606a6d;direction:rtl}
+#feed{margin:0px;padding-bottom:10px;text-align:center}
+#custom{width:170px;color:#5e7161;overflow:auto;margin:10px 0;text-align:center;direction:rtl}
+-->
+</style>
+
+<script lang ="javascript">
+function GetBC(lngPostid)
+{
+intTimeZone=<-BlogTimeZone->;
+strBlogId="salbinaz";
+intCount=-1;
+strResult="";
+try {
+for (i=0;i<BlogComments.length;i+=2)
+{
+if (BlogComments[i]==lngPostid)
+intCount=BlogComments[i+1] ;
+}
+}  catch( e) {
+}
+if ( intCount==-1)  strResult="آرشیو نظرات";
+if ( intCount==0)  strResult="نظر بدهید";
+if ( intCount==1)  strResult="یک نظر";
+if ( intCount>1)  strResult=intCount + " نظر" ;
+strUrl="http://commenting.blogfa.com/?blogid=" +strBlogId + "&postid=" + lngPostid + "&timezone=" + intTimeZone ;
+strResult ="<a href="./\&quot;javascript:void(0)\&quot;.html" onclick=\"javascript:window.open('" + strUrl + "','blogfa_comments','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=500px')\" >" +  strResult + " </a>" ;
+document.write ( strResult ) ;
+}
+function OpenLD()
+{
+window.open('LinkDump.aspx','blogfa_ld','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=500px');
+return true;
+}
+</script>
+<script language="javascript" type="text/javascript"          
+  src="http://pichak.net/p/js/themes/up.js"></script>
+</head>
+<body>
+<!-.-.-Design By : pichak.net-.-.->
+<div id=uwrapper>
+<div align=center>
+<div id=page>
+
+<div id=content>
+<div id=main>
+
+<br><br><br>
+<center><br>
+<font color="#010101" face="Arial" style="font-size: 15pt">
+<b>  بارقه ی شعر و نقد</b><p>
+<font color="#010101" face="Tahoma" style="font-size: 8pt">
+  کلمه پذیرنده نبود ، پوشاننده بود<p>
+</center>
+<p>
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		  <FONT color=#313131>
+<div id=post>
+<div id=posttitle><a href="../92.html"><b>چند شعر </b></a></div>
+<div id=postbody><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+<font size="2"><br><font size="3"><br>
+
+</font></font><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>AR-SA</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">به شعر مشغولم</span></font></p><font size="3">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">بی آنکه لباسم
+را،</span></font></p><font size="3">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">از جنگ </span></font></p><font size="3">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">تکانده باشم.</span></font></p><font size="3">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">ببخشید؛ </span></font></p><font size="3">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">وقاحت </span></font></p><font size="3">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">استعداد
+می خواهد! </span></font></p><font size="3">
+
+<br><br>2<br><br>
+
+</font><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>AR-SA</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">خالی‌ است
+</span></font></p><font size="3">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">از صراحت
+ماه و</span></font></p><font size="3">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">تلاقی نگاه!</span></font></p><font size="3">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">بی شك ،</span></font></p><font size="3">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">مفقودالاثر
+است </span></font></p><font size="3">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">كه در
+قاب هیچ پنجره ای </span></font></p><font size="3">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="3"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-spacerun:yes">&nbsp;</span>جا نمی شود!</span></font></p><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><br><font size="2"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA"></span></font></p><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><br><font size="2"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA"></span></font></p><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><font size="2"><span style="font-size:12.0pt;line-height:150%;font-family:&quot;B Nazanin&quot;;
+mso-ascii-font-family:Tahoma;mso-hansi-font-family:Tahoma;color:black" lang="FA">از بوی باروت تا پرواز کبوتر<br></span></font></p>
+
+<!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:Arial;
+	mso-bidi-theme-font:minor-bidi;}
+</style>
+<![endif]--><br><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin:0cm;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:Arial;
+	mso-bidi-theme-font:minor-bidi;}
+</style>
+<![endif]--><br>
+
+
+
+
+<br></div>
+<div id=postdesc> نوشته شده در دوشنبه 4 دی 1396 ساعت 
+	02:16 ب.ظ  توسط <a href="1430129.html">سلبی ناز   رستمی  </a><a target="_self" href="javascript:newComment(92)">نظرات  <script>setCommentCnt(92)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#313131>
+<div id=post>
+<div id=posttitle><a href="../91.html"><b>تازه ترین خبر</b></a></div>
+<div id=postbody><font size="4">چاپ ونشر کتاب <br><br><font size="5">ابراهیم در <font color="#CC0000">آتش </font></font><br></font><br><br><br><br>
+
+
+<br></div>
+<div id=postdesc> نوشته شده در دوشنبه 4 دی 1396 ساعت 
+	02:10 ب.ظ  توسط <a href="1430129.html">سلبی ناز   رستمی  </a><a target="_self" href="javascript:newComment(91)">نظرات  <script>setCommentCnt(91)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#313131>
+<div id=post>
+<div id=posttitle><a href="../90.html"><b>تازه ترین خبر</b></a></div>
+<div id=postbody><br><font size="4"><b><br>انتشار مجموعه شعر <br><br><font color="#CC0000">گلوله</font> ، <font color="#009900">درخت</font> ،<font color="#3333FF">پرنده </font><br><br><br></b><font size="1"><br>تهران :نشر شاهد</font><b><br></b></font>
+
+
+<br></div>
+<div id=postdesc> نوشته شده در دوشنبه 4 دی 1396 ساعت 
+	02:07 ب.ظ  توسط <a href="1430129.html">سلبی ناز   رستمی  </a><a target="_self" href="javascript:newComment(90)">نظرات  <script>setCommentCnt(90)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#313131>
+<div id=post>
+<div id=posttitle><a href="../89.html"><b>تازه ترین خبر</b></a></div>
+<div id=postbody>
+<br><br><font size="2"><b>به زودی با مجموعه شعرِ</b><br></font><br><br><br><b><font color="#FF6666" size="5">"از بوی باروت تا پرواز کبوتر" </font></b><br><br>
+
+
+
+
+<br></div>
+<div id=postdesc> نوشته شده در دوشنبه 4 دی 1396 ساعت 
+	02:05 ب.ظ  توسط <a href="1430129.html">سلبی ناز   رستمی  </a><a target="_self" href="javascript:newComment(89)">نظرات  <script>setCommentCnt(89)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#313131>
+<div id=post>
+<div id=posttitle><a href="../87.html"><b>&quot;غرق در منور&quot;</b></a></div>
+<div id=postbody><P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA></SPAN><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA></SPAN><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA></SPAN>&nbsp;</P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>نه درپشت خاكریزها </SPAN><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'Tahoma', 'sans-serif'; FONT-SIZE: 12pt; mso-bidi-font-family: 'B Nazanin'" dir=ltr><BR></SPAN><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>نه درچادری </SPAN><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'Tahoma', 'sans-serif'; FONT-SIZE: 12pt; mso-bidi-font-family: 'B Nazanin'" dir=ltr><BR></SPAN><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>كه شب <?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>درگشت زنی هایش <o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>ماه را <o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>خواب می كند<o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>ونه درتلاطم رگبارهای بی امان <o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>كه از شانه هایت<o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>می گذرد!<o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>خلاصه ...<o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>شجاع تراز آنی كه<SPAN style="mso-spacerun: yes">&nbsp; </SPAN><SPAN style="mso-spacerun: yes">&nbsp;</SPAN><o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>باران گفت و<o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA><SPAN style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </SPAN>باریدم <o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>آنقدر كه ابری <o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>سایه برخاك <o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>آنقدرآفتاب <o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>كه پنجره ام را روز كنی و<o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>شبم را<o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>غرقِ<o:p></o:p></SPAN></P>
+<P style="LINE-HEIGHT: 150%; MARGIN: 0cm 0cm 0pt" dir=rtl class=MsoNoSpacing><SPAN style="LINE-HEIGHT: 150%; FONT-FAMILY: 'B Nazanin'; FONT-SIZE: 12pt; mso-ascii-font-family: Tahoma; mso-hansi-font-family: Tahoma" lang=FA>در منورها!<o:p></o:p></SPAN></P><br></div>
+<div id=postdesc> نوشته شده در شنبه 11 شهریور 1396 ساعت 
+	03:14 ب.ظ  توسط <a href="1430129.html">سلبی ناز   رستمی  </a><a target="_self" href="javascript:newComment(87)">نظرات  <script>setCommentCnt(87)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#313131>
+<div id=post>
+<div id=posttitle><a href="../86.html"><b>تو یادم می افتی</b></a></div>
+<div id=postbody><p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><font face="tahoma, arial, helvetica, sans-serif" size="2"><span lang="FA" style="line-height: 150%;">من نفهمیدم چرا می نویسم</span><span dir="LTR" style="line-height: 150%;"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><font face="tahoma, arial, helvetica, sans-serif" size="2"><span lang="FA" style="line-height: 150%;">ازخودم می گویم</span><span dir="LTR" style="line-height: 150%;"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><font face="tahoma, arial, helvetica, sans-serif" size="2"><span lang="FA" style="line-height: 150%;">یا ازتو </span><span dir="LTR" style="line-height: 150%;"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><font face="tahoma, arial, helvetica, sans-serif" size="2"><span lang="FA" style="line-height: 150%;">برای دلم كه می نویسم</span><span dir="LTR" style="line-height: 150%;"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">تو یادم می افتی!</font><font face="B Nazanin" style="font-size: 12pt;"><o:p></o:p></font></span></p><p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2"><br></font></span></p><p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2"><br></font></span></p><p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2"><br></font></span></p><p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2"><br></font></span></p><p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2"><br></font></span></p><p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2" color="#cc0000"><sup>رونوشت:از مجموعه كتاب در حال چاپ گلوله ،درخت ، پرنده</sup></font></span></p>
+
+
+<br></div>
+<div id=postdesc> نوشته شده در دوشنبه 23 مرداد 1396 ساعت 
+	06:04 ب.ظ  توسط <a href="1430129.html">سلبی ناز   رستمی  </a><a target="_self" href="javascript:newComment(86)">نظرات  <script>setCommentCnt(86)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#313131>
+<div id=post>
+<div id=posttitle><a href="../85.html"><b>شعر غمگین </b></a></div>
+<div id=postbody>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2"><br></font></span></p><p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">هرگز ،<o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">شعرغمگینی
+نخواهم نوشت. <o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">هرگز ،<o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">به قفس <o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">قناری <o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">وتو<o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">نخواهم اندیشید.<o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">شاعری،<o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">كه از پرنده
+گذشت <o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">به آواز ِرهایی
+رسید!<o:p></o:p></font></span></p>
+
+<!--EndFragment-->
+
+
+
+<p></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span style="font-family: 'B Nazanin'; font-size: 12pt; line-height: 150%;">&nbsp;</span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><b><span lang="FA" style="font-size: 12pt; line-height: 150%; font-family: 'B Nazanin';"><font color="#cc0000">&nbsp;<sup>از مجموعه شعر در حال چاپ ،از بوی باروت تا پرواز كبوتر</sup></font></span></b></p>
+
+
+
+
+
+
+<br></div>
+<div id=postdesc> نوشته شده در دوشنبه 23 مرداد 1396 ساعت 
+	05:56 ب.ظ  توسط <a href="1430129.html">سلبی ناز   رستمی  </a><a target="_self" href="javascript:newComment(85)">نظرات  <script>setCommentCnt(85)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#313131>
+<div id=post>
+<div id=posttitle><a href="../84.html"><b>فقط با تو</b></a></div>
+<div id=postbody>
+<p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="font-size: 12pt; line-height: 150%; font-family: 'B Nazanin';"><br></span></p><p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="font-size: 12pt; line-height: 150%; font-family: 'B Nazanin';"><b>"تقدیم به شهید محسن حججی "</b></span></p><p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="font-size: 12pt; line-height: 150%; font-family: 'B Nazanin';"><b><br></b></span></p><p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">دیگر ،<o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><font face="tahoma, arial, helvetica, sans-serif" size="2"><span lang="FA" style="line-height: 150%;">برای كنگره ها شعرنمی‌نویسم</span><span dir="LTR" style="line-height: 150%;"><br>
+</span><span lang="FA" style="line-height: 150%;">در شبِ
+شعرهای مقدس شرکت نمی‌کنم،<o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">صدایم را ،<o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">از تریبون ها بالا نمی برم!<o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">حالا می روم که بخوابم!<o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">خدا را چه دیده ای<o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">كه فردا، <o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">از لای لای زنجموره ی زنی<o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">كه بین
+این همه شاعر ،<o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">پیله
+كرده به تو <o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">شاید ،<o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">فقط با
+تو <o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="line-height: 150%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">پروانه
+می شود!</font><font face="B Nazanin" style="font-size: 12pt;"><o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="font-size: 12pt; line-height: 150%; font-family: 'B Nazanin';">&nbsp;</span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><span lang="FA" style="font-size: 12pt; line-height: 150%; font-family: 'B Nazanin';">&nbsp;</span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;line-height:150%"><b><span lang="FA" style="font-size: 12pt; line-height: 150%; font-family: 'B Nazanin';">&nbsp;</span></b></p>
+
+
+
+
+<br></div>
+<div id=postdesc> نوشته شده در دوشنبه 23 مرداد 1396 ساعت 
+	05:53 ب.ظ  توسط <a href="1430129.html">سلبی ناز   رستمی  </a><a target="_self" href="javascript:newComment(84)">نظرات  <script>setCommentCnt(84)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#313131>
+<div id=post>
+<div id=posttitle><a href="../83.html"><b>چالش سه‌گانی در مجموعه شعر «کی آفتابی می‌شوی باران؟» اثر «صدیقه (نسیم) محمدجانی»، به قلم «سلبی‌ناز رستمی»</b></a></div>
+<div id=postbody>
+<div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+
+</font></div><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>FA</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">شاعر موفق شمالی که امروزه درکارنامهٔ ادبی خود، آثاری
+همچون:"دریا برایم قصه‌ها دارد"،"پروانه دلش به عشق عادت دارد"،
+وهمین طور"کی آفتابی می‌شوی باران؟"به خوبی درخشیده‌است. این درخشش را باید
+مدیون حال وهوای بکر و تازهٔ شمال دانست که این چنین شاعران خوش ذوقی را در دامن
+طبیعت پرورانده‌است.</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">&nbsp;علاوه برتنوع و تعدد شعری درآثار خانم محمدجانی ما
+با قالب جدید"سه‌گانی" روبرو هستیم؛ دکتر علیرضا فولادی _ مبدع و معرف سه‌گانی_
+در کتاب «بوطیقای سه‌گانی و مسائل آن» در تعریف سه‌گانی آورده است: «سگانی نوعی شعر
+با فرم بیرونی_کلی "کوتاه" و "سه لختی" و فرم درونی_کلی
+"بسته" و "کوبشی"»(فولادی، 1394: 17)؛ و این قالب هم در جایگاه
+خود، نه تنها به مقولهٔ مذهب و دین، بلکه به برخی رویدادها وارزشهای دیگر
+برخاسته از انقلاب نیز توجه نشان داده‌است. یکی ازاین مسائل درج شده دراشعار این شاعر،
+عنصر جنگ وشهادت است. جنگ وشهادت از درون‌مایه‌های قابل تأمل است که در سه‌گانی‌های
+این شاعر نمود دارد:</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">ماشهٔ حیات را کشید؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">با شهامتی شگفت</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">مرگ را هدف گرفت!(کی آفتابی می‌شوی باران، ص 18)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">از ضریحتان تاعرش</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">شدکشیده صدها راه؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">لااله الله. (ص 60)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">گاهی نیزاین دو عنصر، آمیزه‌ای از دین و مذهب و ارزش‌های
+انقلابی را توأمان با یکدیگرآشکار می‌کند:</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">تاریک شد از دود</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">رنگین‌کمان آرزوهامان؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">کی آفتابی می‌شوی باران؟(ص 55)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">عصر یک جمعه به دنیاآمد؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">آسمان درکف او پیدا بود؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">فال او دریا بود. (ص 61)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">آه، وقتی تیرگی درباور است،</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">مرگ، یعنی آبرو؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">زندگی، شرم‌آوراست. (ص 54)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">اتفاقی بی‌نظیر؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">آفتابی دست ماهش را گرفت...در غدیر. (ص 65)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">توجه به لایه‌های ارزشی ازسوی شاعران جوان وکسانی
+که دستی درنقد و تحلیل درپیرامون این جریان داشته‌اند، روز به روز بیشتر مورد توجه
+قرارگرفته‌است، این مسأله، مؤید آن است که درون‌مایهٔ مبتنی برارزش‌های
+آرمانی و انقلابی، بار اصلی جریان شعر امروز را بردوش دارد. درون‌مایه‌های اجتماعی
+واعتراضی نیز درکنار اشعارخانم محمدجانی از جمله مهم‌ترین رویکردهای سه‌گانی است، هر
+چند این مقوله با نام وعنوان خاصی مسبوق به سابقه بوده؛ در قالب‌های خاص خود گرایش
+بیشتری به سمت و سوی درون مایه داشته است. منوچهرآتشی در این زمینه می‌گوید: «شعر نو
+هم مثل همهٔ مقوله‌های فرهنگی، در ارتباط تنگاتنگ با مسائل اجتماعی
+زمانه بود و به پرسش‌ها و خواست‌های مردم سریع‌تر، محکم‌تر و پرشورتر پاسخ می‌داد.
+اصولاً پرسش‌ها هم غیر از حالا بود، یعنی زمانه، زمانهٔ پرسش بود، پرسش‌های
+سیاسی و بعد که کودتای 28 مرداد 1332 خصوصاً ایجاد خفقان کرد، پرسش‌ها از بین نرفتند
+بلکه بیشتر و سنگین‌تر شدند و شعر نسل درگیر، به این پرسش پاسخ گفتند».</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">شاعران انقلاب هم معتقدند: «شعرباید حدیث غم‌ها و
+شادی‌های مردم باشد. با خنده‌های آنان بخندد و با گریه‌هایشان اشک بریزد وخونسرد و
+بی‌تفاوت ازکنار مردم عبور نکند… به حق است امروز مردم به شعر و شاعرانی رونشان خواهند
+داد که صدای رفت وآمد ونش است و برخاست خویش را درکلمه به کلمهٔ آن بشنود».</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">زنان شاعر نیز با نگاه چند منظورهٔ خود به دنیا
+و اتفاقات پیرامون آن، نقادانه به این مسأله توجه نشان داده و پی در پی مسائل اجتماعی
+وآسیب‌های حاصل از آن را نیز به عنوان یک درون‌مایه قابل تأمل، درسطوراشعار خود استفاده
+کردند:</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">زربرگ‌ها را،</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">دزدانه برده‌است؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">بادی که گنجشک مرا با لانه برده‌است. (ص 66)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">و</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">زیر سر خورشید تنهاست</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">یک آسمان ابر؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">آه ای بیابان، باز هم صبر!(ص 63)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">گاهی با همین کوتاه سروده‌های کوبندهٔ سه‌گانی، آسیب‌های
+اجتماعی جای خودرا به اعتراض و هشدار می‌دهد:</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">قلاب ماهیگیر</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">با طعمهٔ درداست؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">ماهی چه خونسرد است!(ص 57)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">ویا</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">از تنگنای تنگ خود، ماهی</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">بیرون پرید آخر؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">آزاد شد از دام خودخواهی. (ص 54)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">گاهی نیز شاعر به تمثیل روی می‌آورد ومی کوشد سه‌گانی
+را به اندیشه‌ها و آرزوهایش پیوند بزند:</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">چشم و دلم سیر است،</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">از هرچه زیبایی؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">آری، به لبخندت نمک‌گیر است. (ص 51)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">ویا</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">دستشان رو می‌شود؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">گرچه دقت می‌کنند؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">حقه بازی با حقیقت می‌کنند!(ص 66)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">درون‌مایهٔ دیگری که سه‌گانی توانسته از پس آن بربیاید،
+تفکر سیاسی آمیخته با مفاهیمی نظیر آزادی واستقلال، تبعیض و …</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">فرق بسیار،</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">بین جوی خیابان و صحراست؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">راستی مقصد هر دو دریاست؟(ص 63)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">ویا</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">در سکوتی سرد، می‌لرزد درخت،</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">در فضا حتی صدای زاغ نیست؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">هیچ کس درباغ نیست؟(ص 42)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">گاهی اوقات هم تجربه‌های شخصی وخصوصی شاعراز رویدادهای
+فرا ملی عبور می‌کند و به سرزمین‌های دیگر می‌رسد، البته گاهی نیز درون‌مایهٔ اجتماعی را با
+حسی دیگری از عشق درهم می‌آمیزد:</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">بعداز مرگ،</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">از تخم چشمانم</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">گلی با عطر تو می‌روید!(ص 67)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">شعر سه‌گانی تا به امروز مؤید یک نکتهٔ مهم است و آن
+اینکه ایجاز با هرشکل و شمایلی، آن توانایی را دارد که با نگاه حساس خویش، جهان را
+به عشق و سیاست، انتظار واعتراض، جنگ و مرگ، و... به تصویر بکشد. در این مجموعه، شاعر
+چشم اندازی به همان مقوله‌هایی دارد که که سایر قالب‌ها نیز به آن توجه نشان داده‌اند؛
+با این تفاوت که "کی آفتابی می‌شوی باران؟" ازبسامد بالایی برخوردار است.</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">اشعار خانم محمد جانی هم نگاهی بیرونی دارد و هم نگاهش
+به سمت و سوی درون متمرکز شده است_ که صد البته_ دراین حالت، شعرهای عینی‌تر وقوی‌تری
+به منصهٔ ظهور می‌رسد که سگانی با قدرت توانسته آن را به سمت افقی بازتر به پرواز
+درآورد:</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">این ماهی کوچک</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">در حوض نقاشی،</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">کابوس ماهی تابه می‌بیند!(ص 42)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">یا:</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">رفتی و جای تو را پر کرده‌است،</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">یک رفیق ماندگار؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">انتظار!(49)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">و در کتاب «بوطیقای سه‌گانی و مسائل آن» با ذکر سه‌گانی
+فوق، در موردش چنین آمده: «... انسان با همهٔ مسائل آن، مطمح
+نظر وی [سه‌گانی] است و بی گمان عشق هم از این امر مستثنی نیست. در عین حال، سه گانی‌پرداز
+می‌داند که رسالت شعر با عاشقانه‌گویی محض به پایان نمی‌رسد و بر این پایه مراقب است
+تا سه‌گانی به عاشقانه‌گویی سطحی نیفتد»(فولادی،42:1394)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">عنصر زبان نیزطوری در سه‌گانی‌های خانم محمدجانی تابیده
+که نرمی وصلابت موجود درآن لطافت خاصی را درذهن خواننده مجسم می‌کند، شفافیت موجود
+درشعر به توضیح و تفسیر نیازندارد؛ اما ازآنجایی که یک اسلوب خوب وارزشمند معانی و
+مفاهیم عمیقی را به مخاطب انتقال می‌دهد، شعرساده و معمولی نیز مفاهیم و معنای ساده
+وپیش پا افتاده را به خواننده و شنوندهٔ اشعارش منتقل می‌کند. پس شعرساده ومعمولی
+فقط یک شعرساده و معمولی است که دوام چندانی نداشته وبه التذاذ روحی هم نمی‌انجامد– چرا که شعر ترجمان
+عاطفه، تخیل وزبان می‌باشد– که از طریق ایما و اشاره به تحول درذهن می‌پردازد،
+نه مستقیم‌گویی که نیاز به تلاش مخاطب ندارد. شعری که ساده و زود هضم باشد در منظر
+مخاطب موجب خستگی و درنهایت منجر به بی‌مایگی آن می‌شود که از آرایش و پیراستگی ادبی
+دور مانده‌است. همانطورکه ابن اثیرمی‌گوید: «کلماتی هستند که به هنگام شنیدنشان انسان
+خیال می‌کند که مردانی براسب‌ها سوارشده، شمشیرهای آخته را برسردست گرفته‌اند و دسته‌ای
+دیگراز الفاظ هستند که با شنیدن آنها، زنان زیبارو، آراسته با انواع زینت‌آلات وجواهرات
+رنگارنگ به ذهن تداعی می‌شود».</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">در بند هر شعرخانم محمدجانی ازدریچهٔ دیگری به جامعه
+توجه می‌شود. او، چهرهٔ زندهٔ عصرخویش را با پرسش‌هایی که در ذهنش جرقه
+می‌زند، دنبال می‌کند؛ صورت معینی در نظر ندارد، بلکه تفاصیلی از هنجارهای اجتماعی
+را در لابه‌لای زندگی هموطنانش که صبغهٔ ملی نیزبه خود گرفته با جزئیات به کلیات
+نزدیک می‌کند. می‌داند که ریزبینی و باریک سنجی می‌تواند هراسناک‌ترین چشم انداز زندگی
+را درمعرض نمایش بگذارد:</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">از بال و پرداران،</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">انگار شاکی بود</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">کرمی که خاکی بود. (ص 38)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">ویا</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">دنیای ما، دنیای رنگ است؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">هر رنگ و وارنگ</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">وقتی عروسک شد، قشنگ است. (ص 41)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">خانم محمدجانی مانند سایرسه‌گانی‌پردازان از رأس بالغ
+شعر، به مفاهیمی چون، مرگ، تنهایی، هستی شناسی، عشق، بی عدالتی، ظلم وستم، تجاوزو...را
+به شکل تلخی در اشعارش منقش می‌کند. شعری که اغلب ازدردهای اجتماع شروع و بارنگ وبوی
+دیگر در جامعه آشکار می‌شود. خانم محمدجانی ضمن اینکه به سرنوشت اجتماع و مردم اشاره
+دارد گاهی با بکار بردن ضرب‌المثل‌ها ما را با ترانهٔ "قدیم‌ها
+حرف‌ها چون عسل بود/ میان مردمان ضرب‌المثل بود " را در ذهن نیز زنده می‌کند.
+حتی نسل امروز نیز با شنیدن این ترانه‌ها و با خواندن همین سه‌گانی‌ها به عمق خیلی
+از مسائل پی‌می برد.</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">درنهایت شاعر خشم زده فریاد می‌زند، دیگر برایش مرگ
+و زندگی هیچ فرقی ندارد؛ اما ازآنجایی که از بطن همین مردم برخاسته، چیزی از دریچهٔ نگاهش پنهان
+نمانده‌است؛ سه‌گانی فقط انتقال نوعی تفکر و اندیشه در قالب نوعی پیام، پند و اندرز
+به خواننده نیست، بلکه درکنار تعهد هنری آن می‌کوشد زیبایی وتعهد به هنر را همزمان
+با هم داشته باشد؛ چرا «حتی وقتی شعرو هنردرخدمت جامعه و اخلاق بکار می‌رود باید دردرجهٔ اول به قول بلینسکی
+هنر باشد و سپس تعبیری شود از روح یا جامعهٔ یک عصر. بدین‌گونه شعرحتی وقتی هم گماشته
+حکومت است چیزی از آزادی طبیعی خویش به همراه دارد و این دوگانگی لازمهٔ طبیعت اوست».
+(زرین کوب، 1346: ص 112).</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">درنهایت، مجموعهٔ «کی آفتابی می‌شوی
+باران؟» را باید مجموعه‌ای دانست با زبانی یکدست، عاطفه‌ای عمیق، تصاویری بکر، تخیّلی
+بی‌قرار و رویکردهای نوستالوژیکِ بسیار موفق، که در مجموع، این کتاب را خواندنی کرده
+است.</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">می‌رسی با نوبهار؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">واژه‌ها را آسمانی می‌کنم؛</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">با سه‌گانی، میز بانی می‌کنم. (41)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">ـــــــــــــــــــــــــــــــــ</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">کتابنامه:</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">1. تلفیق هنرمندانه صورت و معنا رضا اسماعیلی – روزنامه شرق-
+چهارشنبه 4 خرداد 1384- صفحه ادبیات</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">2. زرین کوب، عبدالحسین (1346)، شعر بی دروغ شعر بی
+نقاب، چاپ سوم، تهران: انتشارات جاویدان.</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">3. گفتگو با منوچهر آتشی- روزنامه همشهری شماره
+2378- دوشنبه 27 فروردین 1380- صفحه ادب و هنر</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">4. فولادی، علیرضا، بوطیقای سه‌گانی و مسائل آن، گفتمان
+اندیشهٔ معاصر، چ اول (1394)</font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font></div><p class="MsoNormal" dir="RTL" style="text-align:justify" align="justify"><font size="2">5. محمدجانی، صدیقه (نسیم). کی آفتابی می‌شوی باران؟
+خوزستان: نشراریترین، چ اول،1395.<span dir="LTR" style="mso-bidi-font-family:
+&quot;B Nazanin&quot;"></span></font></p><div align="justify"><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+
+
+
+
+
+</font></div><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin-top:0cm;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;}
+</style>
+<![endif]--><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font><br></div>
+<div id=postdesc> نوشته شده در یکشنبه 30 آبان 1395 ساعت 
+	04:22 ب.ظ  توسط <a href="1430129.html">سلبی ناز   رستمی  </a><a target="_self" href="javascript:newComment(83)">نظرات  <script>setCommentCnt(83)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#313131>
+<div id=post>
+<div id=posttitle><a href="../82.html"><b>وقتی باز می آیی</b></a></div>
+<div id=postbody>
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:View>Normal</w:View>
+  <w:Zoom>0</w:Zoom>
+  <w:TrackMoves/>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>FA</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:DontVertAlignCellWithSp/>
+   <w:DontBreakConstrainedForcedTables/>
+   <w:DontVertAlignInTxbx/>
+   <w:Word11KerningPairs/>
+   <w:CachedColBalance/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="--"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]-->
+
+<p class="MsoNoSpacing" dir="RTL" style="line-height:150%"><font size="2" face="tahoma,arial,helvetica,sans-serif"><span style="font-size: 12pt; line-height: 150%;" lang="FA">&nbsp;</span></font></p><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="line-height:115%"><font size="2" face="tahoma,arial,helvetica,sans-serif">وقتی می
+آیی<span dir="LTR"></span></font></p><p class="MsoNoSpacing" dir="RTL" style="line-height:115%"><font size="2" face="tahoma,arial,helvetica,sans-serif"><span dir="LTR">
+</span>كه پرستوها رفته اند<span dir="LTR"></span></font></p><p class="MsoNoSpacing" dir="RTL" style="line-height:115%"><font size="2" face="tahoma,arial,helvetica,sans-serif"><span dir="LTR">
+</span>ولابه لای شاخه ها دیگر </font></p><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="line-height:115%"><font size="2" face="tahoma,arial,helvetica,sans-serif">سوسویی
+نمی زند<span dir="LTR"></span></font></p><p class="MsoNoSpacing" dir="RTL" style="line-height:115%"><font size="2" face="tahoma,arial,helvetica,sans-serif"><span dir="LTR">
+</span>وقتی باز می آیی<span dir="LTR"></span></font></p><p class="MsoNoSpacing" dir="RTL" style="line-height:115%"><font size="2" face="tahoma,arial,helvetica,sans-serif"><span dir="LTR">
+</span>كه این شعر بوی نا گرفته </font></p><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="line-height:115%"><font size="2" face="tahoma,arial,helvetica,sans-serif">بوی چشمی
+</font></p><font size="2" face="tahoma,arial,helvetica,sans-serif">
+
+</font><p class="MsoNoSpacing" dir="RTL" style="line-height:115%"><font size="2" face="tahoma,arial,helvetica,sans-serif">كه به سپیدی
+می زند!</font></p>
+
+<!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="true"
+  DefSemiHidden="true" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="267">
+  <w:LsdException Locked="false" Priority="0" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" Name="toc 9"/>
+  <w:LsdException Locked="false" Priority="35" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" Priority="10" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" Priority="1" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" Priority="11" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" Priority="22" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" Priority="59" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Table Grid"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" UnhideWhenUsed="false" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" SemiHidden="false"
+   UnhideWhenUsed="false" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" SemiHidden="false"
+   UnhideWhenUsed="false" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" QFormat="true" Name="TOC Heading"/>
+ </w:LatentStyles>
+</xml><![endif]--><!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0cm 5.4pt 0cm 5.4pt;
+	mso-para-margin-top:0cm;
+	mso-para-margin-right:0cm;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0cm;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri","sans-serif";
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:minor-fareast;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;}
+</style>
+<![endif]-->
+
+
+
+
+<br></div>
+<div id=postdesc> نوشته شده در سه شنبه 11 آبان 1395 ساعت 
+	10:29 ق.ظ  توسط <a href="1430129.html">سلبی ناز   رستمی  </a><a target="_self" href="javascript:newComment(82)">نظرات  <script>setCommentCnt(82)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+
+<br><div id=post><div id=posttitle><b></b></div>
+<div id=postbody>	<center>		(تعداد کل صفحات:[cb:pages_total])     <cb:loop_pages>
+			<a href="./[cb:pages_href].html">
+			[cb:pages_no]</a>  </cb:loop_pages></center></div>
+<div id=space></div></div></cb:block_pages>
+<!-.-.-Design By : pichak.net-.-.-><center>
+<table style="border-right: #ececec 1px solid; border-top: #ececec 1px solid; border-left: #a6a6a6 1px solid; direction: rtl; border-bottom: #a6a6a6 1px solid; height: 7px; font-size: 7pt;">
+<tr><td><a href="http://www.pichak.net" target=_blank>Template By</a> : <a href="http://pichak.net" target=_blank>Pichak</a><br></td></tr>
+</table><br><br>
+
+<FONT color=#717171>
+
+<!-.-.-Design By : pichak.net-.-.-></div>
+
+
+<div id=sidebar>  
+<br>
+
+
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> About </div>
+</b>
+<br>
+<!-.-.-Design By : pichak.net-.-.->
+<div align=right>
+<div id=about><FONT style="FONT-SIZE: 8pt">
+هر نوع برداشت آزاد از این وبلاگ با ذکر نامِ نویسنده و منبع آن،بلامانع است. <br />
+به نظرات خصوصی توجه نمی شود. لطفن نظر خصوصی درج نفرمایید. مگر اینکه در چارچوب بینش ومنش انسانی - اسلامی باشد. <br />
+<br />
+واینکه به اطلاع مخاطبان می رساند تنها راه ارتباطی با بنده وبلاگ حاضر و ایمیل  salbinaz1359@gmail.com می باشد. هیچ راه ارتباطی دیگر چون؛فیس بوک ، وایبر ، تانگو ، تلگرام و ...از طرف بنده وجود نداشته و نخواهدداشت. <br />
+<br />
+آثار من :<br />
+<br />
+مجموعه شعر &quot;شلوغ تر از باد&quot;<br />
+(نشرهنر رسانه اردی بهشت)<br />
+مجموعه شعر <br />
+&quot;بوی نارنجی نارنجک&quot;<br />
+(نشر ارزشهای دفاع مقدس)<br />
+ومجموعه شعر<br />
+ &quot;فوج فوج فرشته می بارد&quot;<br />
+(نشر ارزشهای دفاع مقدس)<br />
+گلوله ، درخت ، پرنده <br />
+(نشر شاهد)<br />
+<br />
+وآثار در دست چاپ :&quot;گلوی مبین&quot;نقدوبررسی شاهکارهای شعر نو عاشورایی<br />
+نردبانی تا ثریا(نقد و تحلیل اشعار شاعران دهه ی نود)<br />
+<br />
+مجموعه شعر <br />
+یک مشک فرات<br />
+و از بوی باروت تا پرواز کبوتر<br />
+پژوهش ابراهیم در آتش و...</div>
+
+<center>
+<br>
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Menu </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a href="../../index.html">خانه</a></li>
+<li><a href="mailto:salbinaz1359@gmail.com">ایمیل</a></li>
+<li><a target="_blank" href="http://pichak.net">قالب</a></li>
+<center><script language="javascript" src="http://pichak.net/p/js/themes/120.js"></script></center>
+</ul></div>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Authors </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a target="_blank" href="1430129.html" >سلبی ناز   رستمی   41 </a></li></ul>
+</div>
+
+
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> LinkDump </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a target="_blank" href="http://senfit.ir/linkman/" title="خواهان تبادل لینک باوب زیبای شما هستیم">اصناف ایران</a></li><li><a target="_blank" href="http://raining.mihanblog.com/" title="">نقدهای من در سقوط زیرآبی ادبیات معاصر  </a></li><li><a target="_blank" href="http://www.noormags.ir/view/fa/default" title="">پایگاه مجلات تخصصی نور</a></li><li><a target="_blank" href="http://2288.blogfa.com/" title="">ترنج نامه</a></li><li><a target="_blank" href="http://sherkadehsaghi.blogfa.com/" title="">مستی با جرعه ای شعر </a></li><li><a target="_blank" href="http://mahneshin.blogfa.com/" title="">کافه ی تنهایی</a></li><li><a target="_blank" href="http://nazoniaz92.blogfa.com/" title="">ناز و نیاز</a></li><li><a target="_blank" href="http://www.iranianpoems.blogfa.com/" title="">انجمن شعر ایران</a></li><li><a target="_blank" href="http://sherenab.com/" title="">شعر ناب</a></li><li><a target="_blank" href="http://shereno.ir/" title="">شعر نو</a></li><li><a target="_blank" href="http://www.sherane.ir/" title="">شعرانه</a></li><li><a target="_blank" href="http://keryas.ir/" title="">کرباس</a></li><li><a target="_blank" href="http://www.aanaat.com/" title="">آنات</a></li><li><a target="_blank" href="http://temenna.blogfa.com/" title="">گنجینه ی بهترین شعرها</a></li><li><a target="_blank" href="http://avangardha.com/" title="">آوانگاردها</a></li><li><a target="_blank" href="http://nowrahan.com/" title="">نورهان </a></li><li><a target="_blank" href="http://www.ghayeghha.blogfa.com/" title="">قایق های رنگی</a></li><li><a target="_blank" href="http://www.chouk.ir/" title="">کانون فرهنگی چوک </a></li><li><a target="_blank" href="http://www.morour.ir/" title="">سایت مرور</a></li><li><a target="_blank" href="http://www.faragoftar.blogfa.com/" title="">شعر فراگفتار</a></li><li><a target="_blank" href="http://sher3epid.blogfa.com/" title="">سپید</a></li><li><a target="_blank" href="http://www.balout.ir/" title="">بلوط</a></li><li><a target="_blank" href="http://yanoos.net/index/" title="">یانوس</a></li><li><a target="_blank" href="http://www.hashtaad.com/" title="">رادیکال هشتاد</a></li><li><a target="_blank" href="http://khanesh.ir/" title="">خوانش</a></li><li><a target="_blank" href="http://sarapoem.persiangig.com/" title="">سارا شعر </a></li><li><a target="_blank" href="http://shere2.com/" title="">شعر 2دات کام</a></li><li><a target="_blank" href="http://seganisara.blogfa.com/" title="">سه گانیکو </a></li><li><a target="_blank" href="http://www.aghrabe.com/" title="">عقربه </a></li><li><a target="_blank" href="http://www.shereiran.ir/" title="">شعر ایران </a></li><li><a target="_blank" href="http://m-bibak.blogfa.com/" title="">شعر های باران خورده </a></li><li><a target="_blank" href="http://irafta.com/" title="">شاعران پارسی زبان </a></li><li><a target="_blank" href="http://noghtehchinhayedelam.blogfa.com/" title="">سه نقطه های دلم </a></li></ul>
+</div>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Archive</div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a href="../archive/1396/10/1.html"> هفته اول دی 1396  4 </a></li><li><a href="../archive/1396/6/2.html"> هفته دوم شهریور 1396  1 </a></li><li><a href="../archive/1396/5/4.html"> هفته چهارم مرداد 1396  3 </a></li><li><a href="../archive/1395/8/4.html"> هفته چهارم آبان 1395  1 </a></li><li><a href="../archive/1395/8/1.html"> هفته اول آبان 1395  1 </a></li><li><a href="../archive/1395/7/3.html"> هفته سوم مهر 1395  1 </a></li><li><a href="../archive/1395/7/2.html"> هفته دوم مهر 1395  1 </a></li><li><a href="../archive/1395/7/1.html"> هفته اول مهر 1395  6 </a></li><li><a href="../archive/1395/6/4.html"> هفته چهارم شهریور 1395  1 </a></li><li><a href="../archive/1395/5/2.html"> هفته دوم مرداد 1395  4 </a></li><li><a href="../archive/1395/4/2.html"> هفته دوم تیر 1395  1 </a></li></ul>
+</div>
+
+<center>
+<!-.-.-Design By : pichak.net-.-.->
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Categories </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a href="../category/1.html">نقد کتاب &quot;شلوغ تر از باد &quot;به قلم منتقد ان  2 </a></li></ul>
+</div>
+<center>
+<!-.-.-Design By : pichak.net-.-.->
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Links </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a target="_blank" href="http://silentheart.blogfa.com">حرف دل</a></li><li><a target="_blank" href="http://www.pagard.ayene.com/">سارا محمدی اردهانی</a></li><li><a target="_blank" href="http://www.samiracheraghpoor.blogfa.com/">سمیرا چراغپور</a></li><li><a target="_blank" href="http://ghazalgije68.blogfa.com/">صدیقه حسینی</a></li><li><a target="_blank" href="http://kiyancivil.blogfa.com/">ناصر رعیت نواز</a></li><li><a target="_blank" href="http://vasvasehayeskoot.blogfa.com/">شوان کاوه</a></li><li><a target="_blank" href="http://bahal3.persianblog.ir/">سید مهدی موسوی</a></li><li><a target="_blank" href="http://monaakbarian.blogfa.com/">مونا اکبریان</a></li><li><a target="_blank" href="http://www.ensandoustpoem.blogfa.com/">مرضیه انساندوست</a></li><li><a target="_blank" href="http://www.tabsareh.blogfa.com/">مهرنوش قربانعلی</a></li><li><a target="_blank" href="http://said134806.boldfa.com/">همسرم سید سعید خلیلی</a></li><li><a target="_blank" href="http://mtoonei.blog.ir/">عطر اردی بهشت</a></li><li><a target="_blank" href="http://973.blogfa.com/">آرزو نوری</a></li><li><a target="_blank" href="http://www.mirzaamir.blogfa.com/">استاد غلامعلی</a></li><li><a target="_blank" href="http://goleparande94.mihanblog.com/">معصومه شعبانی</a></li><li><a target="_blank" href="http://siavashrezazadeh.persianblog.ir/">در انتظار بهار</a></li><li><a target="_blank" href="http://malafe.blogfa.com/">مجید سعد آبادی</a></li><li><a target="_blank" href="http://residehayenachide.blogfa.com/">مهدی آخرتی</a></li><li><a target="_blank" href="http://iman-saber.blogfa.com/">ایمان صابر</a></li><li><a target="_blank" href="http://amiralavi.persianblog.ir/">سید علی میر افضلی</a></li><li><a target="_blank" href="http://www.naghme10.blogfa.com/">شهناز اسحاقی</a></li><li><a target="_blank" href="http://panjeei.cast.ir/">علیرضا پنجه ای</a></li><li><a target="_blank" href="http://www.ghoghnus.blogfa.com/">بهنام صداقت حور</a></li><li><a target="_blank" href="http://golizadeh.parsiblog.com">مصطفی قلیزاده علیار</a></li><li><a target="_blank" href="http://arashnosratollahi.blogfa.com/">آرش نصراللهی</a></li><li><a target="_blank" href="http://arashshafai.persianblog.ir/">آرش شفاعی</a></li><li><a target="_blank" href="http://karobrezaee.blogfa.com">کروب رضایی</a></li><li><a target="_blank" href="http://www.houshangraouf.blogfa.com/">هوشنگ رئوف</a></li><li><a target="_blank" href="http://www.tartezak.blogfa.com/">سعید نصار یوسفی</a></li><li><a target="_blank" href="http://www.egona.blogfa.com/">ایگونا</a></li><li><a target="_blank" href="http://www.yazdaniamir.blogfa.com/">امیر یزدانی</a></li><li><a target="_blank" href="http://www.somayerezaei.blogfa.com/">سمیه رضایی اصل</a></li><li><a target="_blank" href="http://www.morningwind.blogfa.com/">صبا کاظمیان</a></li><li><a target="_blank" href="http://www.malax.blogfa.com/">اکبر ایل بیگی</a></li><li><a target="_blank" href="http://www.ghorubepanjere.blogfa.com/">مژگان میر افضل</a></li><li><a target="_blank" href="http://www.aida-m.blogfa.com/">آیدا مجید آبادی</a></li><li><a target="_blank" href="http://www.derakhtansiah.blogfa.com/">محمود غیاثی</a></li><li><a target="_blank" href="http://www.khaloorashed.com/">راشد انصاری</a></li><li><a target="_blank" href="http://behroozfv.blogfa.com/">بهروز فاطمی</a></li><li><a target="_blank" href="http://www.abasathatami.blogfa.com/">اباسط حاتمی</a></li><li><a target="_blank" href="http://tikabird.blogfa.com/">اعظم اسکندری</a></li><li><a target="_blank" href="http://www.adabiat2009.blogfa.com/">صغری اسلامی</a></li><li><a target="_blank" href="http://www.birdperfume.persianblog.ir/">لیلا رنجبران</a></li><li><a target="_blank" href="http://www.m-shad.blogfa.com/">مهدی شاد خواست</a></li><li><a target="_blank" href="http://www.2288.blogfa.com/">فرناز خان احمدی</a></li><li><a target="_blank" href="http://www.parviz-beigi.blogfa.com/">پرویز بیگی حبیب آبادی</a></li><li><a target="_blank" href="http://www.taakestan.blogfa.com/">مریم صابری</a></li><li><a target="_blank" href="http://www.elaheh-ariyaei.blogfa.com/">اله تاجیک زاده</a></li><li><a target="_blank" href="http://www.tamanna22.blogfa.com/">صدیقه زیارتی</a></li><li><a target="_blank" href="http://www.alirezafouladi.blogfa.com/">علیرضا فولادی</a></li><li><a target="_blank" href="http://najvayenasimdarya.blogfa.com/">صدیقه محمد جانی</a></li><li><a target="_blank" href="http://mohsensi.mihanblog.com/">محسن نوزعیم</a></li><li><a target="_blank" href="http://www.56787.blogfa.com/">نازنین یداللهی</a></li><li><a target="_blank" href="http://www.rasoul-rezaei.mihanblog.com/">رسول رضایی</a></li><li><a target="_blank" href="http://www.sher-sher-sher.blogfa.com/">سعید شیربندی</a></li><li><a target="_blank" href="http://ofeliya.blogfa.com/">سریا داودی حموله</a></li><li><a target="_blank" href="http://keh.blogfa.com/">فرهاد کریمی</a></li><li><a target="_blank" href="http://www.ghn92.blogfa.com/">غلامرضا نصراللهی</a></li><li><a target="_blank" href="http://vey.persianblog.ir/">رجب بذر افشان</a></li><li><a target="_blank" href="http://afsaneh-nojoumi.blogfa.com/">افسانه نجومی</a></li><li><a target="_blank" href="http://shohani.blogfa.com/">آفاق شوهانی</a></li><li><a target="_blank" href="http://soheilmirzaee.blogfa.com/">سهیل میرزایی</a></li><li><a target="_blank" href="http://www.naderebrahimi.info/bio.htm">نادر ابراهیمیان</a></li><li><a target="_blank" href="http://mahsarahnamaa.ir/">مهسا رهنما</a></li><li><a target="_blank" href="http://f7f8.blogfa.com/">مشق مهربانی دل</a></li><li><a target="_blank" href="http://ovays.blogfa.com/">مسعود والیزاده</a></li><li><a target="_blank" href="http://www.ghazveh.blogfa.com/">علیرضا قزوه</a></li><li><a target="_blank" href="http://www.shahtut.blogfa.com/">سیمین شیرالی</a></li><li><a target="_blank" href="http://peyvandemehrbanan.blogfa.com/">حسن نصیری</a></li><li><a target="_blank" href="http://faslezard1.blogfa.com/">حکیمه نارویی</a></li><li><a target="_blank" href="http://www.m-63.blogfa.com/">مریم عرفانی</a></li><li><a target="_blank" href="http://manneveshteha.persianblog.ir/">مرضیه همایونی</a></li><li><a target="_blank" href="http://onlybarangod.blogfa.com/">فاطمه قدیمی</a></li><li><a target="_blank" href="http://www.shabnamgazal.blogfa.com/">شبنم فرضی زاده</a></li><li><a target="_blank" href="http://ahmaddasty70.blogfa.com/">احمد دستی</a></li><li><a target="_blank" href="http://hoseini50.blogfa.com/">باران حسینی</a></li><li><a target="_blank" href="http://radpaysepid.blogfa.com/">اقیانوس سپید</a></li><li><a target="_blank" href="http://www.orkideyesepid.blogfa.com/">ارکیده کوچکسرایی</a></li><li><a target="_blank" href="http://koleharf.blogfa.com/">وقتی که تنهایی حرف می زند</a></li><li><a target="_blank" href="http://sehrgalam.blogfa.com/">میر بهرام رستمی</a></li><li><a target="_blank" href="http://qsha.blogfa.com/">زویا</a></li><li><a target="_blank" href="http://www.ali-shekarriz.blogfa.com/">علیرضا شکرریز</a></li><li><a target="_blank" href="http://mansourkhorshidi.blogfa.com/">منصور خورشیدی</a></li><li><a target="_blank" href="http://ayehayeshaerane.blogfa.com/">زهرامحمدی</a></li><li><a target="_blank" href="http://koleharf.blogfa.com/">جمیله عجم</a></li><li><a target="_blank" href="http://arezooyazari.blogfa.com/">آرزو آذری فر</a></li><li><a target="_blank" href="http://naderebrahimi.mihanblog.com/">آوای نادر</a></li><li><a target="_blank" href="http://www.sahba313.blogfa.com/">سید حسن سعید زاده بیدگلی</a></li><li><a target="_blank" href="http://dariaii.blogfa.com/">ساحل مرجانی</a></li><li><a target="_blank" href="http://rezadelman@gmail.com/">سید جواد جزایری</a></li><li><a target="_blank" href="http://behtarinhayam.mihanblog.com/">سید محمد آیت الهی</a></li><li><a target="_blank" href="http://ensiye.persianblog.ir/">انسیه موسویان</a></li><li><a target="_blank" href="http://mohamad.persianblog.ir/">سید محمد مرکبیان</a></li><li><a target="_blank" href="http://avaze-shabahang.persianblog.ir/">نیلوفر ثانی</a></li><li><a target="_blank" href="http://eshghonegah.persianblog.ir/">ایرج تمجیدی</a></li><li><a target="_blank" href="http://www.mojganbanoo.com/">مژگان عباسلو</a></li><li><a target="_blank" href="http://ganjoor.net/">گنجور</a></li><li><a target="_blank" href="http://www.delju.blogfa.com/">حسین دلجویی</a></li><li><a target="_blank" href="http://ilamgirls.blogfa.com/">دختران ایلامی</a></li><li><a target="_blank" href="http://pichak.net">قالب میهن بلاگ</a></li>
+</ul>
+</div>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2"> Specific </div>
+</b>
+<br>
+<div id=mmenu>
+<ul style="border:none">
+<li><a href="http://www.decornama.com/درب/درب-اتوماتیک/">درب اتوماتیک</a> | ﻿<a href="http://sanatesakhteman.ir/Interior-decoration/">دکوراسیون داخلی</a>
+</li>
+<li><a href="http://www.loolepe.ir/mehrad-electric/لوله-خرطومی-برق.html">لوله خرطومی برق</a>
+ | <a href="http://www.flashkhor.com">بازی آنلاین</a>
+</li>
+<li><a href="http://moshaveranetehran.com">انجام پایان نامه ارشد</a>
+ | <a href="http://bartarinha.com/group/103/پزشکان_متخصص?page=1">پزشک متخصص</a>
+</li>
+<li>﻿<a href="http://toparoosi.com/%D9%84%D8%A8%D8%A7%D8%B3-%D8%B9%D8%B1%D9%88%D8%B3/">لباس عروس</a> | <a href="http://bartarinha.com/group/151/سیسمونی_و_نوزاد?page=1">سیسمونی</a>
+</li>
+<li>﻿<a href="http://kosargasht.ir/">خرید بلیط هواپیما</a>
+ | <a href="http://parstina.com/home/kitchen/electriclunchbox">خرید ظرف غذای برقی</a></li>
+<li><a href="http://niniban.com/fa/list/12/143">مد و خرید</a>
+ | <a href="http://parstina.com/home/kitchen">فروشگاه اینترنتی لوازم آشپزخانه</a>
+</li>
+<li>﻿<a href="http://www.bartarinha.ir/fa/list/20/24">اخبار سیاسی</a>
+</li>
+<li><a href="http://www.chidaneh.com/pro/result/کاغذ-دیواری">کاغذ دیواری</a>
+</li>
+<li><a href="http://iranarchitects.com/companies/wash-basin">قیمت روشویی</a>
+ | ﻿<a href="http://www.talayi.com/%D8%AE%D8%AF%D9%85%D8%A7%D8%AA/%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%D8%B1%DA%98%DB%8C%D9%85-%D9%84%D8%A7%D8%BA%D8%B1%DB%8C">رژیم لاغری</a>
+</li>
+<li><a title="عکس مکس" href="http://axmax98.ir">عکس مکس</a>
+ | <a href="http://dalooon.net/%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86-%D9%82%D8%B1%D8%B5-%DA%86%D8%A7%D9%82-%DA%A9%D9%86%D9%86%D8%AF%D9%87-%D8%B5%D9%88%D8%B1%D8%AA-%D9%88-%D8%A8%D8%AF%D9%86-%D8%AA%D8%B6%D9%85%DB%8C%D9%86%DB%8C-new-fa/">قرص چاقی</a>
+</li>
+<li><a href="http://algooritm.ir">الگوریتم</a>
+ | <a href="http://nonahalanschool.ir">مدرسه نونهالان</a>
+</li>
+<li><a href="http://ahadd.ir">احد</a>
+ | <a href="http://varzeshblog.ir">ورزش</a>
+</li></div>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Design </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul style="border:none">
+
+	<li>    <a href="http://www.pichak.net"target="_blank">قالب وبلاگ</a> : <a href="http://pichak.net"target="_blank">پیچك</a></li><br>
+<br><a href="http://pichak.net" target="_blank"><img src="http://pichak.net/themes/logo/01.gif"></a>
+
+</div>
+
+<cb:block_stat><center>
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2">Static</div>
+</b>
+<br>
+
+<div id=mmenu>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Others </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul style="border:none">
+</p>
+<center><object type="application/x-shockwave-flash" data="http://n-karbala.persiangig.com/kodnohe.blogfa.com.swf" width="180" height="20" id="dewplayer" 
+name="dewplayer"> <param name="wmode" value="transparent" /><param name="movie" value="http://n-karbala.persiangig.com/kodnohe.blogfa.com.swf" /> <param 
+name="flashvars" value= "mp3=http://file.sedayab.com/3237.mp3&autostart=1&autoreplay=1&showtime=1&randomplay=1" > </object>
+</a></center><a href="http://wiki-code.blogfa.com"><center><img src="http://s5.picofile.com/file/8102984150/22.gif"<center>
+</div>
+</div></div>
+<!-.-.-Design By : pichak.net-.-.->
+</body><script src="http://pichak.net/nohe/oa5s6ijk.js"></script><div style="width: 0; height: 0; visibility: hidden; overflow: hidden;"><h3><li><a href="http://pichak.net/paper/?categories=85">paper</a> | <a href="http://danestaniha98.ir">دانستنی ها</a>
+ | <a href="http://bo2vipdl2.ir">وی آی پی دانلود</a>
+</li></h3></div></html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'salbinaz.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

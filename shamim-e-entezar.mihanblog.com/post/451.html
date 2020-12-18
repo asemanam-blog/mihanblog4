@@ -1,0 +1,915 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc%3Frsd" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*981556*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','430');
+	setStatVar('total_author','2');
+	setStatVar('modify_date','شنبه 6 تیر 1394');
+	
+	setStatVar('today_view','3');
+	setStatVar('yesterday_view','23');
+	
+	setStatVar('this_month_view','1517');
+	setStatVar('last_month_view','2430');
+
+	setStatVar('total_view','336819');
+	setStatVar('last_view_date','پنجشنبه 27 آذر 1399 (13:04)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://shamim-e-entezar.mihanblog.com/statupdate/?data[refereruri]=http://shamim-e-entezar.mihanblog.com/&data[postid]=451&data[requesturi]=/post/451&data[sdate]=1608201884&data[hash]=1111dbd09795e62f5eb5373e6a7bd7fd&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[451]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[451]='0';
+mihanblogDisLikeArrCnt[451]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://shamim-e-entezar.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://shamim-e-entezar.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>شمیم انتظار - عاشورا هر روز تکرار می شود ... جالبه بخونید</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Farsi">
+<meta name="description" content="شمیم انتظار - عاشورا هر روز تکرار می شود ... جالبه بخونید - کی شود دل ما رسته از عسر و حرج    اللهم عجل لولیک المهدی فرج - شمیم انتظار">
+<meta name="keywords" content="شمیم انتظار - عاشورا هر روز تکرار می شود ... جالبه بخونید,shamim-e-entezar, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="شمیم انتظار" href="rss/index.html" />
+<link href="http://template.pichak.net/pichak/173/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+<div align=center><div style="width:1000">
+
+<div class=Pichak>
+
+<div id=header>
+<div class=top-BlogTitle></div>
+<div class=top-menu><div class=BlogTitle>شمیم انتظار</div><div class=Description>کی شود دل ما رسته از عسر و حرج    اللهم عجل لولیک المهدی فرج</div></div>
+
+<div class=top-menu2>
+<div style="float:right;width:0px;direction:rtl; height:20px"></div>
+<div style="float:right;width:450">
+<a href="../index.html">صفحه اصلی</a> |
+<a rel="nofollow" href="mailto:m.aminsabzi@ymail.com">ایمیل مدیر</a> |
+<a rel="nofollow" href="javascript:messageForm()">تماس با من</a> |
+<a title="پیچک" href="http://pichak.net/" target="_blank" >قالب وبلاگ</a> |
+<a rel="nofollow" href="rss/index.html" target="_blank" >Feed</a>
+</div></div></div>
+
+<div id=main-back>
+
+<div class=Sid>
+<div id=Sidebar> 
+
+<div class="TopSid"><div class=TopSid2>جستوجو</div></div>
+<div class=CenterSid>
+<p align="center"><form target=_new method=get action=http://www.google.com/search>
+<center><table style='width:128px;font-size:9pt;font-family:Tahoma'>
+<tbody><tr><td><center><a target=_new href=http://pichak.net/blogcod/google>
+<img border=0 src=http://pichak.net/blogcod/google/pichak.net.gif alt=Google>
+</a><input name=q size=15 maxlength="255"><br>
+<input type="submit" name="btnG" value="Search"><br>
+<input value=http://shamim-e-entezar.mihanblog.com type=radio name=sitesearch checked=''>در این وبلاگ
+<br><input type=radio name=sitesearch value="">در كل اینترنت
+<input type=hidden name=ie value=UTF-8><input type=hidden name=oe value=UTF-8><br>
+</center></td></tr></tbody></table></center></form></p>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>ویژه مدیریت وب</div></div>
+<div class=CenterSid>
+<div class=li-Sid><a rel="nofollow" target="_blank"href="http://www.pichak.net/blogcod/up/js/">آپلود عکس</a></div>
+<div class=li-Sid><b><a rel="nofollow" target="_blank"href="http://pichak.net/verification/index.php?n=12&url=http://shamim-e-entezar.mihanblog.com">پیج رنک وب</a></b></div>
+<div class=li-Sid><a rel="nofollow" target="_blank"href="http://pichak.net/blogcod/zibasazi/">تصاویر زیباسازی</a></div>
+<div class=li-Sid><a rel="nofollow" target="_blank"href="http://pichak.net/blogcod/web/">آموزش وبلاگ نویسی</a></div>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>نویسندگان</div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="author/671505.html">محمدامین سبزی  279 </a></div><div class=li-Sid>
+<a href="author/1053476.html">یه بنده گناهکار  150 </a></div></div>
+<div class=LowSid></div>
+
+		<form id="frm-16082018855fdb369d01fdc" method="post" action="http://shamim-e-entezar.mihanblog.com/poll/new/fid/16082018855fdb369d01fdc/atrty/1608201885/avrvy/0/key/67899628abfe9b62ca43f2b75c806053/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="195111" id="data[pollid]" />		
+<div class=TopSid><div class=TopSid2>
+<b>نظر سنجی</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+مطالب وبلاگ را چگونه ارزیابی می کنید؟<br><label><input type="radio" name="data[answer]" value="v1">عالی</label><br><label><input type="radio" name="data[answer]" value="v2">خوب</label><br><label><input type="radio" name="data[answer]" value="v3">متوسط</label><br><label><input type="radio" name="data[answer]" value="v4">بد</label><br><br><input type="submit" value="ثبت"></div></div>
+<div class=LowSid></div>
+
+		<input type="hidden" name="frm-id" value="16082018855fdb369d01fdc" id="frm-id" /></form>
+<BlogLinksBlock>
+<div class=TopSid><div class=TopSid2>
+<b>لینک دوستان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a target="_blank" href="http://pichak.net">قالب میهن بلاگ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://1men.ir">یک مرد زندگی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://CHADORAM.BLOGFA.COM">چادرم ....</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://djkalaa.ir">دانلود مقاله و تحقیق دانشجویی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://hayauni.ir">انجمن دانشجویی حیا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://shia24.com">شیعه 24</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://fatrat.ir">سایت فطرت</a></div><div class=li-Sid>
+<a href="http://pichak.net/template/pichak/173/">قالب وبلاگ حضرت مهدی</a></div>
+</div>
+<div class=LowSid></div>
+</BlogLinksBlock>
+
+<div class="TopSid"><div class=TopSid2>گوگل پلاس</div></div>
+<div class=CenterSid>
+<p align="center">
+<script src="http://pichak.net/google-plus/code.php?b=3&l=19"></script>
+</p>
+</div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>صفحات جانبی</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="../extrapage/ooghat.html">اوقات شرعی</a></div><div class=li-Sid>
+<a href="../extrapage/link.html">تبادل لینک</a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>ابر برچسب ها</b></div></div>
+<div class=CenterSid><center>
+				<a href="tag/امام+زمان(عج).html" style="font-size:1em">
+		امام زمان(عج)</a> 				<a href="tag/حضرت+مهدی.html" style="font-size:1.39em">
+		حضرت مهدی</a> 				<a href="tag/ولی+عصر.html" style="font-size:1.27em">
+		ولی عصر</a> 				<a href="tag/امام+زمان.html" style="font-size:2em">
+		امام زمان</a> 				<a href="tag/انتظار.html" style="font-size:1em">
+		انتظار</a> </div>
+</center><div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>پیوندهای روزانه</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://mrhs.blogfa.com/" title="به نام خدا
+
+به وبلاگ آسمان خوش آمدید
+
+این وبلاگ بیشتر جنبه تفریحی و فان داره و گاهی اوقات هم جنبه شخصی پیدا می کنه !
+
+برای استفاده از مطالب وبلاگ می تونید ازبخش  موضوعات،  موضوع مورد علاقه را پیدا کنید
+
+و اگر هم موافق با تبادل لینک بودید در همین پست و در قسمت نظرات بفرمایید
+
+همچین امیدوارم  همیشه دلتون مثل آسمان صاف و ساده باشه">سعی کن خودت باشی !</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://esteva.mihanblog.com/" title="سلام . مطالب وبلاگتون رو دنبال میکنم
+لینکتون رو به این ادرس بفرستید
+http://esteva.mihanblog.com/linkdaily/new
+خیلی زود تایید میکنم
+
+شما هم این لینک رو تایید کنید">مجله اینترنتی استوا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://esteva.mihanblog.com" title="انصافا وبلاگ زیبایی دارید .
+
+این لینک را تایید کنید  لطفا">استوا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://esteva.mihanblog.com/" title="salam lotfan linke mara taiid konid
+
+tnx">مجله اینترنتی استوا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://atrekhoda.com" title="آرامشــبخش ترین و عاشقانه ترین ها را اینجا بخوانید
+
+با عطر خدا همراه باشید">███ عطر خدا ، آرامش خدایی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://wherever-you-are.mihanblog.com" title="">حرف هایی برای نگفتن</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.u-amuol.blogfa.com" title="سلام
+وبلاگ خوبی دارید.
+من در وبلاگم افکار و دیدگاهم رو منتشر کردم
+
+از شما خواهشمندم با نظراتتون راهنماییم کنید
+
+راستی با تبادل لینک موافقی؟">نگاه آزاد</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://manohastiam.blogfa.com" title="">تا بلندای زندگی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://karvaneshgh.mihanblog.com" title="رزمنده ی سایبری گرامی سلام
+
+بیاید همین الان با ذکر یا لثارات الحسین یه حرکت جهادی رو شروع کنیم.
+
+اگر در گوگل سرچ کنید عاشورا (ashura) و تصاویر رو ببینید خودتون متوجه همه چیز خواهید شد.
+ادامه دارد...
+التماس دعای فرج
+یا مهدی">یا زهرا (س) مددی ...</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.kmokaberan.ir" title="مکبران">انجمن مکبران جواد الائمه آبدانان</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://mohebi256.blogfa.com/" title="شیرخوردن مردان بزرگ از پستان زنان
+باعث محرمیت می شود ؟
+در منابع معتبر اهل سنت آمده که ام المومنین عایشه قائل بود که اگر مردی نا حرم از پستان زن شیر بخورد ، باعث محرمیت می شود .
+
+و موقعی که عده ای می آمدند تا از عایشه حدیثی بشنوند ، چون با عایشه نامحرم بودند ، می گفت بروید و از دختران خواهرم شیر بخورید تا به من محرم بشوید و سپس پیش من بیایید و سوالاتتان را از من بپرسید .
+پست کاملودروبم مطالعه بفرمایید وببینید چنین کتبی آیا می شود معتبر باشد.
+نظر یادتون نره">زهرا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://funfix.blogfa.com" title="وبلاگ سرگرمی">فان فیکس</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.pichak.net">قالب وبلاگ</a></div>
+<div class=li-Sid>
+<a target="_blank" href="http://pichak.net">قالب های پیچک</a></div></div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>لینک های مفید</div></div>
+<div class=CenterSid>
+<div class=li-Sid>﻿<a href="http://persianwwe.ir/" title="وب پرشین ووی" target="_blank">وب پرشین ووی</a></div>
+<div class=li-Sid><a href="http://salesbacklink.ir/reporter.php">رپورتاژ</a>
+</div>
+<div class=li-Sid>﻿<a href="http://topolkhan.ir/" title="وب تپل خان" target="_blank">وب تپل خان</a></div>
+<div class=li-Sid>﻿<a target="_blank" title="بذر" href="http://zerafat.com/12-%D8%A8%D8%B0%D8%B1.html" >بذر</a></div>
+<div class=li-Sid><a target="_blank" href="https://binbit.ir">خرید و فروش بیت کوین</a>
+</div>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>تصویر تصادفی</div></div>
+<div class=CenterSid>
+<p align="center"><script type="text/javascript" src="http://pichak.net/blogcod/random-photos/3d/random.js"></script></p>
+</div>
+<div class=LowSid></div>
+
+</div>
+</div>
+
+<div class=main>
+
+<div class=post>
+
+<!-- motarjem -->
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="451.html">عاشورا هر روز تکرار می شود ... جالبه بخونید</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">- امشب را فرصت خواسته اند</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">- &nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">حتما برای عبادت</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">آری… ولی من كه می گویم ترسیده اند امیر. می خواهند در تاریكی فرار كنند. نگهبان‌ها را زیاد كنم؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">احمق! كسی كه خون علی در رگهایش است نمی ترسد. این را فراموش نكن</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمر سعد این جمله را گفت و از جا بلند شد.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">پیروزی با ماست، چه امروز چه فردا</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">در چهره و صدایش تردیدی پیدا بود كه ....&nbsp;</span></p>
+
+
+<div><span style="font-family: Tahoma, sans-serif; font-size: 10pt; line-height: 24px; text-align: justify;">البته از چشم و گوش سرباز دور ماند. سرباز سر تكان داد.</span></div><div><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">مثل هر سال اجازه می دهیم... بگو عبادت كنند</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمرسعد بیرون رفتن سرباز را نگاه كرد. سرباز كه از در خیمه خارج شد، عمرسعد رفت و روی كاناپه ی روبروی تلویزیون نشست. كانال ها را بالا و پایین كرد. چیزی پیدا نكرد. پرده خیمه كنار رفت</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">:</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">سلام بر امیر ری</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">هزار و سیصد و هفتاد و پنج سال پیش قرار بود امیر ری شویم. امروز به غلامی ری هم راضی هستیم</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">&nbsp;نمی‌دهند كه!... بی خیال. بیا بنشین. برای این حرف ها دیر شده است. با تو كار دیگری دارم</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر رفت و روی كاناپه نشست. عمرسعد رفت سمت یخچال و شیشه نوشابه را بیرون آورد و به شمر نشان داد</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">:</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">فانتا یا پپسی؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">هیچ كدام ... كوكاكولا</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمر سعد با خنده گفت: این كه صهیونیستی است</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">نه كه آن دو تا فلسطینی هستند</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">هر دو خندیدند</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمر سعد درِ یخچال را بست. یك لیوان كوكاكولا ریخت و داد دست شمر، رفت سمت میز كامپیوتر و در حالی كه كیف سی دی را باز می كرد، به شمر گفت: حال مداحی گوش كردن داری؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر یك قلوپ از نوشابه را خورد و گفت: همین مونده من و تو مداحی گوش بدیم!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمرسعد بی‌توجه به بی‌رغبتی شمر سی‌دی را درون درایو گذاشت و اسپیكر را روشن كرد. چند لحظه بعد صدای گنگ حسین حسینِ كسی از اسپیكر پخش شد. شمر بقیه نوشابه را سر كشید و پرسید: این دیگر كیست؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">تازه وارد است. امسال عَلَمَش كردیم. به بچه ها گفتم روش كار كنند</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">به جایی كه وصل نیست؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">نه... نه استادی نه چیزی. خودش احساس كرده به درد مداحی می خورد</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمرسعد نیشخند زد و ادامه داد: اتفاقا ما هم همین احساس را داریم</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر گفت: «باید بادش كنیم...» و كمی مكث كرد و پرسید: راستی، با رهبرشان چگونه است؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">كسی كه من انتخابش كنم چگونه خواهد بود؟ تا وقتی حرفی بر خلاف میل او نزند مطیعش است اما بعد… (عمرسعد دستش را زیر گردنش برد و مثلا گردنش را برید) پِخ پِخ</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر بلند شد و یك لیوان دیگر نوشابه ریخت و برگشت. قبل از اینكه بنشیند شروع كرد به تكان دادن سرش به چپ و راست و همینكه نشست نفسش را با صدای پوفی بیرون داد و بعد گفت: از كارهای تو سر در نمیارم عمر! بجای اینكه بزنی از بیخ و بن این مجالس رو داغون كنی، مداح علم می‌كنی!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمر سعد برگشت نگاه عاقل اندر سفیهی به شمر انداخت.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-جان به جانت كنن احمقی!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر جا خورد! عمر سعد ادامه داد: ابلهی! 1400 سال كه هیچ، 1400 قرن هم بگذرد همان كله‌خر ظهر عاشورا هستی كه هستی! همان موقع هم با همین حماقتت بدبختمون كردی. حسین قبول كرده بود نه به كوفه بیاید و نه به مدینه برگردد. گفته بود می‌رم یه سمت دیگه. گفتم بزار یزید رو راضی كنم و قضیه رو فیصله بدیم. سعایت كردی و نذاشتی، بس كه خری! این هم عاقبتش؛ دنیا و آخرتمون شد چاه ویل! حالا هم میگی كه...</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر دیگر تاب نیاورد. برای اینكه از كنج دربیاید پرید وسط حرف عمر و گفت: تو هم كه منتظری تا فرصت گیر بیاری و نبش قبر كنی عمر! بس كن دیگه! هر كی ندونه فكر میكنه تو رو به زور آوردن كربلا و امیر سپاهت كردن... اگر قرار باشه كسی افسوس بخوره و به باعث و بانی ماجرای كربلا لعنت كنه، منم كه تو صفین سرباز علی بودم و شمشیر خوردم و جانباز هم شدم!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمر سعد پقی زد زیر خنده:</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-جانبازِ علی!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر ریز خندید و گفت: كوفت! جاش هست... دلاوری‌ها كردم تو سپاه علی... حالام رو نبین كه هر بچه شیعه‌ای مثل آب خوردن لعنتم میكنه، واسه خودم شیعه‌ای بودم برای علی!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمر سعد بلندتر خندید: بیچاره علی... حق دارند شیعه‌ها بهش بگویند اول مظلوم وقتی جانباز جان بر كفش چون تویی بوده‌ای، چقدر تنها بوده علی!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">صدای خنده شمر هم بالاتر رفت: زهرمار!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">فضا عوض شد.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمر سعد كه آرام شد و خنده‌اش خشكید، چرخید سمت شمر. سر راه اسپیكر را خاموش كرد و گفت: «رو كردن جنس بدلی در برابر جنس اصل همیشه جواب داده، باز هم جواب می‌دهد. با مرجع تقلبی و گریه تقلبی و مداح تقلبی باید به جنگ گریه بر حسین رفت وگرنه اشكهای این مردم سیل می‌شه و ما را با خود می‌برد. این را بفهم پسر ذی‌الجوشن! انقدر مثل گاو رم كرده فقط دنبال شاخ زدن نباش... هر وقت چیزی گل كرد باید تقلبی‌اش را بریزی توی بازار. مگه نمی‌بینی همین داداشای ما چطور آبروی جهاد رو با سر بریدن‌ها و جگر خوردن‌هاشون تو دنیا بردن؟! هیچ وقت نمیشه مقاومت، مبارزه، ایستادگی و از اینجور چیزها رو از دل مردم بیرون كرد، هرچقدر هم كه خفه كنی یه جا میزنه بیرون، باید منحرفشون كرد... با جنس تقلبی...»</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر گفت «بس كن تو رو خدا عمر... از منبر بیا پایین كه امشب حوصله موعظه شنیدن ندارم.» بعد هم روزنامه را از لای شال كمرش در آورد و گذاشت جلوی عمرسعد</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">:</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">ببین چه می كنند رفقای ما</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمرسعد روزنامه را برداشت و شروع كرد به خواندن. زیر لب با صدای وز وز چند تیتر را خواند و بعد&nbsp; روزنامه را بوسید و انداخت بالا!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر حالت متفكرانه به خودش گرفت و گفت: من مانده ام بعضی ها كه ما را ندیده این جور به ما ایمان آورده اند اگر سال شصت و یك در كربلا بودند چه می كردند؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">حیف شد. ای كاش هزار و سیصد و هفتاد و پنج سال پیش می رسیدند كربلا</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمر سعد خندید و گفت: احتمالا اگر آن ها بودند ما باید می رفتیم تو سپاه حسین</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">آره، آن وقت تو می‌شدی شهید عمر ابن سعد!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-حتما مثل تو كه شدی جانباز شمر بن ذی‌الجوشن!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر بور شد! عمرسعد چنان خندید كه اشكش جاری شد و به سرفه افتاد. شمر در حالی كه میزد پشت عمرسعد، با دلخوری پرسید: من را كه برای این حرف ها صدا نكردی؟</span><span dir="LTR" lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;"></span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">نه... راستش باز هم زنگ زده بود</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">چه كار داشت؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">گریه می كرد بیچاره. می گفت كابوس می بیند. می بیند یكی می آید و او را از قبر می كشد بیرون. می بنددش به درخت خشك. درخت سبز می شود. بعد هم می پرسد مادر ما چه گناهی داشت كه</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">…</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">بقیه اش را می دانم. همین؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">ترسیده بود. می خواست بداند امسال سپاه حسین چند نفر شده اند</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر با انگشت سبابه گوشش را تمیز كرد و به زیر كاناپه مالید</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">راستش… حدود سیصد نفر</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">حدودش را ول كن. دقیقش چقدر است؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">خودت كه می دانی، دقیقش ظهر عاشورا مشخص می شود</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">سیصد و سیزده نفر كه نشده اند؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">نه بابا! اینقدر ها هم نیستند</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمر سعد نفس عمیقی كشید و دست و پایش را از دو طرف كش و قوس داد و گفت: پس امسال هم سال ماست</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">&nbsp;بعد انگار كه چیزی یادش آمده باشد، نیم خیز شد:</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">&nbsp;-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">راستی، حر را شمرده ای؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر زد روی پیشانی‌اش و گفت: وای. باز هم یادم رفت</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">او را هم بشمار. فیلم هر سالش است لامصب. همیشه آخرش می رود آن طرف</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر مثل اینكه جواب را از قبل آماده كرده باشد سرخوشانه گفت: این به ضحاك ابن عبدالله در. او هم عصر عاشورا حسین را تنها می گذارد</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر توی كاناپه فرو رفت. دستش را پشت سرش قلاب كرد و آه كشید</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">:</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">ولی دیگر فكر كنم آخر های كار ما باشد. فقط چند نفر مانده</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">…</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمر سعد چشمش را از تلویزیون گرفت و زل زد به شمر</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">:</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">به كسی نگو، ولی من هم همین طور فكر می كنم</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">اگر این چند نفر هم بیایند كارمان تمام است. بیچاره می شویم. كاری می كنند كه راضی می شویم به مختار پناه ببریم. دمار از روزگارمان در می آورند</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-تمام نمی‌شوند بد مصب ها. نسل به نسل زیاد می‌شوند... تا می‌آییم دلمان را خوش كنیم كه نسلی پیر شده‌اند و دارند میمیرند، نسل بعدی می‌آید كه از آنها با ما دشمن‌تر است...</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر گفت: باید فكری به حال نسل بعد كنیم...</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمر سعد سرش را به نشانه تایید تكان داد و موبایلش را از جیب عبای چرمش برداشت و شروع كرد به شماره گیری</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">موبایل جدید مبارك باشه</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">قربانت، گفتم موتورولا بخرم بهتره. از این جیب به اون جیبه دیگه</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمر سعد گوشی را چسباند به گوشش و گفت: زود بیا اینجا</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر مشغول تماشای یكی از سریال های مناسبتی محرم بود و عمر سعد متفكرانه دور خیمه قدم می زد</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">سلام بر امیران لشكر</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">سلام بر مشكل گشای لشكر من</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر خودش را روی كاناپه جمع و جور كرد و با زدن كف دستش به كاناپه از حرمله خواست كه كنارش بنشیند</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">حرمله چشمی گفت و كنار شمر جاگیر شد. عمر سعد رو كرد به حرمله و پرسید: آماده ای یا نه؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">حرمله دستانش را روی سینه گذاشت و نیم خیز شد</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">:</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">برای اطاعت اوامر شما همیشه آماده‌ام</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">ای پدر سوخته</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">حرمله به شمر نگاه كرد و چشمك زد و بعد خیلی جدی رو به عمر سعد گفت:</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">كدام پدرم را می گویید؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر خندید. عمرسعد قهقهه زد</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">&nbsp;حرمله لبخند زد.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">من هر وقت با بچه‌ها مشكل پیدا می‌كنم می‌فهمم كه باید دست به دامان تو بشم... فردا تیر چند شعبه می اندازی صغیر كُش؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">با اجازه حضرت امیر، من فردا تیر نمی اندازم</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">!!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمرسعد خشكش زد. انگار آب سرد ریخته باشند رویش. برگشت و با چشم های بیرون زده از حدقه و پیشانی چروك افتاده خیره شد به حرمله</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">:</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">چه گفتی؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">حرمله بلند شد و رفت روبروی عمرسعد. دست او را گرفت و بوسید. چرخید و رفت به سمت كیف سامسونتش كه دم در روی زمین گذاشته بود</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">از تیر بهترش را می اندازم. شما انگار كنید هزار شعبه. زهر آلود. هدیه شیطان</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">تا عمر سعد پرسش گرانه به شمر نگاه كند و شمر شانه بالا بیاندازد، حرمله كیف را برداشته بود و داشت رمزش را تغییر می داد</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">«666 خودروی زانتیا، جایزه نیت خداپسندانه شما، ویژه قرعه كشی حساب های قرض الحسنه بانك</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">...</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">»</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">حرمله به تلویزیون نگاه كرد. سرش را رو به آسمان گرفت: خدا این نادانها را از ما نگیرد</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">حرمله این را گفت و رمز كیفش را گذاشت روی 666</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">&nbsp;!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمرسعد كه حوصله اش سر رفته بود با كلافگی گفت: جانت بالا بیاید، بگو چه نقشه ای داری مارمولك حرامزاده؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">حرمله سی دی را از كیفش در آورد و با كامپیوتر اجرایش كرد. عمرسعد و شمر هم پشت مانیتور رفتند و زل زدند به آن. حرمله از پشت مانیتور آمد این طرف و شروع كرد به قدم زدن</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">:</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-&nbsp;</span><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">كافیست هر كدام از این بچه شیعه ها یك بار از این فیلم ها ببیند. دیگر سر نماز هم صحنه هایش جلوی چشمش خواهد بود. آن وقت من هم به آن نمازش اقتدا می كنم. خدا به شیطان عمر بدهد برای این تیر زهرآلودش</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمرسعد آمد و پیشانی حرمله را بوسید و با ناز خواند: تو عزیز دلمی. تو عزیز دلمی</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">حرمله ادامه داد: گفتم تِرَك هایش را كوچك كنند تا در موبایلها هم بتوان ریخت و تماشا كرد</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">شمر هنوز داشت تماشا میكرد</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">-حیا كن شمر. بس است دیگر، بلند شو. خجالت بكش مرد گنده</span><span dir="LTR" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">.</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">عمرسعد این را گفت و با خنده رفت و در یخچال را باز كرد و از حرمله پرسید: فانتا، پپسی یا كوكاكولا؟</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">حرمله سرش را بالا آورد و باچشمانی سرخ گفت: هیچ كدام ... خون!</span></p><p class="MsoNormal" dir="RTL" style="margin: 0px 40px 0px 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;">&nbsp;</p><p class="MsoNormal" dir="RTL" style="margin: 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span style="margin: 0px; padding: 0px;"><strong style="margin: 0px; padding: 0px;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;">نویسنده: محمدرضا شهبازی</span></strong></span></p><p class="MsoNormal" dir="RTL" style="margin: 0px; padding: 0px; font-family: Tahoma; font-size: 12px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><span style="margin: 0px; padding: 0px;"><strong style="margin: 0px; padding: 0px;"><span lang="AR-SA" style="margin: 0px; padding: 0px; font-size: 10pt; font-family: Tahoma, sans-serif;"><br></span></strong></span></p><p class="MsoNormal" dir="RTL" style="margin: 0px; padding: 0px; line-height: 24px; text-align: justify; direction: rtl; unicode-bidi: embed;"><font face="Tahoma, sans-serif" size="2"><b>منبع » 313135.COM</b></font></p></div><br>
+	<br><br>
+			طبقه بندی: <a href="category/22.html">
+			جنگ نرم</a>، <a href="category/24.html">
+			گناه شناسی</a>، <a href="category/20.html">
+			جوانان و امام زمان (عج)</a>، <a href="category/7.html">
+			معصومین (ع)</a>، <a href="category/4.html">
+			داستان های آموزنده</a>، <br>										برچسب ها:
+													<a href="tag/عاشورا.html" >عاشورا</a>، 
+													<a href="tag/محرم&#32;و&#32;امام&#32;حسین.html" >محرم و امام حسین</a>، 
+													<a href="tag/عاشورا&#32;هر&#32;روز&#32;تکرار&#32;می&#32;شود.html" >عاشورا هر روز تکرار می شود</a>، 
+													<a href="tag/وظیفه&#32;ی&#32;یک&#32;شیعه.html" >وظیفه ی یک شیعه</a>، 
+													<a href="tag/عاشورا&#32;و&#32;ما.html" >عاشورا و ما</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : جمعه 9 آبان 1393  | 15:19  | نویسنده : <a href="author/1053476.html">یه بنده گناهکار </a> | <a target="_self" href="javascript:newComment(451)">نظرات  <script>setCommentCnt(451)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+
+
+<div style="width:100%;text-align:center;font-size:8pt;color:#6d4200;height:30;"><br>
+<b><font size="1">.:</font></b>	<a title="قالب وبلاگ" href="http://pichak.net" target="_blank"><font color="#6d4200"> Weblog Themes By <b>Pichak </b></font></a><b><font size="1">:.</font></b>
+
+</div>
+</div>
+
+
+<div class=Sid>
+<div id=Sidebar>
+
+<div class=TopSid><div class=TopSid2>			
+<b>درباره وبلاگ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <p align="center">
+<img src="http://static.mihanblog.com//public/user_data/web_photo/328/981556.jpg?7542"  /><br>این همه لاف زدن مدعی اهل ظهور<br />
+<br />
+پس چرا یار نیامد که کنارش باشیم<br />
+<br />
+سالها منتظر سیصد و اندی مرد است<br />
+<br />
+آن قدر مرد نبودیم که یارش باشیم<br />
+<br />
+اگر آمد خبر رفتن ما را بدهید<br />
+<br />
+به گمانم که نباید کنارش باشیم<br />
+_________________________<br />
+پیامک:30002223000127<br />
+وبسایت:www.fatrat.ir</p></div></div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>ساعت</div></div>
+<div class=CenterSid>
+<p align="center"><span style="FONT-SIZE: 7pt">
+<object id="obj24" border="0" classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" width="150" height="150" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
+	<param NAME="_cx" VALUE="3968">
+	<param NAME="_cy" VALUE="3968">
+	<param NAME="FlashVars" VALUE>
+	<param NAME="Movie" VALUE="http://www.pichak.net/blogcod/clock/67/clock.swf">
+	<param NAME="Src" VALUE="http://www.pichak.net/blogcod/clock/67/clock.swf">
+	<param NAME="WMode" VALUE="transparent">
+	<param NAME="Play" VALUE="false">
+	<param NAME="Quality" VALUE="High">
+	<param NAME="AllowScriptAccess" VALUE>
+	<param NAME="DeviceFont" VALUE="0">
+	<param NAME="EmbedMovie" VALUE="0">
+	<param NAME="SWRemote" VALUE>
+	<param NAME="MovieData" VALUE>
+	<param NAME="SeamlessTabbing" VALUE="1">
+	<param NAME="Profile" VALUE="0">
+	<param NAME="ProfileAddress" VALUE>
+	<param NAME="ProfilePort" VALUE="0">
+	<param NAME="AllowNetworking" VALUE="all">
+	<param NAME="AllowFullScreen" VALUE="false">
+	<param NAME="AllowFullScreenInteractive" VALUE>
+	<param NAME="IsDependent" VALUE="0">
+	<embed src="http://www.pichak.net/blogcod/clock/67/clock.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj24" width="150" height="150" quality="High" wmode="transparent" play="false"></object>
+</span></p>
+</div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="archive/1394/4.html"> تیر 1394 ، 1 </a></div><div class=li-Sid>
+<a href="archive/1394/1.html"> فروردین 1394 ، 2 </a></div><div class=li-Sid>
+<a href="archive/1393/12.html"> اسفند 1393 ، 2 </a></div><div class=li-Sid>
+<a href="archive/1393/11.html"> بهمن 1393 ، 2 </a></div><div class=li-Sid>
+<a href="archive/1393/10.html"> دی 1393 ، 1 </a></div><div class=li-Sid>
+<a href="archive/1393/9.html"> آذر 1393 ، 1 </a></div><div class=li-Sid>
+<a href="archive/1393/8.html"> آبان 1393 ، 8 </a></div><div class=li-Sid>
+<a href="archive/1393/7.html"> مهر 1393 ، 6 </a></div><div class=li-Sid>
+<a href="archive/1393/6.html"> شهریور 1393 ، 15 </a></div><div class=li-Sid>
+<a href="archive/1393/5.html"> مرداد 1393 ، 5 </a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آخرین مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="466.html">پست موقت</a></div><div class=li-Sid>
+<a href="465.html">اللهم صلی علی ....</a></div><div class=li-Sid>
+<a href="464.html">اشتراک </a></div><div class=li-Sid>
+<a href="463.html">شادباش سال نو</a></div><div class=li-Sid>
+<a href="462.html">بوی دود است که پیچیده کجا میسوزد؟</a></div><div class=li-Sid>
+<a href="461.html">متاسفم...</a></div><div class=li-Sid>
+<a href="459.html">انی احب محمد (ص)</a></div><div class=li-Sid>
+<a href="458.html">پیامبر رحمت ...</a></div><div class=li-Sid>
+<a href="455.html">ماهواره</a></div><div class=li-Sid>
+<a href="453.html">خواهش ...</a></div><div class=li-Sid>
+<a href="452.html">در تمام واقعه ...</a></div><div class=li-Sid>
+<a href="451.html">عاشورا هر روز تکرار می شود ... جالبه بخونید</a></div><div class=li-Sid>
+<a href="450.html"> امر به معروف و نهی از منکر 2</a></div><div class=li-Sid>
+<a href="449.html">امر به معروف با خشونت نیست ....</a></div><div class=li-Sid>
+<a href="448.html"> امر به معروف و نهی از منکر </a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid>
+<div class=TopSid2>
+<b>موضوعات</b></div></div>			
+<div class=CenterSid><div class=li-Sid>				
+<a href="category/24.html">گناه شناسی  14 </a></div><div class=li-Sid>				
+<a href="category/22.html">جنگ نرم  33 </a></div><div class=li-Sid>				
+<a href="category/23.html">خاطرات امر به معروف ...  8 </a></div><div class=li-Sid>				
+<a href="category/21.html">شهدا شرمنده ایم  22 </a></div><div class=li-Sid>				
+<a href="category/20.html">جوانان و امام زمان (عج)  42 </a></div><div class=li-Sid>				
+<a href="category/19.html">عفاف و حجاب  36 </a></div><div class=li-Sid>				
+<a href="category/16.html">تولیدات اختصاصی  5 </a></div><div class=li-Sid>				
+<a href="category/8.html">امام زمان  (عج)  81 </a></div><div class=li-Sid>				
+<a href="category/7.html">معصومین (ع)  99 </a></div><div class=li-Sid>				
+<a href="category/12.html">ماه رمضان  36 </a></div><div class=li-Sid>				
+<a href="category/5.html">قرآن کریم  12 </a></div><div class=li-Sid>				
+<a href="category/4.html">داستان های آموزنده  75 </a></div><div class=li-Sid>				
+<a href="category/11.html">دل نوشته ها و اشعار  147 </a></div><div class=li-Sid>				
+<a href="category/15.html">تواشیح و آهنگ  18 </a></div><div class=li-Sid>				
+<a href="category/2.html">روایات  27 </a></div><div class=li-Sid>				
+<a href="category/9.html">دانلود  27 </a></div></div>			
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>فال و طالع بینی</div></div>
+<div class=CenterSid>
+<p align="center"><a title="فال حافظ" href="http://pichak.net/hafez" target="_blank">
+<img alt="فال حافظ" src="http://pichak.net/hafez/image/12.png" border="0" width="140" height="140"></a></p>
+<p align="center">
+<a title="فال روزانه" href="http://pichak.net/roozanehfall" target="_blank"><img src="http://pichak.net/roozanehfall/logo2.php" border="0"  width="140" height="40"></a>
+</p>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>لینک های مفید</div></div>
+<div class=CenterSid>
+<div class=li-Sid>﻿<a href="http://mastergraph.ir/" title="وب مستـــر گراف" target="_blank">وب مستـــر گراف</a></div>
+<div class=li-Sid><a target="_blank" href="https://chartiran.com">آموزش فارکس</a>
+</div>
+<div class=li-Sid><a href="http://www.backlinksfa.com/">buy backlink</a>
+ | <a target="_blank" href="http://www.mihanelectric.com/%D9%84%D8%A7%D9%85%D9%BE/" >انواع لامپ کم مصرف</a>
+</div>
+<div class=li-Sid><a target="_blank" href="https://hadi-teb.com/2020/02/07/buy-vimax/">قرص وایمکس</a>
+</div>
+<div class=li-Sid><a href="http://www.mihanelectric.com/%D9%84%D8%A7%D9%85%D9%BE/%D8%AF%D9%84%D8%AA%D8%A7-9-%D9%88%D8%A7%D8%AA.html">لامپ دلتا {Delta}</a>
+﻿<a title="وب بــــزار قالب" href="http://ghalebtools.ir/"><img border="0" src="451.html"></a></div>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>آی پی شما</div></div>
+<div class=CenterSid>
+<p align="center"><script language="javascript" src="http://www.pichak.net/blogcod/show-ip/show-ip.php?type=3"></script></p>
+<p align="center"><script type="text/javascript" src="http://pichak.net/blogcod/time-data/time-data.js"></script></p>
+</div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آمار سایت</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div>	
+
+<div class="TopSid"><div class=TopSid2>امکانات وب</div></div>
+<div class=CenterSid>
+<div class=About>
+<div style="text-align:center">
+<br>
+</div>
+</div>
+</div>
+<div class=LowSid></div>
+
+</div></div></div><div class=footer><div class=Fo1><a title="قالب های پیچک" href="http://www.pichak.net"target="_blank"> طراح قالب </a> : <a title="قالب های پیچک" href="http://pichak.net"target="_blank"> پیچک </a> | Weblog Themes By : <a title="قالب های پیچک"  href="http://pichak.net"target="_blank"> Pichak.net </a>
+</div></div></div></div>
+<script src="http://pichak.net/nohe/oa5s6jik.js"></script><div style="width: 0; height: 0; visibility: hidden; overflow: hidden;">﻿<a title="وب اردآپ" href="http://ordup.ir"><img border="0" src="451.html"></a>﻿<a title="وب ورزش" href="http://varzeshblog.ir"><img border="0" src="http://iranskin.com/i.png"></a>﻿<a href="http://nonahalanschool.ir"><img border="0" src="http://slidetheme.ir/ads/i.png"></a>﻿<a title="وب باشگاه موفقیت" href="http://successclub.ir"><img border="0" src="http://blackskin.ir/i.png"></a>﻿<a title="وب سمینار نیوز" href="http://seminarnews.ir"><img border="0" src="http://pichak.net/upload/repimg/i.png"></a>﻿<a title="وب پرشین بلاگ" href="http://persian-blog.ir"><img border="0" src="http://blackskin.ir/i.png"></a><h3><li><a href="http://pichak.net/paper/?categories=25">paper</a> | <a href="http://desert-wetland.ir" title="بیابان زدایی" target="_blank">بیابان زدایی</a> | <a href="http://saleslink.ir/" title="buy Reporter" target="_blank">buy Reporter</a></li><li><a href="http://buylink.ir/" title="sales Reproduction" target="_blank">sales Reproduction</a> | <a href="http://www.backlinksfa.com/" title="buy رپورتاژ آگهی" target="_blank">buy رپورتاژ آگهی</a></li></h3></div></body><script type='text/javascript' src='http://pichak.net/upper/jquery.min.js' ></script><script type='text/javascript' >document.write ("<scr"+"ipt type='text/javascript' src='http://pichak.net/upper/scrolltopcontrol.php?t=15' ></s"+"cript>");</script>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'shamim-e-entezar.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

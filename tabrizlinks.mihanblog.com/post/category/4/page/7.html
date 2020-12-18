@@ -1,0 +1,1719 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*1100278*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[1024]='6';commentCnt[1028]='1';commentCnt[1033]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[1024]='0';
+mihanblogDisLikeArrCnt[1024]='0';
+mihanblogLikeArrCnt[1028]='0';
+mihanblogDisLikeArrCnt[1028]='0';
+mihanblogLikeArrCnt[1033]='0';
+mihanblogDisLikeArrCnt[1033]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://tabrizlinks.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://tabrizlinks.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','1196');
+	setStatVar('total_author','3');
+	setStatVar('modify_date','جمعه 9 اسفند 1398');
+	
+	setStatVar('today_view','695');
+	setStatVar('yesterday_view','1261');
+	
+	setStatVar('this_month_view','15951');
+	setStatVar('last_month_view','27851');
+
+	setStatVar('total_view','3573283');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (15:33)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://tabrizlinks.mihanblog.com/statupdate/?data[refereruri]=http://tabrizlinks.mihanblog.com/post/category/4&data[postid]=&data[requesturi]=/post/category/4/page/7&data[sdate]=1607774662&data[hash]=9d258ff73e76d462b79ef18072471a49&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://tabrizlinks.mihanblog.com/post/category/4/page/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fa-IR">
+<!--تبریز آذربایجان دریاچه ارومیه زبان ترکی آذری tabrizlinks wikilinks-->
+
+<head>
+<title>تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان</title>
+    <base href="" />
+	<meta name="generator" content="ParsTools.Com | Hesam B" />
+	<meta content="fa" http-equiv="Content-Language" />
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="tabriz , azerbaijan weblog tabrizlinks turk wikilinks
+وبلاگ تبریز لینکلر قارتال ترکی آذری، تراکتور آذربایجان و ارومیه ارس و زنجان و اردبیل" />
+	<meta name="keywords" content="tabrizlinks,تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان, تبریز,tabriz,آذربایجان,ترکی,ایران,azerbaijan,ارس,ارومیه,اردبیل" />
+	<link rel="alternate" type="application/rss+xml" title="تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان" href="../../../rss/index.html" />
+	<link rel="alternate" type="application/atom+xml" title="تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان"  href="../../../atom/index.html" />
+	
+
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان" href="../../../rss/index.html" />
+<meta name="google-site-verification" content="n6T8POLjcxVom0461uwQoryqydThNaEJARSpk_5fZPA" />
+
+<meta name="msvalidate.01" content="38A7A3D8CD214D8C1160582BBBDB424D" />
+
+<meta name="alexaVerifyID" content="Qdjfdb1DWdeeATdB4RAcReqKUTk"/>
+
+<link href="http://tabrizlinks.persiangig.com/video/favicon.ico" rel="shortcut icon">
+
+
+
+<link media="screen" href="http://tem.parstools.com/skyback/style/styles.css" type="text/css" rel="stylesheet" />
+<link media="screen" href="http://tem.parstools.com/skyback/style/engine.css" type="text/css" rel="stylesheet" />
+
+</head>
+<!--تبریز آذربایجان دریاچه ارومیه زبان ترکی آذری tabrizlinks wikilinks-->
+<body>
+<div class="pagebg">
+<div class="wrapper">
+	<div class="header">
+
+		<h1>
+		<div style="float:left; margin-left: 100px;">
+			<!-- Begin parstools.com ‍Clock Code --><div  style="display:none;"><a href="http://parstools.com"><h1>ساعت فلش</h1></a></div><script language="javascript" src="http://www.parstools.com/clock/?type=93&w=130&h=90"></script><!-- End Clock code -->
+			</div>
+		<a class="thide" href="../../../../index.html" title="تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان"><img src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/amlak.png" title="Tabriz WikiLinks , Azerbaijan Region of Iran"></a></h1>
+					
+			<div class="loginblock">
+				<div class="loginenter">
+					<h3>تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان</h3>
+				</div>
+			</div>
+	</div>
+	<div class="topmenu"><div><div>
+		<ul style="float:right;" class="lcolomn reset">
+			<li ><a href="../../../atom/index.html"><b>نسخه اتوم</b></a></li>
+			<li ><a href="../../../../m.html"><b>نسخه موبایل</b></a></li>
+			<li ><a href="../../../list.html"><b>آرشیو مطالب</b></a></li>
+			<li ><a href="mailto:tabrizlinks.mihanblog@gmail.com"><b>پست الکترونیکی</b></a></li>
+			<li ><a href="javascript:messageForm()"><b>ارتباط با مدیریت</b></a></li>
+			<li ><a href="../../../../index.html"><b>صفحه اصلی</b></a></li>
+		</ul>
+		
+		<div name="seatchform"  style="float:left; padding-left:70px">
+		<form id="frm-16077711715fd4a42318737" method="get" action="http://tabrizlinks.mihanblog.com/post/search/fid/16077711715fd4a42318737"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+		<ul class="rcolomn reset">	<li class="sh-btn"><input value="" type="submit" src="http://tem.parstools.com/skyback/images/spacer.gif" /></li>
+			<li class="sh-text"><input name="search_text" value="جستجو..." onblur="if(this.value=='') this.value='جستجو...';" onfocus="if(this.value=='جستجو...') this.value='';" type="text" /></li>
+		
+		</ul>
+		<input type="hidden" name="frm-id" value="16077711715fd4a42318737" id="frm-id" /></form>		</div>
+		
+	</div></div></div>
+	<div class="vsep"><div class="vsep"><div class="vsep"><div class="vsep">
+		<div class="rcolomn midside">
+			<div class="container">
+				<div class="lcolomn mainside">
+					<div class="brcont">
+						<div class="topadblock">
+							<div class="dcont">
+								<a href="../../../../index.html"><img src="../../../../index.html" alt="Təbriz və Azərbaycan üçün Blog İranda - Tabriz , Azerbaijan Region in Iran" /></a>
+
+							</div>
+						</div>
+
+						<div id='dle-info'></div>
+						<div id='dle-content'>
+	
+   
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+			
+<div class="base shortstory">
+	<div class="shd">
+		<h1><a href="../../../1033.html" title="پرستار ورزشکار نمونه تبریزی">پرستار ورزشکار نمونه تبریزی</a></h1>
+	</div>
+	<div class="shdinfo"><div class="shdin">
+
+		<span class="arg">نویسنده : <a href="../../../author/944998.html">تبریز قارتال</a></span>
+		<span class="date"><img src="http://tem.parstools.com/skyback/images/date.png" alt="">سه شنبه 27 بهمن 1394, 09:00 ق.ظ</span>
+	</div></div>
+	<div class="maincont">
+		<div style="padding-right:10px;">
+		
+		 <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+<div align="center"><font size="4"><b><font color="#3366FF">پرستار فرشته‌ای در لباس سفید زمینی</font><br></b></font><div align="right"><br><font size="3">بارها از بیماران کتک خورده‌ام!&nbsp; کسب ۹۰ مدال ورزشی<br><br></font><font size="2">پرستاری را می‌توان زندگی کرد و 
+مثل خون در رگ‌های بیماران بود، باوجوداینکه پرستاری شغل استرس‌ آوری 
+به‌حساب می‌آید اما علاقه‌ وافر به این شغل و اشتیاق کاهش آلام بیماران 
+مهم‌ترین انگیزه پرستاران در تحمل سختی‌ها و تنش‌های بالای حرفه‌شان است 
+چراکه &nbsp;یک پرستار خوب گاهی می‌تواند با ارتباط برقرار کردن با بیمار و 
+همراهان او، باری سنگین از روی دوش آن‌ها بردارد و گاهی کاری کند که بیمار 
+به مبارزه با بیماری‌اش بپردازد و موفقیت در این راه علاوه بر خشنودی 
+بیماران، حس خوب رضایت و آرامش را نیز برای پرستاران به ارمغان خواهد آورد.<br><br></font><div align="center"><img src="http://s7.picofile.com/file/8239076034/1669469.jpg" alt="پرستاران" align="bottom" height="333" hspace="0" border="0" vspace="0" width="500"><br><br></div><p dir="RTL" style="text-align:justify"><font size="2">زندگی یک پرستار با دغدغه‌هایی 
+همراه است، دغدغه سلامتی بیماران گاهی آن‌ها را با تنش‌های جدی چون ضرب و 
+شتم از سوی بیمارانی که از وضعیت روحی خوبی برخوردار نیستند، پیش می‌برد و 
+باوجود تمام این دغدغه‌ها و چالش‌های شغلی، یک پرستار باید همواره پا 
+به‌پای پزشکان راه برود و در کنار آن‌ها باشد تا بیماری را&nbsp;به بهبودی 
+امیدوار کند.</font></p></div><div align="right"><font size="2"></font><p dir="RTL" style="text-align:justify"><font size="2">در آستانه‌ی روز پرستار به سراغ یکی از پرستاران نمونه سال گذشته تبریز که
+ شناگر قهرمان کشور نیز هست و در بخش روان مرکز آموزشی درمانی رازی تبریز 
+فعالیت می کند، رفته تا گوشه ای از سختی های کار و موفقیت های ورزشی وی را 
+به رشته تحریر درآورد، آنچه می خوانید شرحی از این گفت و گو است.</font></p><p dir="RTL" style="text-align:justify"><font size="2"><br></font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2"><span style="color:#000080"><strong>*لطفا خودتان را معرفی کنید؟ </strong></span></font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">سمیرا قاسمی نظام هستم و ۳۳ سال 
+دارم و حدود ۹ سال است که به عنوان پرستار در بخش روان مرکز آموزشی درمانی 
+رازی تبریز فعالیت می کنم و از هفت سالگی نیز عضو تیم ملی شنای تبریز در 
+تیم الف هستم و از ۱۷ سالگی تاکنون نیز به عنوان مربی و نجات غریق در این 
+رشته ی ورزشی فعالیت می کنم و به گفته مادرم فعالیت در رشته ی ورزشی شنا را
+ از دو سالگی شروع کرده ام.</font></p><div align="center"><div align="center"><img src="http://s7.picofile.com/file/8239076076/1996977.jpg" alt="سمیرا قاسمی" align="bottom" height="333" hspace="0" border="0" vspace="0" width="500"><br></div><font size="2">
+
+</font></div><p dir="RTL" style="text-align:justify"><font size="2"><span style="color:#000080"><strong>*در
+ مراسم هفته پرستار سال گذشته از شما به عنوان پرستارِ ورزشکار نمونه تجلیل
+ شد، در خصوص تعداد مدال هایی که تاکنون کسب کرده اید، توضیح دهید؟ </strong></span></font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">تاکنون نزدیک ۹۰ مدال رنگارنگ در 
+مسابقات مختلف کشوری و استانی کسب کرده ام و از زمان استخدام تا به حال نیز
+ در مسابقات مختلف کارکنان دولت، کادر علوم پزشکی تبریز و کادر نظام 
+پرستاری تبریز و شهرستان های تابعه نیز شرکت کرده ام و در تمام مسابقات 
+مقام اول و قهرمانی را کسب کرده ام.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2"><span style="color:#000080"><strong>*حضور در دو حوزه زمان گیر </strong><strong>ورزش و پرستاری را چگونه مدیریت می کنید؟ </strong></span></font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">شغل پرستاری، یکی از شغل های 
+استرس زا به حساب می آید، لذا ورزش کردن برای کادر درمان یکی از ضروریات 
+است و به نظرم فعالیت در ورزش شنا، استرس های کاری را کاهش داده و موجب 
+شادی و نشاط و تخلیه روحی می شود و می توانم ادعا کنم که عمر خود را بیش از
+ خشکی در آب زندگی کرده ام و خستگی در ورزش برایم خوشایند تر از خستگی در 
+بیمارستان است.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2"><span style="color:#000080"><strong>*چه توصیه ای برای ورزش کردن و سلامت جسمی و روحی همکاران کادر درمان دارید؟ </strong></span></font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">کاش امکانی برای کادر درمان فراهم
+ شود تا به فعالیت های ورزشی منسجم بپردازند، اما متأسفانه پرستاران به علت
+ در گردش بودن شیفت های کاری از امر ورزش غافل هستند و مسئولان و متولیان 
+باید در این خصوص برنامه ریزی های لازم را انجام دهند تا سلامت جسمی و روحی
+ و همچنین روانی کادر درمان آسیب نبیند.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">به نظر من کادر پیراپزشکی، به علت
+ کار طاقت فرسایی خود باید فعالیت ورزشی نیز داشته باشند و معتقدم در این 
+میان ورزش شنا، درمان هر دردی است و به گفته پزشکان حتی راه رفتن در داخل 
+استخر نیز موجب آرامش در فرد می شود.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">کسب تمام مدال هایم در مسابقات 
+کارمندی را مدیون گذشته ام هستم، اگر در بیرون از محل کار تمرین نداشتم، 
+هرگز نمی توانستم صاحب این مقام ها و مدال ها باشم و بیشتر از هر چیزی دوست
+ دارم تا همکاران دیگرم نیز در رشته ورزشی شنا به همراه من در مسابقات شرکت
+ کنند تا تمام مقام های مسابقات را در کادر درمان کسب کنند و من به تنهایی 
+علم دار آنان در مسابقات کارمندی نباشم.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">اولین سالی که در مسابقات 
+کارمندان دولت شرکت کردم به همراه من پرستاران دیگری نیز در مسابقات 
+والیبال شرکت کردند، اما از سال های دیگر شاهد حضور آنها در مسابقات نبودم و
+ کاش زمینه های لازم برای فعالیت های ورزشی منسجم برای کادر درمان فراهم 
+شود تا کادر درمان نیز بتوانند در مسابقات مختلف مدال های رنگارنگی را کسب 
+کنند.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:center"><font size="2"><img src="http://s7.picofile.com/file/8239076042/1996976.jpg" alt="پرستار" align="" height="333" hspace="0" border="0" vspace="0" width="500"></font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2"><span style="color:#000080"><strong>*از سختی های کارتان بگویید و اینکه آیا فعالیت در این بخش در روح و روان شما نیز تاثیر می گذارد؟ </strong></span></font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">به عنوان نماینده پرستاران مرکز 
+آموزشی درمانی رازی تبریز در بخش روان اعلام می کنم که فعالیت در این بخش 
+در طولانی مدت بر روی پرستاران تاثیر می گذارد، اما با وجود اطلاع از شرایط
+ موجود و عمل به وظیفه خود، تنها در راه خدا فداکاری می کنیم.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">در میان پرستاران بخش روان این 
+مرکز هیچ پرستاری را نمی یابید که در طول مدت فعالیت خود حداقل یک بار از 
+بیمار کتک نخورده باشد و من نیز بارها از برخی بیماران این بخش کتک خورده 
+ام، بیمارانی که از لحاظ اعصاب و روان مشکل دارند و هر پرستار فعالی در این
+ بخش حداقل یک بار با این امر مواجه شده است و بنده نیز از این قاعده 
+مستثنی نبوده ام و چندین بار در اثر پرتاب اشیاء و یا حمله ی برخی بیماران 
+این بخش بدن ام دچار آسیب و کبودی شده است.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">در بخش روان مرکز آموزشی درمانی 
+رازی تبریز، کار بالینی کم است و تعداد بیماران نسبت به کادر پرستاری زیاد 
+است و برخی از بیماران بخش روان دچار بیماری توهم هستند و کادر پزشکی را 
+دشمن خود می دانند، چندین بار اتفاق افتاده است که بیماری از پشت به من 
+حمله کرده است.</font></p><div align="center"><img src="http://s7.picofile.com/file/8239076000/1598667.jpg" alt="پرستاران" align="bottom" height="333" hspace="0" border="0" vspace="0" width="500"><font size="2">
+
+</font></div><p dir="RTL" style="text-align:justify"><font size="2"><span style="color:#000080"><strong>*مهم ترین مطالبات شما از مسئولان و متولیان امر چیست؟ </strong></span></font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">با وجود حجم کاری زیاد، کارانه ی 
+پرستاران مرکز آموزشی درمانی رازی تبریز خیلی پایین است و در مقایسه با 
+پرستاران دیگر بیمارستان ها نیز بسیار ناچیز است و به نمایندگی از همکارانم
+ در بخش روان این مرکز خواستار توجه بیش از پیش مسئولان به این امر مهم 
+هستم.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2"><span style="color:#000080"><strong>*آیا با عشق و علاقه، شغل پرستاری را انتخاب کردید؟ </strong></span></font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">رشته تحصیلی بنده در زمان 
+دبیرستان، ریاضی فیزیک بود و با وجود بی ارتباطی رشته تحصیلی و علی رغم عدم
+ علاقه قلبی به پرستاری بعد از اتمام تحصیلات در دانشگاه مجبور به گذراندن 
+دوره طرح ام&nbsp; شدم و پس از آن که استخدام شدم&nbsp; به شغل خودم علاقه مند شدم و 
+اکنون حدود ۹ سال است که در این شغل فعالیت می کنم.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2"><span style="color:#000080"><strong>*فعالیت در کدام مرکز درمانی استان برای شما لذت بخش تر است؟ </strong></span></font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">در حال حاضربنده بیشترازهر جایی، 
+فعالیت بخش روان مرکز آموزشی درمانی رازی تبریز را دوست دارم و اگر روزی 
+محل فعالیت ام را تغییر دهند، ترجیح می دهم از شغل خود استعفا دهم چرا که 
+به فعالیت در این بخش عشق و علاقه زیادی دارم و به این علت تمام شرایط سخت 
+را تحمل می کنم.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2"><span style="color:#000080"><strong>*آیا فعالیت در چنین بخشی با روحیه ی شما سازگار بود؟ </strong></span></font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">بنده در بخش روان این مرکز اکثراً
+ در شیفت های کاری عصر و شب فعالیت می کنم و کشیک ایستادن در این شیفت ها 
+ضربه‌ی جدی به زندگی شخصی ام وارد می کند، اما با این وجود سعی کرده ام در 
+کنار کار همسر خوب، مادر خوب، آشپز خوب و پرستار خوب باشم.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">شیفت های کاری ام گردشی است و عدم
+ ثابت بودن شیفت های کاری توان برنامه ریزی را در زندگی از دستم می گیرد و 
+به این علت مجبور می شوم که برنامه های زندگی ام را مطابق با برنامه ی کاری
+ ارایه شده تنظیم کنم.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">بهترین روزهای سال را در کنار 
+همکاران و به دور از خانواده جشن گرفته ام و حتی در مراسم عروسی و عزای 
+بهترین عزیزانم نیز نتوانستم حضور داشته باشم، اما با این حال عاشق شغلم 
+هستم.</font></p><div align="center">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/Q1Eik]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/Q1Eik/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				<font size="2">
+
+</font></div><p dir="RTL" style="text-align:justify"><font size="2"><span style="color:#000080"><strong>*شغل پرستاری در زندگی شخصی شما چقدر تاثیر گذاشته است؟ </strong></span></font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">یک پسر چهار و نیم ساله دارم، او 
+در زمان کودکی اش وقتی که من سر کار می رفتم، خیلی اذیت می شد و پشت سرم 
+ساعت ها گریه و زاری می کرد و حتی زمانی که می خواستم از خانه خارج شوم، 
+لباسم را می کشید تا مانع رفتنم شود اما اکنون دیگر قبول کرده که مادرش 
+پرستار است و چاره ای غیر از تحمل چنین وضعیتی ندارد و شب ها قبل از 
+خوابیدن، چندین بار با من تماس تلفنی دارد و هر بار که زنگ می زند، می گوید
+ «امشب بدون تو می خوابم، اما دوست دارم هر وقت که چشمانم را باز کردم تو 
+را در کنارم ببینم» و من هم به او قول می دهم و پس از آن او حاضر به شب 
+بخیر گفتن با من می شود.</font></p><font size="2">
+
+</font><p dir="RTL" style="text-align:justify"><font size="2">این در حالی است که من هم زمان 
+خروج از خانه حس جدایی از مادر به پسرم دست می دهد و در این میان همسرم نیز
+ قبول کرده که شریک زندگی اش یک پرستار است و چاره ای جز تحمل وضعیت موجود 
+را ندارد.</font></p><font size="2">گزارش از زهرا ناصران</font><br></div></div>
+
+
+
+
+
+
+
+
+ 
+								<br />						<br />
+						دسته بندی : 						<a href="../../4.html" title="متفرقه" >متفرقه</a> , <br />						برچسب ها :   						<a href="../../../tag/شغل&#32;پرستاری.html" title="شغل پرستاری" >شغل پرستاری</a> , 						<a href="../../../tag/پرستاران.html" title="پرستاران" >پرستاران</a> , 						<a href="../../../tag/بیمارستانهای&#32;تبریز.html" title="بیمارستانهای تبریز" >بیمارستانهای تبریز</a> , 						<a href="../../../tag/علوم&#32;پزشکی&#32;تبریز.html" title="علوم پزشکی تبریز" >علوم پزشکی تبریز</a> , <br />												<div style="text-align:center;"><br />
+									<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+									<script language="javascript">$rating_widget_type='thumb';$rating_widget_theme=7;$rating_widget_color='FFFFFF';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/1033';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/voting/widgets/rating.js"></script>
+									<!-- END Parstools.com RATING WIDGET CODE --> 
+						</div>		
+		</div>
+		<br clear="all">
+	</div>
+	<div class="morelink"><div class="morein">
+		<span class="argmore"><a href="../../../1033.html" title="پرستار ورزشکار نمونه تبریزی"><b>ادامه مطلب ...</b></a></span>
+		<span class="arg">نظرات: (<a target="_self" href="javascript:newComment(1033)"><script>setCommentCnt(1033)</script></a>)</span>
+		<div class="ratebox"><div id='ratig-layer-1'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+
+		<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+							<script language="javascript">$rating_widget_type='rate';$rating_widget_theme=10;$rating_widget_color='F3F6F8';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/1033';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/rating/widgets/rating.js"></script>
+		<!-- END Parstools.com RATING WIDGET CODE -->
+
+		</ul>
+</div></div></div>
+	</div></div>
+</div>
+<div class="hsep"></div>
+     	
+<div class="base shortstory">
+	<div class="shd">
+		<h1><a href="http://tabrizlinks.mihanblog.com/post/1028" title="موستانگ و کامارو در رقابتی بی پایان">موستانگ و کامارو در رقابتی بی پایان</a></h1>
+	</div>
+	<div class="shdinfo"><div class="shdin">
+
+		<span class="arg">نویسنده : <a href="../../../author/944998.html">تبریز قارتال</a></span>
+		<span class="date"><img src="http://tem.parstools.com/skyback/images/date.png" alt="">شنبه 17 بهمن 1394, 12:45 ب.ظ</span>
+	</div></div>
+	<div class="maincont">
+		<div style="padding-right:10px;">
+		
+		 
+
+
+
+<div align="right"><div align="center"><font color="#990000" size="5"><b>مقایسه دو ابر خودرو موستانگ و کامارو</b></font><br></div><font color="#990000" size="2"><b><br></b></font><div><font size="2">تصاویر موستانگ و کامارو مربوط به شهر اولین ها تبریز<br>محمد حسین جعفری سرابی: از دیرباز فورد موستانگ و شورولت کامارو همواره 
+رقابت نفس‌گیری داشتند و هر کدام جهت تصاحب سهم بیشتری از بازار در تکاپو 
+بودند. با عرضه‌ی نسل جدید کامارو، رقابت بین محبوب‌ترین خودروهای ماسل 
+مجددا از سر گرفته شده است. <br></font><div align="center"><br></div><div><div align="center"><img src="http://s6.picofile.com/file/8237257292/photo_2016_02_05_22_33_11.jpg" alt="موستانگ در برابر کامارو، رقابتی بی‌پایان" align="" height="499" hspace="0" border="0" vspace="0" width="499"></div><font size="2"><br></font></div><font size="2">زمانی
+ که صحبت از خودرو‌های عضلانی آمریکا به میان بیاید ناخودآگاه چند محصول در
+ ذهن تداعی می‌شود؛ فورد موستانگ، شورولت کامارو و داج چارجر. البته نباید 
+از پونتیاک GTO‌ و پلیموت GTX فراموش کرد. اما با توجه به روند فعلی 
+شرکت‌های خودروسازی ایالات متحده، تنها موستانگ، کامارو و چارجر هم‌چنان 
+راه خود را ادامه می‌دهند و به عنوان خودرو‌های عضلانی خود را معرفی 
+می‌کنند. <br><br>اما اگر بخواهیم به این رده از خودرو‌های دقیق‌تر بنگریم،
+ خواهیم دید که همواره موستانگ و کامارو به عنوان بهترین نمونه‌های موجود 
+خودنمایی کرده‌اند. از زمان تولد کامارو در سال ۱۹۶۶ رقابتی نفس‌گیر بین 
+خودرو‌های ماسل غول‌های خودروسازی ایالات متحده شکل گرفته که در هر نسل 
+جذاب‌تر دنبال می‌شود. این رقابت با معرفی نسل ششم کامارو دوباره از سر 
+گرفته شد. <br><br>با توجه به عرضه‌ی زودتر نسل ششم موستانگ، این خودرو 
+توانست در طول غیبت کامارو لقب پرفروش‌ترین خودروی اسپرت سال ۲۰۱۵ را به 
+خود اختصاص دهد. اما با معرفی و عرضه‌ی نسل جدید کامارو به همراه 
+بهینه‌سازی‌های متنوع، موستانگ فشار زیادی را از سوی رقیب پرآوازه‌ی خود 
+متحمل شده است. کامارو ۲۰۱۶ تنها با یک هدف به بازار عرضه شده است؛ نابودی 
+موستانگ.<br></font><div align="center"><br></div><div align="center"><font size="2"><img src="http://s6.picofile.com/file/8237257426/tabrizcars_3_.jpg" alt="فورد" align="bottom" height="370" hspace="0" border="0" vspace="0" width="501"><br><br><img src="http://s7.picofile.com/file/8237257392/tabrizcars_2_.jpg" alt="کامارو" align="bottom" height="500" hspace="0" border="0" vspace="0" width="500"><br></font></div><font size="2"><br>موستانگ
+ جی‌تی ۲۰۱۶ تفاوت‌ خاصی با نمونه‌ی ۲۰۱۵ خود ندارد. با این حال موستانگ 
+جی‌تی یکی از بهترین خودرو‌های اسپرت حال حاضر&nbsp; جهان است. زیر کاپوت 
+کشیده‌ی این خودرو پیشرانه‌ی ۵ لیتری ۸ سیلندر به نام شغال و با توان خروجی
+ ۴۳۵ اسب بخار و ۴۰۰ پوند فوت گشتاور تعبیه شده است.<br><br>&nbsp;همانطور که 
+همواره در موستانگ مقدر شده، جعبه دنده‌ی ۶ سرعته‌ی دستی وظیفه‌ی انتقال 
+قدرت به چرخ‌های عقب را در این خودرو بر عهده دارد. لیست سلاح‌های موستانگ 
+برای رقابت با کامارو به اینجا ختم نمی‌شود.<br><br>&nbsp;بسته‌ی پرفورمنس مخصوص
+ نمونه‌ی جی‌تی موستانگ، امکانات ویژه‌ای اعم از ترمز‌های برمبو در جلو، 
+دیفرانسیل لغزش محدود با نسبت ۳.۷۳:۱، فنر‌های سفت‌تر در سیستم تعلیق جلو، 
+رینگ‌های ۱۹ اینچی و لاستیک‌های پی‌زرو پیرلی را به همراه دارد.<br><br></font><div align="center"><br><br><font size="2"><img src="http://s6.picofile.com/file/8237257350/tabrizcars_1_.jpg" alt="شورولت" align="bottom" height="331" hspace="0" border="0" vspace="0" width="501"><br><br><img src="http://s6.picofile.com/file/8237257442/tabrizcars_4_.jpg" alt="ارس پلاک" align="bottom" height="345" hspace="0" border="0" vspace="0" width="500"><br><br><img src="http://s7.picofile.com/file/8237257518/tabrizcars_7_.jpg" alt="مجله خودرو" align="bottom" height="496" hspace="0" border="0" vspace="0" width="501"><br><br></font></div><font size="2">نسل
+ جدید کامارو یا بهینه‌سازی‌های زیادی عرضه شده است. این خودرو به واسطه‌ی 
+بهره گرفتن از پلتفرم آلفا جنرال موتورز و رژیم‌های لاغری خاص، اکنون با 
+۱۶۶۶ کیلوگرم سبک‌ترین عضو خودرو‌های ماسل به شمار می‌رود. لازم به ذکر است
+ که موستانگ وزنی برابر با ۱۷۳۵ کیلوگرم دارد. <br><br>برتری کامارو اس اس 
+تنها به وزن کم‌تر ختم نمی‌شود و پیشرانه‌ی این خودرو نیز توان بیشتری در 
+اختیار راننده قرار می‌دهد. پیشرانه‌ی ۸ سیلندر ۶.۲ لیتری به عاریت گرفته 
+شده از کوروت توانایی تولید ۴۵۵ اسب بخار در کنار ۴۵۵ پوند فوت گشتاور را 
+دارد. <br><br>در بخش انتقال قدرت، کامارو از مشخصات مشابهی با موستانگ 
+بهره می‌برد و جعبه دنده‌ی ۶ سرعته‌ی این خودرو وظیفه‌ی انتقال توان به 
+چرخ‌های عقب را بر عهده دارد. لاستیک‌های به کار رفته در نسل جدید کامارو 
+نمونه‌ی اف‌ ۱ برند گودیر هستند تا از قدرت بالای پیشرانه به خوبی بهره 
+برداری شود.<br></font><div align="center"><br><font size="2"><img src="http://s6.picofile.com/file/8237257534/tabrizcars_8_.jpg" alt="ford" align="bottom" height="329" hspace="0" border="0" vspace="0" width="501"><br><br><img src="http://s7.picofile.com/file/8237257568/tabrizcars_9_.jpg" alt="camaro" align="bottom" height="375" hspace="0" border="0" vspace="0" width="501"><br><b>هرتز تقویت شده 600 اسب بخاری</b><b> در تبریز</b><br><img src="http://s7.picofile.com/file/8237257600/tabrizcars_10_.jpg" alt="هرتز" align="bottom" height="363" hspace="0" border="0" vspace="0" width="499"><br></font></div><font size="2"><br>رقابت با نسبت نیرو به وزن بهتر کامارو اس‌اس امری دشوار است<br><br>توانایی
+ بالاتر پیشرانه‌ی کامارو اس اس منجر به شتاب و عملکرد بهتر آن نیز شده 
+است. موستانگ جی‌تی در دنده‌ی ۲ و در مدت زمان ۴.۶ ثانیه به ۱۰۰ کیلومتر بر
+ ساعت می‌رسد و توانایی طی&nbsp; مسیر ۴۰۰ متر را در ۱۲.۹ ثانیه و با سرعت ۱۷۷ 
+کیلومتر بر ساعت دارد. <br><br>با این که رکورد‌های ثبت شده توسط موستانگ 
+نشان از عملکرد فو‌ق‌العاده‌ی آن دارد، اما رقابت با نسبت نیرو به وزن بهتر
+ کامارو اس‌اس امری دشوار خواهد بود. کامارو به لطف بهینه‌سازی‌های صورت 
+گرفته تنها به ۴ ثانیه برای رسیدن به سرعت ۱۰۰ کیلومتر بر ساعت نیاز خواهد 
+داشت و مسیر ۴۰۰ متر را تنها در ۱۲.۴ ثانیه و با سرعت ۱۸۵ کیلومتر بر ساعت 
+طی خواهد کرد.<br></font><font size="2"><br>برتری‌های
+ کامارو در بخش هندلینگ و فرمان‌پذیری نیز ادامه پیدا می‌کند. این خودرو به
+ واسطه‌ی سیستم تعلیق پیشرفته‌ی خود توانایی تحمل ۰.۸۵ جی فشار جانبی را 
+دارد. فرمان کامارو دقت بالایی دارد و به واسطه‌ی ترمز‌ها برمبو می‌توانید 
+با خیال راحت پدال گاز را تا انتها فشار دهید. <br><br>هم‌چنین نمودار 
+مناسب گشتاور کامارو به شما اجازه می‌دهد که بتوانید تمام یک دور پیست را 
+تنها با دنده ۲ طی کنید و اقدام به انجام حرکات نمایشی بپردازید. سیستم 
+کنترل تراکشن در کامارو رفتار بسیار پیشرفته‌ای دارد و نیازی به خاموش کردن
+ آن هنگام زمان‌گیری‌های سریع نیست. <br><br>با این حال در نظر داشته باشید
+ برای آتش‌بازی‌ با این خودرو پیش‌ شرط آن خاموش بودن همین سیستم است. در 
+نهایت باید بدانید که کامارو خودرویی با فرمان‌پذیری فوق‌العاده است و 
+انجام حرکات نمایشی با آن به سادگی صورت می‌پذیرد.<br></font><div align="center"><font size="2"><b><br>خیابانی فروغی تبریز خودمان </b><br><img src="http://s7.picofile.com/file/8237257668/tabrizcars_11_.jpg" alt="tabriz" align="bottom" height="357" hspace="0" border="0" vspace="0" width="499"><br><br></font></div><div align="center"><font size="2"><img src="http://s6.picofile.com/file/8237257684/tabrizcars_12_.jpg" alt="ماشین" align="bottom" height="326" hspace="0" border="0" vspace="0" width="501"><br><br><img src="http://s7.picofile.com/file/8237257792/tabrizcars_18_.jpg" alt="ماشین باز" align="bottom" height="604" hspace="0" border="0" vspace="0" width="501"></font><br></div><font size="2"><br>هدف موستانگ ارایه‌ی لذت رانندگی مشابه خودرو‌های کلاسیک دهه‌ی ۷۰ است<br><br>در
+ طرف مقابل رانندگی با موستانگ نیاز به مهارت بیشتری دارد.&nbsp; این خودرو 
+توانایی تحمل ۰.۸۲ جی شتاب جانبی را دارد. با این که اعداد و ارقام موستانگ
+ در این بخش بسیار خوب هستند، اما گفته‌ی کیم رینولدز راننده‌ی آزمایشی 
+فورد مبنی بر حس رانندگی مشابه موستانگ با نمونه‌های کلاسیک خود، به خوبی 
+نشانگر حس رانندگی با این خودرو است. فورد از فرمول ۴۰ سال پیش در نسل جدید
+ موستانگ بهره برده تا بتواند علاقه‌مندان واقعی به خودرو‌های کلاسیک را با
+ همان حس رانندگی به سوی خود بازگرداند. <br><br>این مساله بدین معنی است 
+که فرمان موستانگ حس سنگین‌تری نسبت به کامارو دارد و خودرو در شتاب‌های 
+جانبی زوایای رول زیادی می‌گیرد. هم‌چنین طراحی پیشرانه‌ی موستانگ به نحوی 
+بوده است که نیاز زیادی به تغییر دنده دارد. <br><br>هرزگردی و چرخاندن 
+انتهای موستانگ به راحتی آغاز می‌شود اما در نظر داشته باشید که نگه داشتن 
+این خودرو در این حالت امری بسیار سخت است. به وضوح می‌توان حس کرد که هدف 
+فورد از نسل جدید موستانگ چیست؛ ارایه‌ی لذت رانندگی مشابه خودرو‌های 
+کلاسیک دهه‌ی ۷۰.<br></font><div align="center"><br></div><div align="right"><div align="center"><font size="2"><img src="http://s6.picofile.com/file/8237257476/tabrizcars_6_.jpg" alt="ماستینگ" align="bottom" height="359" hspace="0" border="0" vspace="0" width="501"><br><br></font><font size="2"><img src="http://s7.picofile.com/file/8237257718/tabrizcars_14_.jpg" alt="شورولت کامارو" align="bottom" height="371" hspace="0" border="0" vspace="0" width="500"></font></div><br></div><div align="center"><br></div><font size="2">حس
+ رانندگی خشن با موستانگ به معنی فضای داخلی با حال و هوای مشابه نیست. 
+پنل‌های در و داشبورد از موادی باکیفیت تولید شده‌اند و صندلی‌های ریکارو 
+علاوه بر ارایه‌ی سواری راحت، سرنشینان را در مانور‌ها نیز به خوبی در 
+بر‌می‌گیرد.<br><br>&nbsp;موستانگ هنگام حرکت در بزرگراه‌ها به طور اعجاب‌آوری 
+راحت و آرام است. صدای پیشرانه در دور موتور‌های پایین آرام و دلنشین است و
+ صدای باد نیز در این خودرو به خوبی کنترل شده است. سیستم تعلیق نرم 
+موستانگ ضربات جاده را تا حدود خوبی جذب می‌کند.<br><br>&nbsp;کلید‌های کنترلی 
+مشابه با کابین هواپیما، استفاده‌ی گسترده از آلومینیوم در کنار چرم، سیستم
+ اطلاعاتی و سرگرمی سینک ۳ و صندوق بار بزرگ موستانگ را به گزینه‌ای 
+ایده‌آل برای انجام مسافرت‌های طولانی تبدیل کرده است. <br><br>البته 
+لحظه‌ای که اقدام به فشردن پدال گاز تا انتها بکنید، ناگهان موستانگ روی 
+دیگر خود را نشان خواهد داد و غرش پیشرانه جو موجود را به کلی تغییر خواهد 
+داد.<br><br>&nbsp;رفتار آرام موستانگ در دور موتور‌های پایین هیچ شباهتی به 
+عملکرد آن در دور موتور‌های بالا و هنگام گذر از پیچ‌های تند ندارد. 
+همانطور که پیش‌تر گفتیم، ورود به پیچ‌ها با سرعت بالا نیازمند تمرکز 
+بالایی جهت کنترل خودرو است و خودرو در مانور‌ها حسی مانند قایق دارد. <br><br>ضریب
+ دنده‌های جعبه دنده‌ی موستانگ به یکدیگر نزدیک هستند تا راننده به صورت 
+مداوم نیاز به تعویض دنده داشته باشد. این عمل باعث شده‌ است تا پیشرانه 
+همواره در دور موتور مدنظر باقی بماند و سرنشنیان بتوانند از صدای آن نهایت
+ لذت را ببرند.<br></font><br><div align="center"><div align="center"><img src="http://s6.picofile.com/file/8237259368/771076_355.jpg" alt="موستانگ در برابر کامارو، رقابتی بی‌پایان" align="" height="337" hspace="0" border="0" vspace="0" width="499"></div></div><font size="2"><br>کامارو در قابلیت‌های حرکتی توانایی پشت سر گذاشتن موستانگ در هر بخشی را دارد<br><br>برچسب
+ (SS (Super Sport کامارو به خوبی نمایانگر ذات این خودرو است و رفتار 
+خودرو همواره راننده را وادار به افزایش سرعت و رانندگی سریع می‌کند. فرمان
+ دقیق کامارو هنگام عبور از پیچ‌های تند عملکرد فوق‌العاده‌ای دارد و جعبه 
+دنده‌ی این خودرو نیز حس و حال مشابهی با کوروت ارایه می‌دهد. کادیلاک در 
+ATS-V تلاش زیادی برای ارایه‌ی حس مشابهی با کامارو اس‌اس کرد، اما هیچ وقت
+ موفق به انجام این امر نشد. شورولت کامارو به واقع خودرویی مسابقه‌ای است.<br><br>&nbsp;صدای
+ پیشرانه‌ی این خودرو در سرعت ۱۳۰ کیلومتر بر ساعت و دنده‌ی ۲ فوق‌العاده 
+است، در حالی که موستانگ برای رسیدن به این سرعت نیاز به تغییر دنده به ۳ 
+را دارد. با این حال سیستم تعلیق کامارو در بزرگراه‌ها و محیط‌های شهری 
+لرزش بیشتری را نسبت به موستانگ، به کابین منتقل می‌کند. هم‌چنین کابین این
+ خودرو به خوبی موستانگ در برابر صدا عایق‌بندی نشده و در جاده‌ها می‌توان 
+زوزه‌ی باد را حس کرد. <br><br></font><div align="center">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/SLcd2]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/SLcd2/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				<br></div><font size="2"><br>یکی از مشکلات اصلی نسل جدید کامارو فضای 
+دید راننده است که به واقع باعث بروز مشکلاتی حین رانندگی در محیط‌های شلوغ
+ می‌شود. در موستانگ راننده در ارتفاع بالاتری نسبت به کامارو قرار دارد. 
+اما آیا فضای دید برای افرادی که قصد خرید ماسل را دارند، اهمیت دارد؟ <br></font><font size="2"><br>کابین
+ کامارو نسبت به نسل پیشین خود پیشرفت زیادی را تجربه کرده است. غربیلک 
+فرمان، دسته دنده و داشبورد همگی از کیفیت بالایی برخوردارند. نمایشگر نیز 
+در مکانی ایده‌آل نصب شده و به راحتی انجام عملیات‌های مختلف از طریق آن 
+ممکن است. پشتیبانی از پلتفرم کارپلی یکی دیگر از نقاط قوت سیستم 
+چندرسانه‌ای کامارو است. خروجی‌های تهویه مطبوع در این خودرو به زیبایی هر 
+چه بیشتر طراحی شده‌اند؛ البته پیش‌تر شاهد این سبک در کابین خودرو‌های 
+مک‌لارن بودیم.</font><br><div align="center"><font size="2"><br><img src="http://s7.picofile.com/file/8237257726/tabrizcars_16_.jpg" alt="جاده" align="bottom" height="373" hspace="0" border="0" vspace="0" width="500"><br><br><img src="http://s6.picofile.com/file/8237257768/tabrizcars_17_.jpg" alt="cars" align="bottom" height="334" hspace="0" border="0" vspace="0" width="500"><br><b>مبصر کلاس کامارو !</b><br><img src="http://s6.picofile.com/file/8237257842/tabrizcars_20_.jpg" alt="خودرو آمریکایی" align="bottom" height="357" hspace="0" border="0" vspace="0" width="500"></font></div><font size="2"><br>انتخاب
+ بهترین خودروی ماسل از میان موستانگ و کامارو امری سخت است. هر دو خودرو 
+از بدنه‌ای زیبا، کابین راحت، ارگونومی خوب و پیشرانه‌‌ای توانمند بهره 
+می‌برند. اما اگر اولویت شما خودرو‌ی سریع‌تر است، کامارو را در نظر 
+بگیرید.<br><br>&nbsp;این خودرو در قابلیت‌های حرکتی توانایی پشت سر گذاشتن 
+موستانگ را در هر بخشی دارد. اگر می‌خواخید خودرو‌های اسپرت بسیار گران را 
+شرمسار کنید یا لاستیک‌های خود را طی حرکات نمایشی به دود تبدیل کنید، 
+شورولت راه‌حل را در اختیار شما قرار داده است؛ کامارو اس‌اس.<br><br>درست 
+است که عبور از پیچ‌ها با موستانگ امری سخت است، امااین خودرو لذت رانندگی 
+بالایی را برای سرنشینان به ارمغان می‌آورد. موستانگ خودرویی ایده‌‌آل برای
+ سفر‌های طولانی است و در مواقع نیاز نیز غرش پیشرانه‌ی آن به همراه تعویض 
+دنده‌های متوالی مانند فیلم سریع و خشن، آدرنالین را به خوبی در بدن شما 
+تولید خواهد کرد.</font><br></div></div><font size="2">
+
+
+</font>
+
+
+
+
+
+
+
+ 
+								<br />						<br />
+						دسته بندی : 						<a href="../../4.html" title="متفرقه" >متفرقه</a> , <br />						برچسب ها :   						<a href="http://tabrizlinks.mihanblog.com/post/tag/%D9%81%D9%88%D8%B1%D8%AF%20%D9%85%D9%88%D8%B3%D8%AA%D8%A7%D9%86%DA%AF" title="فورد موستانگ" >فورد موستانگ</a> , 						<a href="http://tabrizlinks.mihanblog.com/post/tag/%DA%A9%D8%A7%D9%85%D8%A7%D8%B1%D9%88" title="کامارو" >کامارو</a> , 						<a href="http://tabrizlinks.mihanblog.com/post/tag/%D8%B4%D9%88%D8%B1%D9%88%D9%84%D8%AA" title="شورولت" >شورولت</a> , 						<a href="http://tabrizlinks.mihanblog.com/post/tag/%D8%A7%D8%B1%D8%B3%20%D9%BE%D9%84%D8%A7%DA%A9" title="ارس پلاک" >ارس پلاک</a> , 						<a href="http://tabrizlinks.mihanblog.com/post/tag/%D9%85%D8%A7%D8%B4%DB%8C%D9%86%20%D8%A8%D8%A7%D8%B2%D9%87%D8%A7%DB%8C%20%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2" title="ماشین بازهای تبریز" >ماشین بازهای تبریز</a> , 						<a href="http://tabrizlinks.mihanblog.com/post/tag/%D9%85%D9%82%D8%A7%DB%8C%D8%B3%D9%87%20%D8%AE%D9%88%D8%AF%D8%B1%D9%88" title="مقایسه خودرو" >مقایسه خودرو</a> , 						<a href="../../../tag/تبریز.html" title="تبریز" >تبریز</a> , <br />												<div style="text-align:center;"><br />
+									<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+									<script language="javascript">$rating_widget_type='thumb';$rating_widget_theme=7;$rating_widget_color='FFFFFF';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/1028';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/voting/widgets/rating.js"></script>
+									<!-- END Parstools.com RATING WIDGET CODE --> 
+						</div>		
+		</div>
+		<br clear="all">
+	</div>
+	<div class="morelink"><div class="morein">
+		<span class="argmore"><a href="http://tabrizlinks.mihanblog.com/post/1028" title="موستانگ و کامارو در رقابتی بی پایان"><b>ادامه مطلب ...</b></a></span>
+		<span class="arg">نظرات: (<a target="_self" href="javascript:newComment(1028)"><script>setCommentCnt(1028)</script></a>)</span>
+		<div class="ratebox"><div id='ratig-layer-1'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+
+		<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+							<script language="javascript">$rating_widget_type='rate';$rating_widget_theme=10;$rating_widget_color='F3F6F8';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/1028';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/rating/widgets/rating.js"></script>
+		<!-- END Parstools.com RATING WIDGET CODE -->
+
+		</ul>
+</div></div></div>
+	</div></div>
+</div>
+<div class="hsep"></div>
+     	
+<div class="base shortstory">
+	<div class="shd">
+		<h1><a href="http://tabrizlinks.mihanblog.com/post/1024" title="پارک نور دبی و تصاویر خلاقانه از استانبول">پارک نور دبی و تصاویر خلاقانه از استانبول</a></h1>
+	</div>
+	<div class="shdinfo"><div class="shdin">
+
+		<span class="arg">نویسنده : <a href="../../../author/944998.html">تبریز قارتال</a></span>
+		<span class="date"><img src="http://tem.parstools.com/skyback/images/date.png" alt="">سه شنبه 6 بهمن 1394, 10:50 ب.ظ</span>
+	</div></div>
+	<div class="maincont">
+		<div style="padding-right:10px;">
+		
+		 
+
+
+
+<div align="center"><div align="right"><font size="3">متاسفانه با مسدود شدن بخشی از سرویس پرشین گیگ تقریبا 90 درصد تصاویر این وبلاگ هم که روی این سرور قرار داشت غیرقابل دسترسی شده و هنوز منتظریم تا شاید امیدی حاصل شود البته اگر تصاویر برنگردند شاید به صلاح باشد با وبلاگ وداع کنیم. مهم اینست و این بودکه در طول این سه سال که خدمت شما بودیم هم ما دوستان جدیدی یافتیم و هم توانستیم مطالبی را ارائه و تاثیراتی حداقل در افکار فضای مجازی در زمینه های مختلف داشته باشیم. بقیش با شما...<br><br></font><div align="center"><img src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/tabrizlinks2.jpg" alt="تبریز ویکی لینکلر" align="bottom" border="0" height="168" hspace="0" vspace="0" width="190"><br><br></div><font size="3">بنده هم تا فرصت هست صبر خواهم کرد تا شاید تصاویر برگردند و اگر نشد به صلاح است که نباشیم و هر چه تقدیر باشد، و البته برگردندان یا بارگذاری مجدد بیش از شش هزار تصویر این وبلاگ در سروری دیگر تقریبا غیرممکن بنظر میرسد!<br>آخرین تلاشهای بنده هم با این مطالب کپی برای آپدیت و امیدوار نگهداشتن وبلاگ ادامه دارد که امیدوارم برای شما سودمند و برای مدیران و مهندسان شهری ما الگوها و ایده خلاقانه خوبی باشد.</font><br><br><br><font size="2"><font color="#CC33CC" size="3"><b>پارک نور دبی</b></font><br>اخیرا پارکی در دبی افتتاح شده که مهمترین جاذبه آن 
+نمایش ماکت های نورانی به اشکال مختلف است. این پارک تا 30 آوریل 2016 هر 
+روز از ساعت 16 تا 23 میزبان مراجعین است.<br></font></div><div align="right"><font size="2">برای ساخت این مجموعه 
+تفریحی حدود 30 میلیون درهم هزینه شده است. مسئولان پارک انتظار دارند 
+روزانه تا 5 هزار نفر از آن بازدید کنند. ورودی پارک برای هر نفر 60 درهم و
+ برای کودکان زیر 3 سال رایگان است.&nbsp;&nbsp; آدرس: Area B at Gate 6 of Zabeel Park<br>براساس اطلاعات ارائه شده برای ساخت این پارک حدود 200 هزار ساعت کار هنری انجام شده است و 150 هنرمند در آن همکاری داشته اند.<br><br></font><div align="center"><img style="border: medium none;" alt="پارک نور دبی" title="پارک نور دبی" src="http://cdn.bartarinha.ir/files/fa/news/1394/11/5/762883_232.jpg" height="335" width="467"><br><br><img style="border: medium none;" alt="پارک نور دبی" title="پارک نور دبی" src="http://cdn.bartarinha.ir/files/fa/news/1394/11/5/762886_784.jpg" height="300" width="468"><br><br><br><div align="right"><font size="2"><font color="#CC33CC" size="3"><b>عکس های خلاقانه و متفاوت از استانبول 	</b></font><br>عکس های سورئال آیدین بیوکتاش </font><font size="2">« Aydin Büyüktaş» از استانبول، ما را مجبور می کند منظره جدیدی
+ از جهان را بپذیریم که قوانین جهان در آن اعمال نمی شود! این هنرمند ترک، 
+در مجموعه عکس گیج کننده و خلاقانه اش، مفاهیم بُعد و پرسپکتیو را بررسی می
+ کند. او تصویر نشانه ها و نقاط دیدنی ترکیه را پیچ و تاب می دهد و شیوه 
+جدیدی از عکاسی خیابانی معاصر را ارائه می دهد. او از بناها و مکان های 
+مشهور با کمک «درون» عکاسی کرده و سپس با استفاده از نرم افزارهای سه بعدی 
+آنها را تغییر داده و اصلاح کرده است. </font><font size="2"><br><br></font><div align="center"><font size="2">Basibuyuk</font></div><div align="center"><div style="text-align: center;"><font size="2"><img src="http://cdn.bartarinha.ir/files/fa/news/1394/11/6/763967_656.jpg" title="چشم انداز جدیدی از استانبول در این عکس های خلاقانه!" alt="چشم انداز جدیدی از استانبول در این عکس های خلاقانه!" style="border: medium none;" height="853" width="466"><br></font><div align="right"><br><font size="2">تصاویر زیبایی هستند از دو شهر مطرح در منطقه ما خاورمیانه که مانند نگینی زیبا میدرخشند و به امید آبادانی شهرهای ما و همچنین تبریز زیبای ما که روزگاری بسیار را تجربه داشته است.<br>منبع - برترین ها<br><br></font></div><font size="2"><span style="background-color: rgb(255, 255, 204);"><font size="5"><b><a href="http://tabrizlinks.mihanblog.com/post/1024" target="" title="">به ادامه تصاویر بروید...</a><br><br></b></font></span><a href="http://tabrizlinks.mihanblog.com/post/1024" target="" title=""></a></font></div></div></div></div></div></div>
+
+
+
+
+
+
+
+
+
+
+ 
+								<br />						<br />
+						دسته بندی : 						<a href="../../4.html" title="متفرقه" >متفرقه</a> , <br />						برچسب ها :   						<a href="http://tabrizlinks.mihanblog.com/post/tag/%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1%20%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%A8%D9%88%D9%84%20%D8%AA%D8%B1%DA%A9%DB%8C%D9%87" title="تصاویر استانبول ترکیه" >تصاویر استانبول ترکیه</a> , 						<a href="http://tabrizlinks.mihanblog.com/post/tag/%D8%AF%D9%88%D8%A8%DB%8C" title="دوبی" >دوبی</a> , 						<a href="http://tabrizlinks.mihanblog.com/post/tag/%D8%AF%D8%A8%DB%8C%20%D8%A7%D9%85%D8%A7%D8%B1%D8%A7%D8%AA" title="دبی امارات" >دبی امارات</a> , 						<a href="http://tabrizlinks.mihanblog.com/post/tag/%D9%BE%D8%A7%D8%B1%DA%A9%20%D8%AE%D9%84%D8%A7%D9%82%D8%A7%D9%86%D9%87" title="پارک خلاقانه" >پارک خلاقانه</a> , 						<a href="http://tabrizlinks.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%DA%A9%D9%86%20%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%A8%D9%88%D9%84" title="اماکن استانبول" >اماکن استانبول</a> , 						<a href="../../../tag/شهرداری&#32;تبریز.html" title="شهرداری تبریز" >شهرداری تبریز</a> , 						<a href="http://tabrizlinks.mihanblog.com/post/tag/%D8%B2%DB%8C%D8%A8%D8%A7%D8%B3%D8%A7%D8%B2%DB%8C%20%D8%B4%D9%87%D8%B1%DB%8C" title="زیباسازی شهری" >زیباسازی شهری</a> , <br />												<div style="text-align:center;"><br />
+									<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+									<script language="javascript">$rating_widget_type='thumb';$rating_widget_theme=7;$rating_widget_color='FFFFFF';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/1024';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/voting/widgets/rating.js"></script>
+									<!-- END Parstools.com RATING WIDGET CODE --> 
+						</div>		
+		</div>
+		<br clear="all">
+	</div>
+	<div class="morelink"><div class="morein">
+		<span class="argmore"><a href="http://tabrizlinks.mihanblog.com/post/1024" title="پارک نور دبی و تصاویر خلاقانه از استانبول"><b>ادامه مطلب ...</b></a></span>
+		<span class="arg">نظرات: (<a target="_self" href="javascript:newComment(1024)"><script>setCommentCnt(1024)</script></a>)</span>
+		<div class="ratebox"><div id='ratig-layer-1'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+
+		<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+							<script language="javascript">$rating_widget_type='rate';$rating_widget_theme=10;$rating_widget_color='F3F6F8';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/1024';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/rating/widgets/rating.js"></script>
+		<!-- END Parstools.com RATING WIDGET CODE -->
+
+		</ul>
+</div></div></div>
+	</div></div>
+</div>
+<div class="hsep"></div>
+     
+	
+
+
+<div class="hsep">
+		<center>
+						   					<a href="3.html">[ <i>...</i> ]</a> 
+			   					<a href="4.html">[ <span>4</span> ]</a> 
+			   					<a href="5.html">[ <span>5</span> ]</a> 
+			   					<a href="6.html">[ <span>6</span> ]</a> 
+			   					<a href="7.html">[ <b>7</b> ]</a> 
+			   					<a href="8.html">[ <span>8</span> ]</a> 
+			   					<a href="http://tabrizlinks.mihanblog.com/post/category/4/page/9">[ <span>9</span> ]</a> 
+			   					<a href="http://tabrizlinks.mihanblog.com/post/category/4/page/10">[ <span>10</span> ]</a> 
+			   					<a href="http://tabrizlinks.mihanblog.com/post/category/4/page/11">[ <i>...</i> ]</a> 
+			   					</center>
+</div>
+
+
+
+</div>
+						<br clear="all" />
+						<div class="footadblock">
+								
+							   								» <a href="../../../2.html">درباره تبریز و آذربایجان و اخبار  About and News</a> ( پنجشنبه 15 اسفند 1398 )<br />
+							  								» <a href="../../../1372.html">ویروس کرونا تهدیدی در ایران</a> ( پنجشنبه 8 اسفند 1398 )<br />
+							  								» <a href="../../../1371.html">نقاش و نگارگر استاد علی اصغر پتگر</a> ( جمعه 25 بهمن 1398 )<br />
+							  								» <a href="../../../1370.html">زینب پاشا بانوی رابین هود ایران</a> ( جمعه 18 بهمن 1398 )<br />
+							  								» <a href="../../../1369.html">خانه زیبا که به هتل بوتیک در تبریز تبدیل می‌شود</a> ( یکشنبه 6 بهمن 1398 )<br />
+							  								» <a href="../../../1368.html">بنیس شبستر ، روستای دانشگاهی بدون بیکار و بی سواد</a> ( چهارشنبه 25 دی 1398 )<br />
+							  								» <a href="../../../1367.html">برف زمستانی 1398 تبریز</a> ( پنجشنبه 19 دی 1398 )<br />
+							  								» <a href="../../../1364.html">اردبیل؛ سرزمین چشمه‌های بهشتی آذربایجان</a> ( شنبه 14 دی 1398 )<br />
+							  								» <a href="../../../1366.html">مشکلات صنعت کفش چرم دستدوز تبریز</a> ( چهارشنبه 4 دی 1398 )<br />
+							  								» <a href="../../../1365.html">شب خاطره ها چیلله گئجه‌سی </a> ( شنبه 30 آذر 1398 )<br />
+							  								» <a href="../../../1363.html">خلیل بحران طنز پرداز</a> ( چهارشنبه 20 آذر 1398 )<br />
+							  								» <a href="../../../1362.html">شهر شکی جمهوری آذربایجان</a> ( شنبه 9 آذر 1398 )<br />
+							  								» <a href="../../../1361.html">پاکبان و جدال با فاضلاب برای یک لقمه نان حلال</a> ( یکشنبه 3 آذر 1398 )<br />
+							  								» <a href="../../../1360.html">دوربین تبریز لینک 80 ( گردشی در اطراف بیلانکوه )</a> ( پنجشنبه 23 آبان 1398 )<br />
+							  								» <a href="../../../1359.html">پارک باغ‌شهر تبریز</a> ( دوشنبه 13 آبان 1398 )<br />
+							  								» <a href="../../../1358.html">مسجد حسن پاشا در انتظار احیا</a> ( جمعه 3 آبان 1398 )<br />
+							  								» <a href="../../../1357.html">شهر گمشده اوجان آذربایجان در راه احیا</a> ( جمعه 26 مهر 1398 )<br />
+							  								» <a href="../../../1356.html">عشایر شاهسون آذربایجان از اصالت تا زندگی شیرین</a> ( دوشنبه 15 مهر 1398 )<br />
+							  								» <a href="../../../1355.html">مصاحبه مینا خلیل‌ زاده فتحی برنده جایزه هوانوردی آمریکا</a> ( چهارشنبه 10 مهر 1398 )<br />
+							  								» <a href="../../../1354.html">چهار پروژه و نابودی چهار اثر تاریخی تبریز</a> ( پنجشنبه 4 مهر 1398 )<br />
+							  								» <a href="../../../1353.html">زووفان حیوانات تبریز</a> ( دوشنبه 25 شهریور 1398 )<br />
+							  								» <a href="../../../1352.html">تصاویر محمدحسن‌میرزا قاجار در دارالحکومه تبریز</a> ( چهارشنبه 20 شهریور 1398 )<br />
+							  								» <a href="../../../1351.html">دلیرمردی که سوختن ارسباران را برنتابید</a> ( دوشنبه 11 شهریور 1398 )<br />
+							  								» <a href="../../../1350.html">حوادث اشغال تبریز توسط ارتش سرخ در شهریور ۱۳۲۰</a> ( دوشنبه 4 شهریور 1398 )<br />
+							  								» <a href="../../../1349.html">شهروند لینک آذربایجانی 78 ( مهری نژاد ) </a> ( سه شنبه 29 مرداد 1398 )<br />
+							  								» <a href="../../../1348.html">سرگذشت دراماتیک امپراتوران مدرسه‌سازی مردانی آذر </a> ( شنبه 19 مرداد 1398 )<br />
+							  								» <a href="../../../1347.html">ضرورت احیا هتل قدیمی گراند و محله پاساژ تبریز</a> ( جمعه 11 مرداد 1398 )<br />
+							  								» <a href="../../../1346.html">ساعت به وقت گدایی در شهر بدون گدا تبریز</a> ( دوشنبه 31 تیر 1398 )<br />
+							  								» <a href="../../../1345.html">شهروند لینک آذربایجانی 77 ( آراز نویدی ) </a> ( جمعه 21 تیر 1398 )<br />
+							  								» <a href="../../../1344.html"> چهارمین جشنواره خلاقیت و نوآوری تبریز </a> ( پنجشنبه 13 تیر 1398 )<br />
+							  							
+						</div>
+					</div>
+				</div>
+				<div class="rcolomn rightside">
+					<span class="createbtn">
+					موضوعات
+					</span>
+					<br />
+
+					<div class="block bwho">
+
+					  								  									<a href="../../1.html" >» تبریز (430)</a><br />	
+								 									<a href="../../2.html" >» ایران (100)</a><br />	
+								 									<a href="../../3.html" >» آذربایجان (423)</a><br />	
+								 									<a href="../../4.html" >» متفرقه (127)</a><br />	
+								 									<a href="../../5.html" >» ورزش آذربایجان (34)</a><br />	
+								 									<a href="../../8.html" >» آپارات تبریز لینک (69)</a><br />	
+								 									<a href="../../7.html" >» دوربین تبریز لینک (142)</a><br />	
+								 									<a href="../../6.html" >» نتیجه نظرسنجی ها (26)</a><br />	
+								 									<a href="../../9.html" >» شهروند لینک آذربایجانی (78)</a><br />	
+								 									<a href="../../20.html" >» آموزش زبان ترکی آذربایجانی (19)</a><br />	
+								 									<a href="../../12.html" >» English Tabriz WikiLinks (29)</a><br />	
+								 									<a href="../../14.html" >» * پارکها و محیط زیست (71)</a><br />	
+								 									<a href="../../13.html" >» * شهرستان لینک (134)</a><br />	
+								 									<a href="../../16.html" >» * مشاهیر آذربایجان (128)</a><br />	
+								 									<a href="../../15.html" >» * آرتاویل،اورمو،زنگان (91)</a><br />	
+								 									<a href="../../11.html" >» * تورک سئسه لینک (135)</a><br />	
+								 									<a href="../../10.html" >» * انتقاد،پیشنهاد لینک (201)</a><br />	
+								 									<a href="../../19.html" >» * پروژه های عمرانی و شهری (61)</a><br />	
+								 									<a href="../../18.html" >» * میراث،تاریخ،صنایع دستی آذربایجان (234)</a><br />	
+								 									<a href="../../17.html" >» * دریاچه همیشه اورمیه Urmia Lake (23)</a><br />	
+								 									<a href="../../21.html" >» * جمهوری آذربایجان Azərbaycan Republic (15)</a><br />	
+								 					  					</div>
+					<div class="block">
+						<h3>صفحات</h3>
+				   
+				    
+					<a href="../../../../extrapage/ancient.html" target="_blank">» آذربایجان باستان Ancient Azerbaijan</a><br />	
+				    
+					<a href="../../../../extrapage/azerbaijani_tradition.html" target="_blank">» اصالت نژاد رسوم آذربایجانی Tradition</a><br />	
+				    
+					<a href="../../../../extrapage/azerbaijan_news.html" target="_blank">» خبرگزاری و رسانه های آذربایجان news</a><br />	
+				    
+					<a href="../../../../extrapage/turk_tabrizlinks.html" target="_blank">» آتا بابا آذربایجان تورکم</a><br />	
+				    
+					<a href="../../../../extrapage/tourism_tabrizlinks.html" target="_blank">» گردشگری و توریسم Travel Tourism</a><br />	
+				    
+					<a href="../../../../extrapage/o_ses_azerbaijan.html" target="_blank">» O'Ses Azerbaijan - Sahand Music</a><br />	
+				    
+					<a href="../../../../extrapage/celebrities_azerbaijan.html" target="_blank">» مشاهیر، مفاخر، بزرگان آذربایجان Celeb</a><br />	
+				    
+					<a href="../../../../extrapage/carfts_azerbaijan.html" target="_blank">» صنایع دستی و سوغات آذربایجان crafts</a><br />	
+				    
+					<a href="../../../../extrapage/weather_azerbaijan.html" target="_blank">» هواشناسی تبریز ویکی لینکلر weather</a><br />	
+				    
+					<a href="../../../../extrapage/tourmovies_tabrizlinks.html" target="_blank">» ویدیو توریسم آذربایجان و تبریز WikiLinks Tourism movies</a><br />	
+				      
+									</div>
+
+					<div class="block btags">
+						<h3>لینکستان</h3>
+					 							 
+							<a href="http://tourism.tabriz.ir/" title=""  target="_blank">» سازمان گردشگری شهرداری تبریز    Tourism Development Organization of Tabriz Municipality</a><br />	
+						   
+							<a href="http://www.tabriztourist.com" title=""  target="_blank">» گردشگری آذربایجان شرقی - تبریز توریست</a><br />	
+						   
+							<a href="http://www.aparat.com/bayandir" title=""  target="_blank">» آپارات کارتونهای آذربایجانی</a><br />	
+						   
+							<a href="../../../../../kaleybarcity.mihanblog.com/index.html" title=""  target="_blank">» وبلاگ کلیبر سیتی (پریسا)</a><br />	
+						   
+							<a href="http://tabrizdownload.r98.ir " title=""  target="_blank">» وبسایت تبریز دانلود (هادی)</a><br />	
+						   
+							<a href="../../../../../khotbehsara.mihanblog.com/index.html" title=""  target="_blank">» آنایوردوم خطبه سرا</a><br />	
+						   
+							<a href="http://azarbook.blogfa.com/" title=""  target="_blank">» آذربایجان و پیرامون (عبدالحسین)</a><br />	
+						   
+							<a href="http://bayrambayani84.blogfa.com/" title=""  target="_blank">» وبلاگ بایرام (بیانی)</a><br />	
+						   
+							<a href="http://azadazarbaycan.arzublog.com/" title=""  target="_blank">» وبلاگ جانیم آزربایجان(elçi bəy)</a><br />	
+						   
+							<a href="http://mazqamet.blogfa.com/" title=""  target="_blank">» وبلاگ مازگامت</a><br />	
+						   
+							<a href="http://yeniqapi.com/" title=""  target="_blank">» یئنی قاپی</a><br />	
+						   
+							<a href="http://ishiq.net/" title=""  target="_blank">» سایت ادبیات ترکی ایشیق</a><br />	
+						   
+							<a href="../../../../../myabriz.mihanblog.com/index.html" title=""  target="_blank">» شهرمن تبریز (یاشار)</a><br />	
+						   
+							<a href="http://nazlibakhish.persianblog.ir/" title=""  target="_blank">» وبلاگ باخیش(شادی)</a><br />	
+						   
+							<a href="http://mohsen-behboudi.blogfa.com/" title=""  target="_blank">» وبلاگ سهند ما (محسن)</a><br />	
+						   
+							<a href="http://huseynvahedi.ir/" title=""  target="_blank">» خاطیره لر دوراغی (حسین واحدی)</a><br />	
+						   
+							<a href="http://sajjadsanm666.blogfa.com/" title=""  target="_blank">» صنم در اوج (سجاد)</a><br />	
+						   
+							<a href="http://shear.blogsky.com/" title=""  target="_blank">» وبلاگ اشعار ترکی آذری و فارسی</a><br />	
+						   
+							<a href="../../../../../govdil.mihanblog.com/index.html" title=""  target="_blank">» یوردوم ملکان</a><br />	
+						   
+							<a href="http://shahrimtabriz.blogfa.com" title=""  target="_blank">» وبلاگ تبریز شهر اولین ها (سعید)</a><br />	
+						   
+							<a href="http://sahandtopragi.blogfa.com/" title=""  target="_blank">» سهند توپراقی(جواد نجات)</a><br />	
+						   
+							<a href="../../../../../amlakgorbani.mihanblog.com/index.html" title=""  target="_blank">» املاک قربانی (اسپیران)</a><br />	
+						   
+							<a href="http://safidantabriz.blogfa.com/" title=""  target="_blank">» وبلاگ ینگی اسپیران (محمد)</a><br />	
+						   
+							<a href="http://www.tabrizli.lxb.ir/" title=""  target="_blank">» آنــــا یــوردوم تــبریــز(عبدا.. رضوی)</a><br />	
+						   
+							<a href="http://amegan.mihanblog.com/" title=""  target="_blank">» وبلاگ کشاورزی آمقانی اسکو(شوکتی)</a><br />	
+						   
+							<a href="http://www.goganim.blogfa.com/" title=""  target="_blank">» وبلاگ گوگان</a><br />	
+						   
+							<a href="../../../../linkdaily/index.html" title=""  target="_blank">» ....................................</a><br />	
+						   
+							<a href="http://www.artawilnews.blogfa.com" title=""  target="_blank">» وبلاگ اخبار اردبیل (فرزاد)</a><br />	
+						   
+							<a href="http://soleimanipour.blogfa.com/" title=""  target="_blank">» وبلاگ شهریمیز اورمو</a><br />	
+						   
+							<a href="http://www.digale.blogfa.com/" title=""  target="_blank">» دئیه لر(دیگاله)-اورمیه</a><br />	
+						   
+							<a href="http://khiyavtraxtorchi.blogfa.com/" title=""  target="_blank">» وبلاگ مشگین شهر (میلاد)</a><br />	
+						   
+							<a href="http://ardabil1354.blogfa.com/" title=""  target="_blank">» وبلاگ چشمه های بهشتی آرتاویل</a><br />	
+						   
+							<a href="http://www.irph.blogfa.com/" title=""  target="_blank">» پروژه های عمرانی ایران</a><br />	
+						   
+							<a href="http://www.mashhadtoday.ir/" title=""  target="_blank">» وبسایت مشهد امروز (اشکان)</a><br />	
+						   
+							<a href="http://shahrebehesht8.blogfa.com" title=""  target="_blank">» مشهد شهر بهشت (امیرحسین)</a><br />	
+						   
+							<a href="http://virr.blogfa.com/" title=""  target="_blank">» وبلاگ شهر خرم آباد</a><br />	
+						   
+							<a href="../../../../../www.haneberchem.mihanblog.com/index.html" title=""  target="_blank">» وبلاگ هورامان</a><br />	
+						   
+							<a href="http://welcome-to-borazjan.blogfa.com/" title=""  target="_blank">» وبلاگ برازجان (بوشهر)</a><br />	
+						   
+							<a href="http://www.amoozeshnima.blogfa.com/" title=""  target="_blank">» وبلاگ آموزش رانندگی</a><br />	
+						   
+							<a href="http://asemaneriz.blogfa.com " title=""  target="_blank">» هواشناسی ایرما</a><br />	
+						   
+							<a href="../../../../linkdaily/index.html" title=""  target="_blank">» ......................................</a><br />	
+						   
+							<a href="http://traxturnews.blogfa.com/" title=""  target="_blank">» وبلاگ گالری تراکتور</a><br />	
+						   
+							<a href="http://www.gftclub.ir" title=""  target="_blank">» وبسایت گسترش فولاد تبریز</a><br />	
+						   
+							<a href="http://www.mstfc.ir/" title=""  target="_blank">» وبسایت باشگاه ماشین سازی تبریز</a><br />	
+						   
+							<a href="http://www.tractor-club.com" title=""  target="_blank">» وبسایت رسمی باشگاه تراکتورسازی</a><br />	
+						   
+                            
+
+<a href="http://defaultlink2.com" title="لینک پیش فرض دوم"  target="_blank">» لینک پیش فرض دوم</a><br /><a href="http://defaultlink1.com" title="لینک پیش فرض اول"  target="_blank">» لینک پیش فرض اول</a><br />
+							<a href="../../../../link/index.html">» لیست لینک ها</a><br />
+											</div>
+					
+					<div id='vote-layer'>
+					
+		 </div>
+					
+				<div class="block">
+				<h3>لینکدونی</h3>
+            			     
+				 <a href="http://www.tabrizpedia.info" title="سلام
+دوستان عزیز با اجازه شما، با ذکر منبع از مطالبتون توی تبریز پدیا استفاده میکنم.
+لطفا لینک بزارین
+من به زودی بخشی با عنوان لینک فعالان تبریزی خواهم ساخت که تبریز ویکی لینکلر در راس لینکها قرار خواهد گرفت." target="_blank">» تبریز پدیا</a><br />
+			    
+				 <a href="../../../../linkdaily/index.html" title="لیست لینک ها">» لیست لینک ها</a><br />
+				 <a href="javascript:linkdailyForm()">+ ارسال لینک</a><br />		  
+						   </div>
+					
+				 <div class="block">
+				<h3>نویسندگان</h3>
+				 	   
+							   
+									<a href="../../../author/944998.html">» تبریز قارتال (1155)</a><br />
+							   
+									<a href="../../../author/1105799.html">» آذر قارتال (33)</a><br />
+							   
+									<a href="../../../author/1218364.html">» دنیز قارتال (8)</a><br />
+							  				 				</div>
+									
+				 <div class="block">
+				<h3>کلمات کلیدی</h3>
+											 				
+							   <a href="../../../tag/ارسباران.html" 
+								style="font-size:1.05em">
+									   ارسباران 
+							   </a>
+						 				
+							   <a href="../../../tag/ترکی.html" 
+								style="font-size:1.09em">
+									   ترکی 
+							   </a>
+						 				
+							   <a href="../../../tag/آذربایجان+شرقی.html" 
+								style="font-size:1.1em">
+									   آذربایجان شرقی 
+							   </a>
+						 				
+							   <a href="../../../tag/اورمیه.html" 
+								style="font-size:1.01em">
+									   اورمیه 
+							   </a>
+						 				
+							   <a href="../../../tag/شهرداری+تبریز.html" 
+								style="font-size:1.21em">
+									   شهرداری تبریز 
+							   </a>
+						 				
+							   <a href="../../../tag/Azerbaijan.html" 
+								style="font-size:1.12em">
+									   Azerbaijan 
+							   </a>
+						 				
+							   <a href="../../../tag/اردبیل.html" 
+								style="font-size:1.08em">
+									   اردبیل 
+							   </a>
+						 				
+							   <a href="../../../tag/گردشگری.html" 
+								style="font-size:1.25em">
+									   گردشگری 
+							   </a>
+						 				
+							   <a href="../../../tag/تبریز.html" 
+								style="font-size:1.73em">
+									   تبریز 
+							   </a>
+						 				
+							   <a href="../../../tag/آذربایجان.html" 
+								style="font-size:2em">
+									   آذربایجان 
+							   </a>
+						 				
+							   <a href="../../../tag/میراث+فرهنگی+تبریز.html" 
+								style="font-size:1.11em">
+									   میراث فرهنگی تبریز 
+							   </a>
+						 				
+							   <a href="../../../tag/شعر+ترکی.html" 
+								style="font-size:1.03em">
+									   شعر ترکی 
+							   </a>
+						 				
+							   <a href="../../../tag/دریاچه+ارومیه.html" 
+								style="font-size:1.01em">
+									   دریاچه ارومیه 
+							   </a>
+						 				
+							   <a href="../../../tag/سفر.html" 
+								style="font-size:1em">
+									   سفر 
+							   </a>
+						 				
+							   <a href="../../../tag/tabriz.html" 
+								style="font-size:1.29em">
+									   tabriz 
+							   </a>
+						 	
+									</div>
+									
+				 <div class="block">
+				<h3>آمار بازدید</h3>
+				<br/>
+					کل بازدید ها : <script>getStatVar('total_view');</script><br/>
+					بازدید امروز : <script>getStatVar('today_view');</script><br/>
+					بازدید دیروز : <script>getStatVar('yesterday_view');</script><br/>
+					بازدید این ماه : <script>getStatVar('this_month_view');</script><br/>
+					بازدید ماه قبل : <script>getStatVar('last_month_view');</script><br/>
+					تعداد نویسندگان : <script>getStatVar('total_author');</script><br/>
+					تعداد کل مطالب : <script>getStatVar('total_post');</script><br/>
+					آخرین بروز رسانی : <script>getStatVar('modify_date');</script><br/>
+					
+				  				</div>
+				
+					<img src="http://tem.parstools.com/skyback/images/rightboxfoot.jpg" alt="" />
+
+
+
+
+
+
+
+
+<!-- start logo cod off http://tabrizdigilinks.mihanblog.com --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../../../../tabrizdigilinks.mihanblog.com/index.html" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/digi.jpg"  width="188" height="160" alt="تبریز دیجی لینکلر"></a></p><!--finish logo cod off http://tabrizdigilinks.mihanblog.com -->
+
+<!-- start logo cod off https://t.me/tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://t.me/tabrizlinks" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/telelinks.jpg"  width="188" height="150" alt="تلگرام تبریز ویکی لینکلر"></a></p><!--finish logo cod off https://t.me/tabrizlinkss -->
+
+
+<!-- start logo cod off https://instagram.com/tabrizlinks/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://instagram.com/tabrizlinks/" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/insta_tabrizlinks.jpg"  width="188" height="160" alt=" اینستاگرام تبریز ویکی لینکلر"></a></p><!--finish logo cod off https://instagram.com/tabrizlinks/ -->
+
+<!-- start logo cod off http://www.aparat.com/sahandtv --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/sahandtv" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/aparatsahandtv.jpg"  width="188" height="150" alt=" آپارات شبکه سهند"></a></p><!--finish logo cod off http://www.aparat.com/sahandtv -->
+
+<!-- start logo cod off http://www.aparat.com/sahandmusic --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/sahandmusic" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/oses_aparat.jpg"  width="188" height="150" alt="آپارات سهند موزیک"></a></p><!--finish logo cod off http://www.aparat.com/sahandmusic -->
+
+<!-- start logo cod off http://www.aparat.com/sahandcartoon --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/sahandcartoon" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/aparatsahandcartoon.jpg"  width="188" height="150" alt="آپارات سهند کارتون"></a></p><!--finish logo cod off http://www.aparat.com/sahandcartoon -->
+
+<!-- start logo cod off http://www.aparat.com/sahandchef --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/sahandchef" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/ashpaziaparat.jpg"  width="188" height="150" alt="آشپزی آذربایجان"></a></p><!--finish logo cod off http://www.aparat.com/sahandchef -->
+
+<!-- start logo cod off http://www.aparat.com/tabriz_2018 --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/tabriz_2018" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/2018laparat.jpg"  width="188" height="150" alt="تبریز 2018"></a></p><!--finish logo cod off http://www.aparat.com/tabriz_2018 -->
+
+
+<!-- start logo cod off https://www.facebook.com/tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://www.facebook.com/tabrizlinks" rel=”nofollow”  target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/facelinks.jpg"  width="188" height="160" alt="فیسبوک"></a></p><!--finish logo cod off https://www.facebook.com/tabrizlinks -->
+
+<!-- start logo cod off https://www.lenzor.com/tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://www.lenzor.com/tabrizlinks" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/lenzor.jpg"  width="188" height="150" alt="لنزور"></a></p><!--finish logo cod off https://www.lenzor.com/tabrizlinks -->
+
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/azerbaijan_news --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../../../extrapage/azerbaijan_news.html" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/wikilinksnews.jpg"  width="188" height="160" alt="آذربایجان نیوز"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/azerbaijan_news -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/tourism_tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../../../extrapage/tourism_tabrizlinks.html" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/wiki_tourism.jpg"  width="188" height="160" alt="توریسم و گردشگری"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/tourism_tabrizlinks -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/carfts_azerbaijan --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../../../extrapage/carfts_azerbaijan.html" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/sogat.jpg"  width="188" height="160" alt="سوغات و صنایع دستی"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/carfts_azerbaijan-->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/weather_azerbaijan --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../../../extrapage/weather_azerbaijan.html" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/weather2.jpg"  width="188" height="150" alt="هواشناسی آذربایجان"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/weather_azerbaijan -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/azerbaijani_tradition --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../../../extrapage/azerbaijani_tradition.html" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/azari.jpg"  width="188" height="150" alt="اصالت و رسوم آذربایجان"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/azerbaijani_tradition -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/celebrities_azerbaijan --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../../../extrapage/celebrities_azerbaijan.html" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/celebrity.jpg"  width="188" height="150" alt="مشاهیر"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/celebrities_azerbaijan-->
+
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/post/706 --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../../706.html" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/first.jpg"  width="188" height="150" alt="اولین های تبریز"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/post/706 -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/turk_tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../../../extrapage/turk_tabrizlinks.html" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/turkman.jpg"  width="188" height="140" alt="ترکی آذربایجانی"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/turk_tabrizlinks -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/ancient --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../../../extrapage/ancient.html" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/ancientaz.jpg"  width="188" height="140" alt="تاریخ باستان"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/ancient -->
+
+
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+
+		</div>
+		<div class="lcolomn leftside">
+			<div class="leftvnavi"><div>
+				<ul class="reset">
+               		
+				 					<li><a href="../../../archive/1398/12.html"><b> اسفند 1398</b></a></li>
+									<li><a href="../../../archive/1398/11.html"><b> بهمن 1398</b></a></li>
+									<li><a href="../../../archive/1398/10.html"><b> دی 1398</b></a></li>
+									<li><a href="../../../archive/1398/9.html"><b> آذر 1398</b></a></li>
+									<li><a href="../../../archive/1398/8.html"><b> آبان 1398</b></a></li>
+									<li><a href="../../../archive/1398/7.html"><b> مهر 1398</b></a></li>
+									<li><a href="../../../archive/1398/6.html"><b> شهریور 1398</b></a></li>
+									<li><a href="../../../archive/1398/5.html"><b> مرداد 1398</b></a></li>
+									<li><a href="../../../archive/1398/4.html"><b> تیر 1398</b></a></li>
+									<li><a href="../../../archive/1398/3.html"><b> خرداد 1398</b></a></li>
+									<li><a href="../../../archive/1398/2.html"><b> اردیبهشت 1398</b></a></li>
+									<li><a href="../../../archive/1398/1.html"><b> فروردین 1398</b></a></li>
+									<li><a href="../../../archive/1397/12.html"><b> اسفند 1397</b></a></li>
+									<li><a href="../../../archive/1397/11.html"><b> بهمن 1397</b></a></li>
+									<li><a href="../../../archive/1397/10.html"><b> دی 1397</b></a></li>
+									<li><a href="../../../archive/1397/9.html"><b> آذر 1397</b></a></li>
+									<li><a href="../../../archive/1397/8.html"><b> آبان 1397</b></a></li>
+									<li><a href="../../../archive/1397/7.html"><b> مهر 1397</b></a></li>
+									<li><a href="../../../archive/1397/6.html"><b> شهریور 1397</b></a></li>
+									<li><a href="../../../archive/1397/5.html"><b> مرداد 1397</b></a></li>
+									<li><a href="../../../archive/1397/4.html"><b> تیر 1397</b></a></li>
+									<li><a href="../../../archive/1397/3.html"><b> خرداد 1397</b></a></li>
+									<li><a href="../../../archive/1397/2.html"><b> اردیبهشت 1397</b></a></li>
+									<li><a href="../../../archive/1397/1.html"><b> فروردین 1397</b></a></li>
+									<li><a href="../../../archive/1396/12.html"><b> اسفند 1396</b></a></li>
+									<li><a href="../../../archive/1396/11.html"><b> بهمن 1396</b></a></li>
+									<li><a href="../../../archive/1396/10.html"><b> دی 1396</b></a></li>
+									<li><a href="../../../archive/1396/9.html"><b> آذر 1396</b></a></li>
+									<li><a href="../../../archive/1396/8.html"><b> آبان 1396</b></a></li>
+									<li><a href="../../../archive/1396/7.html"><b> مهر 1396</b></a></li>
+									<li><a href="../../../archive.html"><b>نمایش تمام مطالب</b></a></li>
+							</ul>
+			</div></div>
+			<div class="lbox"><div class="lbox">
+				<div class="block btopnews">
+					<h3>درباره ما</h3>
+<center><div style="text-align:center"><img src="../../../../../static.mihanblog.com/public/user_data/web_photo/367/1100278.jpg@2386"  /></div></center>
+
+			<hr />
+			مجموعه تبریز ویکی لینکلر<br />
+  Tabriz WikiLinks<br />
+آغاز وبلاگ در آذر ماه 1391<br />
+*******************<br />
+<br />
+وبلاگ تبریز ویکی لینکلر  <br />
+Tabrizlinks.mihanblog.com <br />
+<br />
+وبلاگ تبریز دیجی لینکلر<br />
+Tabrizdigilinks.mihanblog.com <br />
+<br />
+اینستاگرام  تبریز ویکی لینکلر<br />
+Instagram.com/tabrizlinks <br />
+<br />
+فیس بوک تبریز ویکی لینکلر<br />
+Facebook.com/tabrizlinks <br />
+<br />
+شبکه ویدیویی نماشا تبریز لینک<br />
+Namasha.com/tabrizlinks<br />
+<br />
+آپارات ویدیویی شبکه سهند<br />
+Aparat.com/sahandtv <br />
+<br />
+آپارات ویدیویی سهند موزیک<br />
+Aparat.com/sahandmusic <br />
+<br />
+آپارات ویدیویی سهند کارتون<br />
+Aparat.com/sahandcartoon <br />
+<br />
+آپارات ویدیویی آشپزی آذربایجان<br />
+Aparat.com/sahandchef <br />
+<br />
+آپارات ویدیویی بازنشر تبریز 2018<br />
+Aparat.com/tabriz_2018<br />
+<br />
+کانال یوتیوب ویدیویی<br />
+youtube.com/tabrizlinks<br />
+<br />
+گالری لنزور تبریز ویکی لینکلر<br />
+Lenzor.com/tabrizlinks <br />
+<br />
+تلگرام تبریز ویکی لینکلر<br />
+https://t.me/tabrizlinks<br />
+@tabrizlinks<br />
+<br />
+		    <br />ایجاد کننده وبلاگ : <a href="../../../author/944998.html">تبریز قارتال</a>
+				
+				<br /><br />
+				<center></center>
+				<br />
+
+				</div>
+			</div></div>
+			<div class="lboxfoot">
+				<div class="block bfriends">
+				
+					<ul class="reset">
+						
+
+
+
+
+<!-- start logo cod off https://www.google.com/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://www.google.com/" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/goole.png"  width="172" height="120" alt="گوگل"></a></p><!--finish logo cod off https://www.google.com/ -->
+
+
+<!-- start logo cod off https://azb.wikipedia.org/wiki/%D8%A2%D9%86%D8%A7_%D8%B5%D9%81%D8%AD%D9%87 --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://azb.wikipedia.org/wiki/%D8%A2%D9%86%D8%A7_%D8%B5%D9%81%D8%AD%D9%87"  target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/AZwikipedia.jpg"  width="172" height="140" alt="ویکی پدیا"></a></p><!--finish logo cod off https://azb.wikipedia.org/wiki/%D8%A2%D9%86%D8%A7_%D8%B5%D9%81%D8%AD%D9%87 -->
+
+<!-- start logo cod off http://kitablar.org/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://kitablar.org/"  rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/kitab.gif"  width="172" height="140" alt="کتاب ترکی"></a></p><!--finish logo cod off http://kitablar.org/ -->
+
+<!-- start logo cod off http://www.lehceler.com/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.lehceler.com/"  rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/turkdictionary.jpg"  width="172" height="140" alt="دیکشنری زبان ترکی"></a></p><!--finish logo cod off http://www.lehceler.com/ -->
+
+<!-- start logo cod off http://www.turuz.com/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.turuz.com/" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/Turuz_Sozlugu.jpg"  width="172" height="110" alt="دایره المعارف مجازی"></a></p><!--finish logo cod off http://www.turuz.com/ -->
+
+<!-- start logo cod off https://www.instagram.com/urmialake/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://www.instagram.com/urmialake/"  target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/urmialake.JPG"  width="172" height="130" alt="دریاچه ارومیه"></a></p><!--finish logo cod off https://www.instagram.com/urmialake/ -->
+
+<!-- start logo cod off http://mostamandan.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://mostamandan.ir/"  rel=”nofollow”  target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/mostmandan.png"  width="172" height="130" alt="مستمندان تبریز"></a></p><!--finish logo cod off http://mostamandan.ir/ -->
+
+<!-- start logo cod off http://iranestekhdam.ir/category/agahi-estekhdam/estekhdam-ostani/%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A2%D8%B0%D8%B1%D8%A8%D8%A7%DB%8C%D8%AC%D8%A7%D9%86-%D8%B4%D8%B1%D9%82%DB%8C/--><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://iranestekhdam.ir/category/agahi-estekhdam/estekhdam-ostani/%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A2%D8%B0%D8%B1%D8%A8%D8%A7%DB%8C%D8%AC%D8%A7%D9%86-%D8%B4%D8%B1%D9%82%DB%8C/"  target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/estekhdamiran.png"  width="172" height="120" alt="استخدامی"></a></p><!--finish logo cod off http://iranestekhdam.ir/category/agahi-estekhdam/estekhdam-ostani/%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A2%D8%B0%D8%B1%D8%A8%D8%A7%DB%8C%D8%AC%D8%A7%D9%86-%D8%B4%D8%B1%D9%82%DB%8C/ -->
+
+<!-- start logo cod off http://www.tabrizsearch.com/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.tabrizsearch.com/"  target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/TS.png"  width="172" height="100" alt="تبریز سرچ"></a></p><!--finish logo cod off http://www.tabrizsearch.com/ -->
+
+<!-- start logo cod off https://divar.ir/tabriz/%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2/browse/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://divar.ir/tabriz/%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2/browse/" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/divar.png"  width="172" height="100" alt="دیوار تبریز"></a></p><!--finish logo cod off https://divar.ir/tabriz/%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2/browse/ -->
+
+<!-- start logo cod off http://sevin.dance/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://sevin.dance/" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/azeri.jpg"  width="172" height="140" alt="رقص آذری "></a></p><!--finish logo cod off http://sevin.dance/ -->
+
+
+<!-- start logo cod off http://zanjan2rism.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../../../zanjan2rism.mihanblog.com/index.html" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/zancan2rism.jpg"  width="172" height="130" alt="زنجان توریسم"></a></p><!--finish logo cod off http://zanjan2rism.mihanblog.com/ -->
+
+<!-- start logo cod off http://www.tabrizmodern.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.tabrizmodern.ir/"  target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/tabrizmodern2b.jpg"  width="172" height="110" alt="تبریز مدرن"></a></p><!--finish logo cod off http://www.tabrizmodern.ir/ -->
+
+<!-- start logo cod off http://www.tripadvisor.com/Tourism-g3532667-East_Azerbaijan_Province-Vacations.html --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.tripadvisor.com/Tourism-g3532667-East_Azerbaijan_Province-Vacations.html" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/tripad.png"  width="172" height="100" alt="tripadvisor"></a></p><!--finish logo cod off http://www.tripadvisor.com/Tourism-g3532667-East_Azerbaijan_Province-Vacations.html -->
+
+
+
+<!-- start logo cod off http://www.trakhtorlink.com/default.aspx --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.trakhtorlink.com/default.aspx" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/ttlink.png"  width="172" height="120" alt="تراکتور لینک"></a></p><!--finish logo cod off http://www.trakhtorlink.com/default.aspx/ -->
+
+<!-- start logo cod off http://fava.tabriz.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://fava.tabriz.ir/" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/fava.jpg"  width="172" height="120" alt="آمار و داده های تبریز"></a></p><!--finish logo cod off http://fava.tabriz.ir/ -->
+
+
+<!-- start logo cod off http://nasrnews.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://nasrnews.ir/" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/NasrNews.jpg"  width="172" height="120" alt="نصرنیوز"></a></p><!--finish logo cod off http://nasrnews.ir/ -->
+
+<!-- start logo cod off http://shahryarnews.net/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://shahryarnews.net/" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/shahriar.jpg"  width="172" height="120" alt="خبرگزاری شهریار"></a></p><!--finish logo cod off http://shahryarnews.net/ -->
+
+
+
+<!-- start logo cod off https://ca.axar.az/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://ca.axar.az/" rel=”nofollow” target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/axar.JPG"  width="172" height="130" alt="آخار آذ"></a></p><!--finish logo cod off https://ca.axar.az/ -->
+
+
+
+<!-- start logo cod off http://azargalam.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://azargalam.ir/" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/azarghalam.png"  width="172" height="120" alt="آذرقلم"></a></p><!--finish logo cod off http://azargalam.ir/ -->
+
+
+<!-- start logo cod off http://durnanews.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://durnanews.ir/" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/durnanews.jpg"  width="172" height="120" alt="دورنا نیوز"></a></p><!--finish logo cod off http://durnanews.ir/ -->
+
+<!-- start logo cod off http://www.eachto.org/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.eachto.org/" rel=”nofollow”  target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/miras.jpg"  width="172" height="120" alt="میراث فرهنگی آذربایجان"></a></p><!--finish logo cod off http://www.eachto.org/ -->
+
+
+<!-- start logo cod off http://tabriz.irib.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://tabriz.irib.ir/" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/sahandtv.png"  width="172" height="130" alt="صدا و سیمای مرکز استان آذربایجانشرقی"></a></p><!--finish logo cod off http://tabriz.irib.ir/ -->
+
+<!-- start logo cod off http://ostan-as.gov.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://ostan-as.gov.ir/" target="_blank"><img border="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/east_azarbayjan.png"  width="172" height="172" alt="استانداری آذربایجان شرقی"></a></p><!--finish logo cod off http://ostan-as.gov.ir/ -->
+
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="clr"></div>
+	</div></div></div>
+		<div class="footer"><div><div>
+			<ul class="reset">
+				<li class="lcolomn">
+					<b>
+					 CopyRight © 2010 - 2011 <a href="../../../../index.html" title="tabrizlinks Group">tabrizlinks Group</a> , All Rights Reserved | <a href="../../../rss/index.html">RSS 2</a>
+					</b><br />
+
+					<span><a target="_blank" href="http://parstools.com/" title="ParsTools.com">Design by ParsTools.Com</a></span>
+				</li>
+				<li class="rcolomn">
+					<ul>
+						<li><a href="../../../../index.html"><img src="http://tem.parstools.com/skyback/images/counter.png" alt="counter" /></a></li>
+						<li><a href="../../../../index.html"><img src="http://tem.parstools.com/skyback/images/counter.png" alt="counter" /></a></li>
+						<li><a href="../../../../index.html"><img src="http://tem.parstools.com/skyback/images/counter.png" alt="counter" /></a></li>
+					</ul>
+
+				</li>
+			</ul>
+		</div></div></div>
+	</div>
+</div>
+<br />
+</div>
+</body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'tabrizlinks.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

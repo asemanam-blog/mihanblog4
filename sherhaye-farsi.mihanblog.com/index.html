@@ -1,0 +1,2651 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://sherhaye-farsi.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*339102*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[167]='67';commentCnt[563]='0';commentCnt[564]='0';commentCnt[565]='1';commentCnt[566]='0';commentCnt[567]='0';commentCnt[568]='0';commentCnt[569]='0';commentCnt[570]='2';commentCnt[571]='0';commentCnt[572]='31';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[167]='91';
+mihanblogDisLikeArrCnt[167]='18';
+mihanblogLikeArrCnt[563]='19';
+mihanblogDisLikeArrCnt[563]='3';
+mihanblogLikeArrCnt[564]='16';
+mihanblogDisLikeArrCnt[564]='3';
+mihanblogLikeArrCnt[565]='15';
+mihanblogDisLikeArrCnt[565]='2';
+mihanblogLikeArrCnt[566]='12';
+mihanblogDisLikeArrCnt[566]='1';
+mihanblogLikeArrCnt[567]='11';
+mihanblogDisLikeArrCnt[567]='4';
+mihanblogLikeArrCnt[568]='8';
+mihanblogDisLikeArrCnt[568]='1';
+mihanblogLikeArrCnt[569]='12';
+mihanblogDisLikeArrCnt[569]='4';
+mihanblogLikeArrCnt[570]='12';
+mihanblogDisLikeArrCnt[570]='3';
+mihanblogLikeArrCnt[571]='17';
+mihanblogDisLikeArrCnt[571]='4';
+mihanblogLikeArrCnt[572]='10';
+mihanblogDisLikeArrCnt[572]='2';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://sherhaye-farsi.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://sherhaye-farsi.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','531');
+	setStatVar('total_author','2');
+	setStatVar('modify_date','شنبه 29 خرداد 1395');
+	
+	setStatVar('today_view','109');
+	setStatVar('yesterday_view','192');
+	
+	setStatVar('this_month_view','5820');
+	setStatVar('last_month_view','7784');
+
+	setStatVar('total_view','2207215');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (14:53)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://sherhaye-farsi.mihanblog.com/statupdate/?data[refereruri]=http://blogdooni.mihanblog.com/page/5&data[postid]=&data[requesturi]=/&data[sdate]=1607772910&data[hash]=00441b25cce3239fab42e3bbb5a01bb6&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://sherhaye-farsi.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://sherhaye-farsi.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<style>
+
+
+
+body{
+	padding:0px;
+	margin:0px;
+	font-family:Trebuchet MS, Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	background:#000000;
+	width:100%;
+	direction:rtl;
+}
+
+img{
+	border:0px;
+}
+
+a{
+	color:#d21119;
+	text-decoration:none;
+}
+
+form, table, ul, li{
+	padding:0px;
+	margin:0px;;
+}
+
+.sub{
+	border:0px;
+}
+
+input, textarea{
+	
+	font-size:12px
+}
+
+#page{
+	width:820px;
+
+/*
+	text-align:left;
+	*/
+}
+
+/*header*/
+#header{
+	width:100%;
+	height:362px;
+	text-align:right;
+	direction:ltr;
+}
+
+
+
+
+
+#header_top{
+	width:100%;
+	height:111px;
+	background:url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/header_top_bg.gif) no-repeat bottom;
+}
+
+#header_center{
+	width:100%;
+	height:51px;
+	background:url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/header_center_bg.gif) no-repeat bottom;
+}
+
+#header_end #header_center_text{
+	font-family:tahoma,Verdana, Arial, Helvetica, sans-serif;
+	padding-right:50px;
+	padding-top:15px;
+	direction:rtl;
+}
+
+#header_end #header_center_text #header_center_title{
+	font-size:19px;
+	color:#ffffff;
+	padding-bottom:10px;
+}
+
+#header_end #header_center_text #header_center_body{
+	font-size:11px;
+	line-height:18px;
+	width:700px;
+	color:#ffffff;
+	margin-left:50px;
+	margin-right:0px;
+	
+}
+#header_end #header_center_text #header_center_body a{
+	color:#fff;
+}
+#header_center_body img{
+	float:right;
+	width:150px;
+	height:150px;
+	margin-left:10px;
+}
+
+#header_end{
+	width:100%;
+	height:200px;
+	background:url(http://s1.picofile.com/file/7550582147/i0fmjtrx2qd1nxmw2vr.gif) 
+no-repeat bottom;
+}
+
+#header_title{
+	color:#FFFFFF;
+	direction:rtl;
+	font-size:31px;
+	overflow:hidden;
+	padding-right:45px;
+	direction:rtl;
+	padding-top:40px;
+	white-space:nowrap;
+	width:750px;
+	line-height:36px;
+}
+
+#header_title span{
+	color:#ffffff;
+	font-size:18px;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	position:relative;
+	top:0px;
+}
+
+/*menu*/
+
+#menu_items{
+	/*width:70%;*/
+	float:right;
+	padding-right:10px;
+}
+
+#menu_search_box{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#7f7f7f;
+	font-size:11px;
+	float:left;
+	width:30%;
+	padding-top:20px;
+}
+
+#menu_search_box input.s{
+	width:120px;
+	font-size:13px;
+	color:#666666;
+	border:0px;
+	background:none;
+}
+
+#menu{
+	padding-left:30px;
+}
+
+div#menu #menu_pad{
+	font-family:tahoma, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	color:#FFFFFF;
+}
+
+div#menu a{
+	color:#FFFFFF;
+	line-height:25px;
+}
+
+div#menu a:hover{
+	color:#ea1c24;
+	line-height:25px;
+}
+
+div#menu #menu_items div{
+	float:right;
+	margin-right:15px;	
+	padding-left:8px;
+	height:30px;
+	font-weight:bold;
+	
+}
+
+div#menu #menu_items div:hover
+{
+
+	color:#ea1c24;
+	font-weight:bold;
+}
+
+
+
+/* end menu */
+/* end header */
+
+/* blog*/
+
+div#page #blog{
+	background:url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/body_bg.gif) repeat-y top left;
+	float:left;
+	width:820px;
+}
+
+div#blog #blog_top{
+	background:url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/body_top_bg.gif) no-repeat top left;
+	float:left;
+	width:820px;
+	text-align:right;
+}
+
+div#blog #blog_left{
+	width:600px;
+	float:left;
+	padding-top:25px;
+}
+
+div#blog #blog_right{
+	width:200px;
+	float:left;
+}
+
+/* sidebar*/
+
+#blog_right #sidebar{
+	
+	padding-right:20px;
+	padding-top:15px;
+	width:180px;
+	direction:rtl;
+	
+}
+
+
+#blog_right #sidebar ul{
+	padding:0px;
+	margin:0px;
+	padding-bottom:5px;
+	text-align:right;
+	
+}
+#blog_right #sidebar li{
+	padding:0px;
+	margin:0px;
+	list-style-type:none;
+}
+
+#blog_right #sidebar h2{
+	color:#dc4c52;
+	font-size:18px;
+	margin:0px;
+	padding-bottom:5px;
+	padding-top:3px;
+	padding-left:10px;
+	font-weight:normal;
+	background:url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/h2_li.gif) no-repeat top left;
+}
+
+#blog_right #sidebar ul li{
+	color:#2c2c2c;
+	font-size:11px;
+	font-family:tahoma, Arial, Helvetica, sans-serif;
+	display:block;
+	padding-left:5px;
+	padding-bottom:10px;
+}
+
+#blog_right #sidebar li a{
+	color:#2c2c2c;
+	font-size:11px;
+	font-family:tahoma, Arial, Helvetica, sans-serif;
+	text-decoration:none;
+	font-weight:normal;
+
+}
+
+#blog_right #sidebar ul li ul li{
+	border-bottom:1px dotted gray;
+	font-size:11px;
+	font-family:tahoma, Arial, Helvetica, sans-serif;	
+	padding-right:10px;
+	padding-bottom:5px;
+	background: url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/cat_li.gif) right 50% no-repeat;
+}
+#blog_right #sidebar ul li .stat li{
+	line-height:19px;
+}
+#blog_right #sidebar ul li .cloud a{
+	border:0px;
+	background: none;
+	float:right;	
+	
+}
+#blog_right #sidebar ul li .cloud a:hover{	
+	color:#d21119;
+} 
+
+#blog_right #sidebar ul li ul li ul li{
+	font-size:11px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	color:#2c2c2c;
+	padding-bottom:0px;
+}
+
+#blog_right #sidebar ul li ul li ul li a{
+	font-size:11px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:normal;
+	color:#2c2c2c;
+}
+
+
+/*
+#blog_right #sidebar ul li.widget .cloud li{
+	padding:5px;
+
+}
+*/
+#blog_right #sidebar ul li.widget .poll li{
+	line-height:25px;
+	background:none;
+	padding-right:5px;
+
+}
+#blog_right #sidebar ul li.widget .poll_question{
+	color:#176CA2;
+	padding:5px;
+	line-height:20px;
+}
+#blog_right #sidebar ul li.widget ul li ul li{
+	border-bottom:0;
+	background: none;
+	padding-left:5px;
+}
+#blog_right #sidebar ul li.widget ul li a img{
+	border-bottom:0;
+	padding-top:1px;
+}
+
+#blog_right #sidebar ul li ul li ul{
+	padding-left:10px;
+}
+
+
+#blog_right #sidebar ul li.widget ul li a{
+	/*background: url(/public/public/user_data/template/16/images/cat_li.gif)  top no-repeat;*/
+	margin-right:5px;
+}
+
+
+
+
+
+/*inside*/
+
+#blog_left #blog_comm{
+	margin-left:60px;
+	float:left;
+	width:520px;
+}
+
+#blog_left #blog_comm h2{
+	font-size:21px;
+	font-weight:bold;
+	color:#bb2329;
+	position:relative;
+	top:-10px;
+	margin-left:0px;
+	padding-left:0px;
+}
+
+#blog_left #blog_comm .comm_panel{
+	height:16px;
+	background:#f1f1f1;
+	padding-right:10px;
+	padding-left:10px;
+	padding-top:4px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	width:94%;
+}
+
+#blog_left #blog_comm .comm_panel a{
+	font-weight:bold;
+	color:#000000;
+}
+
+#blog_left #blog_comm .comm_text{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	line-height:18px;
+	padding-top:0px;
+	padding-bottom:5px;
+	padding-left:5px;
+	padding-right:5px;
+	border-bottom:3px solid #f1f1f1;
+	width:94%;
+	color:#7e7e7e;
+}
+
+#blog_left #blog_comm .comm_text p{
+	padding:0px;
+	margin:0px;
+	margin-top:10px;
+	text-indent:20px;
+}
+
+#blog_left #comments_from_bg{
+	background:url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/blog_form_bg.gif) no-repeat top left;
+	width:500px;
+	padding-bottom:30px;
+}
+
+#blog_left #blog_comm #comm_post_title{
+	width:430px;
+	height:65px;
+	font-size:21px;
+	font-weight:normal;
+	padding-left:15px;
+	padding-top:5px;
+	color:#bb2329;
+}
+
+#blog_left #blog_comm #comm_post_form{
+	padding-left:25px;
+}
+
+#blog_left #blog_comm #comm_post_form input.text{
+	font-size:14px;
+}
+
+#blog_left #blog_comm #comm_post_form td{
+	list-style:none;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	padding-bottom:10px;
+	padding-right:10px;
+	color:#000000;
+}
+
+#blog_left #blog_comm #comm_post_form td.right{
+	text-align:right;
+	vertical-align:top;
+}
+
+
+/* end sidebar*/
+
+/* blod item*/
+
+#blog_left .item_class{
+	width:90%;
+	padding-left:50px;
+	padding-bottom:30px;
+	float:left;
+}
+
+#blog_left .item_class .item_class_title{
+	width:540px;
+}
+
+#blog_left .item_class .item_class_title_text{
+	min-height:52px;
+}
+
+#blog_left .item_class .item_class_title_text .titles{
+	float:left;
+	width:98%;
+	padding-bottom:5px;
+}
+
+#blog_left .item_class .item_class_title_text .top_title_top{
+	font-size:11px;
+	padding-right:10px;
+	padding-left:0px;
+	color:#737373;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+#blog_left .item_class .item_class_title_text .top_title{
+	padding-right:10px;
+	padding-left:0px;
+}
+
+#blog_left .item_class .item_class_title_text .top_title a{
+	font-size:21px;
+	color:#d21119;
+	font-weight:bold;
+}
+
+#blog_left .item_class .item_class_title_text .end_title{
+	font-size:10px;
+	padding-right:10px;
+	padding-left:0px;
+	color:#000000;
+	font-family:tahoma, Arial, Helvetica, sans-serif;
+}
+
+#blog_left .item_class .item_class_title_text .end_title a{
+	font-size:10px;
+	font-weight:bold;
+	color:#d21119;
+}
+
+#blog_left .item_class .item_class_text{
+	color:#595959;
+	font-size:11px;
+	line-height:20px;
+	padding-left:5px;
+	padding-right:0px;
+	padding-bottom:5px;
+	padding-top:10px;
+	background:url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/title_line.gif) no-repeat center top;
+	float:left;
+	width:530px;
+	overflow:hidden;
+	font-family:tahoma, Arial, Helvetica, sans-serif;
+}
+
+#blog_left .item_class .item_class_text p{
+	padding:0px;
+	margin:0px;
+	margin-top:10px;
+	text-indent:20px;
+}
+
+#blog_left .item_class .item_class_panel{
+	height:21px;
+	background:#f1f1f1;
+	margin-left:0px;
+	padding-right:10px;
+	padding-left:10px;
+	padding-top:5px;
+	float:left;
+	width:515px;
+	text-align:left;
+}
+
+#blog_left .item_class .item_class_panel a{
+	font-family:tahoma, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:11px;
+	color:#d21119;
+}
+
+#blog_left .item_class .item_class_panel a:hover{
+	font-family:tahoma, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	font-size:11px;
+	text-decoration:underline;
+	color:#d21119;
+}
+
+#blog_left .item_class .item_class_panel a.panel_read{
+	background:url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/read.gif) no-repeat left center;
+	padding-left:10px;
+	color:#d21119;
+}
+
+#blog_left .item_class .item_class_panel span.panel_comm a{
+	padding-left:0px;
+	color:#d21119;
+}
+
+/* end blog */
+
+/* footer */
+
+#footer{
+	width:100%;
+	height:140px;
+	text-align:center;
+	float:left;
+	background:url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/footer_bg.gif) no-repeat top left;	
+	direction:rtl;
+}
+#footer strong{font-size:9px}
+div#footer #footer_text{
+	color:#ffffff;
+	line-height:20px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	padding-top:40px;
+	padding-bottom:10px;
+}
+
+div#footer #footer_text a{
+	color:#ffffff;	
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-weight:bold;
+}
+
+
+/* end footer */
+
+
+
+#blog_left .navigation{
+	padding-bottom:40px;
+	text-align:center;
+}
+
+#blog_left .navigation ul{
+}
+
+#blog_left .navigation ul li{
+	list-style:none;
+	display:inline;
+	padding-right:20px;
+}
+
+#blog_left .navigation .alignright a{
+	font-weight:bold;
+	font-size:11px;
+	padding-right:15px;
+	color:#000000;
+}
+
+#blog_left .navigation .alignleft a{
+	font-weight:bold;
+	font-size:11px;
+	padding-left:8px;
+	color:#000000;
+}
+
+div#blog h2{
+	margin:0px;
+	padding:0px;
+	padding-left:40px;
+	padding-top:0px;
+	font-size:19px;
+	color:#d21119;
+}
+
+div#blog .entry{
+	padding-left:40px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#7e7e7e;
+}
+
+div#blog .entry p{
+	padding:0px;
+	margin:0px;
+	margin-top:10px;
+	text-indent:20px;
+}
+
+.item_class blockquote, #blog_comm blockquote{
+	background:url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/block_bg.gif) no-repeat right top;
+	padding-left:10px;
+	margin:0px;
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-left:20px;
+	padding-top:5px;
+}
+
+.item_class blockquote blockquote, #blog_comm blockquote blockquote{
+	background:url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/block2_bg.gif) no-repeat left top;
+	padding-left:10px;
+	margin:0px;
+	margin-top:5px;
+	margin-bottom:5px;
+	margin-left:20px;
+}
+
+.item_class ol, #blog_comm ol{
+	background:url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/ol_bg.png) repeat-y left;
+	color:#7e7e7e;
+}
+
+.item_class ol li, #blog_comm ol li{
+	color:#7e7e7e;
+}
+
+.item_class ul, #blog_comm ul{
+	padding-right:30px;
+	direction:rtl;
+}
+
+.item_class img, #blog_comm img{
+	/*float: right;
+	margin:5px;*/
+}
+
+.item_class strong, #blog_comm strong{
+	color:#000000;
+}
+.main_body{
+ font-family: tahoma,Arial,Helvetica,sans-serif;
+ font-size: small;
+}
+
+.author_photo{
+	margin:5px 5px 5px 17px;
+	color:#fff;
+	float:right;
+	text-indent:0px;
+}
+
+.today_view{
+float:left;
+margin-top:20px;
+}
+.recent_posts{
+	font-weight:bold;
+	font-size:19px;
+	margin-right:30px;
+	padding-bottom:10px;
+}
+.recent_posts div{
+	height:18px;
+}
+.postrecent_body
+{
+	padding-right:30px;
+}
+/* ***************************************************************************** CLEAR FIX  */
+.clearfix {display: inline-block;}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+/* ************************************************************************** EO CLEAR FIX   */
+
+
+.btn{
+	-x-system-font:none;
+	background:url(http://sherhaye-farsi.mihanblog.com/public/public/user_data/template/16/images/sub.gif) ;		
+	color:#fff;
+	cursor:pointer;
+	float:none;
+	font-family:Tahoma;
+	font-size:12px;
+	font-size-adjust:none;
+	font-stretch:normal;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	height:25px;
+	line-height:normal;
+	text-align:center;
+	padding:0px 10px;
+	border:1px solid #F1F1F1;
+}
+.general{
+	font-family:tahoma;
+	font-size:12px;
+	margin:5px 15px;	
+}
+.general a{
+	font-family:tahoma;
+	font-size:12px;
+	margin:3px 0;
+	line-height:22px;	
+}
+.cloud li{
+	list-style:none;
+	border:none;
+}
+.mihan_logo{
+	background: url(http://sherhaye-farsi.mihanblog.com/public/public/images/logo/poweredby.gif) no-repeat top center;
+	text-align:center;
+	height:131px;
+	margin-top:10px;
+}
+
+.page_box ul{
+	direction:rtl;
+	height:17px;
+	margin:3px auto;
+	max-width:560px;
+	text-align:left;
+	width:560px;
+	list-style:none;
+}
+.page_box ul{
+	height:17px;
+}
+.page_box li{
+	float:right;
+	margin-right:5px;
+	font-family:tahoma;
+}
+.page_box a{		
+	border:1px solid #CCCCCC;
+	display:block;
+	line-height:17px;
+	text-align:center;
+	width:17px;	
+}
+.page_box a b{
+	color:#fff;	
+	background:#D21119  none repeat scroll 0 0;
+	
+	display:block;
+	line-height:17px;
+	text-align:center;
+	width:17px;	
+	color:#fff;
+}
+
+#parentheses p{
+	float:right;
+	padding:0px 1px;
+	margin:0px;
+	direction:rtl;
+	text-align:right;
+	cursor:pointer;
+}
+
+.cb_share{
+	text-align:left;
+}
+.cb_share a{
+	font-size:11px;	
+	text-decoration:none
+}
+.cb_share a img{
+	padding:0 0 0 5px;
+}
+
+
+</style>
+<head>
+
+ <script language="JavaScript" type="text/javascript">
+
+  function getPdf(inline,url){
+	if(!url) url=document.location.href;
+	var param={
+		'url'		:	url,
+		'plain'		:	'1',
+		'filename'	:	(!inline)?url.replace(/[^a-z|0-9|-|_]/ig,'_').replace(/_{2,}/g,'_')+'.pdf':''
+	};
+	var temp=[];
+	for(var key in param)
+		temp.push(encodeURIComponent(key)+'='+encodeURIComponent(param[key]));
+	document.location.href='http://online.htmltopdf.de/?'+temp.join('&');
+}
+
+  </script>
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="" />
+<meta name="keyword" content="شعر،شعرهای فارسی،شعر فارسی،شعر های فارسی،اشعار،حافظ،سعدی،مولوی" />
+
+<link rel="alternate" type="application/rss+xml" title="شعر های فارسی" href="http://sherhaye-farsi.mihanblog.com/post/rss/" />
+<link rel="alternate" type="application/atom+xml" title="شعر های فارسی" href="http://sherhaye-farsi.mihanblog.com/post/atom/" />
+
+<title>شعر های فارسی</title>
+
+<script type="text/javascript" src="http://api.vajehyab.com/js/magicword.js"></script>
+
+</head>
+
+<body>
+<center>
+<div id="page">
+
+<div id="header">
+	<div id="header_top">
+		<div id="header_title">
+			شعر های فارسی <br>
+			<span></span>
+		</div>
+	</div>
+	<div id="header_center">
+		<div id="menu">
+			<div id="menu_pad">
+				<div id="menu_items">
+					&nbsp;&nbsp;<div><a href="index.html">خانه</a></div>
+					&nbsp;&nbsp;<div><a href="mailto:">پست الکترونیک</a></div>
+					&nbsp;&nbsp;<div><a href="javascript:messageForm()">تماس با ما</a></div>
+					&nbsp;&nbsp;<div><a href="http://sherhaye-farsi.mihanblog.com/post/rss/">RSS</a></div>
+					&nbsp;&nbsp;<div><a href="http://sherhaye-farsi.mihanblog.com/post/atom/">Atom</a></div>&nbsp;&nbsp;
+				</div>				
+			</div>
+
+		</div>
+	</div>
+	<div id="header_end">
+		<div id="header_center_text">
+			<div id="header_center_title">
+				
+			</div>
+			<div id="header_center_body">
+								<br>
+				<a href="http://sherhaye-farsi.mihanblog.com/post/author/231931"><b>مهدی شرق</b></a>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div id="blog">
+<div id="blog_top">
+	<div id="blog_left">
+	
+						<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+						<div class="item_class clearfix">
+					<div class="item_class_title">
+						<div class="item_class_title_text">
+							<div class="titles">
+
+
+
+								<div class="top_title_top">یکشنبه 18 تیر 1391&nbsp;&nbsp;19:58</div>
+								<div class="top_title"><a href="http://sherhaye-farsi.mihanblog.com/post/167" rel="bookmark">دریافت معنی کلمه ی مورد نظر شما با کمک واژه یاب</a></div>
+								<div class="end_title"> توسط: <a href="http://sherhaye-farsi.mihanblog.com/post/author/231931" >مهدی شرق</a></div>
+							</div>
+
+							
+						</div>
+					</div>
+					
+					<div class="item_class_text clearfix">
+					
+						<div class="cb_share clearfix">
+							<a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://sherhaye-farsi.mihanblog.com/post/167&amp;title=دریافت معنی کلمه ی مورد نظر شما با کمک واژه یاب">
+								ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+							</a>
+						</div>					
+				
+
+
+
+						<p><span class="main_body">
+							<div class="author_photo"></div>
+							<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><FONT color=#ff0000 size=3 face=arial,helvetica,sans-serif>
+<P align=center><FONT color=#ff0000 size=3 face=arial,helvetica,sans-serif>توجه : این یک پست ثابت است،مطالب وبلاگ در پایین قرار دارند.</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif><IMG src="http://s3.picofile.com/file/7550584836/01_vajeh_yab.jpg" width=450 height=300></FONT></P>
+<P align=right><FONT size=3 face=arial,helvetica,sans-serif>با سلام</FONT></P>
+<P align=right><FONT size=3 face=arial,helvetica,sans-serif>از این پس می توانید با دوبار کلیک کردن بر روی کلمات معنی کلمات را دریافت کنید.</FONT></P>
+<P align=right><FONT size=3 face=arial,helvetica,sans-serif>شما می توانید برای دریافت معنی کلمات دشوار از این واژه یاب استفاده نمایید</FONT></P>
+<P align=right><FONT size=3 face=arial,helvetica,sans-serif>از شما عزیزان خواهش می کنم اگر هرگونه مشکلی در اجرای این برنامه(واژه یاب) یا هر قسمتی از وبلاگ وجود داشت آن را حتما با مدیران وبلاگ در میان بگذارید تا ما در رفع آن بر آییم.</FONT></P>
+<P align=center><FONT color=#ff0000 size=3 face=arial,helvetica,sans-serif>توجه : این یک پست ثابت است،مطالب وبلاگ در پایین قرار دارند.</FONT></P></FONT>							</span>
+						</p>
+						<p><span class="main_body"></span><p>
+						<br>
+
+<!-- Rating by www.theme-designer.com -->
+<script type="text/javascript" src="http://www.theme-designer.com/s/vote/rating.php?color=444444&bg=FFFFFF&kc=555555&h=1&kadr=0&mod=7&url=sherhaye-farsi.mihanblog.com//post/167"></script>
+<!-- Rating by www.theme-designer.com -->
+
+						<ul>
+							<li><font size="2" face="Verdana">آخرین ویرایش:جمعه 19 آبان 1391</font></li>
+																					
+
+						</ul>
+
+
+					
+<script>mihanblogPostLike('167','like')</script>                               </br>
+
+
+
+					</div>
+					<div class="item_class_panel">
+						<div>
+							<span class="panel_comm"><a target="_self" href="javascript:newComment(167)">نظرات(<script>setCommentCnt(167)</script>)</a></span>&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;
+
+						</div>
+					</div>
+				</div>
+								<div class="item_class clearfix">
+					<div class="item_class_title">
+						<div class="item_class_title_text">
+							<div class="titles">
+
+
+
+								<div class="top_title_top">جمعه 28 خرداد 1395&nbsp;&nbsp;23:00</div>
+								<div class="top_title"><a href="http://sherhaye-farsi.mihanblog.com/post/572" rel="bookmark">تا‌ سحر ای‌ شمع‌ بر با‌لین‌ من‌</a></div>
+								<div class="end_title">نوع مطلب: (<a href="http://sherhaye-farsi.mihanblog.com/post/category/1">شعر های فارسی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/49">چهارپاره</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/37">دیگر شاعران</a>&nbsp;،) توسط: <a href="http://sherhaye-farsi.mihanblog.com/post/author/231931" >مهدی شرق</a></div>
+							</div>
+
+							
+						</div>
+					</div>
+					
+					<div class="item_class_text clearfix">
+					
+						<div class="cb_share clearfix">
+							<a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://sherhaye-farsi.mihanblog.com/post/572&amp;title=تا‌ سحر ای‌ شمع‌ بر با‌لین‌ من‌">
+								ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+							</a>
+						</div>					
+				
+
+
+
+						<p><span class="main_body">
+							<div class="author_photo"></div>
+							<DIV class=xxpost><FONT size=3 face=arial,helvetica,sans-serif>
+<DIV class=xxpost>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>تا‌ سحر ای‌ شمع‌ بر با‌لین‌ من‌<BR>امشب‌ از بهرخدا بیدار با‌ش‌<BR>سا‌یه‌ غم‌ نا‌گها‌ن‌ بردل‌ نشست‌<BR>رحم‌ کن‌ امشب‌ مرا غمخوار با‌ش‌</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>کا‌م‌ امیدم‌ بخون‌ آغشته‌ شد<BR>تیرها‌ی‌ غم‌ چنا‌ن‌ بر دل‌ نشست‌<BR>کا‌ندر این‌ دریا‌ی‌ مست‌ زندگی‌<BR>کشتی‌ امید من‌ بر گل‌ نشست‌</FONT></P>
+<P align=center><BR><FONT size=3 face=arial,helvetica,sans-serif>آه‌! ای‌ یا‌ران‌ به فریا‌دم‌ رسید<BR>ورنه‌ امشب‌ مرگ‌ بفریا‌دم‌ رسد<BR>ترسم آن شیرین‌تر از جانم ز راه<BR>ورنه‌ امشب‌ مرگ‌ بفریا‌دم‌ رسد</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>گریه و فریاد بس کن شمع من<BR>بر دل ریشم، نمک دیگر مپاش<BR>قصّه ی بی تابی دل پیش من<BR>بیش ازین دیگر مگو خاموش باش</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>جز توام‌ ای‌ مونس‌ شب‌ها‌ی‌ تا‌ر<BR>در جها‌ن‌ دیگر مرا یا‌ری‌ نما‌ند<BR>زآن همه‌ یا‌ران‌ بجز دیدار مرگ‌<BR>با‌ کسی‌، امید دیداری‌ نما‌ند</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>همدم‌ من‌ ، مونس‌ من‌، شمع‌ من‌<BR>جز تواَم‌ دراین‌ جها‌ن‌ غمخوار کو؟<BR>واندرین‌ صحرای‌ وحشت‌ زای مرگ‌<BR>وای‌ بر من،‌ وای‌ بر من،‌ یا‌ر کو؟</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>اندر این‌ زندان‌، من‌ امشب‌، شمع‌ من‌<BR>دست‌ خواهم‌ شستن‌ ازاین‌ زندگی‌<BR>تا‌ که‌ فردا همچو شیران‌ بشکنند<BR>ملتم‌ زنجیرها‌ی‌ بندگی‌<BR>دکتر علی شریعتی<BR>**29 خرداد سالروز درگذشت دکتر علی شریعتی**</FONT></P></DIV></FONT></DIV>							</span>
+						</p>
+						<p><span class="main_body"></span><p>
+						<br>
+
+<!-- Rating by www.theme-designer.com -->
+<script type="text/javascript" src="http://www.theme-designer.com/s/vote/rating.php?color=444444&bg=FFFFFF&kc=555555&h=1&kadr=0&mod=7&url=sherhaye-farsi.mihanblog.com//post/572"></script>
+<!-- Rating by www.theme-designer.com -->
+
+						<ul>
+							<li><font size="2" face="Verdana">آخرین ویرایش:شنبه 29 خرداد 1395</font></li>
+							<li><font size="2" face="Verdana">برچسب ها:<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AA%D8%A7%E2%80%8C%20%D8%B3%D8%AD%D8%B1%20%D8%A7%DB%8C%E2%80%8C%20%D8%B4%D9%85%D8%B9%E2%80%8C%20%D8%A8%D8%B1%20%D8%A8%D8%A7%E2%80%8C%D9%84%DB%8C%D9%86%E2%80%8C%20%D9%85%D9%86%E2%80%8C" >تا‌ سحر ای‌ شمع‌ بر با‌لین‌ من‌</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AF%DA%A9%D8%AA%D8%B1%20%D8%B4%D8%B1%DB%8C%D8%B9%D8%AA%DB%8C" >دکتر شریعتی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B9%D9%84%DB%8C%20%D8%B4%D8%B1%DB%8C%D8%B9%D8%AA%DB%8C" >علی شریعتی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%DA%86%D9%87%D8%A7%D8%B1%D9%BE%D8%A7%D8%B1%D9%87" >چهارپاره</a>&nbsp;،</font></li>														
+
+						</ul>
+
+
+					
+<script>mihanblogPostLike('572','like')</script>                               </br>
+
+
+
+					</div>
+					<div class="item_class_panel">
+						<div>
+							<span class="panel_comm"><a target="_self" href="javascript:newComment(572)">نظرات(<script>setCommentCnt(572)</script>)</a></span>&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;
+
+						</div>
+					</div>
+				</div>
+								<div class="item_class clearfix">
+					<div class="item_class_title">
+						<div class="item_class_title_text">
+							<div class="titles">
+
+
+
+								<div class="top_title_top">چهارشنبه 15 اردیبهشت 1395&nbsp;&nbsp;23:00</div>
+								<div class="top_title"><a href="http://sherhaye-farsi.mihanblog.com/post/571" rel="bookmark">شراب تلخ بیاور که وقت شیدایی است</a></div>
+								<div class="end_title">نوع مطلب: (<a href="http://sherhaye-farsi.mihanblog.com/post/category/1">شعر های فارسی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/44">غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/36">فاضل نظری</a>&nbsp;،) توسط: <a href="http://sherhaye-farsi.mihanblog.com/post/author/231931" >مهدی شرق</a></div>
+							</div>
+
+							
+						</div>
+					</div>
+					
+					<div class="item_class_text clearfix">
+					
+						<div class="cb_share clearfix">
+							<a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://sherhaye-farsi.mihanblog.com/post/571&amp;title=شراب تلخ بیاور که وقت شیدایی است">
+								ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+							</a>
+						</div>					
+				
+
+
+
+						<p><span class="main_body">
+							<div class="author_photo"></div>
+							<P align=center><FONT size=3 face=arial,helvetica,sans-serif>شراب تلخ..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; فاضل نظری&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; غزل </FONT>
+<DIV align=center><FONT size=3 face=arial,helvetica,sans-serif>
+<HR>
+</FONT></DIV>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif></FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>شراب تلخ بیاور که وقت شیدایی ست!<BR>که آنچه در سر من نیست ، ترس رسوایی ست!</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>چه غم که خلق به حُسن تو عیب میگیرند؟<BR>همیشه زخم زبان خون بهای زیبایی ست!</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>اگر خیال تماشاست در سرت بشتاب!<BR>که آبشارم و افتادنم تماشایی ست...!</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>شباهت تو و من هرچه بود ثابت کرد<BR>که فصل مشترک عشق و عقل تنهایی ست!</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>کنون اگرچه کویرم هنوز در سر من<BR>صدای پر زدن مرغ های دریایی ست<BR></FONT></P>							</span>
+						</p>
+						<p><span class="main_body"></span><p>
+						<br>
+
+<!-- Rating by www.theme-designer.com -->
+<script type="text/javascript" src="http://www.theme-designer.com/s/vote/rating.php?color=444444&bg=FFFFFF&kc=555555&h=1&kadr=0&mod=7&url=sherhaye-farsi.mihanblog.com//post/571"></script>
+<!-- Rating by www.theme-designer.com -->
+
+						<ul>
+							<li><font size="2" face="Verdana">آخرین ویرایش:پنجشنبه 16 اردیبهشت 1395</font></li>
+							<li><font size="2" face="Verdana">برچسب ها:<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B4%D8%B1%D8%A7%D8%A8%20%D8%AA%D9%84%D8%AE%20%D8%A8%DB%8C%D8%A7%D9%88%D8%B1%20%DA%A9%D9%87%20%D9%88%D9%82%D8%AA%20%D8%B4%DB%8C%D8%AF%D8%A7%DB%8C%DB%8C%20%D8%B3%D8%AA" >شراب تلخ بیاور که وقت شیدایی ست</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%BA%D8%B2%D9%84" >غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%81%D8%A7%D8%B6%D9%84%20%D9%86%D8%B8%D8%B1%DB%8C" >فاضل نظری</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%85%D9%86%D8%AA%D8%B4%D8%B1%20%D9%86%D8%B4%D8%AF%D9%87" >منتشر نشده</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AC%D8%AF%DB%8C%D8%AF" >جدید</a>&nbsp;،</font></li>														
+
+						</ul>
+
+
+					
+<script>mihanblogPostLike('571','like')</script>                               </br>
+
+
+
+					</div>
+					<div class="item_class_panel">
+						<div>
+							<span class="panel_comm"><a target="_self" href="javascript:newComment(571)">نظرات(<script>setCommentCnt(571)</script>)</a></span>&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;
+
+						</div>
+					</div>
+				</div>
+								<div class="item_class clearfix">
+					<div class="item_class_title">
+						<div class="item_class_title_text">
+							<div class="titles">
+
+
+
+								<div class="top_title_top">جمعه 10 اردیبهشت 1395&nbsp;&nbsp;23:00</div>
+								<div class="top_title"><a href="http://sherhaye-farsi.mihanblog.com/post/570" rel="bookmark">هستی چه باشد؟ آشفته خوابی</a></div>
+								<div class="end_title">نوع مطلب: (<a href="http://sherhaye-farsi.mihanblog.com/post/category/1">شعر های فارسی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/44">غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/27">رهی معیّری</a>&nbsp;،) توسط: <a href="http://sherhaye-farsi.mihanblog.com/post/author/231931" >مهدی شرق</a></div>
+							</div>
+
+							
+						</div>
+					</div>
+					
+					<div class="item_class_text clearfix">
+					
+						<div class="cb_share clearfix">
+							<a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://sherhaye-farsi.mihanblog.com/post/570&amp;title=هستی چه باشد؟ آشفته خوابی">
+								ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+							</a>
+						</div>					
+				
+
+
+
+						<p><span class="main_body">
+							<div class="author_photo"></div>
+							<P align=center><FONT size=3 face=arial,helvetica,sans-serif>هستی چه باشد..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; رهی معیری&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; غزل </FONT></P><FONT size=3 face=arial,helvetica,sans-serif>
+<DIV align=center>
+<HR>
+</FONT></DIV>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif></FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>هستی چه باشد؟ آشفته خوابی&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;نقش فریبی، موج سرابی</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>نخل محبت، پژمرده شد، کو؟&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>فیض نسیمی، اشک سحابی</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>در بحر هستی، ما چون حبابیم&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <BR>&nbsp;جز یک نفس نیست، عمر حبابی</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>از هجر و وصلم، حاصل همین بود&nbsp;&nbsp;&nbsp; <BR>&nbsp;یا انتظاری، یا اضطرابی</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>ما از نگاهت مستیم ور نه<BR>کیفیتی نیست،&nbsp; در هر شرابی</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>از داغ حسرت حرفی چه گوید؟<BR>نا کامیابی،&nbsp; با کامیابی</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>دیدم رهی را، می رفت و می گفت<BR>هستی چه باشد، آشفته خوابی</FONT></P>							</span>
+						</p>
+						<p><span class="main_body"></span><p>
+						<br>
+
+<!-- Rating by www.theme-designer.com -->
+<script type="text/javascript" src="http://www.theme-designer.com/s/vote/rating.php?color=444444&bg=FFFFFF&kc=555555&h=1&kadr=0&mod=7&url=sherhaye-farsi.mihanblog.com//post/570"></script>
+<!-- Rating by www.theme-designer.com -->
+
+						<ul>
+							<li><font size="2" face="Verdana">آخرین ویرایش:شنبه 11 اردیبهشت 1395</font></li>
+							<li><font size="2" face="Verdana">برچسب ها:<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%87%D8%B3%D8%AA%DB%8C%20%DA%86%D9%87%20%D8%A8%D8%A7%D8%B4%D8%AF%D8%9F%20%D8%A2%D8%B4%D9%81%D8%AA%D9%87%20%D8%AE%D9%88%D8%A7%D8%A8%DB%8C" >هستی چه باشد؟ آشفته خوابی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B1%D9%87%DB%8C%20%D9%85%D8%B9%DB%8C%D8%B1%DB%8C" >رهی معیری</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%BA%D8%B2%D9%84" >غزل</a>&nbsp;،</font></li>														
+
+						</ul>
+
+
+					
+<script>mihanblogPostLike('570','like')</script>                               </br>
+
+
+
+					</div>
+					<div class="item_class_panel">
+						<div>
+							<span class="panel_comm"><a target="_self" href="javascript:newComment(570)">نظرات(<script>setCommentCnt(570)</script>)</a></span>&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;
+
+						</div>
+					</div>
+				</div>
+								<div class="item_class clearfix">
+					<div class="item_class_title">
+						<div class="item_class_title_text">
+							<div class="titles">
+
+
+
+								<div class="top_title_top">چهارشنبه 11 فروردین 1395&nbsp;&nbsp;23:00</div>
+								<div class="top_title"><a href="http://sherhaye-farsi.mihanblog.com/post/569" rel="bookmark">شب که سازد غم آغوش تو بی تاب مرا</a></div>
+								<div class="end_title">نوع مطلب: (<a href="http://sherhaye-farsi.mihanblog.com/post/category/1">شعر های فارسی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/44">غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/37">دیگر شاعران</a>&nbsp;،) توسط: <a href="http://sherhaye-farsi.mihanblog.com/post/author/231931" >مهدی شرق</a></div>
+							</div>
+
+							
+						</div>
+					</div>
+					
+					<div class="item_class_text clearfix">
+					
+						<div class="cb_share clearfix">
+							<a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://sherhaye-farsi.mihanblog.com/post/569&amp;title=شب که سازد غم آغوش تو بی تاب مرا">
+								ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+							</a>
+						</div>					
+				
+
+
+
+						<p><span class="main_body">
+							<div class="author_photo"></div>
+							<P align=center><FONT size=3 face=arial,helvetica,sans-serif>شب که سازد غم آغوش تو بی تاب مرا&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; غنی کشمیری&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; غزل</FONT> 
+<HR>
+
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>شب که سازد غم آغوش تو بی تاب مرا<BR>گر بود فرش ز مخمل،نبرد خواب مرا</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>تا زبان چون قلم از کام نیاید بیرون<BR>یک دم این چرخ سیه کاسه نداد آب مرا</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>سوی مسجد ندهد نفس بدم راه هنوز<BR>گرچه از بار گنه ساخت چو محراب مرا</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>آب تیغت چو گذر در دل مجروح کند<BR>بخیه چون موج شود، زخم چو گرداب مرا</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>دهر،نا امن چنان گشته که چون مردم چشم<BR>تا در خانه نبندم ، نبرد خواب مرا</FONT></P>							</span>
+						</p>
+						<p><span class="main_body"></span><p>
+						<br>
+
+<!-- Rating by www.theme-designer.com -->
+<script type="text/javascript" src="http://www.theme-designer.com/s/vote/rating.php?color=444444&bg=FFFFFF&kc=555555&h=1&kadr=0&mod=7&url=sherhaye-farsi.mihanblog.com//post/569"></script>
+<!-- Rating by www.theme-designer.com -->
+
+						<ul>
+							<li><font size="2" face="Verdana">آخرین ویرایش:پنجشنبه 12 فروردین 1395</font></li>
+							<li><font size="2" face="Verdana">برچسب ها:<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B4%D8%A8%20%DA%A9%D9%87%20%D8%B3%D8%A7%D8%B2%D8%AF%20%D8%BA%D9%85%20%D8%A2%D8%BA%D9%88%D8%B4%20%D8%AA%D9%88%20%D8%A8%DB%8C%20%D8%AA%D8%A7%D8%A8%20%D9%85%D8%B1%D8%A7" >شب که سازد غم آغوش تو بی تاب مرا</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%BA%D9%86%DB%8C%20%DA%A9%D8%B4%D9%85%DB%8C%D8%B1%DB%8C" >غنی کشمیری</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B3%D8%A8%DA%A9%20%D9%87%D9%86%D8%AF%DB%8C" >سبک هندی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%BA%D8%B2%D9%84" >غزل</a>&nbsp;،</font></li>														
+
+						</ul>
+
+
+					
+<script>mihanblogPostLike('569','like')</script>                               </br>
+
+
+
+					</div>
+					<div class="item_class_panel">
+						<div>
+							<span class="panel_comm"><a target="_self" href="javascript:newComment(569)">نظرات(<script>setCommentCnt(569)</script>)</a></span>&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;
+
+						</div>
+					</div>
+				</div>
+								<div class="item_class clearfix">
+					<div class="item_class_title">
+						<div class="item_class_title_text">
+							<div class="titles">
+
+
+
+								<div class="top_title_top">پنجشنبه 20 اسفند 1394&nbsp;&nbsp;00:00</div>
+								<div class="top_title"><a href="http://sherhaye-farsi.mihanblog.com/post/568" rel="bookmark">شکوه ندارم که دل قرار ندارد</a></div>
+								<div class="end_title">نوع مطلب: (<a href="http://sherhaye-farsi.mihanblog.com/post/category/1">شعر های فارسی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/44">غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/30">عماد خراسانی</a>&nbsp;،) توسط: <a href="http://sherhaye-farsi.mihanblog.com/post/author/231931" >مهدی شرق</a></div>
+							</div>
+
+							
+						</div>
+					</div>
+					
+					<div class="item_class_text clearfix">
+					
+						<div class="cb_share clearfix">
+							<a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://sherhaye-farsi.mihanblog.com/post/568&amp;title=شکوه ندارم که دل قرار ندارد">
+								ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+							</a>
+						</div>					
+				
+
+
+
+						<p><span class="main_body">
+							<div class="author_photo"></div>
+							<P align=center><FONT size=3 face=arial,helvetica,sans-serif>قرار&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; عماد خراسانی&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; غزل
+<HR>
+<BR>شکوه ندارم که دل قرار ندارد<BR>بِه که بسوزد دلی که یار ندارد</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>عشق نه عشق است گر بلا و غمش نیست<BR>می نه که شور و شر و خمار ندارد</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>حیرتم آید که در زمانه چه‌دارد<BR>آن‌که به کف طرّه‌ی نگار ندارد</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>بی‌رخت اردیبهشت،زشت بُود زشت<BR>هر که ندارد گلی،بهـار ندارد</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>دیده‌ام آن زلف بیقرار و از آن شب<BR>بی سر زلفت دلم قرار ندارد</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>گرمی بزمم ز آه سوختگان است<BR>خام در این بارگاه،بار ندارد</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>آنچه دلم شکوه دارد از سرِ زلفت<BR>هیچ کس از جور روزگار ندارد</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>چشم عماد است و طاق ابروی جانان<BR>نیست غم ار طاق زرنگار ندارد<BR><BR></FONT></P>							</span>
+						</p>
+						<p><span class="main_body"></span><p>
+						<br>
+
+<!-- Rating by www.theme-designer.com -->
+<script type="text/javascript" src="http://www.theme-designer.com/s/vote/rating.php?color=444444&bg=FFFFFF&kc=555555&h=1&kadr=0&mod=7&url=sherhaye-farsi.mihanblog.com//post/568"></script>
+<!-- Rating by www.theme-designer.com -->
+
+						<ul>
+							<li><font size="2" face="Verdana">آخرین ویرایش:پنجشنبه 20 اسفند 1394</font></li>
+							<li><font size="2" face="Verdana">برچسب ها:<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B4%DA%A9%D9%88%D9%87%20%D9%86%D8%AF%D8%A7%D8%B1%D9%85%20%DA%A9%D9%87%20%D8%AF%D9%84%20%D9%82%D8%B1%D8%A7%D8%B1%20%D9%86%D8%AF%D8%A7%D8%B1%D8%AF" >شکوه ندارم که دل قرار ندارد</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B9%D9%85%D8%A7%D8%AF%20%D8%AE%D8%B1%D8%A7%D8%B3%D8%A7%D9%86%DB%8C" >عماد خراسانی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%BA%D8%B2%D9%84" >غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%A8%D9%87%20%DA%A9%D9%87%20%D8%A8%D8%B3%D9%88%D8%B2%D8%AF%20%D8%AF%D9%84%DB%8C%20%DA%A9%D9%87%20%DB%8C%D8%A7%D8%B1%20%D9%86%D8%AF%D8%A7%D8%B1%D8%AF" >به که بسوزد دلی که یار ندارد</a>&nbsp;،</font></li>														
+
+						</ul>
+
+
+					
+<script>mihanblogPostLike('568','like')</script>                               </br>
+
+
+
+					</div>
+					<div class="item_class_panel">
+						<div>
+							<span class="panel_comm"><a target="_self" href="javascript:newComment(568)">نظرات(<script>setCommentCnt(568)</script>)</a></span>&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;
+
+						</div>
+					</div>
+				</div>
+								<div class="item_class clearfix">
+					<div class="item_class_title">
+						<div class="item_class_title_text">
+							<div class="titles">
+
+
+
+								<div class="top_title_top">جمعه 27 آذر 1394&nbsp;&nbsp;00:00</div>
+								<div class="top_title"><a href="http://sherhaye-farsi.mihanblog.com/post/567" rel="bookmark"> هنوز عشق تو امید بخش جان من است</a></div>
+								<div class="end_title">نوع مطلب: (<a href="http://sherhaye-farsi.mihanblog.com/post/category/1">شعر های فارسی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/44">غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/25">هوشنگ ابتهاج(سایه)</a>&nbsp;،) توسط: <a href="http://sherhaye-farsi.mihanblog.com/post/author/231931" >مهدی شرق</a></div>
+							</div>
+
+							
+						</div>
+					</div>
+					
+					<div class="item_class_text clearfix">
+					
+						<div class="cb_share clearfix">
+							<a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://sherhaye-farsi.mihanblog.com/post/567&amp;title= هنوز عشق تو امید بخش جان من است">
+								ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+							</a>
+						</div>					
+				
+
+
+
+						<p><span class="main_body">
+							<div class="author_photo"></div>
+							<P align=center><FONT size=3 face=arial,helvetica,sans-serif>هم آشیان&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; هوشنگ ابتهاج(سایه)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; غزل </FONT></P><FONT size=3 face=arial,helvetica,sans-serif>
+<DIV align=center>
+<HR>
+</FONT><FONT size=3 face=arial,helvetica,sans-serif>&nbsp;هنوز عشق تو امید بخش جان من است<BR>خوشا غمی که ازو شادی جهان من است <BR><BR>&nbsp;چه شکر گویمت ای هستی یگانه ی عشق<BR>که سوز سینه یخورشید در زبان من است<BR> <BR>&nbsp;اگر چه فرصت عمرم ز دست رفت بیا <BR>&nbsp;که همچنان به رهت چشم خون فشان من است <BR><BR>&nbsp;نمی رود ز سرم این خیال خون آلود <BR>&nbsp;که داس حادثه در قصد ارغوان من است <BR><BR>&nbsp;بیا بیا که درین ظلمت دروغ و ریا <BR>&nbsp;فروغ روی تو آرایش روان من است <BR><BR>حکایت غم دیرین به عشق گفتم ، گفت <BR>&nbsp;هنوز این همه آغاز داستان من است <BR><BR>&nbsp;بدین نشان که تویی ای دل نشسته به خون <BR>&nbsp;بمان که تیر امان تو در کمان من است <BR><BR>&nbsp;اگر ز ورطه بترسی چه طرف خواهی بست<BR>ز طرفه ها که درین بحر بی کران من است <BR><BR>&nbsp;زمان به دست پریشانی اش نخواهد داد&nbsp;<BR>&nbsp;دلی که در گرو حسن جاودان من است <BR><BR>&nbsp;به شادی غزل سایه نوش و بخشش عشق <BR>&nbsp;که مرغ خوش سخن غم هم آشیان من است </FONT></DIV>							</span>
+						</p>
+						<p><span class="main_body"></span><p>
+						<br>
+
+<!-- Rating by www.theme-designer.com -->
+<script type="text/javascript" src="http://www.theme-designer.com/s/vote/rating.php?color=444444&bg=FFFFFF&kc=555555&h=1&kadr=0&mod=7&url=sherhaye-farsi.mihanblog.com//post/567"></script>
+<!-- Rating by www.theme-designer.com -->
+
+						<ul>
+							<li><font size="2" face="Verdana">آخرین ویرایش:جمعه 27 آذر 1394</font></li>
+							<li><font size="2" face="Verdana">برچسب ها:<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%87%D9%86%D9%88%D8%B2%20%D8%B9%D8%B4%D9%82%20%D8%AA%D9%88%20%D8%A7%D9%85%DB%8C%D8%AF%20%D8%A8%D8%AE%D8%B4%20%D8%AC%D8%A7%D9%86%20%D9%85%D9%86%20%D8%A7%D8%B3%D8%AA" >هنوز عشق تو امید بخش جان من است</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D9%87" >سایه</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%87%D9%88%D8%B4%D9%86%DA%AF%20%D8%A7%D8%A8%D8%AA%D9%87%D8%A7%D8%AC" >هوشنگ ابتهاج</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%BA%D8%B2%D9%84" >غزل</a>&nbsp;،</font></li>														
+
+						</ul>
+
+
+					
+<script>mihanblogPostLike('567','like')</script>                               </br>
+
+
+
+					</div>
+					<div class="item_class_panel">
+						<div>
+							<span class="panel_comm"><a target="_self" href="javascript:newComment(567)">نظرات(<script>setCommentCnt(567)</script>)</a></span>&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;
+
+						</div>
+					</div>
+				</div>
+								<div class="item_class clearfix">
+					<div class="item_class_title">
+						<div class="item_class_title_text">
+							<div class="titles">
+
+
+
+								<div class="top_title_top">شنبه 21 آذر 1394&nbsp;&nbsp;00:00</div>
+								<div class="top_title"><a href="http://sherhaye-farsi.mihanblog.com/post/566" rel="bookmark">تو همچو صبحی و من شمع خلوت سحرم</a></div>
+								<div class="end_title">نوع مطلب: (<a href="http://sherhaye-farsi.mihanblog.com/post/category/1">شعر های فارسی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/44">غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/4">حافظ</a>&nbsp;،) توسط: <a href="http://sherhaye-farsi.mihanblog.com/post/author/231931" >مهدی شرق</a></div>
+							</div>
+
+							
+						</div>
+					</div>
+					
+					<div class="item_class_text clearfix">
+					
+						<div class="cb_share clearfix">
+							<a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://sherhaye-farsi.mihanblog.com/post/566&amp;title=تو همچو صبحی و من شمع خلوت سحرم">
+								ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+							</a>
+						</div>					
+				
+
+
+
+						<p><span class="main_body">
+							<div class="author_photo"></div>
+							<P align=center><FONT size=3 face=arial,helvetica,sans-serif>تو همچو صبحی و من..&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; حافظ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; غزل<BR><FONT color=#ff0000>وزن : مفاعلن فعلاتن مفاعلن فع لن
+<HR>
+</FONT></FONT></P>
+<P align=center><FONT color=#000000 size=3 face=Arial>تو همچو صبحی و من شمع خلوت سحرم<BR>تبسمی کن و جان بین که چون همی‌سپرم</FONT></P>
+<P align=center><FONT color=#000000 size=3 face=Arial>چنین که در دل من داغ زلف سرکش توست<BR>بنفشه زار شود تربتم چو درگذرم</FONT></P>
+<P align=center><FONT color=#000000 size=3 face=Arial>بر آستان مرادت گشاده‌ام در چشم<BR>که یک نظر فکنی خود فکندی از نظرم</FONT></P>
+<P align=center><FONT color=#000000 size=3 face=Arial>چه شکر گویمت ای خیل غم عفاک الله<BR>که روز بی‌کسی آخر نمی‌روی ز سرم</FONT></P>
+<P align=center><FONT color=#000000 size=3 face=Arial>غلام مردم چشمم که با سیاه دلی<BR>هزار قطره ببارد چو درد دل شمرم</FONT></P>
+<P align=center><FONT color=#000000 size=3 face=Arial>به هر نظر بت ما جلوه می‌کند لیکن<BR>کس این کرشمه نبیند که من همی‌نگرم</FONT></P>
+<P align=center><FONT color=#ff0000 size=3 face=Arial><FONT color=#000000>به خاک حافظ اگر یار بگذرد چون باد</FONT><BR><FONT color=#000000>ز شوق در دل آن تنگنا کفن بدرم</FONT><BR></P></FONT>							</span>
+						</p>
+						<p><span class="main_body"></span><p>
+						<br>
+
+<!-- Rating by www.theme-designer.com -->
+<script type="text/javascript" src="http://www.theme-designer.com/s/vote/rating.php?color=444444&bg=FFFFFF&kc=555555&h=1&kadr=0&mod=7&url=sherhaye-farsi.mihanblog.com//post/566"></script>
+<!-- Rating by www.theme-designer.com -->
+
+						<ul>
+							<li><font size="2" face="Verdana">آخرین ویرایش:شنبه 21 آذر 1394</font></li>
+							<li><font size="2" face="Verdana">برچسب ها:<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AA%D9%88%20%D9%87%D9%85%DA%86%D9%88%20%D8%B5%D8%A8%D8%AD%DB%8C%20%D9%88%20%D9%85%D9%86%20%D8%B4%D9%85%D8%B9%20%D8%AE%D9%84%D9%88%D8%AA%20%D8%B3%D8%AD%D8%B1%D9%85" >تو همچو صبحی و من شمع خلوت سحرم</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%BA%D8%B2%D9%84" >غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AD%D8%A7%D9%81%D8%B8" >حافظ</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%85%D9%81%D8%A7%D8%B9%D9%84%D9%86%20%D9%81%D8%B9%D9%84%D8%A7%D8%AA%D9%86%20%D9%85%D9%81%D8%A7%D8%B9%D9%84%D9%86%20%D9%81%D8%B9%20%D9%84%D9%86" >مفاعلن فعلاتن مفاعلن فع لن</a>&nbsp;،</font></li>														
+
+						</ul>
+
+
+					
+<script>mihanblogPostLike('566','like')</script>                               </br>
+
+
+
+					</div>
+					<div class="item_class_panel">
+						<div>
+							<span class="panel_comm"><a target="_self" href="javascript:newComment(566)">نظرات(<script>setCommentCnt(566)</script>)</a></span>&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;
+
+						</div>
+					</div>
+				</div>
+								<div class="item_class clearfix">
+					<div class="item_class_title">
+						<div class="item_class_title_text">
+							<div class="titles">
+
+
+
+								<div class="top_title_top">پنجشنبه 14 آبان 1394&nbsp;&nbsp;00:00</div>
+								<div class="top_title"><a href="http://sherhaye-farsi.mihanblog.com/post/565" rel="bookmark">به سینه می زندم سر، دلی که کرده هوایت</a></div>
+								<div class="end_title">نوع مطلب: (<a href="http://sherhaye-farsi.mihanblog.com/post/category/1">شعر های فارسی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/44">غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/34">حسین منزوی</a>&nbsp;،) توسط: <a href="http://sherhaye-farsi.mihanblog.com/post/author/231931" >مهدی شرق</a></div>
+							</div>
+
+							
+						</div>
+					</div>
+					
+					<div class="item_class_text clearfix">
+					
+						<div class="cb_share clearfix">
+							<a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://sherhaye-farsi.mihanblog.com/post/565&amp;title=به سینه می زندم سر، دلی که کرده هوایت">
+								ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+							</a>
+						</div>					
+				
+
+
+
+						<p><span class="main_body">
+							<div class="author_photo"></div>
+							<P align=center><FONT size=3 face=arial,helvetica,sans-serif>به سینه می زندم سر...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; حسین منزوی&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; غزل<BR><FONT color=#ff0000>وزن عروضی : مفاعلن فعلاتن مفاعلن فعلاتن </FONT></FONT><FONT size=3 face=arial,helvetica,sans-serif>
+<HR>
+</P>
+<P align=center></FONT><FONT size=3 face=arial,helvetica,sans-serif>به سینه می زندم سر، دلی که کرده هوایت<BR>دلــی کــــه کرده هـوای کرشمه‌های صدایت</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>نه یوسفم، نه سیاوش، به نفس کشتن و پرهیز<BR>کـــه آورد دلــــــم ای دوست! تاب وسوسه‌هایت</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>تو را ز جرگــــه‌ی انبوه خاطرات قدیمی<BR>برون کشیده‌ام و دل نهاده‌ام به صفایت</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>تو سخت و دیر به دست آمدی مرا و عجب نیست<BR>نمی‌کنــــم اگـــر ای دوست، سهل و زود ، رهایت</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>گره بـــــه کار من افتاده است از غم غربت<BR>کجاست چابکی دست‌های عقده‌گشایت؟</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>به کبر شعر مَبینم کــه تکیه داده به افلاک<BR>به خاکساری دل بین که سر نهاده به پایت</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>"دلم گرفته برایت" زبان ساده‌ی عشق است<BR>سلیس و ساده بگویم: دلــــــم گرفته برایت !</FONT></P>							</span>
+						</p>
+						<p><span class="main_body"></span><p>
+						<br>
+
+<!-- Rating by www.theme-designer.com -->
+<script type="text/javascript" src="http://www.theme-designer.com/s/vote/rating.php?color=444444&bg=FFFFFF&kc=555555&h=1&kadr=0&mod=7&url=sherhaye-farsi.mihanblog.com//post/565"></script>
+<!-- Rating by www.theme-designer.com -->
+
+						<ul>
+							<li><font size="2" face="Verdana">آخرین ویرایش:پنجشنبه 14 آبان 1394</font></li>
+							<li><font size="2" face="Verdana">برچسب ها:<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%A8%D9%87%20%D8%B3%DB%8C%D9%86%D9%87%20%D9%85%DB%8C%20%D8%B2%D9%86%D8%AF%D9%85%20%D8%B3%D8%B1" >به سینه می زندم سر</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AF%D9%84%DB%8C%20%DA%A9%D9%87%20%DA%A9%D8%B1%D8%AF%D9%87%20%D9%87%D9%88%D8%A7%DB%8C%D8%AA" >دلی که کرده هوایت</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%A8%D9%87%20%D8%B3%DB%8C%D9%86%D9%87%20%D9%85%DB%8C%20%D8%B2%D9%86%D8%AF%D9%85%20%D8%B3%D8%B1%20%D8%AF%D9%84%DB%8C%20%DA%A9%D9%87%20%DA%A9%D8%B1%D8%AF%D9%87%20%D9%87%D9%88%D8%A7%DB%8C%D8%AA" >به سینه می زندم سر دلی که کرده هوایت</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AD%D8%B3%DB%8C%D9%86%20%D9%85%D9%86%D8%B2%D9%88%DB%8C" >حسین منزوی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%BA%D8%B2%D9%84" >غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%85%D9%81%D8%A7%D8%B9%D9%84%D9%86%20%D9%81%D8%B9%D9%84%D8%A7%D8%AA%D9%86%20%D9%85%D9%81%D8%A7%D8%B9%D9%84%D9%86%20%D9%81%D8%B9%D9%84%D8%A7%D8%AA%D9%86" >مفاعلن فعلاتن مفاعلن فعلاتن</a>&nbsp;،</font></li>														
+
+						</ul>
+
+
+					
+<script>mihanblogPostLike('565','like')</script>                               </br>
+
+
+
+					</div>
+					<div class="item_class_panel">
+						<div>
+							<span class="panel_comm"><a target="_self" href="javascript:newComment(565)">نظرات(<script>setCommentCnt(565)</script>)</a></span>&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;
+
+						</div>
+					</div>
+				</div>
+								<div class="item_class clearfix">
+					<div class="item_class_title">
+						<div class="item_class_title_text">
+							<div class="titles">
+
+
+
+								<div class="top_title_top">پنجشنبه 7 آبان 1394&nbsp;&nbsp;00:00</div>
+								<div class="top_title"><a href="http://sherhaye-farsi.mihanblog.com/post/563" rel="bookmark">قدری بخند ، سایه ی غم از فضا بگیر</a></div>
+								<div class="end_title">نوع مطلب: (<a href="http://sherhaye-farsi.mihanblog.com/post/category/1">شعر های فارسی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/44">غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/37">دیگر شاعران</a>&nbsp;،) توسط: <a href="http://sherhaye-farsi.mihanblog.com/post/author/231931" >مهدی شرق</a></div>
+							</div>
+
+							
+						</div>
+					</div>
+					
+					<div class="item_class_text clearfix">
+					
+						<div class="cb_share clearfix">
+							<a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://sherhaye-farsi.mihanblog.com/post/563&amp;title=قدری بخند ، سایه ی غم از فضا بگیر">
+								ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+							</a>
+						</div>					
+				
+
+
+
+						<p><span class="main_body">
+							<div class="author_photo"></div>
+							<P align=center><FONT size=3 face=arial,helvetica,sans-serif>شرم&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; یاسر شاهد خطیبی&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; غزل <BR><FONT color=#ff0000>وزن عروضی: مفعول فاعلاتُ مفاعیلُ فاعلن</FONT></FONT>
+<DIV align=center><FONT size=3 face=arial,helvetica,sans-serif>
+<HR>
+</FONT></DIV>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>قدری بخند ، سایه ی غم از فضا بگیر<BR>این شرم را رها کن و دست مرا بگیر</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>نامحرمم ؛ قبول گناهش به پای من <BR>اندازه ی دو بوسه امان از خدا بگیر</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>آغوش از تب هیجان پر بکن ، و بعد<BR>از پشت سر بیا و مرا بی هوا بگیر</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>دست خودت که نیست ، به هر شیوه دلبری<BR>سر تا به پای عشوه ی خود را طلا بگیر</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>بی تو تمام دلخوشی ام شعر مانده است<BR>این هم تمام دار و ندارم...بیا بگیر</FONT></P>							</span>
+						</p>
+						<p><span class="main_body"></span><p>
+						<br>
+
+<!-- Rating by www.theme-designer.com -->
+<script type="text/javascript" src="http://www.theme-designer.com/s/vote/rating.php?color=444444&bg=FFFFFF&kc=555555&h=1&kadr=0&mod=7&url=sherhaye-farsi.mihanblog.com//post/563"></script>
+<!-- Rating by www.theme-designer.com -->
+
+						<ul>
+							<li><font size="2" face="Verdana">آخرین ویرایش:پنجشنبه 7 آبان 1394</font></li>
+							<li><font size="2" face="Verdana">برچسب ها:<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%82%D8%AF%D8%B1%DB%8C%20%D8%A8%D8%AE%D9%86%D8%AF%20%D8%B3%D8%A7%DB%8C%D9%87%20%DB%8C%20%D8%BA%D9%85%20%D8%A7%D8%B2%20%D9%81%D8%B6%D8%A7%20%D8%A8%DA%AF%DB%8C%D8%B1" >قدری بخند سایه ی غم از فضا بگیر</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%DB%8C%D8%A7%D8%B3%D8%B1%20%D8%B4%D8%A7%D9%87%D8%AF" >یاسر شاهد</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%DB%8C%D8%A7%D8%B3%D8%B1%20%D8%B4%D8%A7%D9%87%D8%AF%20%D8%AE%D8%B7%DB%8C%D8%A8%DB%8C" >یاسر شاهد خطیبی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%BA%D8%B2%D9%84" >غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%85%D9%81%D8%B9%D9%88%D9%84%20%D9%81%D8%A7%D8%B9%D9%84%D8%A7%D8%AA%20%D9%85%D9%81%D8%A7%D8%B9%DB%8C%D9%84%20%D9%81%D8%A7%D8%B9%D9%84%D9%86" >مفعول فاعلات مفاعیل فاعلن</a>&nbsp;،</font></li>														
+
+						</ul>
+
+
+					
+<script>mihanblogPostLike('563','like')</script>                               </br>
+
+
+
+					</div>
+					<div class="item_class_panel">
+						<div>
+							<span class="panel_comm"><a target="_self" href="javascript:newComment(563)">نظرات(<script>setCommentCnt(563)</script>)</a></span>&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;
+
+						</div>
+					</div>
+				</div>
+								<div class="item_class clearfix">
+					<div class="item_class_title">
+						<div class="item_class_title_text">
+							<div class="titles">
+
+
+
+								<div class="top_title_top">چهارشنبه 6 آبان 1394&nbsp;&nbsp;00:00</div>
+								<div class="top_title"><a href="http://sherhaye-farsi.mihanblog.com/post/564" rel="bookmark">چتر ها در شرشر دلگیر باران می رود بالا</a></div>
+								<div class="end_title">نوع مطلب: (<a href="http://sherhaye-farsi.mihanblog.com/post/category/1">شعر های فارسی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/44">غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/category/59">حسین جنتی عطایی</a>&nbsp;،) توسط: <a href="http://sherhaye-farsi.mihanblog.com/post/author/231931" >مهدی شرق</a></div>
+							</div>
+
+							
+						</div>
+					</div>
+					
+					<div class="item_class_text clearfix">
+					
+						<div class="cb_share clearfix">
+							<a rel="nofollow" target="_blank" href="http://www.cloob.com/share/link/add/?url=http://sherhaye-farsi.mihanblog.com/post/564&amp;title=چتر ها در شرشر دلگیر باران می رود بالا">
+								ارسال به <img title="ارسال به 100 درجه کلوب دات کام" alt="ارسال به 100 درجه کلوب دات کام" src="http://www.cloob.com/public/public/images/icon/100c.gif" />
+							</a>
+						</div>					
+				
+
+
+
+						<p><span class="main_body">
+							<div class="author_photo"></div>
+							<P align=center><FONT size=3 face=arial,helvetica,sans-serif>می رود بالا&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; حسین جنتی&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; غزل <BR><FONT color=#ff0000>وزن عروضی : فاعلاتن فاعلاتن فاعلاتن فاعلاتن فع(؟)</FONT></FONT>
+<DIV align=center><FONT size=3 face=arial,helvetica,sans-serif>
+<HR>
+</FONT></DIV>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif></FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>چتر ها در شرشر دلگیر باران می رود بالا<BR>فکر من آرام از طول خیابان می رود بالا</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>من تماشا می کنم غمگین و با حسرت خیابان را <BR>یک نفر در جان من مست و غزل خوان می رود بالا</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>گشته ام میدان به میدان شهر را هر گوشه دردی هست <BR>ارتفاع دردها از پیچ شمیران می رود بالا </FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>خواجه در رویای خود از پای بست خانه می گوید <BR>ناگهان صدها ترک از نقش ایوان می رود بالا</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>درد من هر چند درد خانه و پوشاک ارزان نیست <BR>با بهای سکه در بازار تهران می رود بالا </FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>گاه شب ها بعد کار سخت و ارزان خواب می بینم <BR>پول خان با چکمه اش از دوش دهقان می رود بالا</FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>جوجه های اعتقادم را کجا پنهان کنم ، وقتی <BR>شک شبیه گربه از دیوار ایمان می رود بالا </FONT></P>
+<P align=center><FONT size=3 face=arial,helvetica,sans-serif>فکر من آرام از طول خیابان می رود پایین <BR>یک نفر در جان من اما غزل خوان می رود بالا</FONT></P>							</span>
+						</p>
+						<p><span class="main_body"></span><p>
+						<br>
+
+<!-- Rating by www.theme-designer.com -->
+<script type="text/javascript" src="http://www.theme-designer.com/s/vote/rating.php?color=444444&bg=FFFFFF&kc=555555&h=1&kadr=0&mod=7&url=sherhaye-farsi.mihanblog.com//post/564"></script>
+<!-- Rating by www.theme-designer.com -->
+
+						<ul>
+							<li><font size="2" face="Verdana">آخرین ویرایش:پنجشنبه 7 آبان 1394</font></li>
+							<li><font size="2" face="Verdana">برچسب ها:<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%DA%86%D8%AA%D8%B1%20%D9%87%D8%A7%20%D8%AF%D8%B1%20%D8%B4%D8%B1%D8%B4%D8%B1%20%D8%AF%D9%84%DA%AF%DB%8C%D8%B1%20%D8%A8%D8%A7%D8%B1%D8%A7%D9%86%20%D9%85%DB%8C%20%D8%B1%D9%88%D8%AF%20%D8%A8%D8%A7%D9%84%D8%A7" >چتر ها در شرشر دلگیر باران می رود بالا</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AD%D8%B3%DB%8C%D9%86%20%D8%AC%D9%86%D8%AA%DB%8C" >حسین جنتی</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%BA%D8%B2%D9%84" >غزل</a>&nbsp;،<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%81%D8%A7%D8%B9%D9%84%D8%A7%D8%AA%D9%86%20%D9%81%D8%A7%D8%B9%D9%84%D8%A7%D8%AA%D9%86%20%D9%81%D8%A7%D8%B9%D9%84%D8%A7%D8%AA%D9%86%20%D9%81%D8%A7%D8%B9%D9%84%D8%A7%D8%AA%D9%86%20%D9%81%D8%B9" >فاعلاتن فاعلاتن فاعلاتن فاعلاتن فع</a>&nbsp;،</font></li>														
+
+						</ul>
+
+
+					
+<script>mihanblogPostLike('564','like')</script>                               </br>
+
+
+
+					</div>
+					<div class="item_class_panel">
+						<div>
+							<span class="panel_comm"><a target="_self" href="javascript:newComment(564)">نظرات(<script>setCommentCnt(564)</script>)</a></span>&nbsp;&nbsp;&nbsp;
+							&nbsp;&nbsp;&nbsp;
+
+						</div>
+					</div>
+				</div>
+				<P align=center><IMG src="http://s3.picofile.com/file/7550584836/01_vajeh_yab.jpg" width=450 height=300></P>
+
+
+				
+				
+				
+					
+				
+				
+				<div align="center" class="page_box clearfix">
+					<ul><li>تعداد کل صفحات :54&nbsp;&nbsp;</li><li><a href="http://sherhaye-farsi.mihanblog.com/page/1"><b>1</b></a>&nbsp;&nbsp;</li><li><a href="http://sherhaye-farsi.mihanblog.com/page/2"><span>2</span></a>&nbsp;&nbsp;</li><li><a href="http://sherhaye-farsi.mihanblog.com/page/3"><span>3</span></a>&nbsp;&nbsp;</li><li><a href="http://sherhaye-farsi.mihanblog.com/page/4"><span>4</span></a>&nbsp;&nbsp;</li><li><a href="http://sherhaye-farsi.mihanblog.com/page/5"><span>5</span></a>&nbsp;&nbsp;</li><li><a href="http://sherhaye-farsi.mihanblog.com/page/6"><span>6</span></a>&nbsp;&nbsp;</li><li><a href="http://sherhaye-farsi.mihanblog.com/page/7"><span>7</span></a>&nbsp;&nbsp;</li><li><a href="http://sherhaye-farsi.mihanblog.com/page/8"><i>...</i></a>&nbsp;&nbsp;</li></ul>			
+				</div>
+
+
+
+				<div class="item_class">
+					
+					<div class="item_class_text" >
+										
+					<blockquote><div class="recent_posts">آخرین پست ها</div><div class="postrecent_body">
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/572">تا‌ سحر ای‌ شمع‌ بر با‌لین‌ من‌..........<span>جمعه 28 خرداد 1395</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/571">شراب تلخ بیاور که وقت شیدایی است..........<span>چهارشنبه 15 اردیبهشت 1395</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/570">هستی چه باشد؟ آشفته خوابی..........<span>جمعه 10 اردیبهشت 1395</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/569">شب که سازد غم آغوش تو بی تاب مرا..........<span>چهارشنبه 11 فروردین 1395</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/568">شکوه ندارم که دل قرار ندارد..........<span>پنجشنبه 20 اسفند 1394</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/567"> هنوز عشق تو امید بخش جان من است..........<span>جمعه 27 آذر 1394</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/566">تو همچو صبحی و من شمع خلوت سحرم..........<span>شنبه 21 آذر 1394</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/565">به سینه می زندم سر، دلی که کرده هوایت..........<span>پنجشنبه 14 آبان 1394</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/563">قدری بخند ، سایه ی غم از فضا بگیر..........<span>پنجشنبه 7 آبان 1394</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/564">چتر ها در شرشر دلگیر باران می رود بالا..........<span>چهارشنبه 6 آبان 1394</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/562">شمشیر ستم در کف پائیز ببینید..........<span>چهارشنبه 15 مهر 1394</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/561">گرچه زهرم دوست دارم بر لبانت باده باشم..........<span>سه شنبه 31 شهریور 1394</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/560">من آن نیم که دل از مهر دوست بردارم..........<span>یکشنبه 15 شهریور 1394</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/559">در جام سرم شراب انداخته اند..........<span>شنبه 7 شهریور 1394</span></a></div>
+															<div><a  href="http://sherhaye-farsi.mihanblog.com/post/558">جان منست او هی مزنیدش..........<span>یکشنبه 1 شهریور 1394</span></a></div>
+											
+							<div><a  href="http://sherhaye-farsi.mihanblog.com/post/list"><b>همه پستها</b></span></a></div>
+					</div></blockquote>
+								
+					</div>
+				</div>
+
+	
+
+				<div class="navigation">
+					<div class="navigation">
+						<ul>
+							<li class="alignleft"></li>
+							<li class="alignright"></li>
+						</ul>
+					</div>
+				</div>
+
+		
+
+	
+				
+	</div>
+	<div id="blog_right">
+			<div id="sidebar">
+		<ul>
+			
+	
+			
+		    		    <li class="widget"><h2>نویسندگان</h2>
+		    <ul>
+		    	      	
+		      	<li  class="clearfix" id="parentheses"><p><a href="http://sherhaye-farsi.mihanblog.com/post/author/231931"><img src="../static.mihanblog.com/public/user_data/user_photo/78/231931.jpg" style="width:16px;" /></a></p><a href="http://sherhaye-farsi.mihanblog.com/post/author/231931"><p>مهدی شرق</p><p>(523)</p></a></li>
+		      	      	
+		      	<li  class="clearfix" id="parentheses"><p><a href="http://sherhaye-farsi.mihanblog.com/post/author/235576"></a></p><a href="http://sherhaye-farsi.mihanblog.com/post/author/235576"><p>عطا </p><p>(1)</p></a></li>
+		      	      	
+		      	<li  class="clearfix" id="parentheses"><p><a href="http://sherhaye-farsi.mihanblog.com/post/author/256064"><img src="../static.mihanblog.com/public/user_data/user_photo/86/256064.jpg" style="width:16px;" /></a></p><a href="http://sherhaye-farsi.mihanblog.com/post/author/256064"><p>وحید </p><p>(7)</p></a></li>
+		      	      	
+		      	<li  class="clearfix" id="parentheses"><p><a href="http://sherhaye-farsi.mihanblog.com/post/author/371774"></a></p><a href="http://sherhaye-farsi.mihanblog.com/post/author/371774"><p>سهیل </p><p>(0)</p></a></li>
+		      			    </ul>
+		    </li>
+		    		    
+		    <form id="frm-16076322155fd285570e2f3" method="get" action="http://sherhaye-farsi.mihanblog.com/post/search/fid/16076322155fd285570e2f3"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+		     <li class="widget"><h2>جستجو</h2>
+				  <div align="center"><input type="text" value="" name="search_text" id="s" size="20"/>	</div>  
+				  <div align="center"><input type="submit" value="جستجو" class="btn"/></div>
+		    </li>
+		   <input type="hidden" name="frm-id" value="16076322155fd285570e2f3" id="frm-id" /></form>		   
+		  	
+		    
+						<li class="widget"><h2>آرشیو</h2>
+				<ul>
+										<li><a href='http://sherhaye-farsi.mihanblog.com/post/archive/1395/3'> خرداد 1395</a></li>
+										<li><a href='http://sherhaye-farsi.mihanblog.com/post/archive/1395/2'> اردیبهشت 1395</a></li>
+										<li><a href='http://sherhaye-farsi.mihanblog.com/post/archive/1395/1'> فروردین 1395</a></li>
+										<li><a href='http://sherhaye-farsi.mihanblog.com/post/archive/1394/12'> اسفند 1394</a></li>
+										<li><a href='http://sherhaye-farsi.mihanblog.com/post/archive/1394/9'> آذر 1394</a></li>
+										<li><a href='http://sherhaye-farsi.mihanblog.com/post/archive/1394/8'> آبان 1394</a></li>
+										<li><a href='http://sherhaye-farsi.mihanblog.com/post/archive/1394/7'> مهر 1394</a></li>
+										<li><a href='http://sherhaye-farsi.mihanblog.com/post/archive/1394/6'> شهریور 1394</a></li>
+										<li><a href='http://sherhaye-farsi.mihanblog.com/post/archive/1394/5'> مرداد 1394</a></li>
+										<li><a href='http://sherhaye-farsi.mihanblog.com/post/archive/1394/4'> تیر 1394</a></li>
+										<li><a href='http://sherhaye-farsi.mihanblog.com/post/archive/1394/3'> خرداد 1394</a></li>
+										<li><a href='http://sherhaye-farsi.mihanblog.com/post/archive/1394/2'> اردیبهشت 1394</a></li>
+										<li><a href="http://sherhaye-farsi.mihanblog.com/post/archive"><b>همه آرشیوها</b></a></li>
+				</ul>
+			</li>
+						    
+		    
+						<li class="widget"><h2>آرشیو موضوعی</h2>
+				<ul>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/1"><p>شعر های فارسی</p><p>(500)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/38"><p>------قالب های شعر------</p><p>(5)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/44"><p>غزل</p><p>(369)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/39"><p>مثنوی</p><p>(25)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/40"><p>قصیده</p><p>(2)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/49"><p>چهارپاره</p><p>(10)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/42"><p>دوبیتی</p><p>(8)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/41"><p>رباعی</p><p>(17)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/43"><p>قطعه</p><p>(5)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/45"><p>مسمّط</p><p>(3)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/46"><p>مستزاد</p><p>(1)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/50"><p>شعر نو</p><p>(36)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/21"><p>--------شاعران کهن--------</p><p>(1)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/4"><p>حافظ</p><p>(41)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/5"><p>سعدی</p><p>(29)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/8"><p>ابوسعید ابوالخیر</p><p>(3)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/7"><p>مولوی</p><p>(35)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/16"><p>خیام</p><p>(1)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/11"><p>عطار</p><p>(7)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/19"><p>ناصر خسرو</p><p>(1)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/18"><p>وحشی بافقی</p><p>(2)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/15"><p>بابا طاهر همدانی</p><p>(6)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/14"><p>امیر خسرو دهلوی</p><p>(2)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/13"><p>جامی</p><p>(2)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/12"><p>صائب تبریزی</p><p>(6)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/9"><p>فخرالدین عراقی</p><p>(4)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/70"><p>میرزا حبیب خراسانی</p><p>(1)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/22"><p>--------شاعران معاصر--------</p><p>(1)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/23"><p>استاد شهریار</p><p>(13)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/24"><p>پروین اعتصامی</p><p>(8)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/58"><p>ایرج میرزا</p><p>(2)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/25"><p>هوشنگ ابتهاج(سایه)</p><p>(30)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/30"><p>عماد خراسانی</p><p>(8)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/28"><p>شفیعی کدکنی(م.سرشک)</p><p>(9)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/26"><p>مهدی اخوان ثالث</p><p>(9)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/27"><p>رهی معیّری</p><p>(15)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/29"><p>سهراب سپهری</p><p>(1)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/32"><p>فریدون مشیری</p><p>(8)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/56"><p>مهرداد اوستا</p><p>(2)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/53"><p>سیاوش کسرایی</p><p>(1)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/68"><p>سیمین بهبهانی</p><p>(4)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/54"><p>فریدون توللی</p><p>(1)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/33"><p>حسین پناهی</p><p>(6)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/34"><p>حسین منزوی</p><p>(18)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/35"><p>محمدعلی بهمنی</p><p>(10)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/63"><p>محمد قهرمان</p><p>(5)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/36"><p>فاضل نظری</p><p>(41)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/57"><p>دکتر جواد نوربخش</p><p>(5)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/62"><p>مهدی فرجی</p><p>(8)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/59"><p>حسین جنتی عطایی</p><p>(2)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/69"><p>جاوید سیفی</p><p>(6)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/51"><p>حامد عسکری</p><p>(7)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/52"><p>قیصر امین پور</p><p>(8)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/61"><p>کاظم بهمنی</p><p>(7)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/60"><p>سید مهدی موسوی</p><p>(2)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/64"><p>علیرضا بدیع</p><p>(2)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/65"><p>سورنا جوکار</p><p>(3)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/66"><p>آذر زمانی</p><p>(8)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/37"><p>دیگر شاعران</p><p>(96)</p></a></li>
+										<li class="clearfix" id="parentheses"><a href="http://sherhaye-farsi.mihanblog.com/post/category/3"><p>فقط جهت تغییر فضا</p><p>(7)</p></a></li>
+									</ul>
+			</li>
+						
+	    
+		    
+		    		    <li class="widget"><h2>لینکستان</h2>
+		    <ul>
+		    	     	
+		      	<li><a href="http://koocheye-rendan.blogfa.com" title="زاهد از کوچه ی رندان به سلامت بگذر"  target="_blank">کوچه ی رندان</a></li>
+		      	     	
+		      	<li><a href="http://zakhmenahn.blogfa.com" title="این چه استغناست یارب وین چه قادر حکمت است/کاین همه زخم نهان هست و مجال آه نیست"  target="_blank">زخم نهان</a></li>
+		      	     	
+		      	<li><a href="http://lengekafsh.ir/" title=""  target="_blank">لنگه کفش خود را قورت بده !</a></li>
+		      	     	
+		      	<li><a href="http://www.rahi-moayyeri.blogfa.com/" title=""  target="_blank">رهی معیری</a></li>
+		      	     	
+		      	<li><a href="http://atreadab.mihanblog.com" title=""  target="_blank">عطر ادب</a></li>
+		      	     	
+		      	<li><a href="http://no3in.blogfa.com" title=""  target="_blank">کفتر چاهی</a></li>
+		      	     	
+		      	<li><a href="http://www.avaayesokoot.blogfa.com/" title=""  target="_blank">آوای سکوتـ ــ</a></li>
+		      	     	
+		      	<li><a href="http://www.go-to-eternity.blogfa.com" title=""  target="_blank">جاودانگی</a></li>
+		      	     	
+		      	<li><a href="http://footprint-azrael.mihanblog.com" title=""  target="_blank">ردپای عزرائیل</a></li>
+		      	     	
+		      	<li><a href="http://masoud-lazemi.blogfa.com" title="وبلاگ دوست عزیز آقای مسعود لازمی"  target="_blank">داد و بیداد</a></li>
+		      	     	
+		      	<li><a href="../www.azarzamani.mihanblog.com/index.html" title=""  target="_blank">شعر و ترانه</a></li>
+		      	     	
+		      	<li><a href="http://zangefarsi.mihanblog.com" title="اشعار استاد"  target="_blank">***زنگ فارسی ما***</a></li>
+		      	     	
+		      	<li><a href="../newman-90.mihanblog.com/index.html" title=""  target="_blank">اشعار و متون ادبی زیبا</a></li>
+		      	     	
+		      	<li><a href="http://divan-moazzen.persianblog.ir" title=""  target="_blank">دیوان موذن</a></li>
+		      	     	
+		      	<li><a href="http://www.hejab1200.blogfa.com" title=""  target="_blank">حجاب(وبلاگ دوست عزیزم حمید)</a></li>
+		      	     	
+		      	<li><a href="http://mehdi-shargian2000.blogfa.com" title="وبلاگی پیرامون موسیقی و ساز کمانچه"  target="_blank">نوای کمانچه</a></li>
+		      	     	
+		      	<li><a href="http://sina-k.blogfa.com/" title=""  target="_blank">آرامش در سکوت</a></li>
+		      	     	
+		      	<li><a href="http://www.bebin-zarar-nadare.blogfa.com/" title=""  target="_blank">بهشتی ساخته  ام در جهنم دنیا</a></li>
+		      	     	
+		      	<li><a href="http://zangefarsimaha.mihanblog.com/" title=""  target="_blank">كلاس سوم هفت</a></li>
+		      	     	
+		      	<li><a href="http://topgaer.mihanblog.com" title="آنلاین ترین وبلاگ اتومبیل در ایران"  target="_blank">تخت گاز</a></li>
+		      			      	<li><a href="http://sherhaye-farsi.mihanblog.com/link/"><b>همه لینکها</b></a></li>
+		    </ul>
+		    </li>
+		    		    
+		    
+        
+		
+
+		    		    <li class="widget"><h2>صفحات جانبی</h2>
+		    <ul>
+		    	     	
+		      	<li><a href="http://sherhaye-farsi.mihanblog.com/extrapage/anvaesher">انواع شعر فارسی</a></li>
+		      	      	
+		    </ul>
+		    </li>
+		      		    	    
+		
+		  	   
+
+
+
+						<li class="widget"><h2>آمار وبلاگ</h2>
+				<ul class="clearfix stat">
+					<li>کل بازدید : <script>getStatVar('total_view');</script></li>
+					<li>بازدید امروز :<script>getStatVar('today_view');</script></li>
+					<li>بازدید دیروز : <script>getStatVar('yesterday_view');</script></li>
+					<li>بازدید این ماه : <script>getStatVar('this_month_view');</script></li>	
+					<li>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li>						
+					<li>تعداد نویسندگان : <script>getStatVar('total_author');</script></li>																
+					<li>تعداد کل پست ها : <script>getStatVar('total_post');</script></li>
+					<li>آخرین بازدید : <script>getStatVar('last_view_date');</script></li>	
+					<li>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></li>
+		
+				</ul>	
+			</li>				
+					    
+		    
+			
+		
+			
+						<li class="widget"><h2>اَبر برچسبها</h2>
+			<div class="cloud clearfix">
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%85%D8%AD%D9%85%D8%AF%D8%B9%D9%84%DB%8C+%D8%A8%D9%87%D9%85%D9%86%DB%8C" style="font-size:1.02em">محمدعلی بهمنی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%A8%D8%A7%D8%A8%D8%A7+%D8%B7%D8%A7%D9%87%D8%B1" style="font-size:1em">بابا طاهر&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D9%87" style="font-size:1.05em">سایه&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AD%D8%B3%DB%8C%D9%86+%D8%B2%D8%AD%D9%85%D8%AA%DA%A9%D8%B4" style="font-size:1em">حسین زحمتکش&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B1%D9%87%DB%8C+%D9%85%D8%B9%DB%8C%D8%B1%DB%8C" style="font-size:1.01em">رهی معیری&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B4%D8%B9%D8%B1%D9%86%D9%88" style="font-size:1em">شعرنو&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B3%D8%B9%D8%AF%DB%8C" style="font-size:1.05em">سعدی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%85%D9%81%D8%A7%D8%B9%D9%84%D9%86+%D9%81%D8%B9%D9%84%D8%A7%D8%AA%D9%86+%D9%85%D9%81%D8%A7%D8%B9%D9%84%D9%86+%D9%81%D8%B9+%D9%84%D9%86" style="font-size:1em">مفاعلن فعلاتن مفاعلن فع لن&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AC%D9%84%DB%8C%D9%84+%D8%B5%D9%81%D8%B1%D8%A8%DB%8C%DA%AF%DB%8C" style="font-size:1.01em">جلیل صفربیگی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AF%D9%88%D8%A8%DB%8C%D8%AA%DB%8C" style="font-size:1.01em">دوبیتی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AC%D8%A7%D9%88%DB%8C%D8%AF+%D8%B3%DB%8C%D9%81%DB%8C" style="font-size:1.04em">جاوید سیفی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%BA%D8%B2%D9%84" style="font-size:2em">غزل&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B9%D9%84%DB%8C%D8%B1%D8%B6%D8%A7+%D8%A8%D8%AF%DB%8C%D8%B9" style="font-size:1em">علیرضا بدیع&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B1%D8%A8%D8%A7%D8%B9%DB%8C" style="font-size:1.05em">رباعی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%85%D9%87%D8%AF%DB%8C+%D9%81%D8%B1%D8%AC%DB%8C" style="font-size:1.04em">مهدی فرجی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%81%D8%A7%D8%B9%D9%84%D8%A7%D8%AA%D9%86+%D9%81%D8%B9%D9%84%D8%A7%D8%AA%D9%86+%D9%81%D8%B9%D9%84%D8%A7%D8%AA%D9%86+%D9%81%D8%B9+%D9%84%D9%86" style="font-size:1em">فاعلاتن فعلاتن فعلاتن فع لن&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B8%D9%85+%D8%A8%D9%87%D9%85%D9%86%DB%8C" style="font-size:1.01em">کاظم بهمنی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%85%D8%AD%D9%85%D8%AF+%D8%B3%D9%84%D9%85%D8%A7%D9%86%DB%8C" style="font-size:1em">محمد سلمانی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%85%D8%AD%D9%85%D8%AF%D8%B4%DA%A9%D8%B1%DB%8C+%D9%81%D8%B1%D8%AF" style="font-size:1em">محمدشکری فرد&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%85%D8%AB%D9%86%D9%88%DB%8C" style="font-size:1.03em">مثنوی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%85%D9%88%D9%84%D9%88%DB%8C" style="font-size:1.05em">مولوی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AD%D8%A7%D9%81%D8%B8" style="font-size:1.04em">حافظ&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B3%DB%8C%D9%85%DB%8C%D9%86+%D8%A8%D9%87%D8%A8%D9%87%D8%A7%D9%86%DB%8C" style="font-size:1.01em">سیمین بهبهانی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%87%D9%88%D8%B4%D9%86%DA%AF+%D8%A7%D8%A8%D8%AA%D9%87%D8%A7%D8%AC" style="font-size:1.06em">هوشنگ ابتهاج&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%AD%D8%B3%DB%8C%D9%86+%D9%85%D9%86%D8%B2%D9%88%DB%8C" style="font-size:1.05em">حسین منزوی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%85%D8%AD%D9%85%D8%AF+%D9%82%D9%87%D8%B1%D9%85%D8%A7%D9%86" style="font-size:1em">محمد قهرمان&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D8%B4%D8%B9%D8%B1+%D9%86%D9%88" style="font-size:1.02em">شعر نو&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%81%D8%A7%D8%B6%D9%84+%D9%86%D8%B8%D8%B1%DB%8C" style="font-size:1.11em">فاضل نظری&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%D9%85%D8%AC%DB%8C%D8%AF+%D8%AA%D8%B1%DA%A9%D8%A7%D8%A8%D8%A7%D8%AF%DB%8C" style="font-size:1em">مجید ترکابادی&nbsp;</a>
+								
+					<a href="http://sherhaye-farsi.mihanblog.com/post/tag/%DA%86%D9%87%D8%A7%D8%B1%D9%BE%D8%A7%D8%B1%D9%87" style="font-size:1.01em">چهارپاره&nbsp;</a>
+					
+			</div>	
+			</li>
+				
+
+			
+		    
+		<form id="frm-16076322155fd285570e82f" method="post" action="http://sherhaye-farsi.mihanblog.com/poll/new/fid/16076322155fd285570e82f/atrty/1607632215/avrvy/0/key/4dc2df10ac60c0cdea8a9e48b554f22d/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="312841" id="data[pollid]" />		
+		    <li class="widget"><h2>نظرسنجی</h2>
+				<ul  class="clearfix poll">
+					<div class="poll_question">آیا از وضعیت ظاهری و گرافیکی وبلاگ شعرهای فارسی رضایت دارید؟</div>
+										<li>
+						<label><input type="radio" name="data[answer]" value="v1">بله</label><br> 
+					</li>
+										<li>
+						<label><input type="radio" name="data[answer]" value="v2">خیر</label><br> 
+					</li>
+										<li>
+						<label><input type="radio" name="data[answer]" value="v3">نیاز به تغییرات اساسی</label><br> 
+					</li>
+										<li>
+						<label><input type="radio" name="data[answer]" value="v4">نیاز به تغییرات جزئی</label><br> 
+					</li>
+						
+					<div align="center"><input type="submit" value="ثبت" class="btn"/></div>
+				</ul> 
+			</li>	
+		    
+		<input type="hidden" name="frm-id" value="16076322155fd285570e82f" id="frm-id" /></form> 
+		    
+	
+
+<cb:block_author>
+		    <li class="widget"><h2>امکانات وبلاگ</h3>
+		    <ul>
+
+<br>
+<script type="text/javascript" src="http://pagerank.pichak.net/rank/icon/?n=12&url=sherhaye-farsi.mihanblog.com"></script><div style="display:none"><h1><a href="http://pichak.net/blogcod/pagerank">پیج رنک گوگل</a></h1><h1><a href="http://pichak.net/verification/index.php?n=12&url=sherhaye-farsi.mihanblog.com">پیج رنک سایت شما</a></h1><h1></a></h1></div><br>
+<br>
+	 
+
+<script type="text/javascript" src="http://www.vajehyab.com/widget/web/?type=sidebar&width=150&height=70"></script>
+
+
+
+   <cb:block_author>
+		    <li class="widget"><h2>لوگوی دوستان</h4>
+		    <ul><marqee>
+<br>
+<a href="http://www.shereno.com/"><img src="http://www.shereno.com/slogo.gif" border="0" alt="www.shereno.com"></a>
+
+
+
+<cb:block_author>
+
+
+		    <div class="clearfix">.</div>
+	
+			<div align="center" class="mihan_logo"></div>	
+		
+		
+		
+					
+					
+		</ul>
+
+	</div>
+	</div>
+</div>
+</div>
+
+
+<div id="footer">
+	<div id="footer_text">
+		<strong>&nbsp;&nbsp;POWERED BY <a href="http://www.Sherhaye-farsi.mihanblog.com/"><font color="#FF0000" size="2px">Sherhaye-</font>Farsi<font color="#FF0000" size="2px">.mihanblog</font>.COM</a></strong>
+		<br />
+		<a>www.askgraphics.com</a> by:AskGraphics <!--Download this theme from <a>www.skinpress.com--></a>
+	</div>
+</div>
+
+
+<div style='display:none;'><li><a href='http://pichak.net/online-user'>کد نمایش افراد آنلاین</a></li></li></div>
+<script type='text/JavaScript'>
+var oulb= 'http://pichak.net/online-user/';
+function CheckBrowser(){
+if(navigator.appName == "Microsoft Internet Explorer")	{
+document.write('<scrip'+'t src="'+oulb+'js/jquery.min.js"></s'+'cript><scrip'+'t src="'+oulb+'js/js.php?c=5&t=7"></s'+'cript>');return true;}document.write('<scrip'+'t src="'+oulb+'cod.php?c=5&t=7"></s'+'cript>');
+return false; }</script>
+<script type='text/JavaScript'>CheckBrowser()</script>				
+</div>
+</center>
+
+
+
+
+
+</body>
+</html>
+
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'sherhaye-farsi.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

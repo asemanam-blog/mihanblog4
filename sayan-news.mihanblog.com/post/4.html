@@ -1,0 +1,1063 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc%3Frsd" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*1120986*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','46');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','پنجشنبه 27 شهریور 1393');
+	
+	setStatVar('today_view','16');
+	setStatVar('yesterday_view','8');
+	
+	setStatVar('this_month_view','298');
+	setStatVar('last_month_view','525');
+
+	setStatVar('total_view','111902');
+	setStatVar('last_view_date','پنجشنبه 27 آذر 1399 (12:56)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://sayan-news.mihanblog.com/statupdate/?data[refereruri]=http://sayan-news.mihanblog.com/post/category/4&data[postid]=4&data[requesturi]=/post/4&data[sdate]=1608204350&data[hash]=ce15d2ce5bc14411c7572609951a3783&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[4]='2';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[4]='0';
+mihanblogDisLikeArrCnt[4]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://sayan-news.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://sayan-news.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://sayan-news.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://sayan-news.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html><head>
+<title>سایان نیوز - درخواست از یک شخصیت مهم روستا</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="designer" content="payamblog">
+<meta name="designerUrl" content="http://www.payamblog.com/">
+<meta name="language" content="Farsi">
+<meta name="author" content="محمد نژادیاری">
+<meta name="description" content="سایان نیوز - درخواست از یک شخصیت مهم روستا - درخواست از یک شخصیت مهم روستا">
+<meta name="keywords" content="سایان نیوز - درخواست از یک شخصیت مهم روستا, درخواست,شخصیت,مهم,روستا,">
+<link rel="alternate" type="application/rss+xml" title="سایان نیوز" href="rss/index.html" />
+<script type="text/javascript" src="http://payamblog.com/tem/43/scrolltopcontrol.js"></script> 
+<script type="text/javascript" src="http://payamblog.com/tem/43/date.js"></script> 
+<script language="javascript" type="text/javascript" src="http://payamblog.com/tem/43/payamblog.js"></script>
+</head>
+<!--- template38-mihanblog-version:3 --->
+<!--- Design By : wWw.payamblog.Com --->
+<body bgcolor="#E5F3F5">
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" dir="rtl" >
+<tr>
+<td>
+<div class="back1">
+
+<div align="center">
+<table border="0" width="1003" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td>
+<div class="menu-bala">
+<div class="menu-bala-link">
+<div style="width:100%">
+<div class="vmenu3"><a href="../index.html">صفحه ی نخست </a></div>
+<div class="vmenu3"><a href="mailto:mohhas9@yahoo.com">پست الکترونیک</a></div>
+<div class="vmenu3"><a href="javascript:messageForm()">تماس با ما</a></div>
+<div class="vmenu3"><a href="archive.html">عناوین مطالب وبلاگ</a></div>
+<div class="vmenu3"><a target="_blank" href="rss/index.html">لینك rss</a></div>
+<div class="vmenu3"><a target="_blank" href="http://sayan-news.mihanblog.com/m/">نسخه موبایل</a></div>
+<div class="vmenu3"><a target="_blank" title="جدید ترین قالب های وبلاگ در پیام بلاگ" href="http://www.payamblog.com" >قالب وبلاگ</a></div>
+</div>
+</div>
+</div>
+</td>
+<td width="283">
+<div class="search"><div class="space5" ></div><form method="Get" target="_blank" action="http://google.com/search" class=sch><input name="sitesearch" value="http://sayan-news.mihanblog.com" type="hidden">
+<p dir="rtl"></a><input type="submit" value=" " class=but><input type="text" name="q" size="21" class=txt >
+</p></form></div>
+<div class="space5"></div>
+</td>
+</tr>
+</table>
+
+<!---------- he ---------------------------->
+<!---------- address-image --------->
+<div style="width:1003px; overflow:hidden; height:123px; overflow:hidden; background-image:url('http://8pic.ir/images/52948267572980256222.jpg'); background-repeat:no-repeat">
+<!---------- address-image --------->
+<div class="bb" ><div class="blogtitle2"><div class="title"><h1><a href="../index.html">سایان نیوز</a></h1></div></div>
+<div class="blogdescription">اخبار هفتگی روستا</div></div>
+</div>
+<!---------- he ---------------------------->
+
+<div class="space1"></div>
+
+<div align="center">
+<table border="0" width="980" cellspacing="0" cellpadding="0">
+<tr>
+
+<td width="540" valign="top" >
+
+
+<!---------- block sabet ------------------------>
+<div class="post">
+<div class="post1"></div>
+<div class="post2">
+<div align="center"><div class="post5"><div align="center">
+
+<a target="_blank" title="جهت اطلاع از تنظیمات و ویرایش این قالب اینجا را کلیک کنید " 
+href="http://www.payamblog.com">
+<div align="center"><img src="http://8pic.ir/images/92951291602882694755.gif" alt="" align="bottom" border="0" hspace="0" vspace="0"></div> 
+
+</a>
+
+</div></div></div>
+</div>
+<div class="post3"></div>
+</div>
+<div class="space2"></div>
+<!---------- block sabet ------------------------>
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="post">
+<div class="post1"></div>
+<div class="post2">
+<div class="title-post"><div class="link-title-post"><a href="4.html">درخواست از یک شخصیت مهم روستا</a></div></div>
+<div class="post-date">جمعه 8 دی 1391</div>
+<div align="center" style="width:100%" ><div class="post4">
+<div align="right" style="width:400px;  padding:5px 5px 0px 0px; float:right;" >
+نوشته شده توسط محمد نژادیاری در  ساعت 08:36 ب.ظ</div>
+<div align="center" style="width:110px; padding:5px 5px 0px 0px; float:left;" ><div class="menu-link">
+<BlogComment><a target="_self" href="javascript:newComment(4)" >نظرات (<script>setCommentCnt(4)</script>)</a></BlogComment>
+</div></div>
+</div></div>
+<div align="center"><div class="post5"><div align="right"><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+<div style="text-align: center;"><p style="text-align: center;">در روستای ما شخصی وجود دارد همه در دوران 
+ابتدایی شعر های آن را می خوانیم و این شخص کسی نیست جز مصطفی رحمان دوست ،
+ که چندین سال است که از روستای ما رفته و من با او سخنی دارم:</p><p style="text-align: center;">اگر
+ کسی از اقوام یا دوستان یا آشنایان که با ایشان ارتباط دارد اگر ایشان را 
+دید به او بگوید که نوه ی خدیجه خاتون وحیدی (نوه دختر عمه ات) تو وبلاگش 
+از شما درخواست می کند که روستای خود را فراموش نکنید و انسان وطن خویش، 
+خاکی که از آن بلند شده را فراموش نمی کند </p><p style="text-align: center;">و من و همه روستاییان مشتاق دیدار شما آقای رحمان دوست هستیم</p></div>
+
+
+
+
+ 
+
+
+
+
+
+<br>
+<b>» </b>
+</div></div></div>
+<div class="post6"></div>
+<div class="post7">
+<!--- category ---><b>مرتبط با :</b><a href="category/4.html">
+مطالب رها</a><br><!--- /category --->
+<!--- link ---><!--- /link --->
+<!--- tag ---><b>برچسب ها : </b><a href="tag/درخواست&#32;از&#32;یک&#32;شخصیت&#32;روستا.html">درخواست از یک شخصیت روستا</a>-<!--- /tag --->
+</div>
+</div>
+<div class="post3"></div>
+</div>
+<div class="space2"></div>
+
+
+
+</td>
+
+<td width="20" valign="top" > </td>
+<td width="420" valign="top" >
+
+<div class="menu-right-one-1"><div class="menu-right-one-text">اشتراك RSS </div></div>
+<div class="menu-right-one-2">
+<div class="ali-behnamfar">اشتراك وب سایت از طریق RSS خوان</div>
+<div class="rss-link">
+<div style="width:100%; height:20px; padding:0px 13px 0px 10px; COLOR: #327ABD; font-weight:bold; ">
+<div class="icon1" >
+	<img src="http://payamblog.com/tem/43/11.gif"></div>
+<div class="menu-link">
+<div class="icon2" ><a target="_blank" href="http://sayan-news.mihanblog.com/post/&lt;-BlogXmlLink-&gt;">RSS پست ها</a></div>
+</div>
+<div class="icon3" ></div>
+<div class="icon1" >
+	<img src="http://payamblog.com/tem/43/12.gif"></div>
+<div class="icon2" >
+
+
+<SCRIPT>showdate()</SCRIPT>
+
+
+
+</div>
+</div>
+</div>
+<div class="space4"></div>
+<!---------- block news ------------------------->
+<div class="ali-behnamfar2">آخرین اخبار وب سایت </div>
+<div class="ali-behnamfar-news3" >
+﻿﻿<script src="http://payamblog.com/tem/43/news.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+var pausecontent2=new Array()
+var x=0;
+var y=1;
+
+/*
+<!---------- news ---------->
+*/
+pausecontent2[x]='<a target="_blank" title="توضیحات خبر" href="ادرس&#32;خبر.html" class="ali-behnamfar-news2" >عنوان خبر</a>';
+y=++x;
+/*
+<!---------- news ---------->
+*/
+
+new pausescroller(pausecontent2, "ali-behnamfar-news", "ali-behnamfar-news2", 2000);
+</script>
+</div>
+<!---------- block news ------------------------->
+<div class="space3"></div>
+</div>
+<div class="menu-right-one-3"></div>
+
+<div class="space2"></div>
+
+<div class="menu-right-one-1"><div class="menu-right-one-text">درباره ی وب سایت</div></div>
+<div class="menu-right-one-2">
+<div class="space3"></div>
+<center><img src="http://static.mihanblog.com//public/user_data/web_photo/374/1120986.jpg?1935"  /></center>
+<div class="text"></div>
+<div style="padding:10px 10px 10px 10px;" ><a target="_blank" href="author/964585.html">:: مدیر وب سایت  : محمد نژادیاری</a></div>
+</div>
+<div class="menu-right-one-3"></div>
+
+<div class="space2"></div>
+
+<div class="previousitems-link">
+<div class="menu-right-one-4"></div>
+<div class="menu-right-one-5">
+<div class="menu-link">
+<div class="vmenu"><a href="104.html" title="دوشنبه 24 شهریور 1393" > برنامه بسبج </a></div><div class="vmenu"><a href="102.html" title="شنبه 15 شهریور 1393" > بازگشت </a></div><div class="vmenu"><a href="101.html" title="پنجشنبه 1 خرداد 1393" > به خلیج فارس رای دهید </a></div><div class="vmenu"><a href="100.html" title="دوشنبه 22 اردیبهشت 1393" > فکر بکر </a></div><div class="vmenu"><a href="95.html" title="سه شنبه 24 دی 1392" > سلامی دوباره </a></div><div class="vmenu"><a href="91.html" title="دوشنبه 28 مرداد 1392" > عکس گل </a></div><div class="vmenu"><a href="90.html" title="دوشنبه 28 مرداد 1392" > پاییز در تابستان.. </a></div><div class="vmenu"><a href="87.html" title="دوشنبه 21 مرداد 1392" > روستای سایان </a></div><div class="vmenu"><a href="85.html" title="دوشنبه 21 مرداد 1392" > نماز عید سعید فطر </a></div><div class="vmenu"><a href="83.html" title="چهارشنبه 9 مرداد 1392" > پرندگان  </a></div><div class="vmenu"><a href="82.html" title="چهارشنبه 9 مرداد 1392" > بچه های مسجد </a></div><div class="vmenu"><a href="81.html" title="چهارشنبه 9 مرداد 1392" > آبروبی جویها </a></div><div class="vmenu"><a href="79.html" title="چهارشنبه 2 مرداد 1392" > اخبار آبی </a></div><div class="vmenu"><a href="78.html" title="چهارشنبه 2 مرداد 1392" > اخبار این هفته </a></div><div class="vmenu"><a href="77.html" title="شنبه 22 تیر 1392" > آهنگ های سنتی  </a></div><div class="vmenu"><a href="76.html" title="شنبه 22 تیر 1392" > نگاهی به شهیدان </a></div><div class="vmenu"><a href="75.html" title="یکشنبه 16 تیر 1392" > جوجه های بهاری.. </a></div><div class="vmenu"><a href="73.html" title="سه شنبه 11 تیر 1392" > از گذشته ها.. </a></div><div class="vmenu"><a href="72.html" title="یکشنبه 9 تیر 1392" > کشاورزی از گذشته تا به امروز </a></div><div class="vmenu"><a href="63.html" title="یکشنبه 1 اردیبهشت 1392" > عکس طبیعت... </a></div><div class="vmenu"><a href="61.html" title="شنبه 24 فروردین 1392" > مداحی سایان </a></div><div class="vmenu"><a href="56.html" title="دوشنبه 12 فروردین 1392" > تصاویر فوق العاده از سایان </a></div><div class="vmenu"><a href="55.html" title="دوشنبه 12 فروردین 1392" > طبیعت دیدنی سایان </a></div><div class="vmenu"><a href="53.html" title="چهارشنبه 16 اسفند 1391" > یک سال من.... </a></div><div class="vmenu"><a href="44.html" title="یکشنبه 29 بهمن 1391" > یاد سالهای برفی </a></div><div class="vmenu"><a href="43.html" title="یکشنبه 29 بهمن 1391" > تصاویر فروردین در بهمن </a></div><div class="vmenu"><a href="38.html" title="یکشنبه 15 بهمن 1391" > بیو گرافی من... </a></div><div class="vmenu"><a href="30.html" title="یکشنبه 1 بهمن 1391" > چند سال قبل ... </a></div><div class="vmenu"><a href="29.html" title="یکشنبه 1 بهمن 1391" > باز شایعه ای غیر قابل باور </a></div><div class="vmenu"><a href="28.html" title="یکشنبه 1 بهمن 1391" > داستانی بحث برانگیز  </a></div></div>
+<div class="space5"></div>
+</div>
+<div class="menu-right-one-6"></div>
+</div>
+
+<div class="space2"></div>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td width="200" valign="top" >
+<div class="menu-link">
+
+<div class="menu-right-two-1"><div class="menu-right-two-text">موضوعات</div></div>
+<div class="menu-right-two-2">
+<div class="vmenu2"><a href="category/7.html" title="11" >
+اخبار</a></div><div class="vmenu2"><a href="category/6.html" title="12" >
+داستانی</a></div><div class="vmenu2"><a href="category/2.html" title="22" >
+تصویر</a></div><div class="vmenu2"><a href="category/1.html" title="7" >
+تاریخی</a></div><div class="vmenu2"><a href="category/3.html" title="5" >
+مذهبی</a></div><div class="vmenu2"><a href="category/4.html" title="7" >
+مطالب رها</a></div><div class="space5"></div>
+</div>
+<div class="menu-right-two-3"></div>
+<div class="space3"></div>
+
+
+		
+<div class="menu-right-two-1"><div class="menu-right-two-text">آرشیو مطالب</div></div>
+<div class="menu-right-two-2">
+<div class="vmenu2"><a href="archive/1393/6.html" title="2">
+ شهریور 1393</a></div><div class="vmenu2"><a href="archive/1393/3.html" title="1">
+ خرداد 1393</a></div><div class="vmenu2"><a href="archive/1393/2.html" title="1">
+ اردیبهشت 1393</a></div><div class="vmenu2"><a href="archive/1392/5.html" title="9">
+ مرداد 1392</a></div><div class="vmenu2"><a href="archive/1392/4.html" title="5">
+ تیر 1392</a></div><div class="vmenu2"><a href="archive/1392/2.html" title="1">
+ اردیبهشت 1392</a></div><div class="vmenu2"><a href="archive/1392/1.html" title="3">
+ فروردین 1392</a></div><div class="vmenu2"><a href="archive/1391/12.html" title="1">
+ اسفند 1391</a></div><div class="vmenu2"><a href="archive/1391/11.html" title="6">
+ بهمن 1391</a></div><div class="vmenu2"><a href="archive/1391/10.html" title="16">
+ دی 1391</a></div><div class="space5"></div>
+</div>
+<div class="menu-right-two-3"></div>
+<div class="space3"></div>
+
+<div class="menu-right-two-1"><div class="menu-right-two-text">دیگر موارد</div></div>
+<div class="menu-right-two-2">
+<div class="text">
+ » تعداد مطالب : <script>getStatVar('total_post');</script><br>
+ » تعداد نویسندگان : <script>getStatVar('total_author');</script><br>
+ » آخرین بروز رسانی : <script>getStatVar('modify_date');</script><br>
+ » بازدید امروز : <script>getStatVar('today_view');</script><br>
+ » بازدید دیروز : <script>getStatVar('yesterday_view');</script><br>
+ » بازدید این ماه : <script>getStatVar('this_month_view');</script><br>
+ » بازدید ماه قبل : <script>getStatVar('last_month_view');</script><br>
+ » بازدید کل : <script>getStatVar('total_view');</script><br>
+ » آخرین بازدید : <script>getStatVar('last_view_date');</script><br><br>
+</div>
+<div align="center"><a href="http://www.hadi-gholami.mihanblog.com" target="_blank" title=""><img src="http://8pic.ir/images/97878717404474291618.jpg" alt="" align="bottom" border="0" height="161" hspace="0" vspace="0" width="149"></a></div> 
+
+<div align="center"><div class="other">.</div></div>
+<div class="space5"></div>
+</div>
+<div class="menu-right-two-3"></div>
+<div class="space3"></div>
+
+</div>
+</td>
+<td width="20" valign="top" > </td>
+<td width="200" valign="top" >
+<div class="menu-link">
+
+<div class="menu-right-two-1"><div class="menu-right-two-text">لینك دوستان</div></div>
+<div class="menu-right-two-2">
+<div class="vmenu2"><a target="_blank" title="پیام بلاگ : قالب وبلاگ" href="http://www.payamblog.com" >قالب وبلاگ</a></div>
+<div class="vmenu2"><a target="_blank" title="بازی آنلاین" href="http://game.payamblog.com" >بازی آنلاین</a></div>
+<div class="vmenu2"><a target="_blank" href="http://shamsipoor.mihanblog.com" title="" >شمسی پور دانلود</a></div><div class="vmenu2"><a target="_blank" href="http://qazvin-boy.niloblog.com" title="" >ضد دختر</a></div><div class="vmenu2"><a target="_blank" href="http://link118.com" title="" >تبادل لینک</a></div><div class="vmenu2"><a target="_blank" href="http://saeidok.mihanblog.com/" title="" >هر چی بخوای</a></div><div class="vmenu2"><a target="_blank" href="http://saeedtnha.mihanblog.com" title="" >تنهـــ ایےِ</a></div><div class="vmenu2"><a target="_blank" href="http://khandefa.ir" title="" >سایت تفریحی خنده فا</a></div><div class="vmenu2"><a target="_blank" href="http://lmmi2au.blogfa.com" title="" >راهنمای سفر به استرالیا</a></div><div class="vmenu2"><a target="_blank" href="http://myanswers.ir" title="" >سوال وجواب خودرا مطرح کنید</a></div><div class="vmenu2"><a target="_blank" href="http://1sms9.ir" title="" >جک،لطیفه،اس ام اس ‏ir‏(حسن)</a></div><div class="vmenu2"><a target="_blank" href="http://a-b-eshgh.mihanblog.com" title="" >آوازبارانی عشق</a></div><div class="vmenu2"><a target="_blank" href="http://ahkechebegooyam.mihanblog.com" title="" >آه...که چه بگویم</a></div><div class="vmenu2"><a target="_blank" href="http://www.sayany.blogfa.com" title="" >وبلاگ حاج آقاخلجی</a></div><div class="vmenu2"><a target="_blank" href="http://parsjok9.mihanblog.com" title="" >پارس جوک</a></div><div class="vmenu2"><a target="_blank" href="http://www.9jok9.mihanblog.com" title="" >جک و لطیفه و اس ام اس</a></div><div class="vmenu2"><a target="_blank" title="پیام بلاگ : قالب میهن بلاگ" href="http://mihanblog.payamblog.com" >قالب میهن بلاگ</a></div>
+<div class="vmenu2"><a href="../link/index.html" >مشاهده لیست کامل پیوندها</a></div>
+<div class="space5"></div>
+</div>
+<div class="menu-right-two-3"></div>
+<div class="space3"></div>
+
+
+<div class="menu-right-two-1"><div class="menu-right-two-text">نویسندگان</div></div>
+<div class="menu-right-two-2">
+<div class="vmenu2"><a href="author/964585.html" title="46" >محمد نژادیاری</a></div><div class="space5"></div>
+</div>
+<div class="menu-right-two-3"></div>
+<div class="space3"></div>
+
+<div class="menu-right-two-1"><div class="menu-right-two-text">پیوند های روزانه</div></div>
+<div class="menu-right-two-2">
+<div class="vmenu2"><a target="_blank" href="http://sh-shahbazi.ir" title="درود بر دوست عزیزم
+چند وقتیه که به وبت سر می زنم و از مطالب اون بهره می برم و پیشرفت اون ها رو می بینم.
+منم چند روزی می شه که وبسایتی علمی به نام  &quot;رنگین کمان&quot; رو ایجاد کرده ام.
+ممنون می شم اگه شما هم به وب من سر بزنید.راستی می تونیم با هم تبادل لینک هم بکنیم پس خبر بده.
+توی خبرنامه هم عضو شو تا هر روز مطالب علمی جالبی رو توی ایمیلت داشته باشی.
+ممنون." >
+وبسایت علمی رنگین کمان</a></div><div class="vmenu2"><a target="_blank" href="http://www.bajeagahi.ir" title="با سلام وبلاگ خوب و قشنگی دارید و پست های خوبی میزارید اگه خواستید وبلاگ . یا کالا و خدمات خودتون رو هم تبلیغ کنید میتونید به سایت ما مراجعه کنید
+http://www.bajeagahi.ir" >
+گروه باجه</a></div><div class="vmenu2"><a target="_blank" href="http://www.medical-book.ir" title="وبسایت خوب و جذابی دارید.
+امیوارم در این راه موفق باشید.
+.
+.
+.
+برای خرید با تخفیف کتب تخصصی پزشکی به وب سایت ما سر بزنید.
+5 درصد تخفیف دائمی و بیش از 10 درصد تخفیف ویژه" >
+مدیکال بوک</a></div><div class="vmenu2"><a target="_blank" href="http://proma-design.ir" title="خدمات گروه پروما دیزاین عبارت است از:
+طراح حرفه ای وب و گرافیک طراحی سایت طراحی بنر تبلیغاتی طراحی لوگو طراهی هدر افزایش بازدید و ....." >
+سامانه طراحی حرفه ای پروما دیزاین</a></div><div class="vmenu2"><a target="_blank" href="http://www.linkaddurl.ir" title="تبادل لینک" >
+تبادل لینک</a></div><div class="vmenu2"><a target="_blank" href="http://joki.rozblog.com/Archive" title="سلام و عرض ادب
+پیشنهاد تبلیغات : مخصوص وبلاگها ، کلوبها ، گروهها ، پروفایلها و حتی سایتها  
+بنر 240*120 ماهیانه 5.000 تومن ، بنر 468*60 ماهیانه 7.000 تومن  
+دهکده مجازی جوکی http://joki.rozblog.com
+همسران آنلاین http://facegirl.mihanblog.com	 
+
+          asemoni_206_ar@yahoo.comبرای سفارش با این ایمیل در ارتباط باشید        
+
+ساخت بنر فلش ارزان مخصوص وبلاگها ، کلوبها ، گروهها ، پروفایلها و حتی سایتها
+برای اطلاعات بیشتر لینک زیر را باز کنید 
+http://joki.rozblog.com/post/213" >
+جوک جدید + اس ام اس + داستان + عکس + والپیپر و ...</a></div><div class="vmenu2"><a target="_blank" href="http://goo.gl/53R7yx" title="وب خوبی داری حیف که امار وبلاگت پایینه و بازدید کننده کمی درای.. چند باره میام وبلاگت  و سر میزنم .. بهت پشنهاد میکنم بیا سایتم و نرم افزاهای افزایش امار میهن بلاگ رو دانلود کن ... و امار وبلاگتو واقعی به روزی صد هزار برسون با نظرات بالا ..
+
+ادرس سایتم  http://goo.gl/53R7yx
+
+ادرس یاهو ای دی  ata.behdad
+
+وب تو هم میتونه مثل سایت من روزی 700 هزار بازدید داشته باشه اگر نرم افزارها رو دانلود کنی" >
+افزایش بازدید و نظر </a></div><div class="vmenu2"><a target="_blank" href="http://taktagroup.r98.ir" title="خفن ترین ها در ایمیل شما" >
+گروه اینترنتی تکتا</a></div><div class="vmenu2"><a target="_blank" href="http://alamdaresorkh.mihanblog.com" title="سلام 
+وبلاگت واقعا فوق العادستا...
+اگه خواستی 100% تبادل لینک کنیم 
+بیا وبلاگم بگو با چه اسمی لینکت کنم" >
+علمدار </a></div><div class="vmenu2"><a target="_blank" href="http://www.mizbanmarket.com/12221" title="سلام
+
+احوال شما؟ نماز و روزتون قبول باشه
+
+میگم  شما که وبلاگ به این خوبی دارین ، چرا ازش کسب درآمد نمی کنید؟
+
+خیلی راحته... فقط کافیه لینک و بنر محصولات فروشگاه ما رو توی وبلاگتون بذارید و با فروش محصولات تا 80% پورسانت بگیرید...
+
+پورسانت ها خیلی راحت به حسابتون واریز میشه
+
+اگر به این سیستم علاقمند شدید روی آدرس سایت کلیک کنید تا اطلاعاتتون کامل بشه
+
+فعلا..." >
+دعوت به همکاری</a></div><div class="vmenu2"><a target="_blank" href="http://nojum9.mihanblog.com" title="با سلام....
+ 
+وبلاگ خوبی داری به وبلاگ من هم سربزن" >
+nojum نجوم</a></div><div class="vmenu2"><a target="_blank" href="http://www.ChicChat.ir" title="با سلام....
+ 
+ویلاگ خیلی جالبی داری خیلی خوشم اومد ما هم یک چت روم داریم اگر دوست داشته باشی میتونی چت روم ما رو تو وبلاگت به عنوان چت روم وبلاگ یا چیک چت لینک کنی حتما سر بزن در ضمن بعد لینک کردن اگر دوست داشته باشی می تونی از قسمت تماس با ما چیک چت به ما خبر بدی که شما رو در وبلاگ چت روم که بازدیدش روزانه زیاد هم هست لینک کنیم
+
+بعد از خبر دادن به ما میتونی از این قسمت لینک وبلاگت رو مشاهده کنی :
+http://chicchat.mihanblog.com/link
+
+چیک چت بهترین چت روم ایرانی با محیط زیبا و جذاب
+
+http://www.ChicChat.ir" >
+چت روم چیک چت</a></div><div class="vmenu2"><a target="_blank" href="http://www.cicagraphic.ir" title="سامانه طراحی  سیکا گرافیک
+
+طراحی  حرفه ای بنر فلش و گیف ویژه وبلاگ شما
+
+جهت اطلاعات بیشتر و نمونه کارها به سایت ما مراجعه کنید :
+
+www.cicagraphic.ir" >
+سیکا گرافیک</a></div><div class="vmenu2"><a target="_blank" href="http://fa.ibforums.net" title="آخرین اخبار و قوانین تجارت خارجی
+سپاسگذاریم" >
+انجمن تجارت بین الملل</a></div><div class="vmenu2"><a target="_blank" href="http://www.montazeranmahdimoud.mihanblog.com" title="سلام
+خوبی ؟
+وبلاگ قشنگی داری . . .
+اگر دوست داری به منم سر بزن
+راستی اگر افتخار میدی منو لینک کن و اطلاع بده تا لینکت کنم یا اینکه بگو اول من لینکت کنم
+موفق باشی دوست خوبم" >
+منتظران ظهور</a></div><div class="vmenu2"><a target="_blank" href="http://911251.blogsky.com/" title="سلام
+منتظرتم
+اگه اومدی یه کلیک یادت نره
+
+
+
+#####__#_____#____###_________ #_____
+_____#__#_____#___#____#________#_____
+_____#__#_____#__#______#_______#_____
+#####__#_____#__#______#_______#_____
+_____#___#___#___#______#_______#_____
+_____#____#_#_____#____#________#_____
+#####_____#_______###_____#####_____
+
+پوریا" >
+poria web</a></div><div class="vmenu2"><a target="_blank" href="http://arashdownload.mihanstore.net/in.php?id=113" title="با این وسیله جالب صدا به گونه ای تغییر می کنه که فرد مقابل تصور می کند با یک زن یا مرد حرف می زند بسته به انتخاب شما" >
+هندزفری تغیر صدای مرد به زن و زن به مرد برای موبایل</a></div><div class="vmenu2"><a target="_blank" href="http://98jokes.rzb.ir" title="" >
+نود و هشت جوک</a></div><div class="vmenu2"><a target="_blank" href="http://www.brooz2013.mihanblog.com" title="" >
+ با ما به روز باشید</a></div><div class="vmenu2"><a target="_blank" href="http://group.sunbow.ir/" title="سلام وبلاگ خوبی داری ممنون میشم به من هم سر بزنی و تو گروه عضو بشی  گروهی برای شادی و تفریح 
+محلی برای سرگرمی
+
+دانلود موسیقی های روز دنیا 
+دانلود فیلم های روز
+بهترین گروه دختر و پسرای با حال ایرانی
+
+سارا" >
+شاد ترین گروه دختر و پسرای ایرانی</a></div><br>
+<div class="vmenu2"><a  target="_blank" href="../linkdaily/index.html" >لیست کامل پیوندهای روزانه</a></div>
+<div class="vmenu2"><a  href="javascript:linkdailyForm()" >ارسال پیوند</a></div>
+<div class="space5"></div>
+</div>
+<div class="menu-right-two-3"></div>
+<div class="space3"></div>
+
+<div class="menu-right-two-1"><div class="menu-right-two-text">برچسب ها</div></div>
+<div class="menu-right-two-2">
+<div class="text">
+<a href="tag/فکر+اقتصادی.html" style="font-size:1em">
+فکر اقتصادی</a> , <a href="tag/رای+گیری+خلیج+فارس.html" style="font-size:1em">
+رای گیری خلیج فارس</a> , <a href="tag/عکس+از+روستا.html" style="font-size:1em">
+عکس از روستا</a> , <a href="tag/پرندگان.html" style="font-size:1em">
+پرندگان</a> , <a href="tag/تاریخ+همدان.html" style="font-size:1em">
+تاریخ همدان</a> , <a href="tag/علما+و+دفاع.html" style="font-size:1em">
+علما و دفاع</a> , <a href="tag/زبان+فارسی.html" style="font-size:1em">
+زبان فارسی</a> , <a href="tag/عکس+سایان.html" style="font-size:1.34em">
+عکس سایان</a> , <a href="tag/نماز+عید+سعید+فطر+در+روستا+ها.html" style="font-size:1em">
+نماز عید سعید فطر در روستا ها</a> , <a href="tag/روستاها.html" style="font-size:1em">
+روستاها</a> , <a href="tag/قلعه+های+تاریخی.html" style="font-size:1em">
+قلعه های تاریخی</a> , <a href="tag/خلیج+ایران.html" style="font-size:1em">
+خلیج ایران</a> , <a href="tag/خلیج+وطن+ایران.html" style="font-size:1em">
+خلیج وطن ایران</a> , <a href="tag/برترین+زبان.html" style="font-size:1em">
+برترین زبان</a> , <a href="tag/تهاجم+فرهنگی.html" style="font-size:1em">
+تهاجم فرهنگی</a> , <a href="tag/ورود+زبانهای+دیگر+در+زبان+فارسی.html" style="font-size:1em">
+ورود زبانهای دیگر در زبان فارسی</a> , <a href="tag/برنامه+بسیج.html" style="font-size:1em">
+برنامه بسیج</a> , <a href="tag/عکس+درخت+قطره+طلا.html" style="font-size:1em">
+عکس درخت قطره طلا</a> , <a href="tag/کلاغها+و+زاغها.html" style="font-size:1em">
+کلاغها و زاغها</a> , <a href="tag/persian+gulf.html" style="font-size:1em">
+persian gulf</a> , <a href="tag/قلعه+ی+سایان.html" style="font-size:1em">
+قلعه ی سایان</a> , <a href="tag/آیا+میدانید+ها.html" style="font-size:1em">
+آیا میدانید ها</a> , <a href="tag/خلیج+فارس.html" style="font-size:1em">
+خلیج فارس</a> , <a href="tag/زبان+ترکی.html" style="font-size:1em">
+زبان ترکی</a> , <a href="tag/تاریخ+روستاها.html" style="font-size:1em">
+تاریخ روستاها</a> , <a href="tag/عکس+گلای+آپارتمانی.html" style="font-size:1em">
+عکس گلای آپارتمانی</a> , <a href="tag/بازگشت+دوست.html" style="font-size:1em">
+بازگشت دوست</a> , <a href="tag/برج+همدان.html" style="font-size:1em">
+برج همدان</a> , <a href="tag/عکس+گل.html" style="font-size:1.34em">
+عکس گل</a> , <a href="tag/sayan.html" style="font-size:1.34em">
+sayan</a> , <a href="tag/خلیج+همیشه+فارس.html" style="font-size:1em">
+خلیج همیشه فارس</a> , <a href="tag/آسار+تاریخی+همدان.html" style="font-size:1em">
+آسار تاریخی همدان</a> , <a href="tag/گل.html" style="font-size:1em">
+گل</a> , <a href="tag/عکس+درخت.html" style="font-size:1em">
+عکس درخت</a> , <a href="tag/نصیحت.html" style="font-size:1em">
+نصیحت</a> , <a href="tag/یک+سال+من_____|(dot)|__________|(dot)|__________|(dot)|_____.html" style="font-size:1.34em">
+یک سال من...</a> , <a href="tag/بسیج.html" style="font-size:1em">
+بسیج</a> , <a href="tag/فکر+کار+آمد+برای+همه.html" style="font-size:1em">
+فکر کار آمد برای همه</a> , <a href="tag/عکس+پاییزی.html" style="font-size:1em">
+عکس پاییزی</a> , <a href="tag/برانامه+بسیج.html" style="font-size:1em">
+برانامه بسیج</a> , <a href="tag/عکس+قلعه.html" style="font-size:1em">
+عکس قلعه</a> , <a href="tag/سایان.html" style="font-size:2em">
+سایان</a> , <a href="tag/نماز+در+روستای+سایان.html" style="font-size:1em">
+نماز در روستای سایان</a> , <a href="tag/تصاویر+سایان.html" style="font-size:1.34em">
+تصاویر سایان</a> , <a href="tag/عکس+گل+خونگی.html" style="font-size:1em">
+عکس گل خونگی</a> , <a href="tag/نماز.html" style="font-size:1em">
+نماز</a> , <a href="tag/همدان.html" style="font-size:1em">
+همدان</a> , <a href="tag/تاثیر+زبانهای+دیگه+در+زبان+فارسی.html" style="font-size:1em">
+تاثیر زبانهای دیگه در زبان فارسی</a> , <a href="tag/روحانیت+در+میدان+جنگ.html" style="font-size:1em">
+روحانیت در میدان جنگ</a> , <a href="tag/عکس+درخت+سوخته.html" style="font-size:1em">
+عکس درخت سوخته</a> , </div>
+<div class="space5"></div>
+</div>
+<div class="menu-right-two-3"></div>
+<div class="space3"></div>
+
+<!---------- block left ------------------------->
+<div class="menu-right-two-1"><div class="menu-right-two-text">امكانات جانبی</div></div>
+<div class="menu-right-two-2">
+<div class="text">
+جهت اطلاع از تنظیمات و ویــــرایش این قالب اینجا را کلیک کنید.<br><br>
+<center><a target="_blank" title="جهت اطلاع از تنظیمات و ویرایش این قالب اینجا را کلیک کنید " 
+href="http://www.payamblog.com">.:: کلیک کنید ::.</a></center>
+</div>
+<div class="space5"></div></div>
+<div class="menu-right-two-3"></div>
+<div class="space3"></div>
+<!---------- block left ------------------------->
+
+</div>
+</td>
+</tr>
+</table>
+
+</td>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+</table>
+</div>
+
+</div>
+</td>
+</tr>
+</table>
+
+<table border="0" width="100%" cellspacing="0" cellpadding="0" dir="rtl" >
+<tr>
+<td>
+<div class="copyright">
+
+<div align="center">
+<table border="0" width="1003" cellspacing="0" cellpadding="0">
+<tr>
+<td valign="top" width="300"  >
+<div class="copyright2"><a href="4.html#top">
+	<img border="0" src="http://payamblog.com/tem/43/26.jpg"></a></div><br><br>
+<div style="width:300px; height:20px; padding:25px 10px 0px 10px; COLOR: #aeec07; font-weight:bold; ">
+<div class="icon1" >
+	<img src="http://payamblog.com/tem/43/11.gif"></div>
+<div class="copyright-link2">
+<div class="icon2" ><a target="_blank" href="rss/index.html">RSS پست ها</a></div>
+<div class="icon3" ></div>
+<div class="icon1" >
+	<img src="http://payamblog.com/tem/43/11.gif"></div>
+<div class="icon2" ><a href="../index.html">صفحه نخست </a></div>
+</div>
+</div>
+</td>
+<td width="20px">
+<img border="0" src="http://payamblog.com/tem/43/27.jpg" width="1" height="95"><p></td>
+<td valign="top" >
+<div class="copyright3" ><div class="copyright-link" >
+<p dir="rtl">تمام حقوق این وبلاگ و مطالب آن متعلق به <a href="../index.html"><b>سایان نیوز</b></a> می باشد.
+</div></div>
+<div class="copyright4" ><div class="copyright-link2" > 
+كد نویسی و ترجمه قالب توسط : <a target="_blank" href="http://www.payamblog.com/">پیام بلاگ
+</a> <a target="_blank" title="Learn html"  href="http://www.mytoptutorials.com/html/"> html </a>
+</div></div>
+</td>
+</tr>
+</table>
+</div>
+
+</td>
+</tr>
+</table>
+<div style="height:1px; overflow:hidden; width:100%;"><br>
+<h1><a href="http://www.payamblog.com" >قالب وبلاگ</a></h1>
+<h1><a href="http://mihanblog.payamblog.com/" >قالب میهن بلاگ</a></h1>
+<h1><a href="http://www.persianace.com/" >بازیگر</a></h1>
+</div><div id="seo"><h1><a title="قالب بلاگفا" href="http://blogfa.payamblog.com/">قالب بلاگفا</a></h1><h2><a title="قالب وبلاگ"  href="http://www.payamblog.com">قالب وبلاگ</a></h2><h2><a title="vpn" href="http://www.purchasevpn.com">purchase vpn</a></h2><h2><a title="بازی اندروید"  href="http://www.download0098.com/category/mobile/android-games/">بازی اندروید</a></h2></div><script type=text/javascript>document.getElementById('s'+'e'+'o').style.display='none';</script>
+
+
+</body></html> <script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'sayan-news.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

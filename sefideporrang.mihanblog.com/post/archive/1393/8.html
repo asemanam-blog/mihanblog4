@@ -1,0 +1,994 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc@rsd" />
+<script type="text/javascript" src="../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('23 آذر 99');
+		/*1173038*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[221]='1';commentCnt[223]='2';commentCnt[225]='9';commentCnt[228]='12';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[221]='1';
+mihanblogDisLikeArrCnt[221]='0';
+mihanblogLikeArrCnt[223]='1';
+mihanblogDisLikeArrCnt[223]='0';
+mihanblogLikeArrCnt[225]='2';
+mihanblogDisLikeArrCnt[225]='0';
+mihanblogLikeArrCnt[228]='1';
+mihanblogDisLikeArrCnt[228]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://sefideporrang.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://sefideporrang.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','206');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','3 تیر 94');
+	
+	setStatVar('today_view','7');
+	setStatVar('yesterday_view','7');
+	
+	setStatVar('this_month_view','633');
+	setStatVar('last_month_view','762');
+
+	setStatVar('total_view','129817');
+	setStatVar('last_view_date','23 آذر 99 (06:42)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://sefideporrang.mihanblog.com/statupdate/?data[refereruri]=http://sefideporrang.mihanblog.com/&data[postid]=&data[requesturi]=/post/archive/1393/8&data[sdate]=1607830593&data[hash]=cb43cfeb899f22c3ffba79f1b430434c&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://sefideporrang.mihanblog.com/post/archive/1393/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://sefideporrang.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://sefideporrang.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<!--Start Cod BackGround By RoozGozar.com-->
+<div id="first_p" style="text-align: center; margin-top: 5px;"><a onclick="document.getElementById('main_p').style.display = 'block';document.getElementById('first_p').style.display = 'none';" href="8.html#"><img src="http://www.negarkhaneh.ir/UserGallery/2011/1/SHIRAZ_31120000_1_Fixed.jpg"></a></div><div id="main_p" style="display: none;"><P align=center><a target="_blank" href="http://roozgozar.com/blogcode/background/">کد صفحه ورودی </a><br>
+<!--End Cod BackGround By RoozGozar.com-->
+
+
+
+
+
+
+
+<html>
+<head>
+<head>
+<title>  ღ  سـِـفــیِــدِ پــُـررَنـــگــــ  ღ</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="profile" href="http://pars-skin.com" />
+<meta name="geo.region" CONTENT="IR" />
+<meta name="googlebot" content="INDEX, follow" />
+<meta name="robots" content="index, follow">
+<meta name="language" content="Farsi">
+<meta name="description" content="  ღ  سـِـفــیِــدِ پــُـررَنـــگــــ  ღ - مطالب  آبان 1393 - وبلاگی سفید از نوع پررنگش!!! -   ღ  سـِـفــیِــدِ پــُـررَنـــگــــ  ღ">
+<meta name="keywords" content="  ღ  سـِـفــیِــدِ پــُـررَنـــگــــ  ღ - مطالب  آبان 1393,sefideporrang, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="  ღ  سـِـفــیِــدِ پــُـررَنـــگــــ  ღ" href="../../rss/index.html"><link href="http://www.themzha.com/theme/66/m.css" type="text/css" rel="stylesheet">
+
+
+</head>
+<body>
+<div align="center">
+<div class=Back-RM>
+	
+<table border="0" width="1000" cellspacing="0" cellpadding="0">		
+
+
+<tr><td colspan="3" id=Header-RM>			
+
+
+<div id=BlogTitle><br>  ღ  سـِـفــیِــدِ پــُـررَنـــگــــ  ღ</div><div style="width:100%;height:23;float:right"></div>
+<div id=BlogDescription>وبلاگی سفید از نوع پررنگش!!!&nbsp;</div>	
+	
+    
+<div class=TopMenu><div style="float:right;width:782;direction:rtl">
+<div style="width:30;height:20;float:right"></div>
+
+<a href="../../../index.html"><img border="0" src="http://www.themzha.com/theme/66/blank.gif" width="100" height="25" hspace="1"></a>
+<a href="../../list.html"><img border="0" src="http://www.themzha.com/theme/66/blank.gif" width="90" height="25" hspace="1"></a>
+<a href="javascript:messageForm()"><img border="0" src="http://www.themzha.com/theme/66/blank.gif" width="70" height="25" hspace="1"></a>
+<a title="قالب وبلاگ" target="_blank" href="http://www.themzha.com"><img border="0" src="http://www.themzha.com/theme/66/blank.gif" width="90" height="25" hspace="1"></a>
+<a target="_blank" rel="nofollow" href="../../rss/index.html"><img border="0" src="http://www.themzha.com/theme/66/blank.gif" width="70" height="25" hspace="1"></a>
+
+</div>
+
+
+</div>
+
+</td></tr>
+
+<tr><td width="220" valign="top">
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>نویسندگان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="../../author/767512.html">بی نام _ 206 </a></div></div>
+<div class=LowSid></div></div>
+
+
+		<form id="frm-16076695885fd31754b1c55" method="post" action="http://sefideporrang.mihanblog.com/poll/new/fid/16076695885fd31754b1c55/atrty/1607669588/avrvy/0/key/fff97843d5d3f73077b3ec075728b0e8/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="318500" id="data[pollid]" />		
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>نظر سنجی</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+کدوم نظرات بیشتر رو اعصابن?<br><label><input type="checkbox"  name="data[v1]" id="v1" value="1" />لینکم کن تا لینکت کنم</label><br><label><input type="checkbox"  name="data[v2]" id="v2" value="1" />بم سر نمی زنی چرا?</label><br><label><input type="checkbox"  name="data[v3]" id="v3" value="1" />تبلیغاتیا</label><br><label><input type="checkbox"  name="data[v4]" id="v4" value="1" />سایت تبادل لینکا که میگن فقط همین وبلاگو داری</label><br><label><input type="checkbox"  name="data[v5]" id="v5" value="1" />بقیشون</label><br><label><input type="checkbox"  name="data[v6]" id="v6" value="1" />همشون</label><br><br><input type="submit" value="ثبتش کن..."></div></div>
+<div class=LowSid></div></div>
+
+		<input type="hidden" name="frm-id" value="16076695885fd31754b1c55" id="frm-id" /></form>
+<BlogLinksBlock>
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>لینک دوستان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="dofollow" target="_blank" title="قالب وبلاگ" href="http://www.themzha.com">قالب وبلاگ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../untouchable.mihanblog.com/index.html">باورنمیکنم ولی انگارغرورمن شکست</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../www.7love7.mihanblog.com/index.html">مطالب و عکس های عاشقانه</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../rainoflove1.mihanblog.com/index.html">❤بــــــــ☂ـــارونـــــ☂ـــــ عــاشــقــی❤</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../gold90.mihanblog.com/index.html">دست نوشته های یک آماتور</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../royalgirl.mihanblog.com/index.html">˙˙·٠• نقطه چین تاخدا....•٠·˙˙</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../katibe-del.mihanblog.com/index.html">کـــــــــــتـــــــــیــــــــــبـــــــــه دلـــــــــ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../yepatilgeryevakhande.mihanblog.com/index.html">یه پاتیل گریه و خنده</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../www.doreakhar.mihanblog.com/index.html">یخمک فروش جهنم</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://1salavat.ir/">صلوات شمار آنلاین</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../aknonlakhtibiyaram.mihanblog.com/index.html#">اکنون لختی بیارام</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://alonedokhi.blogfa.com">خدایا دوستت دارم</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://tooooska.blogfa.com">دخترک روستایی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../marziee.mihanblog.com/index.html">محــــکم بــــــاش...</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://nothaye-tanha.blogfa.com/">nothhaye-tanha</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://b-fuckin-rabbit.mihanblog.com">jimmy rabbit</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../emrooz-e-man.mihanblog.com/index.html">من تنبل هستم</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../funny-note1.mihanblog.com/index.html">funny_notes</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://today-my-memories.blogfa.com">خاطرات من</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../leylajooon.mihanblog.com/index.html">کلبه ی عشق</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../../../../man-va-baran.mihanblog.com/index.html">من و باران</a></div><div class=li-Sid>
+<a rel="dofollow" target="_blank" title="قالب وبلاگ" href="http://www.themzha.com">قالب میهن بلاگ</a></div>
+</div>
+<div class=LowSid></div></div>
+</BlogLinksBlock>
+
+
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>ابر برچسب ها</b></div></div>
+<div class=CenterSid><center>
+				<a href="../../tag/خدا.html" style="font-size:2em">
+		خدا</a> 				<a href="../../tag/درس.html" style="font-size:1.4em">
+		درس</a> 				<a href="../../tag/سفید.html" style="font-size:1em">
+		سفید</a> 				<a href="../../tag/خواب.html" style="font-size:1.6em">
+		خواب</a> 				<a href="../../tag/کتابخونه.html" style="font-size:1em">
+		کتابخونه</a> 				<a href="../../tag/شیمی.html" style="font-size:1.2em">
+		شیمی</a> 				<a href="../../tag/عشق.html" style="font-size:1.2em">
+		عشق</a> 				<a href="../../tag/گسسته.html" style="font-size:1em">
+		گسسته</a> 				<a href="../../tag/امتحان.html" style="font-size:1.8em">
+		امتحان</a> 				<a href="../../tag/دیفرانسیل.html" style="font-size:2em">
+		دیفرانسیل</a> </div>
+</center><div class=LowSid></div></div>
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>لینک های ویژه</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid><a title="خرید انواع عینک آفتابی" href="http://www.girandeh.com/%d8%ae%d8%b1%db%8c%d8%af-%d8%b9%db%8c%d9%86%da%a9-%d8%a2%d9%81%d8%aa%d8%a7%d8%a8%db%8c.html">خرید عینک آفتابی</a>
+</div>
+<div class=li-Sid><a title="فروشگاه اینترنتی" href="http://www.makhsos.com/">فروشگاه اینترنتی</a>
+</div>
+<div class=li-Sid><a title="چت روم رویال" href="http://chatroyal.ir">چت روم رویال</a></div>
+<div class=li-Sid><a title="پزشک متخصص" href="http://bartarinha.com/group/103/%D9%BE%D8%B2%D8%B4%DA%A9%D8%A7%D9%86-%D9%85%D8%AA%D8%AE%D8%B5%D8%B5">پزشک متخصص</a>
+</div>
+<div class=li-Sid><a title="قالب پرشین بلاگ" href="http://downloadskin.ir/persianblog/">قالب پرشین بلاگ</a>
+</div>
+<div class=li-Sid>﻿<a title="شارژ ایرانسل" href="http://pinfa.ir/buy-charge.php">شارژ ایرانسل</a>
+</div>
+<div class=li-Sid><a href="http://kshpol.ir">روزمره</a>
+ | <a href="http://koofeh.ir">کوفه</a>
+</div><div class=li-Sid><a rel="follow" target="_blank" title="آگهی رایگان" href="http://agahi.facenama.com">آگهی رایگان</a></div></div>
+<div class=LowSid></div></div>
+
+			
+</td>
+
+
+<td width="570" valign="top">
+
+<div align="center">
+
+			
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+					
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://sefideporrang.mihanblog.com/post/228">169.ادرس وبلاگم</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+<span style="font-family: Tahoma; line-height: 18px; text-align: justify;"><font size="3">هر ده متر</font></span><p style="margin-top: 10px; margin-bottom: 0px; font-family: Tahoma; line-height: 18px; text-align: justify;"></p><p style="margin-top: 10px; margin-bottom: 0px; font-family: Tahoma; line-height: 18px; text-align: justify;"><font size="3">برای ناموس کسی بوق میزد</font></p><p style="margin-top: 10px; margin-bottom: 0px; font-family: Tahoma; line-height: 18px; text-align: justify;"><font size="3">ماشینی که پشتش</font></p><p style="margin-top: 10px; margin-bottom: 0px; font-family: Tahoma; line-height: 18px; text-align: justify;"><span style="color: rgb(199, 25, 56);"><font size="3">یا زینب&nbsp;</font></span></p><div><span style="font-family: Tahoma; text-align: justify;"><font size="3">نوشته بود</font></span></div><div><font face="verdana, arial, helvetica, sans-serif" size="3">منبع:&nbsp;</font><font size="3"><a href="http://oroje-eshgh.blogfa.com" target="_blank" title="">عروج&nbsp;</a>عشق</font></div><div><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxQSEhQUEhQUFBUUFBgUFBYUFxUUFBQVGBQWFxUUFBQYHCggGBolHRQVIjEhJSotLy4uGh8zODMsNygtLisBCgoKDg0OGhAQGi0kICQsLCwsLCwsNCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLP/AABEIALEBHQMBIgACEQEDEQH/xAAcAAAABwEBAAAAAAAAAAAAAAAAAQIDBAUHBgj/xABGEAABAwIDAwcHCgYBAwUAAAABAAIRAwQSITEFQVEGBxMiYXGBMlNykZKhsRQXI0JSwdHS4fAzYnOCssLiJDRDFRZEY/H/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAQIDBAUG/8QAKxEAAgIBAwQBAwMFAAAAAAAAAAECEQMEEiETMUFRBRQicTNhgSMyQsHw/9oADAMBAAIRAxEAPwDH9m7PbUbUe9/Rsp4cRwl56xgZAjennWFuDBuXA/0HTpP2k5sgH5LdwJM0IETJ6XIRv7le2jr2pTpPYKPSVekcxvyai09ExkF7jgwlp6TA3IziInMhWbdgZ5Nchxf9J8nuMXR4cWKmW+ViiOtn5JV4OZu48832D+ZdJzOisa20PlEGqXUC8gNEksqGYYAJiJ3zM5ytG2i6o2k80g0vAlodoYOY1GcTGYzjMLGWSSlSJ4MWbzNVyJFdns/8kr5l7jzzPY/5LY+Tt98ooMrBrmsqgPpB4AeKZaMJdB1MF3cQrUBR1ZijCPmWuPPM9g/mR/MrcefZ7B/Mt4DUoNTqyIowb5lLjzzPYP5kPmUuPPs9g/mW9YUrCnVkKMD+ZS48+z2D+ZD5lLjz7PYP5lvmFDCnVkKMD+ZS48+z2D+ZD5lLjz7PYP5lvmFDCnVkKMD+ZS48+z2D+ZD5lLjz7PYP5lvmFFhTqzFGCfMpcefZ7B/Mi+ZW48+z2D+Zb5hRYVHVmKME+Za488z2D+ZF8y1x55nsH8y3vCiLU60hRgvzLXHn2ewfzIxzK3Hn2ewfzLeMKMBOtIUYP8ylx59nsH8yHzKXHn2ewfzLeYRwp6shRgnzK3Hn2ewfzIfMrcefZ7B/Mt5IRQnVkKMHPMtcefZ7B/MknmXuPPM9j/kt6hJcE6shRg7uZi48832P+SjnmhuYnpGn+0/it+wohTTqyFHno81lfzjfZP4om811YmBWZPCO3Dx45d63XadniBLcjB4jMjLMad4WW23Jm5F61z6zBLnVGtLjLmNIaaZaBEQ4bzluEmJWWXsUc3X5r67DBqN9n9Uwebir5xvs/qt2qUsTYyIiN+sKrdsl07goWaXkhp+DGKnN/VAJ6QZdn6rkK9PC5zfskj1GFv8AtK3LQ4HWCsG2j/Fqem7/ACK2xybKps6/mx2Oy7NxRqPfTaRTcXsIa5pY4uBDiCBmF37+am0uT0jru8rE5F76jHuy3EuZK4/mYdFW5OWVMHraZYjmtq2ASaZJ3vJ8kt1APknRZZW1J0aIreRnI2js7pehqVX9LgxdKWmOjDg3DhaNzvcFd7XeW0KzmhznNpPIDC0OJDTGEuyB71Ma1VXLK0ZUsbhlR7mNNM9ZrsJBEFufAuABG8Ejesr8sEnYNJzbag14cHCjTDg8tLwQwAhxb1Se7JWACjbItm06FJlNxextNjWPccTntDRhcXbyRnKnBqAJrU4GoBqWApQCDEeBOAI4VqA1hQwp2EUJQG8KLCnYRQooDWFDCnEFFAbwoYU4iSgNEJJCeIRYVDQGYQhOFqGFVoCIQhLDUrArIDUJJan8KQQgG8KS4J6ElwQDIyS5SXNRIBLgs05b3Fhb7Rtq1Z8VmNIc0YzhpkOwvIGQILnZbwTwC0tyyXnb2HS+VWtb5PcVnV6jadYU3YWODQGsZiwnDUdiEZgENO/MFyy0avk02gwYRBkESCNCDoQje1PtohrQ1ogNAAHAAQAkPaqsg5zbtpia5w1wnxXmzaX8ar/Ud/kV6l2lS+jf6J+C8t7VH09X+o//ACK6NP5KteTQOZJrTWuMfk9G2dRl1uGa2bk3/CzbhOIyNc4bvWM8yQBrXAcAQaYBBAII60gg6hbHybd9EdPKJABxAZN04dwUZO7BL25tenaUXVqhyGQG9zjoAsov+dC4qOIZgpt3Bol0SBm4znu8U7z0Cu6uwHF0ApAsH1S8l+M94hngRxWYhhbMwZGHuMDrBRGMfIqT7GtckucJzHhtczTcc/5BxaB8NI0WwMIIBGYOYI0I4rybJaYMscMORMiZBJPhuXpDm0valbZ1u6sMLgHUxqMTabixrs+IaO9HFLlDlcM6YBLAQCUiQCRokFIDQQRKQBBJcgFAFQiISkEA2iS4SVDRISEI0YUATCEJRRJQAEEESACKEaNRQChJc1LROUNAYcE25qeIQ6NVbBGIVTt7ZAuWta572Bj21B0YZixscHMdL2uiCAcvhkr1zUy9q5sk5+C8UkRabi1oBJcQAC4wC7tIAAk9gCI1AlVAo1Rc/wBTJdzRQTG7/wAh3oleWNsfx639V/8AmV6fvXQx3on4Ly/tj+PW/qv/AMivS0WVTszyRo7nmaqhtau4zAY0mP7lsmwoFOACAHGARBAgRksf5lP+4rei3/ZbZQYBoAO7JbZP7mZnI865Lram2Ymp2SYbJDZ3xJ8Fkgsm5ZOOc5Y5cMvo2iPKGZP7w6vzpv8AoqQmBic4neAAOsO4/s6LLXuAmSGx5RbgJYT5JpcSY62fHtVsUeDGc3upMDbMveCXYzID5gggxgDSAJJEjMaj1+mrYhgDQIa0AAcABAC887BZir0WkARUYIE4aeJ4xNGsuMtORyDjlGvoSUkkmTCcn3ZNZWBSwVBapDHKtGiZIlFKRKEoSLlFKTKS5AKe9AFNBOsKAWEaJGgAiIRoKAJIRJRKSoZIEEESgAQQRIA0ESCANABG0JYCVYCDUl4S3OhRa1yFjmywxrktGLfYOoVHe9RK18JyM9gUevdkCSIHEwF5GXW2+DojhZKqOUSq9Ul9t7B29wkfFVz+Us6A+oT6pWO6cuaN1gaL6/f1Hb8ivMe1/wCPW/qv/wAit8utoPLCYgEbwQsC2kfpqn9R3+RXr/FNtysw1UNqR3HM/dso1a9Sq9rGNY0uc4wBm4ZnvK6PlTzomgG07YUatUjE+oCXUWgmWtaAZe7DEmQB7hnPJ/Z1WvQumURJaGVHN3uYzGSGjedDHYqJw07V6mxOTbOM7XanOHVu6YFxTbjpyaT6XVbJgRUY7FI7iNAuVO0qsiHRhkNA0aDqBKjycMQNZmBPrSWQrKNdiNquzouT/KJtCrRq1A49C8OLGBsPgzJJ+tmczO4ra+R/Oba39UUQ19GqfIbUwkVNSQ1wOsDQx2SvOdZ0mYA7sh6k5bPdTLKrHQ9jw5pGrXNIc1w9QUSjYSSPYQSws05meU11eMri5d0uB8iocIIkD6PC1okamd2ndpYWb44AeJHKIBBQSHiR4kAE50aAQlscqjlVt5ljQ6Z+nSU6Yz+28NJ8AS7wT3Jva7L23bXYypTa+cIqtwvInJ0AnIjMHgVBIexNuU7pr30pw06r6JkRLqbsLiOzgrDpM1n3M1UmlfM+xtCsB3GD8ZWgmkgK7a23mW9a1ouBLrqo6myNG4WOeXHsyA8VbLgOcJ0XOyn7xfBvg5jgfgu9lQAFEot26qHtwmiynkXufic855sY0QG5fWJOvklN7Y2oy2ptqPkh1WnSGHPrVajabT3S4Sqkk5NvrtDmtLmhzpwgkAugSYG9U/KDCK1qalaswPrNptp08IY+oA6o3pSQThhjgQInq8FRba2zbvvWOo033tzbB7KdOg0YaLniHmrXccLTAiJEZ5HKAO4QVNsGneueal2aNNpEMoUZfh/mqVnQXHsAAzOqu0AlLaElA1FnLLGPclKxxNvrAKPVrKsvr2JA1/eq87P8lXEDaGFyHr/amGdOGu9cpf7bJnd+98ori5JmT2aDLPMrjdu3pnDiJjMSuCDlmnyz0Y4Y442zqKe3aQGbgD3Ez6lFu+VlM5DEd2Q/FZ5WvCTqfWotW51zXZH4+Ldso88V2R31flA2oYM8MyB8EdG7pcBrvPvWdtu3aT6lPtttBoAwOJ3k6R2K8tDS+0R1UfJ39xctLHZjyToZhYVtAzVqEaY3R7RXc1NuSwtAI7cpXBVz1nekfiu747A8TlZy6vJGdUdtzY1MLb104YtnGeEMqZqk2Rs2m4/ShzGuaCx0jWJ4EuGnktPDLdYcha2CleukAdGwOMT1XOIcAN5IMeKrqt+6SWgiTOeZ7J8Bvld9vc6OFhX2zGgmKstxQHFjmnT7J0SP/S8sLalMk55tOL1tBKafWJ8qT6hmO4IAu7Dp29mk8VNthKhdDYNRz2tBZ19C54p7uDwHcNAkbS2OaNQ03PYXBuJ0YoZlOF2Uz4cE/RunNOo7ojXM6ZbuCurOvTrDon5FwLGnQ5giGmOrppppkYUbmuSWb/yW2ay3tqLKbBTApN6o+rIBdPFxJJJOpV0CE1YuD6dNwyxMaROsFoIkcU65kLOyAkESCEiw5U+0OUjaV5bWpAm4bUdiJiMAbDQN5Mn1FWy5nltyMo7SazG59KpSJNKqzymzEjtGQ9SgF7tzY9C8omjcMFSm6CWkkZjQgjMHtCi7S25abOoDpalOkymzCxk9YhoyaxupMBZDsDkq68rV6NLbVy/5O7DUbFYby2Wk1IcJBH7C7LYXNLZUXirWNS6qAz9MZZPEtHlf3ShJVcxV+XVtoNcCzpHsuWNdkcNUvIMdxb61odxyvs2Ne91wzDTrC3eQZw1SQMGXpCToM50Mcly05FULq9oubcVbWvVpuZ9Dl0lOnEiQRBGId+WWSYtuZfZ7XOc91eqCIDXPgA73S0Ak953oCPyo5RNu69sMGAW22adEOLgRUHROcHZaSTpwjjC0SttSk2u23Lx0r2OqNZvLGkAnszcPfwK5vaHN1aVLEWVMOosbU6Zj2nE9tX7Zc7UwSO7SMlztXmbYQH/Lrn5QD/GJnq/ZAmRv+tvKIHPVL202rcXI2reVbc0qzqdCjibTpMY3qh0uaQXyDM/BdLVvLcbN+S0b5t66jcWzg7EC9tP5ZSwBxBzjSVJ2NzRWVM4rg1LqoTJdVcQ2fRGviSunfyOs+gqW7KDKdOqAH9EAxxIMtdiGcgiQj5BRcsDWp0W1K1dlXotp0XswNDDRove1gpvzMuDahM75SebVtexrVNm3TWmekubaq0z0tM1OuHmPKBc05/a7E4zmtsSTjNzUDh12vrvLXuiA943uA0O6Ar3k5yRt7J5qMdVqVC3AKleo6q5rJBwMnyRIGmsDgq0SdIkykGqm6j8llnyLHByZMVbA+ootavCXUeAMyuf2ntQAka/cvnc+Wcn3OzFj3PgmO2i1pJcfD15rndqbeFKcDA4nIEjLxVZtDagB6knj2qg2ldvqRO7OOGSjDp3Jpy7HW4xghV/tmq8k4sM6hojwXOXVQuJkk9+qfGJ24wg62PrXrY4xx9jnySlLgqard6aa2VafIXEgAE9wJlOt2Q/Lqu1znL4ro6sUu5h05N9imdS70y6nwXT0dkOOrfeOCjXGzgNBr2pHPG6JlglVnPFh3hc/V8o95+K7l1rkchI7dVw9x5bvSPxXZp57mzDJDadnzdWJr0doU2tL3Otuo1vlF4xOYB24gFzFckHDmIgn9fetB5hf+5reg34uXO8r9i/Jry6ZhqYA4mk57YLwS0kzADhm8SN4Wqf3tGTOcec8hA7PenGnMk7wQOHYfWlUjGIQ3rCMxJjsz/cJdGmerIEAiQchuMT2q1EWJovMmSQI9+fuzU7Ztubh7KYhr6j2saQCMLnuAaR3Fw/VNPYHVdAxpcMplrRkNdw8MvBaJzIcnnVa1S4cxrqVEuDS7CSK56Mhzd8hk5/zBQ+EDa6HVa1uuEATxgRKfbUG9MFpGqMLKgPlgKZQNSASdAJPcFWcm9tMvbdtxTEMeXYQTJhry0E8JiY3ShJZo0SaubllNpfUc1jRq5xDQJMCSVAKWzZZWt4aNJjKdxdNdWdhEYww5kncZcTG/rFDl1s25uLR9Oyq9DVJaQ6SwkAyWh7c2zxWf88V66z2hs+8YJLQ4H+ZrXCW+LXuC6blfy9FLZ9O8s8FZr6jGuzEsY6cUtkHFlhjcTmMlJJKrUalOvsoV3h9VjKrar9MTug6zvW1dVY3rK1NtSk4PY8S1w0cOIWKbC2e9zr+htC7rtZYubcNuKbj0jOka7HGRyc0iWgaytW5G3Nq+0piydioUwaTSQ4HqGDOISc9+9QC7XM3uxLt20qNyy5LbZlMtfQz6xz3aGSQZ1GHtXTSghASNEiQBoSiQQBhCqd6STE9yhXlxEd4Xk/JZdtRN8MbIm1LoR2znHBchdknvXQbQdP790qjuHAdvwXjQl5PWwwpcFQ+3J/f3qHVtDvMK3ursu7O7h3/AIKtFUnPQHf+q6YTkbPCn3Gfk0bj4wBkUum5o+q0TAnWM4TVzXcYyLvVEbyq2rtJxBLGicgJz36ketbKMpEbYxLc1ACIdPdokveTxn1b+xc+ba6eQ4ODWZZiNScjxUq3t6jf4lTEd+ZhWeNL/JExTfhlm5xGf3lQK5E7s58E84sIl1RjYGkjx3qJ0lBrv4oM5kyMtFMEyJbV5CrPlpOQyPis3uvLf6R+JWm3V1blpitJAIHDs3LMro9d0faPxXqfH3btHm66uKNL5hz/ANTW9Fvxcui57sxbjSMRnxAj3fuVzfMU6Lmt6Lfi5dDz1VCegHBrj2a/ouibaycHDSa5MixMzmTxyGcab+5P0Wsdpi7Jg568ez3pl1Fs+W33nh2fuFItWN+0090zu/H3Hx0blXAShfLJ1nbmWwQRjE9gxCcuEbty9PbC2PRs6XR0Kbabci7D9Z2ENxOJ1MNGfYvOGwKRdWotIydVYJmdXAR+i9Ml2Sylkb4YcUnwwVagOSbkSo1QmCAQDGRIkA7iRIkdkqvNjXLhhqtbnixdEXQYLYE1ZzDuBHV8FRSZFFvVpyCDoQR4FZD/AO0drbNc8bNrtqW5cXNpvIlsnQteI8QRPBabcbPrF+M1gcMinhpNDqeOGFwcSZgEmCIJA3ZIM2fUZUe5jmta85tIdUyDnOJa4ubgLjUcSIIG5aqRDRnVG55SvywUGfzHo/ucUq45AbTvmObtG/AbEtp0hLMf1S+A0EDh711GyLfaDdpVzVc02JYOhb1ZDurAA1B8qZ4jw62VJFmSfN7cUR0949+1Oibhp22Nw6ruq50vOZAzjs1mFwQ2bTFw35HY3rqpf9HTuIFNjxmCYaC4A7nEDivSzxIImJETvCy/ZfNG6lXpVXX1V3RXBrAQc2yDE4snuI6zt43KQmdTyC5MOtLd/wAocKtxcONS4ccwXHRg4gDL1rqKdMNENAA4AQEcoSooWGgilCUoBokUopUAUilFiS8KAbq+S7u+9VV/VAHgrK4PUd3LmryriPZ7l4Pyq/qL8HoaONoh3lUnf+HZ3qqunxJcYA1nQdqm3jzpTEuIyJ09S43atwxpm5qlxk/RszOWXcAuLBic3SPWTUVbJdztalMNPSRv+r61T3O07hziMLabCYHE909g4KsfyicMqFJlMQTLpc7LXuP71yVFcX9WpGKq4yDAGQz3wIHv8Tv9jDoX5S/nlnJk1sFwrf4Lq6rZ9erodCcjHBup9SYdthjJjG7wDRr296oGzlA3yO6NPcUrFuk78h2RlxXctLFdzilrJPsqLStt52QDTAzhzzGW6AodXaz36Bre4E+Gajtt3umGuMk54T2faTlPZtTeIyIzIG+d0rRY8UfRk8uWXkZqXb/tZxOgGaQ65edXE5/vRSTs905lo8f0CM7PP2xHoz75V90Cn3/uQxVd9o6dvBQ3HNW77D+bd9k6etVLxBPerwafYpJPyaRzIOi4rei34uVhzv0wbljnuLh0YAbOTdcgO0yZ7e5VfMqYuK3ot/2T/OxVm6ifqNHu/VYP9YNfaca7A3dMiRplp+/3m4GMnDEk6HhnwB4KKSPglhwn1Rr++PqW9EWdDyWs3C5txSd1+mZ1XSW5EET2L0i1y868gRN/b9tQH1SV6DZUXPlfISJUA6p5jAojXp1tRURI/CQ6jJyPeEbXJQVkyBqpQgSEzKkvqKG7JXi7IaFyhKblCVYqOShKblCUA5KEpuUJQCyUJSJRSoAuUtvemZTV1WLWPcIlrHETpIaSJQE6sAWOHYuIvrhjGOfUcGMbm4njEgAbzloutoXJc0EDygDmQMiJ3Ss25TVBVe4GQxhcGDuID6neSCO4BedrcCyTizv0mTamUe1OUD6ktBFBjiQSSOlMVGgDMiJxH7u3jblmF+eYDnB7nEy4w4OzJh2hK7qjsCpWxFz+jpOdIeQelcMoFOnObdes6Bpk5ush2xqVvLmtAcPKq1IdU3Zg6MyG6Aqx1GHB9se/pf7Zu8U8zt/9+Dg6GyatWC1lRoM+X9G2CG97jpq0Rl2qTR5NARjqRlEMGEDjnB9wC6o3THiWPa/tDg7wyVfWqD1lPq8snXYt9Pjj+5VnY9Fn1cXpdb/KfgECQBkAOwCMu5RuUl+aLcj1naHh2ri33DiZLjPGc10YcM8i3NmOTJDG6SO1qP8AV4D4JgZ/iq7YV454c13WIiJ1hWhoOOjXHuBUuG10U37lYzUrBskwFVVttCSGtJHqU3amzKpZ1WHM5yQ3LxKp37IePKfSb2Go2fdK6McI92ZTm/BY0L4PBjIxoVRVfKPefip1G1awy6tT7m43T6mqBUOZjPMrbHFJ8GUpWaFzNH6er6Lf9lH5zKmK9fEGIHuA++E/zNn6er6Lf9lA5cVcV5W9Mj1FZr9Z/grJ1FHPwRqMwO/IoNbmMtTlIz3+rVNunFv+Pd/+J5ue/wBWS6CnZnX82wxX1v2F5PsP+9bs16wvmuE3zD9lrz62kbt+i2pr1wal1P8Ag0xrgnsenQ5QGvT9N6yUizRNY9OByitcnJWqZUWU1XOnqSwURAOqsmQxjEhiSX0yCmKt01vlPa3vcB8VfcRRJxIsSq623bdnlVqY/uB+CrLnl1Ys1uGeH6qNyJ2s6fEhiXCXPOnYN0e53c2fhKqbvnkt2+RRqP8AHD8QrK34G01HEixLGrnnnf8A+O3aPSk/ByrbrndvCOoxjOBgH4hTtl6FG74lHvqzWscXua1pBEuIAzEASV57uec7aD//AChvoiPgqu65W3tSHurOJzAMNJHGCRIU9OYpG08k+WtK6Y1uCo0tc2m41TId9E4l4gkRiZHiipOpzLiwZuw4h1Ww49ZwgSNIbvOZ0CwuvtO4cCXV6hzAye6NCdxhV9SoXZuJJ7ST8Vnl0ryqro0xZFB33N8q7ft6dSpjr08JDcLi4B7jLsYdJ9GNNSuI5cbZo3OFlO6ptpjN2T3Oe7dIYDkO9Z6ylmQdzSfEBKbbzG49bFOQAEH71ji+Nx45b75NpaubVF3sm5t7Z+Pp31JEOYykQHcM3OGh7FZVOV1HVtKoe8tb+K45tKTAI357st/cpFOmQCN/WGXcD9y6p6eEncuWYrNJKkWV/t+nVibYGNMVR5HqbCijahHWbQoN/sxRw8ongo1O0yzBz8I/fwKJ9OGmeA0P8xH3q6xxSpFXJvlkl23q+5+EcGNY34BR6m06zszVqH+534qIgr7Y+itsN7yTJJJ7c0SCJSQGggggNA5n/wCPV9Fv+yo+UlQOuaxzzqO/yKRyO5RCye95aXYgBlG6ePeq2+2h0j3PgjEZWai97ZL5VC+GX7O9G18nLLOclFbddk/vsQbcR++/QeK0KV4NB5rB/wBYT/8AU7L2c545rXw9YByS5VNs6rqjmF0sLYEbyDPuXWu52GEEdFUEiJGGR2jNcWfFOU7SNsbSXJqgqJYrwvOtxyzu3Od/1FbCSYHVyG4fBQq+36r/ACqtY/3kfBVWkl7DyL0bDyz5yDbdW2YXkGKlUscabDIgNcYa4mSJmMt65qrz13P1aNIe195Kze6vC8QcR7XOc74qIF0xwRS5K7jQbjne2g7yTTZ3MafuVZc85G0X/wDyHN9GW/ArkpQlaLFD0RuZb3PKi7qZPuKjh2mVAdf1TrVqHve78VGRyrKMfQthuJOpnvRISiVuCBdMCROm+NY3qVVtsTuqAAYzExnMGN2ihtdGYTzbpwznMxOZzjQZblV2CRStJaACQXay13gJjIIrtkMAOowf4uUN1QnUk95QLycpTkkeFv8AzMHjMepSaTGBusgRigHMjFv8R6lXSUFDtkE9haB3NBIkeVDhv7wVFpPaNRJ7yE0jUgktuGzm3UEEyS7MRvS6t9OYEGcsh4z6gogA7UoFvA6e9RQDZXIJO8z7+CDbl0HPXedeGvclsqMH1d3v46pbbhgPk5ZcNR4ICJKUGu4FS3XoJ0MDMDcOOSSLlueWvcdxGnigI/RHh92sx8CjNA7/AN5SpHy3TISOwfzfij+WN1w56jgPAzKcgYFsYkkfv4IxbHdJz4e+NUr5XvIk7s4jKNAPhCS65J3Dv3qQLFplJ79+Qka5Zb1GITor+8QZEz60ygAgggpAEEEEAEEEEAEEEEAEEEEAEEEEAEEEEAEEEEAEEEEAEEEEAEEEEAEEEEAEEEEAEEEEAEEEEAEEEEAEEEEAEEEEB//Z"></div><div><span style="font-family: verdana, arial, helvetica, sans-serif; font-size: medium;"><br></span></div><div><span style="font-family: verdana, arial, helvetica, sans-serif; font-size: medium;"><font color="#ff0000">پ ن: </font>بعد از یه مدت اعصاب خوردی و باز نشدن وبلاگم امروز به جای درس خوندن درستش کردم&nbsp;</span></div><div style="font-size: 10.9090909957886px;"><font size="3" face="verdana, arial, helvetica, sans-serif">و جالب اینجا بود که میدونستم که وبلاگم باز نمیشه ولی بازم آپ می کردم و بازم این سایت هایی که میگن بیا لینک کن و اینا نظر میذاشتن</font></div><div style="font-size: 10.9090909957886px;"><font size="3" face="verdana, arial, helvetica, sans-serif">کلا همه ی نظراتم از اوناس هیچی دیگه نظر ندارم تو مطالبم</font></div><div style="font-size: 10.9090909957886px;"><font size="3" face="verdana, arial, helvetica, sans-serif">چرا همه وبلاگا تعطیله حالا مگه چقدر وقتتونو میگیره که تعطیلش کردین من اینجا غریب افتادم خب کسی نیست( اینا که اینو نمی خونن چرا من نوشتم نمی دونم)</font></div>
+
+
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دلـ نوشتهـ</a>، <br>										برچسب ها:
+													<a href="../../tag/درس.html" >درس</a>، 
+													<a href="http://sefideporrang.mihanblog.com/post/tag/%D8%A7%D8%AF%D8%B1%D8%B3%20%D9%88%D8%A8%D9%84%D8%A7%DA%AF" >ادرس وبلاگ</a>، 
+												  
+					<br>									
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 27 آبان 93 ] [ 06:32 ب.ظ ] [ <a href="../../author/767512.html">
+	بی نام _ </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(228)">
+	نظرات <script>setCommentCnt(228)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+</a> <div><script>mihanblogPostLike('228','like')</script><div/><br/>
+
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://sefideporrang.mihanblog.com/post/225">168. دوری تو....</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+
+
+
+<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"><font color="#999999" size="3" face="verdana, arial, helvetica, sans-serif">اینجا&nbsp;</font></blockquote><div><font size="3" face="verdana, arial, helvetica, sans-serif"><font color="#999999">به جز</font> دوری <font color="#999999"><u>تو&nbsp;</u></font></font></div><div><font size="3" face="verdana, arial, helvetica, sans-serif"><font color="#999999">چیزی به <strike>من</strike> </font>نزدیک <font color="#999999">نیست....</font></font></div><div><font color="#999999"><br></font></div><div><img src="data:image/jpeg;base64,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"></div><div><br></div><div>پ ن: چه بده کنکوری باشی :(</div><div><br></div><div><br></div><div>+ دیروز تو فروشگاه یکی از فروشنده ها بهم گفت خانم ببخشید یه چیزی میگم نترسد من فقط نگاه کردم گفت یه سوسک به پایین چادرتونه من گفتم خب کجاش نمی بینم هیچی دیگه سوسکه جدا شد بعد یه پسره لهش کرد در همین لحظه اون یکی خانومه پشت داشت می لرزید از ترس مدیرشون گفت ای کاش اینقدر که از این می ترسیدی از من می ترسیدی بعد یه خانومه گفت من بش گفتم تا بش بگی جیغ می کشه و پاشو می کوبه زمین من :/ چرا باید جیغ میزدم?</div><div><br></div><div><br></div>
+
+
+
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دلـ نوشتهـ</a>، <br>										برچسب ها:
+													<a href="http://sefideporrang.mihanblog.com/post/tag/%D9%84%D8%A8%D8%AE%D9%86%D8%AF" >لبخند</a>، 
+													<a href="http://sefideporrang.mihanblog.com/post/tag/%D8%AF%D9%88%D8%B1%DB%8C%20%D8%AA%D9%88" >دوری تو</a>، 
+													<a href="http://sefideporrang.mihanblog.com/post/tag/%D8%B3%D9%88%D8%B3%DA%A9" >سوسک</a>، 
+												  
+					<br>									
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 24 آبان 93 ] [ 05:09 ب.ظ ] [ <a href="../../author/767512.html">
+	بی نام _ </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(225)">
+	نظرات <script>setCommentCnt(225)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+</a> <div><script>mihanblogPostLike('225','like')</script><div/><br/>
+
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://sefideporrang.mihanblog.com/post/223">167. محرم</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+<div><font color="#ff0000" style="background-color: rgb(0, 0, 0);">مـُحَرم</font>&nbsp;روزگار من است..!!</div><div><br></div><div><br></div><div><br></div><div>وقتی هر روز&nbsp;<font color="#ff0000">دسته</font>&nbsp;های ِ شعرم؛&nbsp;<font color="#ff0000">عزا دار</font>&nbsp;ِ&nbsp;<strike>تو</strike>&nbsp;اند...</div><div><br></div><div><img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxIHEhQUExQUExUUFR0TGBYXFRsUGhoaFxgYHhQYGB8YHiggGhslGxQUIjEhJiotLjAuGCEzODMsNygtLisBCgoKDg0OGxAQGywkICY3Lzg0NDcsLDQ0NDc0LDA0Lzc0MiwsNCwvMCw0LCw2LDIvLCw3LDUsMDQsLy8vNCwvL//AABEIALEBHAMBEQACEQEDEQH/xAAbAAEAAwEBAQEAAAAAAAAAAAAAAwQFBgIBB//EADsQAAIBAgMDCQcDAwQDAAAAAAABAgMRBAUhEjFBBhQyUVJhcZKxEyJygZHB0UKh8BUj4UNigsKisvH/xAAaAQEAAgMBAAAAAAAAAAAAAAAAAwQCBQYB/8QANxEAAgECBAIIBgIBAwUAAAAAAAECAwQFESExEkETIlFhcYGR0QahscHh8BQyIzNCkiRDUqKy/9oADAMBAAIRAxEAPwD8WxGImpy96XSfF9YBHzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAOcT7UvMwBzifal5mAMT05fE/UAiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJcT05fE/UAiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJcT05fE/UAiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABK8PJQ22rRb2U+t63t17jHiXFw8yZ29RUuma6ueS7/AA8OZEZEIAAAAAAAAAAAAAAAAJcT05fE/UAiAAAAAAAAAAAAAAAAAAAAAAAAAPdKnKs0opyb3JK7PG0lmzOnTnUkowTbfJHmUXBtNWa0aelj1PMxlFxbi1k0fAeEuGw08U9mEXJ9336jGUlFZtk1C3q15cFKLbOhwOQQwq268k7a2vaK8Xx8PUpzuXLqwR1NpgNKhHpbyS05cvN8/D6mXnmYrHSSirQgrR4eLtw3L6E9Ck4LXdmmxfEI3dRKmsoR0Xv3dxmk5qQAAAAAAAAAAAAAAAAS4npy+J+oBEAAAAAAAAAAAAAAAAAC/lGWSzGXVFdKX2XeQ1qyprvNnhmGzvamW0Vu/wB5njMsunl8rSV090luf4fcZU6sai0I7/Dq1nPhmtOT5P8AewpkhQAAANLK5rCKU5r3JRcUrtOTun7ttbXSuyCquLKK3Nth81bxlVqrqtNc03ryy13Wr2XjoUpOWLm3ZuU23ZK929XZEqyiu5Gvk6lxVbSzlJt6dr1N3LuTblZ1Xb/at/zfD5FSpdpaQOjsfhyUuvcvJdi383y8vkW8Vm1HK1sUkpNcI7l8T4sjjRnVfFMv3GK2dhDoreKb7Ft5vm/XxRzmOzCpjneb04JaJeCLsKcYLQ5O8v693LOrLy5LyKpIUwAAAAAAAAAAAAAAAAACXE9OXxP1AIgAAAAAAAAAAAAAAAAAbeR52sEtia9y900tVfffrRVr2/G+KO50OEY0rWPQ1V1eTW69/r4kOeZt/UGlFWhHVX3t9bMqFHo1m9yDF8V/mSUYLKC9W+32MosGlAAANnL8kq4+0ptxj1vVtdyfArVLiENI7m+ssFuLvKdVuMe/d+C/e7M2J1sPkUbJe91LWT8XwRWUald5vY38qtjhMOGK63rJ+L5fLuRgZjnVTHadCPZXHxfEt06EYa7s5i+xm4uurnwx7F93z+nce8NlEZr+5VhSk90Xq9d19VbwPJV2v6xzM7fCYSX+erGnJ8nv56rLwJanJqqn7rhJdd7fX/FzFXcOZPP4culLqOLXbn+/LMqZtl39NcVtqTau9LW/fXiSUavSJvIpYlh38KUYOfE2s9tvn7FAmNYAAAAAAAAAAAAAAAACXE9OXxP1AIgAAAAAAAAAAAAAAAD6lcHqTbyRu5byclVtKq3BdldL59RUqXSWkdTpLD4dnUSncPhXZz/H7sbccloRVvZrxd7/AFvcq/yKmeeZ0KwayUeHo188/UxM6wdPK6ezFtupJPXW0Y3+7RaoVJVJZvkc7i1nQsKHR0225vPXsX5fmY2Hw8sTJRgm2+BZlJRWbNDQoVK81Cms2zqcBlFLLI7dVpyWt30Y+HWyhUrzqPhgdlZ4Rb2MOmuGm1zey8O1/qRQzTlFKreNL3V2nvfh1evgS0rVLWZrcQ+IZ1M4W2i7eb8Oz6+Bgye1q9Wy4c02282eqVR0WpLetVpf1PGs1kzKnUlTkpx3RpZXlE8xe1JuML3cnvfXa/qQVa8aei3Nvh2E1b2XSVG1Dm+b7cvcu4/O44RKlh0ko6bW9f8AG+/xZFTt3J8VQ2F5jULeCt7JaLn7dvi/yYOIryxMnKbcm+LLcYqKyRzVavUrTc6jzZ6pYdzhOe5Rt823ovpd/IOWTS7TOnbynSnV5Ry9W9vTN+RCZFcAAAAAAAAAAAAAAAlxPTl8T9QCIAAAAAAAAAAAAAAHulSdZqMVdvRJHjaSzZnSpTqzUILNs67LMqhlcdubTkldye6Ph+TXVa0qj4Y7Hc4fhdGwh01ZriW75Lw9/QpZ7nU6Utin7uiblx1SenVoyWhbxa4pFDGMZqwqdDR00WvPVZ+W5j4bNK2GldTk+tSe0n9SzKjCSyaNDQxO6oz44zb8XmvmP7ub1e1KXySX2SPOpSj3D/qMRuO2T9Evsl+6nR7VHk9Tt0ptfOT+0f5qUsp3Eu46vitcGoZbzfq/ZfurObzDMJ4+V5PThFbl4fkvU6cYLJHJXt/Wu58VR+C5IqEhSPdKlKs0opyb4LU8bSWbM6dKdWShBZtnR5dkEaC267WmuzfRfE+Ph6lKpcuT4aZ1djgMKUemvGtNcuS8Xz8NvEpZznTxXuU/dp7upy/C7iWjb8PWluUMUxl3H+GjpD6+y7vXsMYsmgABtV4bGBp2/VVu/wDzX/VFaLzrvw9jf1oKOD02uc9f/ZfYxSyaAAAAAAAAAAAAAAAAlxPTl8T9QCIAAAAAAAAAAAAAAHXZPgY5VTdWpZSau2/0rgvF/wCDXVqjqy4YncYXZU8PoO4r6Sy17l2eL/BhZtmssxl1QT0j931v0LdGiqa7znMTxSpez7ILZfd9/wBOXfsco8qliGqlNXaVnFb2lua6/wD4Vraso9WRvcdwqdZqvRWby1X0a/fA5eUXHR6MvnHNOLyZ0GDqxyWgp2Tq1dYru4X7uPfdFOadapw8kdPa1YYZZKs1nUqbLu5eXPv0XhhVq0q8nKTbb1bZbjFRWSObq1Z1Zuc3m2faGHniHaEXJ9yueSko7s9o0KtZ8NOLb7kbWB5NTqa1HsLqWr/C/crTu0v66nQ2nw3VnrXfCuxav2XzNmXsMkhuUb/OUvu/Qq/5KzN+/wCFhdLPJL/6fv8ARdxzGa5tPMH2YLdH7vrZfpUY013nHYjitW8lk9I8l79r/UZxMasAEsqDjBT4Sbivla/qY8SzyJZUZKkqr2baXll7mpi5bODorrnJ/Ry/JBD/AF5M3NzLLCaMXzk3837mMWTQgAAAAAAAAAAAAAAEuJ6cvifqARAAAAAAAAAAAAAGxyawPOqm017sNfGX6fyVrmpwxyXM32AWPT1+kkurD68vcs4/EPOaypRdqcXdvrt0pfZf5MKcehhxPctXtw8Tu1bwf+OO78N39l+TBrSU5NpWTbaXUr6ItrNLU5urKMptxWSbeSOxyDMOeU0n0oWi+/qt32RrLilwS02Z3uC4grmglL+0ck+/s8+0v18NDEdOMZeKTIozlHZmyrW1Gt/qQT8UQYjKqOJd5Qu7JdKS0W5KzsZxrTiskyrXwq0ry4qkM3tu9l4M+UsooUt1OPz97/2uHXqPmKeE2UNqa89frmT1q9PBr3nGC6t30XEwUZTempYq16FtHrtRX7svYwsw5SpaUl/yl9l+foW6dpzmc5e/Ei/rbLzf2Xv6HPVq0sRK8m5N8XqXVFRWSOWq1alafHNttm1lfJ2Va0qt4rhH9T8er18CrVuktInQYf8AD06iU7jqrs5+fZ9fAtZ/gKODoe7BRe0knx79Xv0TI7epOdTVl3GbG0trPOEEnmsnz/cszly+cadjlMKVXDU1NRa1fvW3qTu9TW1nNVXkd7hkLeeH01VSy1euXa83qYWf42OKmowtsU1sq2i77d2iXyLdvTcY5y3ZzWNXlOvVUKX9ILJdnfl3exlk5pwAAAAAAAAAAAAAACXE9OXxP1AIgAAAAAAAAAAAADo3U/pmDjbSVXj8XHy2XzKWXSV9dkdW6n8HCYqP9qn3/GXqV8ko7NHEVFv2HBfS8vsZ15deMSphNJq0uKy34Wl6Zv7GNCm6l7K9ld9y6/3RZbSNFCnKefCttX4GpjIc3wtFduUqj+VlH9mQQfFVk+zQ291B0cOoxX+5uT8tF8mR4HOK1KUU6j2bq97S0vrqz2dCDTeWpHaYvdU5xi6j4c1nnk9M9dyzXz7EUJSi9m8W10epmEbam1mW62O31Kcqcss02tuwqVs6r1d9RrwSj6akit6a5FKrjN7U0dRrwyX01KM5Obu22+t6kyWRrZScnnJ5s94ehLEyUYJyb4IxlJRWbM6NCpWmoU1mzqcvyunlEfaVWnJceEe6PWyhUrSqvhjsdnZYZb4dDp7hpyXPkvDtf6jMzLlDPEXVO8I9f6n8+HyJ6VrGOstWai/+IK1ZuNDqx+b9vL1LuAy5ZjhYpyabm5336q61v3EVSr0dXNI2FlhyvcOjGUmm5N5767HinRwuUS2aj9pN7243SXBW4MycqtVZx0RHCjhuHT6Ou+OfPq5peWu/m/Axs0xixk/dWzCK2Yx3WX5ZYpQ4FruaHEbuNzVzgsoLSK7vyUyUoAAAAAAAAAAAAAAAAAlxPTl8T9QCIAAAAAAAAAAAAA3eVPuOjHhGGnp/1RUtdeJ950fxF1XRprZR/H2LvJGadOceKle3c0l9mRXifEmbH4ZnF0Jw555+TS9iPlHOng4ezhGMZVGnKyS91br27/uZWylOXFJ7EWOzoW1HoKMUnPLPJcl+dvMn5kszwlNJ6qKcX3rRp/uYdJ0dZtln+Er7DKcYvVJZeK0aOXxGGnhnacXF9/26y/GSks0zja9vVoS4asWmX3T/AKrFOLXtkrSi9NtLdKP+629dxFn0Tyf9fobJ01iEFKD/AMqWTX/llzXfluue5n+xltbOzLa7Nnf6E3Ess8zV9DU4+DhfF2Za+hrYDk7Ur6z/ALcfrL6cPmVql1GP9dTeWfw9cVdavUXz9OXn6G5J0Mih1X+cpW/ngir/AJK8jo5Ozwmjoss/+Uv30RyuZZjPMJXloluity/z3mwp0o01kjir/EKt5PintyXJfvaUyQolzCZnVwcXGErJ8LJ/S60I50YTebRetsSubaDhSlkvBP6lWc3UbbbberbM0stEU5SlOTlJ5tl3K8rnmLdtEl0nuvwRHVrRp7mww/DKt63w6Jc+/kv3b0zrYrDSwknGas1/LrrRnGaks0VLi3qW83TqLJkJkQAAAAAAAAAAAAAAAEuJ6cvifqARAAAAAAAAAAAAAHT8osPzujTqx12Ypv4ZJa/J+pQtpcM3BnYY5bu4tadzDXJa+DS+n3Oco1pUHeMnF9adi84qSyZydKtUpS4qcmn3PI81Juo7ttt723dhJLRGM5ynLik833m5ydzZYX+3Udot3i+pven3FW5oOXWjudFgeLRof4Kzyi9n2ePc/kdQ0qq4ST+aKGqZ2bUKkdcmn5ohWApLX2dPyL8GXSz7X6lf+Ba559HH/ivYmnJU1dtJcW9DFJvRFicowXFJpLtMXMeUUKOlL35df6V+S1TtW9ZaHPX3xDSp5xodZ9vL8/upzGJryxMtqbcm+L/miL0YqKyRx9evUrz46rzZ5o0pV5KMVdvRI9bUVmzGlSnVmoQWbZvYjk04U04vaqLWS4Puj4fuVI3actdjpK/w3ONBOm85rdcn4eHfv3bHjIMm9u9uovdW6L/U+/uPbivw9WO5hg2Duq+mrrqrZdv4XzIc+ylZfaUX7snaz3p/dGVvXdTR7lfGcJjZtVKb6re3Ne6NjJczoypqOlNwWqbt4tN7/UrV6M+LPfM32E4naOgoaQcd0380+f1MLPsyWYTWyvdjonxd97/Yt0KXRx13ZzeMYiryquBdWO3f3+xmE5qAAAAAAAAAAAAAAACXE9OXxP1AIgAAAAAAAAAAAADreTONWIp+zfShwfGL/F7fQ111T4ZcS5ncfD95GtQ6CW8fmvxt6FbNOTjbcqPkenlf2ZJSuuUyniHw683O2/4+z+z9TAr0J4d2nFxferFuMlLZnMVqFSjLhqRafeiIyIiahi6mH6E5R8G0jGUIy3RYo3Vej/pza8Gyy84rv/Ul+xh0FPsLTxe9ay6RlSrXlW6UpS8W36kiilsilUrVKrzqSb8W39TQyLK/6hK8uhHfrq+pd3iQ163RrTc2mD4Z/MqcU/6R37X3fk388y6lVpuTtBwjo1pu3RfWuBToVZqWW+Z0uL4fbVLd1JdVxWj+i+y+RzGV495dPaSTurNd3c+Bfq01UjkzkMOv5WdXpIrPk/Dx5G5j+UCqRUaN3Oel7aq/BdcipTtsnnPZHRXuPxnBU7TPil3bZ8vE8RxVXIdmNT+5CSurb4vik3vWp64Qr5uOjI43VxhHDTr9eLXmnzXh+oxcyzCWYS2paJaKPBL895ap01TWSNBf39S8qcc9uS7P3m+ZUJCiAAAAAAAAAAAAAAAAAAS4npy+J+oBEAAAAAAAAAAAAASYevLDSUouzW5mMoqSyZLRrTozVSm8mjq8u5Q08QkqnuS6/wBL+fD5lCpayjrHVHa2PxBQrJRrdWXyft5+pr6VVwkn80VtUze9SpHk16oq1MqoVN9OHyWz6EirVFzKU8Ks5704+Sy+mRXlyfw7/S14Sf3Zl/JqdpWlgFi/9rXm/cinyaoy3Oa+a+6Mldz7iCXw3aPZyXmvYyc3yJ4GO3F7UVvvvXf3os0bhTeT3NJieBytYdLTfFHn2r3M/L6tSlUXsr7T0SXHufcTVFFx62xq7KrXp1ou3z4vr+DT5STr3iqllDhs32b21vfjvILZU9eHc2+PTvc4xrZKPLLbPn5/qMMtHOlzKcS8LVjJJPW2qvo9HbqZHVhxQaL2G3Dt7mE0k9cvXs7y9yqxKrVVFfoVn4vf9iG1hlDPtNl8RXKqXKpr/avm9/sYpaOfAAAAAAAAAAAAAAAAAAABLienL4n6gEQAAAAAAAAAAAAAAABLRxE6HRlKPg2vQxlFS3RLSr1aTzpya8G0XKeeYiH+pfxSfqiN29N8jYQxu+j/ANzPxSf2LEeUtddh/wDH8Mw/iU+8tR+I7xb8L8vZk1PlRUXShB+F1+TB2ceTJ4fE9Zf2hF+Ga9y6s4hmVGsrbMlTbs3dbuD8bEfQOnOL7zYLF6d7a1oZcMlFvLf0KfJavSptp6VHom9zXUup+pJdRm1mtij8O17WEnGWlR7N9nYux/UucpMyhSi6SSlKS14qPf8AF1fXxitqTb4+Rfx7EqVOm7dJSk9+789nZv2Z8mbE4gu5elQvVluhpFdc/wBPyW9+C6yKpr1Fz+hsLJKkncz2jt3y5eS3fl2lScnNtvVt3bJUsijKTk3J7s8gxAAAAAAAAAAAAAAAAAAABLienL4n6gEQAAAAAAAAAAAAAAAAAAAAAB9TsD1NrY+A8PrdwG8z4ATV6/tVFJWjFWS36vpN97f2XAxjHLNk9atxqMUslFaL6vxb+y5EJkQAAAAAAAAAAAAAAAAAAAAAEuJ6cvifqARAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEuJ6cvifqARAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEuJ6cvifqARAAAAAAAAAAAAAAAAAAAF/D0IU1GUmru/uvRJWdnL52AIa2DlT3WkutNNACnhXOEpJXs7b93Xpx4AHqWD2YKTaTk9NVa3F+gB7ngU0nGS2dltyfXF62/YAjWFTg57Wm1s6ru7rgHjD0PbSttJdb4JLiwCFgHwAAAAAAAAAAAAAAAAAAAAEuJ6cvifqARAAAAAAAAAAAAAAAAAA+rQA+7e/Ra/t4AByvbRaABStbRABTt/N+/f9QBtW4IAbXctFb/AD/OoA+XADdwD4AAAAAAAAAAAAAAAAAAAACXE9OXxP1AIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//2Q=="></div><div><br></div><div>پ ن: فردا امتحان شیمی و دیفرانسیل دارم ولی فقط شیمی رو خوندم اونم هنوز مونده بحث خسته کننده<img src="http://mihanblog.com/public/public/rte/images_new/smiles/37.gif" style="font-size: 11px;"></div><div>مردم از بس گفتم من چهارمم و همه گفتن نه بابا تو اولی بعضیاشونو چند بار تا حالا گفتم باید یه برگه بزنم رو مقنعم بنویسم من کلاس چهارمم نه اول&nbsp;</div><div>+ دیروز تو هیئت گفتم جهت ال سی دی رو بچرخونن به سمت من و بقیه یارو اول پایشو داغون کرد بعد با دوستش اومد با هم بازم نتونستن کاری کنن ولش کردن رفتن قبلا هم یه چیزی رو که می گفتم به یکی درست کنه کلا خراب میشد&nbsp;</div>
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دلـ نوشتهـ</a>، <br>										برچسب ها:
+													<a href="http://sefideporrang.mihanblog.com/post/tag/%D8%A7%D9%84%20%D8%B3%DB%8C%20%D8%AF%DB%8C" >ال سی دی</a>، 
+													<a href="../../tag/شیمی.html" >شیمی</a>، 
+													<a href="../../tag/دیفرانسیل.html" >دیفرانسیل</a>، 
+													<a href="http://sefideporrang.mihanblog.com/post/tag/%D9%85%D8%AD%D8%B1%D9%85" >محرم</a>، 
+												  
+					<br>									
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 9 آبان 93 ] [ 08:30 ب.ظ ] [ <a href="../../author/767512.html">
+	بی نام _ </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(223)">
+	نظرات <script>setCommentCnt(223)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+</a> <div><script>mihanblogPostLike('223','like')</script><div/><br/>
+
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://sefideporrang.mihanblog.com/post/221">166.نمی دونم...</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+بزرگترین <font color="#3366ff">اقیانوس</font> <font color="#33ccff">آرامه</font>&nbsp;<div><br></div><div>پس <font color="#33ccff">آروم</font> باش تا بزرگترین باشی....!</div><div><br></div><div>ح<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9D3laqKliQbfOts6bRmejB7hXhSZudbVogOfPrWeEk7kRInvCmw"></div><div><br></div><div>پ ن: جمله کم آوردم این بالایی رو نوشتم وگرنه دوسش ندارم!</div><div>شنبه سرم درد می کرد امتحان دیفرانسیل هم داشتیم به طرز شگفتی امتحان و عالی دادم! زنگ آخرش نصفشو تو نمازخونه خوابیدم ششیمی داشتیم تو کلاسم بودم خوابم می برد بعد که &nbsp;رفتم کلاس معلم گفت اینا همه نباشن که سر تو درد بگیره یکی گفت چرا من نباشم به من چه معلم: وای کیفشم چه قشنگه&nbsp;</div><div>یکی دیگه: خانم کیف منم قشنگه</div><div>معلم: اصلا همه هم خودشون قشنگن<span style="font-size: 11px;">&nbsp;هم وسایلشون&nbsp;</span></div><div>همون دومیه: نه خانم کفش من زشته فقط برا مدرسه می پوشمش!</div><div>( کلاس شیمیو با مهد کودک اشتباه گرفتیم)</div><div>وسط این کلاس قاطی یه بچه ها نشسته خوابید معلمم گفت بچه ها ساکت خوابه تا اخراشم خواب بود خوش به حالش</div><div>+ امروز به اتوبوس نرسیدم یه سومیا اومد به دوستانش گفت هانیه دوست من سوار اتوبوس اولی شد?</div><div>اولی: نمی دونم</div><div>دومی: ندیدم</div><div>من : خب اگه به اتوبوس اولی می رسیدیم که سوارس میشدیم</div><div>( خنده حضار) نمی دونم چرا بش بر خورد من خیلیا رو خیلی ضایع می کنم تازه شاد میشن چرا اینجوری بود این?</div><div>+ اعصابم از دست دوچرخه سوارا و موتوری ها خرده تا رد میشن می گن اسید اسید من که نمی ترسم ولی خداییش آب نریزین رو صورت بقیه سکته می کنن&nbsp;<img src="http://mihanblog.com/public/public/rte/images_new/smiles/14.gif" style="font-size: 11px;"></div><br>
+	<br><br>
+			طبقه بندی: <a href="../../category/1.html">
+			دلـ نوشتهـ</a>، <br>										برچسب ها:
+													<a href="../../tag/دیفرانسیل.html" >دیفرانسیل</a>، 
+													<a href="../../tag/شیمی.html" >شیمی</a>، 
+													<a href="http://sefideporrang.mihanblog.com/post/tag/%D8%A7%D9%82%DB%8C%D8%A7%D9%86%D9%88%D8%B3" >اقیانوس</a>، 
+													<a href="http://sefideporrang.mihanblog.com/post/tag/%D8%A7%D8%B1%D8%A7%D9%85" >ارام</a>، 
+													<a href="../../tag/خواب.html" >خواب</a>، 
+													<a href="http://sefideporrang.mihanblog.com/post/tag/%D9%85%DB%8C%DA%AF%D8%B1%D9%86" >میگرن</a>، 
+												  
+					<br>									
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 4 آبان 93 ] [ 09:10 ب.ظ ] [ <a href="../../author/767512.html">
+	بی نام _ </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(221)">
+	نظرات <script>setCommentCnt(221)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+</a> <div><script>mihanblogPostLike('221','like')</script><div/><br/>
+
+
+
+			
+
+
+<center><b><font color="#aaaaaa" size="1">.:</font></b><a rel="dofollow" target="_blank" href="http://www.themzha.com"><span style="text-decoration: none">
+<font style="FONT-SIZE: 8pt" color="#aaaaaa"> Weblog Themes By</font><b>
+<font class=text5 size="1"><font color="#aaaaaa">themzha</font></span></a> </font><font color="#aaaaaa" size="1">
+:.</font>
+</b></a></center><br>
+
+</div>
+</td>
+
+<td width="220" valign="top">	
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>			
+<b>درباره وبلاگ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <p align="center">
+<img src="../../../../static.mihanblog.com/public/user_data/web_photo/392/1173038.jpg@2012"  /><br>دلِ مــَـن .. ! مـے آیــے ؛ دیـگـر گـنـاه نـکنـیــم .. ؟!<br />
+<br />
++  میـ نِویسَمـ با مِداد هایِــ رَنـگیـــ <br />
+<br />
+واژهــ یــِــ دوســـتـ داشتَـنـــ را دَر قَلـَـبمــ....<br />
+<br />
+یه دختر سادم که جملات و عکس هایی که دوست دارمو اینجا می نویسم گاهی هم خاطراتمو میذارم<br />
+امیدوارم خوشتون بیاد</p></div></div>
+<div class=LowSid></div></div>
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../1394/4.html"> تیر 1394 ، 
+1 </a></div><div class=li-Sid>
+<a href="../1394/3.html"> خرداد 1394 ، 
+5 </a></div><div class=li-Sid>
+<a href="../1394/2.html"> اردیبهشت 1394 ، 
+2 </a></div><div class=li-Sid>
+<a href="11.html"> بهمن 1393 ، 
+6 </a></div><div class=li-Sid>
+<a href="10.html"> دی 1393 ، 
+10 </a></div><div class=li-Sid>
+<a href="9.html"> آذر 1393 ، 
+10 </a></div><div class=li-Sid>
+<a href="8.html"> آبان 1393 ، 
+2 </a></div><div class=li-Sid>
+<a href="7.html"> مهر 1393 ، 
+2 </a></div><div class=li-Sid>
+<a href="5.html"> مرداد 1393 ، 
+3 </a></div><div class=li-Sid>
+<a href="4.html"> تیر 1393 ، 
+4 </a></div><div class=li-Sid>
+<a href="3.html"> خرداد 1393 ، 
+8 </a></div></div>
+<div class=LowSid></div></div>
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>آخرین مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../../283.html">206 از اینجا به یه جای دیگه </a></div><div class=li-Sid>
+<a href="../../278.html">205. کوچه پشت مدرسه</a></div><div class=li-Sid>
+<a href="../../277.html">204. برنامه</a></div><div class=li-Sid>
+<a href="../../276.html">203. چیزی به نام نت</a></div><div class=li-Sid>
+<a href="../../275.html">202. ای هیت ال اف من </a></div><div class=li-Sid>
+<a href="../../274.html">201. هوچی</a></div><div class=li-Sid>
+<a href="../../273.html">200. دلتنگی</a></div><div class=li-Sid>
+<a href="../../272.html">199. :(</a></div><div class=li-Sid>
+<a href="../../271.html">198. کبوتر</a></div><div class=li-Sid>
+<a href="../../270.html">197.دزد</a></div><center><a href="../../list.html"><b>لیست آخرین مطالب</b></a></center></div>
+<div class=LowSid></div></div>	
+
+<div id=rightmenu>
+<div class=TopSid>
+<div class=TopSid2>
+<b>موضوعات</b></div></div>			
+<div class=CenterSid><div class=li-Sid>				
+<a href="../../category/4.html">!?think 
+10 </a></div><div class=li-Sid>				
+<a href="../../category/3.html">:( 
+10 </a></div><div class=li-Sid>				
+<a href="../../category/2.html">:) 
+13 </a></div><div class=li-Sid>				
+<a href="../../category/1.html">دلـ نوشتهـ 
+173 </a></div></div>			
+<div class=LowSid></div></div>
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>آمار سایت</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div></div>	
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>امکانات وب</b></div></div>
+<div class=CenterSid>
+<center>
+<font face="Tahoma" style="font-size: 8pt" color="#666666"><center>
+</center></font></div>
+<div class=LowSid></div></div>	</td></tr><tr><td width="1000" colspan="3" id="footer-RM">[<a rel="dofollow" title="قالب وبلاگ" href="http://themzha.com">قالب وبلاگ </a> : 
+<a title="قالب وبلاگ" href="http://www.themzha.com">تمزها</a>] [Weblog Themes By : <a title="قالب وبلاگ" href="http://www.themzha.com"target="_blank">themzha.com</a>]</td></tr></table></div>
+</body>
+</html>
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'sefideporrang.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

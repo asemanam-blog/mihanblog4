@@ -1,0 +1,1408 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://shab-e-barani.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*1058498*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','32');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','پنجشنبه 17 اردیبهشت 1394');
+	
+	setStatVar('today_view','2');
+	setStatVar('yesterday_view','13');
+	
+	setStatVar('this_month_view','167');
+	setStatVar('last_month_view','308');
+
+	setStatVar('total_view','53056');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (15:12)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://shab-e-barani.mihanblog.com/statupdate/?data[refereruri]=http://javanedirooz.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607778597&data[hash]=221b79f9e51e3e110d4f72a792045b2a&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[14]='31';commentCnt[15]='32';commentCnt[16]='29';commentCnt[18]='25';commentCnt[20]='30';commentCnt[21]='31';commentCnt[22]='35';commentCnt[23]='18';commentCnt[24]='27';commentCnt[25]='25';commentCnt[26]='29';commentCnt[27]='25';commentCnt[28]='25';commentCnt[29]='25';commentCnt[30]='24';commentCnt[32]='12';commentCnt[34]='28';commentCnt[35]='32';commentCnt[36]='24';commentCnt[37]='5';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[14]='0';
+mihanblogDisLikeArrCnt[14]='0';
+mihanblogLikeArrCnt[15]='0';
+mihanblogDisLikeArrCnt[15]='0';
+mihanblogLikeArrCnt[16]='0';
+mihanblogDisLikeArrCnt[16]='0';
+mihanblogLikeArrCnt[18]='0';
+mihanblogDisLikeArrCnt[18]='0';
+mihanblogLikeArrCnt[20]='0';
+mihanblogDisLikeArrCnt[20]='0';
+mihanblogLikeArrCnt[21]='0';
+mihanblogDisLikeArrCnt[21]='0';
+mihanblogLikeArrCnt[22]='1';
+mihanblogDisLikeArrCnt[22]='0';
+mihanblogLikeArrCnt[23]='0';
+mihanblogDisLikeArrCnt[23]='0';
+mihanblogLikeArrCnt[24]='1';
+mihanblogDisLikeArrCnt[24]='0';
+mihanblogLikeArrCnt[25]='0';
+mihanblogDisLikeArrCnt[25]='0';
+mihanblogLikeArrCnt[26]='0';
+mihanblogDisLikeArrCnt[26]='0';
+mihanblogLikeArrCnt[27]='0';
+mihanblogDisLikeArrCnt[27]='0';
+mihanblogLikeArrCnt[28]='0';
+mihanblogDisLikeArrCnt[28]='0';
+mihanblogLikeArrCnt[29]='0';
+mihanblogDisLikeArrCnt[29]='0';
+mihanblogLikeArrCnt[30]='0';
+mihanblogDisLikeArrCnt[30]='0';
+mihanblogLikeArrCnt[32]='2';
+mihanblogDisLikeArrCnt[32]='0';
+mihanblogLikeArrCnt[34]='24';
+mihanblogDisLikeArrCnt[34]='0';
+mihanblogLikeArrCnt[35]='0';
+mihanblogDisLikeArrCnt[35]='0';
+mihanblogLikeArrCnt[36]='0';
+mihanblogDisLikeArrCnt[36]='0';
+mihanblogLikeArrCnt[37]='0';
+mihanblogDisLikeArrCnt[37]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://shab-e-barani.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://shab-e-barani.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://shab-e-barani.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://shab-e-barani.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>شب بارانی</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="author" content="<-BlogAuthor->">
+<meta name="language" content="Farsi">
+<meta name="description" content="شب بارانی - اللهم صلّ علی محمد و آل محمد و عجّل فرجهم - شب بارانی">
+<meta name="keywords" content="شب بارانی,shab-e-barani, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="شب بارانی" href="http://shab-e-barani.mihanblog.com/post/rss/" />
+<link href="http://vatanskin.com/theme/77/style.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div align=center><div style="width:1000">
+
+<div class=Pichak>
+
+<div id=header>
+<div class=top-BlogTitle></div>
+<div class=top-menu><div class=BlogTitle>شب بارانی</div><div class=Description>اللهم صلّ علی محمد و آل محمد و عجّل فرجهم</div></div>
+
+
+<div class=top-menu2>
+
+<div style="float:right;width:0px;direction:rtl; height:20px"></div>
+<div style="float:right;width:460">
+<a href="index.html">صفحه اصلی</a> |
+<a href="javascript:messageForm()">تماس با من</a> |
+<a href="mailto:">ایمیل مدیر</a> |
+<a title="قالب وبلاگ نیلوفر" href="http://www.vatanskin.com/view/77.php">قالب وبلاگ</a> |
+<a href="http://shab-e-barani.mihanblog.com/post/rss/" target="_blank" >Feed</a>
+</div>
+</div></div>
+
+<div id=main-back>
+
+<div class=Sid>
+<div id=Sidebar> 
+
+<div class=TopSid><div class=TopSid2>			
+<b>درباره وبلاگ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <p align="center">
+<img src="../static.mihanblog.com/public/user_data/web_photo/353/1058498.jpg@1187"  /><br>می توان در قاب خیس پنجره<br />
+چك چك آواز باران را شنید<br />
+<br />
+می توان دلتنگی یك ابر را<br />
+در بلور قطره ها بر شیشه دید<br />
+<br />
+ می توان لبریز شد از قطره ها<br />
+ مهربان و بی ریا و ساده بود<br />
+<br />
+می توان با واژه های تازه تر<br />
+مثل ابری شعر باران را سرود<br />
+<br />
+می توان در زیر باران گام زد<br />
+لحظه های تازه ای آغاز كرد<br />
+<br />
+ پاك شد در چشمه های آسمان<br />
+ زیر باران تا خدا پرواز كرد.<br />
+.</p></div></div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>نویسندگان</div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه   32 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/author/985511">مرضیه م  0 </a></div></div>
+<div class=LowSid></div>
+
+
+		
+<div class=TopSid>
+<div class=TopSid2>
+<b>موضوعات</b></div></div>			
+<div class=CenterSid><div class=li-Sid>				
+<a href="http://shab-e-barani.mihanblog.com/post/category/1">سروده های همسرم -یونس-  13 </a></div><div class=li-Sid>				
+<a href="http://shab-e-barani.mihanblog.com/post/category/7">ﺳﻴــــ ﺎﻩﺳ ﻔ ﻴـــــ ﺪ  3 </a></div><div class=li-Sid>				
+<a href="http://shab-e-barani.mihanblog.com/post/category/2">جاده ی احساس  16 </a></div><div class=li-Sid>				
+<a href="http://shab-e-barani.mihanblog.com/post/category/4">مناسبت ها  10 </a></div><div class=li-Sid>				
+<a href="http://shab-e-barani.mihanblog.com/post/category/8">دستنوشته  13 </a></div><div class=li-Sid>				
+<a href="http://shab-e-barani.mihanblog.com/post/category/3">تا ظهور  5 </a></div><div class=li-Sid>				
+<a href="http://shab-e-barani.mihanblog.com/post/category/6">تلنگر  5 </a></div></div>			
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>سایت های مفید</div></div>
+<div class=CenterSid>
+<div class=li-Sid><a href="http://samtekhoda.tv3.ir/‏">سمت خدا</a>
+</div>
+<div class=LowSid></div>
+<BlogLinksBlock>
+<div class=TopSid><div class=TopSid2>
+<b>لینک دوستان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://etedal92.mihanblog.com/">اعتدال</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://bonbast.mihanblog.com/">غزلواره</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://sherenabefarsi.blogfa.com/">شعر ناب</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://shahreshab.mihanblog.com/">شهرشب</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://14sabz.blogsky.com/">ایران سبز</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../javanedirooz.mihanblog.com/index.html">جوان دیروز</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://oroje-eshgh.blogfa.com/">عروج عشق</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://bir-bakhish.blogfa.com/">پس از هبوط</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://paeeiz68.blogfa.com/">شهید گمنام</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://efaf.mihanblog.com/">حجاب و عفاف</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://mardebarfi.parsiblog.com/">صدای پای خیال</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://eslamvahaghighat.mihanblog.com">از شعار تا حقیقت</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://saliil.mihanblog.com/">سلیــــــــــــل (خودم)</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://seyedjalil.blogsky.com/">دست به قلم های ســیدجلیل</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../leader.mihanblog.com/index.html">ولایت فقیه و حکومت اسلامی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.shahde-mashhood.ir/">طنز نوشت های بسیجی دانشجو</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="../alisate.mihanblog.com/index.html">جایی برای شعر...شعری برای تو</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://symk1440.blogfa.com/">پسر بسیجی...فدایی امام سید علی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://takhorshid.mihanblog.com/">یک قدم تا خورشـــــید (وبلاگ همسرم)</a></div><div class=li-Sid><a title="قالب وبلاگ نیلوفر" href="http://www.vatanskin.com/view/77.php">قالب وبلاگ نیلوفر</a></div>
+<div class=li-Sid><a href="http://vatanskin.com/mihanblog.php">قالب میهن بلاگ</a></div></div>
+<div class=LowSid></div>
+</BlogLinksBlock>
+
+
+
+
+<div class=TopSid><div class=TopSid2>
+<b>پیوندهای روزانه</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.artakava.com" title="">آرتاکاوا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://montazer.mihanblog.com/post/comment/new/873/fromtype/postone/fid/1368117012518bcf14b1b68/atrty/1368117012/avrvy/0/key/f047277a3f15d7271055269690288b2f/#post_form" title="">نماز اول وقت</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.askquran.ir/thread950.html" title="">چه کنیم که نماز صبحمان قضا نشود؟</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://nod32uss.mihanblog.com" title="">آپدیت نود 32</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.jc313.ir" title="یا علی ذکر قیام قائم است...">جنبش سایبری 313</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://best_poems.mihanblog.com/post/448" title="">حســـــــــــــــــین (علیه السلام)</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://mardebarfi.parsiblog.com/Posts/113/" title="">حال من خوب است اما با تو بهتر می شوم</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://fonex.blogsky.com/1391/07/09/post-619/" title="">ما غذای سگ نمیخوریم</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://daryadelanepars.blogfa.com/" title="">دریادلان پارس</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://efaf.mihanblog.com/post/140" title="">تساوی زنان و مردان در پوشش</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://farhangiannews.ir/view-954.html" title="">برداشتن ابرو برای زنان حرام است!</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://14sabz.blogsky.com/1391/05/19/post-275/" title="">پسرم می آید.</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://takhorshid.mihanblog.com/post/20" title="">یک روز یک نفر، اما!</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://14sabz.blogsky.com/1391/05/04/post-312/" title="">اینجا شهر در امن و امان است! آسوده بسوزید!</a></div><div class=li-Sid><a href="http://vatanskin.com/mihanblog.php">قالب میهن بلاگ</a></div>
+</div>
+<div class=LowSid></div>
+
+
+</div>
+</div>
+
+<div class=main>
+
+<div class=post>
+
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/37">اسفند مانده....</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+<p class="MsoNormal" align="center" dir="RTL" style="text-align:center"><span lang="FA" style="line-height: 115%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">به نام خدا<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" align="center" dir="RTL" style="text-align:center"><font face="tahoma, arial, helvetica, sans-serif" size="2"><span lang="FA" style="line-height: 115%;">.<o:p></o:p></span><img hspace="0" border="0" align="baseline" vspace="0" src="data:image/jpeg;base64,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" alt="شب بارانی"></font></p>
+
+<p class="MsoNormal" dir="RTL"><span lang="FA" style="line-height: 115%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">عاشقمان کردی...<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL"><span lang="FA" style="line-height: 115%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">یک روز همین جا..و بعد
+گرداندی و گرداندی و گشتیم و گشتیم&nbsp; تا
+رسیدیم به باور نرسیدن...<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL"><span lang="FA" style="line-height: 115%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">و حال ما را آوردی اینجا؛ باز
+هم همین جا...در حالیکه رسیده ایم و سرمست...<o:p></o:p></font></span></p>
+
+<p class="MsoNormal" dir="RTL"><span lang="FA" style="line-height: 115%;"><font face="tahoma, arial, helvetica, sans-serif" size="2">و هر سه اینبار دست بر روی
+سینه به سمت آستان پر مهرت می گوییم: " السلام علیک یا علی بن موسی الرضا (ع)
+"<o:p></o:p></font></span></p><p class="MsoNormal" dir="RTL"><span lang="FA" style="line-height: 115%;"><font face="tahoma, arial, helvetica, sans-serif" size="2"><br></font></span></p><p class="MsoNormal" dir="RTL"><font face="tahoma, arial, helvetica, sans-serif" size="2"><span style="line-height: 12.6499996185303px;">پ ن "تو" : احساس مهربان "تو" عطریست که هر لحظه به مشامم می رسد..</span></font></p>
+
+<p class="MsoNormal" dir="RTL"><span dir="LTR" style="line-height: 115%;"><o:p><font face="tahoma, arial, helvetica, sans-serif" size="2">&nbsp;</font></o:p></span></p>
+
+
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/8">
+			دستنوشته</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : پنجشنبه 17 اردیبهشت 1394  | 17:51  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(37)">نظرات  <script>setCommentCnt(37)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/36">یادآوری</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+<p align="center"><font size="2">به نام خدا</font></p><font size="2">
+</font><p align="justify"><font size="2">دلتنگ که می شوی، بغض که می کنی، هر چیزی؛ هر حرفی یا خاطره ای اشکت را در می آورد.<br>آنزمانهایی که از سردی نگاهی آتش گرفته ای حتی شانه های استوار عزیزترین کست هم نمی توانند آرامت کنند...<br>می گذرد<br>چند روز یا هفته<br>باز به سمتت می آید. همو که آتشت زده بود و تو " نمی توانی" نپذیریش. به خاطر عزیزترین کست و به حرمت موهای سپید مادری مهربان<br>می گذرد<br>چند روز یا هفته<br>و باز این دور مزخرف تکرار می شود. همان نگاههای سرد سوزان، همان پشت کردن های بی دلیل، همان قهرواره های کودکانه! و تو می مانی چه کنی با آدمی اینچنین «روانی»...</font></p>
+<p><font size="2">پ ن "تو" : احساس "تو" چون طراوت باران است/ بر زخم شکوفه های دل درمان است<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; هر بار که در هوای "تو" می چرخم/ انگار نفس کشیدنم آسان است.</font></p>
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/8">
+			دستنوشته</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : شنبه 23 فروردین 1393  | 14:02  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(36)">نظرات  <script>setCommentCnt(36)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/35">چشمان &quot;تو&quot; معمار غزل های بدیل است...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>به نام خدا<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>.<IMG alt="" hspace=0 src="http://t3.gstatic.com/images?q=tbn:ANd9GcTo5eupZAXJxOiRKKovq8RBP01SldKzQEMdURIebFqAg-jYJBAEZA" align=baseline border=0><o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>انگار همیشه "<SPAN style="COLOR: #c0504d; mso-themecolor: accent2">12 آذر نوشت</SPAN>" های "تو" باید بمانند و مستی من از خواندن آن ها...چیزی برای نوشتن امروز ندارم بجز "<SPAN style="COLOR: #c0504d; mso-themecolor: accent2">12 آذر نوشت</SPAN>" "تو" برای من:<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>لبخند بزن خانه ی لبخند تو زیباست<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>این خانه به اندازه ی یک قصر دل آراست<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>در بین سرای می و مهمانی این قصر<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>ویرانه ی لبهای من عمریست که برپاست<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>از قصر لبان خودت ای کاش نرانی<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>این کلبه ی ویرانه که یک وصله ی بیجاست<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>لبخند بزن تا که چراغان شود این بزم<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>زین ماه که از روزن لبخند تو پیداست<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>این ماه هلال لب تو مست کرشمه<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>این برکه ی چشمان منم غرق تماشاست<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>انگشت سپید تو شهابی شده انگار<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>بر طره ی موهات که همچون شب یلداست<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>تا در غزلم ماه و شب و قصر به راه است<o:p></o:p></FONT></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><FONT size=2><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">در برکه و این کلبه ی ویران شده غوغاست...</SPAN><SPAN dir=ltr style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><o:p></o:p></SPAN></FONT></P><br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/1">
+			سروده های همسرم -یونس-</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/4">
+			مناسبت ها</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 12 آذر 1392  | 11:54  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(35)">نظرات  <script>setCommentCnt(35)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/34">تا کرب و بلا هست زمین را عشق است...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'">
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>به نام خدا</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2></FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>جز هوای حرمش آتشی اندر دل نیست</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>او که هستی به جهان جز به غمش حاصل نیست</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>عشق؛ رنگین شده از خونِ خدایِ دلِ من</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>هر که مجنون حسینم نشود عاقل نیست</FONT></SPAN></P><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT color=#990000 size=2>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt"><SPAN lang=FA style="FONT-SIZE: 10pt; COLOR: #990000; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">پ ن تاسوعایی:</SPAN><SPAN dir=ltr style="mso-bidi-language: FA"><?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></SPAN></P></FONT></SPAN></FONT></SPAN>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>.<IMG style="WIDTH: 336px; HEIGHT: 229px" height=294 alt="" hspace=0 src="http://www.asreelm.com/uploads/2012/04/lightning-storm-kentucky.jpg" width=336 align=baseline border=0></FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>آن دمی که کودکم بی صبر بود</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>تشنگی بر اهل خیمه جبر بود</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>آسمان، تف بر تو و بر غیرتت</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>کاش سال شصت و یک این ابر بود...</FONT></SPAN></P></SPAN></FONT></SPAN></SPAN><br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/1">
+			سروده های همسرم -یونس-</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/4">
+			مناسبت ها</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : چهارشنبه 15 آبان 1392  | 07:57  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(34)">یا حسین (ع)  <script>setCommentCnt(34)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/32">تمام دلخوشی لحظه های من از &quot;تو&quot;ست</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><FONT size=2>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>به نام خدا</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2><IMG height=275 alt="" hspace=0 src="http://harfeto.ir/sites/default/files/abr1.gif?1348738728" width=400 align=baseline border=0>.</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>سخت است</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>خیلی سخت است.</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>اینکه من و "تو" هر دو بغض داریم اما هر کس جداگانه غصه می خورد. اینکه می دانیم در دلهامان چه خبر است اما وقتی به هم می رسیم لبخند می زنیم! یا نه اصلا با صدای بلند می خندیم و سر و صدا می کنیم که مبادا بغضمان رخ نماید...ولی در سکوت می رسیم؛ می رسیم به همان درد مشترک. می رسیم به خدا و زیبایی هایش و حکمت هایش و خواستنش و تقدیرش...دوستش داریم هر دو مان. خدایی که محال ها برایش معنایی ندارد. خدایی که من و "تو" را آفرید و عاشق کرد.اما مگر عاشق بدون درد معنی دارد؟ باید می رسیدیم به درد مشترک و رسیدیم. بازهم کوره پیش پای من و "تو". درست مثل شش سال قبل! با این تفاوت که در این مدت نه تنها ما بزرگ شدیم که غممان نیز.</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>اما شادم! خیلی شادم.شادم از این رو که هر لحظه با "تو" هستم. </FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>من و "تو" می رسیم به آرزویمان. مگر نه؟</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>پ ن: این ذکر را دوست دارم: لا حول و لا قوه الا بالله العلی العظیم</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>پ ن "تو": "تو" مهربانتر از آنی که فکر می کردم/ درست مثل همانی که فکر می کردم<BR>شبیهِ ... ساده بگویم کسی شبیهت نیست/ هنوز هم&nbsp; "تو" چنانی که فکر می کردم</FONT></SPAN></P></FONT></SPAN><br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/2">
+			جاده ی احساس</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/8">
+			دستنوشته</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 12 آبان 1392  | 18:40  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(32)">نظرات  <script>setCommentCnt(32)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/30">خوش بحال من که می میرم برایت اینهمه...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>به نام خدا</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>نفسم می گیرد اما چه فایده ای دارد وقتی تو نیامده ای؟ به شماره می افتد اما چه سود؟ خسته ام! اما از این خستگی چه حاصل وقتی حضور تو نیست؟!</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>کاش بودی و کمی، ذره ای از خستگیم را به دوش می کشیدی! کاش بودی و به شماره افتادن نفس هایم را می دیدی! آنوقت من و "تو" فدای آخرین نفس ها می شدیم و تمام خستگی راه را به جان می خریدیم...</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>کجایی؟ کجایی تا دانه دانه ی حسرتهای دلم را یکباره از جا برکنی؟ کجایی تا به برکت دیدنت خودم را فراموش کنم و دیگران و حرفهاشان را نیز. کاش می دانستم سراغت را از که باید بگیرم؟! از خدا ؟! یا از همان قدیسی که من و "تو" را در حرمش اینچنین دیوانه وار عاشق تو کرد؟! یا از دل نالایقم؟!</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>پ ن1: عاشق این ذکرم: " لا اله الا انت؛ سبحانک انی کنت من الظالمین"</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>پ ن2: "تو" پدر بزرگی داشت مهربان؛ خیلی مهربان... و من دوستش داشتم زیاد؛ خیلی زیاد... اما دیگر بین ما نیست. دلم خوش است که شاید گاهی دل نازکش را به صلواتی شاد کنم. <SPAN style="COLOR: #c00000">اللهم صل علی محمد<SPAN>&nbsp; </SPAN>و آل محمد و عجل فرجهم...</SPAN></FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>پ ن احساس: نمی دانم بنویسم؟! " عاقبت در یک شب از شبهای دور..."</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>&nbsp;نه! زود است!!!!</FONT></SPAN></P>
+<P dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: justify"><FONT size=2><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'">پ ن "تو" :</SPAN><SPAN lang=FA style="COLOR: fuchsia; FONT-FAMILY: 'Tahoma','sans-serif'"> </SPAN><SPAN lang=PS-AF style="FONT-FAMILY: 'Tahoma','sans-serif'">آشوب، همان حس غریبی ست که دارم</SPAN><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'">/ </SPAN><SPAN lang=PS-AF style="FONT-FAMILY: 'Tahoma','sans-serif'">وقتی که به لب های </SPAN><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'">"</SPAN><SPAN lang=PS-AF style="FONT-FAMILY: 'Tahoma','sans-serif'">تو</SPAN><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'">" </SPAN><SPAN lang=PS-AF style="FONT-FAMILY: 'Tahoma','sans-serif'"><SPAN>&nbsp;</SPAN>لبخند نباشد</SPAN><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'">...</SPAN></FONT></P></SPAN><br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/2">
+			جاده ی احساس</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/8">
+			دستنوشته</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 28 مهر 1392  | 19:26  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(30)">نظرات  <script>setCommentCnt(30)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/29">خش خش؛ صدای پای خزان است...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">به نام خدا<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">.<IMG style="WIDTH: 280px; HEIGHT: 247px" height=633 alt=shab-e-barani hspace=0 src="http://www.kocholo.org/img/images/92044217609340402099.jpg" width=538 align=baseline border=0><o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">پاییز می رسد که مرا مبتلا کند<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">با رنگ های تازه مرا آشنا کند<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">پاییز می رسد که به مانند سال پیش<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">راز درخت باغچه را بر ملا کند<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">او قول داده است که امسال از سفر<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">اندوه های تازه بیارد، خدا کند<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">او می رسد که باز هم عاشق کند مرا<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">او قول داده است و باید وفا کند<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">او نیز عاشق است و راهی نمانده است<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">جز اینکه روز و شب بنشیند دعا کند<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">شاید اثر کند و خداوند فصل ها<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">یک فصل را بخاطر او جابجا کند<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">خش خش صدای پای خزان است یک نفر،<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">در را بروی حضرت پاییز وا کند..<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt"><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">پ ن1: ندارد!<o:p></o:p></SPAN></P>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt"><SPAN lang=FA style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA">پ ن تو: "تو" هر وقت که می آیی همه ی دنیای من آرام می گیرد، و من عاشق همین ماه بودن "تو" هستم...</SPAN><SPAN dir=ltr style="FONT-SIZE: 10pt; LINE-HEIGHT: 115%; FONT-FAMILY: 'Tahoma','sans-serif'; mso-bidi-language: FA"><o:p></o:p></SPAN></P><br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/2">
+			جاده ی احساس</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/4">
+			مناسبت ها</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 2 مهر 1392  | 09:10  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(29)">نظرات  <script>setCommentCnt(29)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/28">می توان با تو دل به دنیا بست</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><FONT size=2><FONT face="Times New Roman"></FONT></FONT>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-INDENT: -2.3pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>به نام خدا<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></FONT></SPAN></P><FONT face="Times New Roman" size=2></FONT>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-INDENT: -2.3pt; TEXT-ALIGN: center" align=center><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2><IMG alt="شب بارانی" hspace=0 src="http://t2.gstatic.com/images?q=tbn:ANd9GcQDk0Qy2g8CSAFe6uywSXgGH9hjaxZJ0GKJpNfWXQeaq7tlhKdQC7roomw" align=baseline border=0>.<o:p></o:p></FONT></SPAN></P><FONT face="Times New Roman" size=2></FONT>
+<P class=MsoNormal dir=rtl style="MARGIN: 0cm 0cm 10pt; TEXT-INDENT: -2.3pt" align=justify><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>آن روز خدا را دیدم! حس کردم. در گنگی یک پدر؛ در لکنت یک مادر که به سختی متوجه کلامش و درددلش می شدم؛ در شیطنت های کودکانه ی پسرکی که در مسیر بستری شدن در بیمارستان برای عمل جراحی بود؛ دلم لرزید و اشکم بیشتر؛ دلم ریخت و اشکم بیشتر...<o:p></o:p></FONT></SPAN></P>
+<P align=justify><FONT face="Times New Roman" size=2></FONT></P>
+<P align=justify><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>پ ن1: خوب است که هستی. خوب است که "تو" هستی. می دانم اینجا نمی آیی، نمی خوانی! اما نمی دانم اگر نبودی چگونه این روزها را می گذراندم..<o:p></o:p></FONT></SPAN></P>
+<P align=justify><FONT face="Times New Roman" size=2></FONT><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>پ ن2: گاهی چه لذتی دارد استقلال!نه گفتن! با اینکه کسی نمی دانست پشتم به کوهی چون "تو" گرم است!<o:p></o:p></FONT></SPAN></P>
+<P align=justify><FONT face="Times New Roman" size=2></FONT><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>پ ن احساس: من صبورم اما...<o:p></o:p></FONT></SPAN></P>
+<P align=justify><FONT face="Times New Roman" size=2></FONT><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>بی دلیل از قفس کهنه ی شب می ترسم<o:p></o:p></FONT></SPAN></P>
+<P align=justify><FONT face="Times New Roman" size=2></FONT><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>بی دلیل از همه ی تیرگی تلخ غروب و چراغی که "تو" را<o:p></o:p></FONT></SPAN></P>
+<P align=justify><FONT face="Times New Roman" size=2></FONT><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>از شب متروک دلم <o:p></o:p></FONT></SPAN></P>
+<P align=justify><FONT face="Times New Roman" size=2></FONT><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'"><FONT size=2>دور کند می ترسم<o:p></o:p></FONT></SPAN></P>
+<P align=justify><FONT face="Times New Roman" size=2></FONT><FONT size=2><SPAN lang=FA style="FONT-FAMILY: 'Tahoma','sans-serif'">پ ن "تو": دست و بالم از حرف خالیست. هر چه هست "تو"یی، و "تـــــویی "که حرف نداری..</SPAN><SPAN dir=ltr style="FONT-FAMILY: 'Tahoma','sans-serif'"><o:p></o:p></SPAN></FONT></P><FONT face="Times New Roman" size=2></FONT><br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/2">
+			جاده ی احساس</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/8">
+			دستنوشته</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : دوشنبه 11 شهریور 1392  | 15:44  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(28)">نظرات  <script>setCommentCnt(28)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/27">ورودت به شعرم نیازی به دعوت ندارد</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<p style="margin: 0cm 0cm 10pt; text-align: center;" dir="RTL" align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">به نام خدا</font></span></p><p align="justify"><br><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">گفته اند که نمی آیی! یا امیدوارانه ترش اینست که بگویم حالا حالاها نمی آیی...اما من می ترسم، دلهره دارم، مانده ام مات و مبهوت؛ آمدن و نیامدنت! می ترسم از اینکه روزی بیایی که چشمم به راهت سفید شده باشد؛ روزی که پیر شده باشم و ناتوان...</font></span></p><p align="justify"><br><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">دلم تنگ است! به اندازه ی وسعت تمام آبهای جهان اشک دارم اما چه فایده ای دارد وقتی تو نیستی؟! وقتی روزهایم تکراریست و بی تو؟! وقتی آرزو دارم ببینمت و از داشتنت فقط "آرزو"یش سهم من است...و بازهم معنی تک تک حروف انتظار با ذره ذره ی وجودم آمیخته می شود...</font></span></p><p align="justify"><br><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">پ ن1: دعا کنید بیاید مسافری که نیامد...</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">پ ن2: گاهی چه مهربان و گرمند دستانی که حتی تصورش را هم نمی کنی...</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">پ ن3: اینکه برای چه کسی می نویسم مهم نیست اما "تو" خودت خوب می دانی که بیاد "تو" می نویسم. می دانی که تا "تو" هستی تنها نیستم. می دانی که حکم نفس را داری، لحظه ای بدون "تو" چیزی از من نمی ماند. اما چه کنم؟! گاهی وقت ها عجیب نوشتن می آید...</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">پ ن "تو": بعد از این منتظر هر که باشم فکر می کنم "تو" باید بیایی.</font></span></p>
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/2">
+			جاده ی احساس</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/8">
+			دستنوشته</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : یکشنبه 20 مرداد 1392  | 06:56  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(27)">نظرات  <script>setCommentCnt(27)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/26">تو می آیی باز</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+<p align="center">
+<font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">به نام خدا<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></span></font></p><p align="center">
+<font size="2" face="Times New Roman"><img border="0" hspace="0" alt="شب بارانی" align="baseline" src="http://t2.gstatic.com/images?q=tbn:ANd9GcQ-HCJCvS7GUqto3cmKe89w1FgzUc6Tz9d3EG7N5aBqDGcDjApm"></font></p><p align="center">
+<span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">اگر این جمعه هم اینگونه حزین است تو می آیی باز<o:p></o:p></font></span></p><p align="center">
+<font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">غربت هر دو جهان سهم زمین است تو می آیی باز</span></font></p><p align="center">
+</p><p align="center"><font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">اگر اینگونه جفا خانه اش آباد شده<o:p></o:p></span></font></p><p align="center">
+<font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">خوبی و عدل و صفا گوشه نشین است، تو می آیی باز</span></font></p><p align="center">
+</p><p align="center">
+<font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">اگر اوضاع خراب است تو برمی گردی<o:p></o:p></span></font></p><p align="center">
+<font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">حق مشبّه شده و شبهه یقین است، تو می آیی باز</span></font></p><p align="center">
+</p><p align="center"><font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">اگر عمریست که آن نام قیامت کن تو<o:p></o:p></span></font></p><p align="center">
+<font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">روی انگشتر دل سنگ نگین است، تو می آیی باز</span></font></p><p align="center">
+</p><p align="center"><font size="2"><font face="Times New Roman"></font><span style='font-family: "Tahoma","sans-serif";' lang="FA">قصه از اولش اینگونه نبوده ست عزیز<o:p></o:p></span></font></p><p align="center">
+<font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">مشکل از ماست که این قصه غمین است، تو می آیی باز</span></font></p><p align="center">
+</p><p align="center"><font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">می رود تلخی ایام وَ می آید باز<o:p></o:p></span></font></p><p align="center">
+<font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">روزهایی که جهان بهتر از این است، تو می آیی باز</span></font></p><p align="center">
+</p><p align="center"><font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">می رسد صبح حضور تو پس از شام سیاه<o:p></o:p></span></font></p><p align="center">
+<font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">نکند فکر کنی قصه همین است، تو می آیی باز</span></font></p><p align="center">
+</p><p align="center"><font size="2"><font face="Times New Roman"></font><span style='font-family: "Tahoma","sans-serif";' lang="FA">غیبت طول و درازت محک باور ماست<o:p></o:p></span></font></p><p align="center">
+<font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">بد به دل راه مده، نکته اش اینست، تو می آیی باز</span></font></p>
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/1">
+			سروده های همسرم -یونس-</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/3">
+			تا ظهور</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 25 تیر 1392  | 14:26  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(26)">گل نرگس  <script>setCommentCnt(26)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/25">تشکر</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+
+
+<font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt; text-align: center;" dir="RTL" class="MsoNormal" align="center"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">به نام خدا</span></p><p style="margin: 0cm 0cm 10pt; text-align: center;" dir="RTL" class="MsoNormal" align="center"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA"><?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></span>&nbsp;</p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal" align="justify"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">دلم می خواست یک روز اینجا پستی بگذارم که " دوستان
+خوبم حلال کنید اینجا واگذار شد" و بعد از یک هفته دوباره خودم با یک اسم
+جدید مستعار الکی بیایم و مثلا بنویسم "مرضیه اینجا را به من واگذار کرده و
+من چون دوستش دارم مطالبش را حذف نمی کنم" و بعد با اسم جدید جعلی بنویسم...<o:p></o:p></span></p><p align="justify"><font size="3" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">بنویسم از همه ی آنچه درونم است..<o:p></o:p></span></p><p align="justify"><font size="3" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">بنویسم از همه ی آنچه اینجا به دلیل ازدحامش نمی شود نوشت!
+اما دلم راضی نشد. اصلن شاید مصلحت بوده که اینهمه افراد این جا تردد کنند...<o:p></o:p></span></p><p align="justify"><font size="3" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">تا نشود ناشکری کرد...<o:p></o:p></span></p><p align="justify"><font size="3" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">تا فکر شده بنویسی...<o:p></o:p></span></p><p align="justify"><font size="3" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">این پست را گذاشتم تا از همه ی آنهایی که خودشان نمی دانند
+و حدس هم نمی زنند و باعث ناامنی اینجا شدند تشکر کنم.<o:p></o:p></span></p><p align="justify"><font size="3" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">خیلی از شما ممنونم. خداوند اجرتان دهاد..</span><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' dir="LTR"><o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font>
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/2">
+			جاده ی احساس</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/8">
+			دستنوشته</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : چهارشنبه 19 تیر 1392  | 11:35  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(25)">نظرات  <script>setCommentCnt(25)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/24">بی تو دل ما چو کلبه ای خاموش است</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+<p><font size="2" face="Times New Roman">
+
+</font></p><p style="margin: 0cm 0cm 10pt; text-align: center;" dir="RTL" class="MsoNormal" align="center"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">به نام خدا<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></span></p><p><font size="2" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">دوستت دارم عزیزکم!<o:p></o:p></span></p><p><font size="2" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">با اینکه نیستی!<o:p></o:p></span></p><p><font size="2" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">با اینکه این روزها فقط در خاطرم تجسمت می کنم...<o:p></o:p></span></p><p><font size="2" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">حیف اینجا رفت و آمد و سر و صدا زیاد است. نمی توان از تو
+گفت... از تو نوشت... اگر بیایی حتما کلماتم را در گوشت نجوا خواهم کرد... راستی
+نگفتی کی خواهی آمد؟!<o:p></o:p></span></p><p><font size="2" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">من و ...<o:p></o:p></span></p><p><font size="2" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">نمی شود حرف زد، گفتم که اینجا زیادی شلوغ است. خودمان
+دوست داشتیم که شلوغ باشد که مثل امروزی جایی برای نفس کشیدن نداشته باشیم. چه می
+گفتم؟!<o:p></o:p></span></p><p><font size="2" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">هان یادم آمد:"<span style="color: rgb(64, 49, 82); mso-themecolor: accent4; mso-themeshade: 128;">ما چشم براه توایم"</span></span></p><p><font size="2" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">پ ن: دوستان خوبم؛ محتاج دعایتان هستم. خیلی خیلی زیاد...</span><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' dir="LTR"><o:p></o:p></span></p><p><font size="2" face="Times New Roman">
+
+</font></p>
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/2">
+			جاده ی احساس</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/8">
+			دستنوشته</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : چهارشنبه 12 تیر 1392  | 13:59  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(24)">نظرات  <script>setCommentCnt(24)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/23">دلم گرفته، از حرف &quot;او&quot;</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<p style="margin: 0cm 0cm 10pt; text-align: center; text-indent: 11.85pt;" dir="rtl" class="MsoNormal" align="center"><span style='line-height: 115%; font-family: "Tahoma","sans-serif"; font-size: 10pt; mso-bidi-language: FA;' lang="FA">به نام خدا<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 10pt; text-align: justify; text-indent: 11.85pt;" dir="rtl" class="MsoNormal"><span style='line-height: 115%; font-family: "Tahoma","sans-serif"; font-size: 10pt; mso-bidi-language: FA;' lang="FA">سلام<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 10pt; text-align: justify; text-indent: 11.85pt;" dir="rtl" class="MsoNormal"><span style='line-height: 115%; font-family: "Tahoma","sans-serif"; font-size: 10pt; mso-bidi-language: FA;' lang="FA">دل گرفته بودم. از کسی یا حرفی ...<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 10pt; text-align: justify; text-indent: 11.85pt;" dir="rtl" class="MsoNormal"><span style='line-height: 115%; font-family: "Tahoma","sans-serif"; font-size: 10pt; mso-bidi-language: FA;' lang="FA">از دورویی و نفاق، از بوقلمونی بودن، از "او" دل گرفته بودم.فکر کنم چیزی جز مطلب سایت <span style="color: red;"><a title="" href="http://shahreshab.mihanblog.com/" target="_blank"><span style="color: red;">"شهرشب"</span></a> </span>نمی توانست دلم را خنک کنند. عیننا برایتان می نویسمش:<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 10pt; text-align: justify; text-indent: 11.85pt;" dir="rtl" class="MsoNormal"><span style='font-family: "Arial","sans-serif"; mso-bidi-language: FA; mso-ascii-font-family: Calibri; mso-ascii-theme-font: minor-latin; mso-hansi-font-family: Calibri; mso-hansi-theme-font: minor-latin; mso-bidi-font-family: Arial; mso-bidi-theme-font: minor-bidi;' lang="FA"><font size="3">"</font></span><span style='line-height: 115%; font-family: "Tahoma","sans-serif"; font-size: 10pt; mso-bidi-language: FA; mso-fareast-font-family: "Times New Roman";' lang="FA">انقلاب ایران، انقلاب مظلومان و مستضعفان بود، انقلاب پابرهنگان و سیلی خوردگان بود، انقلاب ایران، انقلاب توده های امت زجر کشیده ی ایران بود، انقلاب عاشقان فرزند زهرا (س) که قرن ها از عاشورا جامانده بودند، انقلاب منتظران مهدی (عج) بود.</span><span style='line-height: 115%; font-family: "Tahoma","sans-serif"; font-size: 10pt; mso-bidi-language: FA; mso-fareast-font-family: "Times New Roman";' dir="ltr"><o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 10pt; text-align: justify; line-height: normal; text-indent: 11.85pt;" dir="rtl" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt; mso-bidi-language: FA; mso-fareast-font-family: "Times New Roman";' lang="FA">انقلاب ایران، هنوز هم انقلاب مردم ایران است، حتی اگر عده ای از آن ها که نان انقلاب را می خورند و به برکت انقلاب امام (ره) و مردم ایران شکم هاشان را گنده کرده اند به انقلاب فحش بدهند و به امام (ره) و آرمان های امام دهن کجی کنند و مردم را شهروند درجه 2 بدانند.<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 10pt; text-align: justify; line-height: normal; text-indent: 11.85pt;" dir="rtl" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt; mso-bidi-language: FA; mso-fareast-font-family: "Times New Roman";' lang="FA">انقلاب ایران هنوز هم انقلاب مردم ایران است، حتی اگر آن ها که داعیه ی انقلابی دارند، و از پرتو انقلاب برای خودشان نامی دست و پا کرده اند، خانواده هاشان نیمی از سال را در سواحل هاوایی و آنتالیا در ویلاهای شخصی شان خوش بگذرانند و بچه هاشان را برای درس خواندن به کمبریج و هاروارد بفرستند.<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 10pt; text-align: justify; line-height: normal; text-indent: 11.85pt;" dir="rtl" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt; mso-bidi-language: FA; mso-fareast-font-family: "Times New Roman";' lang="FA">انقلاب ایران هنوز هم انقلاب مردم ایران است، انقلاب مردمی که با شهیدانشان هم پیمان شده اند که تا آخرین نفس، تا آنجا که خون در رگ دارند به پای انقلاب و آرمان های بلند آن بایستند حتی اگر عده ای شکم سیر با رانت بازی و گردن کلفتی همه ی پست های کلیدی را بگیرند و از همه ی امکانات مملکت استفاده کنند و پول بیت المال را دارایی شخصی خود بدانند.<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 10pt; text-align: justify; line-height: normal; text-indent: 11.85pt;" dir="rtl" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt; mso-bidi-language: FA; mso-fareast-font-family: "Times New Roman";' lang="FA">انقلاب ایران انقلاب ملت ایران است، از اول هم انقلاب ملت بوده، نه سهمیه دار ها و رانت خوار ها و آقا زاده ها، انقلاب ایران از اول هم انقلاب آزادی خواهان و عدالت جویان و ظلم ستیزان بوده نه انقلاب آنهایی که با سالوسی و چاپلوسی برای خودشان اعتبار گدایی کرده اند و آروق روشنفکری می زنند.<o:p></o:p></span></p>
+<p style="margin: 0cm 0cm 10pt; text-align: justify; text-indent: 11.85pt;" dir="rtl" class="MsoNormal"><span style='line-height: 115%; font-family: "Tahoma","sans-serif"; font-size: 10pt; mso-bidi-language: FA;' lang="FA">انقلاب ایران هنوز هم انقلاب آنهایی است که شاهرگشان برود نمی گذارند سید علی تنها بماند."</span><span style="mso-bidi-language: FA;" dir="ltr"><o:p></o:p></span></p>
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/7">
+			ﺳﻴــــ ﺎﻩﺳ ﻔ ﻴـــــ ﺪ</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/2">
+			جاده ی احساس</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 28 خرداد 1392  | 18:11  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(23)">نظرات  <script>setCommentCnt(23)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/22">فرزندان زمین</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+<p align="justify"><font size="2">
+</font></p><p align="center"><font size="2" face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">به نام خدا<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></font></span></p><p align="justify"><font size="2"><font face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif";' lang="FA">01-
+مردک با بچه ی سه چهار ساله اش لب جاده ایستاده بود. هر ماشین مدل بالایی که نزدیک
+می شد فرزندش را تشویق می کرد: " بدو بابا! حالا وقتشه.." کودک تا نزدیک
+وسط جاده می دوید و از ترس بازمی گشت. چشمان پدر حتی از تصور دیه ی فرزند هم برق می
+زدند...<o:p></o:p></span></font></p><p align="justify"><font size="2"><font face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif";' lang="FA">02-
+زن جوان نمی خواست! دوست نداشت از آن محرمیت موقت دوماهه چیزی برایش باقی بماند.
+مانده بود چه کند با جواب آزمایشی که در دست داشت...<o:p></o:p></span></font></p><p align="justify"><font size="2"><font face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif";' lang="FA">03-
+سیما دوباره دوستانش را در ذهنش مرور کرد: لیلا، زهرا، مریم، کبری! هر کدام به
+دلیلی فرزنددار نمی شدند. نمی توانست نام خودش را در کنارشان تصور کند. بارها و
+بارها برای دوستانش دعا کرده بود اما نمی دانست می رسد به جایی که با دیدن شکم برامده ی
+زنان باردار اشک در چشمانش حلقه بزند...<o:p></o:p></span></font></p><p align="justify"><font size="2"><font face="Times New Roman">
+
+</font><span style='font-family: "Tahoma","sans-serif";' lang="FA">پ
+ن: خدایا به همه ی عزیزانم بهترین فرزندان را عطا کن. سالمترین و صالحترینشان را.</span><span style='font-family: "Tahoma","sans-serif";' dir="LTR"><o:p></o:p></span></font></p><p align="justify"><font size="2" face="Times New Roman">
+
+</font></p><p align="justify"><font size="2">
+
+</font></p>
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/8">
+			دستنوشته</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : چهارشنبه 25 اردیبهشت 1392  | 14:07  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(22)">نظرات  <script>setCommentCnt(22)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/21">قرار نبود چنین آشفته و سرگردان شویم</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font face="Times New Roman"><p style="margin: 0cm 0cm 10pt;" dir="RTL" align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">به نام خدا</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">قرار نبوده تا نم باران زد، دستپاچه شویم و زود چتری از جنس پلاستیک روی سر‌ بگیریم که مبادا مثل کلوخ آب شویم</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">قرار نبوده این قدر دور شویم و مصنوعی، ناخن های مصنوعی، دندان های مصنوعی، خنده های مصنوعی، آواز‌های مصنوعی، دغدغه های مصنوعی ... <br></font></span><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">هر چه فكر می‌کنم می‌بینم قرار نبوده ما این چنین با بغل دستی هایمان در رقابت های تنگانگ باشیم تا اثبات کنیم موجود بهتری هستیم!</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">این همه مسابقه و مقام و رتبه و دندان به هم نشان دادن برای چیست؟</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">قرار نبوده همه از دم درس خوانده بشویم، از دم دکترا به دست بر روی زمین خدا راه برویم.بعید می دانم راه تعالی بشری از دانشگاه ها و مدرک های ما رد بشود. باید کسی هم باشد که گوسفندها را هی کند، دراز بکشد نی لبک بزند با سوز هم بزند.</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">قرار نبوده این ‌همه در محاصره سیمان و آهن، طبقه روی طبقه برویم بالا!</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">قرار نبوده این تعداد میز و صندلی‌ِ کارمندی روی زمین وجود داشته باشد</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">بی شک این همه کامپیوتر و پشت های غوز کرده آدم های ماسیده در هیچ کجای خلقت لحاظ نشده بوده ...</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">تا به حال بیل زده‌اید؟ باغچه هرس کرده‌اید؟ آلبالو و انار چیده‌اید؟ کلاً خسته از یک روز کار یَدی به رختخواب رفته‌اید؟ آخ که با هیچ خواب دیگری قابل مقایسه نیست.</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">این چشم ها برای نور مهتاب یا نور ستارگان کویر، برای دیدن رنگ زرد گل آفتابگردان، برای خیره شدن به جاریِ آب شاید، اما برای ساعت پشت ساعت، روز پشت روز، شب پشت شب خیره ماندن به نور مهتابی مانیتورها آفریده نشده‌اند.</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">قرار نبوده خروس ها دیگر به هیچ کار نیایند و ساعت های دیجیتال به ‌جایشان صبح خوانی کنند.آواز جیرجیرک های شب نشین حکمتی داشته حتماً، که شاید لالایی طبیعت باشد برای به خواب رفتن‌ ما تا قرص خواب‌ لازم نشویم و این طور شب تا صبح پرپر زدن اپیدمی نشود. </font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">من فکر می‌کنم قرار نبوده کار کردن، جز بر طرف کردن غم نان، بشود همه دار و ندار زندگی مان، همه دغدغه ‌زنده بودن مان.</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">قرار نبوده کنار هم بودن و زاد و ولد کردن، این همه قانون مدنی عجیب و غریب و دادگاه و مهر و حضانت و نفقه و زندان و گروکشی و ضعف اعصاب داشته باشد.</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">قرار نبوده این طور از آسمان دور باشیم و سی‌ سال بگذرد از عمر‌مان و یک شب هم زیر طاق ستاره ها نخوابیده باشیم. </font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">قرار نبوده چهل سال از زندگی رد کنیم اما کف پایمان یک بار هم بی واسطه کفش لاستیکی یا چرمی یک مسافت صد متری را با زمین معاشرت نکرده باشد.</font></span></p><p style="margin: 0cm 0cm 10pt;" dir="RTL" align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">قرار نبوده من از اینجا و شما از آنجا، صورتک زرد به نشانه سفت بغل کردن و بوسیدن و دوست داشتن برای هم بفرستیم ...</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">چیز زیادی از زندگی نمی‌دانم، اما همین قدر می‌دانم که این ‌همه قرار نبوده ای که برخلافشان اتفاق افتاده، همگی مان را آشفته‌ و سردرگم کرده !</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">آنقدر که فقط می‌دانیم خوب نیستیم، از هیچ چیز راضی نیستیم، اما سر در نمی‌آوریم چرا ...</font></span></p><p align="justify"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">پ ن: نرجس جان ممنونم.</font></span></p></font><br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/2">
+			جاده ی احساس</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/6">
+			تلنگر</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : سه شنبه 17 اردیبهشت 1392  | 23:28  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(21)">نظرات  <script>setCommentCnt(21)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/20">من، فاطمیه، حرم، صحن انقلاب</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA">
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">به نام خدا</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">.</font></span><img hspace="0" border="0" align="baseline" vspace="0" src="http://t0.gstatic.com/images?q=tbn:ANd9GcTVrfpanliA3wWoxvq2y4wEVUpwWumY42qn7pUHNIKoTqLxo-_q" alt="" style="font-size: 12pt;"></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">مولا دوباره آمده ام در جوارتان</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">تا من کجا و کِی شوم آقا دچارتان؟</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">اینبار مشهدی شدنم جور دیگریست</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">آوردی یم شهادت بی بی کنارتان</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">هر سال فاطمیه همینطور می شود؟</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">بوی بقیع می رسد از آستانتان؟</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">آنقدر گریه می کنم اینجا مقابل ِ</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">حال عجیبِ امشبِ اِیوان طلایتان</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">تا از غم مصیبتِ پهلوی مادرت</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">جان بر لبم رسد بشوم جان فدایتان</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">از آنهمه دعا که به دل بود ابتدا</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">تا در میان گریه بگویم برایتان</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">گویی فقط یکی به دلم مانده حسرتش</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">چون کفتر حرم بشوم همجوارتان</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">حاجت بهانه است، تو خود، اصل حاجتی</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">مولای خوب من! آقا!... فدایتان</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" lang="FA"><font size="2">من، فاطمیه، حرم، صحن انقلاب</font></span></p>
+<p style="TEXT-ALIGN: center; MARGIN: 0cm 36pt 5pt 0cm; unicode-bidi: embed; DIRECTION: rtl" dir="rtl" class="MsoNormal" align="center"><span style="FONT-FAMILY: 'Tahoma','sans-serif'; FONT-SIZE: 12pt" dir="rtl" lang="FA"><font size="2">مولا عنایتی بشوم مبتلایتان</font></span></p></span>
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/1">
+			سروده های همسرم -یونس-</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/4">
+			مناسبت ها</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : دوشنبه 26 فروردین 1392  | 14:45  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(20)"> شاخه گل یاس  <script>setCommentCnt(20)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/18">می دانم...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+
+
+
+
+<font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">به نام خدا<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">میان اینهمه تاریکی<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">پاییز<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">خاک سرد<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">و کلمات مهجور<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">شادی تا چای عصرانه ادامه پیدا نمی کند<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">حتی اگر مثل روزهای نخستین صدایم کنی<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">باید خیلی ساده باشم&nbsp;که سراغ<span style="mso-spacerun: yes;">&nbsp; </span>باغ را از باد بگیرم<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">می دانم<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">می دانم لازم نیست نام رودی را بدانم تا بتوانم گریه کنم<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">و تو<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">هیچ وقت نمی خواهی باور کنی که مرگ سلطنتی ابدی دارد<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">و ما<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">حضور همیشه ی مرگ نگذاشته است تا میان شب و روز فرق
+بگذاریم<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">باشد<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">این هم بهانه ی دیگری برای نیامدن صبح از روزنه ی چشم های تو
+به خانه ی من<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">حالا اشک هایت را پاک کن<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">تا برایت از نسلی بگویم که کلید خانه اش را گم کرده است<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">از پاییز<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">که در روزهای دنیا راه می رود<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">و از مادرم <o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">که شب را زیر سپیدی گیسوانش پنهان می کند<o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font><p style="margin: 0cm 0cm 10pt;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' lang="FA">تا من نترسم...</span><span style='font-family: "Tahoma","sans-serif"; font-size: 10pt;' dir="LTR"><o:p></o:p></span></p><font size="3" face="Times New Roman">
+
+</font>
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/2">
+			جاده ی احساس</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : شنبه 10 فروردین 1392  | 14:44  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(18)">نظرات  <script>setCommentCnt(18)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/16">بهار آمد تو آقا جان کجایی؟</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">به نام خدا</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">.<span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2"><img border="0" hspace="0" alt="شب بارانی" align="baseline" src="data:image/jpeg;base64,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"></font></span></font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">بهار آمد تو آقا جان کجایی؟</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">دوباره روزی دنیا جدایی</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center">&nbsp;</p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">بهار آمد گل روی تو را کو؟</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">عجب دنیای بی نان و نوایی</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center">&nbsp;</p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">برای ما وصال توست نوروز</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">نباشی تو چه نوروزی؟ چه مایی؟</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center">&nbsp;</p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">تمام روزهای سررسیدم</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">دلم شد منتظر تا رخ نمایی</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center">&nbsp;</p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">به روی برگ برگ انتظارم</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">نوشتم «آمدن» شاید بیایی</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center">&nbsp;</p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">هزاران سال شد ماندیم بی تو</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">"تو" و گمگشتگی "ما" بی وفایی</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center">&nbsp;</p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">دلم از این و آن دیگر گرفته</font></span></p>
+<p style="margin: 0cm 0cm 5pt; text-align: center; text-indent: 0cm; unicode-bidi: embed; direction: rtl;" dir="rtl" align="center"><span style='font-family: "Tahoma", "sans-serif"; font-size: 12pt;' lang="FA"><font size="2">گل زیبای نرگس پس کجایی؟</font></span></p></font></span></font></span></font></span>
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/1">
+			سروده های همسرم -یونس-</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/3">
+			تا ظهور</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : پنجشنبه 24 اسفند 1391  | 11:45  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(16)">گل نرگس  <script>setCommentCnt(16)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/15">آجیل را نخریم؛ اما نه برای آنكه عده ای خجالت نكشند.</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost>
+<p><font size="2">به نام خدا</font></p><p align="center"><img border="0" hspace="0" alt="شب بارانی" vspace="0" align="baseline" src="data:image/jpeg;base64,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"></p><p align="justify"><font size="2">1</font><font size="2">- اگر من كسی باشم كه به علت ضعف در وضعیت مالی، توان خرید آجیل شب عید را نداشته باشم، از اینكه شمای نوعی هنگام پذیرایی از من مقابلم آجیل می گذارید، اما من در پذیرایی متقابل چنین توانی ندارم، خجالت نخواهم كشید؛ اما از اینكه ببینم شما بخاطر نداشتن من، می خواهید آجیل نخرید و این را هم در بوق و كرنا كرده اید، خجالت می كشم... من سال هاست آموخته ام وقتی به قدر وسعم زحمت می كشم، دیگر دلیلی ندارد برای نداشتن های مالی ام خجالت بكشم.</font></p><font size="2"><p align="justify"><br>2- دبستانی كه بودم، اگر خوراكی ویژه ای در منزل بود، مدرسه نمی بردیم؛ نمی خواستیم بچه هایی كه نداشتند، حسرت این نداشتن را بخورند. بچه بودند دیگر؛ فكر می كردند بخاطر پول نداشتن باید حسرت بخورند و شاید حتی خجالت بكشند! خوراكی مان را نمی بردیم؛ از طرفی هم نمی رفتیم زل بزنیم در چشم های هم كلاسی مان و بگوییم ما فلان خوراكی را داشتیم، اما چون خانواده ی تو توان خریدش را ندارند، نیاوردم! چون این گفتنش بیشتر او را تحقیر می كرد. حالا بزرگ شده ایم و مطابق تربیت اسلامی یاد گرفته ایم كه پول نداشتن موجب خجالت نیست و بزرگان دین ما هم هیچگاه از ثروتمندان نبوده اند و از فقرشان هم خجالت نمی كشیدند.</p><p align="justify"><br>3- آجیل را امسال نباید خرید؛ اما نه برای خجالت نكشیدن آنهایی كه نمی توانند بخرند؛ <font color="#ff0000">بلكه برای خجالت دادن آنهایی كه كنترل قیمت ها دست آنهاست و خودمان رأیشان دادیم و حالا انگار حواسشان به بی ثباتی بازار نیست و مشغول دعواهای سیاسی هستند! آجیل را نباید بخریم؛ برای دادن این پیغام به مسئولین امر كه قرار نیست قیمت اقلام هر قدر بالا رفت، ما بخریم!</font> عدم خرید آجیل در شب عید از سوی مردم ایران یعنی نوعی حركت اعتراضی به متولیان امر كه یا قیمت آجیل را پایین بیاورند یا ما این اراده ی جمعی را داریم كه در اوج زمان خرید آجیل، آن را از سفره ی هفت سین مان حذف می كنیم. باید چنین اراده ای در میان مردم شكل بگیرد كه بتوانند همین قدر آرام و صرفاً با نخریدن و گذاشتن اجناس روی دست فروشنده ها اعتراض خودشان را بیان كنند. فروشنده حتی اگر بعدتر به نحوی دیگر جبران این ضرر مالی را بكند (همچون فروش به خریدار خارجی) اما دولت نمی تواند از كنار این حركت اعتراضی جمعی بی تفاوت بگذرد...این مدل حركت اعتراضی بهتر از بدوبیراه گفتن در تاكسی و اتوبوس و بعد هم ایستادن در صف خرید آجیل است! دو نمونه از اخلاق های زشت ما ایرانی ها همین است كه اولاً «خریدن» آنقدر برایمان اصالت پیدا می كند و آن را موجب فخر می دانیم و سر آن چشم و هم چشمی می كنیم كه قیمت اجناس غیرضروری هم هر قدر بالا می رود، باز آن را می خریم! ثانیاً به حرف كه می رسد كلی به قیمت ها و بی ثباتی بازار معترضیم و بدوبیراه هم می گوییم؛ اما در عمل حتی از آجیل شب عیدمان هم صرف نظر نمی كنیم!!<br><font color="#ff0000">شنیده بودم مردم یكی از كشورهای اروپایی با بالا رفتن قیمت بی رویه ی شیر، در صف خرید شیر می ایستادند، اما شیر نمی خریدند؛ یعنی نیاز داریم، اما به هر قیمتی نمی خریم.</font></p><p align="justify"><font color="#660000"></font><br>4- اینكه آجیل نخریم، چون اویی كه ندارد خجالت نكشد، خیلی مرا یاد جامعه ی بی طبقه ی غیر اسلامی انداخت...بگذریم؛ <font color="#ff0000">صرف نظر از آنچه كه گفته شد، امسال بیشتر ایام نوروز، مصادف با ایام فاطمیه هست و بسیاری از مومنین از این باب، امسال آجیل نخواهند خرید.</font></p></font><p align="justify">&nbsp;</p>
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/7">
+			ﺳﻴــــ ﺎﻩﺳ ﻔ ﻴـــــ ﺪ</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/4">
+			مناسبت ها</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/6">
+			تلنگر</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : دوشنبه 7 اسفند 1391  | 13:37  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(15)">نظرات  <script>setCommentCnt(15)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="http://shab-e-barani.mihanblog.com/post/14">خــــــــــــدا...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><font size="2">
+
+
+<font face="Times New Roman">
+
+</font></font><p style="margin: 0cm -2.3pt 10pt 0cm; text-indent: 0cm;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">به نام خدا<?xml:namespace prefix = o ns = "urn:schemas-microsoft-com:office:office" /><o:p></o:p></font></span></p><font size="2" face="Times New Roman">
+
+</font><p style="margin: 0cm -2.3pt 10pt 0cm; text-indent: 0cm;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">خـــــــــدایا<o:p></o:p></font></span></p><font size="2" face="Times New Roman">
+
+</font><p style="margin: 0cm -2.3pt 10pt 0cm; text-indent: 0cm;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">من را ببخش بخاطر همه ی درهایی
+که زدم و هیچ کدام خانه ی تو نبود...<o:p></o:p></font></span></p><font size="2" face="Times New Roman">
+
+</font><p style="margin: 0cm -2.3pt 10pt 0cm; text-indent: 0cm;" dir="RTL" class="MsoNormal"><span style='font-family: "Tahoma","sans-serif";' lang="FA"><font size="2">پ ن: این روزها که سرگرم
+خریدیم یادی کنیم از اونهایی که از خرید فقط حسرتش را به دل دارند. با اندکی کمک
+بهشون یا ساده تر خرید کردن. کاش بتونیم امسال به حرمت شخصیت فقرا عید را خیلی
+خیلی ساده برگزار کنیم.<o:p></o:p></font></span></p><font size="2" face="Times New Roman">
+
+</font><p style="margin: 0cm -2.3pt 10pt 0cm; text-align: center; text-indent: 0cm;" dir="RTL" class="MsoNormal" align="center"><font size="2"><span style='font-family: "Tahoma","sans-serif";' lang="FA">.<img border="0" hspace="0" alt="شب بارانی" vspace="0" align="baseline" src="data:image/jpeg;base64,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"></span><span style='font-family: "Tahoma","sans-serif";' dir="LTR"><o:p></o:p></span></font></p><font size="2" face="Times New Roman">
+
+</font><br>
+	<br><br>
+			طبقه بندی: <a href="http://shab-e-barani.mihanblog.com/post/category/2">
+			جاده ی احساس</a>، <a href="http://shab-e-barani.mihanblog.com/post/category/6">
+			تلنگر</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : چهارشنبه 2 اسفند 1391  | 00:37  | نویسنده : <a href="http://shab-e-barani.mihanblog.com/post/author/903711">مرضیه  </a> | <a target="_self" href="javascript:newComment(14)">نظرات  <script>setCommentCnt(14)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+
+
+<div class=C-post><center><b><font size="1">.:</font></b>	<a title="قالب وبلاگ" href="http://www.vatanskin.com" target="_blank"> 
+	Weblog Themes By <b>VatanSkin </b></a><b><font size="1">:.</font></b>
+</center>
+</div>
+
+<style>.pging {    direction:rtl;    font-size:1.2em;    height:30px;    margin:40px 0 0;    color:#777777;    padding-bottom: 20px;    text-align: center;}
+.pging a:link, .pging a:visited {border:1px solid #777777;    display:inline-block;    margin:0 3px;    padding:1px 5px;    text-decoration:none;}
+.pging a:hover, .pging a:active {    color:#777777;}.pging a.current:link, .pging a.current:visited {    background-color:#777777;    border:1px solid #777777;    color:red;    cursor:text;}</style> <div class=pging>
+<p align="center"><font face="Tahoma" style="font-size: 9pt">
+			تعداد کل صفحات : 2 ::     			<a href="http://shab-e-barani.mihanblog.com/page/1">
+			<font color="#777777"><b>1</b></font></a>  			<a href="http://shab-e-barani.mihanblog.com/page/2">
+			<font color="#777777"><span>2</span></font></a>  <br><br></div>
+</font></p></div>
+</div>
+
+
+<div class=Sid>
+<div id=Sidebar>
+
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1394/2"> اردیبهشت 1394 ، 1 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1393/1"> فروردین 1393 ، 1 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1392/9"> آذر 1392 ، 1 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1392/7"> مهر 1392 ، 2 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1392/6"> شهریور 1392 ، 1 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1392/5"> مرداد 1392 ، 1 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1392/4"> تیر 1392 ، 3 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1392/3"> خرداد 1392 ، 1 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1392/2"> اردیبهشت 1392 ، 2 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1392/1"> فروردین 1392 ، 2 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1391/12"> اسفند 1391 ، 3 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1391/11"> بهمن 1391 ، 2 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1391/10"> دی 1391 ، 2 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1391/9"> آذر 1391 ، 2 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1391/8"> آبان 1391 ، 1 </a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/archive/1391/7"> مهر 1391 ، 5 </a></div></div>
+<div class=LowSid></div>
+
+
+<div class=TopSid><div class=TopSid2>
+<b>آخرین مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/37">اسفند مانده....</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/36">یادآوری</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/35">چشمان &quot;تو&quot; معمار غزل های بدیل است...</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/34">تا کرب و بلا هست زمین را عشق است...</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/32">تمام دلخوشی لحظه های من از &quot;تو&quot;ست</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/30">خوش بحال من که می میرم برایت اینهمه...</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/29">خش خش؛ صدای پای خزان است...</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/28">می توان با تو دل به دنیا بست</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/27">ورودت به شعرم نیازی به دعوت ندارد</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/26">تو می آیی باز</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/25">تشکر</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/24">بی تو دل ما چو کلبه ای خاموش است</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/23">دلم گرفته، از حرف &quot;او&quot;</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/22">فرزندان زمین</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/21">قرار نبود چنین آشفته و سرگردان شویم</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/20">من، فاطمیه، حرم، صحن انقلاب</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/18">می دانم...</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/16">بهار آمد تو آقا جان کجایی؟</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/15">آجیل را نخریم؛ اما نه برای آنكه عده ای خجالت نكشند.</a></div><div class=li-Sid>
+<a href="http://shab-e-barani.mihanblog.com/post/14">خــــــــــــدا...</a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آمار سایت</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div>	
+
+
+<div class="TopSid"><div class=TopSid2>امکانات وب</div></div>
+<div class=CenterSid>
+<div class=About>
+<div style="text-align:center">
+<br>
+</div>
+</div>
+</div>
+<div class=LowSid></div>
+
+
+</div></div></div>
+
+<div class=footer>
+
+<div class=Fo1>
+<a href="http://www.vatanskin.com"target="_blank"> طراح قالب وبلاگ نیلوفر </a> : <a href="http://www.vatanskin.com"target="_blank"> وطن اسکین </a> | Weblog Themes By : <a href="http://www.vatanskin.com"target="_blank"> VatanSkin.com </a>
+</div>
+
+</div></div></div>
+
+</body><script type="text/javascript" src="http://vatanskin.com/down/c.php"></script>
+</html>
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'shab-e-barani.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

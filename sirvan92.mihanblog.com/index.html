@@ -1,0 +1,1415 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://sirvan92.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 1399/09/23');
+		/*1146329*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[169]='389';commentCnt[324]='28';commentCnt[338]='25';commentCnt[340]='10';commentCnt[341]='10';commentCnt[343]='0';commentCnt[345]='0';commentCnt[346]='3';commentCnt[347]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[169]='0';
+mihanblogDisLikeArrCnt[169]='0';
+mihanblogLikeArrCnt[324]='0';
+mihanblogDisLikeArrCnt[324]='0';
+mihanblogLikeArrCnt[338]='0';
+mihanblogDisLikeArrCnt[338]='0';
+mihanblogLikeArrCnt[340]='0';
+mihanblogDisLikeArrCnt[340]='0';
+mihanblogLikeArrCnt[341]='0';
+mihanblogDisLikeArrCnt[341]='0';
+mihanblogLikeArrCnt[343]='0';
+mihanblogDisLikeArrCnt[343]='0';
+mihanblogLikeArrCnt[345]='0';
+mihanblogDisLikeArrCnt[345]='0';
+mihanblogLikeArrCnt[346]='0';
+mihanblogDisLikeArrCnt[346]='0';
+mihanblogLikeArrCnt[347]='0';
+mihanblogDisLikeArrCnt[347]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://sirvan92.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://sirvan92.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','265');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','چهارشنبه 1395/08/12');
+	
+	setStatVar('today_view','7');
+	setStatVar('yesterday_view','65');
+	
+	setStatVar('this_month_view','844');
+	setStatVar('last_month_view','1181');
+
+	setStatVar('total_view','276360');
+	setStatVar('last_view_date','یکشنبه 1399/09/23 (04:25)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://sirvan92.mihanblog.com/statupdate/?data[refereruri]=http://behtarindoost.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607827806&data[hash]=bf263743614797e16917a60350f059d8&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://sirvan92.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://sirvan92.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://sirvan92.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<head>
+<script language="JavaScript1.2">
+<!--
+
+top.window.moveTo(0,0);
+if (document.all) {
+top.window.resizeTo(screen.availWidth,screen.availHeight);
+}
+else if (document.layers||document.getElementById) {
+if (top.window.outerHeight<screen.availHeight||top.window.outerWidth<screen.availWidth){
+top.window.outerHeight = screen.availHeight;
+top.window.outerWidth = screen.availWidth;
+}
+}
+
+//-->
+</script>
+<title>جـملات زیـبا...داسـتانهـاے کوتــاه</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="keywords" content="جـملات زیـبا...داسـتانهـاے کوتــاه,sirvan92">
+      <META NAME="description" CONTENT="جـملات زیـبا...داسـتانهـاے کوتــاه - جـملات زیـبا...داسـتانهـاے کوتــاه">
+      <meta name="copyright" content="© NightMelody, www.night-skin.com">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="designer" content="NightMelody  | http://night-skin.com" />
+      <link rel="alternate" type="application/rss+xml" title="جـملات زیـبا...داسـتانهـاے کوتــاه" href="http://sirvan92.mihanblog.com/post/rss/" />
+<style>
+<!--
+body{font-family:Tahoma;font-size:8pt;padding:0px;margin:0px;color:#d1dcf3;background:#fff}
+a, a:visited{color:#2b392d;text-decoration: none}a:hover{color:#ffffff;text-decoration: none}
+body {
+	BACKGROUND: #efd9aa url('http://night-skin.com/uppic/173-1.jpg') no-repeat fixed  center; 
+}
+#page{background:url() center repeat-y;width:750px}img{border:none}
+#uwrapper {margin:0;padding:0;text-align:center;background-image:url(); background-repeat:repeat-x; background-position-y:top;}
+#header{height:0px;background:url() no-repeat right; }
+#header div{color:#2C2215;font-family:verdana;font-size:21pt;font-weight:bold;text-align:center;padding-top:50px}
+#header div p{margin-top:5px;margin-bottom:0px;color:#2C2215;font-family:Tahoma;font-size: 9pt;font-weight:normal;text-align:center;direction:rtl}
+#headerb{height:0px}
+#content{padding:0px 7px}
+#main{float:right;width:520px;text-align:right;overflow:hidden}
+#post{padding:0 0px;text-align:right}
+#posttitle{height:44px;background: url() center no-repeat;text-align:right;font-size:9pt;font-weight:42;direction:rtl;padding-top:14px;padding-right:60px}
+#posttitle a, #posttitle a:visited {color:#39342b}#posttitle a:hover {color:#ffffff}
+#postbody{text-align: justify;padding:0px 17px 5px 3;font-size:8pt;color:#060d1c;line-height:1.5em;direction:rtl}
+#postbody p{margin-top:10px;margin-bottom:0px}
+#postdesc{padding-top:15px;padding-right:7px;padding-left:7px;color:#3b4250;direction:rtl}
+#space{height:20px}
+#sidebar{float:left; url() no-repeat;width:175px;padding-top:15px;line-height:1.5em;text-align:right}
+#mmenu{width:160px;ine-height: 1.5em;text-align:center;direction:rtl;}
+#sidebar ul{font-size:8pt;list-style-type: none;margin: 0px;padding:0 5px 20px 5px}
+#sidebar li {font-size:8pt;padding-right:5px;padding-bottom:0px;line-height:1.5em;direction:rtl}
+#photo{width:160px;padding-top:5px;padding-bottom:2px;text-align:center}
+#photo img{width:160px;padding:4px;border-top:1px solid #8E8C8C;border-left:1px solid #8E8C8C;border-bottom:1px solid #8E8C8C;border-right:1px solid #8E8C8C}
+#about{width:160px;text-align: justify;font-size:8pt;padding:10px 7px 20px 7px;color:#2b392d;direction:rtl}
+#feed{margin:0px;padding-bottom:10px;text-align:center}
+#custom{width:160px;color:#5e7161;overflow:auto;margin:10px 0;text-align:center;direction:rtl}
+-->
+</style>
+<script lang ="javascript">
+function GetBC(lngPostid)
+{
+intTimeZone=<-BlogTimeZone->;
+strBlogId="sirvan92";
+intCount=-1;
+strResult="";
+try {
+for (i=0;i<BlogComments.length;i+=2)
+{
+if (BlogComments[i]==lngPostid)
+intCount=BlogComments[i+1] ;
+}
+}  catch( e) {
+}
+if ( intCount==-1)  strResult="آرشیو نظرات";
+if ( intCount==0)  strResult="نظر بدهید";
+if ( intCount==1)  strResult="یک نظر";
+if ( intCount>1)  strResult=intCount + " نظر" ;
+strUrl="http://commenting.blogfa.com/?blogid=" +strBlogId + "&postid=" + lngPostid + "&timezone=" + intTimeZone ;
+strResult ="<a href="http://sirvan92.mihanblog.com/\&quot;javascript:void(0)\&quot;" onclick=\"javascript:window.open('" + strUrl + "','blogfa_comments','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=500px')\" >" +  strResult + " </a>" ;
+document.write ( strResult ) ;
+}
+function OpenLD()
+{
+window.open('LinkDump.aspx','blogfa_ld','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=500px');
+return true;
+}
+</script>
+</head>
+<body>
+<div id=uwrapper>
+<div align=center>
+<div id=page>
+<div id=content>
+<div id=main>
+<br>
+<font color="#000000" face="Arial" style="font-size: 15pt">
+<b>  جـملات زیـبا...داسـتانهـاے کوتــاه</b><p>
+<font color="#000000" face="Tahoma" style="font-size: 8pt">
+  جـملات زیـبا...داسـتانهـاے کوتــاه<p>
+</center>
+<p>
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		  <FONT color=#717171>
+<div id=post>
+<div id=posttitle><a href="http://sirvan92.mihanblog.com/post/169"><b>خوش آمدید</b></a></div>
+<div id=postbody><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="font-family: Tahoma; line-height: 16px; margin: 0px; padding: 0px; text-align: center;"><font class="Apple-style-span" size="4" color="#FF6666" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; "><img src="http://pichak.net/blogcod/zibasazi/06/image/pichak.net-69.gif" alt="تصاویر جدید زیباسازی وبلاگ , سایت پیچك » بخش تصاویر زیباسازی » سری ششم www.pichak.net كلیك كنید"></font></div><div style="margin: 0px; padding: 0px; text-align: center;"><font class="Apple-style-span" style="margin: 0px; padding: 0px;" color="#ff6600"><p class="MsoNormal" dir="RTL" style="font-size: large; font-family: Tahoma; line-height: 16px;"><span lang="FA" style="font-size:26.0pt;line-height:
+115%;font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;">خوش اومدین</span></p><p class="MsoNormal" dir="RTL"><font face="IranNastaliq, serif"><span style="font-size: 35px; line-height: 40px;">نظر یادتون نره.از صفحات قبلی دیدن کنید</span></font></p><p class="MsoNormal" dir="RTL" style="font-size: large; font-family: Tahoma; line-height: 16px;"><br></p></font></div><div style="font-family: Tahoma; line-height: 16px; margin: 0px; padding: 0px; text-align: center;"><img src="http://blogcod.parsskin.com/zibasazi/mazhabi/115.gif"></div><div style="margin: 0px; padding: 0px; text-align: center;"><p class="MsoNormal" dir="RTL" style="line-height: 16px; font-family: Tahoma;"><span lang="FA" style="font-size:26.0pt;line-height:
+115%;font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;"><font color="#ff9900">میتونید از مطالبم کپی کنید..</font></span><span style="color: rgb(255, 153, 0); font-family: IranNastaliq, serif; font-size: 26pt; line-height: 115%;">اگه جمله زیبایی دارید برام بفرستید</span></p>
+
+<p class="MsoNormal" dir="RTL" style="line-height: 16px; font-family: Tahoma;"><span lang="FA" style="font-size:26.0pt;line-height:
+115%;font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;"><font color="#ff9900">ممنون</font></span></p><p class="MsoNormal" dir="RTL"><br></p></div><div style="font-family: Tahoma; line-height: 16px; margin: 0px; padding: 0px; text-align: center;"><font class="Apple-style-span" size="4" color="#FF99FF" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; "><img src="http://pichak.net/blogcod/zibasazi/06/image/pichak.net-69.gif" alt="تصاویر جدید زیباسازی وبلاگ , سایت پیچك » بخش تصاویر زیباسازی » سری ششم www.pichak.net كلیك كنید"></font></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br></div>
+<div id=postdesc> نوشته شده در سه شنبه 1392/05/1 ساعت 
+	08:43  توسط <a href="http://sirvan92.mihanblog.com/post/author/987117">Kousar  </a><a target="_self" href="javascript:newComment(169)">نظر یادتون نره  <script>setCommentCnt(169)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#717171>
+<div id=post>
+<div id=posttitle><a href="http://sirvan92.mihanblog.com/post/347"><b>✿اللهم عجل لولیک الفرج ✿</b></a></div>
+<div id=postbody>
+
+
+<div style="text-align: center;"><span style="color: rgb(255, 153, 255); font-family: 'Times New Roman'; font-size: 24px; font-weight: bold; text-align: right; background-color: rgb(239, 247, 250);">✿</span><font size="3" style="color: rgb(255, 153, 255);"><font face="Mihan-IransansBold">اللهم عجل لولیک الفرج</font>&nbsp;</font><span style="color: rgb(255, 153, 255); font-family: 'Times New Roman'; font-size: 24px; font-weight: bold; text-align: right; background-color: rgb(239, 247, 250);">✿</span></div><div style="text-align: center;"><div style="text-align: right;"><font color="#ff99ff" face="Times New Roman"><span style="font-size: 24px;"><b><br></b></span></font></div><div style="text-align: right;"><font color="#ff99ff" face="Times New Roman"><span style="font-size: 24px;"><b><br></b></span></font></div><span style="color: rgb(204, 102, 204); font-family: Mihan-IransansBold; font-size: medium;">بی سوادی را گفتند: عشق چند حرف دارد؟</span></div><div style="text-align: center;"><font color="#cc66cc" face="Mihan-IransansBold" size="3"><br><br></font><span style="color: rgb(204, 102, 204); font-family: Mihan-IransansBold; font-size: medium;">بی سواد گفت: 4 حرف</span></div><div style="text-align: center;"><font color="#cc66cc" face="Mihan-IransansBold" size="3"><br><br></font><span style="color: rgb(204, 102, 204); font-family: Mihan-IransansBold; font-size: medium;">همه خندیدند در حالیکه بی سواد را میرفت و زیر لب میگفت:</span></div><div style="text-align: center;"><font color="#cc66cc" face="Mihan-IransansBold" size="3"><br><br></font><font size="3" style="color: rgb(204, 102, 204); font-family: Mihan-IransansBold;">مگر «</font><font size="3" style="color: rgb(204, 102, 204); font-family: Mihan-IransansBold;">مهدی</font><font size="3" style="color: rgb(204, 102, 204); font-family: Mihan-IransansBold;">» چند حرف دارد!</font></div><div style="text-align: center;"><font color="#cc66cc" face="Mihan-IransansBold" size="3"><br><br></font><span style="color: rgb(255, 153, 255); font-family: 'Times New Roman'; font-size: 24px; font-weight: bold; text-align: right; background-color: rgb(239, 247, 250);">✿</span><font size="3" style="color: rgb(255, 153, 255);"><font face="Mihan-IransansBold">اللهم عجل لولیک الفرج</font>&nbsp;</font><span style="color: rgb(255, 153, 255); font-family: 'Times New Roman'; font-size: 24px; font-weight: bold; text-align: right; background-color: rgb(239, 247, 250);">✿</span></div><br></div>
+<div id=postdesc> نوشته شده در چهارشنبه 1395/08/12 ساعت 
+	21:28  توسط <a href="http://sirvan92.mihanblog.com/post/author/987117">Kousar  </a><a target="_self" href="javascript:newComment(347)">نظریادتون نره  <script>setCommentCnt(347)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#717171>
+<div id=post>
+<div id=posttitle><a href="http://sirvan92.mihanblog.com/post/346"><b>یاحسین...</b></a></div>
+<div id=postbody><div style="text-align: center;"><img src="http://images.persianblog.ir/534111_2iSv3CyD.jpg"></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><p class="MsoNormal" align="center" dir="RTL"><strong><i><span lang="FA" style="font-size: 36pt; line-height: 115%; font-family: IranNastaliq, serif; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">یا
+حسین ، گفته اند : جای گنج درون ویرانه هاست</span></i></strong><span dir="LTR"></span><strong><i><span dir="LTR" style="font-size: 36pt; line-height: 115%; font-family: IranNastaliq, serif; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span dir="LTR"></span> !</span></i></strong><span class="apple-converted-space"><b><i><span dir="LTR" style="font-size: 36pt; line-height: 115%; font-family: Tahoma, sans-serif; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">&nbsp;</span></i></b></span><i><span lang="FA" style="font-size: 22pt; line-height: 115%; font-family: IranNastaliq, serif; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><o:p></o:p></span></i></p>
+
+<p class="MsoNormal" align="center" dir="RTL"><i><span dir="LTR" style="font-size: 22pt; line-height: 115%; font-family: IranNastaliq, serif; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><br>
+</span></i><strong><i><span lang="FA" style="font-size: 36pt; line-height: 115%; font-family: IranNastaliq, serif; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">راست گفتند چون وجودت
+در دل ویران ماست</span></i></strong><span dir="LTR"></span><strong><i><span lang="FA" dir="LTR" style="font-size: 36pt; line-height: 115%; font-family: IranNastaliq, serif; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span dir="LTR"></span> </span></i></strong><strong><i><span dir="LTR" style="font-size: 24pt; line-height: 115%; font-family: IranNastaliq, serif; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">!</span></i></strong><i><span dir="LTR" style="font-size: 36pt; line-height: 115%; font-family: IranNastaliq, serif;"><o:p></o:p></span></i></p>
+
+<!--EndFragment--><br><p></p></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><br></div>
+<div id=postdesc> نوشته شده در پنجشنبه 1395/07/15 ساعت 
+	11:30  توسط <a href="http://sirvan92.mihanblog.com/post/author/987117">Kousar  </a><a target="_self" href="javascript:newComment(346)">نظریادتون نره  <script>setCommentCnt(346)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#717171>
+<div id=post>
+<div id=posttitle><a href="http://sirvan92.mihanblog.com/post/345"><b>ماه محرم...</b></a></div>
+<div id=postbody>
+<p align="center" style="text-align:center;line-height:150%"><b><span style="font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;color:#333333">&nbsp;</span></b></p><p align="center" style="text-align: center; line-height: 150%;"><b><span lang="FA" dir="RTL" style="font-size:26.0pt;line-height:150%;font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;
+color:#333333">بیایید در ماه محرم اگر زنجیرمیزنیم ، قبل از آن زنجیر غفلت از پای
+خود باز کرده باشیم...</span></b><span dir="LTR"></span><b><span lang="FA" style="font-size:26.0pt;line-height:150%;font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;
+color:#333333"><span dir="LTR"></span>&nbsp;</span></b></p><p align="center" style="text-align: center;"><b><span style="font-family: IranNastaliq, serif; color: rgb(51, 51, 51);"><span style="font-size: 34.6667px; line-height: 52px;"><br></span>
+</span></b><b style="line-height: 150%;"><span lang="FA" dir="RTL" style="font-size:26.0pt;line-height:150%;
+font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;color:#333333">اگر که سینه میزنیم ، قبل از
+آن سینه دردمندی را از غم و آه پاک کرده باشیم...</span></b></p><p align="center" style="text-align: center;"><b style="line-height: 150%;"><span lang="FA" dir="RTL" style="font-size:26.0pt;line-height:150%;
+font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;color:#333333"><br></span></b></p><p align="center" style="text-align: center;"><span dir="LTR" style="line-height: 150%;"></span><b style="line-height: 150%;"><span lang="FA" style="font-size:26.0pt;line-height:150%;font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;
+color:#333333"><span dir="LTR"></span> </span></b><b style="line-height: 150%;"><span style="font-family:
+&quot;IranNastaliq&quot;,&quot;serif&quot;;color:#333333"><br>
+</span></b><b style="line-height: 150%;"><span lang="FA" dir="RTL" style="font-size:26.0pt;line-height:150%;
+font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;color:#333333">خوب است اگر اشکی میریزیم، اما
+قبل از آن اشک از چهره ی مظلومی پاک کرده باشیم...</span></b><span dir="LTR" style="line-height: 150%;"></span><b style="line-height: 150%;"><span lang="FA" style="font-size:26.0pt;line-height:150%;font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;
+color:#333333"><span dir="LTR"></span>&nbsp;</span></b></p><p align="center" style="text-align: center;"><b><span style="font-family: IranNastaliq, serif; color: rgb(51, 51, 51);"><span style="font-size: 34.6667px; line-height: 52px;"><br></span>
+<br>
+</span></b><b style="line-height: 150%;"><span lang="FA" dir="RTL" style="font-size:28.0pt;line-height:150%;
+font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;color:#333333">آن وقت می توانیم با افتخار
+بگوییم</span></b><b style="line-height: 150%;"><span lang="FA" dir="RTL" style="font-size:28.0pt;line-height:
+150%;font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;color:red"> :یا حسین</span></b><b style="line-height: 150%;"><span lang="FA" dir="RTL" style="font-size:28.0pt;line-height:150%;font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;
+color:#333333">(ع)</span></b><span dir="LTR" style="line-height: 150%;"></span><span lang="FA" style="line-height: 150%;"><span dir="LTR"></span>
+</span><span style="line-height: 150%; font-family: IranNastaliq, serif;">&nbsp;</span><b style="line-height: 150%;"><span style="font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;
+color:#333333"><o:p></o:p></span></b></p><p align="center" style="text-align:center"><br></p><p></p>
+
+
+
+
+<br></div>
+<div id=postdesc> نوشته شده در پنجشنبه 1395/07/15 ساعت 
+	11:27  توسط <a href="http://sirvan92.mihanblog.com/post/author/987117">Kousar  </a><a target="_self" href="javascript:newComment(345)">نظریادتون نره  <script>setCommentCnt(345)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#717171>
+<div id=post>
+<div id=posttitle><a href="http://sirvan92.mihanblog.com/post/343"><b>این روز هارا خوب یادمان باشد...</b></a></div>
+<div id=postbody>
+
+<p align="center" style="text-align:center"><strong><span lang="FA" dir="RTL" style="font-size: 14pt; font-family: 'B Morvarid'; color: maroon; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">یادمــــان
+باشد:</span></strong><span dir="LTR"></span><strong><span lang="FA" style="font-size: 14pt; font-family: IranNastaliq, serif; color: maroon; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span dir="LTR"></span> </span></strong><span style="font-size:14.0pt;font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;mso-bidi-font-family:
+&quot;B Morvarid&quot;;color:#333333"><o:p></o:p></span></p><p align="center" style="text-align:center"><strong><span lang="FA" dir="RTL" style="font-size: 14pt; font-family: 'B Morvarid'; color: maroon; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><br></span></strong></p><p align="center" style="text-align: center;"><span style="font-size: 14pt; font-family: Tahoma, sans-serif; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">&nbsp;&nbsp;</span><strong><span lang="FA" dir="RTL" style="font-size: 14pt; font-family: 'B Morvarid'; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">اول
+نمــاز حســین، بعد عــزای حسین</span></strong><span style="font-size:14.0pt;
+font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;mso-bidi-font-family:&quot;B Morvarid&quot;;
+color:#333333"><o:p></o:p></span></p><p align="center" style="text-align: center;"><strong><span lang="FA" dir="RTL" style="font-size: 14pt; font-family: 'B Morvarid'; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><br></span></strong></p><p align="center" style="text-align: center;"><strong><span lang="FA" dir="RTL" style="font-size: 14pt; font-family: 'B Morvarid'; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">اول شعــور حسـینـی، بعد شــور
+حسینی</span></strong><span style="font-size:14.0pt;font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;
+mso-bidi-font-family:&quot;B Morvarid&quot;;color:#333333"><o:p></o:p></span></p><p align="center" style="text-align: center;"><strong><span lang="FA" dir="RTL" style="font-size: 14pt; font-family: 'B Morvarid'; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><br></span></strong></p><p align="center" style="text-align: center;"><strong><span lang="FA" dir="RTL" style="font-size: 14pt; font-family: 'B Morvarid'; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">محــرم و صفــر زمان بالیــدن است
+نه فقـط نــالیــدن</span></strong><span style="font-size:14.0pt;font-family:
+&quot;IranNastaliq&quot;,&quot;serif&quot;;mso-bidi-font-family:&quot;B Morvarid&quot;;color:#333333"><o:p></o:p></span></p><p align="center" style="text-align: center;"><strong><span lang="FA" dir="RTL" style="font-size: 14pt; font-family: 'B Morvarid'; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><br></span></strong></p><p align="center" style="text-align: center;"><strong><span lang="FA" dir="RTL" style="font-size: 14pt; font-family: 'B Morvarid'; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">بســاطش آمــوزه است نه مــوزه</span></strong><span style="font-size:14.0pt;font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;mso-bidi-font-family:
+&quot;B Morvarid&quot;;color:#333333"><o:p></o:p></span></p><p align="center" style="text-align: center;"><strong><span lang="FA" dir="RTL" style="font-size: 14pt; font-family: 'B Morvarid'; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><br></span></strong></p><p align="center" style="text-align: center;"><strong><span lang="FA" dir="RTL" style="font-size: 14pt; font-family: 'B Morvarid'; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">تمــرین خــوب نگـریســتن است نه
+فقــط خــوب گـریســتن</span></strong><span style="font-size:14.0pt;font-family:
+&quot;IranNastaliq&quot;,&quot;serif&quot;;mso-bidi-font-family:&quot;B Morvarid&quot;;color:#333333"><o:p></o:p></span></p><p align="center" style="text-align: center;"><strong><span lang="FA" dir="RTL" style="font-size: 14pt; font-family: 'B Morvarid'; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><br></span></strong></p><p style="text-align: center; color: rgb(51, 51, 51); font-family: Tahoma; font-size: 10.6667px;">
+
+
+
+
+
+
+
+
+
+
+
+</p><p align="center" style="text-align: center;"><strong><span lang="FA" dir="RTL" style="font-size: 14pt; font-family: 'B Morvarid'; color: rgb(51, 51, 51); background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;">نمـاد شعــور مذهــب است نه فقـط
+شــور مذهــب</span></strong><span style="font-size:14.0pt;font-family:&quot;IranNastaliq&quot;,&quot;serif&quot;;
+mso-bidi-font-family:&quot;B Morvarid&quot;;color:#333333"><o:p></o:p></span></p>
+
+
+
+
+
+
+<br></div>
+<div id=postdesc> نوشته شده در پنجشنبه 1395/07/15 ساعت 
+	11:17  توسط <a href="http://sirvan92.mihanblog.com/post/author/987117">Kousar  </a><a target="_self" href="javascript:newComment(343)">نظریادتون نره  <script>setCommentCnt(343)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#717171>
+<div id=post>
+<div id=posttitle><a href="http://sirvan92.mihanblog.com/post/341"><b>ما خــــدا را داریم..</b></a></div>
+<div id=postbody>
+
+
+<div><font color="#6600cc"><br></font></div><div><b><font size="3" color="#6600cc">آرام بــاش&nbsp;</font></b></div><div><b><font size="3" color="#6600cc"><br></font></b></div><div><b><font size="3" color="#6600cc">تـــو خـــدا را داری</font></b></div><div><b><font size="3" color="#6600cc"><br></font></b></div><div><b><font size="3" color="#6600cc">آن حقیــقت، آن یــگانـه، آن هــوادار شبــانـه</font></b></div><div><b><font size="3" color="#6600cc"><br></font></b></div><div><b><font size="3" color="#6600cc">آرام بـــاش</font></b></div><div><b><font size="3" color="#6600cc"><br></font></b></div><div><b><font size="3" color="#6600cc">تـــو خـــدا را داری، آن معبـود، آن پــاک،</font></b></div><div><b><font size="3" color="#6600cc"><br></font></b></div><div><b><font size="3" color="#6600cc">آن همـه خــوبی و احسـاس و بـهار را داری!</font></b></div><div><b><font size="3" color="#6600cc"><br></font></b></div><div><b><font size="3" color="#6600cc">آرام بـــاش</font></b></div><div><b><font size="3" color="#6600cc"><br></font></b></div><div><b><font size="3" color="#6600cc">تـــو خـــدارا داری</font></b></div><div><b><font size="3" color="#6600cc"><br></font></b></div><div><b><font size="3" color="#6600cc">پــس نــگو تنهایـم، پـس نـگو بـی یــاور، بی یــارم</font></b></div><div><b><font size="3" color="#6600cc"><br></font></b></div><div><b><font size="3" color="#6600cc">تـــو خـــدا را داری</font></b></div><div><b><font size="3" color="#6600cc"><br></font></b></div><div><b><font size="3" color="#6600cc">یعـنی عشــق، مـــعبود</font></b></div><div><b><font size="3" color="#6600cc"><br></font></b></div><div><b><font size="3" color="#6600cc">سـنگ صبـور دل مــن، دل تــو</font></b></div><div><b><font size="3" color="#6600cc"><br></font></b></div><div><b><font size="3" color="#6600cc">پـس خــموش !!!</font></b></div><div><b><font size="3" color="#6600cc"><br></font></b></div><div><b><font size="3" color="#6600cc">مـــا خـــدا را داریـــم.....</font></b></div><div><b><font size="3"><br></font></b></div><div><br></div><br></div>
+<div id=postdesc> نوشته شده در دوشنبه 1394/09/9 ساعت 
+	09:13  توسط <a href="http://sirvan92.mihanblog.com/post/author/987117">Kousar  </a><a target="_self" href="javascript:newComment(341)">نظریادتون نره  <script>setCommentCnt(341)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#717171>
+<div id=post>
+<div id=posttitle><a href="http://sirvan92.mihanblog.com/post/340"><b>چرخ روزگار:....</b></a></div>
+<div id=postbody>
+<div><br></div><div><br></div><div><font size="3" color="#6666cc"><b>از زمین خوردن کسی شاد مشو&nbsp;</b></font></div><div><font size="3" color="#6666cc"><b><br></b></font></div><div><font size="3" color="#6666cc"><b>که نمیدانی گردش روزگار برای تو چه در آستین دارد</b></font></div><div><br></div><div>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <b><i><font color="#009900">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;امـــــام علـــــی(ع)</font></i></b></div><div><br></div><div style="text-align: center;"><img src="http://www.aliforati2.loxblog.com/upload/a/aliforati2/image/4337d5d3bbf1c6683c1d33b4a017c13a-425.jpeg"></div><div style="text-align: center;"><br></div>
+
+
+
+
+<br></div>
+<div id=postdesc> نوشته شده در پنجشنبه 1394/07/16 ساعت 
+	06:56  توسط <a href="http://sirvan92.mihanblog.com/post/author/987117">Kousar  </a><a target="_self" href="javascript:newComment(340)">نظریادتون نره  <script>setCommentCnt(340)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#717171>
+<div id=post>
+<div id=posttitle><a href="http://sirvan92.mihanblog.com/post/338"><b>یاد خـــــدا..</b></a></div>
+<div id=postbody>
+
+
+<div><font color="#3333ff"><br></font></div><div><font size="4" color="#3333ff"><b>در خود می نگرم تا ببینم که خطا کجاست...</b></font></div><div><font size="4" color="#3333ff"><b><br></b></font></div><div><font size="4" color="#3333ff"><b><br></b></font></div><div><font size="4" color="#3333ff"><b>بعد از کمی تامل و قدری سکوت پی میبرم:</b></font></div><div><font size="4" color="#3333ff"><b><br></b></font></div><div><font size="4" color="#3333ff"><b><br></b></font></div><div><font size="4" color="#3333ff"><b>آنجا که خالی از خداست.، خطاست...</b></font></div><div><font size="4" color="#3333ff"><b><br></b></font></div><div><font size="4"><b><br></b></font></div><div><font size="4"><b>&nbsp; <font color="#993300">&nbsp;به یاد می آورم ،</font></b></font></div><div><font size="4" color="#993300"><b><br></b></font></div><div><font size="4" color="#993300"><b>&nbsp; &nbsp; &nbsp; آنجا که از یاد او غافل شده ایم،</b></font></div><div><font size="4" color="#993300"><b><br></b></font></div><div><font size="4" color="#993300"><b>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;به بیراهه رفته ایم...</b></font></div><div><br></div><br></div>
+<div id=postdesc> نوشته شده در دوشنبه 1394/06/16 ساعت 
+	14:05  توسط <a href="http://sirvan92.mihanblog.com/post/author/987117">Kousar  </a><a target="_self" href="javascript:newComment(338)">نظریادتون نره  <script>setCommentCnt(338)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+  <FONT color=#717171>
+<div id=post>
+<div id=posttitle><a href="http://sirvan92.mihanblog.com/post/324"><b>اعتماد کن به خدایی او</b></a></div>
+<div id=postbody>
+
+<div><br></div><div><br></div><img src="http://static.mihanblog.com//public/user_data/user_files/108/321133/picture/negaran_nabash_ou_salhast_khodaei_mikonad.jpg" alt="نگران فردایت نباش ، خدای دیروز و امروز، خدای فردا هم هست ، ما اولین بار است بندگی میکنیم">
+
+
+
+
+
+
+<br></div>
+<div id=postdesc> نوشته شده در دوشنبه 1394/05/12 ساعت 
+	06:57  توسط <a href="http://sirvan92.mihanblog.com/post/author/987117">Kousar  </a><a target="_self" href="javascript:newComment(324)">نظریادتون نره  <script>setCommentCnt(324)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+
+
+ 
+<div id=post><div id=posttitle><b>اخرین مطالب</b></div>
+<div id=postbody>
+ 
+<a href="http://sirvan92.mihanblog.com/post/347" title=" چهارشنبه 1395/08/12">
+✿اللهم عجل لولیک الفرج ✿</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/346" title=" پنجشنبه 1395/07/15">
+یاحسین...</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/345" title=" پنجشنبه 1395/07/15">
+ماه محرم...</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/343" title=" پنجشنبه 1395/07/15">
+این روز هارا خوب یادمان باشد...</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/341" title=" دوشنبه 1394/09/9">
+ما خــــدا را داریم..</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/340" title=" پنجشنبه 1394/07/16">
+چرخ روزگار:....</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/338" title=" دوشنبه 1394/06/16">
+یاد خـــــدا..</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/324" title=" دوشنبه 1394/05/12">
+اعتماد کن به خدایی او</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/336" title=" دوشنبه 1393/10/15">
+خواهرم</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/335" title=" چهارشنبه 1393/08/28">
+نمازت را ترک مکن..</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/329" title=" چهارشنبه 1393/07/30">
+به کجا چنین شتابان</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/327" title=" پنجشنبه 1393/06/27">
+مخفف داعش</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/326" title=" سه شنبه 1393/06/18">
+گذر زندگی</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/325" title=" سه شنبه 1393/05/21">
+ای گل نرگس،کدوم جمعـــــــه؟</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/323" title=" پنجشنبه 1393/05/2">
+اشکهای غزه</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/322" title=" سه شنبه 1393/04/31">
+مثل زندگی...</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/320" title=" یکشنبه 1393/04/15">
+ماه من غصه چــــرا،،،خـــدا هست..خــدا هست</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/318" title=" شنبه 1393/04/7">
+ماه مبارک..</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/317" title=" پنجشنبه 1393/03/22">
+نیمه شعبـــان مبـــارک</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/316" title=" یکشنبه 1393/03/18">
+انسانیت</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/311" title=" یکشنبه 1393/02/21">
+روز پدر</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/309" title=" یکشنبه 1393/02/7">
+نماز اول وقت..</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/307" title=" یکشنبه 1393/01/31">
+مادرم</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/304" title=" سه شنبه 1393/01/26">
+سرنوشت</a><br>
+ 
+<a href="http://sirvan92.mihanblog.com/post/301" title=" چهارشنبه 1392/12/28">
+سال نو مبارک</a><br>
+ 
+</div>
+<div id=space></div></div>
+ 
+
+<hr width="60%" size="1" color="#747474" align="center" >
+
+<div id=post><div id=posttitle><b>صفحات وبلاگ</b></div>
+<div id=postbody><center>
+تعداد کل صفحات :( 34  )
+<a href="http://sirvan92.mihanblog.com/page/1"> <b>1</b></a>  
+<a href="http://sirvan92.mihanblog.com/page/2"> <span>2</span></a>  
+<a href="http://sirvan92.mihanblog.com/page/3"> <span>3</span></a>  
+<a href="http://sirvan92.mihanblog.com/page/4"> <span>4</span></a>  
+<a href="http://sirvan92.mihanblog.com/page/5"> <span>5</span></a>  
+<a href="http://sirvan92.mihanblog.com/page/6"> <span>6</span></a>  
+<a href="http://sirvan92.mihanblog.com/page/7"> <span>7</span></a>  
+<a href="http://sirvan92.mihanblog.com/page/8"> <i>...</i></a>  
+</center></div>
+
+<div id=space></div></div>
+
+
+
+
+
+
+
+</div>
+
+
+<div id=sidebar>  
+<br>
+
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2"> About </div>
+</b>
+<br>
+
+<img src="../static.mihanblog.com/public/user_data/web_photo/383/1146329.jpg@4522"  /><div align=right>
+<div id=about><FONT style="FONT-SIZE: 8pt">
+خدایا دلم به سان قبله نماست ؛<br />
+<br />
+<br />
+ وقتی عقربه اش به سمت “ تو ” می ایستد ، آرام می شود . . .<br />
+<br />
+<br />
+::<br />
+<br />
+::<br />
+<br />
+ﺣﻤﺪ ﻭ ﺳﭙﺎﺱ ﻣﺨﺼﻮﺹ ﺧﺪﺍﻭﻧﺪﯼ است ﮐﻪ ﻫﺮ ﺟﺎ ﺧﻮﺍﺳﺘﻢ ﺍﻭ ﺑﻮﺩ<br />
+<br />
+<br />
+ ﺍﻣﺎ ﻫﺮ ﺟﺎ ﺍﻭ ﺧﻮﺍﺳﺖ ﻣﻦ ﻧﺒﻮﺩﻡ </div>
+<center>
+<br>
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2"> Menu </div>
+</b>
+<BR>
+
+<div id=mmenu>
+<ul>
+<li><a href="index.html">صفحه اصلی</a><br/></li>
+<li><a href="index.html"> پست الکترونیک</a><br/></li>
+<li><a href="javascript:messageForm()">تماس با ما</a><br/></li>
+<li><a href="http://sirvan92.mihanblog.com/post/rss/">RSS</a><br/></li>
+<li><a href="http://sirvan92.mihanblog.com/post/atom/">Atom</a><br/></li>
+</ul>
+</div>
+
+<form id="frm-16076067695fd221f175e9c" method="get" action="http://sirvan92.mihanblog.com/post/search/fid/16076067695fd221f175e9c"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+<div class="link2"> Search </div>
+<div id=mmenu>
+<input type="text" name="search_text"/>	
+<input type="submit" value="جستجو"/>
+</ul>
+</div>
+<input type="hidden" name="frm-id" value="16076067695fd221f175e9c" id="frm-id" /></form>
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2"> Authors </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a target="_blank" href="http://sirvan92.mihanblog.com/post/author/987117" >Kousar   265 </a></li></ul>
+</div>
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2"> LinkDump </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a target="_blank" href="http://yon.ir/AA8ez" title="سلام. ممنونم که پرچم وبلاگ نویسی رو بالا نگه داشتید :)
+
+سایت نویسور راه اندازی شده تا پست های شما بیشتر خونده بشن، اپ موبایلمون هم تو راهه.
+
+دعوت میکنم تشریف بیارید به لینک زیر و فصل نو ی وبلاگ نویسی تون رو شروع کنید.
+yon.ir/AA8ez
+
+لطفا این لینک را هم تایید کنید. متشکرم">ــ وبـلاگ نویسی بهـترــ</a></li><li><a target="_blank" href="http://enabeh.mihanblog.com/" title="">انابه..</a></li><li><a target="_blank" href="http://ofogh65.mihanblog.com/" title="">افق</a></li><li><a target="_blank" href="http://saatitaaghol.blogfa.com/" title="">˙·٠˙·٠ساعتی تعقّل٠·˙٠·˙</a></li><li><a target="_blank" href="http://motherjavanroodi.mihanblog.com" title="">مادر جوانرودی</a></li><li><a target="_blank" href="http://hashtooom.ir/" title="">کلاس هشتم</a></li><li><a target="_blank" href="http://haanay.blogfa.com/" title="">.....الهی.....</a></li><li><a target="_blank" href="../morvaride-sepid.mihanblog.com/index.html" title="">صدفـــــــــــ</a></li><li><a target="_blank" href="http://www.yamahdy72.blogfa.com/" title="">منتظران عاشق</a></li><li><a target="_blank" href="http://tuloo20.blogfa.com/" title="">مهاجـــــــــــــ ـــــــــــر</a></li><li><a target="_blank" href="http://ghoncheziba.blogfa.com/" title=""> آوای دل</a></li><li><a target="_blank" href="http://roghayeh14.blogfa.com/" title="">❁دنیـای رنگارنگ مـــن❁</a></li><li><a target="_blank" href="http://hejabshohada.blogfa.com/" title="">حجاب، شهدا و....</a></li><li><a target="_blank" href="http://www.entezar-e-bahar.blogfa.com/" title="">*چـشـمـان مـنـتـظـر*</a></li><li><a target="_blank" href="http://hejab80.blogfa.com/#" title="">حجاب باارزش من</a></li><li><a target="_blank" href="http://ilam-blager.blogfa.com/" title="">ایلام بلاگر</a></li><li><a target="_blank" href="http://yeknafas.persianblog.ir/" title="">یک نفس</a></li><li><a target="_blank" href="http://www.dabeer92.blogfa.com/" title="">دانشجوی دبیری راهنمایی ومشاوره</a></li><li><a target="_blank" href="http://shahrenajva.blogfa.com/" title="">شهر نجوا</a></li><li><a target="_blank" href="http://tanhameslekhodaa.blogfa.com/" title="">+خـــــــــــــــدا+</a></li><li><a target="_blank" href="http://zahra79a74.mihanblog.com/" title="">+به رنــگ رنگین کـــمان+</a></li><li><a target="_blank" href="http://sarbazegomnamemahdi.loxblog.com/" title="">عـــاشقان مـــهدی</a></li><li><a target="_blank" href="http://www.sepehrehejab2.blogfa.com/" title="">سپهر حجاب  </a></li><li><a target="_blank" href="http://fadak72.loxblog.com/" title="">باران رحمت خدا</a></li><li><a target="_blank" href="http://kosar-bagh.blogfa.com/" title="">+کوثـــــــــر بـــــــــاق+</a></li><li><a target="_blank" href="http://www.monjiy.blogfa.com/" title="">یالثارات الحسین</a></li><li><a target="_blank" href="http://www.dokhtarepaeez64.blogfa.com/" title="">+بـــانوی پــــاییزی+</a></li><li><a target="_blank" href="http://www.maa2nafaar.blogfa.com/" title="">دانشجویان دانشگاه فرهنگیان</a></li><li><a target="_blank" href="http://parchameslam.mihanblog.com/" title="">+پرچــم اســـــلام+</a></li><li><a target="_blank" href="http://new-fantastic.mihanblog.com/" title="">خارق العاده</a></li><li><a target="_blank" href="http://mohajer-e-abadi.blogfa.com/#" title="">پــر پـــــــــرواز</a></li><li><a target="_blank" href="http://amin9256.blogfa.com/" title="">لاله واژگون</a></li><li><a target="_blank" href="http://chadorkhaki2.blogfa.com/#" title="">چــــادر خـــــاکی</a></li><li><a target="_blank" href="http://zekr315.blogfa.com/" title="">محفل ام المومنین حضرت خدیجه(س)کرمانشاه</a></li><li><a target="_blank" href="http://mazhabe20.blogfa.com/" title="">به سوی کمال</a></li><li><a target="_blank" href="../myhotchocolate.mihanblog.com/index.html" title="">شـــــکــــــلــــــات داغ</a></li><li><a target="_blank" href="http://astanehzist.blogfa.com/" title="">گروه آموزشی زیست شناسی</a></li><li><a target="_blank" href="http://mohabatkhorshid.blogfa.com/" title="">ستـــــــــاره ی زنـــــــــدگی</a></li><li><a target="_blank" href="http://msm1375.blogfa.com/" title="">الهی دانشم افزون نما</a></li><li><a target="_blank" href="http://saharghahsetare.blogfa.com/" title="">آســــمــــانــــــه</a></li><li><a target="_blank" href="http://bahtarensokhan91.blogfa.com/" title="">بهترین سخن</a></li><li><a target="_blank" href="http://2setareh2.blogfa.com/" title="">ستاره بارووون</a></li><li><a target="_blank" href="../aftabgardoon.mihanblog.com/index.html" title="">آفتابگردون</a></li><li><a target="_blank" href="../www.jahanseyr.mihanblog.com/index.html" title="صد مبارک به تو آن عید که فردا باشد
+نوروز نوید وصل دلها باشد
+امید که با فضل خداوند جلی
+سال فرج مهدی زهرا باشد
+
+وبلاگ مهدویت سال خوبی را برای شما آرزو دارد.
+
+«الهم عجل لویک الفرج»
+
+">مهدویت</a></li><li><a target="_blank" href="http://alale.loxblog.com/" title="">جملات زیبا و آموزنده</a></li><li><a target="_blank" href="http://aramesh1390.blogfa.com/" title="">++آرامــــــــــــــــــــــــــش++</a></li><li><a target="_blank" href="http://srbazfatmh.blogfa.com/" title="">سرباز فاطمه</a></li><li><a target="_blank" href="http://www.fatemeh-zargar.blogfa.com/" title="">ღ و خدایی که در این نزدیکیست ღ</a></li><li><a target="_blank" href="http://samtehkhoda.blogfa.com/" title="">سمت خدا</a></li><li><a target="_blank" href="http://shghayeghatashin.blogfa.com" title="">گــــردان نیــــلوفر</a></li><li><a target="_blank" href="http://khalvatibashohada.blogfa.com/" title="">خـــــــلوتی بـــــــاشــــهدا</a></li><li><a target="_blank" href="http://minamaryam.blogfa.com/" title="">جانم به قربانت ولی حالاچرا</a></li><li><a target="_blank" href="http://saiban.blogfa.com/" title="">سایـبان آرامـــــــــش</a></li><li><a target="_blank" href="http://lovely-hijab.blogfa.com/" title="">عاشقان زهرا(س)</a></li><li><a target="_blank" href="http://riaziard.persianblog.ir/" title="">جاده ی بی انتهای ریاضی</a></li><li><a target="_blank" href="../karvaneshgh.mihanblog.com/index.html" title="هیچ داری از دل مهدی خبر؟؟؟
+گریه های هر شبش را تا سحر؟؟؟
+او که ارباب تمام عالم است…
+من بمیرم،سر به زانوی غم است…
+شیعیان!!!
+مهدی غریب و بی کس است…
+جان مولا معصیت دیگر بس است…
+:::::اللهم عج لولیک الفرج:::::">یا زهرا (س) مددی...</a></li><li><a target="_blank" href="http://link118.com" title="">تبادل لینک</a></li><li><a target="_blank" href="http://3Jokes.com" title="">جوک، عکس، SMS</a></li></ul>
+</div>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2"> Archive</div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a href="http://sirvan92.mihanblog.com/post/archive/1395/8"> آبان 1395  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1395/7"> مهر 1395  3 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1394/9"> آذر 1394  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1394/6"> شهریور 1394  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1394/5"> مرداد 1394  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1393/10"> دی 1393  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1393/8"> آبان 1393  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1393/7"> مهر 1393  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1393/6"> شهریور 1393  2 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1393/5"> مرداد 1393  2 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1393/4"> تیر 1393  3 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1393/3"> خرداد 1393  2 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1393/2"> اردیبهشت 1393  2 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1392/12"> اسفند 1392  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1392/10"> دی 1392  3 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1392/9"> آذر 1392  2 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1392/8"> آبان 1392  21 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1392/7"> مهر 1392  18 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1392/6"> شهریور 1392  21 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1392/5"> مرداد 1392  27 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1392/4"> تیر 1392  28 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1392/3"> خرداد 1392  61 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1392/2"> اردیبهشت 1392  43 </a></li><li><a href="http://sirvan92.mihanblog.com/post/archive/1392/1"> فروردین 1392  1 </a></li></ul>
+</div>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2"> Categories </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+
+
+<li><a href="http://sirvan92.mihanblog.com/post/category/31">پــــــבر  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/30">مــــــاבر  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/36">نـــــمـــاز  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/29">تــ ـــوکل  2 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/35">محــ ـــــــرم  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/33">تروریستـــــــ  2 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/34">گروه בاعش  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/24">عیــב نـפرפز  2 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/28">بــاراטּ  5 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/32">جملــات تصویـرבار  5 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/23">ایـــــــام فــاطمیـــه  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/22">حــجـــابـــــ  1 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/5">شــ ـ ـعر  16 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/2">جـ ـ ـملــات زیـــــبا  126 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/20">آمــــפ زنـבه  28 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/21">تــــڪبر  2 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/19">قــــرآنـــ ﮯ  2 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/16">مــ ـ ـذهبــــﮯ  10 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/13">جــ ـ ـعبه حــــבیث  4 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/17">احـ ساسـے  3 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/15">مناسبتــــﮯ  6 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/14">فلــــسفـــے  5 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/8">جملـات زیباבرباره زندگـﮯ  20 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/9">جملـات زیبا امام زماטּ(عــج)  9 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/6">جملـات زیبا בرباره פֿـבا  53 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/3"> בاستاטּ ڪــ౨تاه  18 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/4">جملــات בلــنشیـטּ   61 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/12">جملـات زیبا از بزرگاטּ  12 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/11">جملـات زیبا امیـבوارے  15 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/10">جملـات زیبا ماه رمضاטּ  2 </a></li><li><a href="http://sirvan92.mihanblog.com/post/category/7">جملـات زیبا شبهاے قـבر  1 </a></li></ul>
+</div>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2"> Links </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a target="_blank" href="http://beheshtandsun.blogfa.com/">انتظار</a></li><li><a target="_blank" href="http://f56sayadmanesh.blogfa.com/">فقط خدا</a></li><li><a target="_blank" href="http://mehrabaniha.blogsky.com/">مهربانی ها</a></li><li><a target="_blank" href="http://madareesadat.mihanblog.com/">ام المهـــــــدی</a></li><li><a target="_blank" href="../zendegieejbari.mihanblog.com/index.html">قلمرو یک دختر ایرانی</a></li><li><a target="_blank" href="http://akharinyar.blogfa.com/">جملات زیبـــای آخـرین یـــار</a></li><li><a target="_blank" href="http://allah7730.blogfa.com/">&quot;و خدایی که در این نزدیکی ست</a></li><li><a target="_blank" href="http://valizadeh-mk.blogfa.com/">ترویج نماز در دنیای  مادی</a></li><li><a target="_blank" href="http://www.h-samane.blogfa.com/">هرنگ دل</a></li><li><a target="_blank" href="http://atrebehesht.mahdiblog.com/">عطربهشت...</a></li><li><a target="_blank" href="http://nardeban114114.blogfa.com/">نــردبــانی به سمت آسمان</a></li><li><a target="_blank" href="http://khodayekhoobeman.blogfa.com/">در آغــــوش خــــــــدا...</a></li><li><a target="_blank" href="../maryamjo0n.mihanblog.com/index.html">داستــان هــای کـوتاه و آموزنده</a></li><li><a target="_blank" href="http://hejab15.blogfa.com/">یا ابالفضل العباس</a></li><li><a target="_blank" href="http://www.mrs-zahra.blogfa.com">خدای مهربونم دوستت دارم</a></li><li><a target="_blank" href="http://h1e1j1a1b.blogfa.com/">پـ ـ ـرפاز تـ ـ ـا פֿـ ـ ـבا</a></li><li><a target="_blank" href="http://doniayeshirin.blogfa.com/">دنیای شیرین</a></li><li><a target="_blank" href="../masudammasudkhan.mihanblog.com/index.html">سخنی باصاحب دلان</a></li><li><a target="_blank" href="http://www.emamzaman-aj.blogfa.com/">اباصالح المهدی</a></li><li><a target="_blank" href="http://mazharezibayi.blogfa.com/">مظهر زیبایی</a></li><li><a target="_blank" href="http://zahra12zahra.blogfa.com/">السلام علیک یا فاطمة الزهراء</a></li><li><a target="_blank" href="../khanedel.mihanblog.com/index.html">** خـــــــانــــــــه دل **</a></li><li><a target="_blank" href="http://he-will-come.mihanblog.com/">او خـواهد آمــد</a></li><li><a target="_blank" href="http://tuloo20.blogfa.com/">مهاجــــــ ــر</a></li><li><a target="_blank" href="http://goleabi1380.blogfa.com/">شکوفه های بهاری</a></li><li><a target="_blank" href="http://www.maraee1375.blogfa.com">آرامبخش دلـــها خـــداست</a></li><li><a target="_blank" href="http://sibsher.blogfa.com/">*بـــــــــــوی بــــهشت*</a></li><li><a target="_blank" href="http://irost.blogfa.com/">اسمــــــان زیــــــبا</a></li><li><a target="_blank" href="../www.sirwan2020.mihanblog.com/index.html">ســــــــیروان</a></li><li><a target="_blank" href="http://hejab1377.mihanblog.com/">آویزون خدا</a></li><li><a target="_blank" href="../royalgirl.mihanblog.com/index.html">نقطه چین تا خدا</a></li><li><a target="_blank" href="http://shohadazavareh.loxblog.com/">شهـــدا شــــرمنده ایم</a></li><li><a target="_blank" href="http://tameshirinezendegi.blogfa.com/">مــثل همـــه مثل هیچ کس</a></li><li><a target="_blank" href="http://www.formysake.blogfa.com">پرواز تا بی نهایت</a></li><li><a target="_blank" href="http://labkhande-nab.blogfa.com/">تازه ترین بهانه</a></li><li><a target="_blank" href="../meslemah.mihanblog.com/index.html">دل سوخته</a></li><li><a target="_blank" href="http://abc123.blogfa.com/">سكوت دلنشین</a></li><li><a target="_blank" href="http://www.kimia-20.blogfa.com">ღحرف حسابღ</a></li><li><a target="_blank" href="../yasamin78.mihanblog.com/index.html">بانوان اسمانی</a></li><li><a target="_blank" href="http://emamzaman-mahdi.mihanblog.com/">ردپای خـــــ♥ــــدا</a></li><li><a target="_blank" href="http://baharerooheman.mihanblog.com">بهار روح من(بهارجون)</a></li><li><a target="_blank" href="http://bidari114.blogfa.com/">✿إِنَّآ أَعْطَیْنَـکَ الکَوْثَرَ✿</a></li><li><a target="_blank" href="http://daryadel4me.blogfa.com/">فکرخاطره را زیر باران باید برد</a></li><li><a target="_blank" href="http://www.hani-72.blogfa.com">☆جملــات زیبـــا و دلنشیــن☆</a></li><li><a target="_blank" href="http://kosar-h.blogfa.com/">السلام علیک یا غریب الغربا</a></li><li><a target="_blank" href="http://solaleh20.loxblog.com/">و خدایی که در این نزدیکی است</a></li><li><a target="_blank" href="http://haftaeea.blogfa.com/">اِکز &quot;اتحادیه کله گندگان زرنگ&quot;</a></li><li><a target="_blank" href="http://razieh123m.blogfa.com">آه مجنون بوی لیلی میدهد...</a></li><li><a target="_blank" href="http://tahekhiyar.blogfa.com/">و شقـایق دروغی بیــش نیست</a></li><li><a target="_blank" href="http://maryamfirooz.blogfa.com/">ツ دُنیاےِ یـﮧ دُختـَـ ـرِ دَبیرِستانے</a></li><li><a target="_blank" href="http://beheshtiha-92.mihanblog.com/">❤❀נختراכּ بهݜتے❀❤</a></li><li><a target="_blank" href="http://zemetune72.mihanblog.com">زمستون بهاری</a></li><li><a target="_blank" href="http://bahary.persianblog.ir/">☂בُنیاے بـهـارے☂</a></li><li><a target="_blank" href="http://kolbekochakeman.mihanblog.com">❀کلبه شادی❀☺ ❀◕‿◕❀  </a></li><li><a target="_blank" href="http://zabanshimi-8.blogfa.com/">شیمی را بیشتر بشناسیم</a></li><li><a target="_blank" href="http://mary-yo2020.blogfa.com/">آسمان همیشه ابری نیست...</a></li><li><a target="_blank" href="http://www.galile.glxblog.com/">ferveney</a></li><li><a target="_blank" href="http://www.divar73.loxblog.com/">دیوار</a></li><li><a target="_blank" href="../sepideh76.mihanblog.com/index.html">star</a></li><li><a target="_blank" href="http://www.ma2nafar22.blogfa.com/">جملات عارفانه حکایت کوتاه</a></li><li><a target="_blank" href="http://sepanta1390.blogfa.com/">خدایی که دراین نزدیکیست</a></li><li><a target="_blank" href="http://mjn-rad.blogfa.com">جملات زیبا و دلنشین راد</a></li><li><a target="_blank" href="http://sefidbarfi10.loxblog.com/">متن های زیبا</a></li><li><a target="_blank" href="http://balhayeparvaz77.blogfa.com/">♥ღدخــتـــران آســمـانـﮯ♥ღ</a></li><li><a target="_blank" href="../miss-chadory.mihanblog.com/index.html">دختران خوشتیپ چادری</a></li><li><a target="_blank" href="http://moderooz1.loxblog.com">چشمهارابایدشست</a></li><li><a target="_blank" href="http://dokhtareslam.mihanblog.com/">دختر مسلمان</a></li><li><a target="_blank" href="http://colbearezooha3.mihanblog.com/">..کلبه آرزوها..</a></li>
+
+</ul>
+</div>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<form id="frm-16076067695fd221f1766c8" method="post" action="http://sirvan92.mihanblog.com/poll/new/fid/16076067695fd221f1766c8/atrty/1607606769/avrvy/0/key/74bb4abb099419a975855c5f9c89f6a3/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="255804" id="data[pollid]" />		
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2"> Polls </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li>
+وب من چطوره؟<br>
+<label><input type="checkbox"  name="data[v1]" id="v1" value="1" />بسیار بسیار عالی</label><br> 
+<label><input type="checkbox"  name="data[v2]" id="v2" value="1" />بسیار عالی</label><br> 
+<label><input type="checkbox"  name="data[v3]" id="v3" value="1" />عالی</label><br> 
+<label><input type="checkbox"  name="data[v4]" id="v4" value="1" />حرف نداره</label><br> 
+<label><input type="checkbox"  name="data[v5]" id="v5" value="1" />همچین وبی ندیدم</label><br> 
+<label><input type="checkbox"  name="data[v6]" id="v6" value="1" />همه موارد</label><br> 
+	
+<input type="submit" value="ثبت"/>
+</li>
+</ul>
+</div>
+
+		<input type="hidden" name="frm-id" value="16076067695fd221f1766c8" id="frm-id" /></form> 
+
+
+
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2"> Design </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul style="border:none">
+
+	    <li> <a href="http://night-skin.com"target="_blank">Design by : Night Skin</font></a></span></font><span lang="en-us"></li><br><br>
+
+<a href="http://night-skin.com" target="_blank"><img src="http://night-skin.com/uppic/logonewend.gif"></a>
+
+
+</div>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2"> Specific </div>
+</b>
+<br>
+<div id=mmenu>
+<ul style="border:none">
+
+			
+
+<center>
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2">Static</div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li>
+بازدیدهای امروز : <span><script>getStatVar('today_view');</script></span> نفر<br>
+بازدیدهای دیروز : <span><script>getStatVar('yesterday_view');</script></span> نفر<br>
+كل بازدیدها : <span><script>getStatVar('total_view');</script></span> نفر<br>
+بازدید این ماه :<span> <script>getStatVar('this_month_view');</script></span> نفر<br>
+بازدید ماه قبل : <span><script>getStatVar('last_month_view');</script></span> نفر<br>تعداد نویسندگان : <span><script>getStatVar('total_author');</script></span> عدد<br>
+كل مطالب : <span><script>getStatVar('total_post');</script></span> عدد<br>
+آخرین بازدید : <span><script>getStatVar('last_view_date');</script></span><br>
+آخرین بروز رسانی : <span><script>getStatVar('modify_date');</script></span>
+</li>
+</ul>
+</div>
+
+<center>
+
+
+
+
+
+
+
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2"> Others </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul style="border:none">
+</p>
+</div>
+</div></div>
+</body>
+</html><!-- Begin code flag by 20Tools.com --><script type="text/javascript" src="http://www.20tools.com/flags/js/moharam-left1.js"></script><div style="display:none"><center>
+<img src='http://night-skin.com/public/images/icon_green-check.png' /> <a target='_blank' href='http://economicaffairs.ir/'>امور اقتصادی</a> | <a target='_blank' href='http://tadbireghtesad.ir/'>تدبیر اقتصاد</a><br /><img src='http://night-skin.com/public/images/icon_green-check.png' /> <a target='_blank' href='http://papo.ir/'>سرگرمی</a> | <a target='_blank' href='http://onlinepr.ir/'>پزشکی</a><br /><img src='http://night-skin.com/public/images/icon_green-check.png' /> <a target='_blank' href='http://aafaagh.ir/'>آفاق</a> | <a target='_blank' href='http://20tools.com/'>بیست تولز</a><br /></center><B><a href=http://www.20tools.com/flags>کد لوگوهای سه گوشه</a></B></div><!-- End code logo by Arka : 20Tools.com -->
+<!-- Begin code flag by 20Tools.com --><script type="text/javascript" src="http://www.20tools.com/flags/js/moharam-right8.js"></script><div style="display:none"><center>
+<img src='http://night-skin.com/public/images/icon_green-check.png' /> <a target='_blank' href='http://shahadat-talab.ir/'>شهادت طلب</a> | <a target='_blank' href='http://bimehmarkazi.ir/'>بیمه مرکزی</a><br /><img src='http://night-skin.com/public/images/icon_green-check.png' /> <a target='_blank' href='http://onlinepr.ir/'>پزشکی</a> | <a target='_blank' href='http://hcot.ir/'>انگلیسی</a><br /><img src='http://night-skin.com/public/images/icon_green-check.png' /> <a target='_blank' href='http://papo.ir/'>پاپو</a> | <a target='_blank' href='http://k-zaminy.ir/'>کبوتران زمینی</a><br /></center><B><a href=http://www.20tools.com/flags>کد لوگوهای سه گوشه</a></B></div><!-- End code logo by Arka : 20Tools.com --><!--- Start Code www.20Tools.com---><p align="center"><script language="JavaScript" src="http://www.20tools.com/java/shabnam/ghatarat.js"></script></p><p align="center" dir="rtl"><span lang="fa"><font face="Tahoma"><a target="_blank" href="http://www.20tools.com/"><span style="text-decoration: none">منبع کدهای زیباسازی</span></a></font></span></p><div style="display:none"><center>
+<img src='http://night-skin.com/public/images/icon_green-check.png' /> <a target='_blank' href='http://economicaffairs.ir/'>امور اقتصادی</a> | <a target='_blank' href='http://tadbireghtesad.ir/'>تدبیر اقتصاد</a><br /><img src='http://night-skin.com/public/images/icon_green-check.png' /> <a target='_blank' href='http://papo.ir/'>سرگرمی</a> | <a target='_blank' href='http://onlinepr.ir/'>پزشکی</a><br /><img src='http://night-skin.com/public/images/icon_green-check.png' /> <a target='_blank' href='http://aafaagh.ir/'>آفاق</a> | <a target='_blank' href='http://20tools.com/'>بیست تولز</a><br /></center><a href=http://www.20tools.com/java/shabnam>کد قطرات شبنم</a>-<a href=http://20tools.com>Http//wWw.20ToolS.cOm/</a></div><!--- End Code www.20Tools.com--->
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'sirvan92.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

@@ -1,0 +1,943 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc%3Frsd" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*1502768*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','1026');
+	setStatVar('total_author','2');
+	setStatVar('modify_date','جمعه 16 آبان 1399');
+	
+	setStatVar('today_view','1255');
+	setStatVar('yesterday_view','207');
+	
+	setStatVar('this_month_view','10058');
+	setStatVar('last_month_view','9635');
+
+	setStatVar('total_view','2124360');
+	setStatVar('last_view_date','پنجشنبه 27 آذر 1399 (15:48)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://shirinhi.mihanblog.com/statupdate/?data[refereruri]=http://shirinhi.mihanblog.com/post/archive&data[postid]=&data[requesturi]=/post/archive/1397/7&data[sdate]=1608207495&data[hash]=ebd79040427fcdd3472f17b7c1af012f&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[2563]='0';commentCnt[2564]='22';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[2563]='2';
+mihanblogDisLikeArrCnt[2563]='0';
+mihanblogLikeArrCnt[2564]='4';
+mihanblogDisLikeArrCnt[2564]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://shirinhi.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://shirinhi.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://shirinhi.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://shirinhi.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+ 		 <html>  	<head><link href=" 
+http://s9.picofile.com/file/8302287642/%E3%81%8A%E8%8A%B1_%E3%82%9C_m.gif " rel="shortcut 
+icon"> 		
+
+ 	<title>✿دهکده انیمه انیمیشن✿عروسکی✿ - مطالب  مهر 1397</title> 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 		<meta http-equiv="Content-Language" content="fa"> 		<meta name="description" content="فروزن،جلسایی، انیمه،اوتاکو،انیمشین، کی پاپ، لیدی باگ، عاشقان شیطانی،بانوی افسانه ای،دانلود انیمه،بیوگرافی،فکت،دیزنی،دیزنی لند،نورلند،" /> 		<meta name="keywords" content="فروزن،جلسایی، انیمه،اوتاکو،انیمشین، کی پاپ، لیدی باگ، عاشقان شیطانی،بانوی افسانه ای،دانلود انیمه،بیوگرافی،فکت،" /> 		 		<link rel="alternate" type="application/rss+xml" title="✿دهکده انیمه انیمیشن✿عروسکی✿"  		  href="../../rss/index.html" /> 		<link rel="alternate" type="application/atom+xml" title="✿دهکده انیمه انیمیشن✿عروسکی✿"  		  href="../../atom/index.html" /> 	 	</head> 	<style> 		*{font-family:tahoma;direction:rtl;color:#} 		#sidebar{float:right;width:247px;margin-right:10px} 		#content{float:left;width:795px;padding:0px}	 		#body{display:block;font-size:12px} 		 		a,a:hover,a.visited{text-decoration:none} 		.inbox{list-style:none; padding:0 12px} 		ul{padding:3px;margin:10px;} 		h2{color:red} 		h2 a{color:#000000; font-size:32px; font-family:arial} 		h3{color:#FF0D7E; margin-top:0; font-size:30px; font-family:arial; text-align:center} 		#header h1 a{font-size:0px; font-family:arial; float:center; color:}		 		#header h1{margin:0; height:100px; overflow:hidden} 		 		.author_box img{float:right;border:none;} 		.mihan_logo{text-align:center;height:131px;margin-top:10px; 	background: url() no-repeat top center;} 		.slogan{ 			color:#000000; text-align:center; padding:1px 0; 			background: url(http://s9.picofile.com/file/8315862300/%D8%B3%D8%AA%D9%88%D9%86.png) repeat; 			background: expression(#FFFFFF); 		} 		 		#footer{font-size:9px;display:block;margin-top:30px; float:left} 		#footer a,#footer a:hover,#footer a:visited{color:#000;} 		 		.hr{border-top:1px solid #CCCCCC;height:1px;margin:3px;}	 		 		body{margin:0; background: #FFFFFF url(http://s9.picofile.com/file/8310976868/giphy_1_.gif) repeat fixed center} 		 		.sidebar_box{background-color:#; padding:10px 5px; line-height:5px; line-height:20px} 		.sidebar_box_border{background-color:#FF0D7E; height:1px; display:block; overflow:hidden} 		.sidebar_box_border_div{width:275px;} 		.seprator{margin-bottom:10px} 		.main_menu{text-align:center} 		.blog_title{color:#} 		 		#header{height:1132px; overflow:hidden; background:  url(http://s8.picofile.com/file/8318760834/%D9%87%D8%AF%D8%B11.png) center repeat} 		#body{ 			background: url(http://s9.picofile.com/file/8315862300/%D8%B3%D8%AA%D9%88%D9%86.png) repeat; 			background: expression(#FFFFFF); 		} 		#blog_body{width:1150px; margin:30px auto; } 		#footer_background{background: url(http://s8.picofile.com/file/8315997142/%D9%81%D9%88%D8%AA%D8%B13.png) repeat-x; padding-bottom: 1000px} 	 		.clearfix { 			display:inline-block; 		} 		.clearfix:after { 			clear:both; 			content:'.'; 			display:block; 			height:0; 			visibility:hidden; 		} 		* html .clearfix { 			height:1%; 		} 		.clearfix { 			display:block; 		} 	</style> 	<body>  		<div id="blog_body"> 	 			<div id="header"> 				<h1><p style="text-align:center; margin:0"><a class="blog_title" href="shirinhi.html" style="margin:10px">✿دهکده انیمه انیمیشن✿عروسکی✿</a></p></h1> 			</div> 		 			<div class="slogan">شادی یک ماجراجویه نه یک مقصد...</div> 			 			<div class="clearfix"> 			 				<div id="body" class="clearfix"> 					 					<div id="content"> 						 							
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		 								<div> 									<h2> 										<a href="../../2564.html">سایونارا</a> 									</h2> 									<p class="date"> 										پنجشنبه 26 مهر 1397 04:44 ب.ظ 									</p> 								</div> 			 							
+<b><img src="http://s8.picofile.com/file/8319141576/%E5%8B%89%E5%BC%B7_m_14_.gif"/
+
+	<b>نویسنده :</b> 								<a href="../../author/1260119.html"> 									♥ ҽℓiຊค๖ēth คiຖนrค  ♥  								</a>  			        			 								<br/> 			 								 
+
+			        			          	 								<a href="../../author/1260119.html"><img src="http://static.mihanblog.com//public/user_data/user_photo/421/1260119.jpg"  /></a> 								<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+<div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خاطرات خوبم از نگاهم عبور میکنن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>تمام لحظات که اینجا گذروندم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>لبخند ها</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اشک ها</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>روز هایی که به سرعت گذشتن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ادمایی که دیدم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>لحظات نابی که فقط کنار بعضی هاشون میتونستم تجربه کنم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>به یاد میارم زمانی رو که اینجا</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>پراز ادمای مختلف بود</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اون زمان فکر میکردم همه چیز جاودانه میمونه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هرگز به فکر کلمه سایونارا نمی افتادم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>همیشه احساس میکردم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>تمام اون ادما جاودانه قراره تا اخر کنار من باقی بمونن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ولی نخای&nbsp; سرخ سرنوشت بهم ثابت کرد</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>مسیر هر کدوم از اونا از من جدا بود</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هر کدومون به دنبال هدف های مختلفی&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>می دویدیم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یک روز به یکباره به خودم اومدم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دیدم همه اون خاطرات خیلی دور شدن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>انگار که صد ها سال پیش اتفاق افتادن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دیگه اثری از هیچ سر صدایی نبود</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هیچ شلوغی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ولی هنوز نسیم به ارومی می وزید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بو عطر اون روزا رو به یاد می اورد</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>و زخمام برام یاد اور اتفاقات دردناک اون روزا بود</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دیگه کم رنگ شده بودن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>انگار اثری ازشون نبود</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>فقط وقتی دستامو روی قلبم گذاشتم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یه احساسی ته قلبم میگفت</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اونا واقعی بودن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>جایی که بهترین خاطرات زندگیمو درش گذرونده</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بودم تبدیل شده بود به خرابه ای که</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>حتی خودم نمیشناختمش</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>جایی که به زور سرپا مونده بود</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دلتنگ اون روزا هستم ولی هرگز دیگه نمیخوام بهشون برگردم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دلتنگ اون ادما هستم ولی هرگز دیگه نمیخوام ببنمشون</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>مخصوصا اولین سری اون ادما</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اونا بهترین خاطرات از بدترین ادمایی که میتونستم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>تو زندگیم ببینم برای من بودن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>حتی اون خاطرات دردناکی که ازشون دارم برای من</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بهترین لحظات بود</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ادمایی توی گذشته بودن که خیلی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بهم بدی کردن از بیشترشون گذشتم&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بخشیدمشون</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بجز دو نفر&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یکی کسی که باعث بهم ریختن همون جمع گروه اولمون شد و&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هنوزم اثری که گذاشته باعث شده همیشه به ادمای جدید حرفاشون تردید داشته باشم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>همیشه فقط از یه چیزی تو زندگیم نگذرم دروغ&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>فقط از دروغ نتونم چشم پوشی کنم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یکی ام کسی که سر حسادتش به من واقعا ازارم داد</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>باعث شد من تا مدت ها حتی از اومدن اینجام حس خوبی نداشته باسم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>این دو نفر کسایی هستن که</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بازی های خیلی بدی راه انداختن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>البته در اخرم بعد مدت ها دست هر جفتشون رو شد</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بازی کثیفشون لو رفت</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ولی خب منو تو اون تایم تا زمانی که حقیقت زمان به همه فاش کنه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>واقعا ازار دیدم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>البته خیلی های دیگه هستن بدی های خیلی بدتری</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>سرم در اوردن ولی من فقط از این دو نفر نمیخوام بگذرم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>باقی حداقل اینه فقط خودمو ازار دادن کاری به دوستام باقی نداشتن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ولی اینا دوستامم ازار دادن فقط بخاطر اینکه جز دوستای من بودن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>من از خودم شاید بگذرم ولی اطرافیانم هرگز&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خیلی های دیگه هستن که با کار هاشون اثرات بدتری روی ذهنم گذاشتن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>درسای زیادی بهم دادن ترس های زیادی توی قلبم گذاشتن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ولی این دو نفر برام غیر قابل بخشش ان</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>گفتم ترس های زیادی توی قلبم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یه خواهش ازتون دارم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>قبل از استفاده از کلماتی که میزنید بهشون فکر کنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>به تاثیرش به اسیبش خیلی هاتون یه حرفایی میزنید میرید حتی براتون مهم نیست</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ولی ممکن تا سال ها یه ترس تو قلب باقی بمونه از اون حرف</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ترس از چی از دوباره شنیدن اون حرف از کسی دیگه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ترس نه به معنای اینکه از شما بترسه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اون کلمه ای که گفتید اینقدر قلبشو ازار داده که&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>همه ذهنش درگیر شده جا خورده چون شاید اونا رو شنیده</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>باور کنید حرفایی که میزنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یه روز عین یه طناب دور گردنتونو میگیره میخواد خفتون کنه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یه جایی یه روزی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>و یه چیز دیگم منتظر معجزه نشید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>معجزه فقط یه کلمه اس</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>معجزه اسم دیگه تغییره</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>به نظر من البته</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بدون تلاش هرگز به وجود نمیاد</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>پس بلند شید قوی باشید تا کی میخوایید خودتونو گول بزنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>باور کنید عذاب احمق بودن خیلی بیشتر از زحمت تلاش کردنه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>به خودتون بیایید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>در اخر</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ممنونم بابت اینکه این همه مدت طولانی همراهم موندید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هنوزم از بعضی ها نظر دریافت میکنم این واقعا خوشحالم میکنه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بابت همه حمایت هاتون تو تمام این هفت هشت ساله که وبلاگ نویسم ممنونم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>قبلا گفته بودم اینجا رو هرگز ترک نمکنم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ولی خب هیچ وقت تو گذشته فکر نمیکردم اینقدر تغییرات رخ بده این روز ها رو نمیدیدم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بابت همه چی ازتون ممنونم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>من نوشتن ول نکردم هنوزم مینویسم همونطور که پست قبلی گفتم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>من فقط دیگه وب نمیام هم یجورایی دوره وب نویسی تموم شده</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هم دوره این وبلاگ تموم شده</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هم دیگه اینقدر درگیری دارم که نمیرسم بیام قالب اینجا عوض کنم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>پست کلی اماده کنم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>به هر حال هرچی ادم بزرگ میشه درگیری هاشم بیشتر میشه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>امسالم که داره میشه هجده سالم دیگه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>کی فکرش میکرد&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>واقعا هشت سال گذشتا</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ده سالم بود اولین وبلاگمو زدم به همین اسم ادرس توی بلاگفا</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>چه روزای تلخ شیرینی گذروندم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ادمای جالبی باهاشون اشنا شدم توی اینجا واقعا</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دنیای کوچیک خوبی بود برای خودش</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اوپس مثل همیشه خیلی پر حرفی کردم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ماشالا ام که جمله بندی هیچ کدوم درست نیست اوایل ذهنم بهم ریخته بود اخه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>از اونور پریدم به اونور اصلا نمدونستم چی میخواستم بنویسم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هنوزم به نظرم چیزی که باید میشد نشد ک دیگه مهم نیست</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بیام حداقل تو اخرین متن سخت گیری نکنم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>درکل هر چند وقت یبار یه پستی اینجا میزارم ولی صرفا جهت</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>مسدود نشدن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>مثل همیشه میگم دوستون دارم خیلی زیاد</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>امیدوارم سلامت باشید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ادم موفقی توی زندگیتون بشید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>به ارزو هاتون برسید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>غم توی قلبتون نباشه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>فکرتونو سالم کنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>درگیر حسادت دروغ مشتی بچه بازی نشید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>&nbsp;ارزش نداره</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>این لحظه هایی که دارید به دعوا میگذرونید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>عمرتونه بهترین لحظاتتون که دیگه هرگز برنمیگرده</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>زمان بی رحمه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>و وقتی بگذره تموم بشه وقتی که دیره دیگه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>فرصت جبران ندارید متوجه اش میشید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>همیشه تو خداحافظی هاتون سعی کنید خاطره خوشی به جا بزارید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هرگز نزارید خشم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>جلوی احساساتونو بگیره</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بدترین کلمات انتخاب نکنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>چون تا همیشه حسرت میشه براتون توی قلبتون</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>که بخوایید اون کلمات درست کنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>من باورم دارم یه جایی در اخرش</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یه جایی بین&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>واقعیت خیال</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هممون به ارزو هامون میرسیم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دوباره کسایی که ارزوی دیدنشون داشتیم میبنیم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یه مرزی بین خیال واقعیت</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بیرون از قفسی که همه توش حبیسم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بهش میرسیم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>نترسید پرواز کنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>همه بال پرواز دارن فقط باید باورش داشته باشن بالشونو بیین</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یکی قلمشه یکی شجاعته یکی عشقشه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>فقط سرتونو توی برف نکنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>لذت زندگی کردن از خودتون نگیرید زنده بودن کافی نیست</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>زندگی کنید&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>فقط خودتون توی این دنیا نیستید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>باقی رو هم ببنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اون موقع دنیا جای بهتری برای همه میشه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بهتر میتونن ادما نفس بکشن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>به نت های پیانوی زندگی گوش کنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>که چه اهنگ زیبایی مینوازه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>به ستاره های اسمونتون نگاه کنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>همه تلاشتونو کنید تا بهشون دست پیدا کنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>از همه قلبم براتون ارزوی زندگی کردن میکنم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>امیدوارم هرگز فراموشم نکنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یه خاطره خوش حداقل از من توی ذهنتون باشه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>من از فراموش شدن متنفرم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>پس فقط میتونم ارزو داشته باشم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اینقدر براتون ارزش داشته بودم که&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>حداقل یه خاطره از من بخاطر بسپارید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>جای شما تمام خاطرات خوب بد همتون</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>توی قلب من تا همیشه باقی میمونه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>شماها یه شاید چند برگه شاید یه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>فصل از دفتر زندگی من بودید هر کدومتون</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>همه تلاشتونو کنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>قهرمان زندگی خودتون باشید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هیچ کسی جز خودتون نمیتونه شما نجات بده</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هرکسی نقش اصلی زندگی خودشه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>که میتونه یه فیلنامه عالی بسازه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یا یه داستان بدون مخاطب که حتی خودشم نخونه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هرگز به امید کسی نشنید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>چون فقط خودتون بهترین قهرمانید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دلم نمیاد این متن خداحافظی تموم کنم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هرچی که میخوام پایانش بدم میگم یه کلمه دیگه بنویسم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>واقعا خداحافظی دل کندن سخته</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اینکه فکر میکنم این متن اخرین حرفامه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هی میگم چیز دیگه ای اضاف کنم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ولی فکر کنم دیگه واقعا کافی باشه تمام این همه سال</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>با متنای طولانیم سرتونو درد اوردم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>حداقل الان دیگه بیشتر ادامه ندم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خیلی حس عجیبی ندارم نمیفهمم خوشحالم یا ناراحت الان</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>تصمیم سختی بود ولی بلاخره این تصمیم گرفتم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>از همه دوستام که از گذشته تا الان</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>همراهم بودن ممنونم هرگز فراموشتون نمکنم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بابت همه درسایی که گرفتم ازتون سپاس گذارم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اریگاتو بابت همه چی از همتون</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>سایونارا&nbsp;</b></font><b style="font-family: Mihan-Iransans; font-size: small;">جایگاه خاطرات دور من</b></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دوستدار شماها&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>لجندری لیدی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>(پیام بدید جواب میدم )</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>در اخر</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>میگم که دلم نمیاد پست تموم کنم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دلم نیومد نام نبرم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>جدا جدا تشکر از بعضی ها نکنم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>از سارا خواهر کوچولوم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ممنونم که هنوزم سراغمو میگیره این واقعا خوشحالم میکنه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>از بچه های خیلی قدیم موندی هنوزم یادته منو</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>امیدوارم به رویای بزرگی که داری برسی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>من موفقیتتو ببینم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>از پروا که جز یکی از بهترین دوستام بود</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>همیشه پشتم بود تو هر شرایطی&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>واقعا ممنونم که روزای خوبی واقعا باهات داشتم&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هر وقت بهشون فکر میکنم خندم میگیره&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هر وقت هرچی میشد میگفتم بابا بزرگگگ</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>توهم بدون هیچ منتی پشتم بودی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>امیدوارم سال های اینده ام بازم&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>جز دوستام باشی بتونم ببنمت</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>و اینکه به راهت ادامه بده</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>من مطئنم تو در اینده ادم موفقی میشی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>تو زندگیت هرجا که کم اوردی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>نا امید نشو خودتو نباز</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>تو برای خیلی ها مهم هستی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>و تو واقعا ارزشمندی پس قدر خودتو بدون</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>از ساناز پسر عزیز تر از جونم که</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>قبول کرده یه جیغ جیغو غرغر کن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>که همیشه بهونه میگیره مامانش باشه حتی یبارم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>نگفته که نمیخوام مامان باشی&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ممنونم تو هر لحظه ای هنوزم کنارمی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>فقط امیدوارم زودتر بزرگ بشیم به ارزو هامون برسیم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یادم نرفته قول دادم&nbsp; با الیسا که رفتیم سر کار</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>تو رو هر هفته ببرم بیرون</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>و یه حرفم برای تو مراقب خودت باش بچه&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خیلی فاز نا امیدی میگیری</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>باور کن تو واقعا پر استعدادی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>فقط خودتو باور نداری</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>از الیسا دختر خاله همیشه همراهم&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>که هر دیونه بازی میگم بهم نه نمیگه&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هر اتفاقی افتاده باز باهم دوست موندیم ممنونم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خیلی دعوا ها داشتیم تو سر هم زدیم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ولی هنوزم دوستیم تا فور اورم میمونیم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>منو تو قول دادیم کلی رویای مشترک باهم داریم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بایدم بهش برسیم&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هرگز نا امید نشو دختر خاله من</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خیلی میگن منو تو شبیه ایمون یه نفریم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>پیغام به اون نفرات</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اره شماها گول خوردید منو الیسا همیشه یکی بودیم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هاهاا</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خوندم خندم داره میگیره از این پیامام</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خب برای افچیم اتوسا</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خیلی وقته دوستیم نه امسال بلاخره طلسم شکستیمو همو دیدیم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>تو واقعیت وای هی الان دارم اینو مینویسم یاد خاطراتمون میفتم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>چقدر خرابکاری باهم کردیما یادته&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>همیشه ام جمعش میکردیم باهم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>وای تو ادم خیلی خوبی هستی قلبت خیلی روشنه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>مراقب قلبت باش دیگران به بازیش نگیرن افچی من</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هی هی تا همیشه خواهر کوچولوی منم باقی بمون</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خب خب دیگه برای کی بنویسم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>از کسایی که تو وب بودن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ادم که تو تل زیاده ولی برای وبی ها دارم اینو مینویسم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>عام&nbsp; خب</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>عسل&nbsp; تو زندگیت شجاع باش از حقیقت فرار نکن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اجی کوچیکم بودی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>به من لقب فرشته نگهبان دادی اون روز که این لقب دادی واقعا خوشحالم کردی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خیلی اتفاقات افتاد الان جز دوستای گذشتمی حتی باهم دیگه در ارتباطت نیستیم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ولی بدون همیشه توی قلبم برات احترام خاصی قائلم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ممنونم بخاطر موقع هایی که کنارم بودی به حرفام گوش دادی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ساینا هام فکر کنم الان دیگه نتم نیستی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ولی برات مینویسم شاید دیدی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دوست خوبی برام بودی&nbsp; بخاطر صحبتای اخرمون ازت معذرت میخوام</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>باهات تند خیلی حرف زدم کاری که کردی چیز خاصی نبودکه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اونقدر تند باهات صحبت کنم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>به هر حال امیدوارم هرجا هستی سلامت باشی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>به دیگرانم اینقدر اعتماد نکن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>مینامی هام</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>مینامی مدت زیادی نبود باهات دوست شده بودم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دلم میخواست بتوم بیشتر باهات اشنا بشم ولی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خب هیچ وقت نشد</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>تو دختر خوب کاملی هستی شخصیت قوی داری</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>امیدوارم تو زندگیت به هدف هات برسی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ماهی غریق نجات</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>چند باری باهات صحبت کردم ولی ادمی هستی که روحیه ادم شاد میکنی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>وقتی بودی خیلی میخندیدم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ازت ممنونم&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بخاطر روزایی که کنار هم سپری کردیم از همتون ممونم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>و دیگه فکر کنم کسی نیست که من دلم بخواد براش اختصاصی بزارم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اگرم کسی جا انداختم معذرت ادم زیاده&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اسمم زیاده تو ذهنم نمدونم کی وب بود کی تل بود</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دیگه فکر کنم واقعا باید پست تموم کنم نه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>سایونارا وبلاگ عزیزم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>سایونارا همگی</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>سایونارا خاطرات خوش من</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b><br></b></font></div>
+
+
+
+
+
+
+
+
+ 								 				            	 								<br> 								 								 								 								<br> 								<br> 				            	 								<a target="_self" href="javascript:newComment(2564)"> 									
+
+
+
+<b><img src="http://s8.picofile.com/file/8319136892/%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84_m_12_.gif"/
+
+
+
+<b>دیدگاه ها : </b> 									<script>setCommentCnt(2564)</script> نظرات 								</a>  								 								<br/> 			 </p>
+
+                    <div style="float: Left;margin-top:-2px;"><script>mihanblogPostLike('2564','like')</script></div>
+				
+
+				 					 								 	
+
+
+<b><img src="http://s8.picofile.com/file/8319142750/%E3%82%9C_%E3%83%91%E3%82%B9%E3%83%86%E3%83%AB_%E3%82%9C_m_28_.gif"/
+
+				        		 			 								<b>آخرین ویرایش:</b> 
+پنجشنبه 26 مهر 1397  06:12 ب.ظ 
+                                                               
+<br> <center><img src='http://s8.picofile.com/file/8316027500/%D9%85%D8%B7%D8%A7%D9%84%D8%A8.png'</a></center><br>                                                    
+     								<div> 									<h2> 										<a href="../../2563.html">های</a> 									</h2> 									<p class="date"> 										پنجشنبه 26 مهر 1397 04:35 ب.ظ 									</p> 								</div> 			 							
+<b><img src="http://s8.picofile.com/file/8319141576/%E5%8B%89%E5%BC%B7_m_14_.gif"/
+
+	<b>نویسنده :</b> 								<a href="../../author/1260119.html"> 									♥ ҽℓiຊค๖ēth คiຖนrค  ♥  								</a>  			        			 								<br/> 			 								 
+
+			        			          	 								<a href="../../author/1260119.html"><img src="http://static.mihanblog.com//public/user_data/user_photo/421/1260119.jpg"  /></a> 								<div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>سلام&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>مدت طولانی وب نیومدم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>احتمالا دیگم نیام یا اگه بیام</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هر چند ماه یبار باشه فقط پست بزارم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>فقط بخاطر اینکه وبلاگ بسته نشه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>چون واقعا اینجا دوس دارم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>نظر بدید جوابتونو میدم ولی فعالیتی دیگه تقریبا اینجا نداره</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بجاش تو تلگرام فعالیت دارم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>کسی دلش خواست میتونه اونجا</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>مطالب نوشته هام داستانم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>کارایی که میکشم انجام میدم دنبال کنه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>legendary_lady@</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>آیدیش اینه هرکی خواست سر بزنه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>داستان اونجا دارم مینویسم ادامه میدم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>هر روز متن اینا نوشته های خودمو میزارم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دلنوشته های خودم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>گاهی دلنوشته مربوط به کسایی که دلتگشونم دیگه نیستن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>اگه همون نفرات به طور اتفاقی این پستمو دیدن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>دوست دارم یه سر بزنن&nbsp;</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>حتما بخونن چیزایی که نوشتم برای اوناست</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>چیزایی که حتی شک دارم روزی به دستشون برسه ببینن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>البته دیگه خب مثل وب نیست والپیپر فن ارت</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>موزیک ویدیو اینام باشه یا دانلود انیمه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>معرفی انیمه</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>که اینا توی انیم لند انجام میدیم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>که ایدی اونم پست ثابت هستش</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>در کل یه پست دیگه مطئن نیستم شاید تو هفته اینده بزارم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>یه متن مخصوص اینجا نوشته باشم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>فقط مخصوص خود این وب</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خیلی دوستون دارم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>بابت اینکه هنوزم بعضی ها به وب سر میزنن</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>ازتون ممنونم</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>خیلی همیشه حمایتم کردید</b></font></div><div style="text-align: center;"><font face="Mihan-Iransans" size="2"><b>سایونارا^-^</b></font></div><div style="text-align: center;"><img src="http://s9.picofile.com/file/8340257700/2dabf1d7a56753ea7c2a1cc7e37e088b.jpg"></div>
+
+
+ 								 				            	 								<br> 								 								 								 								<br> 								<br> 				            	 								<a target="_self" href="javascript:newComment(2563)"> 									
+
+
+
+<b><img src="http://s8.picofile.com/file/8319136892/%E3%81%8B%E3%82%8F%E3%81%84%E3%81%84_m_12_.gif"/
+
+
+
+<b>دیدگاه ها : </b> 									<script>setCommentCnt(2563)</script> نظرات 								</a>  								 								<br/> 			 </p>
+
+                    <div style="float: Left;margin-top:-2px;"><script>mihanblogPostLike('2563','like')</script></div>
+				
+
+				 					 								 	
+
+
+<b><img src="http://s8.picofile.com/file/8319142750/%E3%82%9C_%E3%83%91%E3%82%B9%E3%83%86%E3%83%AB_%E3%82%9C_m_28_.gif"/
+
+				        		 			 								<b>آخرین ویرایش:</b> 
+پنجشنبه 26 مهر 1397  04:40 ب.ظ 
+                                                               
+<br> <center><img src='http://s8.picofile.com/file/8316027500/%D9%85%D8%B7%D8%A7%D9%84%D8%A8.png'</a></center><br>                                                    
+                             								
+								 								<br><br> 							 							</cb:loop_post> 						</cb:block_post> 				     	 						<br><br> 				     		  							     	 					 						 			 					 						<div id="footer" class="clearfix"> 							<strong> 								POWERED BY <a href="../../../index.html"> 								<font color="#FF0088" size="2px">L</font>egendary 								<font color="#FF0088" size="2px">L</font>ady</a> 							</strong> 						</div> 					</div>		 				 					<div id="sidebar"> 							<form id="frm-16082074955fdb4c87e3ba5" method="get" action="http://shirinhi.mihanblog.com/post/search/fid/16082074955fdb4c87e3ba5"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search">  								<div class="sidebar_box_border_div"> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<div class="sidebar_box"> 										<input type="text" name="search_text" style="width:90px"/> 										<input type="submit" value="❀برگرد ببین هست❀"/> 									</div> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								</div> 							<input type="hidden" name="frm-id" value="16082074955fdb4c87e3ba5" id="frm-id" /></form> 						    							<div class="seprator"><img src="http://static.mihanblog.com//public/images/empty.gif"/></div> 					 							<div class="sidebar_box_border_div"> 								<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								<div class="sidebar_box"> 									<div style="text-align:center"> 										<div align="center" style="border:none; width:264px; overflow:hidden"><img src="http://static.mihanblog.com//public/user_data/web_photo/501/1502768.jpg?8354"  /></div> 										<a href="7.html"> پست الکترونیک</a><br/> 										<a href="javascript:messageForm()">تماس با ما</a><br/> 										<div style="text-align:center">سلام من الیزابت (شیرین)هستم<br />
+یه نکو<br />
+ امیداوارم از وبلاگم خوشتون بیاد <br />
+هر كی بخواهد لینكش می كنم <br />
+من یه دختر اوتاکو و البته کی پاپرم <br />
+عاشق انیمیشن های دیزنی<br />
+یه دختر از شهر آرزو ها<br />
+شخصیت محبوب انیمیشنی من <br />
+اول السا  تو فروزن همه میشناسید دیه و بعد لئوناردو در لاك پشت های نینجا  از شخصیت های انیمه ای هم کائوری اورمارو خیلی میدوستم<br />
+بین خواننده های کی پاپم کریس وو و گروه اکسو گرلز جنرشین دوس دارم  و گروه سابق دابل اس البته فقط هیون جونگ دوست دارم<br />
+بازیگرای کی دارامم پارک شین هه لی مین هو<br />
+راستی نظر فراموش نشه کپی ممنوع <br />
+فقط فقط با ذکر منیع مجازاگه نظر ندی به راپی می گم با اون<br />
+ماهیتابش بزنه تو سرت/^0^ یوهااااهااا<br />
+__000000___00000<br />
+_00000000?0000000<br />
+_0000000000000000<br />
+__00000000000000<br />
+____00000000000<br />
+_______00000<br />
+_________0<br />
+________*__000000___00000<br />
+_______*__00000000?0000000<br />
+______*___0000000000000000<br />
+______*____00000000000000<br />
+_______*_____00000000000<br />
+________*_______00000<br />
+_________?________0<br />
+_000000___00000___*<br />
+00000000?0000000___*<br />
+0000000000000000____*<br />
+_00000000000000_____*<br />
+___00000000000_____*<br />
+______00000_______*<br />
+________0________*<br />
+________*__000000___00000<br />
+_______*__00000000?0000000<br />
+______*___0000000000000000<br />
+______*____00000000000000<br />
+______*______00000000000<br />
+_______*________00000<br />
+________*_________0<br />
+_________*________*<br />
+_________*_______*<br />
+__________*______*<br />
+___________*____*<br />
+____________*___*<br />
+_____________*__*<br />
+______________**<br />
+طرح قالب : legendary lady</div> 										<div class="clearfix" style="margin-right:110px"> 											<a href="../../rss/index.html"><img style="border:none; float:right" src="http://static.mihanblog.com//public/images/icon/rss.gif"/></a> 											<a href="../../atom/index.html"><img style="border:none; float:right" src="http://static.mihanblog.com//public/images/icon/atom.gif"/></a> 										</div> 									</div> 								</div> 								<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 							</div>  							<div class="seprator"><img src="http://static.mihanblog.com//public/images/empty.gif"/></div> 							 							
+		  														 							<div class="seprator"><img src="http://static.mihanblog.com//public/images/empty.gif"/></div>					 							 							 								<div class="sidebar_box_border_div"> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<div class="sidebar_box"> <br> <center><img src='http://s9.picofile.com/file/8316022684/%D8%B3%D8%A7%DA%A9%D8%A7%D9%85%D8%A7%DA%A9%DB%8C.png'</a></center>     
+                                   <h3>✿ابربرچسب✿</h3>														 											<a href="../../tag/السا.html" style="font-size:1.91em"> 												السا  											</a> 														 											<a href="../../tag/انا.html" style="font-size:1.04em"> 												انا  											</a> 														 											<a href="../../tag/عاشقان+شیطانی.html" style="font-size:1.37em"> 												عاشقان شیطانی  											</a> 														 											<a href="../../tag/السا+و+انا.html" style="font-size:1.13em"> 												السا و انا  											</a> 														 											<a href="../../tag/جلسایی.html" style="font-size:1.9em"> 												جلسایی  											</a> 														 											<a href="../../tag/جک+فراست.html" style="font-size:1.23em"> 												جک فراست  											</a> 														 											<a href="../../tag/جلسا.html" style="font-size:1.18em"> 												جلسا  											</a> 														 											<a href="../../tag/عروسکی.html" style="font-size:1.47em"> 												عروسکی  											</a> 														 											<a href="../../tag/دختر+انیمه+ای.html" style="font-size:1em"> 												دختر انیمه ای  											</a> 														 											<a href="../../tag/انیمه.html" style="font-size:1.35em"> 												انیمه  											</a> 														 											<a href="../../tag/ساکاماکی.html" style="font-size:1em"> 												ساکاماکی  											</a> 														 											<a href="../../tag/دیزنی.html" style="font-size:1.19em"> 												دیزنی  											</a> 														 											<a href="../../tag/فروزن.html" style="font-size:2em"> 												فروزن  											</a> 														 											<a href="../../tag/دیابولیک+لاورز.html" style="font-size:1.03em"> 												دیابولیک لاورز  											</a> 											 									</div>	 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								</div> 							  							<div class="seprator"><img src="http://static.mihanblog.com//public/images/empty.gif"/></div>					 							 							 								<div class="sidebar_box_border_div"> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<div class="sidebar_box"> <br> <center><img src='http://s9.picofile.com/file/8316023118/%D9%85%D9%88%DA%A9%D8%A7%D9%85%DB%8C.png'</a></center>      
+                                   <h3>✿موضوعات✿</h3>  										 											<a href="../../category/46.html">  												خبر گذاری mmt eu es(ام ام تی ا یو ا اس )(114) 											</a>  											<br/> 						          		 											<a href="../../category/96.html">  												✟دیابولیک لاورز(عاشقان شیطانی)✟(31) 											</a>  											<br/> 						          		 											<a href="../../category/99.html">  												# فقط 23 ین! #*(2) 											</a>  											<br/> 						          		 											<a href="../../category/98.html">  												دکتر خداحافظ~_^(9) 											</a>  											<br/> 						          		 											<a href="../../category/95.html">  												✮دیزنی✮(20) 											</a>  											<br/> 						          		 											<a href="../../category/93.html">  												♧خبر های وب♧(61) 											</a>  											<br/> 						          		 											<a href="../../category/92.html">  												♱شوالیه خوناشام♱(3) 											</a>  											<br/> 						          		 											<a href="../../category/91.html">  												❃دختر انیمه ای❃(12) 											</a>  											<br/> 						          		 											<a href="../../category/89.html">  												❀پونی کوچولو❀(5) 											</a>  											<br/> 						          		 											<a href="../../category/41.html">  												.:✿ƬӇЄ ԼЄƓЄƝƊƛƦƳ ℓα∂у✿:.(8) 											</a>  											<br/> 						          		 											<a href="../../category/87.html">  												✣Hσω тσ Ƭяαιη Ƴσυя Ɗяαgση✣(2) 											</a>  											<br/> 						          		 											<a href="../../category/86.html">  												☀راپنزل☀(2) 											</a>  											<br/> 						          		 											<a href="../../category/85.html">  												بیوگرافی(19) 											</a>  											<br/> 						          		 											<a href="../../category/81.html">  												ッمصاحبه های خبریッ(1) 											</a>  											<br/> 						          		 											<a href="../../category/80.html">  												♪Vocaloid♪(12) 											</a>  											<br/> 						          		 											<a href="../../category/79.html">  												✣لاک پشت های نینجا✣(2) 											</a>  											<br/> 						          		 											<a href="../../category/78.html">  												بازیLeague of Legends(5) 											</a>  											<br/> 						          		 											<a href="../../category/77.html">  												AMV(1) 											</a>  											<br/> 						          		 											<a href="../../category/76.html">  												پخش انلاین ها(23) 											</a>  											<br/> 						          		 											<a href="../../category/75.html">  												دانلود ها(3) 											</a>  											<br/> 						          		 											<a href="../../category/59.html">  												زمان طلایی(golden time)(1) 											</a>  											<br/> 						          		 											<a href="../../category/73.html">  												مناسبت ها(کریسمس عید نوروزو.....)(28) 											</a>  											<br/> 						          		 											<a href="../../category/72.html">  												♦معنی اهنگ انیمه ها♦(3) 											</a>  											<br/> 						          		 											<a href="../../category/71.html">  												♤دیالوگ های انیمه ای♤(8) 											</a>  											<br/> 						          		 											<a href="../../category/70.html">  												بیوگرافی دوبلر های انیمه ای(1) 											</a>  											<br/> 						          		 											<a href="../../category/69.html">  												چارلوت(Charlotte)(1) 											</a>  											<br/> 						          		 											<a href="../../category/67.html">  												☭توکیو غول☭(2) 											</a>  											<br/> 						          		 											<a href="../../category/66.html">  												هنر شمشیر زنی انلاین(Sword Art Online)(2) 											</a>  											<br/> 						          		 											<a href="../../category/65.html">  												❀انیمه نماینده کلاس ما پیشخدمته❀(12) 											</a>  											<br/> 						          		 											<a href="../../category/64.html">  												☣ خادم سیاه☣(Kuroshitsuji)(5) 											</a>  											<br/> 						          		 											<a href="../../category/62.html">  												❃سفید برفی با موی قرمز❃(4) 											</a>  											<br/> 						          		 											<a href="../../category/60.html">  												انیمه دردسر برادر ها(brothers conflict)(4) 											</a>  											<br/> 						          		 											<a href="../../category/58.html">  												♪انیمه دروغ اوریل♪(5) 											</a>  											<br/> 						          		 											<a href="../../category/57.html">  												☀صبح بخیر☀ /✯شب بخیر✯(15) 											</a>  											<br/> 						          		 											<a href="../../category/56.html">  												بوسه ایزدی(Kamisama Kiss)(9) 											</a>  											<br/> 						          		 											<a href="../../category/43.html">  												♡ ¤ Iи тħe ełνeš ωıтħ Eχø ♡ ¤(5) 											</a>  											<br/> 						          		 											<a href="../../category/55.html">  												╰attack on titan╮(8) 											</a>  											<br/> 						          		 											<a href="../../category/25.html">  												پونی کوچولو(3) 											</a>  											<br/> 						          		 											<a href="../../category/53.html">  												اکشن فیگور(1) 											</a>  											<br/> 						          		 											<a href="../../category/52.html">  												معرفی انیمه هاッ(7) 											</a>  											<br/> 						          		 											<a href="../../category/51.html">  												نقاشی  و طراحی(1) 											</a>  											<br/> 						          		 											<a href="../../category/20.html">  												ملیفیسنت(1) 											</a>  											<br/> 						          		 											<a href="../../category/35.html">  												مطالب طنز کارتونی(3) 											</a>  											<br/> 						          		 											<a href="../../category/19.html">  												انیمه دخملونه(1) 											</a>  											<br/> 						          		 											<a href="../../category/50.html">  												❁Miraculous Tales of Ladybug and Cat Noir ❁(8) 											</a>  											<br/> 						          		 											<a href="../../category/48.html">  												فال روز(1) 											</a>  											<br/> 						          		 											<a href="../../category/16.html">  												انیمه(37) 											</a>  											<br/> 						          		 											<a href="../../category/47.html">  												کارتون های به یاد موندنی(1) 											</a>  											<br/> 						          		 											<a href="../../category/14.html">  												عاشقان شیطانی(27) 											</a>  											<br/> 						          		 											<a href="../../category/12.html">  												❅Jαcк Ƒяσѕт❅(32) 											</a>  											<br/> 						          		 											<a href="../../category/1.html">  												❆ʆЄԼƧƛ❆(79) 											</a>  											<br/> 						          		 											<a href="../../category/4.html">  												❅ƑƦσzєη❅(61) 											</a>  											<br/> 						          		 											<a href="../../category/3.html">  												❃მղղმ❃(29) 											</a>  											<br/> 						          		 											<a href="../../category/2.html">  												❆єℓѕα❆(66) 											</a>  											<br/> 						          		 									</div> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								</div> 							 							 							<div class="seprator"><img src="http://static.mihanblog.com//public/images/empty.gif"/></div>														  							 								<div class="sidebar_box_border_div">						     									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<div class="sidebar_box">     
+                                   <div><br> <center><img src='http://s9.picofile.com/file/8316023150/%D8%AA%D8%B3%D9%88%DA%A9%DB%8C%D9%86%D8%A7%D9%85%DB%8C.png'</a></center>                           
+                  <h3>✿نویسندگان✿</h3>  > 											 	 												<a href="../../author/1260119.html"><img src="http://static.mihanblog.com//public/user_data/user_photo/421/1260119.jpg" style="width:16px;" /></a> 												<a href="../../author/1260119.html"> 													♥ ҽℓiຊค๖ēth คiຖนrค  ♥ (897) 												</a> 											<br/> 											 	 												<a href="../../author/1469200.html"><img src="http://static.mihanblog.com//public/user_data/user_photo/490/1469200.jpg" style="width:16px;" /></a> 												<a href="../../author/1469200.html"> 													♥Queen elizabeth Ainura uchiha♥ Petra ral♥(7) 												</a> 											<br/> 											 										</div> 									</div> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								</div> 							 							 							<div class="seprator"><img src="http://static.mihanblog.com//public/images/empty.gif"/></div>					 							 							 								<div class="sidebar_box_border_div"> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<div class="sidebar_box"> <br> <center><img src='http://s9.picofile.com/file/8316023318/%D8%B3%D8%A8%D8%A7%D8%B3_%DA%86%D8%A7%D9%86.png'</a></center>      
+                                   <h3>✿صفحات جانبی✿</h3>  										     	 											<a href="../../../extrapage/shirin.html"> 												بیوگرافی خودم✿◠‿◠ 											</a> 											<br/> 										     	 											<a href="../../../extrapage/bugrafe.html"> 												✯معرفی بروبچ شبکه✯ 											</a> 											<br/> 										     	 											<a href="../../../extrapage/msh.html"> 												مشخصات شخصیت های انیمه ای و. کارتونی 											</a> 											<br/> 										     	 											<a href="../../../extrapage/zabn.html"> 												اموزش زبان ژاپنی 											</a> 											<br/> 										     	 											<a href="../../../extrapage/lg.html"> 												لوگو های دوستام 											</a> 											<br/> 										     	 											<a href="../../../extrapage/ne.html"> 												نظرسنجی ها 											</a> 											<br/> 										     	 											<a href="../../../extrapage/thief.html"> 												دزد های وبم 											</a> 											<br/> 										     	 											<a href="../../../extrapage/mhe.html"> 												اذر ماهی که باشی 											</a> 											<br/> 										      	 									</div>	 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								</div> 							  							 							<div class="seprator"><img src="http://static.mihanblog.com//public/images/empty.gif"/></div>						    							 							 							 								<div class="sidebar_box_border_div"> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<div class="sidebar_box"> <br> <center><img src='http://s9.picofile.com/file/8316023326/%D8%B4%D9%88%D8%A7%D9%84%DB%8C%D9%87_%D8%AE%D9%88%D9%86%D8%A7%D8%B4%D8%A7%D9%85.png'</a></center>      
+                                   <h3>✿ارشیو مطالب✿</h3>  										 											<a href="../1399/8.html"> آبان 1399</a> 											<br/> 										 											<a href="../1399/6.html"> شهریور 1399</a> 											<br/> 										 											<a href="../1398/11.html"> بهمن 1398</a> 											<br/> 										 											<a href="../1398/10.html"> دی 1398</a> 											<br/> 										 											<a href="../1398/9.html"> آذر 1398</a> 											<br/> 										 											<a href="../1398/8.html"> آبان 1398</a> 											<br/> 										 											<a href="../1398/6.html"> شهریور 1398</a> 											<br/> 										 											<a href="../1398/4.html"> تیر 1398</a> 											<br/> 										 											<a href="../1398/3.html"> خرداد 1398</a> 											<br/> 										 											<a href="../1398/2.html"> اردیبهشت 1398</a> 											<br/> 										 										<a href="../../archive.html"><b>همه آرشیوها</b></a> 									</div> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								</div> 										    														 							 							<div class="seprator"><img src="http://static.mihanblog.com//public/images/empty.gif"/></div>					 							 							 								<div class="sidebar_box_border_div"> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<div class="sidebar_box"> <br> <center><img src='http://s9.picofile.com/file/8316023768/%D8%AF%DB%8C%D8%B2%D9%86%DB%8C.png'</a></center>     
+                                   <h3>✿وب دوستام✿</h3>										     	 											<a href="http://apparition77.mihanblog.com/" title="" target="_blank"> 												Apparition Nastaka 											</a> 											<br/> 										     	 											<a href="http://llwodrlandll.mihanblog.com/" title="" target="_blank"> 												W O N D E R L A N D 											</a> 											<br/> 										     	 											<a href="http://bishoujoroyale.mihanblog.com/" title="" target="_blank"> 												Aphrodite 											</a> 											<br/> 										     	 											<a href="http://ruins-of-mymind.mihanblog.com/" title="" target="_blank"> 												ruins of my mind 											</a> 											<br/> 										     	 											<a href="http://s-1383.mihanblog.com/" title="" target="_blank"> 												دنیای رنگی من 											</a> 											<br/> 										     	 											<a href="http://kuromi-no-kotoba.mihanblog.com" title="" target="_blank"> 												نی سان•-• 											</a> 											<br/> 										     	 											<a href="http://dark-angle.mihanblog.com/" title="" target="_blank"> 												dark angle (وب لیا پروا) 											</a> 											<br/> 										     	 											<a href="http://roman-e.mihanblog.com/" title="" target="_blank"> 												magic spinit(مینامی الی) 											</a> 											<br/> 										     	 											<a href="http://dokhbala.mihanblog.com" title="" target="_blank"> 												ماهی غریق نجات(ماهانا) 											</a> 											<br/> 										     	 											<a href="http://dsatan-skyland.mihanblog.com/" title="" target="_blank"> 												ΞㄨØ..Sку♡Lαηɗ..ΞㄨØ 											</a> 											<br/> 										     	 											<a href="http://mjorvajorm.mihanblog.com/" title="" target="_blank"> 												Enigma 											</a> 											<br/> 										     	 											<a href="http://jelsajona.mihanblog.com/" title="" target="_blank"> 												ĸձթթձէรս 											</a> 											<br/> 										     	 											<a href="http://224339.mihanblog.com/" title="" target="_blank"> 												بهترین وب سفارشی پونی و انیمه 											</a> 											<br/> 										     	 											<a href="http://dsbb.mihanblog.com/" title="" target="_blank"> 												قصر یخی ملکه السا 											</a> 											<br/> 										     	 											<a href="http://paria-1383.mihanblog.com/" title="" target="_blank"> 												WORlD Girl mehir 											</a> 											<br/> 										     	 											<a href="http://elsaandannaz.blogfa.com/" title="" target="_blank"> 												سرزمین یخی 											</a> 											<br/> 										     	 											<a href="http://moosighi11.mihanblog.com/" title="" target="_blank"> 												دخملانه ها 											</a> 											<br/> 										     	 											<a href="http://rainbowland.mihanblog.com/" title="" target="_blank"> 												رینبولند 											</a> 											<br/> 										     	 											<a href="http://pinkie-toon.mihanblog.com/" title="" target="_blank"> 												دنیای سحر و جادو 											</a> 											<br/> 										     	 											<a href="http://sefareshiwinx.mihanblog.com/" title="" target="_blank"> 												♥ بهترین وب سفارشی دنیا از همه چیز ♥ 											</a> 											<br/> 										     	 											<a href="http://bahosha.mihanblog.com" title="" target="_blank"> 												قصر سحرآمیز دخترا 											</a> 											<br/> 										     	 											<a href="http://webniaz.blogfa.com/" title="" target="_blank"> 												وبباز 											</a> 											<br/> 										     	 											<a href="http://zeynabjoon132.blogsky.com" title="" target="_blank"> 												عشق نامه دیانا 											</a> 											<br/> 										     	 											<a href="http://pinky-secrets.mihanblog.com/" title="" target="_blank"> 												pinky secrets 											</a> 											<br/> 										     	 											<a href="http://frozen6693.mihanblog.com" title="" target="_blank"> 												دنیای السا 											</a> 											<br/> 										 										<a href="../../../link/index.html"><b>همه لینکها</b></a> 									</div>	 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								</div> 								 						     							<div class="seprator"><img src="http://static.mihanblog.com//public/images/empty.gif"/></div>					 							 							    														 	 							 							<div class="seprator"><img src="http://static.mihanblog.com//public/images/empty.gif"/></div>					 							 							 								<div class="sidebar_box_border_div"> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b>	     									<div class="sidebar_box">  
+                                       <div> <br> <center><img src='http://s8.picofile.com/file/8316023792/%D8%A8%D8%B1%D8%A7%D8%AF%D8%B1%D8%A7%D9%86_%D9%88%D8%A7%D8%B1%D9%86%D8%B1.png'</a></center>                      
+                      <h3>✿اخرین پست ها✿</h3>   											 	 												<a href="../../2623.html"> 													دیوانگی بی پایان 												</a> 												<br/> 											 	 												<a href="../../2621.html"> 													. 												</a> 												<br/> 											 	 												<a href="../../2619.html"> 													سلام 												</a> 												<br/> 											 	 												<a href="../../2616.html"> 													:_ 												</a> 												<br/> 											 	 												<a href="../../2615.html"> 													.:ஜ✿ بانوی افسانه ای(قسمت چهارم)✿ஜ:. 												</a> 												<br/> 											 	 												<a href="../../2614.html"> 													.:ஜ✿ بانوی افسانه ای(قسمت سوم)✿ஜ:. 												</a> 												<br/> 											 	 												<a href="../../2613.html"> 													من برگشتم 												</a> 												<br/> 											 	 												<a href="../../2612.html"> 													نیمه شب نویسی 												</a> 												<br/> 											 	 												<a href="../../2605.html"> 													♦Q هتل د لونا Q♦ 												</a> 												<br/> 											 	 												<a href="../../2611.html"> 													.:ஜ✿ بانوی افسانه ای(پاسخ به سوالات)✿ஜ:. 												</a> 												<br/> 											 	 												<a href="../../2610.html"> 													اپنینگ و اندینگ فوق العاده استاد تعالیم شیطانی(فصل اول) 												</a> 												<br/> 											 	 												<a href="../../2609.html"> 													.:ஜ✿ بانوی افسانه ای(قسمت دوم)✿ஜ:. 												</a> 												<br/> 											 	 												<a href="../../2603.html"> 													.:ஜ✿ بانوی افسانه ای(قسمت اول)✿ஜ:. 												</a> 												<br/> 											 	 												<a href="../../2602.html"> 													 Lyrics Mo Dao Zu Shi   												</a> 												<br/> 											 	 												<a href="../../2601.html"> 													.:ஜ✿ بانوی افسانه ای(پیش زمینه 2)✿ஜ:. 												</a> 												<br/> 											 	 												<a href="../../2543.html"> 													.:ஜ✿ بانوی افسانه ای(پیش زمینه)✿ஜ:. 												</a> 												<br/> 											 	 												<a href="../../2448.html"> 													.:ஜ✿مقدمه داستان بانوی افسانه ای✿ஜ:. 												</a> 												<br/> 											 	 												<a href="../../2600.html"> 													موارد رو اعصاب درباره رول پلی 												</a> 												<br/> 											 	 												<a href="../../2599.html"> 													من مانده ام تنهای تنها در این شب سرد 												</a> 												<br/> 											 	 												<a href="../../2598.html"> 													خبر فوری  												</a> 												<br/> 											 	 												<a href="../../2597.html"> 													روز های خوش گذشته 												</a> 												<br/> 											 	 												<a href="../../2595.html"> 													|=  												</a> 												<br/> 											 										</div> 									</div> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								</div> 							 							 							<div class="seprator"><img src="http://static.mihanblog.com//public/images/empty.gif"/></div>														 							 							 								<div class="sidebar_box_border_div"> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								    <div class="sidebar_box"> <div> <br> <center><img src='http://s9.picofile.com/file/8316025142/%D8%A8%D8%A7%D9%84_%D8%A7%D8%B2%D8%A7%D8%AF%DB%8C.png'</a></center>               
+                               <h3>✿امار قصر من✿</h3>  										کل بازدید:<script>getStatVar('total_view');</script><br/> 										بازدید امروز :<script>getStatVar('today_view');</script><br/> 										بازدید دیروز : <script>getStatVar('yesterday_view');</script><br/> 										بازدید این ماه : <script>getStatVar('this_month_view');</script><br/> 										بازدید ماه قبل : <script>getStatVar('last_month_view');</script><br/> 										تعداد نویسندگان : <script>getStatVar('total_author');</script><br/> 										تعداد کل مطالب : <script>getStatVar('total_post');</script><br/> 										آخرین بازدید : <script>getStatVar('last_view_date');</script><br/> 										آخرین بروز رسانی : <script>getStatVar('modify_date');</script><br/>   									</div>	 									<b class="sidebar_box_border" style="margin:0 1px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 2px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 									<b class="sidebar_box_border" style="margin:0 3px"><img src="http://static.mihanblog.com//public/images/empty.gif"/></b> 								</div> 														  							   							<div class="seprator"><img src="http://static.mihanblog.com//public/images/empty.gif"/></div>					  							<div class="sidebar_box_border_div"> 								کدحفاظت ازمطالب وبلاگ 
+<!--locking Right click by : fa-tools.ir-->
+<script language="javascript" src="http://fa-tools.ir/code/rightclick/right-click.js"></script>
+<a target="_blank" href="http://fa-tools.ir/News/topic/21/" ></a><div style="display:none"><a href="http://fa-tools.ir" > آقای وب لوستر- جدیدترین ابزار   </a></div>
+<!--locking Right click by : fa-tools.ir-->
+
+*** 
+<!--Start Cod By Theme Sky-->
+<script type="text/JavaScript" language="javascript">
+msg = "..✿♥️ عروسکی♥️✿.. "; msg = "..." + msg;pos = 0;
+function scrollMSG() {
+document.title = msg.substring(pos, msg.length) + msg.substring(0, pos);
+pos++;
+if (pos > msg.length) pos = 0
+window.setTimeout("scrollMSG()",200);
+}
+scrollMSG();
+</script>
+<P><A href="http://themesky.ir/post/category/35" target=_blank>کدهای متحرک سازی</A></P>
+<!--End Cod By Theme Sky-->
+
+
+حذف تبلیغات
+<script>
+document.getElementById('mihan_page_advert').style .display='none';
+</script>
+
+
+
+
+
+
+
+لینک
+<!-- Start Code By Love-skin.ir -->
+<style>
+a{color:#000000;text-decoration:none;transition-duration:.0s;-moz-transition-duration:.0s;}
+a:hover{color:#FF198C;background:url('');font-weight:Bold;font-style:none;text-decoration:none;text-shadow:0px 1px 1px;}
+</style>
+<!-- End Code By Love-skin.ir -->
+
+
+
+نورا اسکرول
+<!-- Scrollbar by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzar.ir/abzar/tools/scrollbar/jquery.min.js"></script><script>$(document).ready(function(){$("html").niceScroll({railalign:"right",cursorcolor:"#6900c2",cursorwidth:"10px",background:"",autohidemode:false,hidecursordelay:"800",cursoropacitymax:"0.7",cursorborder:"0",railpadding:{left:0,right:2}});});</script><div style="display:none"><h3><a href="http://www.1abzar.com/abzar/scrollbar.php">&#1575;&#1587;&#1705;&#1585;&#1608;&#1604; &#1576;&#1575;&#1585;</a></h3></div>
+<!-- Scrollbar by www.1abzar.com --->
+
+بارش برف
+<script type="text/javascript" src="http://bpmaker.giffy.me/userdata/user/49/49264/113/parts.js"></script><p style="text-align:center;margin:0px;"><a href="http://bpmaker.giffy.me/"></a></p><p style="text-align:center;margin:2px 0px 0px 0px;font-size:10px;padding:0;"><a style="text-decoration:none;margin:0;padding:0;" href="http://bpmaker.giffy.me/parts/userPartsId/307239/"></a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+بالابر
+<!-- Start Code By Love-skin.ir -->
+<script type="text/javascript" src="http://up.love-skin.ir/up/l-skin/tools/maker/top/top.jquery-min.js"></script>
+<script>var abzar = "<img src=http://s9.picofile.com/file/8318775542/%D8%A8%D8%A7%D9%84%D8%A7%D8%A8%D8%B1.png/>";</script>
+<script type="text/javascript" src="http://up.love-skin.ir/up/l-skin/tools/maker/top/scroll-topcontrol.js"></script>
+<!-- End Code By Love-skin.ir -->
+
+
+موس
+<style type="text/css">body, a:hover {cursor: url(http://cur.cursors-4u.net/others/oth-9/oth800.cur), progress !important;}</style><a href="http://www.cursors-4u.com/cursor/2012/02/04/pink-bow-tie-9.html" target="_blank" title="Pink Bow Tie"><img src="http://cur.cursors-4u.net/cursor.png" border="0" alt="Pink Bow Tie" style="position:absolute; top: 0px; right: 0px;" /></a>
+موزیک
+<script language="javascript" src="http://c2.sarayedownload.ir/state.js"></script><center><audio width:100%; autoplay autoplay loop><source src="http://up2www.com/uploads/2421EGOIST-mp3-pm-1.mp3" type="audio/mp3"></audio><br>
+
+آیکن
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319235600/%D8%A2%D9%84%DB%8C%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319237050/%D8%A2%D9%85%D9%87.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319237100/%D8%A8%D9%84%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319237126/%D8%A2%D9%86%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319237142/%D8%A7%D9%91%D9%85%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319237168/%D8%A2%DA%A9%D8%A7%D9%85%D9%87.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319318584/%D8%A7%D8%B3%DA%A9%D8%A7%D8%B1%D9%84%D8%AA.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319318618/%D8%A7%D9%84%DB%8C%D8%B3%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319318626/%D8%A7%D9%88%D9%85%DB%8C.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319318642/%D8%A7%DB%8C%D8%B3%D9%84%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319318650/%D8%A2%D9%86%DB%8C%D8%B3%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319318676/%D8%AA%D8%B3%D9%88%D8%A8%D8%A7%D8%B3%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319318684/%D8%AA%D9%88%DA%A9%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319318718/%D8%AC%D8%B1%D9%85%DB%8C.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319318734/%D8%AF%D9%86%DB%8C%D9%84.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319318768/%D8%B1%D8%A7%D8%A8%DB%8C%D9%86.gif"></p>
+<!-- End Code By Love skin -->
+
+
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319318784/%D8%B1%DB%8C%D8%B3%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319318800/%D8%B1%DB%8C%D9%86.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319318818/%D8%B1%DB%8C%D9%86_%D9%84%D9%86.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319318826/%D8%B3%D8%A7%DA%A9%D9%88.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319318842/%D8%B3%D9%88%D8%B1%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319318868/%D8%B3%D9%87%D9%88%D8%B1%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319318892/%D8%B4%D9%88%DA%AF%D9%88.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319318926/%D8%B4%DB%8C%D8%B1%DB%8C%D9%86.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319318934/%D8%B4%DB%8C%D8%B2%D9%88%D8%B1%D9%88.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319318942/%DA%A9%D8%A7%D8%B1%D9%84.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319318950/%DA%A9%D8%A7%D8%B1%D9%85%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319318976/%DA%A9%D8%A7%DB%8C.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319318984/%DA%A9%D8%B1%DB%8C%D8%B3.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319319018/%DA%A9%D9%86%D8%AA%D9%88.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319319034/%DA%A9%D9%88%D9%85%D9%87.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319319042/%DA%A9%DB%8C%D9%86%D9%88.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319319068/%DA%AF%D9%88%D9%85%DB%8C.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319319076/%D9%84%DB%8C%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319319100/%D9%84%DB%8C%D8%B3%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319319134/%D9%84%D8%A6%D9%88.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319319150/%D9%85%D8%A7%D8%B1%DB%8C.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319319176/%D9%86%DB%8C%D9%86%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319319192/%D9%87%D8%A7%DB%8C%D8%A7%D8%AA%D9%88.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319319200/%D9%87%DB%8C%D9%88%D8%B1%DB%8C.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319319242/%D9%87%DB%8C%D9%88%D9%86_%D8%B1%DB%8C%D9%88%D9%86.gif"></p>
+<!-- End Code By Love skin -->
+ 
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8322002876/%DB%8C%D8%A7%D8%B2%D8%A7.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s8.picofile.com/file/8319319268/%DB%8C%D9%88%D8%B1%D9%88.gif"></p>
+<!-- End Code By Love skin -->
+
+<!-- Start Code By Love skin -->
+<style>.icon-150-0{text-align:center;}.icon-150-0 img{border-radius:0px;width:150px;height:150px;}</style>
+<p class="icon-150-0"><img src="http://s9.picofile.com/file/8319319292/%DB%8C%D9%88%D8%B1%DB%8C.gif"></p>
+<!-- End Code By Love skin -->
+
+
+
+<iframe width="157" height="25" src="https://embed.wattpad.com/follow/legendary__lady" frameborder="0" allowfullscreen></iframe>
+                     							</div>  							<div class="sidebar_box_border_div"> 								<div class="mihan_logo"></div> 							</div> 					</div>  				</div> 			</div> 			 			<div id="footer_background"><img src="http://static.mihanblog.com//public/images/empty.gif"/></div> 								 		</div>				 		 	</body>  </html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'shirinhi.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.targetedwebtraffic.com" target="_blank">Buy Website Traffic</a> | <a href="https://www.seo25.com" target="_blank">Buy Targeted Website Traffic</a>
+    </div>
+</center>

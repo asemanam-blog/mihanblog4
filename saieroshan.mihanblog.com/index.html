@@ -1,0 +1,1271 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://saieroshan.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('1399/09/23');
+		/*576351*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[303]='11';commentCnt[304]='12';commentCnt[305]='19';commentCnt[306]='18';commentCnt[309]='11';commentCnt[310]='5';commentCnt[311]='12';commentCnt[317]='4';commentCnt[318]='8';commentCnt[321]='24';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[303]='0';
+mihanblogDisLikeArrCnt[303]='0';
+mihanblogLikeArrCnt[304]='0';
+mihanblogDisLikeArrCnt[304]='0';
+mihanblogLikeArrCnt[305]='0';
+mihanblogDisLikeArrCnt[305]='0';
+mihanblogLikeArrCnt[306]='0';
+mihanblogDisLikeArrCnt[306]='0';
+mihanblogLikeArrCnt[309]='0';
+mihanblogDisLikeArrCnt[309]='0';
+mihanblogLikeArrCnt[310]='0';
+mihanblogDisLikeArrCnt[310]='0';
+mihanblogLikeArrCnt[311]='1';
+mihanblogDisLikeArrCnt[311]='0';
+mihanblogLikeArrCnt[317]='0';
+mihanblogDisLikeArrCnt[317]='0';
+mihanblogLikeArrCnt[318]='0';
+mihanblogDisLikeArrCnt[318]='0';
+mihanblogLikeArrCnt[321]='0';
+mihanblogDisLikeArrCnt[321]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://saieroshan.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://saieroshan.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','238');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','1393/04/4');
+	
+	setStatVar('today_view','8');
+	setStatVar('yesterday_view','37');
+	
+	setStatVar('this_month_view','1217');
+	setStatVar('last_month_view','1341');
+
+	setStatVar('total_view','477351');
+	setStatVar('last_view_date','1399/09/23 (06:13)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://saieroshan.mihanblog.com/statupdate/?data[refereruri]=http://meslemah.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607830445&data[hash]=a25f15388d35261c50a367c21e34391c&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://saieroshan.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://saieroshan.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://saieroshan.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="description" content="این تارنما درباره شعر و شعرا و شاعران و اشعار معاصر و قدیمی و قصاید و غزلیات و شاعرانه هایی می باشد که به امید تاثیر گذاری ثبت شده اند." />
+	<meta name="keywords" content="شعر,شاعر,اشعار شاعرانه,شاعران معاصر,غزلیات,قصاید,poem,poet,love text,romans,sher,shoara,shaeran,shaeraneh,shaeran moaser,shere no,ghazal,ghaside,شعر نو و هایکو,"/> 
+	<link rel="alternate" type="application/rss+xml" title="سایه روشن" href="http://saieroshan.mihanblog.com/post/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="سایه روشن" href="http://saieroshan.mihanblog.com/post/atom/" />
+	<title>سایه روشن</title>
+	<!--
+	<link href='http://www.font-api.ir/css/B Koodak={font-api.ir}.css' rel='stylesheet'type='text/css'>
+	<link href='http://www.font-api.ir/css/B Narm={font-api.ir}.css' rel='stylesheet' type='text/css'>
+	<link href='http://www.font-api.ir/css/B Titr={font-api.ir}.css' rel='stylesheet' type='text/css'>
+	-->
+	<link href='http://www.font-api.ir/css/B Koodak={font-api.ir}.css' rel='stylesheet'type='text/css'>
+<style>
+	 /*-------------- reset ------------------ */
+
+html, body, div,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	background: transparent;
+}
+ol, ul {
+	list-style: none;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+}
+body { font:62.5%/1.7em Tahoma, Arial, sans-serif;/* font-size 1em = 10px */}
+input,textarea,select{font:1.2em Tahoma, Geneva, sans-serif; color:#000;}
+ 
+/*-------------- reset ------------------ */
+
+body {
+	background:#444 url(http://s2.picofile.com/file/7614358923/bg255.gif) fixed;
+	color: #000;
+	direction:rtl;
+	font-family:Tahoma, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	text-align:right;
+}
+
+a{text-decoration:none;}
+
+.base {
+	width:500px;
+	background:#fff url();
+}
+
+.header{
+	height:250px;
+	background:#fff url(http://s1.picofile.com/file/7881894294/saieroshan.jpg);
+	
+}
+
+.bar{
+	height:30px;
+	background:#999 url();
+	text-align:left;
+	padding-left:15px;
+	line-height:30px;
+}
+
+.bar a{
+	font-family:"B Koodak",BKoodak, Arial, Tahoma;
+	font-size: 14px;
+	color:#000;
+}
+
+/*-------------------sidebar-----------------------*/
+.sidebar {
+	float:right;
+	width:160px;
+	overflow: hidden;
+	background:#eee url(http://s3.picofile.com/file/7880589351/sidebar.jpg) repeat;
+}
+
+.menu {
+	margin:5px;
+	margin-top: 15px;
+	border:1px solid #ccc;
+	border-bottom:0px solid #fff;
+	font-family:Tahoma, Arial, "B Koodak", Bkoodak;
+	font-size:11px;
+	line-height:130%;
+	padding:2px;
+	color:#777;
+}
+
+.menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+.menu img{
+	max-width: 140px;
+}
+
+.menu ul a:hover { cursor:pointer;}
+
+.menu ul a li {
+	color: #04A4FF;
+	font-family:Tahoma, Arial, "B Koodak", Bkoodak;
+	font-size:11px;
+	padding: 0 5px;
+	margin:0;
+	line-height: 130%;	
+	border-bottom: 1px solid #ddd;
+	padding: 1px;
+}
+
+.menu ul li a {
+	color: #04A4FF;
+	font-family:Tahoma, Arial, "B Koodak", Bkoodak;
+	font-size:11px;
+	padding: 0 5px;
+	margin:0;
+	line-height: 130%;	
+}
+
+
+.menu ul a:hover li {
+	border:0px solid #000;
+	border-top:1px dashed #52BFFF;
+	border-bottom:1px dashed #52BFFF;
+	color:EA9C00;
+	line-height: 140%;
+	padding: 3px 5px;
+}
+
+.s-title {
+	height:20px;
+	line-height:20px;
+	padding:5px;
+	padding-bottom: 2px;
+	font-family:"B Koodak", Bkoodak, Arial, Tahoma;
+	font-size:15px;
+	font-weight:bold;
+	color:#555;
+}
+
+/*-------------------post-----------------------*/
+.post-base{
+	float:left;
+	width:330px;
+	background:#fff url();
+	
+}
+
+.post{
+	width:320px;
+	background:#fff url();
+	margin-top:20px;
+	margin-left:20px;
+	text-align:right;
+}
+
+.post-header{
+	height:30px;
+	padding:5px;
+	background:#BAE5FF url();
+	line-height:30px;
+	vertical-align:middle;
+}
+
+.post-header a{
+	color:#04A4FF;
+	font-family:"B Koodak",BKoodak, Arial, Tahoma;
+	font-weight:bold;
+}
+
+.post-body{
+	padding:10px;
+	background:#fff url(http://s3.picofile.com/file/7880588381/bg_post.gif) right;
+	font-size: 11px;
+	line-height: 130%;
+}
+
+.post-body img{
+	max-width: 310px;
+	overflow: hidden;
+	position: relative;
+	display: block;
+}
+
+.post-body a{
+	color: #FFAC04;
+}
+
+.post-body a:hover{
+	color:#FF2604;
+}
+
+.post-footer{
+	height:20px;
+	padding:3px;
+	padding-left:10px;
+	padding-right:10px;
+	background:#BAE5FF url();
+	font-size:10px;
+	color:#04A4FF;
+	line-height: 20px;
+}
+
+.post-footer a{
+	color: #FFAC04;
+	font-weight: bold;
+}
+
+.post-footer a:hover{
+	color:#FF2604;
+}
+
+/*--------------page------------------*/
+.page {
+	border: 0px solid #FFAC04;		
+	font-family:"B Koodak",BKoodak, Arial, Tahoma;
+	font-size: 14px;
+	padding:10px;
+	margin:10px;
+	margin-top:20px;
+}
+
+.page a{
+	border: 1px solid #FFC552;
+	background: #FFE8BA url();
+	font-family:"B Koodak",BKoodak, Arial, Tahoma;
+	font-size: 14px;
+	color: #EAA000;
+	margin-right:2px;
+}
+
+.page a:hover{
+	background: #FFD886 url();
+	font-weight: bold;
+	direction:rtl;
+}
+
+.page a:active{
+	background: #FFD886 url();
+	font-weight: bold;
+}
+
+/*----------------------footer------------------*/
+.footer{
+	height:40px;
+	background:#ccc url();
+	line-height: 40px;
+	font-family:"B Koodak",BKoodak, Arial, Tahoma;
+	font-size: 14px;
+	color:#999;
+	padding-right; 12px;
+	text-align:left;
+}
+
+.footer a{
+	font-family:"B Koodak",BKoodak, Arial, Tahoma;
+	font-size: 12px;
+	color:#fff;
+}
+</style>
+
+</head>
+<body topmargin="0" leftmargin="0" rightmargin="0" dir="rtl" onload="document.getElementById('mihan_page_advert').style.display='none'">
+
+<center><table class="base">
+	<tr><td>
+		<div class="header"></div>
+		<div class="bar"><a href="index.html" target="_self">صفحه نخست</a></div>
+	</td></tr>
+	<tr><td>
+		
+		<div class="post-base">
+			<center>
+					<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+					<div class="post">
+				<div class="post-header"><a href="http://saieroshan.mihanblog.com/post/321">سفر ایسگاه از قیصر امین پور</a></div>
+				<div class="post-body">
+					<p><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+<span style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;">قطار می رود….</span><br style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;"><span style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;">تو می روی….</span><br style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;"><span style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;">تمام ایستگاه میرود….</span><br style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;"><span style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;">و من چقدر ساده ام که سال های سال</span><br style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;"><span style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;">در انتظار تو ، کنار این قطار رفته ایستاده ام</span><br style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;"><span style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;">و همچنان….</span><br style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;"><span style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;">به نرده های ایستگاه رفته ، تکیه داده ام<br><br><br><font color="#990000" style="font-style: italic;">پیمان:</font><font color="#666666"> <b>و من چقدر ساده ام&nbsp;</b></font></span><span style="font-family: Tahoma, sans-serif; font-size: 13px; line-height: 20px; text-align: right;"><font color="#666666"><b>به نرده های ایستگاه رفته ، تکیه داده ام</b></font></span>
+
+ 					<br></p>
+				</div>
+				<div class="post-footer">
+					توسط: پیمان  &nbsp;&nbsp; 
+					تاریخ: 1393/04/4 &nbsp;&nbsp; 
+					<BlogComment><a target="_self" href="javascript:newComment(321)" >نظرات (<script>setCommentCnt(321)</script>)</a></BlogComment> 
+				</div>
+			</div>
+						<div class="post">
+				<div class="post-header"><a href="http://saieroshan.mihanblog.com/post/318">شعر درخت از شفیعی کدکنی</a></div>
+				<div class="post-body">
+					<p>زیباتر از درخت در اسفند ماه چیست؟<br>بیداریِ شکفته،پس از شوکراِن مرگ.<br><br>زیباتر از درخت&nbsp; در اسفند ماه چیست؟<br>زیر درفش&nbsp; صاعقه و تیشه تگرگ<br><br>زیباتر از درخت در اسفند ماه چیست؟<br>عریانی و رهایی و تصویر بار و برگ.<br><br>
+
+
+ 					<br></p>
+				</div>
+				<div class="post-footer">
+					توسط: پیمان  &nbsp;&nbsp; 
+					تاریخ: 1392/12/22 &nbsp;&nbsp; 
+					<BlogComment><a target="_self" href="javascript:newComment(318)" >نظرات (<script>setCommentCnt(318)</script>)</a></BlogComment> 
+				</div>
+			</div>
+						<div class="post">
+				<div class="post-header"><a href="http://saieroshan.mihanblog.com/post/317">تغییری ناگزیر ناگریز</a></div>
+				<div class="post-body">
+					<p>
+کلا در روزگاری زندگی میکنیم پر از دود و شبهه؛نه دیگه ارزشها و هنجارها ارزشمند به مانند سابق و نه ضد ارزشها و ناهنجارها به مانند سابق قبیح.<br>رسانه ملی این قبیل اتفاقات فرهنگی یا شایدم اخلاقی یا حتی دینی رو موازی با آمدن ماهواره و جنگ نرم قدرتهای غربی و در صدر اونها آمریکا شیطان بزرگ می داند.<br>اما راقم به عنوان یک جوان امروزی مصداق پیر پیرم گرچه شیر .... از همین آدمهای که ارزشها&nbsp; قداسات<br>و ضد ارزشها قباحت اولیه را برای او در ذهن و اخلاقیات اعمالیات ندارد دارای ظاهری زیبا و باطنی مریض مصداق (فی قلبهم مرض) یک چیز&nbsp; می خواهد بگوید.<br>در دوران ما<br>یک چیزی دیگر انگار خودش نیست ... یک چیز انگار بین ما گم شده.<br>&nbsp;ناخود آگاه مولانا یادم می آید:<br><br>ز کجا آمده ای میدانی؟<br>ز میان حرم سبحانی<br>یاد کن هیچ به یادت آید<br>آن مقامات خوش روحانی؟<br>پس فراموش شدستت آنها<br><font color="#660000"><b>لاجرم خیره و سرگردانی</b></font><br>جان فروشی به یکی مشتی خاک<br>این چه بیع است بدین ارزانی!<br>بازده خاک و بدان قیمت خود<br>نی غلامی، ملک سلطانی<br>جهت تو ز فلک آمده اند<br>خوب رویان خوش پنهانی<br><br>
+
+
+
+
+ 					<br></p>
+				</div>
+				<div class="post-footer">
+					توسط: پیمان  &nbsp;&nbsp; 
+					تاریخ: 1392/12/22 &nbsp;&nbsp; 
+					<BlogComment><a target="_self" href="javascript:newComment(317)" >نظرات (<script>setCommentCnt(317)</script>)</a></BlogComment> 
+				</div>
+			</div>
+						<div class="post">
+				<div class="post-header"><a href="http://saieroshan.mihanblog.com/post/311">دو خط شفیعی کدکنی</a></div>
+				<div class="post-body">
+					<p>
+
+<div><div>دیروز&nbsp;</div><div>چون دو واژه به یک معنی</div><div>از ما دوگانه</div><div>هریک</div><div>سرشار دیگری</div><div>اوج یگانگی</div><div>و امروز</div><div>چون دو خط موازی</div><div>&nbsp;در امتداد یک راه&nbsp;</div><div>یک شهر&nbsp;</div><div>یک افق</div><div>بی نقطه تلاقی و دیدار</div><div>حتی،</div><div>در جاودانگی</div><div><br></div></div><div><br><i><font color="#cc0000">منبع:</font><font color="#333333"> &nbsp;آیینه ای برا صداها</font>&nbsp;ص 209</i></div>
+
+
+
+
+
+
+ 					<br></p>
+				</div>
+				<div class="post-footer">
+					توسط: پیمان  &nbsp;&nbsp; 
+					تاریخ: 1392/05/18 &nbsp;&nbsp; 
+					<BlogComment><a target="_self" href="javascript:newComment(311)" >نظرات (<script>setCommentCnt(311)</script>)</a></BlogComment> 
+				</div>
+			</div>
+						<div class="post">
+				<div class="post-header"><a href="http://saieroshan.mihanblog.com/post/310">مناجات از شفیعی کدکنی</a></div>
+				<div class="post-body">
+					<p>
+خدایا!<br><br>&nbsp; &nbsp; خدایا!<br><br>تو با آن بزرگی_در آن آسمانها_<br>چنین آرزویی بدین کوچکی را&nbsp;<br><br>توانی برآورد<br><br>آیا؟<br><br><i><font color="#990000">منع:</font><font color="#333333"> آیینه ای برای صداها صفحه 208</font></i><br><br>
+
+ 					<br></p>
+				</div>
+				<div class="post-footer">
+					توسط: پیمان  &nbsp;&nbsp; 
+					تاریخ: 1392/05/18 &nbsp;&nbsp; 
+					<BlogComment><a target="_self" href="javascript:newComment(310)" >نظرات (<script>setCommentCnt(310)</script>)</a></BlogComment> 
+				</div>
+			</div>
+						<div class="post">
+				<div class="post-header"><a href="http://saieroshan.mihanblog.com/post/309">یکی بود یکی نبود رضا کاظمی</a></div>
+				<div class="post-body">
+					<p>
+
+<div align="center"><img src="http://www.uploadtak.com/images/i381_katuzian11.jpg" alt="" height="221" width="179"><br></div><br>با « یکی بود یکی نبود » شروع می‌شود این قصه<br>با یکی ماند یکی نماند، تمام.<br>یکی، من بودم یا تو؛ مهم نیست<br>مهم قصه‌ای‌ست که تمام می‌شود!
+
+
+<br><br><br><br><br><br><br><font color="#333333"><i><font color="#660000">پیمان:</font><br><br>........... و خدای که در این نزدیکی ست.</i></font><br><br><font color="#660000">نقاشی از استاد: </font><font color="#333333">کاتوزیان&nbsp; &nbsp;</font> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <br>
+
+
+
+ 					<br></p>
+				</div>
+				<div class="post-footer">
+					توسط: پیمان  &nbsp;&nbsp; 
+					تاریخ: 1392/01/7 &nbsp;&nbsp; 
+					<BlogComment><a target="_self" href="javascript:newComment(309)" >نظرات (<script>setCommentCnt(309)</script>)</a></BlogComment> 
+				</div>
+			</div>
+						<div class="post">
+				<div class="post-header"><a href="http://saieroshan.mihanblog.com/post/306">شعری از مهدیه لطیفی</a></div>
+				<div class="post-body">
+					<p>
+<br>حلوا حلوا می کنمت<br><br>شیرین نمی شوی<br><br>همیشه تلخی<br><br>همیشه عاقلی<br>.<br>.<br>.<br>.<br>.<br><font color="#990000"><br></font><i><font color="#666666"><font color="#990000">پیمان:</font> با آرزوی شادی و نیک بختی برای تمای شما عزیزان<br><font color="#660000">نقاشی از:</font>استاد ملکی</font></i>
+
+
+
+
+ 					<br></p>
+				</div>
+				<div class="post-footer">
+					توسط: پیمان  &nbsp;&nbsp; 
+					تاریخ: 1391/12/24 &nbsp;&nbsp; 
+					<BlogComment><a target="_self" href="javascript:newComment(306)" >نظرات (<script>setCommentCnt(306)</script>)</a></BlogComment> 
+				</div>
+			</div>
+						<div class="post">
+				<div class="post-header"><a href="http://saieroshan.mihanblog.com/post/305">متنی از شمس لنگرودی</a></div>
+				<div class="post-body">
+					<p>
+
+
+
+
+
+
+<br><br>... ای نهنگ<br><br>در تقدیر آب<br><br>تفاوت چندانی<br><br>میان تو و مار ماهیان نیست.<br><font color="#666666"><i><br><font color="#990000"><br><br><br><br><br><br><br><br><br><br>پیمان:</font>تقدیم به اونای که اول پی نوشتشون پلاس می ذارند</i></font><br><font color="#666666"><i><br><font color="#660000">نقاشی:</font> ارسالی از خانم مهدیه معلم هنر<br></i></font><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 					<br></p>
+				</div>
+				<div class="post-footer">
+					توسط: پیمان  &nbsp;&nbsp; 
+					تاریخ: 1391/12/11 &nbsp;&nbsp; 
+					<BlogComment><a target="_self" href="javascript:newComment(305)" >نظرات (<script>setCommentCnt(305)</script>)</a></BlogComment> 
+				</div>
+			</div>
+						<div class="post">
+				<div class="post-header"><a href="http://saieroshan.mihanblog.com/post/304">تکه ای از رضا کاظمی</a></div>
+				<div class="post-body">
+					<p>
+
+
+
+<br>گاهی چتر را باید دستِ باران داد<br>روی سرِ خودش بگیرد<br>و ما<br>جایش بباریم!<br><font color="#666666"><i><br></i></font><font color="#333333"><font color="#666666"><i><font color="#660000">نقاشی از:</font> پینو(ایتالیا)<br><br></i></font></font><br><a href="http://4tik6.mihanblog.com/post/177" target="_blank" title="آجیل میخری؟(لایک)">آجیل میخری؟(لایک)</a><font color="#333333"><font color="#666666"><i><font color="#990000"><br><br>پیمان:</font><br>سراغ من اگر می گیرید،<br>پشت هیچستانم‌.<br><br>پشت هیچستان جایی است‌......<br></i></font><br><br></font>
+
+
+
+
+
+
+
+
+
+
+ 					<br></p>
+				</div>
+				<div class="post-footer">
+					توسط: پیمان  &nbsp;&nbsp; 
+					تاریخ: 1391/12/10 &nbsp;&nbsp; 
+					<BlogComment><a target="_self" href="javascript:newComment(304)" >نظرات (<script>setCommentCnt(304)</script>)</a></BlogComment> 
+				</div>
+			</div>
+						<div class="post">
+				<div class="post-header"><a href="http://saieroshan.mihanblog.com/post/303">متنی از  عباس معروفی</a></div>
+				<div class="post-body">
+					<p>این دنیای کوچک و هفت میلیارد آدم!<br>یعنی تو باور می کنی؟<br>شمرده ای؟<br>کی شمرده است؟<br>جز سیاستمدارها<br>دیده ای کسی آدم بشمرد؟<br>باور نکن<br>نارنجی!<br>باور نکن<br>سبز آبی کبود من!<br>باور کن<br>همه ی دنیا فقط تویی<br>و برخی دوستان<br>بقیه هم تکراری اند<br><br><font color="#666666"><i><font color="#660000"><br><br>پیمان:</font> گاهی دوست داری از زبان عباس معروفی حرف بزنی<br></i></font><br><br>
+
+
+
+
+
+
+
+
+ 					<br></p>
+				</div>
+				<div class="post-footer">
+					توسط: پیمان  &nbsp;&nbsp; 
+					تاریخ: 1391/12/6 &nbsp;&nbsp; 
+					<BlogComment><a target="_self" href="javascript:newComment(303)" >نظرات (<script>setCommentCnt(303)</script>)</a></BlogComment> 
+				</div>
+			</div>
+						
+							<div class="page">صفحات (24): <a href="http://saieroshan.mihanblog.com/page/1">&nbsp;<b>1</b>&nbsp;</a><a href="http://saieroshan.mihanblog.com/page/2">&nbsp;<span>2</span>&nbsp;</a><a href="http://saieroshan.mihanblog.com/page/3">&nbsp;<span>3</span>&nbsp;</a><a href="http://saieroshan.mihanblog.com/page/4">&nbsp;<span>4</span>&nbsp;</a><a href="http://saieroshan.mihanblog.com/page/5">&nbsp;<span>5</span>&nbsp;</a><a href="http://saieroshan.mihanblog.com/page/6">&nbsp;<span>6</span>&nbsp;</a><a href="http://saieroshan.mihanblog.com/page/7">&nbsp;<span>7</span>&nbsp;</a><a href="http://saieroshan.mihanblog.com/page/8">&nbsp;<i>...</i>&nbsp;</a>  </div>
+						</center>
+		</div>
+		
+		
+		
+		
+		<div class="sidebar">
+			
+			<div class="menu"><div class="s-title">درباره</div>
+				<img src="../static.mihanblog.com/public/user_data/web_photo/193/576351.jpg@5764"  />				این تارنما درباره ی شعر و نوشته از هر نوع و سبکی و برای هر دوره ای می باشد.<br />
+از شعرها و متون کلاسیک گذشته گرفته تا شعرهای به اصطلاح نو و مینیمال نویسی های امروزی.<br />
+تنها نقطه اشتراک اشعار و متون ثبت شده زیبایی و تاثیرگذاری آنهاست. <br />
+امیدواریم این اشعار و متون همان طور که روی ما تاثیرگذاشتند برای شما نیز جالب باشند.<br />
+			</div>
+			
+			
+		<form id="frm-16076246935fd267f56c6fb" method="post" action="http://saieroshan.mihanblog.com/poll/new/fid/16076246935fd267f56c6fb/atrty/1607624693/avrvy/0/key/a9ad0e96678aa8da503c9dfe16126011/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="152401" id="data[pollid]" />		
+			<div class="menu"><div class="s-title">نظرسنجی</div>
+			<ul>
+				اشعار کدام شاعر بیشتر به دلتان می نشیند؟								<li><label><input type="checkbox"  name="data[v1]" id="v1" value="1" />قیصر امین پور</label></li>
+								<li><label><input type="checkbox"  name="data[v2]" id="v2" value="1" />سهراب سپهری</label></li>
+								<li><label><input type="checkbox"  name="data[v3]" id="v3" value="1" />فروغ فرخزاد</label></li>
+								<li><label><input type="checkbox"  name="data[v4]" id="v4" value="1" />نیما یوشیج</label></li>
+								<li><label><input type="checkbox"  name="data[v5]" id="v5" value="1" />احمد شاملو</label></li>
+								<li><label><input type="checkbox"  name="data[v6]" id="v6" value="1" />هوشنگ ابتهاج</label></li>
+								<li><label><input type="checkbox"  name="data[v7]" id="v7" value="1" />مهدی اخوان ثالث</label></li>
+								<li><label><input type="checkbox"  name="data[v8]" id="v8" value="1" />حمید مصدق</label></li>
+								<li><label><input type="checkbox"  name="data[v9]" id="v9" value="1" />فریدون مشیری</label></li>
+								<li><label><input type="checkbox"  name="data[v10]" id="v10" value="1" />شاعران خارجی</label></li>
+								<li><center><input type="submit" value="کدوم؟" id="button"/></center></li>
+			</ul>
+			</div>
+			
+		<input type="hidden" name="frm-id" value="16076246935fd267f56c6fb" id="frm-id" /></form>			
+						<div class="menu"><div class="s-title">دسته بندی</div>
+			<ul>
+								<a href="http://saieroshan.mihanblog.com/post/category/28" target="_self"><li>هوشنگ ابتهاج(ه-الف سایه) (8)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/31" target="_self"><li>الهی نامه(حسن زاده) (1)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/24" target="_self"><li>شل سیلور استاین (2)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/27" target="_self"><li>فرامرز عرب عامری (2)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/25" target="_self"><li>واچسلاو کوپریانوف (2)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/26" target="_self"><li>مهدی اخوان ثالث (4)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/15" target="_self"><li>رابیندرانات تاگور (18)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/9" target="_self"><li>سهراب سپهری (6)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/20" target="_self"><li>سیمین بهبهانی (1)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/8" target="_self"><li>سعدی شیرازی (3)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/10" target="_self"><li>ویلیام شکسپیر (1)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/16" target="_self"><li>فریدون مشیری (1)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/7" target="_self"><li>پروین اعتصامی (2)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/13" target="_self"><li>سعید بیابانکی (3)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/30" target="_self"><li>بابا طاهر عریان (2)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/1" target="_self"><li>قیصر امین پور (16)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/18" target="_self"><li>علی شریعتی (17)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/17" target="_self"><li>حسین پناهی (11)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/22" target="_self"><li>استاد شهریار (6)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/23" target="_self"><li>صادق هدایت (1)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/12" target="_self"><li>صائب تبریزی (6)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/33" target="_self"><li>حمید مصدق (2)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/11" target="_self"><li>رهی معیری (7)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/14" target="_self"><li>فروغ فرخزاد (6)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/35" target="_self"><li>منطق الطیر (6)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/4" target="_self"><li>فاضل نظری (6)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/5" target="_self"><li>داستان (8)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/6" target="_self"><li>سخنان (4)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/34" target="_self"><li>مولانا (1)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/29" target="_self"><li>حافظ (2)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/21" target="_self"><li>سایر شاعران (65)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/3" target="_self"><li>خودسروده پیمان (11)</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/category/2" target="_self"><li>دلسروده بهنام.س (10)</li></a>
+							</ul>
+			</div>
+						
+						<div class="menu"><div class="s-title">بایگانی</div>
+			<ul>
+								<a href="http://saieroshan.mihanblog.com/post/archive/1393/4" target="_self" title="1"><li> تیر 1393</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/archive/1392/12" target="_self" title="2"><li> اسفند 1392</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/archive/1392/5" target="_self" title="2"><li> مرداد 1392</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/archive/1392/1" target="_self" title="1"><li> فروردین 1392</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/archive/1391/12" target="_self" title="4"><li> اسفند 1391</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/archive/1391/11" target="_self" title="5"><li> بهمن 1391</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/archive/1391/10" target="_self" title="5"><li> دی 1391</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/archive/1391/9" target="_self" title="9"><li> آذر 1391</li></a>
+							</ul>
+			</div>
+						
+						<div class="menu"><div class="s-title">آخرین مطالب</div>
+			<ul>
+								<a href="http://saieroshan.mihanblog.com/post/321" title="1393/04/4" target="_self"><li>سفر ایسگاه از قیصر امین پور</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/318" title="1392/12/22" target="_self"><li>شعر درخت از شفیعی کدکنی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/317" title="1392/12/22" target="_self"><li>تغییری ناگزیر ناگریز</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/311" title="1392/05/18" target="_self"><li>دو خط شفیعی کدکنی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/310" title="1392/05/18" target="_self"><li>مناجات از شفیعی کدکنی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/309" title="1392/01/7" target="_self"><li>یکی بود یکی نبود رضا کاظمی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/306" title="1391/12/24" target="_self"><li>شعری از مهدیه لطیفی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/305" title="1391/12/11" target="_self"><li>متنی از شمس لنگرودی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/304" title="1391/12/10" target="_self"><li>تکه ای از رضا کاظمی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/303" title="1391/12/6" target="_self"><li>متنی از  عباس معروفی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/302" title="1391/11/18" target="_self"><li>افسانه از فاضل نظری</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/301" title="1391/11/15" target="_self"><li>بی رودربایستی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/300" title="1391/11/11" target="_self"><li>&quot;برنده&quot;و&quot;بازنده&quot;</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/299" title="1391/11/7" target="_self"><li>کازابلانکا از یغما گلرویی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/298" title="1391/11/3" target="_self"><li>اتوبوس ظلمت</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/297" title="1391/10/26" target="_self"><li>بی ربط ولی با ربط روزگار</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/296" title="1391/10/19" target="_self"><li>&quot;برنده&quot;و&quot;بازنده&quot;</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/295" title="1391/10/12" target="_self"><li> مردم من نیز از &quot;لنگستون هیوز&quot;</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/294" title="1391/10/7" target="_self"><li>یاداشتی از &quot;احمد شاملو&quot;</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/293" title="1391/10/2" target="_self"><li>ایمان بیاوریم به آغاز فصل سرد فروغ فروخزاد</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/292" title="1391/09/27" target="_self"><li>شعری از حسین منزوی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/291" title="1391/09/25" target="_self"><li>اولین وآخرین از حسین پناهی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/290" title="1391/09/20" target="_self"><li>حسین پناهی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/289" title="1391/09/17" target="_self"><li>شعر ار شاعری مجهول</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/288" title="1391/09/14" target="_self"><li>می دانی بعضی... از حسین پناهی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/287" title="1391/09/13" target="_self"><li>شعری از شفیعی کدکنی &quot; سیاسی&quot;</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/286" title="1391/09/8" target="_self"><li>&quot;یک زنبق هفتاد و یک برگ&quot; از سعید بیابانکی</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/285" title="1391/09/7" target="_self"><li>&quot;به یک پلک تو می بخشم&quot;  زنده یاد نجمه زارع </li></a>
+								<a href="http://saieroshan.mihanblog.com/post/284" title="1391/09/5" target="_self"><li>&quot;نی نامه &quot;از قیصر امین پور</li></a>
+								<a href="http://saieroshan.mihanblog.com/post/283" title="1391/08/14" target="_self"><li>&quot;گریه کردم...&quot; از زنده یاد نجمه زارع   </li></a>
+							</ul>
+			</div>
+						
+						<div class="menu"><div class="s-title">زندگینامه</div>
+			<ul>
+								<a href="http://saieroshan.mihanblog.com/extrapage/biography_mahdi_hamidi_shirazi" target="_self"><li>زندگینامه مهدی حمیدی شیرازی</li></a>
+								<a href="http://saieroshan.mihanblog.com/extrapage/biography_sheldon_alan_silverstein" target="_self"><li>زندگینامه شل سیلور استاین</li></a>
+								<a href="http://saieroshan.mihanblog.com/extrapage/biography_wjatschslaw_kuprijanow" target="_self"><li>زندگینامه واچسلاو کوپریانوف</li></a>
+								<a href="http://saieroshan.mihanblog.com/extrapage/biography_hoshang_abthaj" target="_self"><li>زندگی نامه هوشنگ ابتهاج</li></a>
+								<a href="http://saieroshan.mihanblog.com/extrapage/biography_mehdi_akhavan_sales" target="_self"><li>زندگینامه مهدی اخوان ثالث</li></a>
+								<a href="http://saieroshan.mihanblog.com/extrapage/biography_william_shakespeare" target="_self"><li>زندگینامه ویلیام شکسپیر</li></a>
+								<a href="http://saieroshan.mihanblog.com/extrapage/biography_rabindranath_tagore" target="_self"><li>زندگینامه رابیندرانات تاگور</li></a>
+								<a href="http://saieroshan.mihanblog.com/extrapage/biography_fereydoon_moshiri" target="_self"><li>زندگینامه فریدون مشیری</li></a>
+								<a href="http://saieroshan.mihanblog.com/extrapage/biography_edith_sodergran" target="_self"><li>زندگینامه ادیت سودرگران</li></a>
+								<a href="http://saieroshan.mihanblog.com/extrapage/biography_gheysar_aminpour" target="_self"><li>زندگینامه قیصر امین پور</li></a>
+								<a href="http://saieroshan.mihanblog.com/extrapage/biography_forough_farrokhzad" target="_self"><li>زندگینامه فروغ فرخزاد</li></a>
+							</ul>
+			</div>
+						
+						<div class="menu"><div class="s-title">دوستان</div>
+			<ul>
+								<a href="http://acnc.mihanblog.com/" title="(سحر)" target="_blank"><li>به قلم آنهاکه به بهشت نمیروند</li></a>
+								<a href="http://behtarinbahane.mihanblog.com/" title="مهلا و آقا" target="_blank"><li>قشنگترین بهونه برای زندگی</li></a>
+								<a href="http://ostadvashagerd.persianblog.ir/" title="(سید جمال)" target="_blank"><li>هجووطنزدرادبیاتپارسی</li></a>
+								<a href="http://likeme.mihanblog.com/" title="(نگار)" target="_blank"><li>تمام لحظه های بی تو</li></a>
+								<a href="http://najvaye-tanhai.blogsky.com/" title="(مریم بزرگمهر)" target="_blank"><li>خدا برای من کافیست</li></a>
+								<a href="http://rangys.parsiblog.com/" title="(یاسمن)" target="_blank"><li>سایه گاه خنک تنهایی</li></a>
+								<a href="http://sahba110.blogfa.com/" title="(صهبا)" target="_blank"><li>دنیا هیچ فرقی نکرده</li></a>
+								<a href="http://sereeno0.blogfa.com/" title="ضعیفه" target="_blank"><li>کاموریژهای یک قرلی</li></a>
+								<a href="http://pe2010.mihanblog.com/" title="(پژمان)" target="_blank"><li>سرزمین نوشته ها</li></a>
+								<a href="http://hekayatydegar.mihanblog.com/" title="مهشید" target="_blank"><li>بی نهایت هیچ ها</li></a>
+								<a href="http://www.titi-mz.mihanblog.com/" title="(مانلی)" target="_blank"><li>خیس تر از باران</li></a>
+								<a href="http://sangorisheh.persianblog.ir" title="سنگ وریشه (رها ، سجاد)" target="_blank"><li>این بود زندگی؟!</li></a>
+								<a href="http://naghme-baran.blogfa.com/" title="(مژده ژیان)" target="_blank"><li>نغمه های باران</li></a>
+								<a href="http://azda.mihanblog.com/" title="(لیدوما)" target="_blank"><li>حرفهای ناتمام</li></a>
+								<a href="http://ama-to-bavar-nakon.mihanblog.com/" title="(تانیش)" target="_blank"><li>اما تو باور نکن</li></a>
+								<a href="http://deardiaries.persianblog.ir/" title="ملیحه" target="_blank"><li>deardiaries</li></a>
+								<a href="http://belletrist.mihanblog.com/" title="پگاه" target="_blank"><li>تلخ وشیرین</li></a>
+								<a href="http://bi-seda.persianblog.ir/" title="(سایه)" target="_blank"><li>سایه ی من</li></a>
+								<a href="../sahar-ariyayi.mihanblog.com/index.html" title="(سحر)" target="_blank"><li>جاده خیس</li></a>
+								<a href="../ghasedak111.mihanblog.com/index.html" title="(مهلا)" target="_blank"><li>اما...من که</li></a>
+								<a href="http://getartanha.mihanblog.com/" title="(آیلا)" target="_blank"><li>گیتار تنهای</li></a>
+								<a href="http://zluxe.mihanblog.com/" title="(زهرا)" target="_blank"><li>تنها در تنها</li></a>
+								<a href="../meslemah.mihanblog.com/index.html" title="(رویا)" target="_blank"><li>دل سوخته</li></a>
+								<a href="http://4tik6.mihanblog.com/" title="(ویکی)" target="_blank"><li>بی جوابی</li></a>
+								<a href="http://shadkami.blogsky.com/" title="(پروین خودمون)" target="_blank"><li>شادکامی</li></a>
+								<a href="http://sootedellan.mihanblog.com/" title="(امین)" target="_blank"><li>سوته دل</li></a>
+								<a href="http://khat0khal.blogfa.com/" title="(فاطمه)" target="_blank"><li>خط وخال</li></a>
+								<a href="http://www.rozegarejavani.mihanblog.com/" title="(امید)" target="_blank"><li>حرف دل</li></a>
+								<a href="http://dar-tariky.persianblog.ir" title="(ندا)" target="_blank"><li>تنها نگاه</li></a>
+								<a href="http://ghasedakeroya.mihanblog.com/" title="(رویا قاصدک)" target="_blank"><li>قاصدک</li></a>
+								<a href="http://yekhekayat.blogfa.com/" title="(آیدای عزیز)" target="_blank"><li>راز آتش</li></a>
+								<a href="http://www.savour.blogfa.com/" title="(شیدا فراهانی)" target="_blank"><li>مزمزه</li></a>
+								<a href="http://away.persianblog.ir/" title="(nobody)" target="_blank"><li>Away</li></a>
+								<a href="http://rains-melody.mihanblog.com/" title="(پری)" target="_blank"><li>باران</li></a>
+							</ul>
+			</div>
+						
+						
+						<div class="menu"><div class="s-title">آمار بازدید</div>
+			<ul>
+				<li>بازدید امروز : <a href="index.html#"><script>getStatVar('today_view');</script></a></li>
+				<li>بازدید دیروز : <a href="index.html#"><script>getStatVar('yesterday_view');</script></a></li>
+				<li>بازدید این ماه : <a href="index.html#"><script>getStatVar('this_month_view');</script></a></li>
+				<li>بازدید ماه قبل : <a href="index.html#"><script>getStatVar('last_month_view');</script></a></li>
+				<li>بازدید کل : <a href="index.html#"><script>getStatVar('total_view');</script></a></li>
+				<li>تعداد مطالب : <a href="index.html#"><script>getStatVar('total_post');</script></a></li>
+			</ul>
+			</div>
+					</div>
+	</td></tr>
+	<tr><td class="footer">
+			طراحی شده توسط:
+			<a href="http://ghami.mihanblog.com">بهنام غمی</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	</td></tr>
+</table></center>
+
+</body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'saieroshan.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

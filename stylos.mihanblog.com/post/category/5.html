@@ -1,0 +1,987 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*852554*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[95]='13';commentCnt[103]='19';commentCnt[273]='9';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[95]='0';
+mihanblogDisLikeArrCnt[95]='0';
+mihanblogLikeArrCnt[103]='0';
+mihanblogDisLikeArrCnt[103]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://stylos.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://stylos.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','419');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','یکشنبه 25 خرداد 1399');
+	
+	setStatVar('today_view','16');
+	setStatVar('yesterday_view','75');
+	
+	setStatVar('this_month_view','1382');
+	setStatVar('last_month_view','1364');
+
+	setStatVar('total_view','195893');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (05:12)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://stylos.mihanblog.com/statupdate/?data[refereruri]=http://stylos.mihanblog.com/&data[postid]=&data[requesturi]=/post/category/5&data[sdate]=1607824266&data[hash]=6d403199747f0b11371fecf483dfae6c&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://stylos.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://stylos.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://stylos.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://stylos.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://stylos.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://stylos.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://stylos.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://stylos.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://stylos.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://stylos.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://stylos.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://stylos.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://stylos.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://stylos.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://stylos.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://stylos.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://stylos.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://stylos.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>خــــــ نویس ــــود - مطالب موجودی به نام سرباز</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="designer" content="Blog Skin">
+<meta name="author" content="بـــــهنام ">
+<meta name="designerUrl" content="http://www.blogskin.ir/">
+<meta http-equiv="expires" content="never">
+<script src="http://blogskin.ir/blog.js" language="javascript"></script>
+<meta name="description" content="خــــــ نویس ــــود - خودنویـــــس  یا   خود  نویــــس  مهم اینه که حرفای خودمه - خــــــ نویس ــــود">
+<meta name="keywords" content="خــــــ نویس ــــود,stylos, Blog, Weblog, Iran, Farsi, Weblogs, Blogskin">
+<link rel="alternate" type="application/rss+xml" title="خــــــ نویس ــــود" href="../rss/index.html" />
+<link rel="alternate" type="application/atom+xml" title="خــــــ نویس ــــود" href="../atom/index.html" />
+<link href="http://blogskins.ir/48/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div align=center><div class="ax"><div style="width:1003">
+<div class=main>
+<div class=top>
+<div class=top-left>
+<div class=blogskin2>
+<a href="../../index.html" title="صفحه اول"><img src="http://blogskins.ir/48/x.gif" width="45" height="50" alt="صفحه اول"></a>
+<a href="javascript:messageForm()" title="تماس با ما"><img src="http://blogskins.ir/48/x.gif" width="45" height="50" alt="تماس با ما"></a>
+<a href="../rss/index.html" title="RSS"><img src="http://blogskins.ir/48/x.gif" width="45" height="50" alt="RSS"></a>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="http://www.blogskin.ir" target="_blank" title="قالب وبلاگ"><img src="http://blogskins.ir/48/x.gif" width="60" height="40" alt="قالب وبلاگ"></a>
+</div>
+<div class=blogskin3>
+<form method="Get" action="http://google.com/search" class=sch><input name="sitesearch" value="stylos.mihanblog.com" type="hidden">
+<input type="text" name="q" class=txt>&nbsp;&nbsp;<input type="submit" value=" " class=but>
+</form>
+<div class=tarikh><script language="javascript" src="http://blogskins.ir/date.php"></script></div>
+</div>
+</div>
+<div class=top-sp><div class=titr>خــــــ نویس ــــود</div>
+<div class=des>مینویسم تا خودم به خودم نزدیک تر شم...</div>
+</div>
+</div>
+
+<div class=post>
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=tpost>
+<div class=date><span style="width:195">بـــــهنام </span>
+<span style="width:240">یکشنبه 17 آذر 1392</span>
+<span style="width:80"><a target="_self" href="javascript:newComment(273)" >نظرات (<script>setCommentCnt(273)</script>)</a></span> 
+</div>
+<div class=tpost2><a href="../273.html">من و سربازیم - 3</a></div>
+</div>
+<div class=xpost><div class=xxpost><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+<div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://gooyaup.com/uploads/gooya_13454440281.jpg" alt=""></div><div style="text-align: right;"><br></div><div style="text-align: center;"><br></div><div style="text-align: right;"><br></div><div style="text-align: center;"><p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">بازم من و بازم نوشتن خاطرات
+نصفه و نیمه سربازیم<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">برای یادآوری اتفاقات قبلی
+میتونید برید تو بخش موضوعات قسمت "&nbsp;<a href="5.html" target="_blank" title="">موجودی به نام سرباز</a>&nbsp;" رو بخونید<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">نظری هم بود تو قسمت نظرات همین
+مطلب بگید<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">دیگه توضیحات بسه و برم سراغ
+ادامه خاطراتم که حس همون روز و همون لحظه اس و ممکنه فحشی چیزی هم توش باشه و بی سانسور میگم!<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span style="font-family: 'B Nazanin'; font-size: 14pt; line-height: 107%;"><font color="#ff0000">90/7/7 ساعت 6:05</font></span></p><p class="MsoNormal" dir="RTL" style="text-align: right;"><span style="font-family: 'B Nazanin'; font-size: 14pt; line-height: 107%;"><font color="#cc0000">پنجشنبه</font></span></p><p class="MsoNormal" dir="RTL" style="text-align: right;"><span style="font-family: 'B Nazanin'; font-size: 14pt; line-height: 107%;">امروز از ظهر بیکار بودم اما
+الان حوصله ام اومد بنویسم.درگیری ذهنی دارم. امروز دیدم این نظام چه نظمی داره!</span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">بخاطر گم شدن شناسنامه و کارت
+ملیم می خواستم برم ثبت احوال، فرمانده ام هم از ساعت 9 تا 13 بهم مرخصی داد.وقتی
+رفتم برای امضای آخر این بی شرف منشی تا 12:30 منو نگه داشت و آخر سر هم کلا
+بیخیال نامه شدم و رفتم دژبانی شاید خبری از ساکم شده باشه ولی با زهم خبری نبود.
+با راننده ها هم حرف زدم و بهشون سپردم اما خبری نبود.یواش یواش دارم به این حرف
+که در نا امیدی بسی امید است شک میکنم.کاملا نا امیدم.حیف دفترم ، عکسهام ، کارت
+ملی و شناسنامه ام.<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">اعصاب خرد ساعت 2 برگشتم خوابگاه
+و با کمال تعجب دیدم بالشم ملافه نداره!<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">این طرف اون طرف بالاخره فهمیدم
+هم تختی تخت کناریم که یه لر احمق بود و واقعا از سگ کمتر ملافه منو ورداشته و
+وقتی گفتم این مال منه و اسمم روش هست گفت تو اینو دزدکی نوشتی و دروغ میگی.<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">من از قبل عصبانی بودم ، تهمت
+مسخره و احمقانه و بچه بازی اون هم یه جرقه ایی شد تا دعوا کنم اساسی!<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">دعوایی که دو نفر نمی تونست منو
+نگه داره!!هر چی حرص داشتم رو پسره خالی کردم و زدم.هر چی زور داشتم زدم و راحت
+شدم ( اونم با یه لر که خر زور میشن )<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">مرخصی امروزو عمدا نرفتم.دلم
+میخواست کمی دراز بکشم و فکر کنم. اما می تونستم برم و حتی میخواستم بندازم برم
+تهران ولی قسمت نبود.تنها چیزی که فکرمو مشغول کرده گم شدنه ساکمه ....<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">هنوز سرفه هام ادامه داره، سرما
+خوردم اساسی . حالم از یه سری آدم بهم میخوره ، سعی کردم درکشون کنم ولی نشد که
+نشد!!<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">دلم خواب میخواد یه خواب راحت
+بدون سروصدای یه سری حیوان ! ( اغراق نمیکنم )<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;"><font color="#ff0000">ساعت 7:20</font><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">از شام میام<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">یه عدد تن برای سه نفر.بسیار
+فراوان و مغذی بود!<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">معلوم نیست تو اردوگاه چجوری
+میخوان بهمون غذا بدن<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">صبح هم که بهمون لوبیا دادن و
+منم اصلا خوشم نمیاد و به یه چای شیرین و یه لقمه نون و مربا اکتفا کردم<o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">&nbsp;</span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/100.gif" style="text-align: center; font-family: tahoma; font-size: 11px;"><font color="#993399">خودنویس:</font><o:p></o:p></span></p>
+
+<p class="MsoNormal" dir="RTL" style="text-align: right;"><span lang="FA" style="font-size:14.0pt;mso-ansi-font-size:
+11.0pt;line-height:107%;font-family:&quot;B Nazanin&quot;">این عکسمو خیلی دوس دارم&nbsp;</span><span dir="LTR"><o:p></o:p></span></p></div><div style="text-align: right;"><br></div>
+
+
+
+
+
+
+<br><br><b></b><br>
+<font style="font-size:8pt">
+					</font>
+</div></div>
+<div class=bpost></div>
+    
+<div class=tpost>
+<div class=date><span style="width:195">بـــــهنام </span>
+<span style="width:240">سه شنبه 21 شهریور 1391</span>
+<span style="width:80"><a target="_self" href="javascript:newComment(103)" >نظرات (<script>setCommentCnt(103)</script>)</a></span> 
+</div>
+<div class=tpost2><a href="../103.html">من و سربازیم</a></div>
+</div>
+<div class=xpost><div class=xxpost><font size="2">90/7/6<br>ساعت 7:25 عصر<br>امروز کمی دیرتر دارم مینویسم.از پنج و نیم بیکاریم.کمی چرخیدم و با چند نفر گپ زدم.حوصله تلفن زدن هم نداشتم.میخوام ببینم بهم زنگ میزنن یا نه؟<br>امروز رفتیم میدون تیر.تیراندازیم بهتر شده و زدم دشمن فرضی رو ناقص کردم!<br>اخه دفعه قبل از دستم در رفت!!!!<br>اما از میدون تیر بدم میاد.چون بعدش دردسر گم شدن پوکه هست.یه احمق،که هر چی بهش بگم کمه،&nbsp; هر دفعه پوکه گم میکنه و این بار هم باعث شد از ساعت 10 که تیراندازی تموم شد تا ساعت 1 زیر افتاب داغ تو میدون دنبال پوکه بگردیم.حتی مجبور شدیم پوتین رو هم دربیاریم و بازرسی بدنی بشیم که اگه فرماندمون سخت گیرتر بود تا درآوردن لباسامون هم پیش میرفت!!<br>.<br>.<br>.<br>.<br>میخوام برم شام<br>اما نمیدونم چیه؟فردا احتمالا مرخصی 24 ساعته نرم و فقط یه سر برم ثبت احوال برای گزارش مفقودی مدارک شناساییم.امروز خسته ام.خیلی خسته ام<br>.<br>.<br>.<br>.<br>.<br>.<br>ساعت 7:30<br>از شام اومدم<br>شام استانبولی بود به نوعی!<br>شنبه باید بریم اردوگاه<br>بمدت 2 شب و 3 روز.<br>الانم بحثشه.بچه ها طبق معمول میگن سخته و فلانه.اما من انداختم رو رگ بیخیالیم.<br>خوب یا بد باید بریم<br>حرفی که همش برای خودم باید تکرار کنم"سخت بگیری سخت میگذره"<br>دارم به این فکر میکنم قسمتی از اتفاقات ماه قبل رو که یادم مونده دوباره بنویسم<br>حیف دفتر خاطراتم...</font>
+
+
+<br><br><b></b><br>
+<font style="font-size:8pt">
+					</font>
+</div></div>
+<div class=bpost></div>
+    
+<div class=tpost>
+<div class=date><span style="width:195">بـــــهنام </span>
+<span style="width:240">دوشنبه 30 مرداد 1391</span>
+<span style="width:80"><a target="_self" href="javascript:newComment(95)" >نظرات (<script>setCommentCnt(95)</script>)</a></span> 
+</div>
+<div class=tpost2><a href="../95.html">موجودی به نام سرباز</a></div>
+</div>
+<div class=xpost><div class=xxpost>
+
+
+
+
+<img src="http://GooyaUp.com/uploads/gooya_13454440281.jpg" alt="" align="left" border="0" height="473" vspace="0" width="316" hspace="0"><br><font size="2"><br></font><div align="justify"><font size="2"><br><br><br><br><br><br>قبلا یه پست هایی میزدم با نام "<font color="#CC33CC">موجودی به نام سرباز</font>" که خاطرات آموزشیم یا یجورایی حس همون لحظه ام بود که نشد ادامشو بنویسم</font><br><font size="2">و چون فردا نه پس فردا یعنی یک شهریور یکسال از سربازی من میگذره</font><br><font size="2">مزید بر علت شد و تصمیم گرفتم دوباره از نو بنویسم و ادامه بدم</font><br><font size="2">دو قسمت رو که قبلا نوشته بودم همزمان میذارم </font><br><font size="2">و </font><font size="2">خاطرات از نیمه دوم اموزشی شروع میشه(نیمه اول موجود نیست) و بصورت روزنگاره!</font><br><br><br><br></div><font size="2"><br><br></font><font color="#FF0000"><b><br><br><br><br><br><br><br><br><br><a href="http://black-diamond.mihanblog.com/post/98">بی هویت شده!!!؟</a></b></font><br><br><div align="justify"><font size="2">خب از اونجاییکه اون ناکس بی همه چیز ساکم رو برنگردوند و نتونست از چهارتا
+ تیکه لباس و یه موزر بگذره و دفتر خاطراتم هم تو ساک بود مجبورم دوباره 
+بنویسم.</font><br><font size="2">
+سعی میکنم هر چیزی که یادم میاد بنویسم</font><br><font size="2">
+البته توی دفترم تاریخ بتاریخ جدا نوشته بودم اما الان مجبورم ادامه دار یا یه پست طولانی بنویسم</font><br><font size="2">
+  </font><br><font size="2">
+روز اعزامم(۱/۶/۹۰) بعد از کلی معطلی ساعت ۱۱ سوار اتوبوس شدیم</font><br><font size="2">
+چهره اشنا ندیدم.فکر کردم دیگه راه افتاد&nbsp; ولی دوباره برگشت ترمینال و تا ۱۲ معطل شدیم</font><br><font size="2">
+یه اتوبوس قرازه و داغون!</font><br><font size="2">
+یارو هم هی کولرشو خاموش میکرد.آخه ما سرباز بودیم و جزء آدم حساب نمی شدیم.</font><br><font size="2">
+اتوبوس هم که مدام ریب میزد و در نهایت بعد سقز و نرسیده به دیواندره اون اتوبوس کذایی خاموش شد.</font><br><font size="2">
+از ساعت ۶ تا ۹ شب اونجا بودیم و کسی هم نبود تا به دادمون برسه و بیاد این سربازهای بیچاره رو جمع کنه</font><br><font size="2">
+اعصاب همه خرد بود حالا بماند که بنده با راننده درگیری لفظی هم داشتم!</font><br><font size="2">
+دوباره راه افتاد ولی چند باری هم خاموش کرد،طوریکه مسیر ۱۰ ساعته رو ما ۲۲ ساعته اومدیم</font><br><font size="2">
+تصور کن که ۲۲ ساعت تو یه اتوبوس قراضه بمونی و تازه راننده هم ازتون طلبکار باشه!!</font><br><font size="2">
+در نهایت خسته و کلافه رسیدیم اراک</font><br><font size="2">
+جلوی دژبانی به صفمون کردن و ساکهارو گشتن</font><br><font size="2">
+به این شکل که کل وسایلتو باید خالی میکردی روی زمین</font><br><font size="2">
+محض خنده هم برامون اسپند دود کردن که نکنه این جوونای کچل چشم بخورن</font><br><font size="2">
+رفتیم داخل پادگان و مارو مثل چی ریختن توی جایی به اسم مهدیه</font><br><font size="2">
+فوق العاده شلوغ بود و خفه</font><br><font size="2">
+تصور کن بعد مسافرت طولانی باید بچپی کنار هم و تحمل کنی</font><br><font size="2">چیو؟</font><br><font size="2">
+حداقل ، بوی افتضاح جوراب رو!</font><br><font size="2">
+خلاصه بعد از نوشتن اسم و مشخصات رفتیم واسه تقسیم شدن بین گردانها</font><br><font size="2">
+من افتادم گردان قدس،گروهان ایثار که یکی از چهار گروهان ایمان،ایثار،جهاد و شهادت بود</font><br><font size="2">
+یه لحظه وقت استراحت نداشتیم</font><br><font size="2">
+زیر افتاب داغ(حس اون موقع رو حیف نمیشه انتقال داد) به صف شدیم.بعد از کلی
+ معطلی رفتیم برای تحویل وسائل که شامل دو پتو-دو عدد ملافه- یک عدد رو 
+بالشی ـپوتین -دو دست لباس شلوار - کمربند - اورکت</font><br><font size="2">
+نکته جالب اینکه اگه لباسها کوچیک یا بزرگ بود باید خودمون بین خودمون عوض 
+میکردیم و نکته جالبتر اینکه من تا سرمو چرخوندم و برگشتم دیدم سگکک 
+کمربندم رو دزدین!</font><br><font size="2">
+اینجا بود که فهمیدم مهم نیست تو جمعی باشی که همه لیسانسن،مهم اینه که تو <span style="background-color: rgb(255, 255, 255); color: rgb(255, 0, 0);">لیسانس هم دزد </span>داریم!</font><br><br><b><a href="http://black-diamond.mihanblog.com/post/106">ندید بدید!</a></b><br><br><font size="2"><span style="color: rgb(255, 0, 0);">پنجم مهر 1390 ساعت 18:30</span></font><br><br><font size="2">امروز
+ بدجور ناراحتم.تازه از مرخصی اومدم.فکر میکردم اون راننده ایی که ساکم 
+بخاطر حماقت همراهم(نه دوست یا رفیقم) توی ماشینش جا موند،ساکمو اورده</font><br><font size="2">ولی زهی خیال باطل!</font><br><font size="2">لباسام،پوتینم،دفتر خاطراتم،عکسهام و از همه مهمتر شناسنامه و کارت ملیمتوش بود</font><br><font size="2">موندم چرا نیاورده؟توی ساک که پولی نبود!</font><br><font size="2">با خواهش وتمنا دژبانی منو راه داد داخل پادگان(چون لباس شخصی بودم نمیذاشت)</font><br><font size="2">ساعت
+ 4 صبح که هوای کویری اراک یخ یخ بود اومدم داخل و تا ساعت 6 سردرگم 
+میچرخیدم و خودمو از چشم درجه داراها پنهون میکردم و صبر کردم تا فرمانده 
+ام -آقای ستوان دوم حاجی آبادی- بیاد</font><br><font size="2">وقتی اومد ماجرا رو براش تعریف کردم</font><br><font size="2">کمی سرزنش کرد ولی واقعا خوب برخورد کرد</font><br><font size="2">بعد
+ گفت برم تو آسایشگاه و جلوی چشم نباشم تا بعد مراسم صبحگاه که تا 9 طول 
+میکشید صبر کنم(این تیکه واقعا چسبید چون وقتی بقیه داشتم رژه میرفتن من 
+راحت رو تختم تو سکوت خوابیده بودم)</font><br><font size="2">بعد رژه فرمانده منو برد توی انبار و
+ برام&nbsp; یه دو ست لباس و یه شلوار و یه جفت پوتین و ملافه تخت(آخه خیر سرم 
+اینارم میخواستم ببرم ارومیه که بشورمشون)برام جور کرد</font><br><font size="2">بالاخره لباس دار شدم</font><br><font size="2">میتونست بعد کلی حرف و سرزنش بهم بگه برو شهر و خودت تهیه کن ولی این کارو نکرد</font><br><font size="2">از
+ صبح تا الان کار خاصی نکردم ،جز اینکه چند بار رفتم دژبانی و یه سری کاغذ 
+با متن<br>«یک عدد ساک گم شده از یابنده تقاضا میشود ساک را به دژبانی تحویل 
+دهد»</font><br><font size="2">تا حدودی نا امید شدم</font><br><font size="2">چون اگه میخواست بیاره از پنج شنبه(روزی که به مرخصی میان دوره رفتم) تا الان میاورد!</font><br><font size="2">امیدوارم ساکمو بیاره........</font><br><br><font size="2"><span style="color: rgb(153, 51, 153);">گذشته نوشت:</span></font><br><font size="2">موقع تایپ این خاطرات یاد یه خاطره تو میان دوره افتادم که گفتنش خالی از لطف نیست!</font><br><font size="2">تو میان دوره بعد از اینکه ساکم گم شد و کلی حرص خوردم سوار اتوبوس مسیر تهران شدم که اتوبوس به ترمینال آرژانتین میرفت</font><br><font size="2">سوار شدیم و رفتیم</font><br><font size="2">تو تهران بعد میدون آزادی که یه سری پیاده شدن من پیاده نشدم و چند تا سرباز دیگه هم به تبیعت از من پیاده نشدن</font><br><font size="2">توی مسیر که میرفتیم و از دور برج میلاد و دیدیم و شلوغ و ازدحام سرسام آور تهران،که حتی یکی از دوستام وقتی برج میلادو دید گفت:</font><br><font size="2">ااااااااااااا </font><br><font size="2">اون کارگرش چه زوری داشته که اجرو تا اون بالا میانداخته!!</font><br><font size="2">پسر باحالی بود</font><br><font size="2">نزدیکای
+ ترمینال یواش یواش صدای اینا در اومد که وای اینجا اتوبوس ارومیه نداره و 
+باید دوباره با مترو برگردیم ترمینال غرب و این حرفا</font><br><font size="2">رسیدیم ترمینال</font><br><font size="2">اینا
+مثل گیجا واسه خودشون میچرخیدن ،ولی من(خدا رو شکر) خوب بلد بودم که کجا 
+برم و چیکار کنم چون سال 81 ترمینال آرژانتین بودم اونارو هم گفتم که خنگ 
+بازی در نیارید و اینهمه تعاونی برید برای ارومیه بلیط بگیرید</font><br><font size="2">خود من هم اتوبوس VIP گرفتم</font><br><font size="2">حرکتش ساعت 8:30 بود و من ساعت 6 تهران بودم</font><br><font size="2">کمی چرخیدیم و منم که هیچی همراهم نبود دست در جیب واسه خودم میچرخیدم</font><br><font size="2">نزدیکای حرکت حدود7:30 دیدیم همگی گرسنه تشریف داریم پس چیکار کنیم؟ گفتیم بریم یه ساندویچ بخوریم</font><br><font size="2">تو خود ترمینال بود ولی من گفتم به اندازه کافی خرج کردم مال اینا گرونه و بریم بیرون</font><br><font size="2">رفتیم بیرون ترمینال</font><br><font size="2">5 نفر بودیم و اونا به مسخره میگفتم بهنام مارو هدایت کن</font><br><font size="2">تهران که میگن اینجاست!</font><br><font size="2">فلانی گوسفندارو کجا گذاشتی</font>؟<br><font size="2">یا وقتی انبه دیده بودن به مسخره میگفتم چه خیار های زرد تپلی!!</font><br><font size="2">کمی چرخیدیدم و یه رستوران اون طرفا بیشتر پیدا نکردیم</font><br><font size="2">ما که گرسنگی حسابی بهمون فشار میاورد و دیگه یه روده مونده بود تو شکممون گفتیم به جهنم</font><br><font size="2">هر چه بادا باد</font><br><font size="2">ماکه تا الان خرج کردیم اینم روش</font><br><font size="2">رفتیم داخل محیط باکلاسش، اونم با لباسهای سبز زیتونی رنگ نیروی انتظامی</font><br><font size="2">وقتی منو رو نگاه کردیم ارزونترین غذاش 3500 بود که ما هم به ناچار انتخاب کردیم و بعد مدتی غذا اومد</font><br><font size="2">الحق غذای خوشمزه ایی بود و هر کدوم هم حداقل دو تا دوغ خوردیم و بقولی حسابی به شکم رسیدیم</font><br><font size="2">بعد نشستیم حساب کتاب کردیم که بالای 20 تومن در اومد</font><br><font size="2">همه پولارو دادن به من و من رفتم واسه پرداخت</font><br><font size="2">من:خسته نباشید غذای خوشمزه ایی بود</font><br><font size="2">صاحب اونجا:خواهش میکنم نوش جونتون</font><br><font size="2">من:خب چقد تقدیمتون کنم؟</font><br><font size="2">اون بدون اینکه به میز ما نگاه کنه گفت:</font><br><font size="2">میشه 12 تومن</font><br><font size="2">من که تعجب کرده بودم گفتم:</font><br><font size="2">میزمونو دیدین؟فک میکنم اشتباه حساب کردین</font><br><font size="2">صاحب اونجا:نه درست حساب کردم</font><br><font size="2">من:ممنونم</font><br><font size="2">با حالت متعجب رفتم پیش دوستام</font><br><font size="2">اونا:خب بهنام چقد شد؟</font><br><font size="2">من:12 تومن</font><br><font size="2">حالا شده بودیم 5 تا ادم متعجب</font>!<br><br><font size="2">اره</font><br><font size="2">صاحب اونجا وقتی دیده بود ما سربازیم بهمون حال داده بود</font><br><font size="2">اون شب واقعا اون چند ساعت تهران بهم چسبید</font><br><font size="2">بعد هم که ساعت8:30 سوار اتوبوس شدیم به سوی منزل</font><br><font size="2">جالب اینکه تو اتوبوس هم شام دادن!!</font><br><font size="2">منم که حسابی خورده بودم پس غذام موند</font><br><font size="2">خب چیکار کنم دفعه اولم بود سوار اتوبوس باکلاسا شده بودم دیگه!</font><br><br></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><b></b><br>
+<font style="font-size:8pt">
+					</font>
+</div></div>
+<div class=bpost></div>
+    
+
+
+			
+<script src="http://blogskins.ir/48/code.js" language="javascript"></script>
+<div class=tmenu><div class=tmenu2>درباره وبلاگ</div></div>
+<div class=xmenu>
+<div class=xxxmenu>
+<div style="text-align:center;"><img src="../../../static.mihanblog.com/public/user_data/web_photo/285/852554.jpg@8824"  /></div>
+خودنویـــــس  یا   خود  نویــــس  مهم اینه که حرفای خودمه</div>
+</div><div class=bmenu></div>
+
+<div class=tmenu><div class=tmenu2>موضوعات</div></div><div class=xmenu>
+<div class=xxmenu><a href="1.html">حس من (159)</a></div>
+<div class=xxmenu><a href="3.html">تاریک خونه (51)</a></div>
+<div class=xxmenu><a href="4.html">روزمرگی هام (144)</a></div>
+<div class=xxmenu><a href="6.html">بچه کوچولوی درونم (2)</a></div>
+<div class=xxmenu><a href="2.html">به خوندنش می ارزه (15)</a></div>
+<div class=xxmenu><a href="5.html">موجودی به نام سرباز (3)</a></div>
+</div><div class=bmenu></div>
+
+<div class=tmenu><div class=tmenu2>آخرین مطالب</div></div><div class=xmenu>
+	<div class=xxmenu><a href="../484.html">آپدیتک!</a></div>
+	<div class=xxmenu><a href="../483.html">مثلا سال نو مبارک</a></div>
+	<div class=xxmenu><a href="../482.html">در افق!</a></div>
+	<div class=xxmenu><a href="../481.html">یه قدم پر از استرس!</a></div>
+	<div class=xxmenu><a href="../480.html">یه گوشه خلوت</a></div>
+	<div class=xxmenu><a href="../479.html">یکسال هم گذشت</a></div>
+	<div class=xxmenu><a href="../478.html">گناهکار بی گناه</a></div>
+	<div class=xxmenu><a href="../477.html">هپی عید</a></div>
+	<div class=xxmenu><a href="../476.html">تف!</a></div>
+	<div class=xxmenu><a href="../475.html">دغدغه!</a></div>
+	<div class=xxmenu><a href="../474.html">گزارش وضعیت :)</a></div>
+	<div class=xxmenu><a href="../473.html">دشت برهوت</a></div>
+	<div class=xxmenu><a href="../472.html">Ctrl + Z</a></div>
+	<div class=xxmenu><a href="../470.html">این گربه وضعش خیلی خرابه!</a></div>
+	<div class=xxmenu><a href="../469.html">لعنت به این اقازاده ها و سهمیه هاشون</a></div>
+		<div class=xxmenu><a href="../list.html"><b>لیست آخرین 
+			مطالب</b></a></div>
+
+</div><div class=bmenu></div>
+
+
+		
+<div class=tmenu><div class=tmenu2>نویسندگان</div></div>
+<div class=xmenu>
+<div class=xxmenu><a href="../author/714433.html">بـــــهنام </a></div></div>
+<div class=bmenu></div>
+<div class=tmenu><div class=tmenu2>آرشیو مطالب</div></div><div class=xmenu>
+<div class=xxmenu><a href="../archive/1399/3.html"> خرداد 1399</a></div>
+<div class=xxmenu><a href="../archive/1398/12.html"> اسفند 1398</a></div>
+<div class=xxmenu><a href="../archive/1398/9.html"> آذر 1398</a></div>
+<div class=xxmenu><a href="../archive/1398/8.html"> آبان 1398</a></div>
+<div class=xxmenu><a href="../archive/1398/4.html"> تیر 1398</a></div>
+<div class=xxmenu><a href="../archive/1398/2.html"> اردیبهشت 1398</a></div>
+<div class=xxmenu><a href="../archive/1398/1.html"> فروردین 1398</a></div>
+<div class=xxmenu><a href="../archive/1397/12.html"> اسفند 1397</a></div>
+<div class=xxmenu><a href="../archive/1397/11.html"> بهمن 1397</a></div>
+<div class=xxmenu><a href="../archive/1397/10.html"> دی 1397</a></div>
+<div class=xxmenu><a href="../archive/1397/7.html"> مهر 1397</a></div>
+<div class=xxmenu><a href="../archive/1397/6.html"> شهریور 1397</a></div>
+<div class=xxmenu><a href="../archive/1397/5.html"> مرداد 1397</a></div>
+<div class=xxmenu><a href="../archive/1397/3.html"> خرداد 1397</a></div>
+<div class=xxmenu><a href="../archive/1397/2.html"> اردیبهشت 1397</a></div>
+<div class=xxmenu><a href="../archive/1397/1.html"> فروردین 1397</a></div>
+<div class=xxmenu><a href="../archive/1396/12.html"> اسفند 1396</a></div>
+<div class=xxmenu><a href="../archive/1396/10.html"> دی 1396</a></div>
+<div class=xxmenu><a href="../archive/1396/9.html"> آذر 1396</a></div>
+<div class=xxmenu><a href="../archive/1396/6.html"> شهریور 1396</a></div>
+<div class=xxmenu><a href="../archive/1396/4.html"> تیر 1396</a></div>
+<div class=xxmenu><a href="../archive/1396/3.html"> خرداد 1396</a></div>
+<div class=xxmenu><a href="../archive/1396/2.html"> اردیبهشت 1396</a></div>
+<div class=xxmenu><a href="../archive/1396/1.html"> فروردین 1396</a></div>
+<div class=xxmenu><a href="../archive/1395/12.html"> اسفند 1395</a></div>
+<div class=xxmenu><a href="../archive/1395/11.html"> بهمن 1395</a></div>
+<div class=xxmenu><a href="../archive/1395/9.html"> آذر 1395</a></div>
+<div class=xxmenu><a href="../archive/1395/8.html"> آبان 1395</a></div>
+<div class=xxmenu><a href="../archive/1395/7.html"> مهر 1395</a></div>
+<div class=xxmenu><a href="../archive/1395/6.html"> شهریور 1395</a></div>
+<div class=xxmenu><a href="../archive/1395/4.html"> تیر 1395</a></div>
+<div class=xxmenu><a href="../archive/1395/3.html"> خرداد 1395</a></div>
+<div class=xxmenu><a href="../archive/1395/2.html"> اردیبهشت 1395</a></div>
+<div class=xxmenu><a href="../archive/1395/1.html"> فروردین 1395</a></div>
+<div class=xxmenu><a href="../archive/1394/12.html"> اسفند 1394</a></div>
+<div class=xxmenu><a href="../archive/1394/11.html"> بهمن 1394</a></div>
+<div class=xxmenu><a href="../archive/1394/10.html"> دی 1394</a></div>
+<div class=xxmenu><a href="../archive/1394/9.html"> آذر 1394</a></div>
+<div class=xxmenu><a href="../archive/1394/8.html"> آبان 1394</a></div>
+<div class=xxmenu><a href="../archive/1394/7.html"> مهر 1394</a></div>
+<div class=xxmenu><a href="../archive/1394/5.html"> مرداد 1394</a></div>
+<div class=xxmenu><a href="../archive/1394/4.html"> تیر 1394</a></div>
+<div class=xxmenu><a href="../archive/1394/2.html"> اردیبهشت 1394</a></div>
+<div class=xxmenu><a href="../archive/1394/1.html"> فروردین 1394</a></div>
+<div class=xxmenu><a href="../archive/1394/0.html"> - 1394</a></div>
+<div class=xxmenu><a href="../archive/1393/12.html"> اسفند 1393</a></div>
+<div class=xxmenu><a href="../archive/1393/11.html"> بهمن 1393</a></div>
+<div class=xxmenu><a href="../archive/1393/10.html"> دی 1393</a></div>
+<div class=xxmenu><a href="../archive/1393/9.html"> آذر 1393</a></div>
+<div class=xxmenu><a href="../archive/1393/7.html"> مهر 1393</a></div>
+<div class=xxmenu><a href="../archive/1393/6.html"> شهریور 1393</a></div>
+<div class=xxmenu><a href="../archive/1393/5.html"> مرداد 1393</a></div>
+<div class=xxmenu><a href="../archive/1393/4.html"> تیر 1393</a></div>
+<div class=xxmenu><a href="../archive/1393/3.html"> خرداد 1393</a></div>
+<div class=xxmenu><a href="../archive/1393/2.html"> اردیبهشت 1393</a></div>
+<div class=xxmenu><a href="../archive/1393/1.html"> فروردین 1393</a></div>
+<div class=xxmenu><a href="../archive/1392/12.html"> اسفند 1392</a></div>
+<div class=xxmenu><a href="../archive/1392/11.html"> بهمن 1392</a></div>
+</div><div class=bmenu></div>
+
+<div class=tmenu><div class=tmenu2>پیوند ها</div></div><div class=xmenu>
+<div class=xxmenu><a target="_blank" href="http://abanam.blog.ir/" title="">آبان</a></div>
+<div class=xxmenu><a target="_blank" href="http://www.be-kind.blogfa.com/" title="">حرفهای ناتمام من</a></div>
+<div class=xxmenu><a target="_blank" href="../../../starling88.mihanblog.com/index.html" title="">ســــار</a></div>
+<div class=xxmenu><a target="_blank" href="http://life65.blogfa.com/" title="">زندگی</a></div>
+
+
+
+</div><div class=bmenu></div>
+
+
+
+<div class=tmenu><div class=tmenu2>آمار سایت</div></div><div class=xmenu>
+<div class=xxxmenu>
+			بازدیدهای امروز : <span class=aa><script>getStatVar('today_view');</script></span> نفر<br>
+بازدیدهای دیروز : <span class=aa><script>getStatVar('yesterday_view');</script></span> نفر<br>
+كل بازدیدها : <span class=aa><script>getStatVar('total_view');</script></span> نفر<br>
+بازدید این ماه :<span class=aa> <script>getStatVar('this_month_view');</script></span> نفر<br>
+كل مطالب : <span class=aa><script>getStatVar('total_post');</script></span> عدد<br>
+آخرین بازدید : <span class=aa><script>getStatVar('last_view_date');</script></span><br>
+آخرین بروز رسانی : <span class=aa><script>getStatVar('modify_date');</script></span>
+</div>
+</div><div class=bmenu></div>
+
+<div id="c" style="text-align:center;width:250;float:right">
+<!-- Begin WebGozar.com Counter code -->
+<script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=2435810&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=2435810" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+<!-- End WebGozar.com Counter code -->
+
+<script type="text/javascript" src="http://feedjit.com/serve/?vv=1515&amp;tft=3&amp;dd=0&amp;wid=&amp;pid=0&amp;proid=0&amp;bc=030303&amp;tc=FFFFFF&amp;brd1=336699&amp;lnk=22B814&amp;hc=F9FAF7&amp;hfc=6A007A&amp;btn=000000&amp;ww=200&amp;wne=10&amp;srefs=1"></script><noscript><a href="http://feedjit.com/">Live Traffic Stats</a></noscript>
+
+<!-- Statistics by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzar.ir/abzar/tools/stat/amar-v3-ramz.php?mod=1&amar=n6y-y5v9wilckeb1c-ocs0rhyqbm2e&p=d2ce4378c3fff39f23bc6054c33d2593"></script><div style="display:none"><h3><a href="http://www.1abzar.com/abzar/stat.php">&#1570;&#1605;&#1575;&#1585;&#1711;&#1740;&#1585; &#1608;&#1576;&#1604;&#1575;&#1711;</a></h3></div>
+<!-- Statistics by www.1abzar.com --->
+
+
+<br><a target="_blank" style="text-decoration:none;font-size:9pt" title="کد وبلاگ" href="http://www.bloghelp.ir"></a><br><a target="_blank" style="text-decoration:none;font-size:9pt" title="" href="http://www.1abzar.com"></a>
+</div>
+
+</div></div>
+</div></div></div></div>
+<div id="seo">
+<h2><a href="http://www.blogskin.ir" title="قالب وبلاگ">قالب وبلاگ</a></h2>
+</div>
+<script type=text/javascript>document.getElementById('s'+'e'+'o').style.display='none';</script> </body></html>
+
+<a href="http://www.freepik.com/free-vector/blue-corporate-visit-card_931005.htm">Designed by Freepik</a><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'stylos.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

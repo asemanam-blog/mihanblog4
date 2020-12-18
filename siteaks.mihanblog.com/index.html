@@ -1,0 +1,2274 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://siteaks.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('1399/09/22');
+		/*1280520*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[149]='39';commentCnt[995]='0';commentCnt[1005]='1';commentCnt[1008]='0';commentCnt[1009]='0';commentCnt[1010]='3';commentCnt[1011]='0';commentCnt[1012]='2';commentCnt[1013]='0';commentCnt[1014]='0';commentCnt[1015]='1';commentCnt[1016]='0';commentCnt[1017]='0';commentCnt[1018]='0';commentCnt[1019]='2';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[149]='234';
+mihanblogDisLikeArrCnt[149]='7';
+mihanblogLikeArrCnt[995]='4';
+mihanblogDisLikeArrCnt[995]='0';
+mihanblogLikeArrCnt[1005]='6';
+mihanblogDisLikeArrCnt[1005]='0';
+mihanblogLikeArrCnt[1008]='3';
+mihanblogDisLikeArrCnt[1008]='0';
+mihanblogLikeArrCnt[1009]='3';
+mihanblogDisLikeArrCnt[1009]='0';
+mihanblogLikeArrCnt[1010]='8';
+mihanblogDisLikeArrCnt[1010]='0';
+mihanblogLikeArrCnt[1011]='2';
+mihanblogDisLikeArrCnt[1011]='0';
+mihanblogLikeArrCnt[1012]='6';
+mihanblogDisLikeArrCnt[1012]='0';
+mihanblogLikeArrCnt[1013]='2';
+mihanblogDisLikeArrCnt[1013]='0';
+mihanblogLikeArrCnt[1014]='8';
+mihanblogDisLikeArrCnt[1014]='0';
+mihanblogLikeArrCnt[1015]='8';
+mihanblogDisLikeArrCnt[1015]='0';
+mihanblogLikeArrCnt[1016]='6';
+mihanblogDisLikeArrCnt[1016]='0';
+mihanblogLikeArrCnt[1017]='4';
+mihanblogDisLikeArrCnt[1017]='0';
+mihanblogLikeArrCnt[1018]='4';
+mihanblogDisLikeArrCnt[1018]='0';
+mihanblogLikeArrCnt[1019]='4';
+mihanblogDisLikeArrCnt[1019]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://siteaks.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://siteaks.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','640');
+	setStatVar('total_author','1');
+	setStatVar('modify_date','1399/09/19');
+	
+	setStatVar('today_view','8');
+	setStatVar('yesterday_view','25');
+	
+	setStatVar('this_month_view','248');
+	setStatVar('last_month_view','38');
+
+	setStatVar('total_view','469905');
+	setStatVar('last_view_date','1399/09/22 (15:22)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://siteaks.mihanblog.com/statupdate/?data[refereruri]=http://naseemazohoor313.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607779503&data[hash]=db0e486fbbc2f503d75fc2137b2524f4&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://siteaks.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://siteaks.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://siteaks.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<head>
+<title>سایت عکس</title>
+    <base href="" />
+	<meta name="generator" content="ParsTools.Com | Hesam B" />
+	<meta content="fa" http-equiv="Content-Language" />
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="سلام بروزترین و بهترین وب عکس " />
+	<meta name="keywords" content="siteaks,سایت عکس, عکس - سایت عکس - محسن قاسمی" />
+	<link rel="alternate" type="application/rss+xml" title="سایت عکس" href="http://siteaks.mihanblog.com/post/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="سایت عکس"  href="http://siteaks.mihanblog.com/post/atom/" />
+
+<script type="text/javascript" src="http://tem.parstools.com/pisces/js/jquery.js"></script>
+<script type="text/javascript" src="http://tem.parstools.com/pisces/js/jqueryui.js"></script>
+<script type="text/javascript" src="http://tem.parstools.com/pisces/js/libs.js"></script> 
+
+<link rel="shortcut icon" href="http://tem.parstools.com/pisces/images/favicon.ico" />
+<link href="http://tem.parstools.com/pisces/style/styles.css" type="text/css" rel="stylesheet" />
+
+</head>
+<body>
+<div class="wwide pagebg">
+	<div id="headbar">
+		<div id="header">
+			<div class="wrapper">
+				<div class="container">
+					
+					<h1>
+						<a href="index.html" title="سایت عکس">
+							<img src="http://uupload.ir/files/ufiu_cxcxcxc.png" alt="Logo"/>
+						</a>
+					</h1>
+		
+					<div class="headlinks">
+						<a href="http://siteaks.mihanblog.com/post/rss/" title="RSS">
+							<img src="http://uupload.ir/files/klbk_imw9_untitled-1.png" alt="RSS"/>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="speedbar">
+			<div class="wrapper">
+				<div class="container">
+					 <span id='dle-speedbar'><a href="index.html" title="سایت عکس"><h1 id="blog_title">سایت عکس</h1></a></span> 
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div id="toolbar" class="container">
+			<ul id="topmenu" class="rcol reset">
+				
+						<li class="sublnk"><a rel="follow" href="mailto:M1375Gh@Yahoo.com" title="سایت عکس"  target="_blank"><h1 class="myh2"><b>ایمیل ما</b></h1></a></li>
+						<li class="sublnk"><a href="http://siteaks.mihanblog.com/m"><b>نسخه موبایل</b></a></li>
+						<li class="sublnk"><a href="http://siteaks.mihanblog.com/post/atom/"><b>نسخه اتوم</b></a></li>
+						<li class="sublnk"><a href="javascript:messageForm()"><b>ارتباط با ما</b></a></li>
+						<li class="sublnk"><a href="https://www.instagram.com//"><b>اینستاگرام</b></a></li>
+						<li class="sublnk"><a href="https://t.me/Dreampix"><b>کانال تلگرام</b></a></li>
+						<li class="sublnk"><a href="index.html"><b>صفحه اصلی</b></a></li>
+			</ul>
+			<form id="frm-16075231665fd0db5e44e2e" method="get" action="http://siteaks.mihanblog.com/post/search/fid/16075231665fd0db5e44e2e"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+				<ul class="searchbar reset">
+					<li class="lfield"><input id="story" name="search_text" value="جستجو..." onblur="if(this.value=='') this.value='جستجو...';" onfocus="if(this.value=='جستجو...') this.value='';" type="text" /></li>
+					<li class="lbtn"><input title="بگرد" alt="بگرد" type="image" src="http://tem.parstools.com/pisces/images/spacer.gif" /></li>
+				</ul>
+			<input type="hidden" name="frm-id" value="16075231665fd0db5e44e2e" id="frm-id" /></form>		</div>
+		
+		<script type="text/javascript" src="http://tem.parstools.com/pisces/js/slides.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#slides').slides({
+					effect: 'fade',
+					play: 5000,
+					pause: 2500,
+					generatePagination: true,
+					preload: true,
+					hoverPause: true
+				});
+			});
+		</script>
+		
+		<!-- SLIDER -->
+		<div class="slider">
+			<div class="container">
+				<div id="slides">
+					<div class="slides_container">
+						<div><a href="index.html#"><img src="http://uupload.ir/files/19q8_1.jpg" alt="" /></a></div>
+						<div><a href="index.html#"><img src="http://uupload.ir/files/lve_2.jpg" alt="" /></a></div>
+						<div><a href="index.html#"><img src="http://uupload.ir/files/tp4b_3.jpg" alt="" /></a></div>
+					</div>
+				</div>
+			</div>
+			<div class="dleft">&nbsp;</div>
+			<div class="dright">&nbsp;</div>
+		</div>
+		<!-- SLIDER -->
+		
+		<div class="shadlr"><div class="shadlr">
+			<div class="container">
+				<div id="vseptop" class="wsh"><div class="wsh">&nbsp;</div></div>
+				<div class="vsep"><div class="vsep">
+					<div id="midside" class="lcol">
+						
+						<div class="hban">
+							<div class="hban">
+								<div class="dpad">
+									<div align="center">
+										<a href="index.html" target="_blank"><img src="http://uupload.ir/files/fd0j_13.jpg" style="border: none;" /></a>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div class="dpad"><div class="sortn"><div class="sortn">♥ به بهترین و بروزترین وبلاگ عکس خوش آمدید ، نظر فراموش نشه ... ♥</div></div></div>
+						
+<div id='dle-content'>
+
+   
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+			
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/149" title="♦ سایت عکس ♦">♦ سایت عکس ♦</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 15:40 - 1392/11/27</p><script>mihanblogPostLike('149','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(149)"><b><script>setCommentCnt(149)</script></b></a></span>
+			
+			<div>
+					 <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div align="center">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div><div align="center"><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><div style="text-align: center;"><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><div style="text-align: center;"><div class="ahbabzar4"><a href="index.html" target="" title="سایت عکس" style="font-size: 8pt;"><img src="http://www.bunte-gifs.de/gifs/mini/mini07.gif" style="font-size: 8pt;"></a><a href="https://mahak-charity.org/main/index.php/fa/" target="_blank" title="محک"><img alt="موسسه حمایت از کودکان,محک" title="موسسه حمایت از کودکان,محک" src="http://up.jazzabonline.ir/up/barankhoshk/Pictures/%D8%A8%D9%86%D8%B1%20%D9%87%D8%A7%DB%8C%20%D9%85%D8%AD%DA%A9%20(2).gif"></a><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><a href="index.html" target="" title="سایت عکس" style="font-size: 8pt;"><img src="http://www.bunte-gifs.de/gifs/mini/mini07.gif" style="font-size: 8pt;"></a></font></font></font></font></font></font><br><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/n8uz_ezgif-3-5f298e5253.gif" alt="سایت عکس" width="658" vspace="0" hspace="0" height="360" border="0" align="bottom"></a></div><link rel="stylesheet" type="text/css" href="http://pr8.ir/data/normalize.css"><script src="http://pr8.ir/data/modernizr.custom.js"></script><!-- this script got from Pr8.ir-Design By: Pr8.ir --></div></font></font></font></div></font></font></font></div><div align="center"><a href="index.html" target="" title="سایت عکس"><img src="../file.mihanblog.com/public/user_data/user_files/427/1280520/SDVDFV.gif" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a></div><div align="center"><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><div style="text-align: center;"><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><div style="text-align: center;"><p><font size="3">&nbsp;خوش آمدید به <font color="#009900">سایت</font></font><font size="3"><font color="#009900"> عکس</font> لحظات خوشی را برای شما ارزو میکنم&nbsp;</font><font size="-1"><a href="index.html" target="" title="سایت عکس ♥ محسن قاسمی"> </a></font></p></div></font></font></font></div></font></font></font></div><div style="text-align: center;" align="center">&nbsp;&nbsp;</div><div style="text-align: center;" align="center"><div style="text-align: center;"><font style="font-size: 10pt" face="Tahoma" color="#996633"><font style="font-size: 8pt" face="Tahoma"><font style="font-size: 10pt" face="Tahoma"><font style="font-size: 8pt" face="Tahoma"><div style="font-size: 8pt; display: inline-block; opacity: 1;"><font size="3"><font style="font-size: 10pt" face="Tahoma" color="#f37f83"><font style="font-size: 8pt" face="Tahoma" color="#0066a4"><font color="#9f552e"><font color="#996633">&nbsp;</font></font></font></font></font><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/c7n_untitled-1.gif" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a><font style="font-size: 10pt" face="Tahoma" color="#996633"><font style="font-size: 8pt" face="Tahoma"><font style="font-size: 10pt" face="Tahoma"><font style="font-size: 8pt" face="Tahoma"><font style="font-size: 10pt" face="Tahoma" color="#f37f83"><font style="font-size: 8pt" face="Tahoma" color="#0066a4"><font color="#9f552e"><font color="#996633"><font size="3">&nbsp;</font></font></font></font></font></font></font></font></font></div></font></font></font></font></div></div><div style="text-align: center;" align="center"><div style="text-align: center;"><font style="font-size: 10pt" face="Tahoma"><font style="font-size: 8pt;" face="Tahoma"><font><font style="font-size: 10pt;" face="Tahoma"><font style="font-size: 8pt;" face="Tahoma"><font><a href="http://siteaks.mihanblog.com/&lt;script&#32;src=" http:="" code.jquery.com="" jquery-latest.js"="" style="color: rgb(0, 0, 0);"><div class="webniazbanner" onclick="window.open('//siteaks.mihanblog.com/');"><div class="text" style="display: block;"> 	</div> 	<div class="Url" style="display: none;"> 		<div class="anime3" style="font-size: 40px; top: 0px;">www.siteaks.mihanblog.com</div> 	</div> </div>  	<div class="Url" style="display: none;"> 		<div class="anime4" style="font-size: 40px; top: 0px;">www.siteaks.mihanblog.com</div> 	</div>   	<div class="logoimg" style="display: none;"> 		<div class="anime5" style="font-size: 40px;">    <img src="آدرس&#32;لوگو&#32;70&#32;%252A&#32;70.html" width="70" height="70">         </div> 	</div> </a></font></font></font></font></font></font><p style="text-align: center;"><font style="font-size: 10pt" face="Tahoma"><font style="font-size: 8pt;" face="Tahoma"><font><font style="font-size: 10pt;" face="Tahoma"><font style="font-size: 8pt;" face="Tahoma"><font><font size="2" face="Mihan-IransansBold"><a href="https://t.me/Dreampix" target="_blank" title="کانال تلگرام"><img src="http://uupload.ir/files/e706_untitled-1.png" alt="سایت عکس" width="355" vspace="0" hspace="0" height="166" border="0" align="bottom"></a><br></font></font></font></font></font></font></font></p><p style="text-align: center;"><a href="https://t.me/Dreampix" target="_blank" title="کانال تلگرام"><img src="http://uupload.ir/files/j47_e706_untitled-1.jpg" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a></p><p style="text-align: center;"><font style="font-size: 10pt" face="Tahoma"><font style="font-size: 8pt;" face="Tahoma"><font><font style="font-size: 10pt;" face="Tahoma"><font style="font-size: 8pt;" face="Tahoma"><font><font size="2" face="Mihan-IransansBold">&nbsp;- <font color="#333333">نظرات تنها با داشتن نام <font color="#3366FF">مشخص</font> تایید می شوند</font></font></font></font></font></font></font></font><font size="2" face="Mihan-IransansBold"><font color="#ff0000">&nbsp;</font></font></p><p style="text-align: center;"><font size="2" face="Mihan-IransansBold">- پیام های <font color="#ff0000">تبلیغاتی</font> تایید نمی شود&nbsp;</font></p><font style="font-size: 10pt" size="2" face="Mihan-IransansBold"><font style="font-size: 8pt;"><font><font style="font-size: 10pt;"><font style="font-size: 8pt;"><font><p style="color: rgb(0, 0, 0); text-align: center;" align="right">&nbsp;-<font style="font-size: 10pt" color="#000000"><font style="font-size: 8pt" color="#000000"><font color="#000000"><font style="font-size: 10pt" color="#000000"><font style="font-size: 8pt" color="#000000"><font color="#000000"> بر خلاف وبلاگ های دیگر این وبلاگ امکان پسندیدن پست ها یا بلعکس آن را دارد</font></font></font></font></font></font>&nbsp;</p></font></font></font></font></font></font><p style="color: rgb(0, 0, 0); text-align: center;"><font style="font-size: 10pt" size="2" face="Mihan-IransansBold"><font style="font-size: 8pt;"><font><font style="font-size: 10pt;"><font style="font-size: 8pt;"><font>&nbsp;- <font style="font-size: 10pt" color="#000000"><font style="font-size: 8pt" color="#000000"><font color="#000000"><font style="font-size: 10pt" color="#000000"><font style="font-size: 8pt" color="#000000"><font color="#000000">Ctrl + <font style="font-size: 10pt" color="#000000"><font style="font-size: 8pt" color="#000000"><font color="#000000"><font style="font-size: 10pt" color="#000000"><font style="font-size: 8pt" color="#000000"><font color="#000000"> </font></font></font></font></font></font>D + Enter&nbsp; یادت نره&nbsp;</font></font></font></font></font></font></font></font></font></font></font></font></p><p style="color: rgb(0, 0, 0); text-align: center;"><font size="2" face="Mihan-IransansBold">&nbsp;- کپی برداری از مطالب این سایت، پاشیدن رنگ خدا است به زندگی دیگران؛ در رنگی کردن دیگران درنگ نکنید!&nbsp;</font><font size="2" face="Mihan-IransansBold"> </font></p><p style="color: rgb(0, 0, 0); text-align: center;"><font size="2" face="Mihan-IransansBold">&nbsp;-<font style="font-size: 10pt" color="#000000"><font style="font-size: 8pt" color="#000000"><font color="#000000"><font style="font-size: 10pt" color="#000000"><font style="font-size: 8pt" color="#000000"><font color="#000000"> موفق باشید </font></font></font></font></font></font></font><a href="index.html" target="" title="سایت عکس - محسن قاسمی"><br></a></p><div style="color: rgb(0, 0, 0);"><a href="index.html" target="" title="سایت عکس"><img src="http://s1.picofile.com/file/7522847632/5.gif" alt="نطر یادت نره دوست عزیز"><br></a></div><div style="color: rgb(0, 0, 0);"><a href="index.html" target="" title="سایت عکس"></a><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><font style="font-size: 10pt" face="Tahoma" color="#000000"><font style="font-size: 8pt" face="Tahoma" color="#000000"><font color="#000000"><p><a href="index.html" target="" title="سایت عکس"><img src="http://night-skin.com/blogcode/tasvir-zibasazi/upimg/uploads/1311474210.gif" alt="" vspace="0" hspace="0" border="0" align=""></a></p></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+						<br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="سایت عکس" >سایت عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/site&#32;aks" title="site aks" >site aks</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%DA%A9%D8%B3" title="عکس" >عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/photo" title="photo" >photo</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/pic" title="pic" >pic</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86%20%D9%88%D8%A8%D9%84%D8%A7%DA%AF%20%D8%B9%DA%A9%D8%B3" title="بهترین وبلاگ عکس" >بهترین وبلاگ عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86%20%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="بهترین سایت عکس" >بهترین سایت عکس</a> , <br />															</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/1019" title="برو دنبالش ♥">برو دنبالش ♥</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 03:00 - 1399/09/19</p><script>mihanblogPostLike('1019','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(1019)"><b><script>setCommentCnt(1019)</script></b></a></span>
+			
+			<div>
+					 
+<div align="center"><font size="2" face="Mihan-Iransans"><a href="index.html" target="" title="سایت عکس"><img src="https://uupload.ir/files/t9w8_7292d001d85bf89400f3e4146a419ff2.jpg" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a></font></div><div align="center"><font size="2" face="Mihan-Iransans"><br></font></div><div align="center"><font size="2" face="Mihan-Iransans">چشاتونو ببندین و به خاطراتش فکر کنین</font></div><div align="center"><font size="2" face="Mihan-Iransans">از اولین روز تا آخرین روز...</font></div><div align="center"><font size="2" face="Mihan-Iransans">اگه چشاتونو باز کردین و دلتون تنگ شد واسش</font></div><div align="center"><font size="2" face="Mihan-Iransans">برین دنبالش.</font></div><div align="center"><font size="2" face="Mihan-Iransans"><br></font></div><div align="center"><font size="2" face="Mihan-Iransans">شبتون زیبا</font><b><br></b></div>
+
+ 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="سایت عکس" >سایت عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%A8%D8%B1%D9%88%20%D8%AF%D9%86%D8%A8%D8%A7%D9%84%D8%B4" title="برو دنبالش" >برو دنبالش</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%DA%86%D8%B4%D9%85%D8%A7%D8%AA" title="چشمات" >چشمات</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%A7%D8%B7%D8%B1%D8%A7%D8%AA" title="خاطرات" >خاطرات</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D8%A7%D8%B4%D9%82%D8%A7%D9%86%D9%87" title="عاشقانه" >عاشقانه</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D8%B4%D9%82" title="عشق" >عشق</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AA%D9%86%20%D8%B9%D8%A7%D8%B4%D9%82%D8%A7%D9%86%D9%87" title="متن عاشقانه" >متن عاشقانه</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/11" title="عکس های عاشقانه" >عکس های عاشقانه</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/995" title="شماره !">شماره !</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 00:00 - 1399/07/16</p><script>mihanblogPostLike('995','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(995)"><b><script>setCommentCnt(995)</script></b></a></span>
+			
+			<div>
+					 
+
+
+
+<div align="center"><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/hv7y_8.jpg" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a></div><div align="center"><br></div><div align="center">دیشب یه نفر با یه شماره ناشناس بهم اس ام اس داد :<br></div><div align="center">« تو که درباره ی دلتنگی انقدر قشنگ نوشتی ، تا حالا دلت برای کسی تنگ شده ؟ »<br>
+واسش فرستادم نه اندازه ی تو ،<br>
+واسم فرستاد « مگه می دونی من کی هستم ؟»<br>
+گفتم نه ،<br>
+گفت « هنوزم علم غیب داری و همه چیز رو می دونی ؟»<br>
+گفتم همه چیز که نه ،</div><div align="center"> فقط این رو می دونم که انقدر دلتنگ هستی که شماره م رو
+ هنوز یادته . <br></div><div align="center">اگه نتونستی شماره م رو فراموش کنی یا از تو گوشیت پاک کنی 
+یعنی بدجور اسیر خاطرات شدی ...<br>
+چند دقیقه ی بعد با شماره ی اصلیش بهم زنگ زد . <br></div><div align="center">شماره ش تو گوشیم سیو بود، شماره ش رو حفظ بودم !</div>
+
+
+
+
+
+
+
+
+
+
+ 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" title="خدا" >خدا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AD%D8%B3%D9%86%20%D9%82%D8%A7%D8%B3%D9%85%DB%8C" title="محسن قاسمی" >محسن قاسمی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="سایت عکس" >سایت عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AF%D9%84%D8%AA%D9%86%DA%AF%DB%8C" title="دلتنگی" >دلتنگی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AC%D8%A7%D9%86%D9%85%20%D8%A8%D8%A7%D8%B4" title="جانم باش" >جانم باش</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B1%D8%AE%20%D9%86%D9%85%D8%A7%DB%8C%D8%A7%D9%86%20%DA%A9%D9%86" title="رخ نمایان کن" >رخ نمایان کن</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D8%B4%D9%82" title="عشق" >عشق</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/11" title="عکس های عاشقانه" >عکس های عاشقانه</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/1018" title="حرفم را پس میگیرم !">حرفم را پس میگیرم !</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 17:02 - 1398/12/24</p><script>mihanblogPostLike('1018','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(1018)"><b><script>setCommentCnt(1018)</script></b></a></span>
+			
+			<div>
+					 
+
+
+<div align="center"><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/pn4v_photo-sander-taats-couple-winter-snowing-3.jpg" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a></div><div align="center"><br></div><div align="center">من عاشق زمستانم<br></div><div align="center">عاشق اینکه در زمستان ببینمت</div><div align="center">آرام راه میروی که سر نخوری <br></div><div align="center">گونه هایت از سرما سرخ شده</div><div align="center">سر خود را در یقه ات فرو کرده ای<br></div><div align="center">دست هایت در جیبت مچاله شده</div><div align="center">معصومانه به زمین خیره ای</div><div align="center">چقدر دوست داشتنی شده ای<br></div><div align="center">حرفم را پس میگیرم</div><div align="center">من عاشق زمستان نیستم</div><div align="center">عاشق تو ام ♥<br></div>
+
+
+
+
+
+
+
+
+ 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="سایت عکس" >سایت عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%DA%A9%D8%A7%D8%B3" title="عکاس" >عکاس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%DA%A9%D8%B3" title="عکس" >عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B2%D9%85%D8%B3%D8%AA%D8%A7%D9%86" title="زمستان" >زمستان</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" title="خدا" >خدا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%DB%8C%D9%87%D9%86%20%D8%A8%D9%84%D8%A7%DA%AF" title="میهن بلاگ" >میهن بلاگ</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D8%B4%D9%82" title="عشق" >عشق</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/11" title="عکس های عاشقانه" >عکس های عاشقانه</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/1017" title="درست در ♥ من">درست در ♥ من</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 16:40 - 1398/12/24</p><script>mihanblogPostLike('1017','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(1017)"><b><script>setCommentCnt(1017)</script></b></a></span>
+			
+			<div>
+					 <div align="center"><blockquote><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/qde8_couple_hugs_hands_love_119017_2560x1600.jpg" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a><p style="text-align: center;"><br></p><p style="text-align: center;">تـو صدها کیلومتر از مـن دوری</p><p style="text-align: center;">اما احساس می کنم اینجایی</p><p style="text-align: center;">درست در قلب مـن</p></blockquote></div>
+
+
+ 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="سایت عکس" >سایت عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" title="خدا" >خدا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D8%A7%D8%B4%D9%82%D8%A7%D9%86%D9%87" title="عاشقانه" >عاشقانه</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%82%D9%84%D8%A8" title="قلب" >قلب</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D8%B4%D9%82" title="عشق" >عشق</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D9%84%D8%A7%D9%82%D9%87" title="علاقه" >علاقه</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AF%D9%88%D8%B3%D8%AA%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%86" title="دوست داشتن" >دوست داشتن</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/11" title="عکس های عاشقانه" >عکس های عاشقانه</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/1016" title="کاش ..!">کاش ..!</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 07:04 - 1398/04/24</p><script>mihanblogPostLike('1016','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(1016)"><b><script>setCommentCnt(1016)</script></b></a></span>
+			
+			<div>
+					 
+<div align="center"><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/aoti_original.gif" alt="سایت عکس" vspace="0" hspace="0" border="0" align="baseline"></a></div><div align="center"><br></div><div align="center">کاش ناشناخته می ماندند ؛<br>
+آدم هایی که فکر می کردیم بهترین اند !<br>
+آن هایی که رویِ معرفتشان حساب کرده بودیم .<br>
+کاش سر از کارشان در نمی آوردیم ،<br>
+آن رویِ سکه شان را نمی دیدیم ،<br>
+نقابشان را کنار نمی زدیم .<br>
+کاش تصوراتمان را ،<br>
+اعتمادمان را ،<br>
+آرامشمان را ؛<br>
+خراب نمی کردیم !</div>
+
+
+
+
+ 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" title="خدا" >خدا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AD%D8%B3%D9%86%20%D9%82%D8%A7%D8%B3%D9%85%DB%8C" title="محسن قاسمی" >محسن قاسمی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="سایت عکس" >سایت عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%86%D8%A7%D8%B4%D9%86%D8%A7%D8%B3" title="ناشناس" >ناشناس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%DA%A9%D8%A7%D8%B4" title="کاش" >کاش</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B2%D9%86%D8%AF%DA%AF%DB%8C" title="زندگی" >زندگی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AA%D8%AC%D8%B1%D8%A8%D9%87" title="تجربه" >تجربه</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/11" title="عکس های عاشقانه" >عکس های عاشقانه</a> , 					    <a href="http://siteaks.mihanblog.com/post/category/17" title="فیلم و آموزش و جملات فلسفی" >فیلم و آموزش و جملات فلسفی</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/1015" title="شما با کدوم تصمیم میگیرید ؟">شما با کدوم تصمیم میگیرید ؟</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 23:52 - 1398/04/7</p><script>mihanblogPostLike('1015','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(1015)"><b><script>setCommentCnt(1015)</script></b></a></span>
+			
+			<div>
+					 <div align="center"><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/kgf0_closing-the-gap.jpg" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a></div><div align="center"><br></div><div align="center">جایی که عقل بتونه جلو احساساتو بگیره ینی دل دیگه خستس :)<br></div>
+
+
+ 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" title="خدا" >خدا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AD%D8%B3%D9%86%20%D9%82%D8%A7%D8%B3%D9%85%DB%8C" title="محسن قاسمی" >محسن قاسمی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B7%D9%88%D9%81%D8%A7%D9%86" title="طوفان" >طوفان</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%A2%D8%B1%D8%A7%D9%85%D8%B4" title="آرامش" >آرامش</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AF%DB%8C%D9%88%D8%A7%D9%86%DA%AF%DB%8C" title="دیوانگی" >دیوانگی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D9%82%D9%84" title="عقل" >عقل</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%82%D9%84%D8%A8" title="قلب" >قلب</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/11" title="عکس های عاشقانه" >عکس های عاشقانه</a> , 					    <a href="http://siteaks.mihanblog.com/post/category/17" title="فیلم و آموزش و جملات فلسفی" >فیلم و آموزش و جملات فلسفی</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/1014" title="جز کمی مراقبت و محبت ؟!">جز کمی مراقبت و محبت ؟!</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 01:54 - 1398/04/7</p><script>mihanblogPostLike('1014','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(1014)"><b><script>setCommentCnt(1014)</script></b></a></span>
+			
+			<div>
+					 <div align="center"><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/fjbw_1_cykl-lw1ybh4tcibsl1_oq.jpeg" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a></div><div align="center"><br></div><div align="center">یک گلدان گل را رها کن به امان خودش،</div><div align="center">بعد از چند وقت، حتما می‌خشکد.</div><div align="center">حالا جای آن گلدان، آدمیزاد باشد،</div><div align="center">نگویی دوستش داری، دستی از روی محبت بر سرش نکشی،</div><div align="center">به اوضاع و احوالش نرسی، نازش را نکشی،</div><div align="center">برایش دلبری نکنی، خبر از احوالش نگیری،</div><div align="center">هر چقدر هم که محکم باشد، یک جایی می‌خشکد.<br>می‌خواهم بگویم مراقب گل زندگی‌تان باشید،</div><div align="center">قبل از آنکه تنها مشتی خاک تهِ گلدانِ زندگی برایتان بماند.<br>مگر آدمیزاد به چه بند است، جز کمی مراقبت و محبت ؟؟<br></div>
+
+
+ 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" title="خدا" >خدا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AD%D8%B3%D9%86%20%D9%82%D8%A7%D8%B3%D9%85%DB%8C" title="محسن قاسمی" >محسن قاسمی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="سایت عکس" >سایت عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AD%D8%A8%D8%AA" title="محبت" >محبت</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%B1%D8%A7%D9%82%D8%A8%D8%AA" title="مراقبت" >مراقبت</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D8%B4%D9%82" title="عشق" >عشق</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AF%D9%88%D8%B3%D8%AA%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%86" title="دوست داشتن" >دوست داشتن</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/11" title="عکس های عاشقانه" >عکس های عاشقانه</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/1013" title="هفتگانه ..!">هفتگانه ..!</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 01:38 - 1398/04/7</p><script>mihanblogPostLike('1013','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(1013)"><b><script>setCommentCnt(1013)</script></b></a></span>
+			
+			<div>
+					 <div align="center"><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/y0g3_235148191257717093111110195891121561318255.jpg" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a></div><div align="center"><br></div><div align="center">نه هفت طبقه‌ی آسمان ، نه هفت طبقه‌ی زمین ،</div><div align="center">هیچکدام برای جا دادن خدا کافی نیست !<br>ولی قلب انسان به تنهایی قادر است این کار را بکند ؛</div><div align="center">پس خیلی مواظب باش تا دل احدی را نشکنی...<br></div>
+
+
+ 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" title="خدا" >خدا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AD%D8%B3%D9%86%20%D9%82%D8%A7%D8%B3%D9%85%DB%8C" title="محسن قاسمی" >محسن قاسمی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="سایت عکس" >سایت عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%87%D9%81%D8%AA%DA%AF%D8%A7%D9%86%D9%87" title="هفتگانه" >هفتگانه</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%81%D9%84%D8%A8" title="فلب" >فلب</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AF%D9%84" title="دل" >دل</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B4%DA%A9%D8%B3%D8%AA%D9%86" title="شکستن" >شکستن</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/17" title="فیلم و آموزش و جملات فلسفی" >فیلم و آموزش و جملات فلسفی</a> , 					    <a href="http://siteaks.mihanblog.com/post/category/11" title="عکس های عاشقانه" >عکس های عاشقانه</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/1012" title="من نمیگم ، تویی که بلدی منو !">من نمیگم ، تویی که بلدی منو !</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 23:32 - 1398/04/3</p><script>mihanblogPostLike('1012','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(1012)"><b><script>setCommentCnt(1012)</script></b></a></span>
+			
+			<div>
+					 
+<div align="center"><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/iv42_istock-861368754.jpg.jpg" alt="" vspace="0" hspace="0" border="0" align="bottom"></a></div><div align="center"><br></div><div align="center">من از اونا نیستم که بهت بگم باید جلوی همه بهم ابراز احساسات کنی،<br>یا توقع داشته باشم از بیست و چهار ساعت روز حداقل بیست ساعتشو مالِ من باشی...<br>من از اونا نیستم که توی خیابون دستمو دراز کنم و مجبورت کنم دستمو بگیری،<br>یا گونمو بیارم جلوی لبات،<br>یا مثلا موقعی که بعد از چند روز میبینمت محکم بغلت کنم و بگم آخ که دوریت مزه ی زهر میده..<br>یا از اونا که بگم وقتی من میخوابم تو نباید بیدار باشی...<br>من از اونا نیستم که بگم هیچکسو نبین جز من،<br>با هیچکس حرف نزن جز من،<br>با هیچکسی حالت خوب نباشه جز من...<br>من نمیگم؛<br>تویی که بلدی منو،<br>تویی که تمومِ منی باید بدونی که؛<br>تو جمع یهو بلند بگی دوستم داری،<br>یا همه وقت آزادت باید برای من باشه،<br>و تو خیابون دستمو محکم بگیری و ول نکنی...<br>تو باید بدونی که خدا گونه های منو افریده که تو بوسشون کنی و بعد چند روز ندیدنم یه جور بغلم کنی که دود بشه بره هوا اون همه ندیدنا و دلتنگیا...<br>تو باید خودت بدونی که وقتی میگم میخوابم میخوابم مینویسمش ولی در واقع فعلِ امریه&nbsp; یعنی توام بخواب...<br>من نمیگم ولی تو باید بدونی که نبینی جز منو،<br>حالت خوب نباشه با کسی غیر من و <br>هم صحبت کسی که من نباشم نشی...<br>تو باید بدونی که من خودخواه ترین ادم روی زمینم تو داشتنت ...<br><br></div>
+
+
+
+
+ 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" title="خدا" >خدا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AD%D8%B3%D9%86%20%D9%82%D8%A7%D8%B3%D9%85%DB%8C" title="محسن قاسمی" >محسن قاسمی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D8%B4%D9%82" title="عشق" >عشق</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="سایت عکس" >سایت عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AF%D9%88%D8%B3%D8%AA%20%D8%AF%D8%A7%D8%B4%D8%AA%D9%86" title="دوست داشتن" >دوست داشتن</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%A7%D8%AD%D8%B3%D8%A7%D8%B3" title="احساس" >احساس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AF%D9%88%D8%B3%D8%AA%20%D8%AF%D8%A7%D8%B1%D9%85" title="دوست دارم" >دوست دارم</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/11" title="عکس های عاشقانه" >عکس های عاشقانه</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/1011" title="بدون اما و اگر ..!">بدون اما و اگر ..!</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 23:21 - 1398/04/3</p><script>mihanblogPostLike('1011','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(1011)"><b><script>setCommentCnt(1011)</script></b></a></span>
+			
+			<div>
+					 <div align="center"><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/iczy_cdcdc.png" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a></div><div align="center"><br></div><div align="center">میگفت تو تنها کسی هستی که من دارمش؛<br>راست میگفت من تنها کسی بودم که پای تمام بدی هایش مانده بود،<br>تنها کسی که بدقلقی هایش را تحمل کرده بود و هیچ نگفته بود...<br>من تنها کسی بودم که هر وقت اشاره میکرد برای بودن کنارش وقت داشتم...<br>تنها کسی که دوستت دارم آمده روی زبانش را به بهانه ی غرور قورت نمیداد،<br>من تنها کسی بودم که&nbsp; تا صدایش بغضی میشد و قطره اولش نیامده از دردش صورتم خیس میشد،<br>از سردردش قلبم مچاله میشد و اخم هایش ویران میکرد دنیایم را...<br>من تنها کسی بودم که حتی موهای نامرتب و لباس های رنگی رنگیش را هم دوست داشتم،<br>یا آن چشم های پف کرده اش توی تخت خواب...<br>من تنها کسی بودم که توی این دنیا پر از آدم جور واجور،<br>با رنگ ها و تیپ ها و شکل های مختلف،<br>تنها آرزویم او بود و بس و رویاهایم خلاصه شده بود توی چشمهایش...<br>او راست میگفت؛<br>بینِ آن همه آدم که دورش را گرفته بود،<br>من تنها کسی بودم که او واقعا داشتش<br>شش دانگ،<br>بدون توجه به تقویم و ساعت،<br>بدون اما و اگر،<br>هر وقت که اشاره میکرد من را داشت...<br>فقط مانده ام چطور میشود آدم تنها کسی را که دارد،<br>دمِ رفتن یادش برود با خودش ببرد ...<br></div>
+
+
+ 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" title="خدا" >خدا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AD%D8%B3%D9%86%20%D9%82%D8%A7%D8%B3%D9%85%DB%8C" title="محسن قاسمی" >محسن قاسمی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="سایت عکس" >سایت عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B4%D8%B4%20%D8%AF%D8%A7%D9%86%DA%AF" title="شش دانگ" >شش دانگ</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%81%D8%B1%D8%A7%D9%85%D9%88%D8%B4%DB%8C" title="فراموشی" >فراموشی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AA%D9%86%D9%87%D8%A7" title="تنها" >تنها</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D8%B4%D9%82" title="عشق" >عشق</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/11" title="عکس های عاشقانه" >عکس های عاشقانه</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/1010" title="♦ خدای مهربانم... ♦">♦ خدای مهربانم... ♦</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 03:02 - 1398/03/28</p><script>mihanblogPostLike('1010','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(1010)"><b><script>setCommentCnt(1010)</script></b></a></span>
+			
+			<div>
+					 <div align="center"><p style="text-align: center;"><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/4j5v_attractive-zen-background.jpg" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a></p><p style="text-align: center;"><br></p><p style="text-align: center;">خدای مهربانم&nbsp;</p>
+<p style="text-align: center;">نورت را در وجودمان متجلی کن که</p>
+<p style="text-align: center;">سخت محتاج آنیم ...</p>
+<p style="text-align: center;">خدایا&nbsp;</p>
+<p style="text-align: center;">برکت نگاهت را در نگاهمان بریز تا هر</p>
+<p style="text-align: center;">کجا که مینگریم نیکی باشد و مهر ...</p>
+<p style="text-align: center;">خدایا&nbsp;</p>
+<p style="text-align: center;">میدانی که خسته ایم از خودمان از&nbsp;</p>
+<p style="text-align: center;">روزمرگی ها از نفرتها از جدایی ها از&nbsp;</p>
+<p style="text-align: center;">من بودن ها و ما نشدن هایمان ...</p>
+<p style="text-align: center;">خدایا&nbsp;</p>
+<p style="text-align: center;">دستمان را بگیر تا یادمان باشد که باید</p>
+<p style="text-align: center;">دستی را بگیریم ....</p>
+<p style="text-align: center;">خدایا نگاه مهربانت را از ما دریغ مکن تا</p>
+<p style="text-align: center;">یادمان باشد که باید به تمامی نگاهی</p>
+<p style="text-align: center;">باشیم از سر مهر و عشق به انسانها ..</p>
+<p style="text-align: center;">آمین</p></div>
+
+
+ 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" title="خدا" >خدا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AF%D8%B9%D8%A7" title="دعا" >دعا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%86%DB%8C%D8%A7%DB%8C%D8%B4" title="نیایش" >نیایش</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%A2%D9%85%DB%8C%D9%86" title="آمین" >آمین</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%A7%DB%8C%D9%85%D8%A7%D9%86" title="ایمان" >ایمان</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/2%20%D8%AF%D9%82%DB%8C%D9%82%D9%87%20%D8%B4%DA%A9%D8%B1%20%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C" title="2 دقیقه شکر گزاری" >2 دقیقه شکر گزاری</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/2%20%D8%AF%D9%82%DB%8C%D9%82%D9%87%20%D8%B4%DA%A9%D8%B1%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C" title="2 دقیقه شکرگزاری" >2 دقیقه شکرگزاری</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/20" title="2 دقیقه شكر گزاری" >2 دقیقه شكر گزاری</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/1009" title="تونستم نگهش دارم پیشم ؟!">تونستم نگهش دارم پیشم ؟!</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 02:26 - 1398/03/28</p><script>mihanblogPostLike('1009','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(1009)"><b><script>setCommentCnt(1009)</script></b></a></span>
+			
+			<div>
+					 <div align="center"><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/6zwd_fvfvfd.jpeg" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a>
+</div><div align="center"><br></div><div align="center">گفت یه کاری کن،یه چیزی بهش بگو،<br>بگو که پشیمون شه از رفتن...<br>گفتم:چیکار کنم؟برم بگم برگرد حتی اگه نمیخوای؟؟؟<br>تهش که چی؟من گفتم...<br>وقتی نگاه میکنم به قبلا میبینم همه چی زوری بود...<br>اگه دوستت دارم میگفت زوری بود چون من بهش میگفتم روزی چهار بار مثل قرص،سر ساعت<br>میگفت دوستم داره چون احساس دین میکرد...<br>اگه بهم زنگ میزد چون بهش میگفتم،میگفتم چاییتو خوردی زنگ بزن،رفتنی بیرون زنگ بزن،برگشتنیم زنگ بزن و الا آخر...<br>خودش نمیخواستا مجبورش میکردم،<br>مجبورش میکردم پیشم باشه،ادای عاشق معشوقارو در بیاریم و قصه های عاشقانه بسازیمو از تهش حرف بزنیم،<br>که چقدر خوشبختیم و عاشق زندگیمون...<br>مجبورش میکردم در حالی که هیچی نمیگه حرفمو گوش کنه،<br>یه لبخند میزد و هیچی نمیگفت...<br>چیشد؟؟؟هیچی...<br>تونستم نگهش دارم پیشم؟؟<br>نه،نمیشه...<br>شاید بتونی تا یه جایی با زور و محبت زیاد از حد پیش خودت نگهش داری،<br>ولی نمیشه همیشه بندش کنی،یه جور بندش کنی که خودش نره...<br>بزار خودش بیاد،<br>بزار اگه میخواد خودش تموم کنه این رفتنو...
+
+
+
+
+</div> 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" title="خدا" >خدا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AD%D8%B3%D9%86%20%D9%82%D8%A7%D8%B3%D9%85%DB%8C" title="محسن قاسمی" >محسن قاسمی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="سایت عکس" >سایت عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D8%A7%D8%B4%D9%82%D8%A7%D9%86%D9%87" title="عاشقانه" >عاشقانه</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%DA%A9%D9%BE%D8%B4%D9%86" title="کپشن" >کپشن</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%A7%DB%8C%D9%86%D8%B3%D8%AA%D8%A7%DA%AF%D8%B1%D8%A7%D9%85" title="اینستاگرام" >اینستاگرام</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%87%DB%8C%DA%86%20%D9%88%20%D9%BE%D9%88%DA%86" title="هیچ و پوچ" >هیچ و پوچ</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/11" title="عکس های عاشقانه" >عکس های عاشقانه</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/1008" title="از دست دادن یه چیزایی بزرگت نمیکنه ..!">از دست دادن یه چیزایی بزرگت نمیکنه ..!</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 02:21 - 1398/03/28</p><script>mihanblogPostLike('1008','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(1008)"><b><script>setCommentCnt(1008)</script></b></a></span>
+			
+			<div>
+					 <div align="center"><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/kn5r_5_there_is_a_difference_between_feeling_sad_and_depressed_shutterstock_345397208.jpg" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a>
+</div><div align="center"><br></div><div align="center">از دست دادن یه چیزایی بزرگت نمیکنه<br>باتجربت نمیکنه؛ وقتی یه چیزایی و از دست میدی تا یه مدت انقدر هرثانیه مرورش میکنی که داشتنش و باور میکنی.<br>بعد دلت هواشو میکنه و تا به خودت میای جواب دلتو بدی میبینی کل وجودت صداش میزنن.<br>چند سال با همینا سر میکنی و تا بخوای قبول کنی تجربه بوده&nbsp; میبینی دلت از یه جای خیلی دور داره تیر می‌کشه <br>همونجا به هرچی بزرگ شدن لعنت میفرستی و تا میتونی مثل یه بچه گریه میکنی و گریه میکنی و گریه میکنی !
+
+
+
+
+</div> 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" title="خدا" >خدا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AD%D8%B3%D9%86%20%D9%82%D8%A7%D8%B3%D9%85%DB%8C" title="محسن قاسمی" >محسن قاسمی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="سایت عکس" >سایت عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D8%A7%D8%B4%D9%82%D8%A7%D9%86%D9%87" title="عاشقانه" >عاشقانه</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B2%D9%86%D8%AF%DA%AF%DB%8C" title="زندگی" >زندگی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AA%D9%86%20%D8%AE%D9%88%D8%A8" title="متن خوب" >متن خوب</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%DA%A9%D9%BE%D8%B4%D9%86" title="کپشن" >کپشن</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/11" title="عکس های عاشقانه" >عکس های عاشقانه</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  	
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl"><a href="http://siteaks.mihanblog.com/post/1005" title="♦ الله ♦">♦ الله ♦</a></h3>
+		<p class="binfo small">نویسنده : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a> | تاریخ : 20:00 - 1398/03/20</p><script>mihanblogPostLike('1005','like')</script>
+		
+		<div class="maincont">
+			
+			<span class="argcoms"><a target="_self" href="javascript:newComment(1005)"><b><script>setCommentCnt(1005)</script></b></a></span>
+			
+			<div>
+					 
+
+<div align="center"><a href="index.html" target="" title="سایت عکس"><img src="http://uupload.ir/files/dzut_147330_693534744.jpg" alt="سایت عکس" vspace="0" hspace="0" border="0" align="bottom"></a></div><div align="center"><br>
+ﺑـﻮﯼ ناﺏ ﺑﻬﺸـﺖ ﻣﯿﺪﻫﺪ ﻫﻤـﮥ ﻧﺎﻣﻬﺎﯼ ﻗﺸـﻨﮓ ﺗــﻮ<br>
+ﻣﯿﮕﺬﺍﺭﻣﺸﺎﻥ ﺭﻭﯼ ﺯﺧﻤﻬﺎﯼ ﺩﻟﻢ<br>
+<br>
+ﮔﻔـﺘﻪ ﺑـﻮﺩﯼ <font color="#FF0000">♥</font> ﺍَﻟﺠَّﺒﺎﺭ <font color="#FF0000">♥</font><br>
+◄ﯾﻌﻨﯽ ﮐﺴﯽ ﮐـﻪ ﺟُـﺒﺮﺍﻥ ﻣــﯿﮑﻨﺪ ﻫﻤـﮥ شکستگیهای ﺩﻟﺖ ﺭﺍ</div><div align="center"><br>
+ﮔﻔـــــﺘﻪ ﺑﻮﺩی <font color="#FF0000">♥</font> ﺍَﻟﻤُﺼَـﻮِّﺭ <font color="#FF0000">♥</font><br>
+◄ﯾﻌﻨﯽ ﮐﺴﯽ ﮐــﻪ ﺍﺯ ﻧﻮ ﻣـﯿﺴـﺎﺯﺩ ﻫﻤﮥ ﺁﻧﭽﻪ ﺭﺍﻭﯾـﺮﺍﻥ ﺷـﺪﻩ ﺍﺳـﺖ ﺩﺭﻭﻥ ﺩﻟﺖ<br>
+<br>
+ﮔﻔــﺘﻪ ﺑـﻮﺩﯼ <font color="#FF0000">♥</font> ﺍﻟﺸّـﺎﻓـﯽ <font color="#FF0000">♥</font><br>
+◄ﯾﻌﻨﯽ ﮐﺴﯽ ﮐـــﻪ ﺷِﻔﺎ ﻣـﯿﺪﻫﺪ ﺗﻤﺎم ﺯﺧﻤﻬـﺎﯼِ ﻋﻤﯿﻖ ﻭ ﻧﺎﻋـﻼﺝ ﺭﺍ<br>
+<br>
+ﻫـﻮﺍﯼ ﺩﻟﻢ ﺳﺒﮏ ﻣﯿﺸﻮﺩ ﺑــﺎ ﺯﻣﺰﻣﻪ ﻧﺎﻣﻬﺎﯼِ ﺯﯾﺒﺎﯾﺖ<br>
+ﻧَﻔـﺲ ﻣﯿﮑﺸــﻢ ﺩﺭ ﻫﻮﺍﯼِ <font color="#FF0000">♥</font> ﻣﻬﺮﺑﺎﻧﯿﻬـﺎﯼِ ﻧﺎﺑﺖ <font color="#FF0000">♥</font><br>
+<br>
+<br>
+ﺳﭙﺎﺱ ﮐﻪ ﻫﺴﺘﯽ ﻭ ﺧﺪﺍﯾﯽ ﻣﯿﮑﻨﯽ.<br>
+<br></div>
+
+
+
+
+
+
+ 
+						<br />						<br /><br />
+						برچسب ها :   						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" title="خدا" >خدا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AD%D8%B3%D9%86%20%D9%82%D8%A7%D8%B3%D9%85%DB%8C" title="محسن قاسمی" >محسن قاسمی</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/2%20%D8%AF%D9%82%DB%8C%D9%82%D9%87%20%D8%B4%DA%A9%D8%B1%20%DA%AF%D8%B2%D8%A7%D8%B1%DB%8C" title="2 دقیقه شکر گزاری" >2 دقیقه شکر گزاری</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA%20%D8%B9%DA%A9%D8%B3" title="سایت عکس" >سایت عکس</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%AF%D8%B9%D8%A7" title="دعا" >دعا</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%B2%D9%86%D8%AF%DA%AF%DB%8C%20%D8%B2%DB%8C%D8%A8%D8%A7%D8%B3%D8%AA" title="زندگی زیباست" >زندگی زیباست</a> , 						<a href="http://siteaks.mihanblog.com/post/tag/%D8%A8%D9%87%D8%B4%D8%AA" title="بهشت" >بهشت</a> , <br />												دسته بندی : 					    <a href="http://siteaks.mihanblog.com/post/category/20" title="2 دقیقه شكر گزاری" >2 دقیقه شكر گزاری</a> , <br />			</div>
+			<div class="clr"></div>
+		</div>
+		
+		<div class="mlink"><div class="mlink">
+			<span class="argmore"><b></b></span>
+		</div></div>
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+  
+	
+
+		
+	<div class="base shortstory">
+	<div class="dpad">
+		<h3 class="btl">آخرین مطالب</h3>
+		<div class="maincont">
+			<div>
+			    								
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1019">برو دنبالش ♥</a> ( 1399/09/19 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/995">شماره !</a> ( 1399/07/16 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1018">حرفم را پس میگیرم !</a> ( 1398/12/24 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1017">درست در ♥ من</a> ( 1398/12/24 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1016">کاش ..!</a> ( 1398/04/24 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1015">شما با کدوم تصمیم میگیرید ؟</a> ( 1398/04/7 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1014">جز کمی مراقبت و محبت ؟!</a> ( 1398/04/7 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1013">هفتگانه ..!</a> ( 1398/04/7 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1012">من نمیگم ، تویی که بلدی منو !</a> ( 1398/04/3 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1011">بدون اما و اگر ..!</a> ( 1398/04/3 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1010">♦ خدای مهربانم... ♦</a> ( 1398/03/28 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1009">تونستم نگهش دارم پیشم ؟!</a> ( 1398/03/28 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1008">از دست دادن یه چیزایی بزرگت نمیکنه ..!</a> ( 1398/03/28 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1005">♦ الله ♦</a> ( 1398/03/20 )<br />
+												
+						&raquo; <a href="http://siteaks.mihanblog.com/post/1006">♦ 2 دقیقه شكر گزاری ♦</a> ( 1398/03/19 )<br />
+							</div>
+			<div class="clr"></div>
+		</div>
+
+	</div>
+</div>
+<div class="bsep">&nbsp;</div>
+	
+
+	
+	<div class="base shortstory">
+	<div class="dpad">
+		<div class="maincont">
+
+				<div style="text-align:center;">
+					 	 صفحات سایت:
+												   <a href="http://siteaks.mihanblog.com/page/1">[ <b>1</b> ]</a>
+												   <a href="http://siteaks.mihanblog.com/page/2">[ <span>2</span> ]</a>
+												   <a href="http://siteaks.mihanblog.com/page/3">[ <span>3</span> ]</a>
+												   <a href="http://siteaks.mihanblog.com/page/4">[ <span>4</span> ]</a>
+												   <a href="http://siteaks.mihanblog.com/page/5">[ <span>5</span> ]</a>
+												   <a href="http://siteaks.mihanblog.com/page/6">[ <span>6</span> ]</a>
+												   <a href="http://siteaks.mihanblog.com/page/7">[ <span>7</span> ]</a>
+												   <a href="http://siteaks.mihanblog.com/page/8">[ <i>...</i> ]</a>
+									    </div>
+			<div class="clr"></div>
+		</div>
+
+	</div>
+	</div>
+<div class="bsep">&nbsp;</div>
+	
+
+</div>
+					</div>
+					<div id="sidebar" class="rcol">
+
+<div class="block leftmenu">
+		<ul class="lmenu reset">
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/11">عکس های عاشقانه ( 272 )</a>
+						</li>
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/17">فیلم و آموزش و جملات فلسفی ( 249 )</a>
+						</li>
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/6">عکس های مذهبی ( 140 )</a>
+						</li>
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/3">عکس های جالب و دیدنی ( 74 )</a>
+						</li>
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/16">عکس های متحرک ( 31 )</a>
+						</li>
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/1">عکس های خنده دار  ( 19 )</a>
+						</li>
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/13">عکس هنرمندان ( 7 )</a>
+						</li>
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/4">عکس های طبیعت ( 5 )</a>
+						</li>
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/7">عکس های حیوانات ( 5 )</a>
+						</li>
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/20">2 دقیقه شكر گزاری ( 3 )</a>
+						</li>
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/19">روانشناسی ( 2 )</a>
+						</li>
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/2">عکس های انیمیشنی ( 2 )</a>
+						</li>
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/10">کاریکاتور های جالب ( 1 )</a>
+						</li>
+											<li>
+							<a href="http://siteaks.mihanblog.com/post/category/18">عکس های ماشین ( 1 )</a>
+						</li>
+						</ul>
+			<div class="dcont">
+		<ul class="reset">
+							<li>
+					<a href="http://siteaks.mihanblog.com/post/archive/1399/9" > آذر 1399</a>
+				</li>
+							<li>
+					<a href="http://siteaks.mihanblog.com/post/archive/1399/7" > مهر 1399</a>
+				</li>
+							<li>
+					<a href="http://siteaks.mihanblog.com/post/archive/1398/12" > اسفند 1398</a>
+				</li>
+							<li>
+					<a href="http://siteaks.mihanblog.com/post/archive/1398/4" > تیر 1398</a>
+				</li>
+							<li>
+					<a href="http://siteaks.mihanblog.com/post/archive/1398/3" > خرداد 1398</a>
+				</li>
+							<li>
+					<a href="http://siteaks.mihanblog.com/post/archive/1398/2" > اردیبهشت 1398</a>
+				</li>
+							<li>
+					<a href="http://siteaks.mihanblog.com/post/archive/1398/1" > فروردین 1398</a>
+				</li>
+							<li>
+					<a href="http://siteaks.mihanblog.com/post/archive/1397/12" > اسفند 1397</a>
+				</li>
+							<li>
+					<a href="http://siteaks.mihanblog.com/post/archive/1397/10" > دی 1397</a>
+				</li>
+							<li>
+					<a href="http://siteaks.mihanblog.com/post/archive/1397/9" > آذر 1397</a>
+				</li>
+							<li>
+					<a href="http://siteaks.mihanblog.com/post/archive/1397/8" > آبان 1397</a>
+				</li>
+							<li>
+					<a href="http://siteaks.mihanblog.com/post/archive/1397/7" > مهر 1397</a>
+				</li>
+							<li>
+					<a href="http://siteaks.mihanblog.com/post/archive">نمایش تمام مطالب</a>
+				</li>
+		</ul>
+	</div>
+		<div class="dtop">&nbsp;</div>
+	<div class="dbtm">&nbsp;</div>
+</div>
+
+	<div id="bcalendar" class="block">
+		<h4 class="btl"><span class="green">نویسندگان</span> سایت</h4>
+		<div class="dcont">
+		  <ul>
+							<li>
+					<a title="" href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen  (640)</a>
+				</li>
+					  </ul>
+		</div>
+		<div class="dtop">&nbsp;</div>
+		<div class="dbtm">&nbsp;</div>
+	</div>
+
+
+		<form id="frm-16075231665fd0db5e461b3" method="post" action="http://siteaks.mihanblog.com/poll/new/fid/16075231665fd0db5e461b3/atrty/1607523166/avrvy/0/key/3dd9150f0126281e05c3a943d3b2c3c1/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="269529" id="data[pollid]" />		
+<div id='vote-layer'><div id="bvote" class="block">
+	<div class="btl">
+		<h4>نظرسنجی</h4>
+	</div>
+	<div class="dcont">
+		<p class="vtitle"><b>نظرت درباره وبم چیه ؟!!</b></p>
+		<div id="dle-vote">
+			<div class="vote"><label><input type="checkbox"  name="data[v1]" id="v1" value="1" />فوق العادس</label></div><div class="vote"><label><input type="checkbox"  name="data[v2]" id="v2" value="1" />عالیه</label></div><div class="vote"><label><input type="checkbox"  name="data[v3]" id="v3" value="1" />خوبه</label></div><div class="vote"><label><input type="checkbox"  name="data[v4]" id="v4" value="1" />متوسط</label></div><div class="vote"><label><input type="checkbox"  name="data[v5]" id="v5" value="1" />بده</label></div><div class="vote"><label><input type="checkbox"  name="data[v6]" id="v6" value="1" />افتضاحه</label></div><div class="vote"><label><input type="checkbox"  name="data[v7]" id="v7" value="1" />نظری ندارم</label></div>		</div>
+	</div>
+	<div class="votefoot">
+	<input class="fbutton"  type="submit" value="ثبت"/>
+	
+	</div>
+
+	<div class="dtop">&nbsp;</div>
+	<div class="dbtm">&nbsp;</div>
+</div></div>
+
+		<input type="hidden" name="frm-id" value="16075231665fd0db5e461b3" id="frm-id" /></form>
+
+
+<div id="barchives" class="block">
+	<h4 class="btl"><span class="green">صفحات </span>جانبی</h4>
+	<div class="dcont">
+		   <ul>
+			  	
+				<li>
+					<a href="http://siteaks.mihanblog.com/extrapage/khoda" target="_blank">ازکلام مرحوم حاج اسماعیل</a>
+				</li>
+			  	
+		  </ul>
+	</div>
+	<div class="dtop">&nbsp;</div>
+	<div class="dbtm">&nbsp;</div>
+</div>
+
+<div id="barchives" class="block">
+	<h4 class="btl"><span class="green">آمار </span>بازدید</h4>
+	<div class="dcont">
+			کل بازدید ها : <script>getStatVar('total_view');</script><br/>
+			بازدید امروز : <script>getStatVar('today_view');</script><br/>
+			بازدید دیروز : <script>getStatVar('yesterday_view');</script><br/>
+			بازدید این ماه : <script>getStatVar('this_month_view');</script><br/>
+			بازدید ماه قبل : <script>getStatVar('last_month_view');</script><br/>
+			تعداد نویسندگان : <script>getStatVar('total_author');</script><br/>
+			تعداد کل مطالب : <script>getStatVar('total_post');</script><br/>
+			آخرین بروز رسانی : <script>getStatVar('modify_date');</script><br/>
+	</div>
+	<div class="dtop">&nbsp;</div>
+	<div class="dbtm">&nbsp;</div>
+</div>
+
+	
+<div id="popular" class="block">
+	<h4 class="btl"><span class="green">لینکدونی</span></h4>
+	<div class="dcont">
+		 <ul>
+			 
+				<li>
+					<a href="../mahefateme.mihanblog.com/index.html" title="" target="_blank">پیچ های دنیا</a>
+				</li>
+			 
+				<li>
+					<a href="http://bache-hamedani.mihanblog.com" title="" target="_blank">دیدنی های همدان</a>
+				</li>
+			 
+				<li>
+					<a href="../niiyayesh1351.mihanblog.com/index.html" title="" target="_blank">دلنوشته های نیایش</a>
+				</li>
+			 
+				<li>
+					<a href="http://headersaz.mihanblog.com/" title="" target="_blank">هدر ساز</a>
+				</li>
+			 
+				<li>
+					<a href="http://bartarinha2017.mihanblog.com/" title="" target="_blank">برترین ها</a>
+				</li>
+			 
+				<li>
+					<a href="../naseemazohoor313.mihanblog.com/index.html" title="" target="_blank">نسیم ظهور</a>
+				</li>
+			 
+				<li>
+					<a href="http://baroon-ehsas.mihanblog.com/" title="" target="_blank">بارون احساس</a>
+				</li>
+						<li>
+				<a href="http://siteaks.mihanblog.com/linkdaily/" title="لیست لینک ها">لیست لینک ها</a>
+			</li>
+			<li>
+				<a href="javascript:linkdailyForm()">+ ارسال لینک</a>
+			</li>			
+		  </ul>
+	</div>
+	<div class="dtop">&nbsp;</div>
+	<div class="dbtm">&nbsp;</div>
+</div>
+
+<div id="news-partner" class="block2"><div class="dtop">
+	<div class="dcont">
+		<h4 class="btl">درباره ما</h4>
+		<div class="informer">
+				<center><div style="text-align:center"><img src="../static.mihanblog.com/public/user_data/web_photo/427/1280520.jpg@8354"  /></div></center>
+			<br />
+					اینجا گوشه ی دنجی ست که اندکی بار همه ی دغدغه های روی دوشم را زمین بگذارم و فارغ از وجود هر گونه دغدغه، به درخت سبز خلوت خویش تکیه بزنم و زیر سایه اش بیارامم و از احساساتم بگویم؛ از تنهایی هایم، از غربت، از غم ها و گاهی حتی از شادی ها؛ بی هیچ ملاحظه و محدودیتی، تحت هیچ قانونی، در قالب هیچ چارچوبی،...<br />
+اینجا محل درد دل های شخصی من است، محل سبک شدن؛ شاید تنها مکان زندگی من که دغدغه هایم در آن جایی ندارند. جایی که خلاء تنهایی ام را با نوشتن، پر خواهم کرد؛ تنهایی همیشگی من؛ می دانم؛ می دانم کسی که خدا را دارد، درواقع هرگز تنها نیست، اما ما آدم ها، گاهی، به زمان هایی که کسی جز خدا ما را نمی فهمد، هم می گوییم، تنهایی!<br />
+اینجا کنج خلوتی است برای تنهایی من؛ جایی آرام برای فریاد زدن، جایی دنج برای گریه کردن و جایی فارغ از همه ی هیاهوهای زندگی پردغدغه ی من...<br />
+ورود هر گونه دغدغه، ممنوع!!!<br />
+سپاسگزارم به خاطر قضاوت نکردن ♥					<br />ایجاد کننده وبلاگ : <a href="http://siteaks.mihanblog.com/post/author/1071602">Mohsen </a>
+						
+				<br /><br />
+				<center><!-- http://siteaks.mihanblog.com/ --->
+<center><img src="http://api.qrserver.com/v1/create-qr-code/?data=http://siteaks.mihanblog.com&size=120x120"></center>
+<!-- http://siteaks.mihanblog.com/ --->
+
+♠ سایت عکس ♠
+
+
+<!-- Click by www.20i.ir --->
+<script type="text/javascript" src="http://www.20i.ir/tools/click-c/click-c.js"></script><div style="display:none"><h1><a href="http://www.20i.ir/">کد قفل کردن راست کلیک</a></h1></div>
+<!-- Click by www.20i.ir --->
+
+
+<!-- Payam form by www.20i.ir --->
+<script>window.onload=function() {alert("♥ خوش اومدی امیدوارم لذت ببری ، نظر فراموش نشه ♥")}
+window.onunload=function() {alert("از بازدید شما متشکریم")}</script><div style="display:none"><h2><a href="http://www.20i.ir">ابزار رایگان وبلاگ</a></h2></div>
+<!-- Payam form by www.20i.ir --->
+
+
+<!-- copyright form www.servicebox.ir --->
+<script type="text/javascript" src="http://servicebox.ir/abzar/tools/copyright/?name=www.siteaks.mihanblog.com"></script><div style="display:none"><h2><a href="http://www.servicebox.ir">&#1705;&#1583; &#1604;&#1740;&#1606;&#1705; &#1605;&#1606;&#1576;&#1593; &#1607;&#1606;&#1711;&#1575;&#1605; &#1705;&#1662;&#1740; &#1605;&#1591;&#1604;&#1576;</a></h2></div>
+<!-- copyright form www.servicebox.ir --->
+
+
+
+<!-- Goto Top by www.servicebox.ir --->
+<script type="text/javascript" src="http://servicebox.ir/abzar/tools/top-page/jquery.min.js"></script><script>var abzar = "<img src=http://servicebox.ir/abzar/tools/top-page/top6.png />";</script><script type="text/javascript" src="http://servicebox.ir/abzar/tools/top-page/scrolltopcontrol.js"></script><div style="display:none"><h1><a href="http://www.servicebox.ir">ابزار هدایت به بالای صفحه</a></h1></div>
+<!-- Goto Top by www.servicebox.ir --->
+
+
+<!-- Google Search by www.servicebox.ir --->
+<script type="text/javascript" src="http://servicebox.ir/abzar/tools/search/?mod=21&site=http://siteaks.mihanblog.com/&bg=FFFFFF&kadr=1&kc=BBBBBB&color=333333"></script><div style="display:none"><h1><a href="http://www.servicebox.ir">کد جستجو گر گوگل</a></h1></div>
+<!-- Google Search by www.servicebox.ir --->
+
+<!-- Goto Top by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzaar.ir/abzar/tools/top-page/jquery.min.js"></script><script>var abzar = "<img src=http://1abzaar.ir/abzar/tools/top-page/top6.png />";</script><script type="text/javascript" src="http://1abzaar.ir/abzar/tools/top-page/scrolltopcontrol.js"></script><div style="display:none"><h1><a href="http://www.1abzar.com">ابزار هدایت به بالای صفحه</a></h1></div>
+<!-- Goto Top by www.1abzar.com --->
+
+  
+<p align='center'></script>
+<div class="webniaz-blogfa-com">
+<div class="PM"></div>
+<marquee scrollamount="2" scrolldelay="5" direction="right">
+♥ خوش اومدی امیدوارم لذت ببری ♥</marquee>
+</div></p>
+
+<!---begin GOFTINO code--->
+<script type="text/javascript">
+!function(){function g(){var g=document.createElement("script"),s="https://www.goftino.com/widget/aeqGwF";g.type="text/javascript", g.async=!0,g.src=localStorage.getItem("goftino")?s+"?o="+localStorage.getItem("goftino"):s;var e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(g, e);}
+var a = window;"complete" === document.readyState ? g() : a.attachEvent ? a.attachEvent("onload", g) : a.addEventListener("load", g, !1);}();
+</script>
+<!---end GOFTINO code--->
+
+<center><audio controls autoplay preload="none" style="width:94%;margin:0% 3%;"><source type="audio/mpeg" id="player" src="http://dl.tabamusic.com/Music/1399/08/Kasra Zahedi - Shakhe Gol (128).mp3">مرورگر شما از Player ساپورت نمی کند</audio><br /><a href="http://tabamusic.com" target="_blank"></a></center></center>
+				<br />
+		</div>
+	</div>
+</div></div>
+					</div>
+					<div class="clr"></div>
+				</div></div>
+				<div id="vsepfoot" class="wsh"><div class="wsh">&nbsp;</div></div>
+			</div>
+		</div></div>
+	</div>
+</div>
+<div class="wwide footbg">
+	<div class="wrapper">
+		<div class="container">
+		<br />
+						<div class="blocktags radial">
+								
+								   <a href="http://siteaks.mihanblog.com/post/tag/%D8%B2%D9%86%D8%AF%DA%AF%DB%8C" 
+									style="font-size:1.03em">
+										   زندگی 
+								   </a>
+								
+								   <a href="http://siteaks.mihanblog.com/post/tag/%D9%82%D8%A7%D8%B3%D9%85%DB%8C" 
+									style="font-size:1.04em">
+										   قاسمی 
+								   </a>
+								
+								   <a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%DA%A9%D8%B3" 
+									style="font-size:1.48em">
+										   عکس 
+								   </a>
+								
+								   <a href="http://siteaks.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7" 
+									style="font-size:1.83em">
+										   خدا 
+								   </a>
+								
+								   <a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AD%D8%B3%D9%86+%D9%82%D8%A7%D8%B3%D9%85%DB%8C" 
+									style="font-size:1.79em">
+										   محسن قاسمی 
+								   </a>
+								
+								   <a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D8%B4%D9%82" 
+									style="font-size:1.14em">
+										   عشق 
+								   </a>
+								
+								   <a href="http://siteaks.mihanblog.com/post/tag/%D8%B2%D9%86%D8%AF%DA%AF%DB%8C+%D8%B2%DB%8C%D8%A8%D8%A7%D8%B3%D8%AA" 
+									style="font-size:1em">
+										   زندگی زیباست 
+								   </a>
+								
+								   <a href="http://siteaks.mihanblog.com/post/tag/%D8%B3%D8%A7%DB%8C%D8%AA+%D8%B9%DA%A9%D8%B3" 
+									style="font-size:2em">
+										   سایت عکس 
+								   </a>
+								
+								   <a href="http://siteaks.mihanblog.com/post/tag/%D9%85%D8%AD%D8%B3%D9%86" 
+									style="font-size:1.05em">
+										   محسن 
+								   </a>
+								
+								   <a href="http://siteaks.mihanblog.com/post/tag/%D8%B9%D8%A7%D8%B4%D9%82%D8%A7%D9%86%D9%87" 
+									style="font-size:1.11em">
+										   عاشقانه 
+								   </a>
+										</div>
+						
+		</div>
+	</div>
+</div>
+<div class="wwide footer">
+	<div class="wrapper">
+		<div class="container">
+
+			<span class="copyright">
+					CopyRight © 2011 - 2021 <a href="index.html" title="siteaks Group">siteaks Group</a> , All Rights Reserved<br/>
+       				
+					تمامی حقوق متن ها، تصاویر مربوط به سایت عکس می باشد و استفاده از آن ها با لینک دادن به سایت مجاز می باشد.
+
+			</span>
+
+		</div>
+		<a href="index.html#" onclick="scroll(0,0); return false" class="thide toptop">بالا</a>
+	</div>
+</div>
+</body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'siteaks.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

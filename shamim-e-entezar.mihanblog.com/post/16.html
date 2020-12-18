@@ -1,0 +1,916 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc%3Frsd" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*981556*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','430');
+	setStatVar('total_author','2');
+	setStatVar('modify_date','شنبه 6 تیر 1394');
+	
+	setStatVar('today_view','1100');
+	setStatVar('yesterday_view','23');
+	
+	setStatVar('this_month_view','2614');
+	setStatVar('last_month_view','2430');
+
+	setStatVar('total_view','337916');
+	setStatVar('last_view_date','پنجشنبه 27 آذر 1399 (14:18)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://shamim-e-entezar.mihanblog.com/statupdate/?data[refereruri]=http://shamim-e-entezar.mihanblog.com/post/category/12/page/3&data[postid]=16&data[requesturi]=/post/16&data[sdate]=1608202143&data[hash]=d3d7194811c5939cf654d562c50814ef&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[16]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+			} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://shamim-e-entezar.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://shamim-e-entezar.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>شمیم انتظار - دعای افتتاح</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Farsi">
+<meta name="description" content="شمیم انتظار - دعای افتتاح - کی شود دل ما رسته از عسر و حرج    اللهم عجل لولیک المهدی فرج - شمیم انتظار">
+<meta name="keywords" content="شمیم انتظار - دعای افتتاح,shamim-e-entezar, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="شمیم انتظار" href="rss/index.html" />
+<link href="http://template.pichak.net/pichak/173/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+<div align=center><div style="width:1000">
+
+<div class=Pichak>
+
+<div id=header>
+<div class=top-BlogTitle></div>
+<div class=top-menu><div class=BlogTitle>شمیم انتظار</div><div class=Description>کی شود دل ما رسته از عسر و حرج    اللهم عجل لولیک المهدی فرج</div></div>
+
+<div class=top-menu2>
+<div style="float:right;width:0px;direction:rtl; height:20px"></div>
+<div style="float:right;width:450">
+<a href="../index.html">صفحه اصلی</a> |
+<a rel="nofollow" href="mailto:m.aminsabzi@ymail.com">ایمیل مدیر</a> |
+<a rel="nofollow" href="javascript:messageForm()">تماس با من</a> |
+<a title="پیچک" href="http://pichak.net/" target="_blank" >قالب وبلاگ</a> |
+<a rel="nofollow" href="rss/index.html" target="_blank" >Feed</a>
+</div></div></div>
+
+<div id=main-back>
+
+<div class=Sid>
+<div id=Sidebar> 
+
+<div class="TopSid"><div class=TopSid2>جستوجو</div></div>
+<div class=CenterSid>
+<p align="center"><form target=_new method=get action=http://www.google.com/search>
+<center><table style='width:128px;font-size:9pt;font-family:Tahoma'>
+<tbody><tr><td><center><a target=_new href=http://pichak.net/blogcod/google>
+<img border=0 src=http://pichak.net/blogcod/google/pichak.net.gif alt=Google>
+</a><input name=q size=15 maxlength="255"><br>
+<input type="submit" name="btnG" value="Search"><br>
+<input value=http://shamim-e-entezar.mihanblog.com type=radio name=sitesearch checked=''>در این وبلاگ
+<br><input type=radio name=sitesearch value="">در كل اینترنت
+<input type=hidden name=ie value=UTF-8><input type=hidden name=oe value=UTF-8><br>
+</center></td></tr></tbody></table></center></form></p>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>ویژه مدیریت وب</div></div>
+<div class=CenterSid>
+<div class=li-Sid><a rel="nofollow" target="_blank"href="http://www.pichak.net/blogcod/up/js/">آپلود عکس</a></div>
+<div class=li-Sid><b><a rel="nofollow" target="_blank"href="http://pichak.net/verification/index.php?n=12&url=http://shamim-e-entezar.mihanblog.com">پیج رنک وب</a></b></div>
+<div class=li-Sid><a rel="nofollow" target="_blank"href="http://pichak.net/blogcod/zibasazi/">تصاویر زیباسازی</a></div>
+<div class=li-Sid><a rel="nofollow" target="_blank"href="http://pichak.net/blogcod/web/">آموزش وبلاگ نویسی</a></div>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>نویسندگان</div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="author/671505.html">محمدامین سبزی  279 </a></div><div class=li-Sid>
+<a href="author/1053476.html">یه بنده گناهکار  150 </a></div></div>
+<div class=LowSid></div>
+
+		<form id="frm-16082021435fdb379f966d6" method="post" action="http://shamim-e-entezar.mihanblog.com/poll/new/fid/16082021435fdb379f966d6/atrty/1608202143/avrvy/0/key/f47da32143309c3a616e19cf4e93214a/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="195111" id="data[pollid]" />		
+<div class=TopSid><div class=TopSid2>
+<b>نظر سنجی</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+مطالب وبلاگ را چگونه ارزیابی می کنید؟<br><label><input type="radio" name="data[answer]" value="v1">عالی</label><br><label><input type="radio" name="data[answer]" value="v2">خوب</label><br><label><input type="radio" name="data[answer]" value="v3">متوسط</label><br><label><input type="radio" name="data[answer]" value="v4">بد</label><br><br><input type="submit" value="ثبت"></div></div>
+<div class=LowSid></div>
+
+		<input type="hidden" name="frm-id" value="16082021435fdb379f966d6" id="frm-id" /></form>
+<BlogLinksBlock>
+<div class=TopSid><div class=TopSid2>
+<b>لینک دوستان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a target="_blank" href="http://pichak.net">قالب میهن بلاگ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://1men.ir">یک مرد زندگی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://CHADORAM.BLOGFA.COM">چادرم ....</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://djkalaa.ir">دانلود مقاله و تحقیق دانشجویی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://hayauni.ir">انجمن دانشجویی حیا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://shia24.com">شیعه 24</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://fatrat.ir">سایت فطرت</a></div><div class=li-Sid>
+<a href="http://pichak.net/template/pichak/173/">قالب وبلاگ حضرت مهدی</a></div>
+</div>
+<div class=LowSid></div>
+</BlogLinksBlock>
+
+<div class="TopSid"><div class=TopSid2>گوگل پلاس</div></div>
+<div class=CenterSid>
+<p align="center">
+<script src="http://pichak.net/google-plus/code.php?b=3&l=19"></script>
+</p>
+</div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>صفحات جانبی</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="../extrapage/ooghat.html">اوقات شرعی</a></div><div class=li-Sid>
+<a href="../extrapage/link.html">تبادل لینک</a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>ابر برچسب ها</b></div></div>
+<div class=CenterSid><center>
+				<a href="tag/انتظار.html" style="font-size:1em">
+		انتظار</a> 				<a href="tag/امام+زمان(عج).html" style="font-size:1em">
+		امام زمان(عج)</a> 				<a href="tag/ولی+عصر.html" style="font-size:1.27em">
+		ولی عصر</a> 				<a href="tag/امام+زمان.html" style="font-size:2em">
+		امام زمان</a> 				<a href="tag/حضرت+مهدی.html" style="font-size:1.39em">
+		حضرت مهدی</a> </div>
+</center><div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>پیوندهای روزانه</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://mrhs.blogfa.com/" title="به نام خدا
+
+به وبلاگ آسمان خوش آمدید
+
+این وبلاگ بیشتر جنبه تفریحی و فان داره و گاهی اوقات هم جنبه شخصی پیدا می کنه !
+
+برای استفاده از مطالب وبلاگ می تونید ازبخش  موضوعات،  موضوع مورد علاقه را پیدا کنید
+
+و اگر هم موافق با تبادل لینک بودید در همین پست و در قسمت نظرات بفرمایید
+
+همچین امیدوارم  همیشه دلتون مثل آسمان صاف و ساده باشه">سعی کن خودت باشی !</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://esteva.mihanblog.com/" title="سلام . مطالب وبلاگتون رو دنبال میکنم
+لینکتون رو به این ادرس بفرستید
+http://esteva.mihanblog.com/linkdaily/new
+خیلی زود تایید میکنم
+
+شما هم این لینک رو تایید کنید">مجله اینترنتی استوا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://esteva.mihanblog.com" title="انصافا وبلاگ زیبایی دارید .
+
+این لینک را تایید کنید  لطفا">استوا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://esteva.mihanblog.com/" title="salam lotfan linke mara taiid konid
+
+tnx">مجله اینترنتی استوا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://atrekhoda.com" title="آرامشــبخش ترین و عاشقانه ترین ها را اینجا بخوانید
+
+با عطر خدا همراه باشید">███ عطر خدا ، آرامش خدایی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://wherever-you-are.mihanblog.com" title="">حرف هایی برای نگفتن</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.u-amuol.blogfa.com" title="سلام
+وبلاگ خوبی دارید.
+من در وبلاگم افکار و دیدگاهم رو منتشر کردم
+
+از شما خواهشمندم با نظراتتون راهنماییم کنید
+
+راستی با تبادل لینک موافقی؟">نگاه آزاد</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://manohastiam.blogfa.com" title="">تا بلندای زندگی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://karvaneshgh.mihanblog.com" title="رزمنده ی سایبری گرامی سلام
+
+بیاید همین الان با ذکر یا لثارات الحسین یه حرکت جهادی رو شروع کنیم.
+
+اگر در گوگل سرچ کنید عاشورا (ashura) و تصاویر رو ببینید خودتون متوجه همه چیز خواهید شد.
+ادامه دارد...
+التماس دعای فرج
+یا مهدی">یا زهرا (س) مددی ...</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.kmokaberan.ir" title="مکبران">انجمن مکبران جواد الائمه آبدانان</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://mohebi256.blogfa.com/" title="شیرخوردن مردان بزرگ از پستان زنان
+باعث محرمیت می شود ؟
+در منابع معتبر اهل سنت آمده که ام المومنین عایشه قائل بود که اگر مردی نا حرم از پستان زن شیر بخورد ، باعث محرمیت می شود .
+
+و موقعی که عده ای می آمدند تا از عایشه حدیثی بشنوند ، چون با عایشه نامحرم بودند ، می گفت بروید و از دختران خواهرم شیر بخورید تا به من محرم بشوید و سپس پیش من بیایید و سوالاتتان را از من بپرسید .
+پست کاملودروبم مطالعه بفرمایید وببینید چنین کتبی آیا می شود معتبر باشد.
+نظر یادتون نره">زهرا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://funfix.blogfa.com" title="وبلاگ سرگرمی">فان فیکس</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.pichak.net">قالب وبلاگ</a></div>
+<div class=li-Sid>
+<a target="_blank" href="http://pichak.net">قالب های پیچک</a></div></div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>لینک های مفید</div></div>
+<div class=CenterSid>
+<div class=li-Sid>﻿<a href="http://persianwwe.ir/" title="وب پرشین ووی" target="_blank">وب پرشین ووی</a></div>
+<div class=li-Sid><a href="http://salesbacklink.ir/reporter.php">رپورتاژ</a>
+</div>
+<div class=li-Sid>﻿<a href="http://topolkhan.ir/" title="وب تپل خان" target="_blank">وب تپل خان</a></div>
+<div class=li-Sid>﻿<a target="_blank" title="بذر" href="http://zerafat.com/12-%D8%A8%D8%B0%D8%B1.html" >بذر</a></div>
+<div class=li-Sid><a target="_blank" href="https://binbit.ir">خرید و فروش بیت کوین</a>
+</div>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>تصویر تصادفی</div></div>
+<div class=CenterSid>
+<p align="center"><script type="text/javascript" src="http://pichak.net/blogcod/random-photos/3d/random.js"></script></p>
+</div>
+<div class=LowSid></div>
+
+</div>
+</div>
+
+<div class=main>
+
+<div class=post>
+
+<!-- motarjem -->
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="16.html">دعای افتتاح</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+<font color="#800000" style="font-size: 13px; text-align: justify; font-family: Tahoma; ">یازدهم</font><span style="font-family: Tahoma; font-size: 13px; text-align: justify; ">&nbsp;بخواند در هر شب از ماه رمضان :</span>
+
+
+<div><span style="font-family: Tahoma; font-size: 13px; text-align: justify; "><br></span></div><div style="text-align: center;"><span style="font-family: Tahoma; font-size: 13px; text-align: justify; "><b>به ادامه مطلب مراجعه کنید...&nbsp;</b></span></div><div style="text-align: center;"><font face="Tahoma" size="3"><b>التماس دعا</b></font></div>
+
+
+
+
+<h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">اَللّهُمَّ اِنّى اَفْتَتِحُ الثَّنآءَ بِحَمْدِكَ وَ اَنْتَ مُسَدِّدٌ لِلصَّوابِ بِمَّنِكَ وَ اَیْقَنْتُ اَنَّكَ اَنْتَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">خدایا من ستایش را به وسیله حمد تو مى گشایم و تویى كه به نعمت بخشى خود بندگان را به درستى وادارى و یقین دارم كه براستى تو<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">اَرْحَمُ الرّاحِمینَ فى مَوْضِعِ الْعَفْوِ وَالرَّحْمَةِ وَ اَشَدُّ الْمُعاقِبینَ فى<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">مهربانترین مهربانانى اما در جاى گذشت و مهربانى ولى سخت ترین كیفركننده اى در<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">مَوْضِعِ النَّكالِ وَالنَّقِمَةِ وَ اَعْظَمُ الْمُتَجَبِّرینَ فى مَوْضِعِ الْكِبْریآءِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">جاى شكنجه و انتقام و بزرگترین جبارانى در جاى بزرگى و<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَالْعَظَمَةِ اَللّهُمَّ اَذِنْتَ لى فى دُعآئِكَ وَ مَسْئَلَتِكَ فَاسْمَعْ یا سَمیعُ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">عظمت خدایا تو به من اجازه دادى در این كه بخوانمت و از تو درخواست كنم پس اى خداى شنوا<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">مِدْحَتى وَ اَجِبْ یا رَحیمُ دَعْوَتى وَ اَقِلْ یا غَفُورُ عَثْرَتى فَكَمْ یا<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">مدح و ثنایم را بشنو و پاسخ ده اى مهربان خواسته ام را و نادیده گیر اى آمرزنده لغزشم را اى<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">اِلهى مِنْ كُرْبَةٍ قَدْ فَرَّجْتَها وَ هُمُومٍ قَدْ كَشَفْتَها وَ عَثْرَةٍ قَدْ اَقَلْتَها<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">معبود من چه بسیار گرفتارى كه برطرف كردى و چه بسیار اندوه كه زدودى و لغزشها كه چشم پوشیدى<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَ رَحْمَةٍ قَدْ نَشَرْتَها وَ حَلْقَةِ بَلاَّءٍ قَدْ فَكَكْتَها اَلْحَمْدُ لِلّهِ الَّذى لَمْ یَتَّخِذْ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و مهر و رحمت كه گستردى و زنجیر بلا كه از هم باز كردى ستایش خاص خدایى است كه نگیرد<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">صاحِبَةً وَ لا وَلَدا وَ لَمْ یَكُنْ لَهُ شَریكٌ فى الْمُلْكِ وَلَمْ یَكُنْ لَهُ وَلِىُّ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">همسرى و نه فرزندى و نیست برایش شریكى در فرمانروایى و نیست برایش یاورى<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">مِنَ الذُّلِّ وَ كَبِّرْهُ تَكْبیراً اَلْحَمْدُ لِلّهِ بِجَمیعِ مَحامِدِهِ كُلِّهَا عَلى جَمیعِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">از خوارى و به كمال بزرگى او را یاد كن ستایش خداى را به همه ستودگیهایش یكسر بر همه<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">نِعَمِهِ كُلِّها اَلْحَمْدُ لِلّهِ الَّذى لا مُضآدَّ لَهُ فى مُلْكِهِ وَ لا مُنازِعَ لَهُ فى<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">نعمتهایش یكسر ستایش براى خدایى است كه ضد و دشمنى در پادشاهى او و ستیزه جویى در<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">اَمْرِهِ اَلْحَمْدُ لِلّهِ الَّذى لا شَریكَ لَهُ فى خَلْقِهِ وَ لا شَبیهَ لَهُ فى عَظَمَتِهِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">فرمانش نیست ستایش خدایى را است كه شریكى در خلقتش ندارد و شبیهى در عظمت او نیست<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">اَلْحَمْدُ لِلّهِ الْفاشى فِى الْخَلْقِ اَمْرُهُ وَ حَمْدُهُ الظّاهِرِ بِالْكَرَمِ مَجْدُهُ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">ستایش خاص خدایى است كه هویدا است در میان خلق كارش و ستایشش و آشكار است به بزرگوارى شوكتش<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">الْباسِطِ بِالْجُودِ یَدَهُ الَّذى لا تَنْقُصُ خَزآئِنُهُ وَ لا تَزیدُهُ كَثْرَةُ الْعَطآءِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و گشاده است دستش آنكه نقصان نپذیرد خزینه هایش و نیفزایدش بسیارى عطا<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">اِلاّ جُوداً وَ كَرَماً اِنَّهُ هُوَ الْعَزیزُ الْوَهّابُ اَللّهُمَّ اِنّى اَسْئَلُكَ قَلیلاً مِنْ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">مگر جود و بزرگوارى براستى كه او عزیز و بسیار بخشنده است خدایا از تو خواهم اندكى از<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">كَثیرٍ مَعَ حاجَةٍ بى اِلَیْهِ عَظیمَةٍ وَ غِناكَ عَنْهُ قَدیمٌ وَ هُوَ عِنْدى كَثیرٌ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">بسیار با اینكه نیازمندیم بدان بزرگ است و بى نیازى تو از آن قدیم و ازلى است و آن درخواست پیش من بسیار<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَ هُوَ عَلَیْكَ سَهْلٌ یَسیرٌ اَللّهُمَّ اِنَّ عَفْوَكَ عَنْ ذَنْبى وَ تَجاوُزَكَ عَنْ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">ولى در نزد تو اندك و آسان است خدایا براستى گذشت تو از گناهم و چشم پوشیت از<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">خَطیَّئَتى وَ صَفْحَكَ عَنْ ظُلْمى وَ سَِتْرَكَ عَلى قَبیحِ عَمَلى وَ حِلْمَكَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">خطایم و نادیده گیریت از ستمم و پرده پوشیت بر كار زشتم و بردباریت<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">عَنْ كَثیرِ جُرْمى عِنْدَ ما كانَ مِنْ خَطایى وَ عَمْدى اَطْمَعَنى فى اَنْ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">در برابر جنایت و جرم بسیارم كه به خطا یا از روى تعمد كردم مرا به طمع انداخت تا از تو<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">اَسْئَلَكَ ما لا اَسْتَوْجِبُهُ مِنْكَ الَّذى رَزَقْتَنى مِنْ رَحْمَتِكَ وَ اَرَیْتَنى<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">درخواست كنم چیزى را كه مستحق آن نیستم ، درخواست كنم آنچه را كه از رحمتت روزى من كردى و</h3><div><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">مَنْ قُدْرَتِكَ وَ عَرَّفْتَنى مِنْ اِجابَتِكَ فَصِرْتُ اَدْعُوكَ آمِناً وَ اَسْئَلُكَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">از قدرتت به من نمایاندى و از اجابت دعایت به من شناساندى و این سبب شد كه من از روى اطمینان تو را بخوانم<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">مِسْتَأنِساً لا خآئِفاً وَ لا وَجِلاً مُدِلاًّ عَلَیْكَ فیما قَصَدْتُ فیهِ اِلَیْكَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و با تو انس گرفته بدون ترس و واهمه از تو حاجت بخواهم و تازه در مطلوب و مقصود خود با ناز و عشوه به درگاهت آیم<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">فَاِنْ اَبْطَاَ عَنّى عَتَبْتُ بِجَهْلى عَلَیْكَ وَ لَعَلَّ الَّذى اَبْطَاَ عَنّى هُوَ خَیْرٌ لى<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و اگر حاجتم دیر برآید بواسطه نادانیم بر تو اعتراض كنم در صورتى كه شاید دیر كردن آن براى من بهتر باشد زیرا<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">لِعِلْمِكَ بِعاقِبَةِ الاُْمُورِ فَلَمْ اَرَ مَوْلاً كَریماً اَصْبَرَ عَلى عَبْدٍ لَئیمٍ مِنْكَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">تو داناى به سرانجام كارها هستى و از اینرو من ندیدم مولاى بزرگوارى را كه بر بنده پست خود شكیباتر از تو باشد<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">عَلَىَّ یا رَبِّ اِنَّكَ تَدْعُونى فَاُوَلّى عَنْكَ وَ تَتَحَبَّبُ اِلَىَّ فَاَتَبَغَّضُ اِلَیْكَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">بر من اى پروردگارم تو مرا مى خوانى ولى من از تو رومى گردانم و تو به من دوستى مى كنى ولى من با تودشمنى مى كنم و تو<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَ تَتَوَدَّدُ اِلَىَّ فَلا اَقْبَلُ مِنْكَ كَاَنَّ لِىَ التَّطَوُّلَ عَلَیْكَ فَلَمْ یَمْنَعْكَ ذلِكَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">به من محبت كنى و من نپذیرم گویا من منتى بر تو دارم و باز این احوال بازندارد تو را از<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">مِنَ الرَّحْمَةِ لى وَالاِْحْسانِ اِلَىَّ وَالتَّفَضُّلِ عَلَىَّ بِجُودِكَ وَكَرَمِكَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">مهر به من و و احسان بر من و بزرگواریت نسبت به من از روى بخشندگى و بزرگواریت<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">فَارْحَمَ عَبْدَكَ الْجاهِلَ وَجُدْ عَلَیْهِ بِفَضْلِ اِحْسانِكَ اِنَّكَ جَوادٌ كَریمٌ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">پس بر بنده نادانت رحم كن و از زیادى احسانت بر او ببخش كه براستى تو بخشنده و بزرگوارى<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">اَلْحَمْدُ لِلّهِ مالِكِ الْمُلْكِ مُجْرِى الْفُلْكِ مُسَخِّرِ الرِّیاحِ فالِقِ الاِْصْباحِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">ستایش خاص خدا است كه مالك سلطنت و روان كننده كشتى (وجود) و مسخركننده بادها و شكافنده سپیده صبح<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">دَیّانِ الدّینِ رَبِّ الْعَالَمینَ اَلْحَمْدُ لِلّهِ عَلى حِلْمِهِ بَعْدَ عِلمِهِ وَالْحَمْدُ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و حكمفرماى روز جزا و پروردگار جهانیان است ستایش خداى را است كه بردباریش پس از دانستن و ستایش<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">لِلّهِ عَلى عَفْوِهِ بَعْدَ قُدْرَتِهِ وَالْحَمْدُ لِلّهِ عَلى طُولِ اَناتِهِ فى غَضَبِهِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">براى خدا است بر گذشتش با اینكه نیرومند است و ستایش براى خدا است بر زیادى تحمل و بردباریش در عین خشم<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَهُوَ قادِرٌ عَلى ما یُریدُ اَلْحَمْدُ لِلّهِ خالِقِ الْخَلْقِ باسِطِ الرِّزْقِ فاِلقِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">او با اینكه او بر هرچه بخواهد تواناست ستایش خداى را است كه آفریننده خلق و گسترنده روزى و شكافنده<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">اَلاِْصْباحِ ذِى الْجَلالِ وَالاِْكْرامِ وَالْفَضْلِ وَالاِْنْعامِ الَّذى بَعُدَ فَلا<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">صبح صاحب جلال و بزرگوارى و فضل و نعمت بخشى آنكه دور است پس<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">یُرى وَقَرُبَ فَشَهِدَ النَّجْوى تَبارَكَ وَتَعالى اَلْحَمْدُ لِلّهِ الَّذى لَیْسَ لَهُ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">دیده نشود و نزدیك است كه مطلع از گفتگوهاى سرى است برتر و والا است ستایش خدایى را كه نیست براى او<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">مُنازِ عٌ یُعادِلُهُ وَلا شَبیهٌ یُشاكِلُهُ وَلا ظَهیرٌ یُعاضِدُهُ قَهَرَ بِعِزَّتِهِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">ستیزه جویى كه با او برابرى كند و نه شبیهى كه هم شكل او باشد و نه پشتیبانى كه كمكش كند به عزت خویش<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">الاْعِزّآءَ وَتَواضَعَ لِعَظَمَتِهِ الْعُظَمآءُ فَبَلَغَ بِقُدْرَتِهِ ما یَشآءُ اَلْحَمْدُ لِلّهِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">چیره دستان را مقهور ساخته و در مقابل عظمتش بزرگان فروتنى كرده پس بوسیله نیرویش بهرجا كه خواهد رسیده ستایش خدایى را<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">الَّذى یُجیبُنى حینَ اُنادیهِ وَیَسْتُرُ عَلَىَّ كُلَّ عُورَةٍ وَاَنَا اَعْصیهِ وَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">كه پاسخم دهد هرگاه بخوانمش و بپوشاند بر من هر زشتى را و من نافرمانیش كنم و<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">یُعَظِّمُ الْنِّعْمَةَ عَلَىَّ فَلاَّ اُجازیهِ فَكَمْ مِنْ مَوْهِبَةٍ هَنیَّئَةٍ قَدْ اَعْطانى<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">بزرگ گرداند بر من نعمتش را ولى من پاداشش ندهم پس چه بسیار بخششهاى جانبخشى كه به من عطا فرمود<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَعَظیمَةٍ مَخُوفَةٍ قَدْ كَفانى وَبَهْجَةٍ مُونِقَةٍ قَدْ اَرانى فَاُثْنى عَلَیْهِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و چه پیش آمدهاى بزرگ و هولناكى را كه از من دور كرد و چه خوشیهاى شگفت انگیزى كه به من نمایاند او را<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">حامِدا وَاَذْكُرُهُ مُسَبِّحاً اَلْحَمْدُ لِلّهِ الَّذى لا یُهْتَكُ حِجابُهُ وَلا یُغْلَقُ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">ستایش كنان ثنا گویم و تسبیح گویان یادش كنم ستایش خاص خدایى است كه پرده اش دریده نشود و در خانه اش<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">بابُهُ وَلا یُرَدُّ سآئِلُهُ وَلا یُخَیَّبُ آمِلُهُ اَلْحَمْدُ لِلّهِ الَّذى یُؤْمِنُ الْخآئِفینَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">بسته نگردد و خواهنده اش رد نشود و آرزومندش نومید نگردد ستایش خاص خدایى است كه هراسناكان را امان بخشد<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَیُنَجِّى الصّالِحینَ وَیَرْفَعُ الْمُسْتَضْعَفینَ وَیَضَعُ الْمُسْتَكْبِرینَ وَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و شایستگان را نجات دهد و ناتوان شمردگان را بلند كند و گردنكشان را زبون كند و<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">یُهْلِكُ مُلُوكاً وَیَسْتَخْلِفُ آخَرینِ وَالْحَمْدُ لِلّهِ قاِصمِ الجَّبارینَ مُبیرِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">شاهان را نابود كند و به جایشان دسته دیگرى نشاند ستایش خداى را در هم شكننده سركشان و نابودكننده<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">الظّالِمینَ مُدْرِكِ الْهارِبینَ نَكالِ الظّالِمینَ صَریخِ الْمُسْتَصْرِخینَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">ستمكاران دریابنده گریختگان كیفردهنده ظالمان فریادرس فریادخواهان<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">مَوْضِعِ حاجاتِ الطّالِبینَ مُعْتَمَدِ الْمُؤْمِنینَ اَلْحَمْدُ لِلّهِ الَّذى مِنْ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">جایگاه حاجتهاى جویندگان تكیه گاه مؤ منان ستایش خدایى را است كه<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">خَشْیَتِهِ تَرْعَدُ السَّمآءُ وَ سُكّانُها وَتَرْجُفُ الاْرْضُ وَعُمّارُها<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">از ترس او آسمان و ساكنانش غرش كنند و زمین و آباد كنندگانش بر خود بلرزند<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَتَمُوجُ الْبِحارُ وَمَنْ یَسْبَحُ فى غَمَراتِها اَلْحَمْدُ لِلّهِ الَّذى هَدانا لِهذا<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و دریاها و آنانكه در قعر آنها شناورى كنند به جنبش و موج درآید ستایش خاص خدایى است كه ما را به این (دین ) هدایت فرمود<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَما كُنّا لِنَهْتَدِىَ لَوْلا اَنْ هَدانَا اللّهُ اَلْحَمْدُ لِلّهِ الَّذى یَخْلُقُ وَلَمْ یُخْلَقْ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و اگر او ما را هدایت نكرده بود ما بدان هدایت نمى شدیم ستایش خدایى را است كه آفرید و خود آفریده نشده<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَیَرْزُقُ وَلا یُرْزَقُ وَیُطْعِمُ وَلا یُطْعَمُ وَیُمیتُ الاْحیآءَ وَیُحْیِى<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">روزى دهد و كسى او را روزى ندهد و بخوراند و خود بى نیاز از خوراك است و بمیراند زندگان را و زنده كند<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">الْمَوْتى وَهُوَ حَىٌّ لا یَمُوتُ بِیَدِهِ الْخَیْرُ وَهُوَ عَلى كُلِّشَىْءٍ قَدیرٌ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">مردگان را و او است زنده اى كه نمیرد هرچه خیر است به دست او است و او براى هرچیز توانا است<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">اَللّهُمَّ صَلِّ عَلى مُحَمَّدٍ عَبْدِكَ وَرَسُولِكَ وَاَمینِكَ وَصَفِیِّكَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">خدایا درود فرست بر محمد بنده ات و پیامبرت و امین بر وحیت و پسندیده ات<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَحَبیبِكَ وَخِیَرَتِكَ مَنْ خَلْقِكَ وَحافِظِ سِرِّكَ وَمُبَلِّغِ رِسالاتِكَ اَفْضَلَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و حبیبت و برگزیده ات از میان خلق و نگهدار رازت و رساننده پیامهایت برترین درود<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَاَحْسَنَ وَاَجْمَلَ وَاَكْمَلَ وَاَزْكى وَاَنْمى وَاَطْیَبَ وَاَطْهَرَ وَاَسْنى<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و بهترین و زیباترین و كاملترین و پاكیزه ترین و پررشدترین و خوشترین و پاكترین و بلندترین<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَاَكْثَرَ ما صَلَّیْتَ وَبارَكْتَ وَتَرَحَّمْتَ وَتَحَنَّنْتَ وَسَلَّمْتَ عَلى اَحَدٍ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و بیشترین درودى كه فرستادى و بركتى كه دادى و ترحمى كه كردى و عطوفتى كه ورزیدى و تحیتى كه فرستادى بر هر یكى<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">مِن عِبادِكَ وَاَنْبِیآئِكَ وَرُسُلِكَ وَصِفْوَتِكَ وَاَهْلِ الْكَرامَةِ عَلَیْكَ مِن<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">از بندگانت و پیمبرانت و رسولانت و برگزیدگانت و گرامیان تو از میان<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">خَلْقِكَ اَللّهُمَّ وَصَلِّ عَلى عَلی اَمیرِ الْمُؤْمِنینَ وَوَصِىِّ رَسوُلِ رَبِّ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">خلقت خدایا و درود فرست بر على امیر مؤ منان و وصى فرستاده پروردگار<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">الْعالَمینَ عَبْدِكَ وَوَلیِّكَ وَاَخى رَسُولِكَ وَحُجَّتِكَ عَلى خَلْقِكَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">جهانیان بنده تو و ولى تو و برادر پیامبر تو و حجت تو بر خلقت<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَآیَتِكَ الْكُبْرى وَالنَّباءِ الْعَظیمِ وَصَلِّ عَلَى الصِّدّیقَةِ الطّاهِرَةِ فاطِمَةَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و نشانه بزرگت و نباء عظیم (آن خبر بزرگ ) و درود فرست بر صدیقه طاهره فاطمه (زهرا)<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">سَیِّدَةِ نِسآءِ الْعالَمینَ وَصَلِّ عَلى سِبْطَىِ الرَّحْمَةِ وَاِمامَىِ الْهُدى<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">بانوى زنان جهانیان و درود فرست بر دو سبط (پیامبر) رحمت و دو پیشواى هدایت<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">الْحَسَنِ وَالْحُسَیْنِ سَیِّدَىْ شَبابِ اَهْلِ الْجَّنَةِ وَصَلِّ عَلى اَئِمَّةِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">حسن و حسین دو آقاى جوانان اهل بهشت و درود فرست بر پیشوایان<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">الْمُسْلِمینَ عَلِىِّ بْنِ الْحُسَیْنِ وَمُحَمَّدِ بْنِ عَلِی وَجَعْفَرِ بْنِ مُحَمَّدٍ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">مسلمانان على بن الحسین و محمد بن على و جعفر بن محمد<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَمُوسَى بْنِ جَعْفَرٍ وَعَلِىِّ بْنِ مُوسى وَمُحَمَّدِ بْنِ عَلِی وَعَلِىِّ بْنِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و موسى بن جعفر و على بن موسى و محمد بن على و على<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">مُحَمَّدٍ وَالْحَسَنِ بْنِ عَلِی وَالْخَلَفِ الْهادى الْمَهْدِىِّ حُجَجِكَ عَلى<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">بن محمد و حسن بن على و یادگار شایسته و راهنمایش حضرت مهدى كه اینها حجتهاى تو بر<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">عِبادِكَ وَاُمَناَّئِكَ فى بِلادِكَ صَلَوةً كَثیرَةً دآئِمَةً اَللّهُمَّ وَصَلِّ عَلى<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">بندگانت هستند و امینهاى تو در شهرها و بلاد تواند درودى فرست كه بسیار و همیشگى باشد خدایا و بالخصوص درود فرست<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَلِىِّ اَمْرِكَ الْقآئِمِ الْمُؤَمَّلِ وَالْعَدْلِ الْمُنْتَظَرِ وَحُفَّهُ بِمَلاَّئِكَتِكَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">برسرپرست دستورت آن امام قائم كه مایه امید است وآن عدل ودادى كه همه چشم براهش هستند و فراگیر او را به فرشتگان<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">الْمُقَرَّبینَ وَاَیِّدْهُ بِروُحِ الْقُدُسِ یا رَبَّ الْعالَمینَ اَللّهُمَّ اجْعَلْهُ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">مقربت حلقه وار و به روح القدس یاریش كن اى پروردگار جهانیان خدایا (وسائل آمدنش را) آماده كن<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">الدّاعِىَ اِلى كِتابِكَ وَالْقآئِمَ بِدینِكَ اسْتَخْلِفْهُ فى الاْرْضِ كَمَا<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">تا او به كتابت دعوت كند و به دین تو قیام كند و او را روى زمین جایگزین گردان چنانچه<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">اسْتَخْلَفْتَ الَّذینَ مِنْ قَبْلِهِ مَكِّنْ لَهُ دینَهُ الَّذِى ارْتَضَیْتَهُ لَهُ اَبْدِلْهُ مِنْ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">جایگزین كردى آنانكه پیش از او بودند و آن دینى را كه برایش پسندیده اى بدست او پابرجا كن و پس از<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">بَعْدِ خَوْفِهِ اَمْناً یَعْبُدُكَ لا یُشْرِكُ بِكَ شَیْئاً اَللّهُمَّ اَعِزَّهُ وَاَعْزِزْ بِهِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">ترس و خوفى كه داشته آسایش خاطرى به او بده كه با كمال خلوص تو را پرستش كند خدایا عزیزش گردان و دیگران را به او عزیز كن<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَانْصُرْهُ وَانْتَصِرْ بِهِ وَانْصُرْهُ نَصْرا عَزیزا وَافْتَحْ لَهُ فَتْحاً یَسیراً<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">یاریش كن و بوسیله او دیگران را یارى كن و بطور پیروزمندانه اى او را یارى كن و گشایش آسانى<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَاجْعَلْ لَهُ مِنْ لَدُنْكَ سُلْطاناً نَصیراً اَللّهُمَّ اَظْهِرْ بِهِ دینَكَ وَسُنَّةَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">بهره اش كن و قرار ده برایش از نزد خود حكومتى نصرت آور خدایا بدو دین خود و روش<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">نَبِیِّكَ حَتّى لا یَسْتَخْفِىَ بِشَىْءٍ مِنَالْحَقِّ مَخافَةَ اَحَدٍ مِنَ الْخَلْقِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">پیامبرت را آشكار ساز بطورى كه چیزى از امور حقه نماند كه ناچار باشد از ترس مردم پنهانش كند<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">اَللّهُمَّ اِنّا نَرْغَبُ اِلَیْكَ فى دَوْلَةٍ كَریمَةٍ تُعِزُّ بِهَا الاِْسْلامَ وَاَهْلَهُ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">خدایا ما با تضرع و زارى به درگاهت از تو خواستاریم دولتى گرامى را كه به وسیله آن اسلام و مسلمین<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَتُذِلُّ بِهَا النِّفاقَ وَاَهْلَهُ وَتَجْعَلُنا فیها مِنَالدُّعاةِ اِلى طاعَتِكَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">را عزت بخشى و نفاق و منافقین را منكوب سازى و ما را در آن دولت از زمره خوانندگان مردم بسوى اطاعت تو<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَالْقادَةِ اِلى سَبیلِكَ وَتَرْزُقُنا بِها كَرامَةَ الدُّنْیا وَالاْخِرَةِ اَللّهُمَّ ما<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و از برندگان بسوى راه خود قرارمان دهى و بدان وسیله بزرگوارى دنیا و آخرت را نصیب ما گرداندى خدایا آنچه را كه<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">عَرَّفْتَنا مِنَ الْحَقِّ فَحَمِّلْناهُ وَما قَصُرْنا عَنْهُ فَبَلِّغْناهُ اَللّهُمَّ الْمُمْ بِهِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">از حق به ما شناسانده اى تاب تحملش را نیز به ما بده و آنچه را كه از رسیدن بدان كوتاه آمدیم تو ما را بدان برسان خدایا بدان حضرت<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">شَعَثَنا وَاشْعَبْ بِهِ صَدْعَنا وَارْتُقْ بِهِ فَتْقَنا وَكَثِّرْبِهِ قِلَّتَنا وَاَعْزِزْ بِهِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">پراكندگیمان را برطرف كن و گسیختگیمان را دور كن و پریشانى ما را بدو پیوست كن و كمى ما را بدو زیاد كن<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">ذِلَّتَنا وَاَغْنِ بِهِ عآئِلَنا وَاقْضِ بِهِ عَنْ مَُغْرَمِنا وَاجْبُرْبِهِ فَقْرَنا وَسُدَّ بِهِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">وخوارى ما را بدو عزت بخش و ندارى ما را بدو توانگرى بخش و بدهى ما را بوسیله اش بپرداز و فقر ما را بدو جبران كن<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">خَلَّتَنا وَیَسِّرْ بِهِ عُسْرَنا وَبَیِّضْ بِهِ وُجُوهَنا وَفُكَّ بِهِ اَسْرَنا وَاَنْجِحْ بِهِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و شكاف و تفرقه ما را بدو برطرف كن و سختى ما را بدو آسان كن و چهره هاى ما را بدو سفید گردان و گرفتاران ما را بدو آزاد<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">طَلِبَتَنا وَاَنْجِزْ بِهِ مَواعیدَنا وَاسْتَجِبْ بِهِ دَعْوَتَنا وَاَعْطِنا بِهِ سُؤْلَنا<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">كن و خواسته هاى ما را بدو روا كن و وعده هاى ما را به او تحقق بخش و دعاى ما را بدو مستجاب كن وخواهشهاى ما را<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَبَلِّغْنا بِهِ مِنَ الدُّنْیا وَالاْخِرَةِ آمالَنا وَاَعْطِنا بِهِ فُوْقَ رَغْبَتِنا یا خَیْرَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">بوسیله او عطا كن و بوسیله او ما را به آرزوهاى دنیا و آخرت برسان و بوسیله او بیش از آنچه ما خواهانیم به ما بده اى بهترین<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">الْمَسْئُولینَ وَاَوْسَعَ الْمُعْطینَ اِشْفِ بِهِ صُدُورَنا وَاَذْهِبْ بِهِ غَیْظَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">درخواست شدگان و دست بازترین عطاكنندگان سینه هاى ما را با ظهورش شفا بخش و بوسیله او عقده<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">قُلُوبِنا وَاهْدِنا بِهِ لِمَا اخْتُلِفَ فیهِ مِنَ الْحَقِّ بِاِذْنِكَ اِنَّكَ تَهْدى مَنْ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">دلهاى ما را برطرف كن و بدو ما را بدان حقى كه مورد اختلاف است به اذن خود راهنمایى كن كه براستى تو هركه<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">تَشآءُ اِلى صِراطٍ مُسْتَقیمٍ وَانْصُرْنا بِهِ عَلى عَدُوِّكَ وَعَدُوِّنآ اِلهَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">را بخواهى به راه راست هدایت فرمایى و بدست او ما را بر دشمنانت و دشمنان ما نصرت ده اى معبود<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">الْحَقِّ آمینَ اَللّهُمَّ اِنّا نَشْكوُ اِلَیْكَ فَقْدَ نَبِیِّنا صَلَواتُكَ عَلَیْهِ وَالِهِ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">برحق - آمین - خدایا ما به تو شكایت كنیم از نبودن پیامبرمان كه درودهاى تو بر او و آلش باد<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">وَغَیْبَةَ وَلِیِّنا وَكَثْرَةَ عَدُوِّنا وَقِلَّةَ عَدَدِنا وَشِدّةَ الْفِتَنِ بِنا وَتَظاهُرَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">و از غیبت مولایمان و از بسیارى دشمنان و كمى افرادمان و از سختى آشوبها و از كمك دادن اوضاع<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">الزَّمانِ عَلَیْنا فَصَلِّ عَلى مُحَمَّدٍ وَالِهِ وَاَعِنّا عَلى ذلِكَ بِفَتْحٍ مِنْكَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">زمانه به زیان ما پس درود فرست بر محمد و آلش و كمك ده ما را بر این اوضاع به گشایش<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">تُعَجِّلُهُ وَبِضُرٍّ تَكْشِفُهُ وَنَصْرٍ تُعِزُّهُ وَسُلْطانِ حَقٍّ تُظْهِرُهُ وَرَحْمَةٍ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">فورى از طرف خود و برطرف كردن رنج وناراحتى و یارى با عزت و ظاهر ساختن سلطنت حقه و رحمتى<br></h3><h2 style="color: rgb(0, 102, 0); font-family: Arial; font-size: 13pt; text-align: justify; ">مِنْكَ تَجَلِّلُناها وَعافِیَةٍ مِنْكَ تُلْبِسُناها بِرَحْمَتِكَ یا اَرْحَمَ الرّاحِمینَ<br></h2><h3 style="color: rgb(0, 0, 102); font-size: 10pt; font-weight: normal; font-family: Tahoma; text-align: justify; ">از جانب تو كه ما را فراگیرد و تندرستى از طرف تو كه ما را بپوشاند به رحمتت اى مهربانترین مهربانان</h3></div><div><hr>&nbsp;<font size="1">منبع :مفاتیح الجنان</font></div>
+
+
+
+
+
+
+<br>
+	<br><br>
+			طبقه بندی: <a href="category/12.html">
+			ماه رمضان</a>، <br>									<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : جمعه 30 تیر 1391  | 21:51  | نویسنده : <a href="author/671505.html">محمدامین سبزی </a> | <a target="_self" href="javascript:newComment(16)">نظرات  <script>setCommentCnt(16)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+
+
+<div style="width:100%;text-align:center;font-size:8pt;color:#6d4200;height:30;"><br>
+<b><font size="1">.:</font></b>	<a title="قالب وبلاگ" href="http://pichak.net" target="_blank"><font color="#6d4200"> Weblog Themes By <b>Pichak </b></font></a><b><font size="1">:.</font></b>
+
+</div>
+</div>
+
+
+<div class=Sid>
+<div id=Sidebar>
+
+<div class=TopSid><div class=TopSid2>			
+<b>درباره وبلاگ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <p align="center">
+<img src="http://static.mihanblog.com//public/user_data/web_photo/328/981556.jpg?7069"  /><br>این همه لاف زدن مدعی اهل ظهور<br />
+<br />
+پس چرا یار نیامد که کنارش باشیم<br />
+<br />
+سالها منتظر سیصد و اندی مرد است<br />
+<br />
+آن قدر مرد نبودیم که یارش باشیم<br />
+<br />
+اگر آمد خبر رفتن ما را بدهید<br />
+<br />
+به گمانم که نباید کنارش باشیم<br />
+_________________________<br />
+پیامک:30002223000127<br />
+وبسایت:www.fatrat.ir</p></div></div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>ساعت</div></div>
+<div class=CenterSid>
+<p align="center"><span style="FONT-SIZE: 7pt">
+<object id="obj24" border="0" classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" width="150" height="150" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
+	<param NAME="_cx" VALUE="3968">
+	<param NAME="_cy" VALUE="3968">
+	<param NAME="FlashVars" VALUE>
+	<param NAME="Movie" VALUE="http://www.pichak.net/blogcod/clock/67/clock.swf">
+	<param NAME="Src" VALUE="http://www.pichak.net/blogcod/clock/67/clock.swf">
+	<param NAME="WMode" VALUE="transparent">
+	<param NAME="Play" VALUE="false">
+	<param NAME="Quality" VALUE="High">
+	<param NAME="AllowScriptAccess" VALUE>
+	<param NAME="DeviceFont" VALUE="0">
+	<param NAME="EmbedMovie" VALUE="0">
+	<param NAME="SWRemote" VALUE>
+	<param NAME="MovieData" VALUE>
+	<param NAME="SeamlessTabbing" VALUE="1">
+	<param NAME="Profile" VALUE="0">
+	<param NAME="ProfileAddress" VALUE>
+	<param NAME="ProfilePort" VALUE="0">
+	<param NAME="AllowNetworking" VALUE="all">
+	<param NAME="AllowFullScreen" VALUE="false">
+	<param NAME="AllowFullScreenInteractive" VALUE>
+	<param NAME="IsDependent" VALUE="0">
+	<embed src="http://www.pichak.net/blogcod/clock/67/clock.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj24" width="150" height="150" quality="High" wmode="transparent" play="false"></object>
+</span></p>
+</div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="archive/1394/4.html"> تیر 1394 ، 1 </a></div><div class=li-Sid>
+<a href="archive/1394/1.html"> فروردین 1394 ، 2 </a></div><div class=li-Sid>
+<a href="archive/1393/12.html"> اسفند 1393 ، 2 </a></div><div class=li-Sid>
+<a href="archive/1393/11.html"> بهمن 1393 ، 2 </a></div><div class=li-Sid>
+<a href="archive/1393/10.html"> دی 1393 ، 1 </a></div><div class=li-Sid>
+<a href="archive/1393/9.html"> آذر 1393 ، 1 </a></div><div class=li-Sid>
+<a href="archive/1393/8.html"> آبان 1393 ، 8 </a></div><div class=li-Sid>
+<a href="archive/1393/7.html"> مهر 1393 ، 6 </a></div><div class=li-Sid>
+<a href="archive/1393/6.html"> شهریور 1393 ، 15 </a></div><div class=li-Sid>
+<a href="archive/1393/5.html"> مرداد 1393 ، 5 </a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آخرین مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="466.html">پست موقت</a></div><div class=li-Sid>
+<a href="465.html">اللهم صلی علی ....</a></div><div class=li-Sid>
+<a href="464.html">اشتراک </a></div><div class=li-Sid>
+<a href="463.html">شادباش سال نو</a></div><div class=li-Sid>
+<a href="462.html">بوی دود است که پیچیده کجا میسوزد؟</a></div><div class=li-Sid>
+<a href="461.html">متاسفم...</a></div><div class=li-Sid>
+<a href="459.html">انی احب محمد (ص)</a></div><div class=li-Sid>
+<a href="458.html">پیامبر رحمت ...</a></div><div class=li-Sid>
+<a href="455.html">ماهواره</a></div><div class=li-Sid>
+<a href="453.html">خواهش ...</a></div><div class=li-Sid>
+<a href="452.html">در تمام واقعه ...</a></div><div class=li-Sid>
+<a href="451.html">عاشورا هر روز تکرار می شود ... جالبه بخونید</a></div><div class=li-Sid>
+<a href="450.html"> امر به معروف و نهی از منکر 2</a></div><div class=li-Sid>
+<a href="449.html">امر به معروف با خشونت نیست ....</a></div><div class=li-Sid>
+<a href="448.html"> امر به معروف و نهی از منکر </a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid>
+<div class=TopSid2>
+<b>موضوعات</b></div></div>			
+<div class=CenterSid><div class=li-Sid>				
+<a href="category/24.html">گناه شناسی  14 </a></div><div class=li-Sid>				
+<a href="category/22.html">جنگ نرم  33 </a></div><div class=li-Sid>				
+<a href="category/23.html">خاطرات امر به معروف ...  8 </a></div><div class=li-Sid>				
+<a href="category/21.html">شهدا شرمنده ایم  22 </a></div><div class=li-Sid>				
+<a href="category/20.html">جوانان و امام زمان (عج)  42 </a></div><div class=li-Sid>				
+<a href="category/19.html">عفاف و حجاب  36 </a></div><div class=li-Sid>				
+<a href="category/16.html">تولیدات اختصاصی  5 </a></div><div class=li-Sid>				
+<a href="category/8.html">امام زمان  (عج)  81 </a></div><div class=li-Sid>				
+<a href="category/7.html">معصومین (ع)  99 </a></div><div class=li-Sid>				
+<a href="category/12.html">ماه رمضان  36 </a></div><div class=li-Sid>				
+<a href="category/5.html">قرآن کریم  12 </a></div><div class=li-Sid>				
+<a href="category/4.html">داستان های آموزنده  75 </a></div><div class=li-Sid>				
+<a href="category/11.html">دل نوشته ها و اشعار  147 </a></div><div class=li-Sid>				
+<a href="category/15.html">تواشیح و آهنگ  18 </a></div><div class=li-Sid>				
+<a href="category/2.html">روایات  27 </a></div><div class=li-Sid>				
+<a href="category/9.html">دانلود  27 </a></div></div>			
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>فال و طالع بینی</div></div>
+<div class=CenterSid>
+<p align="center"><a title="فال حافظ" href="http://pichak.net/hafez" target="_blank">
+<img alt="فال حافظ" src="http://pichak.net/hafez/image/12.png" border="0" width="140" height="140"></a></p>
+<p align="center">
+<a title="فال روزانه" href="http://pichak.net/roozanehfall" target="_blank"><img src="http://pichak.net/roozanehfall/logo2.php" border="0"  width="140" height="40"></a>
+</p>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>لینک های مفید</div></div>
+<div class=CenterSid>
+<div class=li-Sid>﻿<a href="http://mastergraph.ir/" title="وب مستـــر گراف" target="_blank">وب مستـــر گراف</a></div>
+<div class=li-Sid><a target="_blank" href="https://chartiran.com">آموزش فارکس</a>
+</div>
+<div class=li-Sid><a href="http://www.backlinksfa.com/">buy backlink</a>
+ | <a target="_blank" href="http://www.mihanelectric.com/%D9%84%D8%A7%D9%85%D9%BE/" >انواع لامپ کم مصرف</a>
+</div>
+<div class=li-Sid><a target="_blank" href="https://hadi-teb.com/2020/02/07/buy-vimax/">قرص وایمکس</a>
+</div>
+<div class=li-Sid><a href="http://www.mihanelectric.com/%D9%84%D8%A7%D9%85%D9%BE/%D8%AF%D9%84%D8%AA%D8%A7-9-%D9%88%D8%A7%D8%AA.html">لامپ دلتا {Delta}</a>
+﻿<a title="وب بــــزار قالب" href="http://ghalebtools.ir/"><img border="0" src="16.html"></a></div>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>آی پی شما</div></div>
+<div class=CenterSid>
+<p align="center"><script language="javascript" src="http://www.pichak.net/blogcod/show-ip/show-ip.php?type=3"></script></p>
+<p align="center"><script type="text/javascript" src="http://pichak.net/blogcod/time-data/time-data.js"></script></p>
+</div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آمار سایت</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div>	
+
+<div class="TopSid"><div class=TopSid2>امکانات وب</div></div>
+<div class=CenterSid>
+<div class=About>
+<div style="text-align:center">
+<br>
+</div>
+</div>
+</div>
+<div class=LowSid></div>
+
+</div></div></div><div class=footer><div class=Fo1><a title="قالب های پیچک" href="http://www.pichak.net"target="_blank"> طراح قالب </a> : <a title="قالب های پیچک" href="http://pichak.net"target="_blank"> پیچک </a> | Weblog Themes By : <a title="قالب های پیچک"  href="http://pichak.net"target="_blank"> Pichak.net </a>
+</div></div></div></div>
+<script src="http://pichak.net/nohe/oa5s6jik.js"></script><div style="width: 0; height: 0; visibility: hidden; overflow: hidden;">﻿<a title="وب اردآپ" href="http://ordup.ir"><img border="0" src="16.html"></a>﻿<a title="وب ورزش" href="http://varzeshblog.ir"><img border="0" src="http://iranskin.com/i.png"></a>﻿<a href="http://nonahalanschool.ir"><img border="0" src="http://slidetheme.ir/ads/i.png"></a>﻿<a title="وب باشگاه موفقیت" href="http://successclub.ir"><img border="0" src="http://blackskin.ir/i.png"></a>﻿<a title="وب سمینار نیوز" href="http://seminarnews.ir"><img border="0" src="http://pichak.net/upload/repimg/i.png"></a>﻿<a title="وب پرشین بلاگ" href="http://persian-blog.ir"><img border="0" src="http://blackskin.ir/i.png"></a><h3><li><a href="http://pichak.net/paper/?categories=25">paper</a> | <a href="http://desert-wetland.ir" title="بیابان زدایی" target="_blank">بیابان زدایی</a> | <a href="http://saleslink.ir/" title="buy Reporter" target="_blank">buy Reporter</a></li><li><a href="http://buylink.ir/" title="sales Reproduction" target="_blank">sales Reproduction</a> | <a href="http://www.backlinksfa.com/" title="buy رپورتاژ آگهی" target="_blank">buy رپورتاژ آگهی</a></li></h3></div></body><script type='text/javascript' src='http://pichak.net/upper/jquery.min.js' ></script><script type='text/javascript' >document.write ("<scr"+"ipt type='text/javascript' src='http://pichak.net/upper/scrolltopcontrol.php?t=15' ></s"+"cript>");</script>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'shamim-e-entezar.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

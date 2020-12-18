@@ -1,0 +1,1305 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://shahid42.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('22 آذر 99');
+		/*1065183*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[729]='6';commentCnt[730]='6';commentCnt[731]='5';commentCnt[732]='2';commentCnt[734]='15';commentCnt[738]='1';commentCnt[740]='7';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[729]='0';
+mihanblogDisLikeArrCnt[729]='0';
+mihanblogLikeArrCnt[730]='0';
+mihanblogDisLikeArrCnt[730]='0';
+mihanblogLikeArrCnt[731]='0';
+mihanblogDisLikeArrCnt[731]='0';
+mihanblogLikeArrCnt[732]='0';
+mihanblogDisLikeArrCnt[732]='0';
+mihanblogLikeArrCnt[734]='0';
+mihanblogDisLikeArrCnt[734]='0';
+mihanblogLikeArrCnt[738]='0';
+mihanblogDisLikeArrCnt[738]='0';
+mihanblogLikeArrCnt[740]='0';
+mihanblogDisLikeArrCnt[740]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://shahid42.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://shahid42.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','611');
+	setStatVar('total_author','2');
+	setStatVar('modify_date','28 آذر 94');
+	
+	setStatVar('today_view','48');
+	setStatVar('yesterday_view','19');
+	
+	setStatVar('this_month_view','2950');
+	setStatVar('last_month_view','2900');
+
+	setStatVar('total_view','682799');
+	setStatVar('last_view_date','22 آذر 99 (13:11)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://shahid42.mihanblog.com/statupdate/?data[refereruri]=http://daftarhaykhakestari.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607778795&data[hash]=e1756c1b8abd82f1a388d0e281aba46c&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://shahid42.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://shahid42.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://shahid42.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+
+
+<head>
+<title>وب سایت جامع شهید42</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="designer" content="www.shahid42.mihanblog.com">
+<meta name="language" content="Farsi">
+<meta name="description" content="وب سایت جامع شهید42 - لا فَتی اِلّا علی، لا سَیف الّا ذوالفقار - وب سایت جامع شهید42">
+<meta name="keywords" content="وب سایت جامع شهید42,shahid42, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="وب سایت جامع شهید42" href="http://shahid42.mihanblog.com/post/rss/">
+
+<style>
+body{margin:0;font-family: Tahoma;background:#050505 url('') top center repeat;}
+A {TEXT-DECORATION: none; }
+
+#Header-GS{width:1000;color:#fff;background:#000000 url('../static.mihanblog.com/public/user_data/user_files/356/1065183/666.jpg');no-repeat top;height:300;vertical-align:top;direction:rtl;}
+
+.TopMenu{background:#000000 url('');;font-size:11pt;padding:0 10 0 0;text-align:right;}
+.TopMenu a{color:#FFFFFF; padding:3px 6px 3px 6px ;}
+.TopMenu a:hover{
+-webkit-transition:all 111ms linear;
+-moz-transition:all 111ms linear;
+transition:all 111ms linear;
+padding:3px 6px 3px 6px ;
+background:#750000;
+color:#FFFFFF;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+
+#ADS-GS{width:100%;background:#030303;float:center;}
+#Page-GS{width:100%;background:#030303;}
+
+.TopMore{width:550;height:50;background:#222 url('post1.png.html') no-repeat top right;direction:rtl;text-align:right;
+font-size:10pt;font-family: Tahoma;margin-top: 13px;}
+.TopMore2{padding:15 20 0 20;}
+.CenterMore{width:550;background:#FFF url('post2.png.html') repeat-y right;direction:rtl;text-align:right;color:#222;font-size:8pt;;overflow:hidden}
+.CenterMore2{padding:10 30 10 28}
+.LowMore3{width:550;background:#222 url('post3.png.html') no-repeat top right;height:50;text-align:right;margin-bottom: 3px;}
+
+.TopPost{width:550;height:50;background:#080808 url('../static.mihanblog.com/public/user_data/user_files/356/1065183/33.jpg') no-repeat top right;direction:rtl;text-align:right;
+font-size:10pt;font-family: Tahoma;margin-top: 12px;}
+.TopPost a{color:#FFFFFF}
+.TopPost2{padding:15 20 0 20;}
+.CenterPost{width:550;background:#000000 url('') repeat-y right;direction:rtl;text-align:right;color:#FFFFFF;font-size:8pt;;overflow:hidden}
+.CenterPost2{padding:10 30 10 28}
+.LowPost3{width:550;background:#000000 url('../static.mihanblog.com/public/user_data/user_files/356/1065183/999.jpg') no-repeat top right;height:50;text-align:right;margin-bottom: 3px;}
+.CPost3{padding:15 45 0 0}
+.CenterPost a{color:#FFFFFF}
+.CenterPost a:hover{color:#FFFFFF;}
+.date{width:350px;float:right;direction:rtl;font-size:8pt;color:#FFFFFF;}
+.Comment{width:120px;float:left;direction:rtl;font-size:8pt;text-align:center;color:#FFFFFF;}
+
+#rightmenu{width:210;float:left;}
+#leftmenu{width:210;float:right;}
+
+.TopSid{width:210;background:url('../static.mihanblog.com/public/user_data/user_files/356/1065183/69.jpg') no-repeat top right;height:52;direction:rtl;color:#FFFFFF;font-size:8pt;margin-top: 15px;}
+.TopSid2{padding:18 10 0 0;text-align:right}
+.CenterSid{width:210;float:left;direction:rtl;color:#FFFFFF;font-size:8pt;background: url('') repeat-y right;}
+.CenterSid a{color:#FFFFFF;}
+.CenterSid a:hover{color:#750000} 
+.Centersid2{padding:10 30 10 28}
+.li-Sid{padding:4 25 0 5;background:url(http://dl.greenskin.ir/theme/theme_love3/li.png) 190px 6px  no-repeat}
+.li-Sid2 span{color:#506130;font-size:8pt;font-weight:bold}
+.li-Sid2{padding:0 10 5 10;}
+.LowSid{width:210;background:url('') no-repeat top right;height:12;float:right;margin-bottom: -13px;}
+
+#footer-GS{text-align:center;background: #030303 url('') repeat;height:120;font-size:8pt;}
+#footer-GS{padding:15 40 5 10;}
+
+</style>
+</head>
+<body>
+
+
+<div align="center">
+	
+<table border="3" width="1000" cellspacing="3" cellpadding="3">	
+
+
+
+<tr><td colspan="3" id=Header-GS>
+</td></tr>
+<tr><td colspan="3" height="40" class=TopMenu>
+<a href="index.html">صفحه اصلی</a>
+<a href="http://shahid42.mihanblog.com/post/list">عناوین مطالب</a>
+<a href="javascript:messageForm()">تماس با ما</a>
+</td></tr>
+<tr id=ADS-GS><td colspan="3" align="center" style="padding-bottom:5;padding-top:10;">
+<a href="http://www.muheban.ir/" target="_blank" title=" محبان الزهرا"><img width="468" height="60" border="0" src="../static.mihanblog.com/public/user_data/user_files/356/1065183/6586.jpg"></a>
+<a href="http://shahid42.mihanblog.com/extrapage/baner/" target="_blank" title="  کلیک کنید"><img width="468" height="60" border="0" src="http://www.dl.greenskin.ir/theme/theme_music7/ads1.gif"></a>
+
+<a href="index.html" target="_blank" title="  کلیک کنید"><img width="942" height="94" border="0" src="http://fars7.rozup.ir/up/fars7/20880558090100471918.jpg"></a>
+
+
+<!-- Pic Slider by www.1abzar.com --->
+<script src="http://1abzar.ir/abzar/tools/slider2/?no=2&play=1&w=1000&h=300&id=c9u6zvbru3qimpe&max=4&ct=1&kc=000000&kadr=9"></script><div style="display:none"><h1><a href="http://www.1abzar.com">&#1575;&#1587;&#1604;&#1575;&#1740;&#1583;&#1585;</a></h1></div>
+<!-- Pic Slider by www.1abzar.com --->
+
+	
+</td></tr>
+
+<tr id=Page-GS><td width="220" valign="top">
+
+
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>نویسندگان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/author/910097">گمنام گمنامی  418 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/author/1566488">بی پلاک   0 </a></div></div>
+<div class=LowSid></div></div>
+
+
+		<form id="frm-16076664015fd30ae1a031d" method="post" action="http://shahid42.mihanblog.com/poll/new/fid/16076664015fd30ae1a031d/atrty/1607666401/avrvy/0/key/10a4cd6bf96052c90f8bb89525519d3e/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="306471" id="data[pollid]" />		
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>نظر سنجی</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+آیا برنامه شبکه های ماهواره در آمار طلاق ایران تاثیر دارد؟؟؟<br><label><input type="radio" name="data[answer]" value="v1">100 درصد</label><br><label><input type="radio" name="data[answer]" value="v2">80 درصد</label><br><label><input type="radio" name="data[answer]" value="v3">50 درصد</label><br><label><input type="radio" name="data[answer]" value="v4">25 درصد</label><br><label><input type="radio" name="data[answer]" value="v5">10 درصد</label><br><label><input type="radio" name="data[answer]" value="v6">5 درصد</label><br><label><input type="radio" name="data[answer]" value="v7">0 درصد</label><br><br><input type="submit" value="ثبت"></div></div>
+<div class=LowSid></div></div>
+
+		<input type="hidden" name="frm-id" value="16076664015fd30ae1a031d" id="frm-id" /></form>
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>لینک دوستان</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a target="_blank" href="http://2khtare-aftab67.blogfa.com/">یک دختر از جنس آفتاب</a></div><div class=li-Sid>
+<a target="_blank" href="http://hejaboefaf92.mihanblog.com/">حجاب و عفاف</a></div><div class=li-Sid>
+<a target="_blank" href="http://beautygod.mihanblog.com/">زندگی با طعم یاد خدا</a></div><div class=li-Sid>
+<a target="_blank" href="http://rihanaaa.mihanblog.com/">×حرف دل×</a></div><div class=li-Sid>
+<a target="_blank" href="../easylearneng.mihanblog.com/index.html">step by step</a></div><div class=li-Sid>
+<a target="_blank" href="../just-niloo.mihanblog.com/index.html">نیلوفرانه</a></div><div class=li-Sid>
+<a target="_blank" href="http://92qasedak.blogfa.com/">درهم برهم</a></div><div class=li-Sid>
+<a target="_blank" href="http://shaparak1992.blogfa.com/">Ƹ̵̡Ӝ̵̨̄Ʒ َشــــــآپـــــــــرکƸ̵̡Ӝ̵̨̄Ʒ</a></div><div class=li-Sid>
+<a target="_blank" href="../daftarhaykhakestari.mihanblog.com/index.html">من موسیقی نفرینم</a></div><div class=li-Sid>
+<a target="_blank" href="http://golsarame.blogfa.com">خنده......خنده</a></div><div class=li-Sid>
+<a target="_blank" href="http://hania.blogfa.com">شهیدان زنده اند</a></div><div class=li-Sid>
+<a target="_blank" href="http://resourcemanagement.mihanblog.com">منابع طبیعی</a></div><div class=li-Sid>
+<a target="_blank" href="../ghatipati1991.mihanblog.com/index.html">قاتــــــــــی ღ پاتــــــــــی</a></div><div class=li-Sid>
+<a target="_blank" href="http://he-will-come.mihanblog.com">او خواهد آمد</a></div><div class=li-Sid>
+<a target="_blank" href="http://toloueyasin92.blogfa.com/">طلوع یاسین</a></div><div class=li-Sid>
+<a target="_blank" href="../www.sokksok.mihanblog.com/index.html">عشق به رهبری</a></div><div class=li-Sid>
+<a target="_blank" href="http://hejabgohar.blogfa.com">پوشش های اسلامی گوهر</a></div><div class=li-Sid>
+<a target="_blank" href="http://ansarol-hossein.ir/">هیئت انصارالحسین-جویبار</a></div><div class=li-Sid>
+<a target="_blank" href="http://afsaran.mirzabeigi.com/">☫ مقر افسران جنگ سایبری ☫</a></div><div class=li-Sid>
+<a target="_blank" href="http://antistanism.blogfa.com/">پایگاه مبارزه با شیطان</a></div><div class=li-Sid>
+<a target="_blank" href="http://hoseynmohammadzade.blogfa.com/">سردار شهید حسین محمدزاده</a></div><div class=li-Sid>
+<a target="_blank" href="http://ball9.mihanblog.com">سرزمین فوتبال</a></div><div class=li-Sid>
+<a target="_blank" href="../20bist20.mihanblog.com/index.html">Biiist!!!</a></div><div class=li-Sid>
+<a target="_blank" href="http://sael110.mihanblog.com">حاج محمد رضا مقدم مداح اهل بیت علیهم السلام</a></div><div class=li-Sid>
+<a target="_blank" href="http://blogus.mihanblog.com">بلاگ آس</a></div><div class=li-Sid>
+<a target="_blank" href="http://radepayeeshg.mihanblog.com">ناگفته ها</a></div><div class=li-Sid>
+<a target="_blank" href="http://mahgol72.mihanblog.com">دست نوشته های من</a></div><div class=li-Sid>
+<a target="_blank" href="http://comershial-reyhaneh.mihanblog.com">دانش نامه های آزاد</a></div><div class=li-Sid>
+<a target="_blank" href="../www.pcaras.mihanblog.com/index.html">از انتظار تا فرج</a></div><div class=li-Sid>
+<a target="_blank" href="http://ruelove.mihanblog.com">داستان عاشقانه</a></div><div class=li-Sid>
+<a target="_blank" href="http://gizmiz.mihanblog.com">سایت تفریحی گیز میز</a></div><div class=li-Sid>
+<a target="_blank" href="http://parastari89-isf.mihanblog.com">! وبلاگ دانشجویان پرستاری اصفهان !</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.banooyeordibehesht.loxblog.com">بانوی اردیبهشت</a></div><div class=li-Sid>
+<a target="_blank" href="http://rend1.mihanblog.com">عاشقان رند</a></div><div class=li-Sid>
+<a target="_blank" href="http://asma2000.mihanblog.com">دختر جهنمی</a></div><div class=li-Sid>
+<a target="_blank" href="http://azme-ashegh.mihanblog.com/">عزم عاشقی</a></div><div class=li-Sid>
+<a target="_blank" href="http://zariya.mihanblog.com/">مطالب عاشقانه حسی</a></div><div class=li-Sid>
+<a target="_blank" href="http://zakhme-del.mihanblog.com/">یاعلی مدد</a></div><div class=li-Sid>
+<a target="_blank" href="http://elm-city.mihanblog.com/">عمران مهندسی</a></div><div class=li-Sid>
+<a target="_blank" href="http://oxo.blogfa.com/">زندگی زیباست زشتی های آن تقصیر ماست</a></div><div class=li-Sid>
+<a target="_blank" href="../1ava.mihanblog.com/index.html">یک آوا</a></div><div class=li-Sid>
+<a target="_blank" href="http://alimola77.mihanblog.com/">مهدویت</a></div><div class=li-Sid>
+<a target="_blank" href="../behtarin92.mihanblog.com/index.html">بهترینها</a></div><div class=li-Sid>
+<a target="_blank" href="http://havayebihadaf.mihanblog.com/">هوای بی هدف</a></div><div class=li-Sid>
+<a target="_blank" href="../khanesalamati.mihanblog.com/index.html">خانه سلامتی</a></div><div class=li-Sid>
+<a target="_blank" href="http://ghasemasariyan.blogfa.com/">شهید عصاریان</a></div><div class=li-Sid>
+<a target="_blank" href="http://muheban.ir/">هیئت محبان الزهرا</a></div><div class=li-Sid>
+<a target="_blank" href="http://zemzeme-zendegi.blogfa.com/">زمزمه ی زندگی</a></div><div class=li-Sid>
+<a target="_blank" href="http://rozekar.blogfa.com/">شرمنده شهدایم</a></div><div class=li-Sid>
+<a target="_blank" href="http://javadshopgame.blogfa.com/">javadgame</a></div><div class=li-Sid>
+<a target="_blank" href="http://javidbadiran.mihanblog.com/">جاوید با ایران</a></div><div class=li-Sid>
+<a target="_blank" href="../besmellah.mihanblog.com/index.html">بسم الله</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.apocalypse.blogfa.com">آخرالزمان و ظهور مهدی موعود(عج)</a></div><div class=li-Sid>
+<a target="_blank" href="http://fighter-jet-313.blogfa.com">پرواز به سوی  بیت المقدس</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.amalsa.blogfa.com/">فرماندهان دفاع مقدس</a></div><div class=li-Sid>
+<a target="_blank" href="../khorjin-m.mihanblog.com/index.html">ولایت سید علی</a></div><div class=li-Sid>
+<a target="_blank" href="http://hastifr.blogfa.com/">ملکوت</a></div><div class=li-Sid>
+<a target="_blank" href="http://sharmandeimshohada.blogfa.com/">شهدا شرمنده ایم</a></div><div class=li-Sid>
+<a target="_blank" href="http://yusof-crisronaldo7.blogfa.com/">رئال مادرید</a></div><div class=li-Sid>
+<a target="_blank" href="http://pupseda.persianblog.ir/">س مثل صدا</a></div><div class=li-Sid>
+<a target="_blank" href="http://gozarazaflak.blogfa.com/">گذر از افلاک</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.parvane91.blogfa.com">گلبرگ های دل</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.zolfaqar91.blogfa.com/">علی ولی الله</a></div><div class=li-Sid>
+<a target="_blank" href="http://yaraneheydar.blogfa.com/">مــــــــــــــــــــردان دیـــــــن</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.hmer.ir/">هیئت محبین امام رضا (علیه السلام) اراک</a></div><div class=li-Sid>
+<a target="_blank" href="http://demur.blogfa.com/">تنها خالق هستی</a></div><div class=li-Sid>
+<a target="_blank" href="http://homayerahmat58.blogfa.com/">علی ای همای رحمت</a></div><div class=li-Sid>
+<a target="_blank" href="http://viraane.blogfa.com/">بهانه ام برای نوشتن</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.rajabifardmitra67.blogfa.com/">شعر شاعر</a></div><div class=li-Sid>
+<a target="_blank" href="http://nice1lady.mihanblog.com/">نایس لیدی</a></div><div class=li-Sid>
+<a target="_blank" href="http://khastehdelam.blogfa.com/">لا یکلف الله نفسا الا وسعها...</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.sangarshohada.blogfa.com/">محفل رهروان شهداء</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.nayebolmahdi110.blogfa.com/">نائب المهدی</a></div><div class=li-Sid>
+<a target="_blank" href="http://aliakbarhyatim.blogfa.com/">هیئت حضرت علی اكبر كریم آباد مشكین دشت</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.mazloum.ir/">مقتدر مظلوم</a></div><div class=li-Sid>
+<a target="_blank" href="http://dayswithoutrain.blogfa.com/">روزهای بدون بارون...</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.norohoda.ir/">نورالهدی</a></div><div class=li-Sid>
+<a target="_blank" href="../h--h.mihanblog.com/index.html">مطلب جالب-hojjat</a></div><div class=li-Sid>
+<a target="_blank" href="http://r-javand.blogfa.com/">دختر ایرانی</a></div><div class=li-Sid>
+<a target="_blank" href="http://delha92.blogfa.com">مشاوره ازدواج</a></div><div class=li-Sid>
+<a target="_blank" href="../ava-h.mihanblog.com/index.html">آوا</a></div><div class=li-Sid>
+<a target="_blank" href="http://m-nazari-h.blogfa.com">...</a></div><div class=li-Sid>
+<a target="_blank" href="http://bublelife.mihanblog.com/">حباب</a></div><div class=li-Sid>
+<a target="_blank" href="http://jebheyejonoob.blogfa.com/">سرزمین نور...</a></div><div class=li-Sid>
+<a target="_blank" href="http://mygod76.mihanblog.com/">خدا</a></div><div class=li-Sid>
+<a target="_blank" href="http://baboleshgh.blogfa.com/">پرواز عشق</a></div><div class=li-Sid>
+<a target="_blank" href="http://yaaghubi.blogfa.com/">کمیل</a></div><div class=li-Sid>
+<a target="_blank" href="../tarikhy.mihanblog.com/index.html">نگاه به تاریخ اسلام</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.shahid-shojaat.blogfa.com/">بای ذنب قتلت ای شهید؟</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.bayenat.blog.ir ">جریان شناسی سیاسی</a></div><div class=li-Sid>
+<a target="_blank" href="http://rahpoyan.com/">گروه فرهنگی رهپویان عمار</a></div><div class=li-Sid>
+<a target="_blank" href="http://motahari1999.blogfa.com/">××یادمان باشــد××</a></div><div class=li-Sid>
+<a target="_blank" href="http://dokhteordibehesht.blogfa.com/">دخت اردیبهشت</a></div><div class=li-Sid>
+<a target="_blank" href="http://rahi-besuye-aseman.blogfa.com/">راهی به سوی آسمان</a></div><div class=li-Sid>
+<a target="_blank" href="../namaz-adian.mihanblog.com/index.html">آثار و برکات نماز</a></div><div class=li-Sid>
+<a target="_blank" href="http://piche-bozorge-tarikh.blogfa.com/">پـــیـــچ بـــزرگ تـــاریـــخـــی</a></div><div class=li-Sid>
+<a target="_blank" href="http://montazereou.blogfa.com/">هرچه می خواهد دل تنگت بگو!</a></div><div class=li-Sid>
+<a target="_blank" href="http://itechno.mihanblog.com/">وبسایت تخصصی فناوری اطلاعات</a></div><div class=li-Sid>
+<a target="_blank" href="http://shahid-ahmadiroshan.blogsky.com/">وبلاگ شهید احمدی روشن</a></div></div>
+<div class=LowSid></div></div>
+
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>صفحات جانبی</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/baner">تبلیغات شما عزیزان</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/ww">وصیت نامه دوم شهید خرازی</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/w">وصیت نامه اول شهید خرازی</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/n">نحوه شهادت</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/s">سخن شهید خرازی...</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/mm">مختصری از زندگی حاج حسین خرازی</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/kh1">خاطرات شهید خرازی</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/axs">عکس های شهید ضیاسرابی</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/vaa">وصیت نامه شهید ضیاسرابی</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/y">یادمان وصال شهید ضیاسرابی</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/vi">ویژگی اخلاقی شهید ضیاسرابی</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/z">مختصری از زندگی نامه شهید ضیا سرابی</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/a">عکس شهید باقری</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/va">وصیت نامه شهید باقری</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/kh">خاطرات شهید باقری</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/v">زندگی نامه شهید باقری</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/extrapage/ax">عکس هفته</a></div></div>
+<div class=LowSid></div></div>
+
+
+<div id=leftmenu>
+<div class=TopSid><div class=TopSid2>
+<b>ابر برچسب ها</b></div></div>
+<div class=CenterSid><center>
+				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AE%D8%A7%D8%B7%D8%B1%D8%A7%D8%AA+%D8%B4%D9%87%D8%AF%D8%A7" style="font-size:1.07em">
+		خاطرات شهدا</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B3%DB%8C%D8%A8+%D8%B3%DB%8C%D8%A7%D9%87" style="font-size:1.04em">
+		سیب سیاه</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AF%DA%A9%D8%AA%D8%B1+%D8%B9%D9%84%DB%8C+%D8%B4%D8%B1%DB%8C%D8%B9%D8%AA%DB%8C" style="font-size:1em">
+		دکتر علی شریعتی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B3%DB%8C%D9%85+%D8%AE%D8%A7%D8%B1%D8%AF%D8%A7%D8%B1" style="font-size:1em">
+		سیم خاردار</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D8%B9%D8%B1+%DA%A9%D9%86%D8%A7%DB%8C%D9%87" style="font-size:1em">
+		شعر کنایه</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AD%D8%A7%D8%AC+%D9%87%D9%85%D8%AA" style="font-size:1em">
+		حاج همت</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF+%D8%AE%D8%B1%D8%A7%D8%B2%DB%8C" style="font-size:1.04em">
+		شهید خرازی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85+%D8%B2%D9%85%D8%A7%D9%86" style="font-size:1.27em">
+		امام زمان</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B9%DA%A9%D8%B3+%DA%86%D9%85%D8%B1%D8%A7%D9%86" style="font-size:1em">
+		عکس چمران</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AC%D9%85%D9%84%D8%A7%D8%AA+%D8%B2%DB%8C%D8%A8%D8%A7" style="font-size:1em">
+		جملات زیبا</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%A8%DB%8C%D8%AA+%D8%A7%D9%84%D9%85%D8%A7%D9%84" style="font-size:1.04em">
+		بیت المال</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%A7%D8%AB%D8%A8%D8%A7%D8%AA+%D9%88%D9%84%D8%A7%DB%8C%D8%AA+%D8%A7%D9%85%DB%8C%D8%B1%D8%A7%D9%84%D9%85%D9%88%D9%85%D9%86%DB%8C%D9%86" style="font-size:1.04em">
+		اثبات ولایت امیرالمومنین</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AE%D8%A7%D8%B7%D8%B1%D9%87+%D8%A7%DB%8C+%D8%B2%DB%8C%D8%A8%D8%A7+%D8%A7%D8%B2+%D8%B4%D9%87%DB%8C%D8%AF+%D8%B2%DB%8C%D9%86+%D8%A7%D9%84%D8%AF%DB%8C%D9%86" style="font-size:1em">
+		خاطره ای زیبا از شهید زین الدین</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D9%86%D9%85%D8%A7%D8%B2" style="font-size:1em">
+		نماز</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AF%DA%A9%D8%AA%D8%B1+%D8%B4%D8%B1%DB%8C%D8%B9%D8%AA%DB%8C" style="font-size:1em">
+		دکتر شریعتی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF" style="font-size:1.3em">
+		شهید</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B9%D9%84%DB%8C" style="font-size:1.07em">
+		علی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D8%B9%D8%B1+%D8%A7%D9%85%D8%A7%D9%85+%D8%B2%D9%85%D8%A7%D9%86%DB%8C" style="font-size:1.2em">
+		شعر امام زمانی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF+%D9%85%D9%87%D8%AF%DB%8C+%D8%B2%DB%8C%D9%86+%D8%A7%D9%84%D8%AF%DB%8C%D9%86" style="font-size:1em">
+		شهید مهدی زین الدین</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D8%B9%D8%B1+%D8%A7%D9%85%D8%A7%D9%85+%D8%B2%D9%85%D8%A7%D9%86" style="font-size:1.04em">
+		شعر امام زمان</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%A7%D8%AB%D8%A8%D8%A7%D8%AA+%D8%B4%DB%8C%D8%B9%D9%87+%D8%A7%D8%B2+%D9%82%D8%B1%D8%A2%D9%86" style="font-size:1.04em">
+		اثبات شیعه از قرآن</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B9%DA%A9%D8%B3+%D8%B8%D9%87%D9%88%D8%B1" style="font-size:1em">
+		عکس ظهور</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF+%D8%A8%D8%B1%D9%88%D9%86%D8%B3%DB%8C" style="font-size:1em">
+		شهید برونسی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF+42" style="font-size:1.04em">
+		شهید 42</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B3%D9%87%D9%85%DB%8C%D9%87" style="font-size:1em">
+		سهمیه</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B9%D9%84%DB%8C+%D8%A7%D8%A8%D9%86+%D8%A7%D8%A8%DB%8C+%D8%B7%D8%A7%D9%84%D8%A8" style="font-size:1em">
+		علی ابن ابی طالب</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF+%D8%B9%D8%A8%D8%A7%D8%B3+%D8%A8%D8%A7%D8%A8%D8%A7%DB%8C%DB%8C" style="font-size:1em">
+		شهید عباس بابایی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%A7%D9%86%D8%AA%D8%AE%D8%A7%D8%A8%D8%A7%D8%AA" style="font-size:1.04em">
+		انتخابات</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF+%DA%AF%D9%85%D9%86%D8%A7%D9%85" style="font-size:1em">
+		شهید گمنام</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D8%B9%D8%B1+%D8%BA%DB%8C%D8%A8%D8%AA" style="font-size:1.17em">
+		شعر غیبت</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AD%D8%A7%D8%AC+%D8%A7%D8%AD%D9%85%D8%AF+%D9%85%D8%AA%D9%88%D8%B3%D9%84%DB%8C%D8%A7%D9%86" style="font-size:1em">
+		حاج احمد متوسلیان</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D9%85%D8%A7%D8%AF%D8%B1+%D8%B4%D9%87%DB%8C%D8%AF" style="font-size:1em">
+		مادر شهید</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AE%D8%A7%D8%B7%D8%B1%D9%87+%D8%A7%DB%8C+%D8%B2%DB%8C%D8%A8%D8%A7+%D8%A7%D8%B2+%D8%B4%D9%87%DB%8C%D8%AF+%D8%A8%D8%A7%D8%A8%D8%A7%DB%8C%DB%8C" style="font-size:1em">
+		خاطره ای زیبا از شهید بابایی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B9%DA%A9%D8%B3+%D8%A7%D9%85%D8%A7%D9%85+%D8%B2%D9%85%D8%A7%D9%86" style="font-size:1em">
+		عکس امام زمان</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AE%D8%A7%D8%B7%D8%B1%D8%A7%D8%AA+%D8%B4%D9%87%DB%8C%D8%AF+%D8%AE%D8%B1%D8%A7%D8%B2%DB%8C" style="font-size:1.04em">
+		خاطرات شهید خرازی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AD%D8%A7%D8%AC+%D8%AD%D8%B3%DB%8C%D9%86+%D8%AE%D8%B1%D8%A7%D8%B2%DB%8C" style="font-size:1.04em">
+		حاج حسین خرازی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF+%DA%86%D9%85%D8%B1%D8%A7%D9%86" style="font-size:1em">
+		شهید چمران</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B9%DA%A9%D8%B3+%D8%A7%D9%85%D8%A7%D9%85+%D8%B2%D9%85%D8%A7%D9%86%DB%8C" style="font-size:1em">
+		عکس امام زمانی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF+%D8%B5%DB%8C%D8%A7%D8%AF+%D8%B4%DB%8C%D8%B1%D8%A7%D8%B2%DB%8C" style="font-size:1em">
+		شهید صیاد شیرازی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AD%D8%A7%D8%AC+%D8%AD%D8%B3%DB%8C%D9%86+%D8%A8%D8%B5%DB%8C%D8%B1" style="font-size:1.07em">
+		حاج حسین بصیر</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AD%D8%A7%D8%AC+%D8%B9%D8%A8%D8%AF%D8%A7%D9%84%D8%AD%D8%B3%DB%8C%D9%86+%D8%A8%D8%B1%D9%88%D9%86%D8%B3%DB%8C" style="font-size:1em">
+		حاج عبدالحسین برونسی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AE%D8%A7%D8%B7%D8%B1%D9%87+%D8%A7%DB%8C+%D8%B2%DB%8C%D8%A8%D8%A7+%D8%A7%D8%B2+%D8%B4%D9%87%DB%8C%D8%AF+%D9%87%D9%85%D8%AA" style="font-size:1em">
+		خاطره ای زیبا از شهید همت</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D9%87%D8%AF%D8%A7" style="font-size:1.24em">
+		شهدا</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%A7%D8%B3%D8%AA%D8%A7%D8%AF+%D9%86%D9%82%D9%88%DB%8C%D8%A7%D9%86" style="font-size:1em">
+		استاد نقویان</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AE%D8%A7%D8%B7%D8%B1%D9%87" style="font-size:2em">
+		خاطره</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D8%B1%DB%8C%D8%B9%D8%AA%DB%8C" style="font-size:1em">
+		شریعتی</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AA%D9%81%D8%AD%D8%B5+%D8%B4%D9%87%D8%AF%D8%A7" style="font-size:1em">
+		تفحص شهدا</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF+%D9%87%D9%85%D8%AA" style="font-size:1.04em">
+		شهید همت</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D9%81%D8%A7%D8%B7%D9%85%DB%8C%D9%87" style="font-size:1em">
+		فاطمیه</a> 				<a href="http://shahid42.mihanblog.com/post/tag/%D8%AE%D8%AF%D8%A7%D9%88%D9%86%D8%AF" style="font-size:1em">
+		خداوند</a> </div>
+</center><div class=LowSid></div></div>
+
+	
+
+			
+</td>
+
+
+<td width="563" valign="top">
+
+<div align="center">
+
+			
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+					
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://shahid42.mihanblog.com/post/740">رشته ای بر گردنم افکنده دوست...</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><div align="center">
+
+
+<font size="5"><font face="Mihan-IransansBold">رشته ای بر گردنم افکنده دوست<br><br></font></font><font face="Mihan-IransansBold"><font size="5">می کشد هر جا که خاطرخواه اوست</font></font><br><br>(خدایا کمکم کن زیر این بار کمر خالی نکنم چرا که تو آمرزنده و مهربانی)<br></div><div align="center"><br></div><div align="center"><br></div><br>
+	<br><br>			طبقه بندی: <a href="http://shahid42.mihanblog.com/post/category/41">
+			الله</a>، <a href="http://shahid42.mihanblog.com/post/category/43">
+			اشعار شعرا</a>، <br>																		
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 28 آذر 94  ]  [ 13:40  ]  [ <a href="http://shahid42.mihanblog.com/post/author/910097">گمنام گمنامی </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(740)">نظرات  <script>setCommentCnt(740)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://shahid42.mihanblog.com/post/738">آن کو نوید آیه لاتقنطوا شنید...</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<div align="center">
+
+
+
+یک گل ز باغ دوست کسی بو نمیکند / تا هرچه غیر اوست به یک سو نمی کند<br></div><br><div align="center">روشن نمی شود ز رمد چشم سالکی / تا از غبار میکده دارو نمی کند<br></div><div align="center"><br></div><div align="center">گفتم ز شیخ صومعه کارم شود درست / گفتند او به دردکشان خو نمی کند<br></div><div align="center"><br></div><div align="center">گفتم روم به میکده گفتند پیر ما / خوش میکشد پیاله و خوش بو نمی کند<br></div><br><div align="center">رفتم به سوی مدرسه پیری به طنز گفت / تب را کسی علاج به طنزو نمیکند<br><br>آنرا که پیر عشق به ماهی کند تمام / در صدهزار سال ارسطو نمی کند<br><br>کرد اکتفا به دنیی دون خواجه کین عروس / هیچ اکتفا به شوهری او نمی کند<br><br>آن کو نوید آیه لاتقنطوا شنید / گوشی به حرف واعظ پرگو نمی کند<br><br>...<br></div> 
+
+<br>
+	<br><br>			طبقه بندی: <a href="http://shahid42.mihanblog.com/post/category/41">
+			الله</a>، <a href="http://shahid42.mihanblog.com/post/category/34">
+			بزرگان و اساتید</a>، <a href="http://shahid42.mihanblog.com/post/category/35">
+			جملات و داستان های زیبا</a>، <a href="http://shahid42.mihanblog.com/post/category/43">
+			اشعار شعرا</a>، <br>																		
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 19 آبان 94  ]  [ 22:40  ]  [ <a href="http://shahid42.mihanblog.com/post/author/910097">گمنام گمنامی </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(738)">نظرات  <script>setCommentCnt(738)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://shahid42.mihanblog.com/post/734">نیایش یا کمک؟؟؟</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+
+<p style="text-align: center;"><span style="color: #333399;"><strong><span style="font-family: tahoma,verdana,arial,helvetica,sans-serif; font-size: small;"><span style="color: #008000;">&nbsp;شاد کردن</span> <span style="color: #ff0000;">قلبی</span> <font color="#FFFFFF">با یک عمل</font></span></strong></span></p>
+<p style="text-align: center;"><span style="color: #333399;"><strong><span style="font-family: tahoma,verdana,arial,helvetica,sans-serif; font-size: small;"><font color="#FFFFFF">، بهتر از هزاران سر است که به</font> <span style="color: #008000;">نیایش</span> <font color="#FFFFFF">خم شده باشد!&nbsp;&nbsp; </font></span></strong></span></p>
+<p style="text-align: center;"><font color="#FF0000"><span style="font-family: tahoma,verdana,arial,helvetica,sans-serif; font-size: x-small;">&nbsp;گاندی</span></font></p>
+<p style="text-align: center;"><span style="font-family: tahoma,verdana,arial,helvetica,sans-serif; font-size: x-small;"><img src="http://images2.persianblog.ir/525401_zJMBIcuF.jpg" alt="" height="315" width="476"></span></p>
+<p style="text-align: center;"><br></p>
+<p style="text-align: center;"><span style="font-size: medium; color: #000080;"><strong><span style="font-family: arial,helvetica,sans-serif;"><span style="color: #008000;">دستی</span> <font color="#FFFFFF">که کمک می کند،</font></span> <span style="font-family: arial,helvetica,sans-serif;"><span style="color: #008000;"> مقدس تر</span><font color="#FFFFFF"> از دستی است که برای</font> <span style="color: #008000;">دعا</span><font color="#FFFFFF"> بالا می رود</font></span></strong></span><span style="font-family: tahoma,verdana,arial,helvetica,sans-serif; font-size: x-small;"><br></span></p>
+
+
+
+
+
+<br>
+	<br><br>																		
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 28 مهر 93  ]  [ 13:35  ]  [ <a href="http://shahid42.mihanblog.com/post/author/910097">گمنام گمنامی </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(734)">نظرات  <script>setCommentCnt(734)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://shahid42.mihanblog.com/post/732">آرزو...</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<div align="center"><img src="http://images2.persianblog.ir/525401_98JsTxM3.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><br><font color="#FFFFFF"><br>اینان هر کدام آرزویی داشتند...<br><br>خدایا حکمتت رو شکر!!</font><br><br><span style="color: #000080;">آدم در مورد بقیه خیلی راحت میتونه بگه : <span style="color: #ff0000;"><strong>فراموش کن . . .</strong></span></span><br></div>
+
+
+<br>
+	<br><br>			طبقه بندی: <a href="http://shahid42.mihanblog.com/post/category/41">
+			الله</a>، <a href="http://shahid42.mihanblog.com/post/category/37">
+			واقعیت تلخ</a>، <br>																		
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 25 مهر 93  ]  [ 13:31  ]  [ <a href="http://shahid42.mihanblog.com/post/author/910097">گمنام گمنامی </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(732)">نظرات  <script>setCommentCnt(732)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://shahid42.mihanblog.com/post/731">تولد تولد تولدت مبارک...</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<div align="center"><font color="#FFFFFF"><b><font size="5" face="arial,helvetica,sans-serif">بسم الله الرحمن الرحیم<br><br><font size="3"><font face="georgia,times new roman,times,serif">تولد تولد تولد&nbsp; <br><br>تولدت مبارك شهید42 جان!!!<br><br>امروز تولد شهید42 است وبلاكی كه من با تمام وجودم نوشتم!<br><br>همونطور كه خودش مظلوم واقع شد <br><br>روز تولدشم مظلومه!<br><br>همونطور كه شهدا مظلومن وبلاكشون هم مظلومه<br><br>قصد داشتم خیلی بهتر تولد </font></font></font><font size="3" face="georgia,times new roman,times,serif">بگیرم</font><font size="5" face="arial,helvetica,sans-serif"><font size="3"><font face="georgia,times new roman,times,serif"> اما وقت ندارم به هیج عنوان!!<br><br>شرمنده<br><br>حالا بفرمایید كیییییییییییییییییك!!!!!!!!!!!<br><br></font></font></font></b><br><img src="http://img.ir/vHlc.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"></font><b><font size="5" face="arial,helvetica,sans-serif"><font size="3"><font face="georgia,times new roman,times,serif"><font color="#FFFFFF"><br><br>خیلی دعام كنید!!!</font><br></font></font></font></b></div>
+
+
+<br>
+	<br><br>			طبقه بندی: <a href="http://shahid42.mihanblog.com/post/category/12">
+			متفرقه</a>، <br>																		
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 15 مهر 93  ]  [ 16:05  ]  [ <a href="http://shahid42.mihanblog.com/post/author/910097">گمنام گمنامی </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(731)">نظرات  <script>setCommentCnt(731)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://shahid42.mihanblog.com/post/730">من ایرانیم...شیعه ام...این دو هیچ منافاتی با یکدیگر ندارند!!!</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<div align="center">
+<b><font face="georgia,times new roman,times,serif" size="3"><font color="#FFFFFF">بسم رب الحسین...<br><br>ﻣﻦ ﺍﻳﺮﺍﻧﯽ ﺍﻡ<br><br>من شیعه علی ابن ابی طالب ام<br><br>
+ﺍﻫﻮﺭﺍﻣﺰﺩﺍﻱ ﻣﻦ ( ﺍﻟﻠﻪ ) ﺍﺳﺖ،<br><br>
+ﺍﺯ ﺗﺒﺎﺭ ﮐﻮﺭﻭﺷﻢ، ﻭﻟﯽ ﺷﺎﻫﻢ ﺣﺴﻴﻦ ﺑﻦ ﻋﻠﯽ ( ﻉ ) ﺳﺖ،<br><br>
+ﺍﺯ ﺩﻳﺎﺭ ﺁﺭﺷﻢ، ﻭﻟﯽ ﮐﻤﺎﻧﺪﺍﺭ ﻣﻦ ﻣﺴﻠﻢ ﺑﻦ ﻋﻘﯿﻞ ﺍﺳﺖ،<br><br>
+ﺍﻣﭙﺮﺍﻃﻮﺭﯼ ﺍﻡ ﻫﺨﺎﻣﻨﺸﯽ ﺳﺖ، ﻭﻟﯽ ﺟﻐﺮﺍﻓﻴﺎﯼ ﻣﻦ ﺑﻴﻦ ﺍﻟﺤﺮﻣﻴﻦ ﺍﺳﺖ،<br><br>
+ﺷﺎﻩ ﻋﺒﺎﺱ ﺭﺍ ﺩﻭﺳﺖ ﺩﺍﺭﻡ، ﻭﻟﯽ ﺷﺎﻩ ﻋﺒﺎﺱ ﻣﻦ ﻋﺒﺎﺱ ﺑﻦ ﻋﻠﯿﺴﺖ،<br><br>
+ﺁﺭﯼ ﻣﻦ ﺍﻳﺮﺍﻧﻲ ﺍﻡ ﻋﺎﺷﻖ ﮐﺎﻭﻩ، ﻣﺪﻳﻮﻥ ﻧﺎﺩﺭﺷﺎﻩ، ﻭﻟﯽ ﭘﻴﺎﻣﺒﺮﻡ ﻣﺤﻤﺪﺑﻦ ﻋﺒﺪﺍﻟﻠﻪ ( ﺹ ) ﺳﺖ،<br><br>
+ﻗﺪﻣﺖ ﮐﺸﻮﺭﻡ ﺍﺯ ﻣﺎﻭﺭﺍﯼ ﺗﺎﺭﻳﺦ ﺍﺳﺖ، ﻭﻟﻲ ﻣﻌﻨﺎﻱ ﺗﺎﺭﻳﺦ ﺑﺮﺍﯼ ﻣﻦ ﻓﻘﻂ ﺍﺯ ﻫﺠﺮﺕ ﭘﻴﺎﻡ ﺁﻭﺭﻡ ﺍﺯ ﻣﮑﻪ ﺑﻪ ﻣﺪﻳﻨﻪ ﺍﺳﺖ،<br><br>
+من ایرانی ام رهبرم سید علی خامنه...<br><br>
+ﺯﯾﺒﺎﯾﯽ ﻫﺎﯼ ﺗﺎﺭﯾﺦ ﮐﺸﻮﺭﻡ ﺭﺍ ﺩﻭﺳﺖ ﺩﺍﺭﻡ،<br><br>
+ﻭﻟﯽ ﺗﻤﺎﻡ ﺯﯾﺒﺎﯾﯽ ﻫﺎﯼ ﺩﻧﯿﺎ ﺭﺍ ﺩﺭ ﮐﻼﻡ ﻣﻮﻻﯾﻢ ﺣﯿﺪﺭﮐﺮﺍﺭ ﻣﯿﺒﯿﻨﻢ،<br><br>
+ﺁﺭﻱ ﺁﺭﻱ ﻣﻦ ﻳﮏ ﺍﻳﺮﺍﻧﻲ ﺍﻡ،<br><br>
+ﻳﮏ ﺍﻳﺮﺍﻧﻲ ﻋﺎﺷﻖ ﺍﻫﻞ ﺑﯿﺖ ﻭ ﻣﺘﻨﻔﺮ ﻭ ﺩﺷﻤﻦ ﺑﺎﺩﺷﻤﻨﺎﻥ ﻭ ﻣﻨﮑﺮﺍﻥ ﺍﻫﻞ ﺑﯿﺖ .<br><br>
+ﺧﺪﺍ ﻟﻌﻨﺖ ﮐﻨﺪ ﮐﺴﺎﻧﯽ ﮐﻪ ﺑﻪ ﺑﻬﺎﻧﻪ ﺍﺻﺎﻟﺖ ﻣﯿﺨﻮﺍﻫﻨﺪ ﻣﺬﻫﺐ ﻣﺎ ﺭﺍ ﺑﺮﺍﯼ ﺩﻭ ﺭﻭﺯ ﺧﻮﺷﮕﺬﺭﺍﻧﯽ ﺩﻧﯿﺎ ﺍﺯ ﻣﺎ ﺑﮕﯿﺮﻧﺪ .<br><br>
+ننگ بر کسانیکه به اسم دین قصد نابودی این ریشه و تمدن ایرانی شیعی مرا دارند<br><br>
+ﻣﻦ ﯾﮏ ﺍﯾﺮﺍﻧﯿﻪ ﺑﺎ ﺍﺻﺎﻟﺖ ﺷﯿﻌﻪ ﻫﺴﺘﻢ .<br><br>
+ﻭﺑﻪ ﺩﯾﻦ ﻭ ﺍﺻﺎﻟﺖ ﺧﻮﺩﻡ ﺍﻓﺘﺨﺎﺭ ﻣﯿﮑﻨﻢ<br><br>
+ﺩﺭﻭﺩ ﺑﺮ ﺍﯾﺮﺍﻥ ﻭ ﺷﯿﻌﯿﺎﻥ ﺟﻬﺎﻥ</font><br></font></b><br><font size="3"><font face="georgia,times new roman,times,serif"><b><font color="#CC0000">ایکاش متوجه می شدی که اهورامزدا و زرتشت و کوروش و داریوش و آرش و<br><br>شاه عباس و نادرشاه با الله و محمد و علی و فاطمه و حسن و حسین <br><br>در هدف هیچ تفاوت ندارد...<br><br>من و تو رو میخواهند با این اسم ها از هم دور کنند.<br><br>هشیار باش!!!</font><br></b></font></font></div><br>
+	<br><br>			طبقه بندی: <a href="http://shahid42.mihanblog.com/post/category/41">
+			الله</a>، <a href="http://shahid42.mihanblog.com/post/category/46">
+			محمد رسول الله</a>، <a href="http://shahid42.mihanblog.com/post/category/48">
+			فاطمه بنت الرسول(س)</a>، <a href="http://shahid42.mihanblog.com/post/category/39">
+			علی ابن ابی طالب(ع)</a>، <a href="http://shahid42.mihanblog.com/post/category/38">
+			حسین ابن علی(ع)</a>، <a href="http://shahid42.mihanblog.com/post/category/49">
+			سیدعلی آقا خامنه ای</a>، <a href="http://shahid42.mihanblog.com/post/category/37">
+			واقعیت تلخ</a>، <br>																		
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 1 مهر 93  ]  [ 13:00  ]  [ <a href="http://shahid42.mihanblog.com/post/author/910097">گمنام گمنامی </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(730)">نظرات  <script>setCommentCnt(730)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+<div class=TopPost>
+<div class=TopPost2>		
+
+<b><a href="http://shahid42.mihanblog.com/post/729">خسته شدم خدا...</a></b></div></div>
+<div class=CenterPost><div class=CenterPost2>					
+<div align="center"><font color="#CC0000"><b><font face="georgia,times new roman,times,serif" size="5">بسم رب الرئوف</font></b></font><br><br><font color="#FFFFFF"><b><font face="georgia,times new roman,times,serif" size="3">چه روزگار غریبی است...<br><br>خر تو خری است برای خودش...<br><br>به قول مادرم:خر می زند بام بیشی می رقصد!!!!<br><br>دل بستن چه آسان شده است<br><br>دل کندن از آن آسان تر...<br><br>ای خداااااااااااااااااااا<br><br>کفر نمی گویم ولی خودت اگر الان اینجا بودی چه می کردی؟؟<br><br>آیا آرزو مرگ نمی کردی؟؟!<br><br>آیا خودت می توانی در این غوغا زندگی کنی!!<br><br>به خداوندی خودت قسم که خسته شدم ار آدم های تکراری<br><br>از دروغ های تکراری<br><br>از چهره هایی که تبسم روی لبشان است ولی...<br><br>از همه چیز خسته شدم<br><br>خدایا دیگر نمی توانم به تو پناه بیاورم <br><br>خودت بیا و مرا در پناهت بگیر...<br><br>به خودت قسم سخته!!!<br><br>تنها چیزی که در این روزها تسکین می دهد قلبم را نام حسین است!!!<br><br>بارالها اجلم را تو به تاخیر انداز<br><br>چند روزیست دلم تنگ محرم شده است</font></b></font><br></div>
+
+
+<br>
+	<br><br>			طبقه بندی: <a href="http://shahid42.mihanblog.com/post/category/41">
+			الله</a>، <a href="http://shahid42.mihanblog.com/post/category/38">
+			حسین ابن علی(ع)</a>، <a href="http://shahid42.mihanblog.com/post/category/37">
+			واقعیت تلخ</a>، <a href="http://shahid42.mihanblog.com/post/category/35">
+			جملات و داستان های زیبا</a>، <br>																		
+</div></div>			
+
+<div class=LowPost3><div class=CPost3>
+
+<div class=date> [ 30 شهریور 93  ]  [ 15:09  ]  [ <a href="http://shahid42.mihanblog.com/post/author/910097">گمنام گمنامی </a> ] </div>
+<div class=Comment><a target="_self" href="javascript:newComment(729)">نظرات  <script>setCommentCnt(729)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script>
+</div></div></div>						
+
+
+			
+
+
+</div>
+
+<style>.pging {    direction:rtl;    font-size:1.2em;    height:30px;    margin:40px 0 0;    color:#000000;    padding-bottom: 20px;    text-align: center;}
+.pging a:link, .pging a:visited {border:1px solid #666666;  color:#B81B1F;  display:inline-block;    margin:0 3px;    padding:1px 5px;    text-decoration:none;}
+.pging a:hover, .pging a:active {    color:#000000;}.pging a.current:link, .pging a.current:visited {    background-color:#000000;    border:1px solid #666666;    color:red;    cursor:text;}</style> <div class=pging>
+<p align="center"><font face="Tahoma" style="font-size: 9pt">
+			تعداد کل صفحات : 88 ::     			<a href="http://shahid42.mihanblog.com/page/1">
+			<b>1</b></a>  			<a href="http://shahid42.mihanblog.com/page/2">
+			<span>2</span></a>  			<a href="http://shahid42.mihanblog.com/page/3">
+			<span>3</span></a>  			<a href="http://shahid42.mihanblog.com/page/4">
+			<span>4</span></a>  			<a href="http://shahid42.mihanblog.com/page/5">
+			<span>5</span></a>  			<a href="http://shahid42.mihanblog.com/page/6">
+			<span>6</span></a>  			<a href="http://shahid42.mihanblog.com/page/7">
+			<span>7</span></a>  			<a href="http://shahid42.mihanblog.com/page/8">
+			<i>...</i></a>  <br><br></div>
+</font></p></div></td>
+
+<td width="220" valign="top">	
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>		
+<b>درباره وبلاگ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <center>
+<img src="../static.mihanblog.com/public/user_data/web_photo/356/1065183.jpg@7586"  /><br>به نام نامی الله<br />
+<br />
+خدایا<br />
+<br />
+به ما آرامشی عطا فرما...<br />
+<br />
+آرامشی طوفانی!<br />
+<br />
+آمـــین<br />
+<br />
+********************<br />
+عزیزان می توانند از مطالب<br />
+<br />
+وب سایت جامع شهید42<br />
+<br />
+استفاده کنند.<br />
+<br />
+هزینه استفاده:یک صلوات<br />
+<br />
+******************<br />
+نفسنا لک الفداه یا خامنه ای<br />
+<br />
+افراط و تفریط ممنوع لطفاً!!!<br />
+<br />
+*******************<br />
+با ما باشید...<br />
+<br />
+veb.shahid@yahoo.com<br />
+</center></div></div>
+<div class=LowSid></div></div>
+
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1394/9"> آذر 1394 ، 1 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1394/8"> آبان 1394 ، 1 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1393/7"> مهر 1393 ، 4 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1393/6"> شهریور 1393 ، 4 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1393/5"> مرداد 1393 ، 12 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1393/4"> تیر 1393 ، 18 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1393/3"> خرداد 1393 ، 3 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1393/2"> اردیبهشت 1393 ، 3 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1393/1"> فروردین 1393 ، 16 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1392/12"> اسفند 1392 ، 16 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1392/11"> بهمن 1392 ، 3 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1392/10"> دی 1392 ، 4 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1392/9"> آذر 1392 ، 4 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1392/8"> آبان 1392 ، 3 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1392/7"> مهر 1392 ، 7 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1392/6"> شهریور 1392 ، 3 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1392/5"> مرداد 1392 ، 1 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1392/4"> تیر 1392 ، 11 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1392/3"> خرداد 1392 ، 27 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1392/2"> اردیبهشت 1392 ، 31 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1392/1"> فروردین 1392 ، 30 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1391/12"> اسفند 1391 ، 32 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1391/11"> بهمن 1391 ، 74 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1391/10"> دی 1391 ، 60 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1391/9"> آذر 1391 ، 59 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1391/8"> آبان 1391 ، 83 </a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/archive/1391/7"> مهر 1391 ، 77 </a></div></div>
+<div class=LowSid></div></div>
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>آخرین مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/740">رشته ای بر گردنم افکنده دوست...</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/738">آن کو نوید آیه لاتقنطوا شنید...</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/734">نیایش یا کمک؟؟؟</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/732">آرزو...</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/731">تولد تولد تولدت مبارک...</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/730">من ایرانیم...شیعه ام...این دو هیچ منافاتی با یکدیگر ندارند!!!</a></div><div class=li-Sid>
+<a href="http://shahid42.mihanblog.com/post/729">خسته شدم خدا...</a></div><center><a href="http://shahid42.mihanblog.com/post/list"><b>لیست آخرین مطالب</b></a></center></div>
+<div class=LowSid></div></div>	
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>موضوعات</b></div></div>			
+<div class=CenterSid><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/41">الله  21 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/46">محمد رسول الله  6 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/48">فاطمه بنت الرسول(س)  8 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/39">علی ابن ابی طالب(ع)  10 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/38">حسین ابن علی(ع)  14 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/42">محمد بن حسن المهدی(عج)  33 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/50">سید روح الله خمینی  5 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/49">سیدعلی آقا خامنه ای  12 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/34">بزرگان و اساتید  30 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/40">شریعت شریعتی  10 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/36">سر الصلاه  1 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/37">واقعیت تلخ  106 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/47">خاطرات شهدا و عبرت ها  273 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/35">جملات و داستان های زیبا  43 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/11">جانبازان  19 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/45">احادیث  2 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/43">اشعار شعرا  14 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/51">دانلودکده  26 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/44">سیاست  7 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/19">ویژه نامه  8 </a></div><div class=li-Sid>			
+<a href="http://shahid42.mihanblog.com/post/category/12">متفرقه  44 </a></div></div>			
+<div class=LowSid></div></div>
+</div>
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>آمار سایت</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div></div>	
+
+<div id=rightmenu>
+<div class=TopSid><div class=TopSid2>
+<b>امکانات وب</b></div></div>
+<div class=CenterSid>
+<center>
+<font face="Tahoma" style="font-size: 8pt" color="#666666"><center>
+
+
+<script type="text/javascript" src="http://www.iranskin.com/pagerank/icon/?n=42&url=shahid42.mihanblog.com"></script><div style="display:none"><h1><a href="http://www.iranskin.com/pagerank">رتبه سنج گوگل</a></h1><h1><a href="http://www.iranskin.com">رتبه سنج گوگل</a></h1></div>
+
+
+ 
+
+
+
+
+
+
+
+<!-- Stat7.com -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://www.stat7.com/analytics/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "6850"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Stat7.com Code -->
+<!-- Begin: Stat7 Logo -->
+<a href="http://www.stat7.com" title="تحلیل آمار سایت و وبلاگ" target="_blank">
+<img src="http://www.stat7.com/images/stat7-logo.png" title="تحلیل آمار سایت و وبلاگ" alt="تحلیل آمار سایت و وبلاگ" />
+</a>
+<!-- End: Stat7 Logo -->
+<noscript>
+<!-- Stat7.com Image Tracker -->
+<img src="http://www.stat7.com/analytics/piwik.php?idsite=6850&rec=1" style="border:0" alt="" />
+<!-- End Stat7.com -->
+</noscript>
+
+</center></font>
+</div>
+<div class=LowSid></div></div>
+
+
+</td></tr>
+<tr><td width="1000" colspan="3" id="footer-GS">
+[ طراحی : <a href="http://www.shahid42.mihanblog.com/"target="_blank">شهید42 </a> ]  [  <a href="http://www.shahid42.mihanblog.com/"target="_blank">  Weblog Themes By : shahid42 </a>] </td></tr></table>
+</div>
+
+</body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'shahid42.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

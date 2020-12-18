@@ -1,0 +1,1621 @@
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*806068*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[999]='90';commentCnt[1528]='4';commentCnt[1583]='14';commentCnt[2042]='13';commentCnt[2074]='11';commentCnt[2131]='34';commentCnt[2216]='15';commentCnt[2235]='12';commentCnt[2440]='5';commentCnt[2442]='10';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[999]='46';
+mihanblogDisLikeArrCnt[999]='6';
+mihanblogLikeArrCnt[1528]='9';
+mihanblogDisLikeArrCnt[1528]='0';
+mihanblogLikeArrCnt[1583]='12';
+mihanblogDisLikeArrCnt[1583]='0';
+mihanblogLikeArrCnt[2042]='13';
+mihanblogDisLikeArrCnt[2042]='0';
+mihanblogLikeArrCnt[2074]='16';
+mihanblogDisLikeArrCnt[2074]='0';
+mihanblogLikeArrCnt[2131]='24';
+mihanblogDisLikeArrCnt[2131]='0';
+mihanblogLikeArrCnt[2216]='15';
+mihanblogDisLikeArrCnt[2216]='5';
+mihanblogLikeArrCnt[2235]='7';
+mihanblogDisLikeArrCnt[2235]='0';
+mihanblogLikeArrCnt[2440]='0';
+mihanblogDisLikeArrCnt[2440]='0';
+mihanblogLikeArrCnt[2442]='0';
+mihanblogDisLikeArrCnt[2442]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://sherlock-holmes.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://sherlock-holmes.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','1664');
+	setStatVar('total_author','20');
+	setStatVar('modify_date','پنجشنبه 20 آذر 1399');
+	
+	setStatVar('today_view','484');
+	setStatVar('yesterday_view','1870');
+	
+	setStatVar('this_month_view','25904');
+	setStatVar('last_month_view','46264');
+
+	setStatVar('total_view','7932855');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (13:48)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://sherlock-holmes.mihanblog.com/statupdate/?data[refereruri]=http://sherlock-holmes.mihanblog.com/post/category/3&data[postid]=&data[requesturi]=/post/category/3/page/1&data[sdate]=1607768503&data[hash]=1b980968d9b8dc6ac1c587a7321ab56b&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://sherlock-holmes.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://sherlock-holmes.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>شرلوک هلمز ساکن ۲۲۱ بی خیابان بیکر - مطالب سریال ماجراهای شرلوک هلمز</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="designer" content="Theme - Designer">
+<meta name="designerUrl" content="http://www.theme-designer.com/">
+<meta name="language" content="Farsi">
+<meta name="author" content="Sherlock 221 ">
+<meta name="description" content="شرلوک هلمز ساکن ۲۲۱ بی خیابان بیکر - مطالب سریال ماجراهای شرلوک هلمز - شرلوک هلمز مدرن با همراه همیشگی جان واتسون برگشته تا شما رو با داستان های جدید شرلوک همراه کنه 
+به خیابان بیکر خوش آمدید!
+Bakerstreet.ir">
+<meta name="keywords" content="شرلوک هلمز ساکن ۲۲۱ بی خیابان بیکر - مطالب سریال ماجراهای شرلوک هلمز, بیکر.bakerstreet.welcome to baker.بیکر استریت.شرلوک هلمز.Bakerstreet.ir. شرلوک. هلمز. .جرمی برت ..سsherlock holmes.SHERLOCK. SHELOCKED.the game is back on .HOLMES">
+<link rel="alternate" type="application/rss+xml" title="شرلوک هلمز ساکن ۲۲۱ بی خیابان بیکر - مطالب سریال ماجراهای شرلوک هلمز" href="../../../rss/index.html" />
+<link href="http://themeupload.theme-designer.com/64/c.css" type="text/css" rel="stylesheet">
+
+<script src="http://themeupload.theme-designer.com/64/js/jquery-1.4.3.min.js" type="text/javascript"></script>
+<script src="http://themeupload.theme-designer.com/64/js/jquery.tools.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="http://themeupload.theme-designer.com/64/js/scrolltopcontrol.js"></script> 
+<script language="javascript" type="text/javascript">
+        // execute your scripts when the DOM is ready. this is mostly a good habit
+        $(function() {
+
+            // initialize scrollable
+        $(".scrollable").scrollable({ circular: true }).autoscroll({ interval: 4000 });
+
+        });
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+</head>
+
+<!-- template64-mihanblog -->
+<!-- Design By : wWw.Theme-Designer.Com -->
+
+<body background="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/13373564027263403839.jpg" >
+
+<!---------- he ---------------------------->
+<!---------- address-image --------->
+<div style="
+	background-image:url('../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/58957091228608052387.jpg');
+	background-repeat:no-repeat; background-position:center top;" dir="rtl">
+<!---------- address-image --------->
+
+<div align="center"><div class="theme-designer-com_block-koli"><div align="right">
+
+<div align="center"><div class="theme-designer-com_makan_blogtitle"><div align="right">
+<div class="theme-designer-com_blogtitle"><a href="http://bakerstreet.ir">شرلوک هلمز ساکن ۲۲۱ بی خیابان بیکر</a></div>
+<div class="theme-designer-com_description">به بیکر خوش آمدید!</div>
+</div></div></div>
+<!---------- he ---------------------------->
+
+<div align="center"><div class="theme-designer-com_menutop-background"><div align="right">
+<ul id="alibehnamfar-ir" align="right">
+		<li><a href="http://bakerstreet.ir" class="home" title="صفحه ی نخست"><div class="title-menu-top" style="padding:8px 25px 0px 0px;">صفحه ی نخست</div></a></li>
+    <li><a href="http://baker-forum.ir" class="email" title="انجمن بیکر"><div class="title-menu-top" style="padding:8px 5px 0px 0px;">انجمن بیکر</div></a></li>
+    <li><a href="http://bakerstreet.ir/post/archive" class="archive" title="آرشیو مطالب"><div class="title-menu-top" style="padding:8px 0px 0px 25px;">آرشیو مطالب</div></a></li>
+    <li><a href="javascript:messageForm()" class="list-post" title="تماس با ما"><div class="title-menu-top" style="padding:8px 0px 0px 25px;">تماس با ما</div></a></li>
+    <li><a target="_blank" href="../../../rss/index.html" class="rss" title="لینك rss"><div class="title-menu-top" style="padding:8px 0px 0px 25px;">لینك rss</div></a></li>
+    <li><a target="_blank" href="http://sherlock-holmes.mihanblog.com/m/" class="rss" title="نسخه موبایل"><div class="title-menu-top" style="padding:8px 0px 0px 25px;">نسخه موبایل</div></a></li>
+  </ul>
+</div></div></div>
+
+<!-- Date by www.Theme-Designer.com --->
+<div class="theme-designer-com_makan_date"><div class="theme-designer-com_date-text"> [ <script type='text/javascript' language='javascript' src='http://www.theme-designer.com/s/history/?type=1'></script> ] </div></div>
+<!-- Date by www.Theme-Designer.com --->
+
+<div class="theme-designer-com_badane"><div class="theme-designer-com_badane2">
+
+<div class="theme-designer-com_makan_search">
+<div class="search">
+<form method="Get" target="_blank" action="http://google.com/search" class=sch><input name="sitesearch" value="http://bakerstreet.ir" type="hidden">
+<div style="height:34px; overflow:hidden; width:289px; overflow:hidden;">
+<input type="submit" value="جستجو" class=but><input type="text" name="q" size="5" class=txt value="جستجو مطالب مورد نظر ..." onfocus="if (this.value == 'جستجو مطالب مورد نظر ...') {this.value = '';}" onblur="if (this.value == '') {this.value = 'جستجو مطالب مورد نظر ...';}">
+</div>
+</form>
+</div>
+</div>
+
+<!---------- slideshow ---------------------------->
+<div class="theme-designer-com_makan_slideshow">
+<div class="theme-designer-com_slideshow-background">
+
+<div style="margin:0px 11px 0px 0px;">
+<div class="scrollable">
+<div class="items">
+<!---------- address-image size:291-188 --------->
+<div>
+<a target='_parent' href="آدرس&#32;لینک&#32;عکس.html" title="تست"><img  src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/7dsdasdasd.jpg"></a>
+</div>
+<!---------- /address-image --------->
+<!---------- address-image size:291-188 --------->
+<div>
+<a target='_parent' href="آدرس&#32;لینک&#32;عکس.html" title="تست"><img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/777721.jpg"></a>
+</div>
+<!---------- /address-image --------->
+<!---------- address-image size:291-188 --------->
+<div>
+<a target='_parent' href="آدرس&#32;لینک&#32;عکس.html" title="تست"><img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/7770123123.jpg"></a>
+</div>
+<!---------- /address-image --------->
+</div>
+</div>
+</div>
+
+<div class="theme-designer-com_makan_slideshow-f-right"><a class="next browse right"><img border="0" src="http://themeupload.theme-designer.com/64/image/10.png"></a></div>
+<div class="theme-designer-com_makan_slideshow-f-left"><a class="prev browse left"><img border="0" src="http://themeupload.theme-designer.com/64/image/9.png"></a></div>
+
+</div>
+</div>
+<!---------- slideshow ---------------------------->
+
+<table border="0" width="1003" cellspacing="0" cellpadding="0">
+<tr>
+<td width="12" valign="top">&nbsp;</td>
+<td width="667" valign="top">
+<div align="center">
+<div class="theme-designer-com_post-space1"></div>
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="theme-designer-com_post-back1" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="54">
+<tr>
+<td width="94" valign="top">&nbsp;</td>
+<td width="450" valign="top"><div class="theme-designer-com_post-title"><a href="../../../2442.html">چند شب با «ماجراهای شرلوک هلمز»</a></div></td>
+<td width="106" valign="top"><div class="theme-designer-com-post-comment" align="center"><a target="_self" href="javascript:newComment(2442)">نظرات <script>setCommentCnt(2442)</script> </a></div></td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-back2" align="right">
+<div align="center"><div class="theme-designer-com-post-text-badane"><div align="right">
+<div class="theme-designer-com-post-text"><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: justify;"><div><font face="Mihan-IransansLight" size="2"><b style="">حس و حال برگشتن از دنیای مرده‌ها را دارم! بیشتر از سه سال از تاریخ پست قبلی من می‌گذرد ...&nbsp;</b></font></div><div><font face="Mihan-IransansLight" size="2"><b>خواستم خبر شروع پخش سریال «ماجراهای شرلوک هلمز» از شبکه‌ی تماشا را بدهم؛ هر شب ساعت 23 روی آنتن می‌رود و دو شب متوالی است برای من بهانه‌ای شده تا با جرمی برت نازنین و طنین صدای بهرام زند (دوبلور شخصیت شرلوک هلمز) تجدید خاطره کنم و کیفور شوم.&nbsp;</b></font></div><div><font face="Mihan-IransansLight" size="2"><b>اگر این اولین باری است که اسم سریال «ماجراهای شرلوک هلمز» به گوشتان می‌خورد، باید بگویم در نظر خیلی از طرفداران شرلوک هلمز (از جمله من و مدیر!) این سریال خوش‌ساخت‌ترین اقتباس از داستان‌های این شخصیت به قلم آرتور کانن دویل است. جرمی برت در بازه‌ای ده ساله و در چهل و یک قسمت، حتی با وجود اوضاع و احوال بیمارش در سال‌های آخر زندگی، در قامت شرلوک هلمز در کنار جمعی به‌یادماندنی از بازیگران و دست‌اندرکارانِ پشت صحنه، ظاهر شد و برای چند نسل خاطره آفرید.&nbsp;</b></font></div><div><font face="Mihan-IransansLight" size="2"><b><br></b></font></div><div style="text-align: center; "><font face="Mihan-IransansLight" size="2"><b><img hspace="0" border="0" align="baseline" vspace="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/sherlock_and_watson.png" alt=""></b></font></div><div><font face="Mihan-IransansLight" size="2"><b><br></b></font></div><div><font face="Mihan-IransansLight" size="2"><b>امشب نوبت پخش اپیزود «یاقوت کبود» بود. سراغ آرشیوم در هارد رفتم تا عکسی برای این پست انتخاب کنم ... و یادم افتاد ... بعد از چند فولدر بالا و پایین کردن، تمامی قسمت‌های سریال ماجراهای شرلوک هلمز را به شکل دوزبانه‌ی انگلیسی و فارسی و با کیفیتی خوب پیدا کردم. یادم افتاده‌بود که این آرشیوِ کامل را چند سال قبل از دوستی هدیه گرفته‌بودم؛‌ ولی آنقدر در صفِ تماشایی‌های زندگی عقب ماند که از یاد رفت ... حقیقت تلخ است؛ دیگر آن شوقِ سال‌های گذشته را که مرا هر روز به پای تلویزیون می‌کشاند تا تک تک قسمت‌های «ماجراهای شرلوک هلمز» را ضبط و آرشیو کنم، ندارم. زمان با حوصله و ذره ذره، چنین احساساتی را با خودش می‌برد ... مثل دانه‌هایی که در ساعتی شنی، به جبر جاذبه سقوط می‌کنند.&nbsp;</b></font></div><div><font face="Mihan-IransansLight" size="2"><b>ما روزهای خوشی داشتیم؛ ما یعنی من و نویسنده‌های دیگر این وبلاگ و پاهای ثابت دیگری که بخش نظرات پست‌ها را برای خودمان پاتوق کرده‌بودیم.&nbsp;مثل خیلی از طرفداران دوآتشه‌ی شرلوک هلمز، من هم می‌خواستم هولمز باشم! بعد از چند صباحی گردش در این وبلاگ، به سرم زد من هم وبی تأسیس کنم که عنوانش شد «شرلوک پدیا» و اسم مستعار منِ نویسنده در زیر نوشته‌های آن بلاگ هم «Sherlock Holmes» بود ... از سرنوشتش همین را بگویم که حالا از دسترس خارج است و خاک می‌خورد. بعدها که من هم به تیم نویسندگان این وبلاگ اضافه شدم، اسم مستعار «Sherlockpedia» را انتخاب کردم؛ برای پیشگیری از ایجاد تشابه اسمی بین من و مدیر که آن روزها «شرلوک هلمز» بود؛ و علت مهمتر اینکه بچه‌های اینجا هم از روی عادت مرا «پدیا» صدا می‌زدند.</b></font></div><div><font face="Mihan-IransansLight" size="2"><b>یادم هست اوایل تأسیس «شرلوک پدیا»، زیر یکی از پست‌های اینجا، نظری خطاب به مدیر نوشتم که «اگه اهل رقابتی سر بزن» (!) و مدیر جواب داد «اهل رقابت نه، ولی اهل دوستی‌ چرا» ... و با اینکه هیچ وقت چهره‌ی هیچ کدام از اهالی خیابان بیکر را ندیدم، دوستان خوبی بودیم. «شرلوک هلمز» وجه مشترک بزرگی از زندگی‌مان بود و جرقه‌ی شور و شوقمان را سریال Sherlock، با بازی بندیکت کامبربچ، زده‌بود. آخ از آن روزهای بعد از پخش فصل دومِ Sherlock که چندین و چند پست برای آن پایان غیرمنتظره نوشتیم و نظریه‌پردازی کردیم ... به این پاتوق کوچکمان حسابی دلخوش بودیم.</b></font></div><div><font face="Mihan-IransansLight" size="2"><b>حالا در نگاه این روزهای من، «چیز»ها زیادی بزرگ شده‌اند و آدم‌ها پراکنده. دلتنگ شدن برای خاطرات خوب گذشته، کلیشه‌ای نبود که امشب بخواهم از آن بنویسم ولی همیشه پست‌های با کلمات کم به نظرم ناقص آمده‌ ... و بعد از نوشتن چند خط اول این پست، حرف پشت حرف آمد و به اینجا رسید. قرار بود اول فروردین امسال، پستی برای تبریک عید و خداحافظی از دوستان قدیمی اینجا بنویسم. چند سطر به تکمیلش مانده‌بود که با امروز و فردا کردن&nbsp;فراموش شد. فعلا آن پست طلبتان :)&nbsp;</b></font></div><div><font face="Mihan-IransansLight" size="2"><b>می‌دانم؛ زندگی در این روزها به روال گذشته نیست ... شاید این یک ساعت‌های شبانه با جرمی برت برای هر طرفدار جدید و قدیم شرلوک هلمز، فرصتی باشد برای چند لحظه‌ جدا شدن از دست‌اندازهای زندگی و لذت‌بردن از آن نگاه‌های عمیق و خنده‌های ظریف.&nbsp;</b></font></div><div><font face="Mihan-IransansLight" size="2"><b>در کند و کاوی برای نوشتن این پست گذرم به سایت «archive.org» افتاد که تمامی قسمت‌های سریال را به زبان انگلیسی و به رایگان، برای تماشا و دانلود گذاشته که می‌توانید به آن هم سری بزنید: «<a href="https://archive.org/details/SherlockHolmesGranada" target="_blank" title="">این لینک</a>»</b></font></div><div><font face="Mihan-IransansLight" size="2"><b>و خبر خوش دیگری هم برای طرفداران هلمز دارم؛ با اینکه این خبر چندان تازه از تنور درنیامده و حرف یک سال پیش است؛ ولی احتمال دارد بعضی مثل خود من که دیر خبردارشدم آن را نشنیده‌باشند: چهار کتابِ حاوی مجموعا بیست و چهار داستان کوتاهِ شرلوک هلمز با ترجمه‌ی مرحوم کریم امامی دوباره منتشر شده‌است؛ این بار توسط «انتشارات هرمس» و در دنباله‌ی سری «کتاب‌های کارآگاه». اولین جلد از این چهارتا؛ یعنی «رسوایی در بوهم و پنج داستان دیگر»، اولین بار در سال 1372 و توسط انتشارات «طرح نو» چاپ شد و بعد از بازه‌‌ای از توقف فعالیت نشر «طرح نو» و فوت آقای امامی، مدت‌ها این چهارگانه به دست فراموشی سپرده شده‌بود تا همین یک سال پیش. ویژگی‌ای که این ترجمه‌ها را به یادماندنی می‌کند، نثر و ترجمه‌ی دوست‌داشتنی آقای امامی و تصاویرِ اصل کتاب‌ها، یعنی طراحی‌هایِ اثر سیدنی پجت است. می‌توانید متن این خبر را از «&nbsp;<a href="http://iraneconomist.com/fa/news/306081/چاپ-چهار-کتاب-جدید-از-داستان‌های-شرلوک-هولمز" target="_blank" title="">این لینک</a>&nbsp;»&nbsp;بخوانید.</b></font></div><div><font face="Mihan-IransansLight" size="2"><b><br></b></font></div><div><font face="Mihan-IransansLight" size="2"><b style="">ایّامتان به کام و پر از دلخوشی.&nbsp;</b></font></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="../../3.html">
+سریال ماجراهای شرلوک هلمز</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="../../../tag/جرمی&#32;برت.html">
+جرمی برت</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post-back3" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="56">
+<tr>
+<td width="519" valign="top"><div class="theme-designer-com_post-d-t-a">
+شنبه 3 خرداد 1399ساعت : 23:14|
+نویسنده : Sherlockpedia  </td></div>
+<td width="131" valign="top">
+
+<div id="theme-designer-com-post-more"><ul>
+<li><a href="../../../2442.html" >لینک ثابت</a></li>
+</ul></div>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post-back1" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="54">
+<tr>
+<td width="94" valign="top">&nbsp;</td>
+<td width="450" valign="top"><div class="theme-designer-com_post-title"><a href="../../../2440.html">نگاهی به 5اقتباس برتر از داستان و شخصیت شرلوک هلمز بر اساس امتیاز IMDB</a></div></td>
+<td width="106" valign="top"><div class="theme-designer-com-post-comment" align="center"><a target="_self" href="javascript:newComment(2440)">نظرات <script>setCommentCnt(2440)</script> </a></div></td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-back2" align="right">
+<div align="center"><div class="theme-designer-com-post-text-badane"><div align="right">
+<div class="theme-designer-com-post-text">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<font face="Mihan-Yekan" size="3">در این مقاله قصد معرفی 5 اثر برتر اقتباسی از شخصیت شرلوک هلمز بر اساس امتیاز ثبت شده در سایت IMDB را داریم، لطفا همراه ما تا آخر این پست باشید.</font><div><font face="Mihan-Yekan" size="3"><br></font></div><div><font face="Mihan-Yekan" size="3" color="#CC0000"><b><font size="4">1.شرلوک (SHERLOCK)</font></b><br></font></div><div align="right"><table style="border: 0px solid rgb(0, 0, 0); border-collapse: collapse; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); font-size: 11px; width: 100%; " cellspacing="1" cellpadding="8"><tbody><tr><td style="border: 0px solid rgb(0, 0, 0); border-collapse: collapse; width: 100%; direction: ltr; "><font face="Mihan-Yekan" size="3" color="#CCCCCC">&nbsp;9.2/10<br></font><font face="Mihan-Yekan" size="2" color="#CCCCCC"><span style="background-color: rgb(0, 0, 0); ">690,051&nbsp;&nbsp;&nbsp; : &nbsp; تعداد آرا&nbsp;&nbsp; </span></font><br></td></tr></tbody></table></div><div align="left"><font color="#FFFFFF"><br></font></div><div align="center"><br></div><div id="15532716044719328"><style>.h_iframe-aparat_embed_frame{position:relative;} .h_iframe-aparat_embed_frame .ratio {display:block;width:100%;height:auto;} .h_iframe-aparat_embed_frame iframe {position:absolute;top:0;left:0;width:100%; height:100%;}</style><div class="h_iframe-aparat_embed_frame"> <span style="display: block;padding-top: 56.2%"></span><iframe allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" src="https://www.aparat.com/video/video/embed/videohash/rOD4p/vt/frame" height="100%" width="100%"></iframe></div></div><div><br></div><div><font face="Mihan-Yekan" size="3">سریال شرلوک ساخت کشور انگلیس ، یک اقتباس مدرن از شخصیت شرلوک هلمز نوشته کانن دویل هست ، که در قرن 21 ام زندگی می کند. این کارآگاه جوان همراه بازرس اسکاتلندیار که اعتماد به نفس کمی دارد همراه می شود و از راز قتل ها پرده بر میدارد. در این مسیر دستیار و دوست همیشگی اش&nbsp; دکتر جان واتسون که تازه از جنگ افغانستان برگشته نیز آشنا میشود. <br></font></div><div><font face="Mihan-Yekan" size="3">این سریال در 4 فصل تهیه شده است که فصل 5ام آن به طور دقیق مشخص نیست که چه زمانی تصمیم به ساخت آن گرفته شود ولی از طرف نویسندگان و تهیه کنندگان احتمال ساخت فصل 5 ام در آینده دور یا نزدیک تایید شده است.</font><br></div><div><br></div><div align="center"><img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/121212.jpg" height="200" width="423"></div><div><font face="Mihan-Yekan" size="3">امتیاز و اطلاعات ثبت شده برای این سریال به شرح زیر است.</font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">تعداد قسمت ها</font> : 15</font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">مدت زمان هر قسمت </font>: 90 دقیقه(به طور متوسط)</font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">ژانر</font> : جنایی، درام، رمز آلود.</font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">سال ساخت</font>: فصل اول(2010)-فصل دوم (2012)-فصل سوم(2014)-قسمت ویژه(2016)-فصل چهارم(2017)<br></font></div><div><font face="Mihan-Yekan" size="3">سریال شامل 4 فصل کامل 3 قسمتی و دو قسمت ویژه به همراه قسمت صفر می باشد.(قسمت صفر قسمتی غیر رسمی از این سریال هست که به صورت آزمایشی ساخته و پخش شد . قسمت صفر، غیر حرفه ای و غیر رسمی قسمت اول فصل یک میباشد.)</font></div><div><font face="Mihan-Yekan" size="3">سه قسمتی که بیشترین امتیاز را کسب کرده اند :</font></div><div><span style="font-family: Mihan-Yekan; font-size: small;">1. </span><font color="#CC0000" style="font-family: Mihan-Yekan; font-size: small;">The Reichenbach Fall</font><span style="font-family: Mihan-Yekan; font-size: small;"> با امتیاز 9.7 ( فصل 2 قسمت 3)&nbsp;</span></div><div style="direction: rtl; "><div align="right"><font face="Mihan-Yekan" size="2">2. <font color="#CC0000">A Scandal in Belgravia</font> با امتیاز 9.5 (فصل 2 قسمت 1)</font></div><div align="right"><font face="Mihan-Yekan" size="2">3. <font color="#CC0000">His Last Vow</font> با امتیاز 9.3 (فصل 3 قسمت 3)</font></div><div align="right"><font face="Mihan-Yekan" size="3"><font color="#CC0000">بازیگران این سریال : </font><br></font></div><div align="right"><font face="Mihan-Yekan" size="3">بندیکت کامبربچ در نقش شرلوک ، مارتین فریمن در نقش واتسون ، </font><font face="Mihan-Yekan" size="3"><font size="1"><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none; "><font face="Mihan-Yekan" size="3">Una Stubbs در نقش خانم هاتسون ....</font><br></span></font></font></div><div align="right"><table style="border:0px solid #000000; border-collapse: collapse; font-family:tahoma,arial,helvetica,sans-serif; font-size:11; width: 100%; " cellspacing="1" cellpadding="1" align=""><tbody><tr><td style="border:0px solid #000000; border-collapse: collapse; width: 25%; " align="left">&nbsp;<img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/kkpkko.jpg" height="68" width="122"></td><td style="border:0px solid #000000; border-collapse: collapse; width: 25%; " align="center">&nbsp;<img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/4sher.jpg" height="89" width="139"></td><td style="border:0px solid #000000; border-collapse: collapse; width: 25%; " align="right">&nbsp;<img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/qq.jpg" height="84" width="131"></td></tr><tr><td style="border:0px solid #000000; border-collapse: collapse; width: 25%; ">&nbsp;</td><td style="border:0px solid #000000; border-collapse: collapse; width: 25%; ">&nbsp;</td><td style="border:0px solid #000000; border-collapse: collapse; width: 25%; ">&nbsp;<br><br><br></td></tr></tbody></table></div><div align="right"><font face="Mihan-Yekan" size="3" color="#CC0000"><b><font size="4">2.ماجراهای شرلوک هلمز (The Adventures of Sherlock Holmes )</font></b></font></div><div align="right"><table style="border: 0px solid rgb(0, 0, 0); border-collapse: collapse; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); font-size: 11px; width: 100%; " cellspacing="1" cellpadding="8" align=""><tbody><tr><td style="border: 0px solid rgb(0, 0, 0); border-collapse: collapse; width: 100%; direction: ltr; "><font face="Mihan-Yekan" size="3" color="#CCCCCC">&nbsp;8.7/10<br></font><font face="Mihan-Yekan" size="2" color="#CCCCCC"><span style="background-color: rgb(0, 0, 0); direction: rtl; ">17,453&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; تعداد آرا &nbsp; </span></font><br></td></tr></tbody></table></div><div align="center"><br><font face="Mihan-Yekan" size="3"><img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/1011.png"></font></div><div align="left"><span style="color: rgb(19, 108, 178); text-decoration: underline; font-weight: bolder; font-family: Verdana,Arial,sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgba(185, 185, 185, 0.1); direction: rtl; "><br> </span></div></div><div><font face="Mihan-Yekan" size="3">سریال ماجراهای شرلوک هلمز بر اساس داستان های اصلی شرلوک هلمز نوشته کانن دویل ساخته شده است. بازیگران این سریال جرمی برت در نقش شرلوک هلمز ، دیوید بروک در نقش جان واتسون و </font><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none; "><font face="Mihan-Yekan" size="3">Rosalie Williams در نقش خانم هاتسون می باشد.</font></span></div><div><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none; "><br></span><table style="border:0px solid #000000; border-collapse: collapse; font-family:tahoma,arial,helvetica,sans-serif; font-size:11; width: 100%; " cellspacing="1" cellpadding="1" align=""><tbody><tr><td style="border:0px solid #000000; border-collapse: collapse; width: 33.333333333333336%; " align="left"><img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o7_r1_250.gif" height="114" width="208"></td><td style="border:0px solid #000000; border-collapse: collapse; width: 33.333333333333336%; " align="center">&nbsp;<img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o4_r1_250.gif" height="116" width="213"></td><td style="border:0px solid #000000; border-collapse: collapse; width: 33.333333333333336%; " align="right">&nbsp;<img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o2_r1_250.gif" height="115" width="208"></td></tr></tbody></table></div><div><font face="Mihan-Yekan" size="3"><br></font></div><div><font face="Mihan-Yekan" size="3">این سریال در دو فصل ساخته شده است که شرح آن در زیر آمده است:</font></div><div><br><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">تعداد قسمت ها</font> : 13</font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">مدت زمان هر قسمت </font>: 60 دقیقه(به طور متوسط)</font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">ژانر</font> : جنایی، درام، رمز آلود.</font></div><font face="Mihan-Yekan" size="3"><font color="#CC0000">سال ساخت</font>: فصل اول(1984)-فصل دوم (1985)</font></div><div><font style="direction: rtl; " face="Mihan-Yekan" size="3" color="#CC0000"><font color="#000000">سه قسمتی که بیشترین امتیاز را کسب کرده اند:</font></font></div><div><font style="direction: rtl; " face="Mihan-Yekan" size="3" color="#CC0000"><font size="2" color="#000000">1.</font><font size="2"> The Final Problem <font color="#000000">با امتیاز 8.5 (فصل دوم قسمت 6)</font><br></font></font></div><div><font face="Mihan-Yekan" size="2" color="#CC0000"><font color="#000000">2.</font> The Speckled Band <font color="#000000">با امتیاز 8.4 (فصل اول قسمت 6)</font><br></font></div><div><font face="Mihan-Yekan" size="2" color="#CC0000"><font color="#000000">3. </font>The Copper Beeches <font color="#000000">با امتیاز 8.3 (فصل دوم قسمت اول)</font></font></div><div><font face="Mihan-Yekan" size="3" color="#CC0000"><font color="#000000"><br></font></font></div><div><font face="Mihan-Yekan" size="3" color="#CC0000"><font color="#000000">در کل این سریال در دو فصل هفت و شش قسمتی ساخته شده است که&nbsp; به ترتیب شامل داستانهای :</font></font></div><div align="left"><font face="Mihan-Yekan" size="1">"A Scandal in Bohemia"--"The Dancing Men"--"The Naval Treaty"--"The Solitary Cyclist</font></div><div align="left"><font face="Mihan-Yekan" size="1">"The Crooked Man"--"The Speckled Band"--"The Blue Carbuncle"-</font></div><div align="left"><font face="Mihan-Yekan" size="1">-"The Copper Beeches"--"The Greek Interpreter"--"The Norwood Builder"--"The Resident Patient"--"The Red-Headed League"-</font></div><div align="left"><font face="Mihan-Yekan" size="1">"The Final Problem"</font></div><div align="left"><font face="Mihan-Yekan" size="3"><br></font></div><div><font face="Mihan-Yekan" size="3" color="#CC0000"><b><font size="4">3.بازگشت&nbsp; شرلوک هلمز (The Return of Sherlock Holmes )</font></b></font></div><div><br><div align="right"><table style="border: 0px solid rgb(0, 0, 0); border-collapse: collapse; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); font-size: 11px; width: 100%; " cellspacing="1" cellpadding="8" align=""><tbody><tr><td style="border: 0px solid rgb(0, 0, 0); border-collapse: collapse; width: 100%; direction: ltr; "><font face="Mihan-Yekan" size="3">&nbsp;<font color="#CCCCCC">8.7/10<br></font></font><font face="Mihan-Yekan" size="2" color="#CCCCCC"><span style="background-color: rgb(0, 0, 0); direction: rtl; ">8,736 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; : &nbsp; تعداد آرا &nbsp; </span></font><br></td></tr></tbody></table></div><div align="center"><br></div><div align="center"><img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/MV5BMjEzODQ1MDk5MF5BMl5BanBnXkFtZTYwODQ4OTQ5._V1_.jpg" height="379" width="205"><img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/MV5BMTI0MjA4MTAwOF5BMl5BanBnXkFtZTYwMzE4Njg4._V1_.jpg" height="379" width="205"><img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/MV5BMTI0NjM1Nzg0MF5BMl5BanBnXkFtZTYwOTQxNjU5._V1_.jpg" height="379" width="204"></div><div align="center"><br></div><div style="direction: rtl;" align="right"><font face="Mihan-Yekan" size="3">شرلوک هلمز گمشده است ، بعد از سقوط از آبشار هیچ اثری از او پیدا نشده است و دکتر واتسون مدتی بدون دوست عزیزش سپری کرده، که داستانی رمز آلود از راه میرسد و شرلوک بعد از مدت ها ناپدید شدن خود را نمایان میکند و سری جدیدی از داستان های رمز آلود به دست شرلوک هلمز و دکتر واتسون رمز گشایی می شوند. <br></font></div><div style="direction: rtl;" align="right"><font face="Mihan-Yekan" size="3">بازیگران این سری از داستان های شرلوک هلمز با تغییراتی همراه بود نقش شرلوک هلمز همچون سری اول با ایفای نقش جرمی برت همراه بود ولی بازیگر نقش جان واتسون تغییر کرد و نقش این شخصیت توسط </font><font face="Mihan-Yekan" size="3">Edward Hardwicke, ا</font><font face="Mihan-Yekan" size="3">نجام پذیرفت.</font><span style="color: rgb(51, 51, 51); font-family: Verdana, Arial, sans-serif; font-size: 13px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(238, 238, 238); text-decoration-style: initial; text-decoration-color: initial; display: inline !important; float: none;"> <br></span></div><div style="direction: rtl;" align="right"><br><div><font face="Mihan-Yekan" size="3">این سریال در دو فصل ساخته شده است که شرح آن در زیر آمده است:</font></div><div><br><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">تعداد قسمت ها</font> : 11</font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">مدت زمان هر قسمت </font>: 60 دقیقه(به طور متوسط)</font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">ژانر</font> : جنایی، درام، رمز آلود.</font></div><font face="Mihan-Yekan" size="3"><font color="#CC0000">سال ساخت</font>: فصل اول(1986) <font color="#CC0000">7</font> قسمت-فصل دوم (1988)- <font color="#CC0000">4</font> قسمت<br></font></div></div><div style="direction: rtl;" align="right"><font face="Mihan-Yekan" color="#CC0000"><font color="#000000" style=""><font size="3">سه قسمتی که بیشترین امتیاز را کسب کرده اند:</font></font></font></div><div style="direction: rtl;" align="right"><font face="Mihan-Yekan" color="#CC0000"><font color="#000000" style=""><font size="2">1.</font></font><font size="2"> The Bruce Partington Plans</font><font color="#000000" style="font-size: small;"> با امتیاز 8.2 (فصل 2 قسمت 4 )</font><br></font></div><div style="direction: rtl;" align="right"><font face="Mihan-Yekan" size="2" color="#CC0000"><font color="#000000">2.</font> The Devil's Foot <font color="#000000">با امتیاز 8.2 (فصل 2 قسمت 1 )</font><br></font></div><div style="direction: rtl;" align="right"><font face="Mihan-Yekan" size="3" color="#CC0000"><font size="2" color="#000000">3.</font><font size="2"> The Man with the Twisted Lip <font color="#000000">با امتیاز 8.2 (فصل 1 قسمت 5 )</font></font><br></font></div><div style="direction: rtl;" align="right">کل قسمت های این سری به شرح زیر است:</div><div style="direction: rtl;" align="right"><ul style="margin: 0.3em 1.6em 0px 0px; padding: 0px; list-style-type: disc; list-style-image: url(&quot;data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%225%22 height=%2213%22%3E %3Ccircle cx=%222.5%22 cy=%229.5%22 r=%222.5%22 fill=%22%2300528c%22/%3E %3C/svg%3E&quot;); color: rgb(34, 34, 34); font-size: 14px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255); text-decoration-style: initial; text-decoration-color: initial;"><li style="margin-bottom: 0.1em;"><font face="Mihan-Yekan" size="1">"ماجرای خانه خالی" (بازگشت هولمز) The Adventure of the Empty House (the return of Holmes)</font></li><li style="margin-bottom: 0.1em;"><font face="Mihan-Yekan" size="1">"ماجرای معمار نوروود" The Adventure of the Norwood Builder</font></li><li style="margin-bottom: 0.1em;"><font face="Mihan-Yekan" size="1">"ماجرای مردان رقصان" The Adventure of the Dancing Men</font></li><li style="margin-bottom: 0.1em;"><font face="Mihan-Yekan" size="1">"ماجرای دوچرخه سوار تنها" The Adventure of the Solitary Cyclist</font></li><li style="margin-bottom: 0.1em;"><font face="Mihan-Yekan" size="1">"ماجرای مدرسه پریوری" The Adventure of the Priory School</font></li><li style="margin-bottom: 0.1em;"><font face="Mihan-Yekan" size="1">"ماجرای پیتر سیاه" The Adventure of Black Peter</font></li><li style="margin-bottom: 0.1em;"><font face="Mihan-Yekan" size="1">"ماجرای چارلز آگوستوس میلورتن" The Adventure of Charles Augustus Milverton</font></li><li style="margin-bottom: 0.1em;"><font face="Mihan-Yekan" size="1">"ماجرای شش ناپلئون" The Adventure of the Six Napoleons</font></li><li style="margin-bottom: 0.1em;"><font face="Mihan-Yekan" size="1">"ماجرای سه دانشجو" The Adventure of the Three Students</font></li><li style="margin-bottom: 0.1em;"><font face="Mihan-Yekan" size="1">"ماجرای عینک طلایی" The Adventure of the Golden Pince-Nez</font></li><li style="margin-bottom: 0.1em;"><font face="Mihan-Yekan" size="1">"ماجرای سه-چهارم گمشده" The Adventure of the Missing Three-Quarter</font></li><li style="margin-bottom: 0.1em;"><font face="Mihan-Yekan" size="1">"ماجرای اَبِی گرانج" The Adventure of the Abbey Grange</font></li><li style="margin-bottom: 0.1em;"><font face="Mihan-Yekan" size="1">"ماجرای دومین لکه" The Adventure of the Second Stain</font></li></ul></div><div style="direction: rtl;" align="right"><br></div><div style="direction: rtl;" align="right"><div><font face="Mihan-Yekan" size="3" color="#CC0000"><b><font size="4">4.شرلوک .ج ر (Sherlock Jr )</font></b></font></div><div>&nbsp;<font face="Mihan-Yekan" size="3" color="#CC0000"><br></font><div align="right"><table style="border: 0px solid rgb(0, 0, 0); border-collapse: collapse; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); font-size: 11px; width: 100%; " cellspacing="1" cellpadding="8"><tbody><tr><td style="border: 0px solid rgb(0, 0, 0); border-collapse: collapse; width: 100%; direction: ltr; "><font face="Mihan-Yekan" size="3" color="#CCCCCC">&nbsp;8.2/10<br></font><font face="Mihan-Yekan" size="2" color="#CCCCCC"><span style="background-color: rgb(0, 0, 0); ">32,261 &nbsp;&nbsp; : &nbsp; تعداد آرا&nbsp;&nbsp; </span></font><br></td></tr></tbody></table></div><div align="left"><font color="#FFFFFF"><br></font></div><div align="center"><img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/fullwidth.e1c820d8.jpg" height="323" width="528"><br></div></div><div>&nbsp;<br><font face="Mihan-Yekan" size="3" color="#CC0000"><b><font size="4"></font></b></font></div><div><br><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">تعداد قسمت ها</font> : 1</font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">مدت زمان هر قسمت </font>: 45 دقیقه</font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">ژانر</font> : اکشن، کامدی ، رمانس.</font></div><font face="Mihan-Yekan" size="3"><font color="#CC0000">سال ساخت</font>: 1924<br></font><font face="Mihan-Yekan" size="3" color="#CC0000"><font color="#000000">داستان اقتباسی از شخصیت شرلوک هلمز است، مردی جوان که در سینما به عنوان آپاراتچی فیلم مشغول به کار است و علاقه زیادی به کارگاه خصوصی بودن دارد، دل به دختری میسپارد که همزمان مرد دیگری نیز&nbsp; عاشق اوست. مرد دوم نقشه دزدی میکشد تا اتهام دزدی را به مرد جوان بزند و او را به اتهام دزدی به زندان بیندازد ولی مرد جوان همانند شرلوک با استفاده از هوش خود خود را از این مخمصه نجات میدهد.</font></font></div><div><font face="Mihan-Yekan" size="3" color="#CC0000"><font color="#000000">نقد کامل فیلم به زبان علیرضا حنیفی از وبلاگ </font></font><font face="Mihan-Yekan" size="3" color="#CC0000"><font color="#000000"><a href="http://ahanifi.blog.ir/">http://ahanifi.blog.ir</a></font></font></div><div><a href="http://ahanifi.blog.ir/"><br></a><p dir="RTL" style="margin: 0.5em 0px; color: rgb(0, 0, 0); font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; direction: rtl; unicode-bidi: embed;"><font face="Mihan-Yekan" size="3">فیلم در همان ابتدا زمینه‌سازی دو لحنِ متفاوت خود را انجام می‌دهد: «داستان فیلم راجع به پسری است که دو کار را همزمان انجام می‌دهد؛ در عین حال که به عنوان یک آپاراتچی سینما مشغول است، راجع به کارگاه شدن نیز مطالعه می‌کند.» با این پیش‌زمینه، به زندگی پسرِ فیلم ورود می‌کنیم و می‌فهمیم که پایِ یک رقابت عشقی در میان است و هر دو عاشق هم ندار هستند. این کشمکش عشقی باعث به وجود آمدن تنها تنش فیلم می‌شود. در ادامۀ فیلم با یک تعلیق بسیار کارآمد به پسر، باستر کیتون، تهمت دزدی زده می‌شود، و با سوتفاهم نیز طرد می‌شود. تا به اینجا یک پیرنگ ساده به ثمر نشسته است. این صجنه‌ها، کم‌و‌بیش، قدرتِ شوخ‌طبعی‌های باستر کیتون به عنوان یک بازیگر&nbsp;«مؤلف» را به اثبات می‌رساند. برایم یکی از بامزّه‌ترین قسمت‌های فیلم آن‌جایی است که افراد مختلف می‌آیند و یک دلاری‌شان را جستجو می‌کنند. باستر کیتون نیز با آن صورت بدونِ احساسش مدام ضدّحال می‌خورد و در عین حال صادقانه پول‌ها را پس می‌گرداند.</font></p><p dir="RTL" style="margin: 0.5em 0px; color: rgb(0, 0, 0); font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; direction: rtl; unicode-bidi: embed;"><br><font face="Mihan-Yekan" size="3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/sdsadqw.jpg" height="413" width="528"></font><br></p><p dir="RTL" style="margin: 0.5em 0px; color: rgb(0, 0, 0); font-size: 11px; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; font-weight: 400; letter-spacing: normal; text-indent: 0px; text-transform: none; white-space: normal; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial; text-align: justify; direction: rtl; unicode-bidi: embed;"><font face="Mihan-Yekan" size="3">پس از این موقعیت، وجهۀ کاراگاهی فیلم رخ می‌نماید. در اینجا نیز کیتون با شوخی‌های بی‌نهایت خنده‌دار این موقعیت جدّی را به یک موقعیت کمیک تبدیل می‌کند. پس از چندی، پسر در اثبات دزد بودن رقیب عشقی خود شکست می‌خورد؛ پس دست ‌از پا درازتر به سینما برمی‌گردد و درحالیکه به آپارات تکیه کرده است به خواب می‌رود. در این بین که فیلم پخش می‌شود وی خواب می‌بیند. امّا، پرداخت فیلمساز در این زمینه بسیار ویژه و درخشان است. باستر کیتون با دستمایه قرار دادن شباهت میان خواب دیدن و تماشای فیلم در سینما میان دو سطح و مفهوم، پُلی می‌زند که بسیار از زمانۀ خود جلوتر است. در واقع وی مکانیزم سینما و خواب دیدن را یکی می‌داند و وجه شباهت هر دویشان را رویاپردازی می‌داند. در این رویا وی به عنوان یک قهرمان همه فن حریف مشکل دزدی را حل می‌کند و به معشوقش نیز می‌رسد. در واقع، نگاه کیتون به هر دو بستر روپردازی، نگاهی یکسان است. نگاهی که در آن انسان‌های معمولی توانایی قدرت‌نمایی و ارضای خود را دارند. البتّه کیتون آن چنان تلخ‌اندیش نیست که بخواهد دنیای واقعی را به همان حال بگذارد و امور را به گونه‌ای پیش می‌برد که در نهایت از پسر سلب اتهام دزدی می‌شود و به معشوق خود نیز می‌رسد. صحنۀ پایانی فیلم نیز یکی از آن پایان‌های فوق‌العادۀ تاریخ سینماست؛ زمانی که پسر از روی پردۀ سینما حرکات یک عاشق را تقلید می‌کند و از معشوق خود دلبری می‌کند. برای من آن قاب‌بندی‌ای که کیتون خیره به پردۀ سینما است و «زندگی» را از سینما قرض می‌گیرد، کافی است تا این فیلم را «شاهکار» توصیف کنم.</font></p><br><div><font face="Mihan-Yekan" size="3" color="#CC0000"><b><font size="4">5.قتل شرلوک هلمز (Murder of Sherlock Holmes )<font face="Mihan-Yekan" size="3" color="#CC0000"><br></font></font></b></font><div align="right"><table style="border: 0px solid rgb(0, 0, 0); border-collapse: collapse; color: rgb(255, 255, 255); background-color: rgb(0, 0, 0); font-size: 11px; width: 100%; " cellspacing="1" cellpadding="8"><tbody><tr><td style="border: 0px solid rgb(0, 0, 0); border-collapse: collapse; width: 100%; direction: ltr; "><font face="Mihan-Yekan" size="3" color="#CCCCCC">&nbsp;8.2/10<br></font><font face="Mihan-Yekan" size="2" color="#CCCCCC"><span style="background-color: rgb(0, 0, 0); ">524 &nbsp;&nbsp; : &nbsp; تعداد آرا&nbsp;&nbsp; </span></font><br></td></tr></tbody></table></div><div align="left"><font color="#FFFFFF"><br></font></div></div></div><div><font face="Mihan-Yekan" size="3">این فیلم مربوط به قسمت صفر یک سریال 12 فصلی می باشد که داستان یک نویسنده خانمی هست که در زمینه داستان های جنایی کتاب مینویسد ، وارد یک داستان قتل میشود و سعی در حل آن دارد.</font></div><div><br><br><div align="center"><font face="Mihan-Yekan" size="3"><img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/gergfdf.jpg"></font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">تعداد قسمت ها</font> : 264</font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">مدت زمان هر قسمت </font>: 50 دقیقه</font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">ژانر</font> : جنایی، درام ، رازآلود.</font></div><font face="Mihan-Yekan" size="3"><font color="#CC0000">سال ساخت</font>: 1996- 1984</font></div><div><font face="Mihan-Yekan" size="3"><font color="#CC0000">تعداد فصل:</font> 12<br></font></div><div><hr><div align="center"><font face="Mihan-Yekan" size="4" color="#006600">توجه:</font></div></div><div align="center"><font face="Mihan-Yekan" size="3"><font size="4" color="#006600">دوستان برای شما هم وبلاگ دیر لود میشه یا مشکل دیگه ای داره که باعث اذیتتون بشه؟!</font><br></font></div><div><hr><font face="Mihan-Yekan" size="3"><br></font></div><div><font face="Mihan-Yekan" size="3"></font><font face="Mihan-Yekan" size="3" color="#CC0000">منابع:</font></div><div align="left"><font face="Mihan-Yekan" size="1" color="#CC0000">سایت <a href="https://www.imdb.com" target="" title="">IMDB</a></font></div><div align="left"><font size="1"><a href="https://www.wikipedia.org/" target="" title=""><font face="Mihan-Yekan" color="#CC0000">ویکی پدیا</font></a></font></div><div align="left"><font size="1"><a href="http://ahanifi.blog.ir" target="" title=""><font face="Mihan-Yekan" color="#CC0000">وبلاگ آقای حنیفی</font></a></font></div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="../../15.html">
+سر آرتور کانن دویل</a> , <a href="../../1.html">
+کتاب های شرلوک هلمز</a> , <a href="../../14.html">
+بررسی سریال شرلوک</a> , <a href="../../3.html">
+سریال ماجراهای شرلوک هلمز</a> , <a href="../../5.html">
+فیلم های سینمایی شرلوک هلمز</a> , <a href="../../18.html">
+اطلاعات (information)</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post-back3" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="56">
+<tr>
+<td width="519" valign="top"><div class="theme-designer-com_post-d-t-a">
+جمعه 2 فروردین 1398ساعت : 13:41|
+نویسنده : Sherlock 221 </td></div>
+<td width="131" valign="top">
+
+<div id="theme-designer-com-post-more"><ul>
+<li><a href="../../../2440.html" >لینک ثابت</a></li>
+</ul></div>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post-back1" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="54">
+<tr>
+<td width="94" valign="top">&nbsp;</td>
+<td width="450" valign="top"><div class="theme-designer-com_post-title"><a href="../../../2235.html">یادی از یک دوست قدیمی ...</a></div></td>
+<td width="106" valign="top"><div class="theme-designer-com-post-comment" align="center"><a target="_self" href="javascript:newComment(2235)">نظرات <script>setCommentCnt(2235)</script> </a></div></td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-back2" align="right">
+<div align="center"><div class="theme-designer-com-post-text-badane"><div align="right">
+<div class="theme-designer-com-post-text">
+
+<div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/336/1007513/Jeremy_gif/IMG_2583.GIF" alt=""><img hspace="0" border="0" align="baseline" vspace="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/336/1007513/Jeremy_gif/IMG_2582.GIF" alt=""></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/336/1007513/Jeremy_gif/IMG_2585.GIF" alt=""><img hspace="0" border="0" align="baseline" vspace="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/336/1007513/Jeremy_gif/IMG_2584.GIF" alt=""></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/336/1007513/Jeremy_gif/IMG_2587.GIF" alt=""><img hspace="0" border="0" align="baseline" vspace="0" src="../../../../../file.mihanblog.com/public/user_data/user_files/336/1007513/Jeremy_gif/IMG_2586.GIF" alt=""></div><font face="Mihan-Iransans"><br></font><div><font face="Mihan-Iransans" size="3">لسترید : &nbsp;" ما در اسکاتلندیارد به شما حسادت نمی کنیم ؛ نه خیر آقا ، ما به شما افتخار می کنیم . و اگر فردا سری به ما بزنید ، تک تک افراد ، از جوانترین پاسبان تا مسن ترین بازرس مفتخر خواهند بود که دستتان را بفشارند . "&nbsp;</font></div><div><font face="Mihan-Iransans" size="3">شرلوک هلمز : " ممنونم ... ممنونم . "&nbsp;</font></div><div><br></div><div><span style="font-family: Mihan-Iransans; font-size: medium;">بازگشت شرلوک هلمز - شش ناپلئون</span></div><div><font face="Mihan-Iransans" size="3"><br></font><div><font size="2" face="Mihan-Iransans">پ.ن : بابت غیبت طولانی ( طوری که اکثریت منو یادشون نیست یا نمی شناسن&nbsp;<img src="http://mihanblog.com/public/public/rte/images_new/smiles/3.gif">&nbsp;) عذرخواهی می کنم . امیدوارم بعد از این تا حدودی بتونم جبران کنم ...&nbsp;</font></div>
+
+
+
+</div> </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="../../3.html">
+سریال ماجراهای شرلوک هلمز</a> , <a href="../../17.html">
+متفرقه</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="../../../tag/جرمی&#32;برت.html">
+جرمی برت</a> , <a href="../../../tag/Jeremy&#32;Brett.html">
+Jeremy Brett</a> , <a href="../../../tag/ماجراهای&#32;شرلوک&#32;هلمز.html">
+ماجراهای شرلوک هلمز</a> , <a href="../../../tag/سریال&#32;شرلوک&#32;هلمز&#32;قدیمی.html">
+سریال شرلوک هلمز قدیمی</a> , <a href="../../../tag/بازگشت&#32;شرلوک&#32;هلمز.html">
+بازگشت شرلوک هلمز</a> , <a href="../../../tag/شش&#32;ناپلئون.html">
+شش ناپلئون</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post-back3" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="56">
+<tr>
+<td width="519" valign="top"><div class="theme-designer-com_post-d-t-a">
+شنبه 29 آبان 1395ساعت : 10:57|
+نویسنده : Sherlockpedia  </td></div>
+<td width="131" valign="top">
+
+<div id="theme-designer-com-post-more"><ul>
+<li><a href="../../../2235.html" >لینک ثابت</a></li>
+</ul></div>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post-back1" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="54">
+<tr>
+<td width="94" valign="top">&nbsp;</td>
+<td width="450" valign="top"><div class="theme-designer-com_post-title"><a href="../../../2216.html">SHERLOCK HOLMES</a></div></td>
+<td width="106" valign="top"><div class="theme-designer-com-post-comment" align="center"><a target="_self" href="javascript:newComment(2216)">نظرات <script>setCommentCnt(2216)</script> </a></div></td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-back2" align="right">
+<div align="center"><div class="theme-designer-com-post-text-badane"><div align="right">
+<div class="theme-designer-com-post-text"><div align="center"><br><div align="center"><br></div><div style="direction: ltr;" align="center"><img class="transparent" alt="http://file.mihanblog.com//public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o1_250.gif" src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o1_250.gif">&nbsp; <img class="transparent" alt="http://file.mihanblog.com//public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o2_r1_250.gif" src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o2_r1_250.gif"><br><img class="transparent" alt="http://file.mihanblog.com//public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o3_r1_250.gif" src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o3_r1_250.gif">&nbsp; <img class="transparent" alt="http://file.mihanblog.com//public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o4_r1_250.gif" src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o4_r1_250.gif"><br><img class="transparent" alt="http://file.mihanblog.com//public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o5_r1_250.gif" src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o5_r1_250.gif">&nbsp; <img class="transparent" alt="http://file.mihanblog.com//public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o6_r1_250.gif" src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o6_r1_250.gif"><br><img class="transparent" alt="http://file.mihanblog.com//public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o7_r1_250.gif" src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o7_r1_250.gif">&nbsp; <img class="transparent" alt="http://file.mihanblog.com//public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o8_250.gif" src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/tumblr_obo3mlCJ5W1ua6570o8_250.gif"></div><div align="center"><br><p><font size="2">&nbsp;‘ <strong><em>My name is Sherlock Holmes.&nbsp; It is my business to know what other people don’t know</em></strong>‘</font></p>
+<p>(<em>The Adventure of the Blue Carbuncle)</em></p><br><br></div></div>
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="../../15.html">
+سر آرتور کانن دویل</a> , <a href="../../3.html">
+سریال ماجراهای شرلوک هلمز</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post-back3" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="56">
+<tr>
+<td width="519" valign="top"><div class="theme-designer-com_post-d-t-a">
+پنجشنبه 8 مهر 1395ساعت : 12:54|
+نویسنده : Sherlock 221 </td></div>
+<td width="131" valign="top">
+
+<div id="theme-designer-com-post-more"><ul>
+<li><a href="../../../2216.html" >لینک ثابت</a></li>
+</ul></div>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post-back1" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="54">
+<tr>
+<td width="94" valign="top">&nbsp;</td>
+<td width="450" valign="top"><div class="theme-designer-com_post-title"><a href="../../../2131.html">دانلود سریال The Adventures of Sherlock Holmes (کامل)</a></div></td>
+<td width="106" valign="top"><div class="theme-designer-com-post-comment" align="center"><a target="_self" href="javascript:newComment(2131)">نظرات <script>setCommentCnt(2131)</script> </a></div></td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-back2" align="right">
+<div align="center"><div class="theme-designer-com-post-text-badane"><div align="right">
+<div class="theme-designer-com-post-text">
+
+
+
+
+
+
+
+
+
+
+
+
+<br><div align="center"><div id="content"><div id="page"><div class="backdrop" style="background-image:url(pics/backdrops/54989f5ebb6fa.jpg.html);"><div class="backdrop-inner">
+						<a href="http://3tinyz.com/pics/w185/53f5efca6515b.jpg"><img src="http://3tinyz.com/pics/w185/53f5efca6515b.jpg"></a>
+						<h2>The Adventures of Sherlock Holmes</h2>
+						<p id="bd-stars">Jeremy Brett, David Burke, Rosalie Williams</p>
+						<span></span>
+						<h3><a style="color:white; text-decoration:none;" href="http://3tinyz.com/tv_index.php?network=ITV1">ITV1</a></h3><hr><div align="right"><br><a target="_new" href="http://im.tinymdb.com/title/tt0086661" rel="nofollow"><img style="height:15px; border:none" src="http://3tinyz.com/images/imdb-logo.png"></a><strong style="font-size:14px; margin-top:-5px;">8.8</strong> از 10 <span style="font-size:10px;">- میانگین رای <a target="_blank" href="http://im.tinymdb.com/title/tt0086661/ratings" rel="nofollow">13,333 نفر</a></span></div> <div align="right"><br><font face="Mihan-IransansBold"><strong>سالهای پخش :</strong></font> 1984-1994<br></div></div>
+					
+				</div><div align="right"><br></div><div align="right"><div align="right"><font face="Mihan-IransansBold"><strong>ژانر :</strong></font> جنایی / درام / معمایی<br><br><font face="Mihan-IransansBold">سازنده : </font>Michael Cox <br><br></div><hr><br>شخصیت داستانی "شرلوک هولمز" نخستین بار در سال ۱۸۸۷و توسط نویسنده و پزشک 
+اسکاتلندی "آرتور کونان دویل" ساخته و پرداخته شد و در کتاب‌ها مطرح شد. 
+"شرلوک هولمز" نام یک کاراگاه تخیلی و داستانی است که در اواخر سده ۱۹ و 
+آغاز سده بیستم معرفی شد. كارآگاهی كه وجود خارجی نداشت، طرفداران 
+پروپاقرصی در دنیا پیدا كرد به گونه‌ای كه صدها انجمن و گروه به طرفداری او
+ در دنیا تشكیل و مجموعه‌ای از لباس‌های شخصی‌اش در لندن در موزه‌ای 
+نگهداری شد.<br></div></div></div><br><hr><font size="2"><font face="Mihan-IransansBold" color="#336666" size="1">( کیفیت 480p و 720p&nbsp; /&nbsp; +زیرنویس ) </font><font size="1"><br></font><br><font face="Mihan-IransansBold" color="#CC9933">دانلود در ادامه مطلب<br></font></font><hr></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+<a href='../../../2131.html'>ادامه مطلب</a><br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="../../15.html">
+سر آرتور کانن دویل</a> , <a href="../../3.html">
+سریال ماجراهای شرلوک هلمز</a> , <a href="../../16.html">
+دانلود فیلم و سریال</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post-back3" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="56">
+<tr>
+<td width="519" valign="top"><div class="theme-designer-com_post-d-t-a">
+یکشنبه 6 تیر 1395ساعت : 15:41|
+نویسنده : AM </td></div>
+<td width="131" valign="top">
+
+<div id="theme-designer-com-post-more"><ul>
+<li><a href="../../../2131.html" >لینک ثابت</a></li>
+</ul></div>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post-back1" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="54">
+<tr>
+<td width="94" valign="top">&nbsp;</td>
+<td width="450" valign="top"><div class="theme-designer-com_post-title"><a href="../../../2074.html">&quot;چقدر شما خوبید آقای کارآگاه&quot;</a></div></td>
+<td width="106" valign="top"><div class="theme-designer-com-post-comment" align="center"><a target="_self" href="javascript:newComment(2074)">نظرات <script>setCommentCnt(2074)</script> </a></div></td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-back2" align="right">
+<div align="center"><div class="theme-designer-com-post-text-badane"><div align="right">
+<div class="theme-designer-com-post-text"><font face="Mihan-Iransans">
+
+
+مطلب زیر هفته ی پیش در ویژه نامه ی آخر هفته ی روزنامه ی همشهری منتشر شده است. </font><br><br><div><br></div><div align="center"><img src="http://upload7.ir/u/action?q=download&amp;filename=NzoPcM5g.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"><a href="http://s1.upload7.ir/uploads/NzoPcM5g.jpg/CAM00058.jpg" target="" title=""><img src="http://s1.upload7.ir/uploads/thumbs/FZaPOq7D.jpg/CAM058.jpg" alt="" align="bottom" border="0" hspace="0" vspace="0"></a><br><br><div align="right"><br><font face="Mihan-Iransans"><font face="Mihan-Iransans">با تشکر از مریم برای ارسال مطلب <br><br></font>برای خواندن متن کامل به<b> <a href="http://6o7.hamshahrilinks.org/Contents/%DA%86%D9%82%D8%AF%D8%B1-%D8%B4%D9%85%D8%A7-%D8%AE%D9%88%D8%A8%DB%8C%D8%AF-%D8%A7%D9%82%D8%A7%DB%8C-%DA%A9%D8%A7%D8%B1%D8%A7%DA%AF%D8%A7%D9%87?magazineid=1506" target="" title="">این لینک </a></b>مراجعه کنید</font><br></div></div>
+
+
+
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="../../15.html">
+سر آرتور کانن دویل</a> , <a href="../../1.html">
+کتاب های شرلوک هلمز</a> , <a href="../../3.html">
+سریال ماجراهای شرلوک هلمز</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post-back3" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="56">
+<tr>
+<td width="519" valign="top"><div class="theme-designer-com_post-d-t-a">
+سه شنبه 29 دی 1394ساعت : 10:00|
+نویسنده : مهرناز </td></div>
+<td width="131" valign="top">
+
+<div id="theme-designer-com-post-more"><ul>
+<li><a href="../../../2074.html" >لینک ثابت</a></li>
+</ul></div>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post-back1" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="54">
+<tr>
+<td width="94" valign="top">&nbsp;</td>
+<td width="450" valign="top"><div class="theme-designer-com_post-title"><a href="../../../2042.html">مارک گیتیس از فصل چهار شرلوک می گوید</a></div></td>
+<td width="106" valign="top"><div class="theme-designer-com-post-comment" align="center"><a target="_self" href="javascript:newComment(2042)">نظرات <script>setCommentCnt(2042)</script> </a></div></td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-back2" align="right">
+<div align="center"><div class="theme-designer-com-post-text-badane"><div align="right">
+<div class="theme-designer-com-post-text">
+<p lang="fa" style="text-align: center; margin: 0in; direction: rtl; unicode-bidi: embed;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://www.axgig.com/images/99539037733284268215.jpg" alt=""></p><p lang="fa" style="text-align: center; margin: 0in; direction: rtl; unicode-bidi: embed;"><br></p><p lang="fa" style="margin: 0in; direction: rtl; unicode-bidi: embed;"><font face="Mihan-Iransans" size="1">طرفداران شرلوک هنوز منتظر قسمت ویژه کریسمسی این سریال پلیسی هستند اما مارک گیتیس نویسنده و خالق سریال سخت مشغول فصل بعدی شرلوک مدرن با بازی مارتین فریمن و بندیکت کامبربچ است. گیتیس که همچنین نویسنده ی سریال دکتر هو است و همچنین نقش خزانه دار، تایکو نستوریس در سریال بازی تاج و تخت بازی را می کند، گفت " اخیرا نوشتن قسمت یک رو تموم کردم"</font></p><p style="margin: 0in; direction: rtl; unicode-bidi: embed;"><font face="Mihan-Iransans" size="1">&nbsp;</font></p><p lang="fa" style="margin: 0in; direction: rtl; unicode-bidi: embed;"><font face="Mihan-Iransans" size="1">فصل سوم شرلوک در آغاز فصل 2014 پخش شد و ظاهرا با برگشت موریارتی دشمن خونی شرلوک هلمز با بازی اندرو اسکات، ستاره ی فیلم اسپکتر تمام شد. آیا گیتیس می تواند مطلب دیگری در مورد فصل جدید سریال که قرار است اوایل سال آینده فیلم برداری شود بگوید؟ البته! "خب، ماجراهایی بیشتری خواهند بود!" این نویسنده با خنده می گوید" تنها چیزی که می تونم بگم اینه که این فصل مسیر زندگی شخصیت های اصلی رو تغییر می ده. تبعات بازگشت اشکار موریارتی دامنه ی وسیعی داره. اتفاقات خیلی بزرگیه"&nbsp;</font></p><p lang="fa" style="margin: 0in; direction: rtl; unicode-bidi: embed;"><font face="Mihan-Iransans" size="1"><br></font></p><p lang="fa" style="margin: 0in; direction: rtl; unicode-bidi: embed;"><b><a href="http://www.ew.com/article/2015/12/14/sherlock-season-4-mark-gatiss" target="" title="">منبع</a></b></p><p lang="fa" style="margin: 0in; direction: rtl; unicode-bidi: embed;"><font face="Mihan-Iransans" size="1"><br></font></p><p lang="fa" style="margin: 0in; direction: rtl; unicode-bidi: embed;"><font face="Mihan-Iransans" size="1">ترجمه از بیکر استریت</font></p>
+
+
+
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="../../20.html">
+مصاحبه ها</a> , <a href="../../2.html">
+اخبار سریال شرلوک</a> , <a href="../../3.html">
+سریال ماجراهای شرلوک هلمز</a> , <a href="../../6.html">
+از دست اندرکاران</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post-back3" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="56">
+<tr>
+<td width="519" valign="top"><div class="theme-designer-com_post-d-t-a">
+چهارشنبه 25 آذر 1394ساعت : 10:00|
+نویسنده : مهرناز </td></div>
+<td width="131" valign="top">
+
+<div id="theme-designer-com-post-more"><ul>
+<li><a href="../../../2042.html" >لینک ثابت</a></li>
+</ul></div>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post-back1" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="54">
+<tr>
+<td width="94" valign="top">&nbsp;</td>
+<td width="450" valign="top"><div class="theme-designer-com_post-title"><a href="../../../1583.html">نمایشگاه شرلوک هلمز در لندن </a></div></td>
+<td width="106" valign="top"><div class="theme-designer-com-post-comment" align="center"><a target="_self" href="javascript:newComment(1583)">نظرات <script>setCommentCnt(1583)</script> </a></div></td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-back2" align="right">
+<div align="center"><div class="theme-designer-com-post-text-badane"><div align="right">
+<div class="theme-designer-com-post-text">
+<div style="text-align: center;"><span style="font-size: 11px;">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/nLc97]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/nLc97/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				</span></div><div style="text-align: center;"><span style="font-size: 11px;"><br></span></div><div style="text-align: center;"><a href="https://www.mediafire.com/?1a07dvjhf43l7l4" target="" title="" style="font-size: 11px;"><b>دانلود از مدیافایر:</b></a><span style="font-size: 11px;">&nbsp;12 مگابایت</span></div><div style="text-align: center;"><span style="font-size: 11px;"><br></span></div><div style="text-align: right;">با تشکر از parisa برای معرفی مطلب</div>
+
+ </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="../../19.html">
+ویدیو ها و تیزر ها</a> , <a href="../../15.html">
+سر آرتور کانن دویل</a> , <a href="../../3.html">
+سریال ماجراهای شرلوک هلمز</a> , <a href="../../1.html">
+کتاب های شرلوک هلمز</a> , <a href="../../5.html">
+فیلم های سینمایی شرلوک هلمز</a> , <a href="../../2.html">
+اخبار سریال شرلوک</a> , <a href="../../14.html">
+بررسی سریال شرلوک</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post-back3" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="56">
+<tr>
+<td width="519" valign="top"><div class="theme-designer-com_post-d-t-a">
+دوشنبه 28 مهر 1393ساعت : 19:01|
+نویسنده : مهرناز </td></div>
+<td width="131" valign="top">
+
+<div id="theme-designer-com-post-more"><ul>
+<li><a href="../../../1583.html" >لینک ثابت</a></li>
+</ul></div>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post-back1" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="54">
+<tr>
+<td width="94" valign="top">&nbsp;</td>
+<td width="450" valign="top"><div class="theme-designer-com_post-title"><a href="../../../1528.html">این ، زندگی شماست دکتر واتسون !</a></div></td>
+<td width="106" valign="top"><div class="theme-designer-com-post-comment" align="center"><a target="_self" href="javascript:newComment(1528)">نظرات <script>setCommentCnt(1528)</script> </a></div></td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-back2" align="right">
+<div align="center"><div class="theme-designer-com-post-text-badane"><div align="right">
+<div class="theme-designer-com-post-text">
+<font face="arial,helvetica,sans-serif" size="4">هفته ی پیش ، 
+سالروز تولد یکی از به یاد ماندنی ترین واتسون ها بود ... ادوارد هاردویکی 
+<font size="1"><sup>1</sup></font> که هشت سال ( 
+طی ایفای نقش در سه فصل ) دکتر واتسون ، همراه و دوست وفادار شرلوک هلمز ( 
+با بازی جرمی برت <font size="1"><sup>2</sup></font> ) را به تصویر کشید . 
+این بازیگر پرکار ، در سن 78 سالگی ، در سال 2011 چشم از جهان فروبست 
+.<br><br></font><div align="center"><img src="../../../../../static.mihanblog.com/public/user_data/user_files/336/1007513/hw6.jpg" alt="" align="bottom" height="506" hspace="0" border="0" vspace="0" width="373"><br><br></div><font face="arial,helvetica,sans-serif" size="4">برنامه ی " این ، زندگی 
+شماست " <font size="1"><sup>3</sup></font><font size="1"> 
+</font>، یک مستند تلویزیونی است که به مطالعه ی سرگذشت و زندگی نامه
+ ی مهمان آن قسمت از روی یک کتاب قرمز بزرگ می پردازد و همچنین پیش از دعوت
+ به برنامه ، آن ها را غافلگیر می کند . یکی از مهمانان نیز همین دکتر 
+واتسون خودمان بود که به شکلی دیدنی سورپرایز شد ، آن هم با همکاری جرمی 
+برت ! <br><br>توضیح بیشتری نمی دهم تا غافلگیری شما نیز خراب 
+نشود ... پس پیشنهاد می کنم این ویدیو را از لینک زیر از مدیافایر ، دانلود
+ کرده و اگر سوالی در این باره داشتید ، در بخش نظرات اعلام کنید تا توضیح 
+داده شود .<br><br></font><div align="center"><font size="4"><font face="arial,helvetica,sans-serif"><font size="3"><a href="http://download950.mediafire.com/ou38319wdqog/u1jkb7sk28cwg9k/This+is+your+Life%28Sherlockpedia%29.mp4" target="_blank" title="">لینک دانلود</a><br>حجم :8.66 
+مگابایت</font><br></font></font></div><font face="arial,helvetica,sans-serif" size="4"><br></font><ol><li><a href="http://en.wikipedia.org/wiki/Edward_Hardwicke" target="_blank" title=""><font face="arial,helvetica,sans-serif" size="2">Edward 
+Hardwicke</font></a></li><li><font face="arial,helvetica,sans-serif" size="2">Jeremy 
+Brett</font></li><li><a href="http://en.wikipedia.org/wiki/This_Is_Your_Life_%28UK_TV_series%29" target="_blank" title=""><font size="4"><font face="arial,helvetica,sans-serif"><font size="2">This is Your 
+Life</font></font></font></a></li></ol><font face="arial,helvetica,sans-serif" size="4">پ.ن : 
+<br></font><br><div align="center"><font face="arial,helvetica,sans-serif" size="4"><img src="http://upload.tehran98.com/upme/uploads/9d7e6cdf8298c65c1.gif" alt="" align="bottom" height="111" hspace="0" border="0" vspace="0" width="142"> <br></font></div>
+
+
+
+
+
+
+
+
+
+<a href="http://www.pinterest.com/pin/create/extension/" style="height: 20px; width: 40px; position: absolute; opacity: 0.85; z-index: 8675309; display: none; cursor: pointer; border: medium none; background-color: transparent; background-image: url(&quot%3Bdata%253Aimage/png%3Bbase64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAYAAAD/Rn+7AAADU0lEQVR42s2WXUhTYRjHz0VEVPRFUGmtVEaFUZFhHxBhsotCU5JwBWEf1EWEEVHQx4UfFWYkFa2biPJiXbUta33OXFtuUXMzJ4bK3Nqay7m.html);"></a> </div>
+<br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="../../3.html">
+سریال ماجراهای شرلوک هلمز</a> , <a href="../../6.html">
+از دست اندرکاران</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post-back3" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="56">
+<tr>
+<td width="519" valign="top"><div class="theme-designer-com_post-d-t-a">
+پنجشنبه 23 مرداد 1393ساعت : 11:23|
+نویسنده : Sherlockpedia  </td></div>
+<td width="131" valign="top">
+
+<div id="theme-designer-com-post-more"><ul>
+<li><a href="../../../1528.html" >لینک ثابت</a></li>
+</ul></div>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-space2"></div>
+<div class="theme-designer-com_post-back1" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="54">
+<tr>
+<td width="94" valign="top">&nbsp;</td>
+<td width="450" valign="top"><div class="theme-designer-com_post-title"><a href="../../../999.html">تاپیک سریال شرلوک هلمز با بازی جرمی برت</a></div></td>
+<td width="106" valign="top"><div class="theme-designer-com-post-comment" align="center"><a target="_self" href="javascript:newComment(999)">نظرات <script>setCommentCnt(999)</script> </a></div></td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-back2" align="right">
+<div align="center"><div class="theme-designer-com-post-text-badane"><div align="right">
+<div class="theme-designer-com-post-text">
+
+
+
+
+
+<div align="center"><hr><font face="arial,helvetica,sans-serif" size="4"><font size="3">* آپدیت شد *</font><b><br>تاپیک سریال شرلوک هلمز با بازی جرمی برت<br>دانلود قسمت ها به زبان فارسی و انگلیسی به همراه زیرنویس و راهنمای اپیزود ها</b></font></div><div><div align="center"><font face="arial, helvetica, sans-serif" size="4"><b><br></b></font><img src="http://www.iranvij.ir/upload/farvardin92/31128553172185174094.jpg" alt="" align="bottom" height="373" hspace="0" border="0" vspace="0" width="293"><br><font face="arial,helvetica,sans-serif" size="3">جرمی برت - بازیگر نقش شرلوک هلمز</font><br></div><font size="4"><font face="arial,helvetica,sans-serif"><br>سریال شرلوک هلمز با ب<font size="4">ا<font size="4">زی جرمی برت ، اقتباسی است که مورد تحسین بسیاری <font size="4">تماشاگران قرار گرفته است و <font size="4">تا به حال به زبان های متعددی از جمله پارسی ترجمه شده و در ایران نیز پخش شده است به طور<font size="4">ی که <font size="4">بسیاری از <font size="4">ایرانیان ، شرلوک هلمز را با وی می شناسند ..<font size="4">. <font size="4">در این پست ، قادر به دانلود<font size="4"> قسمت هایی از این سریال به زبان فارسی هستید . از طرفی لینک <font size="4">بعضی قسم<font size="4">ت های انگلیسی نیز قرار داده <font size="4">شده همراه با ز<font size="4">یرنویس فارسی . یک راهنمای اپیزود ها هم تهیه شده است<font size="4"> ... همگی در ادامه ی مطلب ...<br><br></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font></font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<a href="http://www.pinterest.com/pin/create/extension/" style="height: 20px; width: 40px; position: absolute; opacity: 0.85; z-index: 8675309; display: none; cursor: pointer; border: medium none; background-color: transparent; background-image: url(&quot%3Bdata%253Aimage/png%3Bbase64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAUCAYAAAD/Rn+7AAADU0lEQVR42s2WXUhTYRjHz0VEVPRFUGmtVEaFUZFhHxBhsotCU5JwBWEf1EWEEVHQx4UfFWYkFa2biPJiXbUta33OXFtuUXMzJ4bK3Nqay7m.html);"></a> </div>
+<a href='../../../999.html'>ادامه مطلب</a><br>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">مرتبط با: <a href="../../3.html">
+سریال ماجراهای شرلوک هلمز</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+<div class="theme-designer-com_width100-darsad" style="margin:4px 0px 0px 0px;">
+<div class="post-abi-icon"></div>
+<div class="post-abi-icon2">برچسب‌ها: <a href="../../../tag/جرمی&#32;برت.html">
+جرمی برت</a> , <a href="../../../tag/شرلوک&#32;هلمز.html">
+شرلوک هلمز</a> , <a href="../../../tag/سریال&#32;شرلوک&#32;هلمز.html">
+سریال شرلوک هلمز</a> , <a href="../../../tag/سریال&#32;شرلوک&#32;هلمز&#32;با&#32;بازی&#32;جرمی&#32;برت.html">
+سریال شرلوک هلمز با بازی جرمی برت</a> , <a href="../../../tag/دانلود&#32;سریال&#32;شرلوک&#32;هلمز.html">
+دانلود سریال شرلوک هلمز</a> , <a href="../../../tag/دانلود&#32;سریال&#32;شرلوک&#32;هلمز&#32;با&#32;بازی&#32;جرمی&#32;برت.html">
+دانلود سریال شرلوک هلمز با بازی جرمی برت</a> , <a href="../../../tag/ماجراهای&#32;شرلوک&#32;هلمز.html">
+ماجراهای شرلوک هلمز</a> , </div>
+</div>
+<div style="theme-designer-com_clear"></div>
+</div></div></div>
+</div>
+<div class="theme-designer-com_post-back3" align="right">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="56">
+<tr>
+<td width="519" valign="top"><div class="theme-designer-com_post-d-t-a">
+دوشنبه 23 تیر 1393ساعت : 10:54|
+نویسنده : Sherlockpedia  </td></div>
+<td width="131" valign="top">
+
+<div id="theme-designer-com-post-more"><ul>
+<li><a href="../../../999.html" >لینک ثابت</a></li>
+</ul></div>
+
+</td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com_post-space2"></div>
+
+<!-- ------------comment------------ -->
+
+<!-- ------------/comment------------ -->
+
+
+<table border="0" width="100%" id="table3" cellspacing="0" cellpadding="0">
+<tr>
+<td width="5"></td>
+<td>
+<table border="0" width="100%" id="table4" cellspacing="0" cellpadding="0">
+<tr>
+<td align="center">
+<p align="right">
+<div id="styleone2">
+  <ul>
+    <li><a href="1.html"> تعداد کل صفحات: 3 </a></li>
+    <li><a href="1.html"><b>1</b></a></li><li><a href="2.html"><span>2</span></a></li><li><a href="3.html"><span>3</span></a></li>  </ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+<td width="5"></td>
+</tr>
+</table>
+
+</div>
+</td>
+<td width="312" valign="top">
+
+<div class="theme-designer-com_menuleft-space1"></div>
+<!-- social -->
+<div class="theme-designer-com_menuleft-block-icon-share">
+<ul id="alibehnamfar-ir" align="right">
+	<li><a target="_blank" href="http://sherlock-holmes.mihanblog.com/post/category/3/page/&lt;-BlogXmlLink-&gt;" class="rss-icon" title="لینك rss"><div class="hidden">لینك rss</div></a></li>
+	<li><div class="theme-designer-com_menuleft-block-icon-share-khat"></div></li>
+	<li><a target="_blank" href="http://plus.google.com" class="google-icon" title="google+"><div class="hidden">google+</div></a></li>
+	<li><div class="theme-designer-com_menuleft-block-icon-share-khat"></div></li>
+	<li><a target="_blank" href="http://twitter.com" class="twitter-icon" title="twitter"><div class="hidden">twitter</div></a></li>
+	<li><div class="theme-designer-com_menuleft-block-icon-share-khat"></div></li>
+	<li><a target="_blank" href="http://facebook.com" class="facebook-icon" title="facebook"><div class="hidden">facebook</div></a></li>
+</ul>
+</div>
+<!-- / social -->
+
+<div class="theme-designer-com_menuleft-back-menutitle">
+<div class="theme-designer-com_menuleft-menutitle">آخرین مطالب</div>
+</div>
+<div class="theme-designer-com_menuleft-block"><div id="vmenu-l" align="right">
+  <ul>
+		<li><a href="../../../2446.html" title="پنجشنبه 20 آذر 1399" > بسته شدن بستر میهن بلاگ </a></li><li><a href="../../../2443.html" title="سه شنبه 24 تیر 1399" > سلامی دوباره </a></li><li><a href="../../../2442.html" title="شنبه 3 خرداد 1399" > چند شب با «ماجراهای شرلوک هلمز» </a></li><li><a href="../../../2441.html" title="دوشنبه 25 شهریور 1398" > نتیجه نظر سنجی  </a></li><li><a href="../../../2440.html" title="جمعه 2 فروردین 1398" > نگاهی به 5اقتباس برتر از داستان و شخصیت شرلوک هلمز بر اساس امتیاز IMDB </a></li><li><a href="../../../2439.html" title="پنجشنبه 17 آبان 1397" > «صادق ممقلی، شرلوک هلمس ایران» در کنار 59 شرلوک هولمز از سرتاسر دنیا </a></li><li><a href="../../../2379.html" title="جمعه 18 خرداد 1397" > THE GAME IS ON </a></li><li><a href="../../../2437.html" title="شنبه 12 خرداد 1397" > To be a Superhero in Real Life </a></li><li><a href="../../../2436.html" title="سه شنبه 1 خرداد 1397" > مهم مهم مهم!!! </a></li><li><a href="../../../2435.html" title="سه شنبه 1 خرداد 1397" > نشانه‌ی چهار؛ چهار حقیقت از زندگی خالق شرلوک هولمز </a></li>  </ul>
+</div></div>
+<div class="theme-designer-com_menuleft-block-space"></div>
+
+<div class="theme-designer-com_menuleft-back-menutitle">
+<div class="theme-designer-com_menuleft-menutitle">درباره ما</div>
+</div>
+<div align="center"><div class="theme-designer-com_menuleft-block-other"><div align="center">
+<div align="center" style="padding:5px 0px 5px 0px;"><img src="../../../../../static.mihanblog.com/public/user_data/web_photo/269/806068.jpg@9555"  /></div>
+I'm bored of being bored because being bored is SO boring<br />
+since 2011<br />
+ (عضو باشگاه نویسندگان میهن بلاگ)<br />
+<br />
+Bakerstreet.ir<br>
+<a target="_blank" href="../../../author/671906.html">مدیر وب سایت  : Sherlock 221 </a>
+</div></div></div>
+<div class="theme-designer-com_menuleft-block-space"></div>
+
+<div class="theme-designer-com_menuleft-back-menutitle">
+<div class="theme-designer-com_menuleft-menutitle">صفحات</div>
+</div>
+<div class="theme-designer-com_menuleft-block"><div id="vmenu" align="right">
+  <ul>
+	<li><a href="../../../../extrapage/shop.html">محصولات بیکر</a></li><li><a href="../../../../extrapage/96cal.html">تقویم های سال 1396</a></li><li><a href="../../../../extrapage/s4.html">دانلود فصل چهارم سریال شرلوک</a></li><li><a href="../../../../extrapage/subtitle2.html">آموزش قرار دادن زیر نویس بر روی فیلم</a></li><li><a href="../../../../extrapage/calender.html">تقویم های شرلوکی</a></li><li><a href="../../../../extrapage/writers.html">اسامی نویسندگان وبلاگ</a></li><li><a href="../../../../extrapage/instatelapa.html">صفحات اجتماعی</a></li><li><a href="../../../../extrapage/rahnama.html">راهنمای سایت</a></li><li><a href="../../../../extrapage/subtitle.html">زیر نویس سه فصل</a></li><li><a href="../../../../extrapage/hobbit.html">نقد هابیت &quot;نبرد 5 سیاه&quot;</a></li><li><a href="../../../../extrapage/mokha.html">بازگشت مخا</a></li><li><a href="../../../../extrapage/elementary2.html">دانلود فصل دوم سریال المنتری</a></li><li><a href="../../../../extrapage/elementary1.html">دانلود فصل اول سریال المنتری</a></li><li><a href="../../../../extrapage/elementary3.html">دانلود سریال المنتری فصل سوم</a></li><li><a href="../../../../extrapage/film.html">فیلم های هفته</a></li><li><a href="../../../../extrapage/apple.html">استیو جابز</a></li><li><a href="../../../../extrapage/sherlockdownload.html">دانلود سه فصل سریال شرلوک  با کیفیت 720</a></li><li><a href="../../../../extrapage/news.html">خلاصه ی اخبار فصل سوم سریال شرلوک</a></li><li><a href="../../../../extrapage/important.html">Weblog Map</a></li><li><a href="../../../../extrapage/episode_guide_sherlock_holmes.html">راهنمای اپیزود های شرلوک هلمز</a></li><li><a href="../../../../extrapage/namaz.html">نماز</a></li><li><a href="../../../../extrapage/setlock_collection.html">Setlock Collection</a></li>  </ul>
+</div></div>
+<div class="theme-designer-com_menuleft-block-space"></div>
+
+<div class="theme-designer-com_menuleft-back-menutitle">
+<div class="theme-designer-com_menuleft-menutitle">موضوعات</div>
+</div>
+<div class="theme-designer-com_menuleft-block"><div id="vmenu" align="right">
+  <ul>
+		<li><a href="../../15.html" title="52" >سر آرتور کانن دویل</a></li><li><a href="../../1.html" title="49" >کتاب های شرلوک هلمز</a></li><li><a href="../../19.html" title="144" >ویدیو ها و تیزر ها</a></li><li><a href="../../20.html" title="70" >مصاحبه ها</a></li><li><a href="../../14.html" title="85" >بررسی سریال شرلوک</a></li><li><a href="../../2.html" title="172" >اخبار سریال شرلوک</a></li><li><a href="../../23.html" title="12" >فصل اول</a></li><li><a href="../../22.html" title="17" >فصل دوم</a></li><li><a href="../../21.html" title="84" >فصل سوم و قسمت ویژه</a></li><li><a href="../../24.html" title="153" >فصل چهارم و قسمت &quot;عروس نفرت انگیز&quot;</a></li><li><a href="../../3.html" title="23" >سریال ماجراهای شرلوک هلمز</a></li><li><a href="../../4.html" title="4" >سریال المنتری</a></li><li><a href="../../5.html" title="19" >فیلم های سینمایی شرلوک هلمز</a></li><li><a href="../../6.html" title="127" >از دست اندرکاران</a></li><li><a href="../../12.html" title="5" >بیوگرافی</a></li><li><a href="../../9.html" title="25" >فن فیکشن</a></li><li><a href="../../16.html" title="31" >دانلود فیلم و سریال</a></li><li><a href="../../18.html" title="18" >اطلاعات (information)</a></li><li><a href="../../7.html" title="2" >مخا</a></li><li><a href="../../8.html" title="25" >معماها و مسابقات</a></li><li><a href="../../10.html" title="129" >پوستر،ادیت،کامیک،فن آرت</a></li><li><a href="../../17.html" title="85" >متفرقه</a></li><li><a href="../../11.html" title="27" >مناسبت ها</a></li><li><a href="../../25.html" title="3" >موسیقی</a></li>  </ul>
+</div></div>
+<div class="theme-designer-com_menuleft-block-space"></div>
+
+
+		<form id="frm-16076524405fd2d458ce948" method="post" action="http://bakerstreet.ir/poll/new/fid/16076524405fd2d458ce948/atrty/1607652440/avrvy/0/key/b8d05aa4dba123f3b8cc5083bde7f05b/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="378346" id="data[pollid]" />		
+<div class="theme-designer-com_menuleft-back-menutitle">
+<div class="theme-designer-com_menuleft-menutitle" dir="rtl">نظر سنجی</div>
+</div>
+<div align="center"><div class="theme-designer-com_menuleft-block-other"><div align="center">
+آیا فصل چهارم سریال شرلوک برای شما فصل دلخواهی بود؟<br>
+<label><input type="radio" name="data[answer]" value="v1">بله</label><br><label><input type="radio" name="data[answer]" value="v2">خیر</label><br><input type="submit" value="ثبت" style="height: 20; width:100; margin:10px 0px 0px 0px; font-family:tahoma; font-size:8pt;"/>
+</div></div></div>
+<div class="theme-designer-com_menuleft-block-space"></div>
+
+		<input type="hidden" name="frm-id" value="16076524405fd2d458ce948" id="frm-id" /></form>
+
+<div class="theme-designer-com_menuleft-back-menutitle">
+<div class="theme-designer-com_menuleft-menutitle">آرشیو مطالب</div>
+</div>
+<div class="theme-designer-com_menuleft-block"><div id="vmenu" align="right">
+  <ul>
+		<li><a href="../../../archive/1399/9.html" title="1"> آذر 1399</a></li><li><a href="../../../archive/1399/4.html" title="1"> تیر 1399</a></li><li><a href="../../../archive/1399/3.html" title="1"> خرداد 1399</a></li><li><a href="../../../archive/1398/6.html" title="1"> شهریور 1398</a></li><li><a href="../../../archive/1398/1.html" title="1"> فروردین 1398</a></li><li><a href="../../../archive/1397/8.html" title="1"> آبان 1397</a></li><li><a href="../../../archive/1397/3.html" title="4"> خرداد 1397</a></li><li><a href="../../../archive/1397/2.html" title="1"> اردیبهشت 1397</a></li>  </ul>
+</div></div>
+<div class="theme-designer-com_menuleft-block-space"></div>
+
+<div class="theme-designer-com_menuleft-back-menutitle">
+<div class="theme-designer-com_menuleft-menutitle">نویسندگان</div>
+</div>
+<div class="theme-designer-com_menuleft-block"><div id="vmenu" align="right">
+  <ul>
+    <li><a href="../../../author/671906.html" title="250" >Sherlock 221 </a></li><li><a href="../../../author/834357.html" title="166" >sara </a></li><li><a href="../../../author/892332.html" title="28" >mmasoudh </a></li><li><a href="../../../author/965567.html" title="72" >kim cullen</a></li><li><a href="../../../author/1019762.html" title="36" >dark moon</a></li><li><a href="../../../author/1025420.html" title="495" >مهرناز </a></li><li><a href="../../../author/1028817.html" title="65" >Sherlockpedia  </a></li><li><a href="../../../author/706020.html" title="40" >محمد بزرگپور</a></li><li><a href="../../../author/1058878.html" title="58" >کیمیا </a></li><li><a href="../../../author/1165594.html" title="73" >محمدامین فیروزی</a></li><li><a href="../../../author/1165606.html" title="11" >Cloner 221</a></li><li><a href="../../../author/1227066.html" title="44" >sh baker</a></li><li><a href="../../../author/1283351.html" title="20" >اشلی ردلایت</a></li><li><a href="../../../author/1307898.html" title="8" >Zahra.Sh </a></li><li><a href="../../../author/1312924.html" title="67" >AM </a></li><li><a href="../../../author/1343491.html" title="2" >Benedict </a></li><li><a href="../../../author/1072651.html" title="44" >هرکول پوآرو</a></li><li><a href="../../../author/1554148.html" title="11" >آراد پوراحمد</a></li><li><a href="../../../author/1553747.html" title="26" >محمد ۲۲۱</a></li><li><a href="../../../author/1821369.html" title="0" >کاربر کاربر</a></li>  </ul>
+</div></div>
+<div class="theme-designer-com_menuleft-block-space"></div>
+
+
+
+<div class="theme-designer-com_menuleft-back-menutitle">
+<div class="theme-designer-com_menuleft-menutitle">دیگر موارد</div>
+</div>
+<div align="center"><div class="theme-designer-com_menuleft-block-other2"><div align="center">
+<div>
+تعداد مطالب : <script>getStatVar('total_post');</script><br>
+تعداد نویسندگان : <script>getStatVar('total_author');</script><br>
+آخرین بروز رسانی : <script>getStatVar('modify_date');</script><br>
+بازدید امروز : <script>getStatVar('today_view');</script><br>
+بازدید دیروز : <script>getStatVar('yesterday_view');</script><br>
+بازدید این ماه : <script>getStatVar('this_month_view');</script><br>
+بازدید ماه قبل : <script>getStatVar('last_month_view');</script><br>
+بازدید کل : <script>getStatVar('total_view');</script><br>
+آخرین بازدید : <script>getStatVar('last_view_date');</script><br><br>
+</div>
+<div><!-- BEGIN: Powered by Supercounters.com -->
+<center><script type="text/javascript" src="http://widget.supercounters.com/online_i.js"></script><script type="text/javascript">sc_online_i(322952,"ffee00","1a1a1a");</script><br><noscript><a href="http://www.supercounters.com/">Tumblr Online Users Counter</a></noscript>
+</center>
+<!-- END: Powered by Supercounters.com -->
+<br />
+<div align='center'><a href='http://www.hit-counts.com'><img src='http://www.hit-counts.com/counter.php?t=MTI3NzMzNw==' border='0' alt='Hit Counter'></a><BR><a href='http://www.hit-counts.com'></a></div>
+<style>.ig-b- { display: inline-block; }
+.ig-b- img { visibility: hidden; }
+.ig-b-:hover { background-position: 0 -60px; } .ig-b-:active { background-position: 0 -120px; }
+.ig-b-v-24 { width: 137px; height: 24px; background: url(http://badges.instagram.com/static/images/ig-badge-view-sprite-24.png) no-repeat 0 0; }
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+.ig-b-v-24 { background-image: url(http://badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png); background-size: 160px 178px; } }</style>
+
+<!-- Goto Top by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzaar.ir/abzar/tools/top-page/jquery.min.js"></script><script>var abzar = "<img src="../../../../../file.mihanblog.com/public/user_data/user_files/269/806068/00o.png" />";</script><script type="text/javascript" src="http://1abzaar.ir/abzar/tools/top-page/scrolltopcontrol.js"></script><div style="display:none"><h2><a href="http://www.1abzar.com/abzar/top-page.php">هدایت به بالای صفحه</a></h2></div>
+<!-- Goto Top by www.1abzar.com --->
+
+<!-- Begin WebGozar.com Counter code -->
+<script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=3531690&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=3531690" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+<!-- End WebGozar.com Counter code -->
+
+<br/>
+<a href="http://instagram.com/bakerstreet_ir?ref=badge" class="ig-b- ig-b-v-24"><img src="1.html" alt="Instagram" width="80px" height="80px"  /></a>
+<br/>
+
+<!-- Begin WebGozar.com Counter code -->
+<script type="text/javascript" language="javascript" src="http://www.webgozar.ir/c.aspx?Code=3531182&amp;t=counter" ></script>
+<noscript><a href="http://www.webgozar.com/counter/stats.aspx?code=3531182" target="_blank">&#1570;&#1605;&#1575;&#1585;</a></noscript>
+<!-- End WebGozar.com Counter code --></div>
+</div></div></div>
+<div class="theme-designer-com_menuleft-block-space"></div>
+
+<div class="theme-designer-com_menuleft-back-saye"></div>
+
+</td>
+<td width="12" valign="top">&nbsp;</td>
+</tr>
+</table>
+
+</div></div>
+
+<div class="theme-designer-com-footer-back">
+<table border="0" width="100%" cellspacing="0" cellpadding="0" height="126">
+<tr>
+<td width="91" valign="top"><div class="theme-designer-logo"><a target="_blank" title="تم دیزاینر" href="http://www.theme-designer.com"><img border="0" src="http://themeupload.theme-designer.com/64/image/22.png" width="70" height="70"></a></div></td>
+<td width="" valign="top">
+<div class="theme-designer-com-copyright" align="right">
+تمام حقوق این وب سایت و مطالب آن متعلق به <a href="http://bakerstreet.ir"> شرلوک هلمز ساکن ۲۲۱ بی خیابان بیکر </a> می باشد
+.<br>
+كد نویسی و گرافیك قالب توسط : <a target="_blank" title="قالب وبلاگ" href="http://www.theme-designer.com">تم دیزاینر</a>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="theme-designer-com-footer-space1"></div>
+
+</div></div></div>
+
+</div>
+
+</body>
+</html>
+[html] 
+[/html]<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'sherlock-holmes.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

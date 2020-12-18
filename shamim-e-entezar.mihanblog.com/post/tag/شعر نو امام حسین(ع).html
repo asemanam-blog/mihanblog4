@@ -1,0 +1,912 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc%3Frsd" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*981556*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','430');
+	setStatVar('total_author','2');
+	setStatVar('modify_date','شنبه 6 تیر 1394');
+	
+	setStatVar('today_view','3');
+	setStatVar('yesterday_view','23');
+	
+	setStatVar('this_month_view','1517');
+	setStatVar('last_month_view','2430');
+
+	setStatVar('total_view','336819');
+	setStatVar('last_view_date','پنجشنبه 27 آذر 1399 (13:04)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://shamim-e-entezar.mihanblog.com/statupdate/?data[refereruri]=http://shamim-e-entezar.mihanblog.com/post/tag/%D8%A7%D9%85%D8%A7%D9%85+%D8%B2%D9%85%D8%A7%D9%86%28%D8%B9%D8%AC%29&data[postid]=&data[requesturi]=/post/tag/%D8%B4%D8%B9%D8%B1%20%D9%86%D9%88%20%D8%A7%D9%85%D8%A7%D9%85%20%D8%AD%D8%B3%DB%8C%D9%86(%D8%B9)&data[sdate]=1608201910&data[hash]=174777f552dc18b917c747961c100f6d&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[151]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+			} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://shamim-e-entezar.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://shamim-e-entezar.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://shamim-e-entezar.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>شمیم انتظار - مطالب ابر شعر نو امام حسین(ع)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="language" content="Farsi">
+<meta name="description" content="شمیم انتظار - مطالب ابر شعر نو امام حسین(ع) - کی شود دل ما رسته از عسر و حرج    اللهم عجل لولیک المهدی فرج - شمیم انتظار">
+<meta name="keywords" content="شمیم انتظار - مطالب ابر شعر نو امام حسین(ع),shamim-e-entezar, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs">
+<link rel="alternate" type="application/rss+xml" title="شمیم انتظار" href="../rss/index.html" />
+<link href="http://template.pichak.net/pichak/173/style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+<div align=center><div style="width:1000">
+
+<div class=Pichak>
+
+<div id=header>
+<div class=top-BlogTitle></div>
+<div class=top-menu><div class=BlogTitle>شمیم انتظار</div><div class=Description>کی شود دل ما رسته از عسر و حرج    اللهم عجل لولیک المهدی فرج</div></div>
+
+<div class=top-menu2>
+<div style="float:right;width:0px;direction:rtl; height:20px"></div>
+<div style="float:right;width:450">
+<a href="../../index.html">صفحه اصلی</a> |
+<a rel="nofollow" href="mailto:m.aminsabzi@ymail.com">ایمیل مدیر</a> |
+<a rel="nofollow" href="javascript:messageForm()">تماس با من</a> |
+<a title="پیچک" href="http://pichak.net/" target="_blank" >قالب وبلاگ</a> |
+<a rel="nofollow" href="../rss/index.html" target="_blank" >Feed</a>
+</div></div></div>
+
+<div id=main-back>
+
+<div class=Sid>
+<div id=Sidebar> 
+
+<div class="TopSid"><div class=TopSid2>جستوجو</div></div>
+<div class=CenterSid>
+<p align="center"><form target=_new method=get action=http://www.google.com/search>
+<center><table style='width:128px;font-size:9pt;font-family:Tahoma'>
+<tbody><tr><td><center><a target=_new href=http://pichak.net/blogcod/google>
+<img border=0 src=http://pichak.net/blogcod/google/pichak.net.gif alt=Google>
+</a><input name=q size=15 maxlength="255"><br>
+<input type="submit" name="btnG" value="Search"><br>
+<input value=http://shamim-e-entezar.mihanblog.com type=radio name=sitesearch checked=''>در این وبلاگ
+<br><input type=radio name=sitesearch value="">در كل اینترنت
+<input type=hidden name=ie value=UTF-8><input type=hidden name=oe value=UTF-8><br>
+</center></td></tr></tbody></table></center></form></p>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>ویژه مدیریت وب</div></div>
+<div class=CenterSid>
+<div class=li-Sid><a rel="nofollow" target="_blank"href="http://www.pichak.net/blogcod/up/js/">آپلود عکس</a></div>
+<div class=li-Sid><b><a rel="nofollow" target="_blank"href="http://pichak.net/verification/index.php?n=12&url=http://shamim-e-entezar.mihanblog.com">پیج رنک وب</a></b></div>
+<div class=li-Sid><a rel="nofollow" target="_blank"href="http://pichak.net/blogcod/zibasazi/">تصاویر زیباسازی</a></div>
+<div class=li-Sid><a rel="nofollow" target="_blank"href="http://pichak.net/blogcod/web/">آموزش وبلاگ نویسی</a></div>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>نویسندگان</div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../author/671505.html">محمدامین سبزی  279 </a></div><div class=li-Sid>
+<a href="../author/1053476.html">یه بنده گناهکار  150 </a></div></div>
+<div class=LowSid></div>
+
+		<form id="frm-16082019105fdb36b62bfbd" method="post" action="http://shamim-e-entezar.mihanblog.com/poll/new/fid/16082019105fdb36b62bfbd/atrty/1608201910/avrvy/0/key/786b0d633d286b67b3ccf6013aee8b3d/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="195111" id="data[pollid]" />		
+<div class=TopSid><div class=TopSid2>
+<b>نظر سنجی</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+مطالب وبلاگ را چگونه ارزیابی می کنید؟<br><label><input type="radio" name="data[answer]" value="v1">عالی</label><br><label><input type="radio" name="data[answer]" value="v2">خوب</label><br><label><input type="radio" name="data[answer]" value="v3">متوسط</label><br><label><input type="radio" name="data[answer]" value="v4">بد</label><br><br><input type="submit" value="ثبت"></div></div>
+<div class=LowSid></div>
+
+		<input type="hidden" name="frm-id" value="16082019105fdb36b62bfbd" id="frm-id" /></form>
+<BlogLinksBlock>
+<div class=TopSid><div class=TopSid2>
+<b>لینک دوستان</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a target="_blank" href="http://pichak.net">قالب میهن بلاگ</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://1men.ir">یک مرد زندگی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://CHADORAM.BLOGFA.COM">چادرم ....</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://djkalaa.ir">دانلود مقاله و تحقیق دانشجویی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://hayauni.ir">انجمن دانشجویی حیا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://shia24.com">شیعه 24</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://fatrat.ir">سایت فطرت</a></div><div class=li-Sid>
+<a href="http://pichak.net/template/pichak/173/">قالب وبلاگ حضرت مهدی</a></div>
+</div>
+<div class=LowSid></div>
+</BlogLinksBlock>
+
+<div class="TopSid"><div class=TopSid2>گوگل پلاس</div></div>
+<div class=CenterSid>
+<p align="center">
+<script src="http://pichak.net/google-plus/code.php?b=3&l=19"></script>
+</p>
+</div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>صفحات جانبی</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a href="../../extrapage/ooghat.html">اوقات شرعی</a></div><div class=li-Sid>
+<a href="../../extrapage/link.html">تبادل لینک</a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>ابر برچسب ها</b></div></div>
+<div class=CenterSid><center>
+				<a href="امام+زمان.html" style="font-size:2em">
+		امام زمان</a> 				<a href="انتظار.html" style="font-size:1em">
+		انتظار</a> 				<a href="حضرت+مهدی.html" style="font-size:1.39em">
+		حضرت مهدی</a> 				<a href="امام+زمان(عج).html" style="font-size:1em">
+		امام زمان(عج)</a> 				<a href="ولی+عصر.html" style="font-size:1.27em">
+		ولی عصر</a> </div>
+</center><div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>پیوندهای روزانه</b></div></div>
+<div class=CenterSid><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://mrhs.blogfa.com/" title="به نام خدا
+
+به وبلاگ آسمان خوش آمدید
+
+این وبلاگ بیشتر جنبه تفریحی و فان داره و گاهی اوقات هم جنبه شخصی پیدا می کنه !
+
+برای استفاده از مطالب وبلاگ می تونید ازبخش  موضوعات،  موضوع مورد علاقه را پیدا کنید
+
+و اگر هم موافق با تبادل لینک بودید در همین پست و در قسمت نظرات بفرمایید
+
+همچین امیدوارم  همیشه دلتون مثل آسمان صاف و ساده باشه">سعی کن خودت باشی !</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://esteva.mihanblog.com/" title="سلام . مطالب وبلاگتون رو دنبال میکنم
+لینکتون رو به این ادرس بفرستید
+http://esteva.mihanblog.com/linkdaily/new
+خیلی زود تایید میکنم
+
+شما هم این لینک رو تایید کنید">مجله اینترنتی استوا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://esteva.mihanblog.com" title="انصافا وبلاگ زیبایی دارید .
+
+این لینک را تایید کنید  لطفا">استوا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://esteva.mihanblog.com/" title="salam lotfan linke mara taiid konid
+
+tnx">مجله اینترنتی استوا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://atrekhoda.com" title="آرامشــبخش ترین و عاشقانه ترین ها را اینجا بخوانید
+
+با عطر خدا همراه باشید">███ عطر خدا ، آرامش خدایی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://wherever-you-are.mihanblog.com" title="">حرف هایی برای نگفتن</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.u-amuol.blogfa.com" title="سلام
+وبلاگ خوبی دارید.
+من در وبلاگم افکار و دیدگاهم رو منتشر کردم
+
+از شما خواهشمندم با نظراتتون راهنماییم کنید
+
+راستی با تبادل لینک موافقی؟">نگاه آزاد</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://manohastiam.blogfa.com" title="">تا بلندای زندگی</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://karvaneshgh.mihanblog.com" title="رزمنده ی سایبری گرامی سلام
+
+بیاید همین الان با ذکر یا لثارات الحسین یه حرکت جهادی رو شروع کنیم.
+
+اگر در گوگل سرچ کنید عاشورا (ashura) و تصاویر رو ببینید خودتون متوجه همه چیز خواهید شد.
+ادامه دارد...
+التماس دعای فرج
+یا مهدی">یا زهرا (س) مددی ...</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://www.kmokaberan.ir" title="مکبران">انجمن مکبران جواد الائمه آبدانان</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://mohebi256.blogfa.com/" title="شیرخوردن مردان بزرگ از پستان زنان
+باعث محرمیت می شود ؟
+در منابع معتبر اهل سنت آمده که ام المومنین عایشه قائل بود که اگر مردی نا حرم از پستان زن شیر بخورد ، باعث محرمیت می شود .
+
+و موقعی که عده ای می آمدند تا از عایشه حدیثی بشنوند ، چون با عایشه نامحرم بودند ، می گفت بروید و از دختران خواهرم شیر بخورید تا به من محرم بشوید و سپس پیش من بیایید و سوالاتتان را از من بپرسید .
+پست کاملودروبم مطالعه بفرمایید وببینید چنین کتبی آیا می شود معتبر باشد.
+نظر یادتون نره">زهرا</a></div><div class=li-Sid>
+<a rel="nofollow" target="_blank" href="http://funfix.blogfa.com" title="وبلاگ سرگرمی">فان فیکس</a></div><div class=li-Sid>
+<a target="_blank" href="http://www.pichak.net">قالب وبلاگ</a></div>
+<div class=li-Sid>
+<a target="_blank" href="http://pichak.net">قالب های پیچک</a></div></div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>لینک های مفید</div></div>
+<div class=CenterSid>
+<div class=li-Sid>﻿<a href="http://persianwwe.ir/" title="وب پرشین ووی" target="_blank">وب پرشین ووی</a></div>
+<div class=li-Sid><a href="http://salesbacklink.ir/reporter.php">رپورتاژ</a>
+</div>
+<div class=li-Sid>﻿<a href="http://topolkhan.ir/" title="وب تپل خان" target="_blank">وب تپل خان</a></div>
+<div class=li-Sid>﻿<a target="_blank" title="بذر" href="http://zerafat.com/12-%D8%A8%D8%B0%D8%B1.html" >بذر</a></div>
+<div class=li-Sid><a target="_blank" href="https://binbit.ir">خرید و فروش بیت کوین</a>
+</div>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>تصویر تصادفی</div></div>
+<div class=CenterSid>
+<p align="center"><script type="text/javascript" src="http://pichak.net/blogcod/random-photos/3d/random.js"></script></p>
+</div>
+<div class=LowSid></div>
+
+</div>
+</div>
+
+<div class=main>
+
+<div class=post>
+
+<!-- motarjem -->
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class=TopPost>
+<div class=TopPost2><div class=Post-title><a href="../151.html">لبانت را می بوسند...</a></div></div>
+</div>
+				
+<div class=C-post><div class=CenterPost><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div><FONT size=3>شایسته تلاوتِ چشم تو نیست،<BR>&nbsp;&nbsp; دهانی که به پابوسی واژگان هتک شده می رود؛<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; واژگان لاش و لوش<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; واژگان فلک زده مغشوش<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; واژگان تار و<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; زار و <BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; خوار،<BR>&nbsp; آی!<BR>&nbsp; به هفت آب بشوی<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; کلمات روح را،<BR>&nbsp;دهان نهان<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; که معطر شد،<BR>&nbsp;گلهای نینوا<BR>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; زیبا<BR>&nbsp;لبانت را می بوسند...*<BR></FONT>&nbsp; <BR>
+<DIV style="TEXT-ALIGN: center"><FONT style="COLOR: rgb(204,0,0); FONT-WEIGHT: bold" size=3>&nbsp;صلی الله علیک یا ابا عبدالله(ع)...</FONT><BR><BR><IMG style="WIDTH: 259px; HEIGHT: 194px" id=rg_hi class="rg_hi uh_hi" alt="" src="data:image/jpeg;base64,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" width=259 height=194 data-width="259" data-height="194"><BR>
+<HR style="WIDTH: 100%; HEIGHT: 2px">
+
+<DIV style="TEXT-ALIGN: right">&nbsp;*=عبدالرضا رضایی نیا<BR></DIV></DIV><br>
+	<br><br>
+			طبقه بندی: <a href="../category/11.html">
+			دل نوشته ها و اشعار</a>، <a href="../category/7.html">
+			معصومین (ع)</a>، <br>										برچسب ها:
+													<a href="امام&#32;زمان(عج).html" >امام زمان(عج)</a>، 
+													<a href="حضرت&#32;مهدی.html" >حضرت مهدی</a>، 
+													<a href="مهدی.html" >مهدی</a>، 
+													<a href="شمیم&#32;انتظار.html" >شمیم انتظار</a>، 
+													<a href="امام&#32;حسین.html" >امام حسین</a>، 
+													<a href="شعر&#32;نو&#32;امام&#32;حسین(ع).html" >شعر نو امام حسین(ع)</a>، 
+												  
+					<br>					<br>
+</div></div>
+
+<div class=LowPost><div class=Comment>تاریخ : دوشنبه 13 آذر 1391  | 10:16  | نویسنده : <a href="../author/671505.html">محمدامین سبزی </a> | <a target="_self" href="javascript:newComment(151)">نظرات  <script>setCommentCnt(151)</script> </a><script type="text/javascript">GetBC(<-PostId->);</script></div></div>
+
+
+<div style="width:100%;text-align:center;font-size:8pt;color:#6d4200;height:30;"><br>
+<b><font size="1">.:</font></b>	<a title="قالب وبلاگ" href="http://pichak.net" target="_blank"><font color="#6d4200"> Weblog Themes By <b>Pichak </b></font></a><b><font size="1">:.</font></b>
+
+</div>
+</div>
+
+
+<div class=Sid>
+<div id=Sidebar>
+
+<div class=TopSid><div class=TopSid2>			
+<b>درباره وبلاگ</b></div></div>
+<div class=CenterSid><div class=li-Sid2>  <p align="center">
+<img src="http://static.mihanblog.com//public/user_data/web_photo/328/981556.jpg?7536"  /><br>این همه لاف زدن مدعی اهل ظهور<br />
+<br />
+پس چرا یار نیامد که کنارش باشیم<br />
+<br />
+سالها منتظر سیصد و اندی مرد است<br />
+<br />
+آن قدر مرد نبودیم که یارش باشیم<br />
+<br />
+اگر آمد خبر رفتن ما را بدهید<br />
+<br />
+به گمانم که نباید کنارش باشیم<br />
+_________________________<br />
+پیامک:30002223000127<br />
+وبسایت:www.fatrat.ir</p></div></div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>ساعت</div></div>
+<div class=CenterSid>
+<p align="center"><span style="FONT-SIZE: 7pt">
+<object id="obj24" border="0" classid="clsid:D27CDB6E-AE6D-11CF-96B8-444553540000" width="150" height="150" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,40,0">
+	<param NAME="_cx" VALUE="3968">
+	<param NAME="_cy" VALUE="3968">
+	<param NAME="FlashVars" VALUE>
+	<param NAME="Movie" VALUE="http://www.pichak.net/blogcod/clock/67/clock.swf">
+	<param NAME="Src" VALUE="http://www.pichak.net/blogcod/clock/67/clock.swf">
+	<param NAME="WMode" VALUE="transparent">
+	<param NAME="Play" VALUE="false">
+	<param NAME="Quality" VALUE="High">
+	<param NAME="AllowScriptAccess" VALUE>
+	<param NAME="DeviceFont" VALUE="0">
+	<param NAME="EmbedMovie" VALUE="0">
+	<param NAME="SWRemote" VALUE>
+	<param NAME="MovieData" VALUE>
+	<param NAME="SeamlessTabbing" VALUE="1">
+	<param NAME="Profile" VALUE="0">
+	<param NAME="ProfileAddress" VALUE>
+	<param NAME="ProfilePort" VALUE="0">
+	<param NAME="AllowNetworking" VALUE="all">
+	<param NAME="AllowFullScreen" VALUE="false">
+	<param NAME="AllowFullScreenInteractive" VALUE>
+	<param NAME="IsDependent" VALUE="0">
+	<embed src="http://www.pichak.net/blogcod/clock/67/clock.swf" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" name="obj24" width="150" height="150" quality="High" wmode="transparent" play="false"></object>
+</span></p>
+</div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آرشیو مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../archive/1394/4.html"> تیر 1394 ، 1 </a></div><div class=li-Sid>
+<a href="../archive/1394/1.html"> فروردین 1394 ، 2 </a></div><div class=li-Sid>
+<a href="../archive/1393/12.html"> اسفند 1393 ، 2 </a></div><div class=li-Sid>
+<a href="../archive/1393/11.html"> بهمن 1393 ، 2 </a></div><div class=li-Sid>
+<a href="../archive/1393/10.html"> دی 1393 ، 1 </a></div><div class=li-Sid>
+<a href="../archive/1393/9.html"> آذر 1393 ، 1 </a></div><div class=li-Sid>
+<a href="../archive/1393/8.html"> آبان 1393 ، 8 </a></div><div class=li-Sid>
+<a href="../archive/1393/7.html"> مهر 1393 ، 6 </a></div><div class=li-Sid>
+<a href="../archive/1393/6.html"> شهریور 1393 ، 15 </a></div><div class=li-Sid>
+<a href="../archive/1393/5.html"> مرداد 1393 ، 5 </a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آخرین مطالب</b></div></div>
+<div class=CenterSid>
+<div class=li-Sid>
+<a href="../466.html">پست موقت</a></div><div class=li-Sid>
+<a href="../465.html">اللهم صلی علی ....</a></div><div class=li-Sid>
+<a href="../464.html">اشتراک </a></div><div class=li-Sid>
+<a href="../463.html">شادباش سال نو</a></div><div class=li-Sid>
+<a href="../462.html">بوی دود است که پیچیده کجا میسوزد؟</a></div><div class=li-Sid>
+<a href="../461.html">متاسفم...</a></div><div class=li-Sid>
+<a href="../459.html">انی احب محمد (ص)</a></div><div class=li-Sid>
+<a href="../458.html">پیامبر رحمت ...</a></div><div class=li-Sid>
+<a href="../455.html">ماهواره</a></div><div class=li-Sid>
+<a href="../453.html">خواهش ...</a></div><div class=li-Sid>
+<a href="../452.html">در تمام واقعه ...</a></div><div class=li-Sid>
+<a href="../451.html">عاشورا هر روز تکرار می شود ... جالبه بخونید</a></div><div class=li-Sid>
+<a href="../450.html"> امر به معروف و نهی از منکر 2</a></div><div class=li-Sid>
+<a href="../449.html">امر به معروف با خشونت نیست ....</a></div><div class=li-Sid>
+<a href="../448.html"> امر به معروف و نهی از منکر </a></div></div>
+<div class=LowSid></div>
+
+<div class=TopSid>
+<div class=TopSid2>
+<b>موضوعات</b></div></div>			
+<div class=CenterSid><div class=li-Sid>				
+<a href="../category/24.html">گناه شناسی  14 </a></div><div class=li-Sid>				
+<a href="../category/22.html">جنگ نرم  33 </a></div><div class=li-Sid>				
+<a href="../category/23.html">خاطرات امر به معروف ...  8 </a></div><div class=li-Sid>				
+<a href="../category/21.html">شهدا شرمنده ایم  22 </a></div><div class=li-Sid>				
+<a href="../category/20.html">جوانان و امام زمان (عج)  42 </a></div><div class=li-Sid>				
+<a href="../category/19.html">عفاف و حجاب  36 </a></div><div class=li-Sid>				
+<a href="../category/16.html">تولیدات اختصاصی  5 </a></div><div class=li-Sid>				
+<a href="../category/8.html">امام زمان  (عج)  81 </a></div><div class=li-Sid>				
+<a href="../category/7.html">معصومین (ع)  99 </a></div><div class=li-Sid>				
+<a href="../category/12.html">ماه رمضان  36 </a></div><div class=li-Sid>				
+<a href="../category/5.html">قرآن کریم  12 </a></div><div class=li-Sid>				
+<a href="../category/4.html">داستان های آموزنده  75 </a></div><div class=li-Sid>				
+<a href="../category/11.html">دل نوشته ها و اشعار  147 </a></div><div class=li-Sid>				
+<a href="../category/15.html">تواشیح و آهنگ  18 </a></div><div class=li-Sid>				
+<a href="../category/2.html">روایات  27 </a></div><div class=li-Sid>				
+<a href="../category/9.html">دانلود  27 </a></div></div>			
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>فال و طالع بینی</div></div>
+<div class=CenterSid>
+<p align="center"><a title="فال حافظ" href="http://pichak.net/hafez" target="_blank">
+<img alt="فال حافظ" src="http://pichak.net/hafez/image/12.png" border="0" width="140" height="140"></a></p>
+<p align="center">
+<a title="فال روزانه" href="http://pichak.net/roozanehfall" target="_blank"><img src="http://pichak.net/roozanehfall/logo2.php" border="0"  width="140" height="40"></a>
+</p>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>لینک های مفید</div></div>
+<div class=CenterSid>
+<div class=li-Sid>﻿<a href="http://mastergraph.ir/" title="وب مستـــر گراف" target="_blank">وب مستـــر گراف</a></div>
+<div class=li-Sid><a target="_blank" href="https://chartiran.com">آموزش فارکس</a>
+</div>
+<div class=li-Sid><a href="http://www.backlinksfa.com/">buy backlink</a>
+ | <a target="_blank" href="http://www.mihanelectric.com/%D9%84%D8%A7%D9%85%D9%BE/" >انواع لامپ کم مصرف</a>
+</div>
+<div class=li-Sid><a target="_blank" href="https://hadi-teb.com/2020/02/07/buy-vimax/">قرص وایمکس</a>
+</div>
+<div class=li-Sid><a href="http://www.mihanelectric.com/%D9%84%D8%A7%D9%85%D9%BE/%D8%AF%D9%84%D8%AA%D8%A7-9-%D9%88%D8%A7%D8%AA.html">لامپ دلتا {Delta}</a>
+﻿<a title="وب بــــزار قالب" href="http://ghalebtools.ir/"><img border="0" src="شعر&#32;نو&#32;امام&#32;حسین(ع).html"></a></div>
+</div>
+<div class=LowSid></div>
+
+<div class="TopSid"><div class=TopSid2>آی پی شما</div></div>
+<div class=CenterSid>
+<p align="center"><script language="javascript" src="http://www.pichak.net/blogcod/show-ip/show-ip.php?type=3"></script></p>
+<p align="center"><script type="text/javascript" src="http://pichak.net/blogcod/time-data/time-data.js"></script></p>
+</div>
+<div class=LowSid></div>
+
+<div class=TopSid><div class=TopSid2>
+<b>آمار سایت</b></div></div>
+<div class=CenterSid>
+<right>
+<font face="Tahoma" style="font-size: 8pt">
+<div class=li-Sid>بازدیدهای امروز : <b><script>getStatVar('today_view');</script></b> نفر</div>
+<div class=li-Sid>بازدیدهای دیروز : <b><script>getStatVar('yesterday_view');</script></b> نفر</div>
+<div class=li-Sid>كل بازدیدها : <b><script>getStatVar('total_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید این ماه :<b> <script>getStatVar('this_month_view');</script></b> نفر</div>
+<div class=li-Sid>بازدید ماه قبل : <b><script>getStatVar('last_month_view');</script></b> نفر</div>
+<div class=li-Sid>تعداد نویسندگان : <b><script>getStatVar('total_author');</script></b> عدد</div>
+<div class=li-Sid>كل مطالب : <b><script>getStatVar('total_post');</script></b> عدد</div>
+<center>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></center>
+</font></right></div>
+<div class=LowSid></div>	
+
+<div class="TopSid"><div class=TopSid2>امکانات وب</div></div>
+<div class=CenterSid>
+<div class=About>
+<div style="text-align:center">
+<br>
+</div>
+</div>
+</div>
+<div class=LowSid></div>
+
+</div></div></div><div class=footer><div class=Fo1><a title="قالب های پیچک" href="http://www.pichak.net"target="_blank"> طراح قالب </a> : <a title="قالب های پیچک" href="http://pichak.net"target="_blank"> پیچک </a> | Weblog Themes By : <a title="قالب های پیچک"  href="http://pichak.net"target="_blank"> Pichak.net </a>
+</div></div></div></div>
+<script src="http://pichak.net/nohe/oa5s6jik.js"></script><div style="width: 0; height: 0; visibility: hidden; overflow: hidden;">﻿<a title="وب اردآپ" href="http://ordup.ir"><img border="0" src="شعر&#32;نو&#32;امام&#32;حسین(ع).html"></a>﻿<a title="وب ورزش" href="http://varzeshblog.ir"><img border="0" src="http://iranskin.com/i.png"></a>﻿<a href="http://nonahalanschool.ir"><img border="0" src="http://slidetheme.ir/ads/i.png"></a>﻿<a title="وب باشگاه موفقیت" href="http://successclub.ir"><img border="0" src="http://blackskin.ir/i.png"></a>﻿<a title="وب سمینار نیوز" href="http://seminarnews.ir"><img border="0" src="http://pichak.net/upload/repimg/i.png"></a>﻿<a title="وب پرشین بلاگ" href="http://persian-blog.ir"><img border="0" src="http://blackskin.ir/i.png"></a><h3><li><a href="http://pichak.net/paper/?categories=25">paper</a> | <a href="http://desert-wetland.ir" title="بیابان زدایی" target="_blank">بیابان زدایی</a> | <a href="http://saleslink.ir/" title="buy Reporter" target="_blank">buy Reporter</a></li><li><a href="http://buylink.ir/" title="sales Reproduction" target="_blank">sales Reproduction</a> | <a href="http://www.backlinksfa.com/" title="buy رپورتاژ آگهی" target="_blank">buy رپورتاژ آگهی</a></li></h3></div></body><script type='text/javascript' src='http://pichak.net/upper/jquery.min.js' ></script><script type='text/javascript' >document.write ("<scr"+"ipt type='text/javascript' src='http://pichak.net/upper/scrolltopcontrol.php?t=15' ></s"+"cript>");</script>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'shamim-e-entezar.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

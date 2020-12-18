@@ -1,0 +1,2237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*1100278*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[1327]='0';commentCnt[1343]='1';commentCnt[1356]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[1327]='0';
+mihanblogDisLikeArrCnt[1327]='0';
+mihanblogLikeArrCnt[1343]='0';
+mihanblogDisLikeArrCnt[1343]='0';
+mihanblogLikeArrCnt[1356]='0';
+mihanblogDisLikeArrCnt[1356]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://tabrizlinks.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://tabrizlinks.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','1196');
+	setStatVar('total_author','3');
+	setStatVar('modify_date','جمعه 9 اسفند 1398');
+	
+	setStatVar('today_view','511');
+	setStatVar('yesterday_view','1261');
+	
+	setStatVar('this_month_view','15767');
+	setStatVar('last_month_view','27851');
+
+	setStatVar('total_view','3573099');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (13:59)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://tabrizlinks.mihanblog.com/statupdate/?data[refereruri]=http://tabrizlinks.mihanblog.com/&data[postid]=&data[requesturi]=/post/category/11&data[sdate]=1607769164&data[hash]=0881ccd251df9ff5ce2cd802ff28e312&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fa-IR">
+<!--تبریز آذربایجان دریاچه ارومیه زبان ترکی آذری tabrizlinks wikilinks-->
+
+<head>
+<title>تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان</title>
+    <base href="" />
+	<meta name="generator" content="ParsTools.Com | Hesam B" />
+	<meta content="fa" http-equiv="Content-Language" />
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="tabriz , azerbaijan weblog tabrizlinks turk wikilinks
+وبلاگ تبریز لینکلر قارتال ترکی آذری، تراکتور آذربایجان و ارومیه ارس و زنجان و اردبیل" />
+	<meta name="keywords" content="tabrizlinks,تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان, تبریز,tabriz,آذربایجان,ترکی,ایران,azerbaijan,ارس,ارومیه,اردبیل" />
+	<link rel="alternate" type="application/rss+xml" title="تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان" href="../rss/index.html" />
+	<link rel="alternate" type="application/atom+xml" title="تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان"  href="../atom/index.html" />
+	
+
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان" href="../rss/index.html" />
+<meta name="google-site-verification" content="n6T8POLjcxVom0461uwQoryqydThNaEJARSpk_5fZPA" />
+
+<meta name="msvalidate.01" content="38A7A3D8CD214D8C1160582BBBDB424D" />
+
+<meta name="alexaVerifyID" content="Qdjfdb1DWdeeATdB4RAcReqKUTk"/>
+
+<link href="http://tabrizlinks.persiangig.com/video/favicon.ico" rel="shortcut icon">
+
+
+
+<link media="screen" href="http://tem.parstools.com/skyback/style/styles.css" type="text/css" rel="stylesheet" />
+<link media="screen" href="http://tem.parstools.com/skyback/style/engine.css" type="text/css" rel="stylesheet" />
+
+</head>
+<!--تبریز آذربایجان دریاچه ارومیه زبان ترکی آذری tabrizlinks wikilinks-->
+<body>
+<div class="pagebg">
+<div class="wrapper">
+	<div class="header">
+
+		<h1>
+		<div style="float:left; margin-left: 100px;">
+			<!-- Begin parstools.com ‍Clock Code --><div  style="display:none;"><a href="http://parstools.com"><h1>ساعت فلش</h1></a></div><script language="javascript" src="http://www.parstools.com/clock/?type=93&w=130&h=90"></script><!-- End Clock code -->
+			</div>
+		<a class="thide" href="../../index.html" title="تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان"><img src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/amlak.png" title="Tabriz WikiLinks , Azerbaijan Region of Iran"></a></h1>
+					
+			<div class="loginblock">
+				<div class="loginenter">
+					<h3>تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان</h3>
+				</div>
+			</div>
+	</div>
+	<div class="topmenu"><div><div>
+		<ul style="float:right;" class="lcolomn reset">
+			<li ><a href="../atom/index.html"><b>نسخه اتوم</b></a></li>
+			<li ><a href="../../m.html"><b>نسخه موبایل</b></a></li>
+			<li ><a href="../list.html"><b>آرشیو مطالب</b></a></li>
+			<li ><a href="mailto:tabrizlinks.mihanblog@gmail.com"><b>پست الکترونیکی</b></a></li>
+			<li ><a href="javascript:messageForm()"><b>ارتباط با مدیریت</b></a></li>
+			<li ><a href="../../index.html"><b>صفحه اصلی</b></a></li>
+		</ul>
+		
+		<div name="seatchform"  style="float:left; padding-left:70px">
+		<form id="frm-16077357975fd419f5bbd49" method="get" action="http://tabrizlinks.mihanblog.com/post/search/fid/16077357975fd419f5bbd49"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+		<ul class="rcolomn reset">	<li class="sh-btn"><input value="" type="submit" src="http://tem.parstools.com/skyback/images/spacer.gif" /></li>
+			<li class="sh-text"><input name="search_text" value="جستجو..." onblur="if(this.value=='') this.value='جستجو...';" onfocus="if(this.value=='جستجو...') this.value='';" type="text" /></li>
+		
+		</ul>
+		<input type="hidden" name="frm-id" value="16077357975fd419f5bbd49" id="frm-id" /></form>		</div>
+		
+	</div></div></div>
+	<div class="vsep"><div class="vsep"><div class="vsep"><div class="vsep">
+		<div class="rcolomn midside">
+			<div class="container">
+				<div class="lcolomn mainside">
+					<div class="brcont">
+						<div class="topadblock">
+							<div class="dcont">
+								<a href="../../index.html"><img src="../../index.html" alt="Təbriz və Azərbaycan üçün Blog İranda - Tabriz , Azerbaijan Region in Iran" /></a>
+
+							</div>
+						</div>
+
+						<div id='dle-info'></div>
+						<div id='dle-content'>
+	
+   
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+			
+<div class="base shortstory">
+	<div class="shd">
+		<h1><a href="../1356.html" title="عشایر شاهسون آذربایجان از اصالت تا زندگی شیرین">عشایر شاهسون آذربایجان از اصالت تا زندگی شیرین</a></h1>
+	</div>
+	<div class="shdinfo"><div class="shdin">
+
+		<span class="arg">نویسنده : <a href="../author/944998.html">تبریز قارتال</a></span>
+		<span class="date"><img src="http://tem.parstools.com/skyback/images/date.png" alt="">دوشنبه 15 مهر 1398, 11:50 ب.ظ</span>
+	</div></div>
+	<div class="maincont">
+		<div style="padding-right:10px;">
+		
+		 <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+<font size="2">
+
+
+</font><div><font size="2"><br></font></div><div><font size="2">یکی از مهم‌ترین و مشهورترین ایل‌های کشورمان، عشایر شاهسون هستند که در 
+واقع گروهی از ایل‌های آذربایجانی به شمار می‌روند و در منطقه دشت مغان و 
+همین‌طور اردبیل زندگی می‌کنند. در این مطلب همراه ما باشید تا عشایر 
+شاهسون را بهتر و کامل‌تر بشناسیم. <br></font></div><div><font size="2"><br></font></div><div align="center"><font size="2"><img src="http://s5.picofile.com/file/8374587750/koc_1_.jpg" alt="ایل" vspace="0" hspace="0" border="0" align="baseline"><br></font></div><div align="center"><br><font size="2"></font></div><div><font size="2"><br></font></div><div><font size="2"> همانطور که می‌دانید یکی از جذاب‌ترین و 
+زیباترین شیوه‌های زندگی در برخی نقاط کشور کوچ‌نشینی است. بسیاری از 
+افرادی که در شهر‌های بزرگ و شلوغ زندگی می‌کنند ترجیح می‌دهند که تعطیلات 
+خود را در کنار عشایر و تماشای ییلاق آن‌ها بگذرانند و بتوانند آرامش زندگی
+ آن‌ها را از نزدیک لمس کنند.</font>
+<p align="center"><font size="2"><img src="http://s2.picofile.com/file/8374587500/2158894_494.jpg" alt="عشایر شاهسون، از اصالت تا زندگی شیرین!" vspace="0" hspace="0" border="0" align=""></font></p>
+<p style="text-align: right;"><font size="2">در بخش‌های متفاوتی از کشور ایران، ایل‌های 
+مختلفی وجود دارند که این شیوه از زندگی را سال‌هاست پیش گرفته‌اند و زندگی
+ سالمی را دنبال می‌کنند. یکی از مهم‌ترین و مشهورترین این ایل‌ها، عشایر 
+شاهسون هستند که در واقع گروهی از ایل‌های آذربایجانی به شمار می‌روند و در
+ منطقه دشت مغان و همین‌طور اردبیل زندگی می‌کنند. در این مطلب همراه ما 
+باشید تا عشایر شاهسون را بهتر و کامل‌تر بشناسیم.</font></p><p style="text-align: right;"><font size="2"><br></font></p>
+<p style="text-align: right;"><font size="2"><strong><span style="font-size: 18pt;">عشایر شاهسون در طول تاریخ</span></strong></font></p>
+<p align="center"><font size="2"><img src="http://s3.picofile.com/file/8374587526/2158895_996.jpg" alt="عشایر شاهسون، از اصالت تا زندگی شیرین!" vspace="0" hspace="0" border="0" align=""><br></font></p><p align="center"><br><font size="2"></font></p>
+<p style="text-align: right;"><font size="2">گفته می‌شود که شاهسون‌ها از سوی شاه عباس 
+اول سازماندهی شده‌اند تا موقعیت طایفه‌های ترک قزلباش را فراهم کنند. پیش 
+از این برخی از این طوایف به دستور نادر شاه افشار و توسط رهبری بدرخان از 
+طایفه ساریخان بیگلو متحد شده بودند. در قرن هجدهم به دلیل رقابت‌های 
+خانواده بدرخان، شاهسون به دو دسته تقسیم شد که بعد از آن با نام‌های 
+شاهسون اردبیل و مشکین شهر شناخته می‌شوند.</font></p>
+<p align="center"><font size="2"><img src="http://s4.picofile.com/file/8374587542/2158896_415.jpg" alt="عشایر شاهسون، از اصالت تا زندگی شیرین!" vspace="0" hspace="0" border="0" align=""></font></p>
+<p style="text-align: right;"><font size="2">در زمان حکومت قاجاریه اتفاقات بسیاری در 
+قلمروی عشایر شاهسون رخ داد، به‌خصوص آنکه در زمان فتحعلی شاه بعد از عقد 
+قرارداد گلستان بین ایران و روس، روس‌ها در منطقه تالش و قسمت‌های شمالی 
+مغان ساکن شدند و طبیعتاً این مسئله باعث تهدید سرزمین‌های قشلاقی 
+شاهسون‌ها شد. علاوه بر این بر اساس عهدنامه ترکمنچای مرز‌های ایران از 
+قسمت شمالی محدود شد و در نتیجه آن بخش‌های زیادی از منطقه قشلاقی عشایر 
+شاهسون از بین رفت.</font></p><p style="text-align: right;"><font size="2"><br></font></p>
+<p style="text-align: right;"><font size="2"><strong><span style="font-size: 18pt;">نحوه کوچ عشایر شاهسون</span></strong></font></p>
+<p align="center"><font size="2"><img src="http://s5.picofile.com/file/8374587550/2158897_652.jpg" alt="عشایر شاهسون، از اصالت تا زندگی شیرین!" vspace="0" hspace="0" border="0" align=""></font></p>
+<p style="text-align: right;"><font size="2">عشایر شاهشون ۶ درصد جمعیت استان اردبیل و 
+۵/ ۶ درصد جمعیت عشایر کل کشور را تشکیل می‌دهند. همان‌طور که می‌دانید یکی
+ از ابعاد اصلی زندگی عشایر کوچ است که به دو صورت عمودی یا افقی انجام 
+می‌گیرد. در استان اردبیل این کوچ به صورت عمودی شکل می‌گیرد و از کمترین 
+ارتفاع که چیزی حدود متر از سطح دریاست شروع می‌شود و تا ارتفاع ۴۵۰۰ متری 
+نیز ادامه پیدا می‌کند.</font></p>
+<p style="text-align: right;"><font size="2">این کوچ عشایر شاهسون شامل کوچ بهاره و 
+پاییزه می‌شود. کوچ بهاره بر اساس عرف و عادت محلی از چیزی نزدیک به ۴۵ روز
+ بعد از سال نو آغاز می‌شود و تقریباً دو تا سه هفته زمان می‌برد، این در 
+حالی است که کوچ پاییزه از اواسط شهریور ماه شروع می‌شود و ۴۰ تا ۴۵ روز 
+طول می‌کشد.</font></p>
+<p align="center"><font size="2"><img src="http://s4.picofile.com/file/8374587592/2158898_969.jpg" alt="عشایر شاهسون، از اصالت تا زندگی شیرین!" vspace="0" hspace="0" border="0" align=""><br></font></p><p align="center"><font size="2"><img src="http://s5.picofile.com/file/8374587818/koc_5_.jpg" alt="کوچ" vspace="0" hspace="0" border="0" align="baseline"></font></p><p align="center"><br></p><p align="center"><br><font size="2"></font></p>
+<p style="text-align: right;"><font size="2"><strong><span style="font-size: 18pt;">معیشت عشایر شاهسون</span></strong></font></p>
+
+<p style="text-align: right;"><font size="2">عشایر شاهسون که ترک زبان هم هستند در زندگی
+ کوچ‌نشینی خود به دامداری در مراتع سرسبز دشت مغان می‌پردازند و 
+گوسفند‌هایی از نژاد مغانی، ترکیب اصلی دام آن‌ها را تشکیل می‌دهد، اما این
+ عشایر در کنار دامداری در قالی‌بافی نیز بسیار مشهور و البته ماهر هستند و
+ قالی و قالیچه‌های بی‌نظیری را با هنر و حوصله خود خلق می‌کنند، به همین 
+دلیل هم امروزه در کنار دامداری از طریق فروش صنایع دستی خود نیز امرار 
+معاش می‌کنند.</font></p>
+<p style="text-align: right;"><font size="2">هنر و صنایع دستی این عشایر تنها در بافت 
+قالی و قالیچه خلاصه نمی‌شود. بلکه آن‌ها محصولات دیگری هم‌چون جاجیم، 
+گیوه، پاپوش، خورجین، ورنی، جوال، دستکش، شال گردن، کلاه، توبره، جوراب، 
+زیلو، نمد، حصیر و... را نیز تولید می‌کنند. جالب است بدانید که طرح‌های 
+به‌وجودآمده بر روی جاجیم‌ها همگی بدون هیچ نقشه و تنها زاییده ذهن خلاق 
+هنرمندان عشایر است.</font></p>
+<p align="center"><img src="http://s2.picofile.com/file/8374587842/koc_7_.jpg" alt="عشایر" vspace="0" hspace="0" border="0" align="baseline"></p><p align="center"><br></p><p align="center"><img src="http://s2.picofile.com/file/8374587834/koc_6_.jpg" alt="عشایر آذربایجان" vspace="0" hspace="0" border="0" align="baseline"></p><p align="center"><br></p>
+<p style="text-align: right;"><font size="2">حالا که بحث از هنر شد بد نیست به موسیقی 
+ایل شاهسون نیز اشاره کنیم. موسیقی متداول در زندگی این عشایر عاشیقی نام 
+دارد و در واقع روایتی از فرهنگ شفاهی، تاریخ حماسه‌ها، رزم‌ها و 
+رویداد‌های مهم تاریخی در منطقه آذربایجان است. اشعار عاشیق‌ها هجایی هستند
+ و بر اساس تعداد هجا‌ها و مفهومشان نامگذاری می‌شوند. از میان مشهورترین 
+اشعار عاشیقی می‌توان به گرایلی، قوشی، تجنیسی، بایاتی، باغلاما، خلق 
+ماهنسی و... اشاره کرد. در کنار این، عشایر شاهسون در مراسم مذهبی و ملی، 
+عروسی‌ها، تغزیه و... نیز انواع دیگری از موسیقی را به کار می‌گیرند.</font></p><p style="text-align: right;"><font size="2"><br></font></p>
+<p style="text-align: right;"><font size="2"><strong><span style="font-size: 18pt;">اسکان عشایر شاهسون</span></strong></font></p>
+<p align="center"><font size="2"><img src="http://s4.picofile.com/file/8374587692/2158902_618.jpg" alt="عشایر شاهسون، از اصالت تا زندگی شیرین!" vspace="0" hspace="0" border="0" align=""></font></p>
+<p style="text-align: right;"><font size="2">یکی از انواع مسکن عشایر شاهسون آلاچیق‌هایی
+ با سازه‌های چوبی است که از ۳۲، ۲۸ و یا ۲۴ چوب صیقل‌خورده به چوبوغ ساخته
+ می‌شود و در نهایت نیز چادری شبیه به یک نیم‌کره گنبدی‌شکل را تشکیل 
+می‌دهد. پوشش خارجی این چادر‌ها از نمد سفید تهیه‌شده از پشم گوسفندان است 
+که با فرمول به‌خصوصی آراسته شده‌اند. این نمد‌ها توسط مردان ایل به قطعات 
+منظمی بریده شده و بر اساس اندازه و شکل موردنظر برای چادر‌ها دوخته 
+می‌شوند. این پوشش از ۵ قسمت اصلی با نام‌های یانلیق در طرفین، دالیق، تپه 
+لیک و قاپی لیق تشکیل می‌شود.</font></p>
+<p align="center"><font size="2"><img src="http://s2.picofile.com/file/8374587668/2158901_203.jpg" alt="عشایر شاهسون، از اصالت تا زندگی شیرین!" vspace="0" hspace="0" border="0" align=""></font></p>
+<p style="text-align: right;"><font size="2">نوع دیگری از مسکن مربوط به عشایر شاهسون 
+چیزی به نام کومه است. کومه، مسکنی طوسی رنگ شبیه دالان است که با استفاده 
+از چوبوغ‌های جنگلی صیقل‌نشده و نمد‌های مستعمل ساخته می‌شود. این کومه‌ها 
+غالباً به عنوان محل پخت و پز، تولید لبنیات و... مورد استفاده قرار 
+می‌گیرند.</font></p>
+<p style="text-align: right;"><font size="2"><span style="font-size: 18pt;"><strong>گردشگری عشایر شاهسون</strong></span></font></p>
+<p align="center"><font size="2"><img src="http://s3.picofile.com/file/8374587718/2158903_859.jpg" alt="عشایر شاهسون، از اصالت تا زندگی شیرین!" vspace="0" hspace="0" border="0" align=""><br></font></p><p align="center"><font size="2"><img src="http://s2.picofile.com/file/8374587634/2158900_797.jpg" alt="عشایر شاهسون، از اصالت تا زندگی شیرین!" vspace="0" hspace="0" border="0" align=""></font></p><p align="center"><br><font size="2"></font></p>
+<p style="text-align: right;"><font size="2">همان‌طور که پیش از این نیز اشاره شد، سفر 
+به محل زندگی عشایر شاهسون، طرفداران بسیاری در میان مسافران و گردشگران 
+دارد. بسیاری از افراد بازدید از دشت مغان و عشایر شاهسون را از بهترین 
+تجربیات گردشگری خود می‌دانند. امروزه تور‌های گردشگری بسیاری وجود دارند 
+که مسافران را در بازدید از این عشایر همراهی می‌کنند.</font></p>
+<p style="text-align: right;"><font size="2">بهترین زمان این بازدید از این محل به لحاظ 
+هوای مناسب و مطبوع، فصل‌های بهار و تابستان است و توصیه ما این است که 
+برای این کار چیزی حدود یک تا دو روز زمان بگذارید. لازم به ذکر است که 
+سکونتگاه ییلاقی این عشایر حوالی کوه سبلان، رشته کوه بزگوش و حوالی 
+شهر‌های سراب، اردبیل، مشکین شهر و هم‌چنین کناره دریاچه نئور بوده و 
+سکونتگاه قشلاقی آنان نیز منطقه مغان هستند.</font></p>
+<p align="right"><br></p><p align="right"><span style="background-color: rgb(255, 255, 204);"><font size="2"><b><a href="3.html">لینک مجموعه پستهای آذربایجان (416)</a><br></b></font></span></p><p align="right"><br><span style="background-color: rgb(255, 255, 204);"><font size="2"><b></b></font></span></p></div>
+
+ 
+								<br />						<br />
+						دسته بندی : 						<a href="3.html" title="آذربایجان" >آذربایجان</a> , 						<a href="11.html" title="* تورک سئسه لینک" >* تورک سئسه لینک</a> , <br />						برچسب ها :   						<a href="../tag/آذربایجان.html" title="آذربایجان" >آذربایجان</a> , 						<a href="../tag/کوچ&#32;عشایر.html" title="کوچ عشایر" >کوچ عشایر</a> , 						<a href="../tag/عشایر&#32;آذربایجان.html" title="عشایر آذربایجان" >عشایر آذربایجان</a> , 						<a href="../tag/شاهسونی.html" title="شاهسونی" >شاهسونی</a> , 						<a href="../tag/قبیله&#32;ترک.html" title="قبیله ترک" >قبیله ترک</a> , 						<a href="../tag/اردبیل.html" title="اردبیل" >اردبیل</a> , <br />												<div style="text-align:center;"><br />
+									<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+									<script language="javascript">$rating_widget_type='thumb';$rating_widget_theme=7;$rating_widget_color='FFFFFF';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/1356';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/voting/widgets/rating.js"></script>
+									<!-- END Parstools.com RATING WIDGET CODE --> 
+						</div>		
+		</div>
+		<br clear="all">
+	</div>
+	<div class="morelink"><div class="morein">
+		<span class="argmore"><a href="../1356.html" title="عشایر شاهسون آذربایجان از اصالت تا زندگی شیرین"><b>ادامه مطلب ...</b></a></span>
+		<span class="arg">نظرات: (<a target="_self" href="javascript:newComment(1356)"><script>setCommentCnt(1356)</script></a>)</span>
+		<div class="ratebox"><div id='ratig-layer-1'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+
+		<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+							<script language="javascript">$rating_widget_type='rate';$rating_widget_theme=10;$rating_widget_color='F3F6F8';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/1356';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/rating/widgets/rating.js"></script>
+		<!-- END Parstools.com RATING WIDGET CODE -->
+
+		</ul>
+</div></div></div>
+	</div></div>
+</div>
+<div class="hsep"></div>
+     	
+<div class="base shortstory">
+	<div class="shd">
+		<h1><a href="../1343.html" title="آموزش برخی جملات و کلمه ترکی و معادل فارسی">آموزش برخی جملات و کلمه ترکی و معادل فارسی</a></h1>
+	</div>
+	<div class="shdinfo"><div class="shdin">
+
+		<span class="arg">نویسنده : <a href="../author/944998.html">تبریز قارتال</a></span>
+		<span class="date"><img src="http://tem.parstools.com/skyback/images/date.png" alt="">چهارشنبه 5 تیر 1398, 10:30 ب.ظ</span>
+	</div></div>
+	<div class="maincont">
+		<div style="padding-right:10px;">
+		
+		 
+<font size="2">
+
+
+</font><div><font size="2"><br></font></div><div><font size="2"><br></font></div><div><font size="2"><span style="color: #c41b5c;">مقدمه :</span><br>
+زبان ترکی از طرف زبانشناسان به عنوان سومین زبان قانونمند وتوانمند دنیا 
+شناخته شده است و حتی یکی از زبان شناسان بنام زبان ترکی را اعجاز غیر بشری
+ معرفی کرده است. <br></font></div><div><font size="2">● زبان ترکی حدود 24000 فعل دارد که در فارسی بیش از 5000
+ نمی باشد <br></font></div><div><font size="2">● حدود 1650 لغت ترکی آذربایجانی شناخته شده است که برای آنها 
+لغات مستقلی در فارسی نیست. مانند یایخالاماق، یوبانماق، یودورتماق و…. <br></font></div><div><font size="2">● 
+چند هزار لغت با ریشه ترکی در زبان فارسی موجود است که از این لغات بیش از 
+600 لغت جزء کلمات مصطلح و روزمره است. مانند آقا ، خانم ، سراغ، بشقاب، 
+قابلمه، دولمه، سنجاق، اتاق، من، تخم، دوقلو، باتلاق، اجاق، آچار، اردک، 
+آرزو، سنجاق، دگمه، تشک، سرمه، فشنگ ، توپ ، تپانچه، قاچاق، گمرک، اتو، 
+آذوقه، اردو، سوغات، اوستا، الک، النگو، آماج، ایل، بیزار، تپه، چکش، چماق،
+ چوپان، چنگال، چپاول، چادر، باجه، بشگه، بقچه، چروک،….</font></div><div><font size="2"><br></font></div><div><font size="2"><br></font></div><div><font size="2"><br></font></div><div><p style="text-align: justify;"><font size="2"><strong><span style="color: #c41b5c;">اینک از انسان شروع می کنیم:</span></strong></font></p>
+<p style="text-align: justify;"><font size="2">دده: پدر بزرگ<br>
+ننه: مادر بزرگ<br>
+آتا و بابا: پدر (فادر انگلیسی)<br>
+آنا: مادر (مادر انگلیسی)<br>
+قایین: ( برادر زن و یا برادر شوهر)<br>
+بالدیز: ( خواهر زن)<br>
+باجاناق: ( این کلمه در فارسی معادل ندارد و به همین شکل استفاده می شود.)<br>
+گؤرومجه: ( خواهر شوهر)<br>
+قارداش: برادر (بطور مطلق)<br>
+آغا بَی: برادر بزرگ<br>
+اینی: برادر کوچک<br>
+آبلا: خواهر بزرگ<br>
+باجی: خواهر (بطور مطلق)<br>
+مانی: عمو (عمّ در عربی)<br>
+تی زه: خاله (خالة در عربی)<br>
+دایی: دایی ( این کلمه تركی در فارسی معادل ندارد و به همین شکل استفاده می شود.)</font></p>
+<p style="text-align: justify;"><font size="2"><strong><span style="color: #c41b5c;">و اما در حیوانات</span></strong></font></p>
+<p style="text-align: justify;"><font size="2">اینک: گاو ماده<br>
+سیغیر: گاو (مطلق)<br>
+اؤکوز: گاو نر (که به گاو آهن بسته می شود)<br>
+بوغا: گاو نری که آماده مبارزه و یا جفت گیری است.<br>
+گؤنگه: گاو نر گوشتی<br>
+دؤیه: گاو ماده جوان<br>
+توسون: گاو نر جوان<br>
+دانا: گوساله یک ساله<br>
+بوزاو: گوساله شیر خوار<br>
+دامیزلیق: گاو نر یا ماده ای که برای ازدیاد نسل نگهداری می شود.<br>
+قوُیون: گوسفند<br>
+قُوچ: قوچ ( که کلمه ترکی است)<br>
+بورولموش ارکک: (قوچی که آخته شده است)<br>
+توخلو: گوسفند نر یکساله<br>
+شیشک: گوسفند ماده یکساله<br>
+قویروق لو: گوسفندی که از جنس آسیایی است.<br>
+قیسا قویروق: گوسفندی که از جنس استرالیایی و یا مرینوس می باشد.<br>
+تاولی: برّه جوان گوشتی<br>
+قوزو: برّه<br>
+———-<br>
+اؤردک: مرغابی<br>
+سونا: مرغابی نر<br>
+یاشیل باش: مرغابی ماده<br>
+چؤرکه: مرغابی<br>
+جوللوخ: مرغابی نیزار<br>
+قارا باتاخ: مرغابی سیاه<br>
+قاش قالداخ: مرغابی سرخ<br>
+آلما باش: مرغابی که سر بزرگ دارد.<br>
+قاشیق قاقا: مرغابی که منقارش مثل قاشق* است.<br>
+گؤی قاناد: مرغابی آبی رنگ<br>
+دمیر قاناد: مرغابی که در هنگام پرواز دیر اوج می گیرد.<br>
+آلا تینجا: مرغابی که رنگ سیاه و سفید دارد.<br>
+باخچان: مرغابی که چشمان قشنگی دارد.<br>
+آنقوت: مرغابی قهوه ای رنگ که از هوش کمی برخوردار است و زود به دام می افتد.</font></p><p style="text-align: justify;"><font size="2"><br></font></p>
+<p style="text-align: justify;"><font size="2"><strong><span style="color: #c41b5c;">” چند فعلی که در فارسی معادل ندارد:</span></strong></font></p>
+<p style="text-align: justify;"><font size="2">سیپقارماق: نوشیدنی را بصورت مکیدن نوشیدن</font></p>
+<p style="text-align: justify;"><font size="2">تامسیماق: نوشیدنی را یک دفعه سر نکشیدن، بلکه جرعه<br>
+جرعه و با لذت خاصی نوشیدن.</font></p>
+<p style="text-align: justify;"><font size="2">آغلاماق چشیتلری: انواع گریه کردن:</font></p>
+<p style="text-align: justify;"><font size="2">آغلامسینماق: بغض کردن و چشم ها را تر ساختن.</font></p>
+<p style="text-align: justify;"><font size="2">اینلمک: یواش و بی صدا گریه کردن</font></p>
+<p style="text-align: justify;"><font size="2">سیزلاماق: گریه و زاری کردن</font></p>
+<p style="text-align: justify;"><font size="2">سیتقاماق: با حالت التماس گریه کردن</font></p>
+<p style="text-align: justify;"><font size="2">هیچقیرماق: با صدای گرفته که حاکی از زیاد گریه کردن است،<br>
+گریه کردن</font></p>
+<p style="text-align: justify;"><font size="2">هؤنگورلمک: زار زار گریه کردن</font></p>
+<p style="text-align: justify;"><font size="2">زیریلداماق: گریه ای که دیگران خوششان نیاید و یا گریه بچه<br>
+گانه و غیر منطقی</font></p>
+<p style="text-align: justify;"><font size="2">اینقالاماق: گریه بچه شیرخوار</font></p>
+<p style="text-align: justify;"><font size="2">فعل واجب الاداء در فارسی و عربی وجود 
+ندارد و باید حتما از كلماتی همچون ” باید ” و ” المفروض ” و مانند آن 
+استفاده کرد. به این فعل در ترکی ” گرکلیلیک کیپی ” گفته می شود:<br>
+یتیشملیییک: باید خودمان را برسانیم.</font></p>
+<p style="text-align: justify;"><font size="2">یمه لیسن: باید بخوری<br>
+فعل شرط در فارسی و حتی در عربی وجود ندارد. برعکس فعلهای شرط ترکی که از 
+کاربردی ترین افعال است و ترك زبان را از استخدام حروف شرط بی نیاز می كند:<br>
+گلسه: اگر بیاید<br>
+ده سه: اگر بگوید<br>
+ایچسه: اگر بنوشد<br>
+فعل تمنی ( ای کاش …) در فارسی و حتی در عربی وجود ندارد. به این فعل در ترکی ” دیلک” ویا “ایستک&nbsp; کیپی ” گفته می شود:</font></p>
+<p style="text-align: justify;"><font size="2">اولایدی: ای کاش می بود<br>
+قیزیل گول اولمایایدی: ای کاش گل سرخ نبود<br>
+سولمایایدی: ای کاش زرد نمی شد<br>
+قدرت مشتق سازی از خود کلمه در عربی و ترکی بی نظیر است درحالیكه در زبان فارسی بسیار كم و ضعیف دیده می شود:</font></p>
+<p style="text-align: justify;"><font size="2">ایتی: تیز<br>
+ایتیلتمک: تیز کردن<br>
+ایتیله شمک: تیز شدن<br>
+———–<br>
+دؤز: درست<br>
+دؤزه لمک: درست شدن<br>
+دؤزه لتمک: درست کردن<br>
+دؤزمک: به نظم درآوردن<br>
+دؤزولمک: به نظم کشیده شدن<br>
+———–</font></p>
+<p style="text-align: justify;"><font size="2">ساری: زرد</font></p>
+<p style="text-align: justify;"><font size="2">سارالماق: به رنگ زرد درآمدن</font></p>
+<p style="text-align: justify;"><font size="2">سارالتماق: به رنگ زرد درآوردن</font></p>
+<p style="text-align: justify;"><font size="2">———–</font></p>
+<p style="text-align: justify;"><font size="2">به زک: زینت<br>
+به زه مک: زینت کردن<br>
+به زنمک: مزین شدن</font></p>
+<p style="text-align: justify;"><font size="2">نکته مهم: در ترکی فعلی وجود دارد بنام فعل دو طرفه، یعنی<br>
+گوینده و فاعل فعل در آنِ واحد، مفعول آن فعل هم محسوب<br>
+می شود. به این فعل در ترکی ” دؤنوشلو ” فعل می گویند.<br>
+مثل مزیَّن شدن&nbsp; در فارسی که اصل آن از کلمه زُیّن در عربی<br>
+گرفته شده است که معنای آن زینت شدن یك وسیله دیگری<br>
+است. در حالیکه معنای کلمه ” به زنمک” در ترکی زینت شدن<br>
+به وسیله خود شخص است.</font></p>
+<p style="text-align: justify;"><font size="2">الآن بعضی نمونه ها از این فعل بی معادل در فارسی:</font></p>
+<p style="text-align: justify;"><font size="2">اؤرتونمک: خود را پوشانیدن</font></p>
+<p style="text-align: justify;"><font size="2">یووونماق: خود را شستشو دادن</font></p>
+<p style="text-align: justify;"><font size="2">قوُ جونماق: از درد به خود پیچپدن</font></p>
+<p style="text-align: justify;"><font size="2">متعدی کردن فعل در بسیاری از افعال فارسی غیر ممکن است<br>
+و باید از راههای دیگری استفاده کرد. ولی در ترکی همه افعال<br>
+لازم را می توان از همان ریشه متعدی کرد:</font></p>
+<p style="text-align: justify;"><font size="2">کسمک —» کستیرمک: بُریدن —» بُراندن ( یعنی کس دیگری<br>
+را به بریدن وادار کردن)</font></p>
+<p style="text-align: justify;"><font size="2">آلماق—» آلدیرماق: خریدن—» خَراندن! ( یعنی کس دیگری را<br>
+به خریدن وادار کردن)</font></p>
+<p style="text-align: justify;"><font size="2">ساتماق—» ساتتیرماق: فروختن—» فروختاندن! ( یعنی کس<br>
+دیگری را به فروختن وادار کردن)</font></p>
+<p style="text-align: justify;"><font size="2">یریمک—» یریتمک: راهاندن&nbsp; رفتن—»&nbsp; رفتاندن! ( یعنی کس<br>
+دیگری را به راه رفتن وادار کردن)</font></p>
+<p style="text-align: justify;"><font size="2">فعل امر در فارسی تابع قاعده خاصی نیست و از ریشه فعل<br>
+درست نمی شود. به نظر زبان شناسان بی قاعده بودن هر<br>
+زبان نشانه ضعف و سستی آن زبان است.</font></p>
+<p style="text-align: justify;"><font size="2">پختن—» پز! (خ—» ز تبدیل شده است)</font></p>
+<p style="text-align: justify;"><font size="2">رفتن—» رو! (ر—» و تبدیل شده است)</font></p>
+<p style="text-align: justify;"><font size="2">کردن—» کن! (د—» ن تبدیل شده است)<br>
+دیدن—» ببین! ( که اصلا از مصدر دیدن فعل امر ندارد.)</font></p>
+<p style="text-align: justify;"><font size="2">درد دل: بدون هیچ تعصبی می گویم که اگر 
+کسی در ایران متولد نشود و اینها را از این و آن نشنود و ازبر نکند، تا 
+سالیان سال نمی تواند یاد بگیرد. این مشکل را دوستان خارجی مقیم ایران همگی
+ اظهار می کنند و از بی قاعدگی فارسی شکایت دارند. در حالیکه فعل امر در 
+ترکی از ریشه اصلی کلمه ساخته می شود و در این خصوص یک استثنا هم در ترکی 
+یافت نمی شود.</font></p>
+<p style="text-align: justify;"><font size="2">بسیاری از ظرافت ها و فرق های ظریف در 
+افعال ترکی وجود دارد که آنها را با زبان فارسی نمی توان بیان کرد. مثلا ” 
+قوُوماق ” و ” قوُوالاماق ” هر دو در فارسی به معنای طرد کردن و دور کردن 
+است. در حالیکه بین آنها فرق جزیی وجود دارد که ترکها در استعمال آن را 
+لحاظ می کنند.</font></p>
+<p style="text-align: justify;"><font size="2">اسم آلت اصلا در فارسی معنا و مفهومی ندارد. اما در عربی و ترکی از قاعده خاصی تبعیت می کند:</font></p>
+<p style="text-align: justify;"><font size="2">بورماق: پیچاندن—» بورقو: پیچ</font></p>
+<p style="text-align: justify;"><font size="2">چالماق: نواختن—» چالقی: آلت نواختن مثل ساز و غیره</font></p>
+<p style="text-align: justify;"><font size="2">سیلمک: پاک کردن—» سیلگی: پاک کن</font></p>
+<p style="text-align: justify;"><font size="2">سَرمک: پهن کردن—» سَرگی: فرش و یا هر چیز دیگری که بر<br>
+زمین پهن شود.</font></p>
+<p style="text-align: justify;"><font size="2">گل گیت: رفت و آمد—» گلن گیدن ( در اسلحه. این کلمه معادل<br>
+فارسی ندارد)</font></p>
+<p style="text-align: justify;"><font size="2">قاپاماق: درپوش گذاشتن—» قالپاق (در ماشین که به همین<br>
+شکل در فارسی استعمال میشود.)</font></p>
+<p style="text-align: justify;"><font size="2">یاتماق: خوابیدن—» یاتاغان (در ماشین که به همین شکل در<br>
+فارسی استعمال میشود.)</font></p>
+<p style="text-align: justify;"><font size="2">اسم زمان و اسم مکان را در فارسی اصلا 
+نباید حرفش را زد. فقط در بعضی مواقع با اضافه کردن پسوند “گاه” می توان&nbsp; 
+اسم مکان و یا زمان ساخت که آن هم از خود کلمه مشتق نمی شود:</font></p>
+<p style="text-align: justify;"><font size="2">یاتماق: خوابیدن—» یاتاق: محل خواب و یا رختخواب</font></p>
+<p style="text-align: justify;"><font size="2">بارینماق: پناه گرفتن—» باریناق: پناهگاه</font></p>
+<p style="text-align: justify;"><font size="2">قونماق: نزول کردن به مکانی—» قوناق: منزل، کاروانسرا</font></p>
+<p style="text-align: justify;"><font size="2">دورماق: ایستادن—» دوراق: محل وقوف، ایست گاه<br>
+قوروماق: محافظت کردن—» قوُروق: منطقه محافظت شده یا قورق که در فارسی هم استعمال می شود.</font></p>
+<p style="text-align: justify;"><font size="2">اسم مصدر در ترکی دقیقا از ریشه کلمه ساخته می شود. ولی در فارسی یا از ریشه دیگری ساخته می شود و یا اصلا ساخته نمی شود. نگاه کنید:</font></p>
+<p style="text-align: justify;"><font size="2">قاچیرماق: ربودن—»&nbsp; قاچاق: در فارسی هم مجبورا لفظ ترکی آن استعمال می شود.<br>
+چالیشماق: باهم کارکردن، درگیر مسأله ای بودن—»&nbsp; چالیش و چلیشکی: چالِش ( در فارسی مجبورا ترکی آن را بکار می برند)<br>
+یاساماق: قانون گذاری—»&nbsp; یاساق: غیر قانونی ( در فارسی مجبورا عربی آن را بکار گرفته اند)<br>
+برای تقویت رنگها در فارسی فقط می توان از پیشوند ” بسیار ” و مانند آن استفاده کرد.</font></p><p style="text-align: justify;"><font size="2"><br></font></p>
+<p style="text-align: justify;"><font size="2"><strong><span style="color: #c41b5c;">در ترکی هر رنگی صفت خاصی دارد که در نوع خود بی نظیر است:</span></strong></font></p>
+<p style="text-align: justify;"><font size="2">قاپ قارا: بسیار سیاه</font></p>
+<p style="text-align: justify;"><font size="2">آپ آغ: بسیار سفید، سفید خالص</font></p>
+<p style="text-align: justify;"><font size="2">یام یاشیل: سبز سبز</font></p>
+<p style="text-align: justify;"><font size="2">ساپ ساری: زردِ زرد</font></p>
+<p style="text-align: justify;"><font size="2">( ملاحظه می کنید که در فارسی احیانا با تکرار اسم رنگ این کار صورت می پذیرد که قابل مقایسه با زبان ترکی نیست.)</font></p>
+<p style="text-align: justify;"><font size="2">برای مصغر کردن در فارسی مجبورا باید کلمه
+ کوچک یا پسوند “چه‎”‎ و حرف كاف ( در مواردی كمیاب و غیر قابل استعمال‎(‎ 
+را به کلمه مورد نظر اضافه کرد، مثلا بخاری کوچک، جمله کوچک و یا کوتاه، 
+مرد کوچک ( البته مردک که در فارسی بصورت مصغر بکار می رود صرفا برای توهین
+ و حقارت بکار می رود و معنای مطلوب را نمی رساند و پسوند “چه‎”‎ هم 
+استعمالهای نادری دارد‏) اما نمونه های&nbsp; تصغیر در ترکی:</font></p>
+<p style="text-align: justify;"><font size="2">قالاچیق: قلعه کوچک<br>
+تپه جیک: تپّه کوچک<br>
+دره جیک: درّه کوچک<br>
+محمود جوق: محمود کوچک</font></p><p style="text-align: justify;"><font size="2"><br></font></p>
+<p style="text-align: justify;"><font size="2"><strong><span style="color: #c41b5c;">صیغه ترحم در فارسی وجود ندارد و در عربی به اشکال مختلف می توان آنرا بیان کرد. اما در ترکی بسیار ساده و قاعده مند است:</span></strong></font></p>
+<p style="text-align: justify;"><font size="2">قیزجاغیز: دخترک بیچاره<br>
+قادین جاغیز: زن بینوا</font></p>
+<p style="text-align: justify;"><font size="2">صفت تقویه در فارسی وجود ندارد. مثلا اگر 
+بخواهی مقدار دایره ای بودن شکلی را با تأکید بگویی، باید از کلمه بسیار 
+دایره وار و امثال آن استفاده کنی. اما در ترکی هر صفتی را با لفظ خاصی می 
+توان تأکید کرد:</font></p>
+<p style="text-align: justify;"><font size="2">یوس یووارلاق: بسیار دایره وار<br>
+ترتمیز: بسیار تمیز<br>
+زیر دلی: صد در صد دیوانه<br>
+قاپ قارانلیق: تاریکی محض<br>
+ایپ ایستی: خیلی گرم<br>
+دارما داغین: بسیار ریخت و پاش، خیلی بی نظم</font></p>
+<p style="text-align: justify;"><font size="2">برای بزرگ نمایی و یا کوچک نمایی فعل 
+انجام شده در فارسی باید از پسوند و پیشوندهای بسیار متعددی استفاده کرد. 
+در حالیکه این امر در عربی و ترکی از خود فعل درست می شود. ( بحث پسوند و 
+پیشوند به قدری در عربی کم استعمال می شود که حتی اگر از بیشتر عرب زبانان 
+معنای کلمه پسوند و یا پیشوند را بپرسید متوجه نمی شوند! چرا که زبانشان 
+احتیاجی به این مخلفات و حشویات ندارد. در حالیکه این بحث نسبت به فارس 
+زبانان از اهمیت بالایی برخوردار است.)</font></p>
+<p style="text-align: justify;"><font size="2">گؤزل جه: به شکل بسیار زیبایی<br>
+یاواش جا: خیلی آهسته<br>
+قالین جا: بصورت خیلی کلفت<br>
+برک جه: بطور بسیار محکم</font></p>
+<p style="text-align: justify;"><font size="2">تعابیری همچون: ” قرار است که…” و یا ” لازم است که…” در ترکی از خود فعل مشتق می شود که جدا قدرت نمایی این زبان را می رساند:</font></p>
+<p style="text-align: justify;"><font size="2">چیخماق: بالا رفتن—»&nbsp; چیحیلاجاق داغ بوراسی: کوهی که قرار است از آن بالا برویم، همین جاست!<br>
+ایچمک: نوشیدن—» ایچیله جک سو بودور: آبی که قرار است نوشیده شود همین است.<br>
+یازماق: نوشتن—» یازیلاجاق اؤدَولری یازدیم: مشق هایی را که باید می نوشتم، نوشتم.<br>
+چؤزمک: حل کردن—» چؤزوله جک تاپماجالاری چؤزدوم: معماهایی را که قرار بود حل کنم، حل کردم.*</font></p>
+<p style="text-align: justify;"><font size="2">متأسفانه بعضی از ترکها تحت تأثیر ادبیات فارسی جمله بسیار شیوای بالایی را چنین بیان می کنند، که دقیقا ترجمه فارسی آن است:</font></p>
+<p style="text-align: justify;"><font size="2">اوُ معمالاری کی قراردی حل ایلیم، حل ایلدیم!</font></p>
+<p style="text-align: justify;"><font size="2">تیکیله جک کؤینک لری گتیردی: پیراهن هایی را که قرار است دوخته بشود آورد.</font></p>
+<p style="text-align: justify;"><font size="2">الان ترجمه آن به ترکی مندرس و بی محتوا : اُو کؤینک لری کی قراردی تیکیلسین، گتیردی!</font></p>
+<p style="text-align: justify;"><font size="2">تعابیری همچون ” به حساب آورد” و یا ” مهم
+ شمرد ” در ترکی مانند باب استفعال در عربی&nbsp; از خود فعل مشتق می شود. که 
+این هم در فارسی نیست:<br>
+اؤنم سه مک: مهم شمردن، مهم به حساب آوردنپ<br>
+قریب سه مک: غیر طبیعی و غیر عادی به حساب آوردن<br>
+آزیمساماق: کم شمردن<br>
+چوغومساماق: زیاد به حساب آوردن</font></p>
+<p style="text-align: justify;"><font size="2">بسیاری از تعابیر در فارسی مثبت و یا منفی
+ ندارد. مثلا: ” عین خیالش نیست” که مثبت آن ” عین خیالش است” می باشد که 
+عملا کاربرد ندارد. چونکه یک ترکیب چند کلمه ای است که از فعلی مشتق نشده 
+است که منفی و مثبت داشته باشد. الان معادل ترکی آن را به سادگی خواهید 
+دید:<br>
+اومورساماق: در عین خیالش بودن<br>
+اومورساماماق: در عین خیالش نبودن*</font></p><p style="text-align: justify;"><font size="2"><br></font></p>
+<p style="text-align: justify;"><font size="2"><span style="color: #ff0000;"><strong>نکته مهم: </strong></span>تمامی
+ قواعد و مثالهای ذکر شده در حال حاضر در ترکی استعمال می شود. و اگر بعضی 
+از آنها در ایران به فراموشی سپرده شده و جای آنرا کلمات فارسی گرفته است، 
+این نتیجه فرهنگی دیگر زبانهاست. چرا که در ایران فرهنگستان و نظام خاصی 
+برای یادگیری قواعد دستوری ترکی وجود ندارد. پس ترکی به نفسه اشکالی ندارد و
+ اشکال در ماست.</font></p>
+<p style="text-align: justify;"><font size="2">از نمونه کلمات اصیل ترکی که در هیچ زبانی
+ معادل ندارد، کلمه ” یاکامُوز” است. این کلمه در ترکی به معنای انعکاس نور
+ ماه در روی آب دریاست، که شب ها در روی آب مانند چشمک زنی می درخشد. این 
+کلمه از طرف هییت زبان شناسی آلمان به عنوان کلمه سال برگزیده شد. 
+خوشبختانه رسانه های ایران هم این نکته را در تلویزیون و مطبوعات به خوبی 
+نشان دادند. زبان غنی و اصیل ترکی منبع این چنین ظرافت هاست که روح انسان 
+را نوازش می دهد.</font></p>
+<p style="text-align: justify;"><font size="2">تبدیل شدن چیزی به چیز دیگر، مثل تبدیل شدن قلب انسان به سنگ در ترکی، از دیگر مزیات این زبان در مشتق سازی است:<br>
+داش: سنگ—» داشلاشماق: تبدیل به سنگ شدن<br>
+کؤمور: زغال—» کؤمورلشمک: تبدیل به زغال شدن ( این با زغال شدن و یا سنگ 
+شدن فرق دارد. به این حالت در عربی استحاله می گویند. و معادل ترکی آن: ” 
+داش اولدو” می باشد.)</font></p>
+<p style="text-align: justify;"><font size="2">ساختن فعل از ریشه اسم، همچون عربی اوج قدرت و شاهکار ادبی ترکی به حساب می آید:<br>
+یومورتا: تخم مرغ—» یومورتلاماق: تخم گذاشتن<br>
+گؤنش: آفتاب—» گؤنش لنمک: حمام آفتاب گرفتن<br>
+داش: سنگ—» داش لاماق: سنگ پرتاب کردن<br>
+ال: دست—» اللمک: با دست ور رفتن، دست کاری کردن<br>
+آیاق: پا—» آیاقلاماق: پایمال کردن—» آیاق لانماق: به پا خواستن، قیام کردن</font></p>
+<p style="text-align: justify;"><font size="2">اصوات حیوانات و یا اشیاء مثل صدای افتادن
+ قطرات و چکه کردن، خشمگین شدن سگ و گرگ به هنگام دیدن انسان، که صدای 
+مخصوصی در می آورند و صدای دیگر جانوران در ترکی مانند عربی بسیار متنوع 
+است. این صداها در فارسی غیر قابل بیان و یا خیلی سحت است. اما ترکی مثل 
+عربی در این زمینه هم غنی است:<br>
+بؤیورمک: صدای غرش گاو نر<br>
+کؤکره مک: صدای غرش شیر<br>
+شاخماق: صدای غرش رعد و برق*<br>
+گؤرولده مک: صدای صاعقه آسمانی<br>
+هاولاماق: پارس کردن سگ<br>
+اولاماق: زوزه کشیدن گرگ<br>
+میریلداماق: صدای تهدید آمیز سگ و گرگ<br>
+قیزغیرماق: صدای سوت مانند مار افعی<br>
+شاکیماق: چهچهه زدن قناری<br>
+اؤتمک: صدای چهچهه بلبل و غیره</font></p>
+<p style="text-align: justify;"><font size="2">* نکته: در فارسی کلمه رعد و برق و صدای آن که صاعقه<br>
+نامیده می شود، همگی برگرفته از عربی است</font></p><p style="text-align: justify;"><font size="2"><br></font></p><p style="text-align: justify;"><font size="2"><br></font></p><p style="text-align: justify;"><br><font size="2"><font color="#3333FF"><b>آموختن زبان شیرین تركی خیلی آسان است</b></font><br>
+<br>
+زبان تركی یكی از زبانهایی است كه علاوه بر ایران در چندین كشور دنیا از 
+جمله تركیه, جمهوری آذربایجان, بیشتر جمهوری های قفقاز و حتی در چندین كشور
+ اروپایی مانند آلمان, فرانسه و ... به عنوان یكی از زبانهای مطرح كاربرد 
+دارد زیرا در آن كشورها تعداد زیادی ترك به عنوان اقلیت قابل توجه زندگی می
+ كنند كه دارای حق و حقوق فرهنگی خود می باشند. علاوه بر آن با توجه به 
+اینكه تمامی افعال زبان تركی از یك قاعده واحد تبعیت می كنند و دارای ریشه 
+هستند بنابراین هم یاد گرفتن آن آسان است و از سوی دیگر با یادگرفتن یك 
+لهجه از زیان تركی قادر خواهید بود با افرادی كه به لهجه های مختلف تركی 
+صحبت می كنند ارتباط برقرار كنید.  بنابر این در این سایت آنچه كه برای یك 
+شخص برای برقراری ارتباط و انجام امور روزمره به زبان تركی لازم است, در 
+قالب درس های مختلف آورده خواهد شد. امید كه در این زمینه موفقیت هایی حاصل
+ گردد.</font></p><p style="text-align: justify;"><font size="2">
+<br>
+<font color="#3333FF">درس 1  (اعداد)</font><br>
+<br>
+اعداد در تركی از یك قاعده خاصی پیروی می كند كه یادگیری آن را آسان می كند. شما ابتدا اعداد زیر را به خاطر بسپارید:<br>
+<br>
+    1= بیر 2= ایكی 3= اوچ   4= دؤرد   5= بئش 6= آلتی  7= یئددی  8= سگگیز 9= دوققوز<br>
+<br>
+ 10= اون  20= ایییرمی  30= اوتوز  40= قیرخ  50= اَللی 60= آتمیش  70= 
+یئتمیش  80= هشتاد 90= دوخسان   100= یوز  200= ایكی یوز  300= اوچ یوز  
+400=دؤرد یوز  و الی آخر  1000= مین  1000000= میلیون  1000000000= میلیارد<br>
+<br>
+حالا كه این اعداد را به خاطر سپردید (سطر اول اعداد از 1 تا 9 و سطر دوم اعداد ده تا میلیارد)<br>
+<br>
+اكنون شما می توانید با اضافه كردن اعداد به همدیگر, عدد مورد نظر خود را 
+بسازید به عنوان مثال برای ساختن عدد 11 شما فقط عدد 10 و 1 را یكجا می 
+آورید. به مثالهای بیشتر توجه كنید:<br>
+<br>
+21= ایییرمی بیر    32= اوتوز ایكی   105= یوز بئش   1002= مین ایكی  2004= ایكی مین دؤرد<br>
+<br>
+اكنون شما شیوه شمارش در تركی را یاد گرفتید. این مهم را به شما تبریك می گویم.  ساغ اول<br>
+<br>
+منتظر درس بعدی باشید كه در مورد تعارفات روزمره خواهد بود.</font></p><p style="text-align: justify;"><font size="2">
+<br>
+<font color="#3333FF">درس دوم (احوال پرسی)</font><br>
+<br>
+امیدوارم كه اعداد را یاد گرفته باشید. در درس امروز به دنبال یادگرفتن 
+تعارفات روزمره و احوال پرسی به زبان تركی هستیم. لطفا جملات زیر را به 
+خاطر بسپارید:<br>
+<br>
+نئجه سن = حال شما چطوره<br>
+<br>
+ساغ اول سیز نئجه سیز = زنده باد شما چطورین<br>
+<br>
+سحریز خیر اولسون = صبح شما به خیر<br>
+<br>
+گله جه گیز خیر = عاقبت شما به خیر<br>
+<br>
+اوشاقلار نئجه دیر= بچه ها چطورن<br>
+<br>
+سلام لاری وار سیزین كی لر نئجه دیر = سلام دارن بچه های شما چطورن<br>
+<br>
+بویورون = بفرمایید<br>
+<br>
+خوش گؤرموشوخ = چشم مان روشن<br>
+<br>
+خوش گلیبسیز = خوش آمدین<br>
+<br>
+آدین نه دیر = اسم تان چیه<br>
+<br>
+منیم آدیم محمد دیر = اسم من محمده<br>
+<br>
+نه گؤزل آد = چه اسم خوبی<br>
+<br>
+چوخ ایستیردیم سیزی گؤرم = خیلی دلم می خواست شما را ببینم<br>
+<br>
+در زبان تركی از این تعارفات زیاد است. در قالب بحث های بعدی به آنها 
+خواهیم پرداخت. اما چندین واژه را كه امروز در مكالمه بالا به كار بردیم 
+دوباره مرور می كنیم.<br>
+<br>
+سیز = شما ,  اولسون =باشد , اوشاق = بچه, اوشاقلار= بچه ها,  گؤرمك = دیدن
+ , گؤرمیشوخ= دیده ایم,  گؤزل= زیبا,  چوخ= خیلی,  ایسته مك= خواستن , 
+ایستیردیم= می خواستم,  آد= اسم<br>
+<br>
+امید كه از امروز بتوانید با دوستان ترك زبان خود حداقل چند كلمه به تركی 
+خوش و بش كنید. درس بعدی به گفتگو در مورد آب و هوا خواهد پرداخت. ساع 
+اولون شاد قالین / سلامت باشید شاد بمانید</font></p><p style="text-align: justify;"><font size="2">
+<br>
+<font color="#3333FF">درس سوم ( آب و هوا)<br>
+</font><br>
+با سلام دوباره نئجه سیز؟ حالیز یاخجی دی. به به شما دارین تركی رو یاد می 
+گیرین. امروز می خوام در مورد آب و هوا با شما صحبت كنم. ابتدا كلمات زیر 
+را را خاطر بسپارین.<br>
+<br>
+هاوا= هوا<br>
+<br>
+بوگوٍِِن (bugün)= امروز<br>
+<br>
+صاباح= فردا<br>
+<br>
+دونن (dünan)= دیروز<br>
+<br>
+ایستی= گرم<br>
+<br>
+سُیوخ (soyukh)= سرد<br>
+<br>
+سرین= خنك<br>
+<br>
+شاخدا= بسیار سرد سوزان<br>
+<br>
+سازاخ= باد سرد<br>
+<br>
+قار= برف<br>
+<br>
+یاغیش= باران<br>
+<br>
+دومان= مه   برای واژه مه در زبان تركی بیش از 12 معادل وجود دارد كه انواع مختلف مه می باشد<br>
+<br>
+بولوت= ابر<br>
+<br>
+گون (gün)= آفتاب - خورشید - روز<br>
+<br>
+آی= ماه<br>
+<br>
+اولدوز= ستاره<br>
+<br>
+اكنون برای شما تازه كاران یك قاعده ای را خواهم گفت كه با استفاده از آن 
+به راحتی وضعیت هوا را به دوستان خود تعریف كنید. به جمله زیر توجه كنید:<br>
+<br>
+هاوا نئجه دی= هوا چطوره<br>
+<br>
+هاوا بولوت دی= هوا ابری است<br>
+<br>
+شما می توانید تا زمانی كه تركی را خوب یاد گرفته اید صرفا یك فعل  دی (di)
+ را به وضعیت مورد نظر خود بعد از هاوا اضافه كنید و دوست خود را در جریان 
+وضعیت هوا قرار دهید.<br>
+<br>
+مانند :  محمد! بوگون هاوا ایستی دی = محمد! امروز هوا گرم است<br>
+<br>
+یا : تهرانین هاواسی چوخ ایستی دی= هوای تهران خیلی گرم است<br>
+<br>
+امیدوارم كه درس امروز را یاد گرفته باشید. ساغ اول/ شاد یاشا<br>
+<br>
+درس بعدی در مورد قرار ملاقات خواهد بود</font></p><p style="text-align: justify;"><font size="2">
+<font color="#3333FF"><br>
+درس  چهارم (قرار ملاقات)</font><br>
+<br>
+سلام, امیدوارم كه حالتون خوب باشه. امروز می خواهیم با شما به زبان تركی 
+قرار بگذاریم. و شما بتوانید با دوستان خود قرار بگذارید.ابتدا به مكالمه 
+زیر توجه كنید:<br>
+<br>
+- سلام<br>
+<br>
+-سنی گؤرمك ایستیرم / می خواهم شما را ببینم<br>
+<br>
+-منده ایستیردیم سنی گؤرم/ من هم می خواستم شما را ببینم<br>
+<br>
+- هاچان گؤره بیله ره م / كی می توانم ببینم<br>
+<br>
+- صاباح آخشام / فردا عصر<br>
+<br>
+- بو گون ساعات اون ایكی ده  اولماز؟ / امروز ساعت دوازده نمی شه؟<br>
+<br>
+اولسون بوگون گله ره م / باشه امروز می آیم<br>
+<br>
+شما با استفاده از این مكالمه می توانید انواع قرار ها را نمونه سازی كنید 
+در صحبت با دوستان ترك زبان خود استفاده نمایید. در قرار ملاقات چندین واژه
+ اساسی است. توجه كنید:<br>
+<br>
+هاچان = كی   مثال: هاچان گله جكسن= كی می آیی؟<br>
+<br>
+هارا= كجا       مثال: هارا گَلیم= كجا بیایم<br>
+<br>
+آخشام= عصر  مثال: آخشام اولدو= عصر شد<br>
+<br>
+گئجه= شب    مثال= دونن گئجه سنه زنگ  ووردوم= دیشب به تو زنگ زدم<br>
+<br>
+ائو (ev)= خانه       مثال= سنی ائوه چاغیریرام= تو را به خانه دعوت می كنم<br>
+<br>
+ائشیگ (eshig)= بیرون      مثال=ائشیگ ایستی دی= بیرون گرم است<br>
+<br>
+امید وارم كه امروز هم توانسته باشیم چیزهایی را به شما یاد بدهیم. هله لیك= فعلا<br>
+<br>
+جلسه بعد در مورد خوردنی ها با شما صحبت خواهیم كرد</font></p><p style="text-align: justify;"><font size="2">
+<br>
+<font color="#3333FF">درس پنجم (میوه ها)</font><br>
+<br>
+در پایین اسم چند میوه به تركی آروده می شود:<br>
+<br>
+سیب: آلما<br>
+<br>
+نار: انار<br>
+<br>
+هیوا: به<br>
+<br>
+قارپوز: هندوانه<br>
+<br>
+قوون: خربزه<br>
+<br>
+گیله نار: آلبالو<br>
+<br>
+مثالها:<br>
+<br>
+من آلما ایستیرم: من سیب می خواهم<br>
+<br>
+آلما یئمه لی دیر: سیب خوردنی است<br>
+<br>
+دونن یولداشیم منه گیله نار وئردی: دیروز دوستم به من آلبالو داد<br>
+<br>
+ایستیرسن سنه نه آلیم؟: می خواهی  برات چی بگیرم؟<br>
+<br>
+ من آلما سویو سویرم:  من آب سیب دوست دارم<br>
+<br>
+اولسون: باشد<br>
+<br>
+داها نه ایستیرسن: دیگه چی می خواهی<br>
+<br>
+ساغ اول بیر زاد ایسته میرم: زنده باد چیز دیگری نمی خواهم<br>
+<br>
+نار سئوه رسن؟: آیا انار دوست داری؟<br>
+<br>
+نار سویو اولسا یاخچی اولار: آگر آب انار باشد بهتر است<br>
+</font></p><p style="text-align: justify;"><font size="2">اولسون بویورون: باشد بفرمایید</font></p><p style="text-align: justify;"><font size="2">
+<br>
+<font color="#3333FF">درس ششم (تعریف و تعارف)</font><br>
+<br>
+افراد برای اینكه میزان علاقه مندی خود را به دوست خود نشان بدهد از الفاظ مختلفی استفاده می كند ببینید:<br>
+<br>
+من سنی چوخ ایستیرم: من خیلی تو را دوست دارم<br>
+<br>
+آوخ! ساغ اول من سنی چوخ راخ:‌ اوه زنده باد من تو را بیستر<br>
+<br>
+اكنون برخی واژگان مربوطه را ملاحظه فرمایید:<br>
+<br>
+ساغ اول:‌زنده باد<br>
+<br>
+گؤزل: زیبا ،‌ خوش تیپ<br>
+<br>
+گؤیچك: خوشگل<br>
+<br>
+سن نه گؤزل سن: تو چقدر زیبایی<br>
+<br>
+بیر داناسان: یكدانه ای<br>
+<br>
+تایسیز: بی نظیر<br>
+<br>
+سن اولماسان منده اولامام: تو نباشی من هم نمی توانم باشم<br>
+<br>
+سن منیم هر زادیم سان: توهمه چیز من هستی<br>
+<br>
+سنی سئویرم: عاشق تو هستم<br>
+<br>
+منده سنی چوخ سئویرم: من هم تو را خیلی دوست دارم<br>
+<br>
+سنسیز داریخیرام: بدون تو دلم می گیرد<br>
+<br>
+داریخیرام: دلم می گیرد<br>
+<br>
+بویور: بفرما<br>
+<br>
+سنین تاین یوخدی: تونظیری نداری</font></p><p style="text-align: justify;"><font size="2">
+<br>
+<font color="#3333FF">درس هفتم  (خوابیدن و بیدار شدن)</font><br>
+<br>
+در این درس اصطلاحات مربوط به خوابیدن و بیدار شدن به شما خواهم نوشت. چنانچه مایل هستین ابتدا این واژه ها را به خاطر بسپارید:<br>
+<br>
+اویاغ: بیدار     یوخو: خواب    یوخولو(yuxuloo): خواب آلود     تئز (Tez):
+ زود    گئجه: شب     گونش (günash): آفتاب   گوندوز (gündüz):‌ روز<br>
+<br>
+اویات : بیدار كن    یوخلا: بخواب    <br>
+<br>
+من یورولموشام: من خسته ام      یوخوم گلیر: خوابم می آید       بو گئجه 
+تئز یاتاجاغام: امشب زود خواهم خوابید    صاباح گرك تئز اویانام: فردا 
+بایستی زود بیدار شوم<br>
+<br>
+گوندوز چوخ ایشله میشم: روز زیاد كار كرده ام     سن اویاخسان؟: تو بیداری؟
+   یوخ منده ایستیرم یوخلیام: نه من هم می خواهم بخوابم    گئجه ز خیر: شب 
+تان به خیر<br>
+<br>
+نیه دانیشمیسان: چرا حرف نمی زنی     یوخولویام: خواب آلو هستم      گئجه 
+یاخجی یاتا بیلدین؟: آیا شب تونستی خوب بخوابی   یوخو گؤردوم: خواب دیدم<br>
+<br>
+در زبان تركی حالت های مختلف خواب و بیداری دارای اصطلاحات مخصوصی است. به اصطلاحات زیر توجه كنید:<br>
+<br>
+یوخلامیشام: خوابیده ام     یاتمیشام: دراز كشیده ام به قصد خواب        
+اوزانمیشام: دراز كشیده ام به قصد استراحت نه خواب      مورگولورم 
+(mürgülüram): چرت می زنم<br>
+<br>
+اویانمیشام:  كاملا بیدارشده ام         آییلمیشام: از خواب بیدار شده ام 
+ولی هنوز دراز كشیده ام      (یوخودان) دورموشام: (از خواب) بیدار شده و 
+سرپا هستم  <br>
+</font></p><p style="text-align: justify;"><font size="2">
+<font color="#3333FF">درس هشتم  ( صحبت در مورد عید نوروز)</font><br>
+<br>
+در این درس با صحبت كردن در مورد عید نوروز یا هر عید دیگری آشنا خواهید شد. ابتدا این واژه ها را به خاطر بسپارید.<br>
+<br>
+بایرام: عید     ایل: سال   یِنی (yeni): تازه    آی: ماه     گون (gün): 
+روز     گؤروش: دیدار    شَنلیك: شادی      آتا: پدر   آنا: مادر     
+باجی:خواهر      داداش یا قارداش: برادر   گؤیَرتی : سرسبزی  چؤل: صحرا    
+داغ: كوه    گؤرمه لی: دیدنی<br>
+<br>
+بایرامیز مبارك اولسون: عیدتان مبارك باد<br>
+<br>
+بایرمدا هارا گئدمیشدین: عید به كجا رفته بودین<br>
+<br>
+گئددیم آتا - آنامی گؤردوم: رفتم پدر- مادرم را دیدم<br>
+<br>
+داها هاردان گؤروش ائتدین: دیگر از كجا دیدن كردی<br>
+<br>
+داغا گئتدیم. داداشیم نان چؤله گئتدوخ: به كوه رفتم. با برادرم به صحرا رفتیم<br>
+<br>
+چؤل بوتون گؤیرتی دی: صحرا تمام سرسبزی بود<br>
+<br>
+هانسی گون ائوه قاییتدین: چه روزی به خانه برگشتی<br>
+<br>
+آیین آلتی سی: در ششم ماه              هانسی آیین: كدام ماه            فروردین!<br>
+<br>
+بو گون آیین نئچه سیدی: امروز چندم ماه است         اون دؤردی: چهاردهم    
+       ایندی هارداسان: الان كجایی     من ایشلیرم: من كار می كنم <br></font></p><p style="text-align: justify;"><font size="2"><br></font></p><p style="text-align: justify;"><br><font size="2"><span style="background-color: rgb(255, 255, 204);"><a href="20.html">لینک مجموعه پستهای آموزش زبان ترکی آذربایجانی (18)</a></span><br></font></p><p style="text-align: justify;"><br><font size="2"></font></p></div>
+
+ 
+								<br />						<br />
+						دسته بندی : 						<a href="20.html" title="آموزش زبان ترکی آذربایجانی" >آموزش زبان ترکی آذربایجانی</a> , 						<a href="11.html" title="* تورک سئسه لینک" >* تورک سئسه لینک</a> , <br />						برچسب ها :   						<a href="../tag/زبان&#32;ترکی.html" title="زبان ترکی" >زبان ترکی</a> , 						<a href="../tag/ترکی&#32;آذری.html" title="ترکی آذری" >ترکی آذری</a> , 						<a href="../tag/آذربایجانی.html" title="آذربایجانی" >آذربایجانی</a> , 						<a href="../tag/آموزش&#32;زبان.html" title="آموزش زبان" >آموزش زبان</a> , 						<a href="../tag/تورکی.html" title="تورکی" >تورکی</a> , <br />												<div style="text-align:center;"><br />
+									<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+									<script language="javascript">$rating_widget_type='thumb';$rating_widget_theme=7;$rating_widget_color='FFFFFF';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/1343';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/voting/widgets/rating.js"></script>
+									<!-- END Parstools.com RATING WIDGET CODE --> 
+						</div>		
+		</div>
+		<br clear="all">
+	</div>
+	<div class="morelink"><div class="morein">
+		<span class="argmore"><a href="../1343.html" title="آموزش برخی جملات و کلمه ترکی و معادل فارسی"><b>ادامه مطلب ...</b></a></span>
+		<span class="arg">نظرات: (<a target="_self" href="javascript:newComment(1343)"><script>setCommentCnt(1343)</script></a>)</span>
+		<div class="ratebox"><div id='ratig-layer-1'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+
+		<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+							<script language="javascript">$rating_widget_type='rate';$rating_widget_theme=10;$rating_widget_color='F3F6F8';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/1343';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/rating/widgets/rating.js"></script>
+		<!-- END Parstools.com RATING WIDGET CODE -->
+
+		</ul>
+</div></div></div>
+	</div></div>
+</div>
+<div class="hsep"></div>
+     	
+<div class="base shortstory">
+	<div class="shd">
+		<h1><a href="../1327.html" title="آیین های سنتی آذربایجان در نوروز 98">آیین های سنتی آذربایجان در نوروز 98</a></h1>
+	</div>
+	<div class="shdinfo"><div class="shdin">
+
+		<span class="arg">نویسنده : <a href="../author/944998.html">تبریز قارتال</a></span>
+		<span class="date"><img src="http://tem.parstools.com/skyback/images/date.png" alt="">چهارشنبه 29 اسفند 1397, 12:10 ق.ظ</span>
+	</div></div>
+	<div class="maincont">
+		<div style="padding-right:10px;">
+		
+		 
+
+
+
+
+
+
+
+
+
+
+<font size="2">
+
+
+</font><div><font size="2"><br></font></div><div><font size="2">عید نوروز به عنوان یک میراث کهن در جای جای ایران اسلامی به شکل‌های 
+مختلفی گرامی داشته می‌شود و در آذربایجان شرقی نیز آیین‌های سنتی خاصی در 
+این ایام برگزار می‌شود.</font></div><div><font size="2"><br></font></div><div><font size="2">عید بهترین بهانه برای دیدار و در کنار هم 
+بودن است، زمستان که به نیمه می‌رسد موسم بهار نه تنها در شهر بلکه در وجود
+ آدمی شروع به وزیدن می‌کند و دلت را به سمت بهار به پرواز در می‌آورد، همه
+ در تکاپوی پذیرایی بهار و نوروز هستند از خانه تکانی دل گرفته تا خرید 
+خوراکی و پوشاک، آنچه به چشم می‌آید شادی، خنده، شور و نشاط است.</font> 
+<p style="text-align:justify"><font size="2">آئین‌ها و آداب و رسوم قدیمی هر سرزمینی، یادگارهایی گران سنگ و پربها از گذشته‌های دور مردم آن منطقه است.</font></p> 
+<p style="text-align:justify"><font size="2">نوروز بزرگترین و باشکوه‌ترین عید مردم 
+آذربایجان شرقی مانند سایر مناطق است. رسم‌ها و جشن‌های نوروزی که در گوشه و
+ کنار استان برگزار می‌شود.</font></p><p style="text-align:justify"><font size="2"><br></font></p><p align="center"><font size="2"><img src="http://s9.picofile.com/file/8355530868/photo_%DB%B2%DB%B0%DB%B1%DB%B9_%DB%B0%DB%B3_%DB%B1%DB%B9_%DB%B1%DB%B4_%DB%B3%DB%B7_%DB%B0%DB%B3.jpg" alt="نوروز" vspace="0" hspace="0" border="0" align="bottom"></font></p><p align="center"><br><font size="2"></font></p> 
+<p style="text-align:justify"><font size="2">بخشی از میراث فرهنگی و همچنین یکی از بزرگترین جاذبه‌های فرهنگی این منطقه به شمار می‌آید.</font></p> 
+<p style="text-align:justify"><font size="2">تمامی آداب و رسوم به خصوص عید باستانی 
+نوروز در دل این تعاملات فرهنگی دچار فراز و نشیب شده و امروز هم مردم این 
+دیار آئین نوروز را با رسوم خاصی برگزار می‌کنند.</font></p> 
+<p style="text-align:justify"><font size="2">آئین‌های نوروزی در هر دیار رنگ و بوی خاص 
+دارد ولی در آذربایجان شرقی، رنگین کمان اقوام و ادیان به مانند یک مجموعه 
+کوچک از ایران گرد هم آمده و ویژگی‌های منحصر به فردی به این آئین در این 
+دیار بخشیده‌اند.</font></p><p style="text-align:justify"><font size="2"><br></font></p><p style="text-align:justify"><font size="2"><br></font></p> 
+<p style="text-align:justify"><font size="2"><span style="color:#000080"><strong>«بایرام <span>سوفراسی</span>» یکی از آئین‌های قدیمی در آذربایجان شرقی</strong></span></font></p> 
+<p style="text-align:justify"><font size="2">برپایی سفره عید یا نوروز در هنگام تحویل سال یکی از رسم‌های ویژه در آذربایجان شرقی است که به آن بایرام <span style="text-align:justify">سوفراسی</span>
+ نیز می‌گویند. چند ساعت مانده به تحویل سال سفره‌ای در خانه‌ها گسترده 
+می‌شود و انواع میوه‌ها و خوراکی‌های محلی بر روی سفره عید قرار داده 
+می‌شود.</font></p> 
+<p style="text-align:justify"><font size="2">جالب هم اینکه برخلاف بسیاری از مناطق دیگر کشور، هفت سین نیز روی این سفره نهاده می‌شود.</font></p><p style="text-align:justify"><font size="2"><br></font></p> 
+<p style="text-align:center"><font size="2"><img src="http://s8.picofile.com/file/8355524792/3078771.jpg" alt="عید" vspace="0" hspace="0" border="0" align=""><br></font></p><p style="text-align:center"><br><font size="2"></font></p> 
+<p style="text-align:justify"><font size="2">نخود ممقان، میان پر <span style="text-align:justify">اسکو</span>، <span style="text-align:justify">سوجوق</span> و <span style="text-align:justify">باسلوق</span>
+ مراغه، آب نبات شکری تبریز و کشمش و سبزه آذرشهر و مراغه، انجیر شیرازی و 
+خرمای صوفی از خوراکی‌هایی است که در این سفره قرار داده می‌شود.</font></p> 
+<p style="text-align:justify"><font size="2">البته سایر خوراکی‌ها نیز در سفره عید مردم آذربایجان شرقی دیده می‌شود که گردو، بادام، پسته و انواع شیرینی‌ها: <span style="text-align:justify">لوز</span>، <span style="text-align:justify">قرابیه</span> و <span style="text-align:justify">نوقا</span> و آجیل چهارشنبه سوری و آجیل سفره عید را شامل می‌شود.</font></p> 
+<p style="text-align:justify"><font size="2">علاوه بر تنقلات ذکر شده برخی خانواده‌ها در سفره عید اقلام خوراکی‌های نظیر نان کنجدی مغز دار موسوم به بایرام <span style="text-align:justify">چوره</span> <span style="text-align:justify">یی</span>
+ (نان عید)، آش بورانی، مربای کنجد، مربای بادمجان، مربای زردآلو، بادام و 
+شیره انگور، کدو تنبل، دلمه برگ انگور و تخم مرغ رنگین آب پز شده نیز 
+می‌چینند.</font></p> 
+<p style="text-align:justify"><font size="2">روی سفره نوروزی افزون بر خوراکی‌های ذکر 
+شده آینه، لاله، شمع، قرآن، کاسه‌ی پر از آب، ماهی و یک بشقاب پلو، سکه، 
+سبزه سبز شده از گندم، نخود و یا عدس می‌گذارند که هریک از خوراکی‌ها در 
+فرهنگ مردم آذربایجان شرقی معنا و مفهومی نمادین دارد.</font></p><p style="text-align:justify"><font size="2"><br></font></p> 
+<p style="text-align:center"><font size="2"><img src="http://s9.picofile.com/file/8355524818/3078800.jpg" alt="هفت سین" vspace="0" hspace="0" border="0" align=""><br></font></p><p style="text-align:center"><br><font size="2"></font></p> 
+<p style="text-align:justify"><font size="2"><span style="color:#000080"><strong>«<span>تاباخ</span>» برای تازه عروس‌ها</strong></span></font></p> 
+<p style="text-align:justify"><font size="2">بردن هدیه که به آن «<span style="text-align:justify">تاباخ</span>»
+ گفته می‌شود برای تازه عروس‌ها نیز از دیگر رسوم استان است. همزمان با عید
+ نوروز در استان آذربایجان شرقی مرسوم است که برای تازه عروس‌ها هدایایی به
+ عنوان عیدی برده می‌شود.</font></p> 
+<p style="text-align:justify"><font size="2">در این روزهای پایانی سال خانواده داماد 
+هدایا و میوه و شیرینی روی سینی‌ها گذاشته و به خانه عروس می‌روند. این رسم
+ بیشتر در شهرستان آذرشهر انجام می‌شود. البته دادن هدیه به تازه عروس‌ها 
+در همه مناطق استان مرسوم است.</font></p> 
+<p style="text-align:justify"><font size="2">هدایا شامل شیرینی، آجیل چهارشنبه، طلا و جواهرات و پارچه و یک بشقاب غذای چهارشنبه آخر سال که آنها را در <span style="text-align:justify">مجمعین</span> گذاشته و به خانه عروس می‌فرستند.</font></p> 
+<p style="text-align:center"><font size="2"><img src="http://s8.picofile.com/file/8355524826/3078801.jpg" alt="عید" vspace="0" hspace="0" border="0" align=""><br></font></p><p style="text-align:center"><br></p><p style="text-align:center"><br><font size="2"></font></p> 
+<p style="text-align:justify"><font size="2"><span style="color:#000080"><strong>«<span>صله</span> ارحام» دیگر آئین ویژه نوروز در آذربایجان شرقی</strong></span></font></p> 
+<p style="text-align:justify"><font size="2">در آذربایجان شرقی مدت کوتاهی پس از تحویل 
+سال خانواده‌ها راهی خانه اقوام و دوستان و در نخستین ساعات سال جدید به 
+دیدار بزرگترها می‌شتابند تا بدین وسیله دل‌هایشان جانی دوباره بگیرد.</font></p> 
+<p style="text-align:justify"><font size="2">حفظ حرمت و احترام به بزرگترهای فامیل در 
+کنار همه اعیاد و آداب و رسوم در آذربایجان شرقی از ارزش و اهمیت بالایی 
+برخوردار است به گونه‌ای که اولین روز و اولین منزلی که مورد دید و بازدید 
+در اعیاد به ویژه عید نوروز قرار می‌گیرد منزل و خانواده بزرگ‌ترین عضو 
+خانواده است.</font></p> 
+<p style="text-align:justify"><font size="2">از آثار این بازدیدها و دیدارها آگاهی از 
+حال و احوال یکدیگر است همین آگاهی‌ها گاهی می‌تواند بار مشکلات را از دوش 
+عده‌ای بر دارد. به طور حتم حس همنوع‌خواهی و <span style="text-align:justify">دگرخواهی</span> در ذات مردم آذربایجان شرقی نهفته است.</font></p><p style="text-align:justify"><font size="2"><br></font></p><p align="center"><font size="2">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/ZpvXk]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/ZpvXk/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				</font></p><p align="center"><font size="2"><br></font></p><p align="center"><font size="2">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/DBOfA]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/DBOfA/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				</font></p><p align="center"><font size="2"><br></font></p><p align="center"><font size="2">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/yj4KS]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/yj4KS/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				</font></p><p align="center"><font size="2"><br></font></p><p align="center"><font size="2">
+		<!--AparatShow-->
+				<div style="display:none">[http://www.aparat.com/v/v3Hs8]</div>
+                <div class="aparatFrame">
+                    <iframe frameborder=0  allowFullScreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" width="435" height="290" src="http://www.aparat.com/video/video/embed/videohash/v3Hs8/vt/frame"> </iframe>
+                </div>
+
+		<!--eoAparatShow-->
+				</font></p><p align="center"><font size="2"><br></font></p><p align="center"><font size="2"><br></font></p> 
+<p style="text-align:justify"><font size="2"><span style="color:#000080"><strong>رواج شال اندازی در روستاها</strong></span></font></p> 
+<p style="text-align:justify"><font size="2">یکی از رسم‌های رایج در اکثر روستاهای آذربایجان شرقی شال اندازی یا <span style="text-align:justify">قورشاخ</span> <span style="text-align:justify">ساللاماخ</span>
+ است. پس از آنکه آتش افروزی به پایان رسید و همه به خانه‌هایشان بازگشتند،
+ پس از شام جوان‌ها و نوجوانان به پشت بام‌ها می‌روند از روزنه سقف خانه‌ها
+ شال- دستمال چهارگوش متصل به چند متر طناب- خود را به داخل خانه آویزان 
+می‌کنند و اهالی خانه داخل آن بادام، گردو و کشمش پر می‌کند، گره می‌زنند.</font></p> 
+<p style="text-align:justify"><font size="2">گذاشتن تخم مرغ رنگی <span style="text-align:justify">آبپز</span>
+ شده و جوراب و پول در داخل شال نیز رسم است. به طور کلی این گونه است که 
+می‌گویند در برخی نقاط پسرهای نامزد دار برای عروس هدیه‌ای تهیه کرده و با 
+همان شال به داخل خانه می‌فرستند که گاهی عطر و صابون یا پیراهن است و اگر 
+وضع مالی خوبی داشته باشد انگشتری طلا.</font></p> 
+<p style="text-align:justify"><font size="2">در مقابل خانواده عروس هم پیراهنی نو و جوراب در شال گذاشته و سپس به پشت بام رفته و پسر را برای صرف شام به خانه دعوت می‌کنند.</font></p><p style="text-align:justify"><font size="2"><br></font></p> 
+<p style="text-align:justify"><font size="2"><span style="color:#000080"><strong>زیارت اهل قبور</strong></span></font></p> 
+<p style="text-align:justify"><font size="2">زیارت اهل قبور در آستانه عید نوروز، در 
+میان مردم آذربایجانی شرقی رایج بوده و شادی‌های این روز را همراه با قرائت
+ فاتحه و احسان کردن با اموات خویش تقسیم می‌کنند از این رو طبق رسم معمول 
+روز قبل از عید اعم از اعیاد مذهبی مانند عید فطر و قربان یا اعیاد ملی، در
+ آخرین پنجشنبه سال باید به زیارت اهل قبور رفت.</font></p> 
+<p style="text-align:center"><font size="2"><img src="http://s8.picofile.com/file/8355526642/guney_novruz.jpg" alt="تکم گردانی" vspace="0" hspace="0" border="0" align=""><br></font></p><p style="text-align:center"><br><font size="2"></font></p> 
+<p style="text-align:justify"><font size="2"><span style="color:#000080"><strong>«<span>تکم</span> <span>چی‌ها</span>» رسمی فراموش شده</strong></span></font></p> 
+<p style="text-align:justify"><font size="2"><span style="text-align:justify">تکم</span> گردانان بین دو چهارشنبه آخر سال که در آذربایجان شرقی به این روزها «<span style="text-align:justify">کول</span> <span style="text-align:justify">چرشنبه</span>» و «گول <span style="text-align:justify">چرشنبه</span>» می‌گویند، به کوچه‌ها <span style="text-align:justify">می</span> <span style="text-align:justify">آیند</span> و با خواندن شعرهایی همراه با <span style="text-align:justify">تکم</span> گردانی، فرا رسیدن نوروز را مژده می‌دهند.</font></p> 
+<p style="text-align:justify"><font size="2">این آئین از جمله رسم‌های زیبای ایام نوروز در آذربایجان شرقی است که به فراموشی سپرده شده است.</font></p> 
+<p style="text-align:justify"><font size="2"><span style="text-align:justify">تکم</span>
+ چی به طور نمادین، بز ساخته شده از قطعات چوب را در کوچه‌های روستاها و 
+شهرها می‌چرخاند و در حالی که اشعاری به زبان ترکی و با صدای دلنشین 
+می‌خواند.</font></p> 
+<p style="text-align:justify"><font size="2"><span style="text-align:justify">تکمچی</span> با خواندن آواز و تصنیف به در خانه‌ها می‌رود و آمدن بهار را مژده می‌دهد: <span style="text-align:justify">آی</span> <span style="text-align:justify">تکمین</span> کندی <span style="text-align:justify">وار</span>، کمندی <span style="text-align:justify">وار</span> کندی <span style="text-align:justify">وار</span> / هر <span style="text-align:justify">قاپودا</span> <span style="text-align:justify">اویناسا</span>، <span style="text-align:justify">بیر</span> <span style="text-align:justify">نلبکی</span> قندی <span style="text-align:justify">وار</span></font></p> 
+<p style="text-align:justify"><font size="2">ترجمه: <span style="text-align:justify">تکم</span> ده دارد / کمند دارد و ده دارد / جلوی هر دری برقصد / یک نعلبکی قند پاداش دارد...</font></p> 
+<p style="text-align:justify"><font size="2">خانواده‌ها با دادن شیرینی، هدیه و یا گاهی پول که به آن «بایرام پایی» می‌گویند، به <span style="text-align:justify">تکم</span> چی پاداش می‌دهند.</font></p> 
+<p style="text-align:justify"><font size="2">نوروز در حال رسیدن است و بدون شک اجرای این آئین‌ها و رسوم باعث شور و نشاطی مضاعف در جامعه می‌شود.</font></p><p style="text-align:justify"><br></p><p style="text-align:justify"><br></p><p style="text-align:justify"><b><font size="2">جشن نوروزگاه 98&nbsp; در بازار بزرگ تبریز‎</font></b></p><font size="2">
+                                
+                            
+                            </font><div class="item-summary"><font size="2">
+                                
+				</font><div class="item-body"><p><font size="2">جشن <span>نوروزگاه</span>، در راستای تکریم نوروز و حفظ و احیای آئین‌های نوروزی آذربایجان‌شرقی با اجرای نمادین رسوم نوروزی از جمله <span>تکم</span> خوانی، موسیقی عاشقی، بازی‌های سنتی آذربایجان و مراسم مرتبط با چهارشنبه آخر سال در بازار تبریز برگزار شد.</font></p>
+</div>
+                            </div><p align="center"><font size="2"><img src="http://s9.picofile.com/file/8355526626/3079785.jpg" alt="نوروز 98" vspace="0" hspace="0" border="0" align="bottom"><br></font></p><p align="center"><img src="http://s8.picofile.com/file/8355526534/3079772.jpg" alt="نوروز تبریز" vspace="0" hspace="0" border="0" align="bottom"></p><p align="center"><img src="http://s8.picofile.com/file/8355526568/3079780.jpg" alt="مراسم عید" vspace="0" hspace="0" border="0" align="bottom"></p><p align="center"><img src="http://s9.picofile.com/file/8355526576/3079781.jpg" alt="نوروزگاه تبریز" vspace="0" hspace="0" border="0" align="bottom"></p><p align="center"><img src="http://s9.picofile.com/file/8355526600/3079784.jpg" alt="تکم چی" vspace="0" hspace="0" border="0" align="bottom"></p><p align="center"><br></p><p align="center"><font size="2"><br></font></p><p align="right"><font size="2">جشن 
+نوروزگاه 98، آیین‌های سنتی نوروز آذربایجان در ایستگاه راه آهن و فرودگاه تبریز و با 
+شعار «نوروز، میراث صلح و دوستی، پیوند فرهنگی و طبیعت » عصر سه شنبه&nbsp; 28 اسفند 97
+برگزارشد. <br></font></p><p align="center"><img src="http://s8.picofile.com/file/8355526668/n3677337_6940382.jpg" alt="تعطیلات نوروز" vspace="0" hspace="0" border="0" align="bottom"></p><p align="center"><img src="http://s8.picofile.com/file/8355526734/n83249169_72912776.jpg" alt="تعطیلات عید" vspace="0" hspace="0" border="0" align="bottom"></p><p align="center"><img src="http://s8.picofile.com/file/8355526700/n3677337_6940387.jpg" alt="عید 98" vspace="0" hspace="0" border="0" align="bottom"></p><p align="center"><img src="http://s9.picofile.com/file/8355526684/n3677337_6940385.jpg" alt="عید نوروز 98" vspace="0" hspace="0" border="0" align="bottom"></p><a href="../../extrapage/azerbaijani_tradition.html" target="_blank" title=""><p align="center"><br></p><p align="center"><br></p><p align="right"><span style="background-color: rgb(255, 255, 204);"><font size="2"><b>لینک صفحه جانبی اصالت و رسوم آذربایجان</b></font></span></p><p align="right"><span style="background-color: rgb(255, 255, 204);"><font size="2"><b><br></b></font></span></p></a></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+								<br />						<br />
+						دسته بندی : 						<a href="3.html" title="آذربایجان" >آذربایجان</a> , 						<a href="11.html" title="* تورک سئسه لینک" >* تورک سئسه لینک</a> , <br />						برچسب ها :   						<a href="../tag/بایرام.html" title="بایرام" >بایرام</a> , 						<a href="../tag/عید&#32;نوروز.html" title="عید نوروز" >عید نوروز</a> , 						<a href="../tag/نوروز&#32;98.html" title="نوروز 98" >نوروز 98</a> , 						<a href="../tag/چهارشنبه&#32;سوری.html" title="چهارشنبه سوری" >چهارشنبه سوری</a> , 						<a href="../tag/سون&#32;چرشنبه.html" title="سون چرشنبه" >سون چرشنبه</a> , 						<a href="../tag/چهارشنبه&#32;آخر&#32;سال.html" title="چهارشنبه آخر سال" >چهارشنبه آخر سال</a> , 						<a href="../tag/عید&#32;آذربایجان.html" title="عید آذربایجان" >عید آذربایجان</a> , <br />												<div style="text-align:center;"><br />
+									<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+									<script language="javascript">$rating_widget_type='thumb';$rating_widget_theme=7;$rating_widget_color='FFFFFF';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/1327';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/voting/widgets/rating.js"></script>
+									<!-- END Parstools.com RATING WIDGET CODE --> 
+						</div>		
+		</div>
+		<br clear="all">
+	</div>
+	<div class="morelink"><div class="morein">
+		<span class="argmore"><a href="../1327.html" title="آیین های سنتی آذربایجان در نوروز 98"><b>ادامه مطلب ...</b></a></span>
+		<span class="arg">نظرات: (<a target="_self" href="javascript:newComment(1327)"><script>setCommentCnt(1327)</script></a>)</span>
+		<div class="ratebox"><div id='ratig-layer-1'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+
+		<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+							<script language="javascript">$rating_widget_type='rate';$rating_widget_theme=10;$rating_widget_color='F3F6F8';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/1327';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/rating/widgets/rating.js"></script>
+		<!-- END Parstools.com RATING WIDGET CODE -->
+
+		</ul>
+</div></div></div>
+	</div></div>
+</div>
+<div class="hsep"></div>
+     
+	
+
+
+<div class="hsep">
+		<center>
+						   					<a href="11/page/1.html">[ <b>1</b> ]</a> 
+			   					<a href="11/page/2.html">[ <span>2</span> ]</a> 
+			   					<a href="11/page/3.html">[ <span>3</span> ]</a> 
+			   					<a href="11/page/4.html">[ <span>4</span> ]</a> 
+			   					<a href="11/page/5.html">[ <span>5</span> ]</a> 
+			   					<a href="11/page/6.html">[ <span>6</span> ]</a> 
+			   					<a href="11/page/7.html">[ <span>7</span> ]</a> 
+			   					<a href="11/page/8.html">[ <i>...</i> ]</a> 
+			   					</center>
+</div>
+
+
+
+</div>
+						<br clear="all" />
+						<div class="footadblock">
+								
+							   								» <a href="../2.html">درباره تبریز و آذربایجان و اخبار  About and News</a> ( پنجشنبه 15 اسفند 1398 )<br />
+							  								» <a href="../1372.html">ویروس کرونا تهدیدی در ایران</a> ( پنجشنبه 8 اسفند 1398 )<br />
+							  								» <a href="../1371.html">نقاش و نگارگر استاد علی اصغر پتگر</a> ( جمعه 25 بهمن 1398 )<br />
+							  								» <a href="../1370.html">زینب پاشا بانوی رابین هود ایران</a> ( جمعه 18 بهمن 1398 )<br />
+							  								» <a href="../1369.html">خانه زیبا که به هتل بوتیک در تبریز تبدیل می‌شود</a> ( یکشنبه 6 بهمن 1398 )<br />
+							  								» <a href="../1368.html">بنیس شبستر ، روستای دانشگاهی بدون بیکار و بی سواد</a> ( چهارشنبه 25 دی 1398 )<br />
+							  								» <a href="../1367.html">برف زمستانی 1398 تبریز</a> ( پنجشنبه 19 دی 1398 )<br />
+							  								» <a href="../1364.html">اردبیل؛ سرزمین چشمه‌های بهشتی آذربایجان</a> ( شنبه 14 دی 1398 )<br />
+							  								» <a href="../1366.html">مشکلات صنعت کفش چرم دستدوز تبریز</a> ( چهارشنبه 4 دی 1398 )<br />
+							  								» <a href="../1365.html">شب خاطره ها چیلله گئجه‌سی </a> ( شنبه 30 آذر 1398 )<br />
+							  								» <a href="../1363.html">خلیل بحران طنز پرداز</a> ( چهارشنبه 20 آذر 1398 )<br />
+							  								» <a href="../1362.html">شهر شکی جمهوری آذربایجان</a> ( شنبه 9 آذر 1398 )<br />
+							  								» <a href="../1361.html">پاکبان و جدال با فاضلاب برای یک لقمه نان حلال</a> ( یکشنبه 3 آذر 1398 )<br />
+							  								» <a href="../1360.html">دوربین تبریز لینک 80 ( گردشی در اطراف بیلانکوه )</a> ( پنجشنبه 23 آبان 1398 )<br />
+							  								» <a href="../1359.html">پارک باغ‌شهر تبریز</a> ( دوشنبه 13 آبان 1398 )<br />
+							  								» <a href="../1358.html">مسجد حسن پاشا در انتظار احیا</a> ( جمعه 3 آبان 1398 )<br />
+							  								» <a href="../1357.html">شهر گمشده اوجان آذربایجان در راه احیا</a> ( جمعه 26 مهر 1398 )<br />
+							  								» <a href="../1356.html">عشایر شاهسون آذربایجان از اصالت تا زندگی شیرین</a> ( دوشنبه 15 مهر 1398 )<br />
+							  								» <a href="../1355.html">مصاحبه مینا خلیل‌ زاده فتحی برنده جایزه هوانوردی آمریکا</a> ( چهارشنبه 10 مهر 1398 )<br />
+							  								» <a href="../1354.html">چهار پروژه و نابودی چهار اثر تاریخی تبریز</a> ( پنجشنبه 4 مهر 1398 )<br />
+							  								» <a href="../1353.html">زووفان حیوانات تبریز</a> ( دوشنبه 25 شهریور 1398 )<br />
+							  								» <a href="../1352.html">تصاویر محمدحسن‌میرزا قاجار در دارالحکومه تبریز</a> ( چهارشنبه 20 شهریور 1398 )<br />
+							  								» <a href="../1351.html">دلیرمردی که سوختن ارسباران را برنتابید</a> ( دوشنبه 11 شهریور 1398 )<br />
+							  								» <a href="../1350.html">حوادث اشغال تبریز توسط ارتش سرخ در شهریور ۱۳۲۰</a> ( دوشنبه 4 شهریور 1398 )<br />
+							  								» <a href="../1349.html">شهروند لینک آذربایجانی 78 ( مهری نژاد ) </a> ( سه شنبه 29 مرداد 1398 )<br />
+							  								» <a href="../1348.html">سرگذشت دراماتیک امپراتوران مدرسه‌سازی مردانی آذر </a> ( شنبه 19 مرداد 1398 )<br />
+							  								» <a href="../1347.html">ضرورت احیا هتل قدیمی گراند و محله پاساژ تبریز</a> ( جمعه 11 مرداد 1398 )<br />
+							  								» <a href="../1346.html">ساعت به وقت گدایی در شهر بدون گدا تبریز</a> ( دوشنبه 31 تیر 1398 )<br />
+							  								» <a href="../1345.html">شهروند لینک آذربایجانی 77 ( آراز نویدی ) </a> ( جمعه 21 تیر 1398 )<br />
+							  								» <a href="../1344.html"> چهارمین جشنواره خلاقیت و نوآوری تبریز </a> ( پنجشنبه 13 تیر 1398 )<br />
+							  							
+						</div>
+					</div>
+				</div>
+				<div class="rcolomn rightside">
+					<span class="createbtn">
+					موضوعات
+					</span>
+					<br />
+
+					<div class="block bwho">
+
+					  								  									<a href="1.html" >» تبریز (430)</a><br />	
+								 									<a href="2.html" >» ایران (100)</a><br />	
+								 									<a href="3.html" >» آذربایجان (423)</a><br />	
+								 									<a href="4.html" >» متفرقه (127)</a><br />	
+								 									<a href="5.html" >» ورزش آذربایجان (34)</a><br />	
+								 									<a href="8.html" >» آپارات تبریز لینک (69)</a><br />	
+								 									<a href="7.html" >» دوربین تبریز لینک (142)</a><br />	
+								 									<a href="6.html" >» نتیجه نظرسنجی ها (26)</a><br />	
+								 									<a href="9.html" >» شهروند لینک آذربایجانی (78)</a><br />	
+								 									<a href="20.html" >» آموزش زبان ترکی آذربایجانی (19)</a><br />	
+								 									<a href="12.html" >» English Tabriz WikiLinks (29)</a><br />	
+								 									<a href="14.html" >» * پارکها و محیط زیست (71)</a><br />	
+								 									<a href="13.html" >» * شهرستان لینک (134)</a><br />	
+								 									<a href="16.html" >» * مشاهیر آذربایجان (128)</a><br />	
+								 									<a href="15.html" >» * آرتاویل،اورمو،زنگان (91)</a><br />	
+								 									<a href="11.html" >» * تورک سئسه لینک (135)</a><br />	
+								 									<a href="10.html" >» * انتقاد،پیشنهاد لینک (201)</a><br />	
+								 									<a href="19.html" >» * پروژه های عمرانی و شهری (61)</a><br />	
+								 									<a href="18.html" >» * میراث،تاریخ،صنایع دستی آذربایجان (234)</a><br />	
+								 									<a href="17.html" >» * دریاچه همیشه اورمیه Urmia Lake (23)</a><br />	
+								 									<a href="21.html" >» * جمهوری آذربایجان Azərbaycan Republic (15)</a><br />	
+								 					  					</div>
+					<div class="block">
+						<h3>صفحات</h3>
+				   
+				    
+					<a href="../../extrapage/ancient.html" target="_blank">» آذربایجان باستان Ancient Azerbaijan</a><br />	
+				    
+					<a href="../../extrapage/azerbaijani_tradition.html" target="_blank">» اصالت نژاد رسوم آذربایجانی Tradition</a><br />	
+				    
+					<a href="../../extrapage/azerbaijan_news.html" target="_blank">» خبرگزاری و رسانه های آذربایجان news</a><br />	
+				    
+					<a href="../../extrapage/turk_tabrizlinks.html" target="_blank">» آتا بابا آذربایجان تورکم</a><br />	
+				    
+					<a href="../../extrapage/tourism_tabrizlinks.html" target="_blank">» گردشگری و توریسم Travel Tourism</a><br />	
+				    
+					<a href="../../extrapage/o_ses_azerbaijan.html" target="_blank">» O'Ses Azerbaijan - Sahand Music</a><br />	
+				    
+					<a href="../../extrapage/celebrities_azerbaijan.html" target="_blank">» مشاهیر، مفاخر، بزرگان آذربایجان Celeb</a><br />	
+				    
+					<a href="../../extrapage/carfts_azerbaijan.html" target="_blank">» صنایع دستی و سوغات آذربایجان crafts</a><br />	
+				    
+					<a href="../../extrapage/weather_azerbaijan.html" target="_blank">» هواشناسی تبریز ویکی لینکلر weather</a><br />	
+				    
+					<a href="../../extrapage/tourmovies_tabrizlinks.html" target="_blank">» ویدیو توریسم آذربایجان و تبریز WikiLinks Tourism movies</a><br />	
+				      
+									</div>
+
+					<div class="block btags">
+						<h3>لینکستان</h3>
+					 							 
+							<a href="http://tourism.tabriz.ir/" title=""  target="_blank">» سازمان گردشگری شهرداری تبریز    Tourism Development Organization of Tabriz Municipality</a><br />	
+						   
+							<a href="http://www.tabriztourist.com" title=""  target="_blank">» گردشگری آذربایجان شرقی - تبریز توریست</a><br />	
+						   
+							<a href="http://www.aparat.com/bayandir" title=""  target="_blank">» آپارات کارتونهای آذربایجانی</a><br />	
+						   
+							<a href="../../../kaleybarcity.mihanblog.com/index.html" title=""  target="_blank">» وبلاگ کلیبر سیتی (پریسا)</a><br />	
+						   
+							<a href="http://tabrizdownload.r98.ir " title=""  target="_blank">» وبسایت تبریز دانلود (هادی)</a><br />	
+						   
+							<a href="../../../khotbehsara.mihanblog.com/index.html" title=""  target="_blank">» آنایوردوم خطبه سرا</a><br />	
+						   
+							<a href="http://azarbook.blogfa.com/" title=""  target="_blank">» آذربایجان و پیرامون (عبدالحسین)</a><br />	
+						   
+							<a href="http://bayrambayani84.blogfa.com/" title=""  target="_blank">» وبلاگ بایرام (بیانی)</a><br />	
+						   
+							<a href="http://azadazarbaycan.arzublog.com/" title=""  target="_blank">» وبلاگ جانیم آزربایجان(elçi bəy)</a><br />	
+						   
+							<a href="http://mazqamet.blogfa.com/" title=""  target="_blank">» وبلاگ مازگامت</a><br />	
+						   
+							<a href="http://yeniqapi.com/" title=""  target="_blank">» یئنی قاپی</a><br />	
+						   
+							<a href="http://ishiq.net/" title=""  target="_blank">» سایت ادبیات ترکی ایشیق</a><br />	
+						   
+							<a href="../../../myabriz.mihanblog.com/index.html" title=""  target="_blank">» شهرمن تبریز (یاشار)</a><br />	
+						   
+							<a href="http://nazlibakhish.persianblog.ir/" title=""  target="_blank">» وبلاگ باخیش(شادی)</a><br />	
+						   
+							<a href="http://mohsen-behboudi.blogfa.com/" title=""  target="_blank">» وبلاگ سهند ما (محسن)</a><br />	
+						   
+							<a href="http://huseynvahedi.ir/" title=""  target="_blank">» خاطیره لر دوراغی (حسین واحدی)</a><br />	
+						   
+							<a href="http://sajjadsanm666.blogfa.com/" title=""  target="_blank">» صنم در اوج (سجاد)</a><br />	
+						   
+							<a href="http://shear.blogsky.com/" title=""  target="_blank">» وبلاگ اشعار ترکی آذری و فارسی</a><br />	
+						   
+							<a href="../../../govdil.mihanblog.com/index.html" title=""  target="_blank">» یوردوم ملکان</a><br />	
+						   
+							<a href="http://shahrimtabriz.blogfa.com" title=""  target="_blank">» وبلاگ تبریز شهر اولین ها (سعید)</a><br />	
+						   
+							<a href="http://sahandtopragi.blogfa.com/" title=""  target="_blank">» سهند توپراقی(جواد نجات)</a><br />	
+						   
+							<a href="../../../amlakgorbani.mihanblog.com/index.html" title=""  target="_blank">» املاک قربانی (اسپیران)</a><br />	
+						   
+							<a href="http://safidantabriz.blogfa.com/" title=""  target="_blank">» وبلاگ ینگی اسپیران (محمد)</a><br />	
+						   
+							<a href="http://www.tabrizli.lxb.ir/" title=""  target="_blank">» آنــــا یــوردوم تــبریــز(عبدا.. رضوی)</a><br />	
+						   
+							<a href="http://amegan.mihanblog.com/" title=""  target="_blank">» وبلاگ کشاورزی آمقانی اسکو(شوکتی)</a><br />	
+						   
+							<a href="http://www.goganim.blogfa.com/" title=""  target="_blank">» وبلاگ گوگان</a><br />	
+						   
+							<a href="../../linkdaily/index.html" title=""  target="_blank">» ....................................</a><br />	
+						   
+							<a href="http://www.artawilnews.blogfa.com" title=""  target="_blank">» وبلاگ اخبار اردبیل (فرزاد)</a><br />	
+						   
+							<a href="http://soleimanipour.blogfa.com/" title=""  target="_blank">» وبلاگ شهریمیز اورمو</a><br />	
+						   
+							<a href="http://www.digale.blogfa.com/" title=""  target="_blank">» دئیه لر(دیگاله)-اورمیه</a><br />	
+						   
+							<a href="http://khiyavtraxtorchi.blogfa.com/" title=""  target="_blank">» وبلاگ مشگین شهر (میلاد)</a><br />	
+						   
+							<a href="http://ardabil1354.blogfa.com/" title=""  target="_blank">» وبلاگ چشمه های بهشتی آرتاویل</a><br />	
+						   
+							<a href="http://www.irph.blogfa.com/" title=""  target="_blank">» پروژه های عمرانی ایران</a><br />	
+						   
+							<a href="http://www.mashhadtoday.ir/" title=""  target="_blank">» وبسایت مشهد امروز (اشکان)</a><br />	
+						   
+							<a href="http://shahrebehesht8.blogfa.com" title=""  target="_blank">» مشهد شهر بهشت (امیرحسین)</a><br />	
+						   
+							<a href="http://virr.blogfa.com/" title=""  target="_blank">» وبلاگ شهر خرم آباد</a><br />	
+						   
+							<a href="../../../www.haneberchem.mihanblog.com/index.html" title=""  target="_blank">» وبلاگ هورامان</a><br />	
+						   
+							<a href="http://welcome-to-borazjan.blogfa.com/" title=""  target="_blank">» وبلاگ برازجان (بوشهر)</a><br />	
+						   
+							<a href="http://www.amoozeshnima.blogfa.com/" title=""  target="_blank">» وبلاگ آموزش رانندگی</a><br />	
+						   
+							<a href="http://asemaneriz.blogfa.com " title=""  target="_blank">» هواشناسی ایرما</a><br />	
+						   
+							<a href="../../linkdaily/index.html" title=""  target="_blank">» ......................................</a><br />	
+						   
+							<a href="http://traxturnews.blogfa.com/" title=""  target="_blank">» وبلاگ گالری تراکتور</a><br />	
+						   
+							<a href="http://www.gftclub.ir" title=""  target="_blank">» وبسایت گسترش فولاد تبریز</a><br />	
+						   
+							<a href="http://www.mstfc.ir/" title=""  target="_blank">» وبسایت باشگاه ماشین سازی تبریز</a><br />	
+						   
+							<a href="http://www.tractor-club.com" title=""  target="_blank">» وبسایت رسمی باشگاه تراکتورسازی</a><br />	
+						   
+                            
+
+<a href="http://defaultlink2.com" title="لینک پیش فرض دوم"  target="_blank">» لینک پیش فرض دوم</a><br /><a href="http://defaultlink1.com" title="لینک پیش فرض اول"  target="_blank">» لینک پیش فرض اول</a><br />
+							<a href="../../link/index.html">» لیست لینک ها</a><br />
+											</div>
+					
+					<div id='vote-layer'>
+					
+		 </div>
+					
+				<div class="block">
+				<h3>لینکدونی</h3>
+            			     
+				 <a href="http://www.tabrizpedia.info" title="سلام
+دوستان عزیز با اجازه شما، با ذکر منبع از مطالبتون توی تبریز پدیا استفاده میکنم.
+لطفا لینک بزارین
+من به زودی بخشی با عنوان لینک فعالان تبریزی خواهم ساخت که تبریز ویکی لینکلر در راس لینکها قرار خواهد گرفت." target="_blank">» تبریز پدیا</a><br />
+			    
+				 <a href="../../linkdaily/index.html" title="لیست لینک ها">» لیست لینک ها</a><br />
+				 <a href="javascript:linkdailyForm()">+ ارسال لینک</a><br />		  
+						   </div>
+					
+				 <div class="block">
+				<h3>نویسندگان</h3>
+				 	   
+							   
+									<a href="../author/944998.html">» تبریز قارتال (1155)</a><br />
+							   
+									<a href="../author/1105799.html">» آذر قارتال (33)</a><br />
+							   
+									<a href="../author/1218364.html">» دنیز قارتال (8)</a><br />
+							  				 				</div>
+									
+				 <div class="block">
+				<h3>کلمات کلیدی</h3>
+											 				
+							   <a href="../tag/tabriz.html" 
+								style="font-size:1.29em">
+									   tabriz 
+							   </a>
+						 				
+							   <a href="../tag/Azerbaijan.html" 
+								style="font-size:1.12em">
+									   Azerbaijan 
+							   </a>
+						 				
+							   <a href="../tag/میراث+فرهنگی+تبریز.html" 
+								style="font-size:1.11em">
+									   میراث فرهنگی تبریز 
+							   </a>
+						 				
+							   <a href="../tag/شهرداری+تبریز.html" 
+								style="font-size:1.21em">
+									   شهرداری تبریز 
+							   </a>
+						 				
+							   <a href="../tag/دریاچه+ارومیه.html" 
+								style="font-size:1.01em">
+									   دریاچه ارومیه 
+							   </a>
+						 				
+							   <a href="../tag/آذربایجان+شرقی.html" 
+								style="font-size:1.1em">
+									   آذربایجان شرقی 
+							   </a>
+						 				
+							   <a href="../tag/تبریز.html" 
+								style="font-size:1.73em">
+									   تبریز 
+							   </a>
+						 				
+							   <a href="../tag/گردشگری.html" 
+								style="font-size:1.25em">
+									   گردشگری 
+							   </a>
+						 				
+							   <a href="../tag/ترکی.html" 
+								style="font-size:1.09em">
+									   ترکی 
+							   </a>
+						 				
+							   <a href="../tag/شعر+ترکی.html" 
+								style="font-size:1.03em">
+									   شعر ترکی 
+							   </a>
+						 				
+							   <a href="../tag/اردبیل.html" 
+								style="font-size:1.08em">
+									   اردبیل 
+							   </a>
+						 				
+							   <a href="../tag/اورمیه.html" 
+								style="font-size:1.01em">
+									   اورمیه 
+							   </a>
+						 				
+							   <a href="../tag/آذربایجان.html" 
+								style="font-size:2em">
+									   آذربایجان 
+							   </a>
+						 				
+							   <a href="../tag/ارسباران.html" 
+								style="font-size:1.05em">
+									   ارسباران 
+							   </a>
+						 				
+							   <a href="../tag/سفر.html" 
+								style="font-size:1em">
+									   سفر 
+							   </a>
+						 	
+									</div>
+									
+				 <div class="block">
+				<h3>آمار بازدید</h3>
+				<br/>
+					کل بازدید ها : <script>getStatVar('total_view');</script><br/>
+					بازدید امروز : <script>getStatVar('today_view');</script><br/>
+					بازدید دیروز : <script>getStatVar('yesterday_view');</script><br/>
+					بازدید این ماه : <script>getStatVar('this_month_view');</script><br/>
+					بازدید ماه قبل : <script>getStatVar('last_month_view');</script><br/>
+					تعداد نویسندگان : <script>getStatVar('total_author');</script><br/>
+					تعداد کل مطالب : <script>getStatVar('total_post');</script><br/>
+					آخرین بروز رسانی : <script>getStatVar('modify_date');</script><br/>
+					
+				  				</div>
+				
+					<img src="http://tem.parstools.com/skyback/images/rightboxfoot.jpg" alt="" />
+
+
+
+
+
+
+
+
+<!-- start logo cod off http://tabrizdigilinks.mihanblog.com --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../../tabrizdigilinks.mihanblog.com/index.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/digi.jpg"  width="188" height="160" alt="تبریز دیجی لینکلر"></a></p><!--finish logo cod off http://tabrizdigilinks.mihanblog.com -->
+
+<!-- start logo cod off https://t.me/tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://t.me/tabrizlinks" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/telelinks.jpg"  width="188" height="150" alt="تلگرام تبریز ویکی لینکلر"></a></p><!--finish logo cod off https://t.me/tabrizlinkss -->
+
+
+<!-- start logo cod off https://instagram.com/tabrizlinks/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://instagram.com/tabrizlinks/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/insta_tabrizlinks.jpg"  width="188" height="160" alt=" اینستاگرام تبریز ویکی لینکلر"></a></p><!--finish logo cod off https://instagram.com/tabrizlinks/ -->
+
+<!-- start logo cod off http://www.aparat.com/sahandtv --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/sahandtv" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/aparatsahandtv.jpg"  width="188" height="150" alt=" آپارات شبکه سهند"></a></p><!--finish logo cod off http://www.aparat.com/sahandtv -->
+
+<!-- start logo cod off http://www.aparat.com/sahandmusic --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/sahandmusic" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/oses_aparat.jpg"  width="188" height="150" alt="آپارات سهند موزیک"></a></p><!--finish logo cod off http://www.aparat.com/sahandmusic -->
+
+<!-- start logo cod off http://www.aparat.com/sahandcartoon --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/sahandcartoon" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/aparatsahandcartoon.jpg"  width="188" height="150" alt="آپارات سهند کارتون"></a></p><!--finish logo cod off http://www.aparat.com/sahandcartoon -->
+
+<!-- start logo cod off http://www.aparat.com/sahandchef --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/sahandchef" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/ashpaziaparat.jpg"  width="188" height="150" alt="آشپزی آذربایجان"></a></p><!--finish logo cod off http://www.aparat.com/sahandchef -->
+
+<!-- start logo cod off http://www.aparat.com/tabriz_2018 --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/tabriz_2018" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/2018laparat.jpg"  width="188" height="150" alt="تبریز 2018"></a></p><!--finish logo cod off http://www.aparat.com/tabriz_2018 -->
+
+
+<!-- start logo cod off https://www.facebook.com/tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://www.facebook.com/tabrizlinks" rel=”nofollow”  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/facelinks.jpg"  width="188" height="160" alt="فیسبوک"></a></p><!--finish logo cod off https://www.facebook.com/tabrizlinks -->
+
+<!-- start logo cod off https://www.lenzor.com/tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://www.lenzor.com/tabrizlinks" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/lenzor.jpg"  width="188" height="150" alt="لنزور"></a></p><!--finish logo cod off https://www.lenzor.com/tabrizlinks -->
+
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/azerbaijan_news --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/azerbaijan_news.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/wikilinksnews.jpg"  width="188" height="160" alt="آذربایجان نیوز"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/azerbaijan_news -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/tourism_tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/tourism_tabrizlinks.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/wiki_tourism.jpg"  width="188" height="160" alt="توریسم و گردشگری"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/tourism_tabrizlinks -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/carfts_azerbaijan --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/carfts_azerbaijan.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/sogat.jpg"  width="188" height="160" alt="سوغات و صنایع دستی"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/carfts_azerbaijan-->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/weather_azerbaijan --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/weather_azerbaijan.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/weather2.jpg"  width="188" height="150" alt="هواشناسی آذربایجان"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/weather_azerbaijan -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/azerbaijani_tradition --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/azerbaijani_tradition.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/azari.jpg"  width="188" height="150" alt="اصالت و رسوم آذربایجان"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/azerbaijani_tradition -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/celebrities_azerbaijan --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/celebrities_azerbaijan.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/celebrity.jpg"  width="188" height="150" alt="مشاهیر"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/celebrities_azerbaijan-->
+
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/post/706 --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../706.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/first.jpg"  width="188" height="150" alt="اولین های تبریز"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/post/706 -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/turk_tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/turk_tabrizlinks.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/turkman.jpg"  width="188" height="140" alt="ترکی آذربایجانی"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/turk_tabrizlinks -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/ancient --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/ancient.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/ancientaz.jpg"  width="188" height="140" alt="تاریخ باستان"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/ancient -->
+
+
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+
+		</div>
+		<div class="lcolomn leftside">
+			<div class="leftvnavi"><div>
+				<ul class="reset">
+               		
+				 					<li><a href="../archive/1398/12.html"><b> اسفند 1398</b></a></li>
+									<li><a href="../archive/1398/11.html"><b> بهمن 1398</b></a></li>
+									<li><a href="../archive/1398/10.html"><b> دی 1398</b></a></li>
+									<li><a href="../archive/1398/9.html"><b> آذر 1398</b></a></li>
+									<li><a href="../archive/1398/8.html"><b> آبان 1398</b></a></li>
+									<li><a href="../archive/1398/7.html"><b> مهر 1398</b></a></li>
+									<li><a href="../archive/1398/6.html"><b> شهریور 1398</b></a></li>
+									<li><a href="../archive/1398/5.html"><b> مرداد 1398</b></a></li>
+									<li><a href="../archive/1398/4.html"><b> تیر 1398</b></a></li>
+									<li><a href="../archive/1398/3.html"><b> خرداد 1398</b></a></li>
+									<li><a href="../archive/1398/2.html"><b> اردیبهشت 1398</b></a></li>
+									<li><a href="../archive/1398/1.html"><b> فروردین 1398</b></a></li>
+									<li><a href="../archive/1397/12.html"><b> اسفند 1397</b></a></li>
+									<li><a href="../archive/1397/11.html"><b> بهمن 1397</b></a></li>
+									<li><a href="../archive/1397/10.html"><b> دی 1397</b></a></li>
+									<li><a href="../archive/1397/9.html"><b> آذر 1397</b></a></li>
+									<li><a href="../archive/1397/8.html"><b> آبان 1397</b></a></li>
+									<li><a href="../archive/1397/7.html"><b> مهر 1397</b></a></li>
+									<li><a href="../archive/1397/6.html"><b> شهریور 1397</b></a></li>
+									<li><a href="../archive/1397/5.html"><b> مرداد 1397</b></a></li>
+									<li><a href="../archive/1397/4.html"><b> تیر 1397</b></a></li>
+									<li><a href="../archive/1397/3.html"><b> خرداد 1397</b></a></li>
+									<li><a href="../archive/1397/2.html"><b> اردیبهشت 1397</b></a></li>
+									<li><a href="../archive/1397/1.html"><b> فروردین 1397</b></a></li>
+									<li><a href="../archive/1396/12.html"><b> اسفند 1396</b></a></li>
+									<li><a href="../archive/1396/11.html"><b> بهمن 1396</b></a></li>
+									<li><a href="../archive/1396/10.html"><b> دی 1396</b></a></li>
+									<li><a href="../archive/1396/9.html"><b> آذر 1396</b></a></li>
+									<li><a href="../archive/1396/8.html"><b> آبان 1396</b></a></li>
+									<li><a href="../archive/1396/7.html"><b> مهر 1396</b></a></li>
+									<li><a href="../archive.html"><b>نمایش تمام مطالب</b></a></li>
+							</ul>
+			</div></div>
+			<div class="lbox"><div class="lbox">
+				<div class="block btopnews">
+					<h3>درباره ما</h3>
+<center><div style="text-align:center"><img src="../../../static.mihanblog.com/public/user_data/web_photo/367/1100278.jpg@4235"  /></div></center>
+
+			<hr />
+			مجموعه تبریز ویکی لینکلر<br />
+  Tabriz WikiLinks<br />
+آغاز وبلاگ در آذر ماه 1391<br />
+*******************<br />
+<br />
+وبلاگ تبریز ویکی لینکلر  <br />
+Tabrizlinks.mihanblog.com <br />
+<br />
+وبلاگ تبریز دیجی لینکلر<br />
+Tabrizdigilinks.mihanblog.com <br />
+<br />
+اینستاگرام  تبریز ویکی لینکلر<br />
+Instagram.com/tabrizlinks <br />
+<br />
+فیس بوک تبریز ویکی لینکلر<br />
+Facebook.com/tabrizlinks <br />
+<br />
+شبکه ویدیویی نماشا تبریز لینک<br />
+Namasha.com/tabrizlinks<br />
+<br />
+آپارات ویدیویی شبکه سهند<br />
+Aparat.com/sahandtv <br />
+<br />
+آپارات ویدیویی سهند موزیک<br />
+Aparat.com/sahandmusic <br />
+<br />
+آپارات ویدیویی سهند کارتون<br />
+Aparat.com/sahandcartoon <br />
+<br />
+آپارات ویدیویی آشپزی آذربایجان<br />
+Aparat.com/sahandchef <br />
+<br />
+آپارات ویدیویی بازنشر تبریز 2018<br />
+Aparat.com/tabriz_2018<br />
+<br />
+کانال یوتیوب ویدیویی<br />
+youtube.com/tabrizlinks<br />
+<br />
+گالری لنزور تبریز ویکی لینکلر<br />
+Lenzor.com/tabrizlinks <br />
+<br />
+تلگرام تبریز ویکی لینکلر<br />
+https://t.me/tabrizlinks<br />
+@tabrizlinks<br />
+<br />
+		    <br />ایجاد کننده وبلاگ : <a href="../author/944998.html">تبریز قارتال</a>
+				
+				<br /><br />
+				<center></center>
+				<br />
+
+				</div>
+			</div></div>
+			<div class="lboxfoot">
+				<div class="block bfriends">
+				
+					<ul class="reset">
+						
+
+
+
+
+<!-- start logo cod off https://www.google.com/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://www.google.com/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/goole.png"  width="172" height="120" alt="گوگل"></a></p><!--finish logo cod off https://www.google.com/ -->
+
+
+<!-- start logo cod off https://azb.wikipedia.org/wiki/%D8%A2%D9%86%D8%A7_%D8%B5%D9%81%D8%AD%D9%87 --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://azb.wikipedia.org/wiki/%D8%A2%D9%86%D8%A7_%D8%B5%D9%81%D8%AD%D9%87"  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/AZwikipedia.jpg"  width="172" height="140" alt="ویکی پدیا"></a></p><!--finish logo cod off https://azb.wikipedia.org/wiki/%D8%A2%D9%86%D8%A7_%D8%B5%D9%81%D8%AD%D9%87 -->
+
+<!-- start logo cod off http://kitablar.org/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://kitablar.org/"  rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/kitab.gif"  width="172" height="140" alt="کتاب ترکی"></a></p><!--finish logo cod off http://kitablar.org/ -->
+
+<!-- start logo cod off http://www.lehceler.com/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.lehceler.com/"  rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/turkdictionary.jpg"  width="172" height="140" alt="دیکشنری زبان ترکی"></a></p><!--finish logo cod off http://www.lehceler.com/ -->
+
+<!-- start logo cod off http://www.turuz.com/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.turuz.com/" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/Turuz_Sozlugu.jpg"  width="172" height="110" alt="دایره المعارف مجازی"></a></p><!--finish logo cod off http://www.turuz.com/ -->
+
+<!-- start logo cod off https://www.instagram.com/urmialake/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://www.instagram.com/urmialake/"  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/urmialake.JPG"  width="172" height="130" alt="دریاچه ارومیه"></a></p><!--finish logo cod off https://www.instagram.com/urmialake/ -->
+
+<!-- start logo cod off http://mostamandan.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://mostamandan.ir/"  rel=”nofollow”  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/mostmandan.png"  width="172" height="130" alt="مستمندان تبریز"></a></p><!--finish logo cod off http://mostamandan.ir/ -->
+
+<!-- start logo cod off http://iranestekhdam.ir/category/agahi-estekhdam/estekhdam-ostani/%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A2%D8%B0%D8%B1%D8%A8%D8%A7%DB%8C%D8%AC%D8%A7%D9%86-%D8%B4%D8%B1%D9%82%DB%8C/--><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://iranestekhdam.ir/category/agahi-estekhdam/estekhdam-ostani/%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A2%D8%B0%D8%B1%D8%A8%D8%A7%DB%8C%D8%AC%D8%A7%D9%86-%D8%B4%D8%B1%D9%82%DB%8C/"  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/estekhdamiran.png"  width="172" height="120" alt="استخدامی"></a></p><!--finish logo cod off http://iranestekhdam.ir/category/agahi-estekhdam/estekhdam-ostani/%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A2%D8%B0%D8%B1%D8%A8%D8%A7%DB%8C%D8%AC%D8%A7%D9%86-%D8%B4%D8%B1%D9%82%DB%8C/ -->
+
+<!-- start logo cod off http://www.tabrizsearch.com/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.tabrizsearch.com/"  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/TS.png"  width="172" height="100" alt="تبریز سرچ"></a></p><!--finish logo cod off http://www.tabrizsearch.com/ -->
+
+<!-- start logo cod off https://divar.ir/tabriz/%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2/browse/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://divar.ir/tabriz/%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2/browse/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/divar.png"  width="172" height="100" alt="دیوار تبریز"></a></p><!--finish logo cod off https://divar.ir/tabriz/%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2/browse/ -->
+
+<!-- start logo cod off http://sevin.dance/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://sevin.dance/" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/azeri.jpg"  width="172" height="140" alt="رقص آذری "></a></p><!--finish logo cod off http://sevin.dance/ -->
+
+
+<!-- start logo cod off http://zanjan2rism.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../zanjan2rism.mihanblog.com/index.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/zancan2rism.jpg"  width="172" height="130" alt="زنجان توریسم"></a></p><!--finish logo cod off http://zanjan2rism.mihanblog.com/ -->
+
+<!-- start logo cod off http://www.tabrizmodern.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.tabrizmodern.ir/"  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/tabrizmodern2b.jpg"  width="172" height="110" alt="تبریز مدرن"></a></p><!--finish logo cod off http://www.tabrizmodern.ir/ -->
+
+<!-- start logo cod off http://www.tripadvisor.com/Tourism-g3532667-East_Azerbaijan_Province-Vacations.html --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.tripadvisor.com/Tourism-g3532667-East_Azerbaijan_Province-Vacations.html" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/tripad.png"  width="172" height="100" alt="tripadvisor"></a></p><!--finish logo cod off http://www.tripadvisor.com/Tourism-g3532667-East_Azerbaijan_Province-Vacations.html -->
+
+
+
+<!-- start logo cod off http://www.trakhtorlink.com/default.aspx --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.trakhtorlink.com/default.aspx" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/ttlink.png"  width="172" height="120" alt="تراکتور لینک"></a></p><!--finish logo cod off http://www.trakhtorlink.com/default.aspx/ -->
+
+<!-- start logo cod off http://fava.tabriz.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://fava.tabriz.ir/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/fava.jpg"  width="172" height="120" alt="آمار و داده های تبریز"></a></p><!--finish logo cod off http://fava.tabriz.ir/ -->
+
+
+<!-- start logo cod off http://nasrnews.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://nasrnews.ir/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/NasrNews.jpg"  width="172" height="120" alt="نصرنیوز"></a></p><!--finish logo cod off http://nasrnews.ir/ -->
+
+<!-- start logo cod off http://shahryarnews.net/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://shahryarnews.net/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/shahriar.jpg"  width="172" height="120" alt="خبرگزاری شهریار"></a></p><!--finish logo cod off http://shahryarnews.net/ -->
+
+
+
+<!-- start logo cod off https://ca.axar.az/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://ca.axar.az/" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/axar.JPG"  width="172" height="130" alt="آخار آذ"></a></p><!--finish logo cod off https://ca.axar.az/ -->
+
+
+
+<!-- start logo cod off http://azargalam.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://azargalam.ir/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/azarghalam.png"  width="172" height="120" alt="آذرقلم"></a></p><!--finish logo cod off http://azargalam.ir/ -->
+
+
+<!-- start logo cod off http://durnanews.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://durnanews.ir/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/durnanews.jpg"  width="172" height="120" alt="دورنا نیوز"></a></p><!--finish logo cod off http://durnanews.ir/ -->
+
+<!-- start logo cod off http://www.eachto.org/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.eachto.org/" rel=”nofollow”  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/miras.jpg"  width="172" height="120" alt="میراث فرهنگی آذربایجان"></a></p><!--finish logo cod off http://www.eachto.org/ -->
+
+
+<!-- start logo cod off http://tabriz.irib.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://tabriz.irib.ir/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/sahandtv.png"  width="172" height="130" alt="صدا و سیمای مرکز استان آذربایجانشرقی"></a></p><!--finish logo cod off http://tabriz.irib.ir/ -->
+
+<!-- start logo cod off http://ostan-as.gov.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://ostan-as.gov.ir/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/east_azarbayjan.png"  width="172" height="172" alt="استانداری آذربایجان شرقی"></a></p><!--finish logo cod off http://ostan-as.gov.ir/ -->
+
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="clr"></div>
+	</div></div></div>
+		<div class="footer"><div><div>
+			<ul class="reset">
+				<li class="lcolomn">
+					<b>
+					 CopyRight © 2010 - 2011 <a href="../../index.html" title="tabrizlinks Group">tabrizlinks Group</a> , All Rights Reserved | <a href="../rss/index.html">RSS 2</a>
+					</b><br />
+
+					<span><a target="_blank" href="http://parstools.com/" title="ParsTools.com">Design by ParsTools.Com</a></span>
+				</li>
+				<li class="rcolomn">
+					<ul>
+						<li><a href="../../index.html"><img src="http://tem.parstools.com/skyback/images/counter.png" alt="counter" /></a></li>
+						<li><a href="../../index.html"><img src="http://tem.parstools.com/skyback/images/counter.png" alt="counter" /></a></li>
+						<li><a href="../../index.html"><img src="http://tem.parstools.com/skyback/images/counter.png" alt="counter" /></a></li>
+					</ul>
+
+				</li>
+			</ul>
+		</div></div></div>
+	</div>
+</div>
+<br />
+</div>
+</body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'tabrizlinks.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

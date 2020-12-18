@@ -1,0 +1,1715 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../../../xmlrpc%3Frsd" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*1379566*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[93]='0';commentCnt[95]='0';commentCnt[96]='0';commentCnt[97]='0';commentCnt[98]='0';commentCnt[99]='0';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[95]='0';
+mihanblogDisLikeArrCnt[95]='0';
+mihanblogLikeArrCnt[97]='0';
+mihanblogDisLikeArrCnt[97]='0';
+mihanblogLikeArrCnt[99]='0';
+mihanblogDisLikeArrCnt[99]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://shahiddanandehlib.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://shahiddanandehlib.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','131');
+	setStatVar('total_author','3');
+	setStatVar('modify_date','دوشنبه 4 اردیبهشت 1396');
+	
+	setStatVar('today_view','0');
+	setStatVar('yesterday_view','4');
+	
+	setStatVar('this_month_view','278');
+	setStatVar('last_month_view','289');
+
+	setStatVar('total_view','57951');
+	setStatVar('last_view_date','پنجشنبه 27 آذر 1399 (00:42)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://shahiddanandehlib.mihanblog.com/statupdate/?data[refereruri]=http://shahiddanandehlib.mihanblog.com/post/archive/1394/11&data[postid]=&data[requesturi]=/post/archive/1394/11/page/2&data[sdate]=1608175049&data[hash]=5cb7b9718a9a68d0ccfe0d66fc597d06&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://shahiddanandehlib.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<title>کتابخانه عمومی شهید داننده بستان آباد - مطالب  بهمن 1394</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="fa">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<link rel="alternate" type="application/rss+xml" title="کتابخانه عمومی شهید داننده بستان آباد" href="../../../../rss/index.html" />
+<link rel="alternate" type="application/atom+xml" title="کتابخانه عمومی شهید داننده بستان آباد" href="../../../../atom/index.html" />
+</head>
+<style type="text/css">
+
+body {
+	font-family: Tahoma;
+	font-size: 8pt;
+	text-align: center;
+	direction: ltr;
+	line-height: 18px;
+	margin: 0px;
+	background-color: #BFBFBD;
+}
+.page {
+	width: 980px;
+	margin-right: auto;
+	margin-left: auto;
+	direction: rtl;
+	background-color: #EDEDEB;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+}
+/******************* header ******************/
+.header {
+	height: 280px;
+	width: 980px;
+	text-align: center;
+	background-repeat: no-repeat;
+	margin-bottom: 0px;
+	background-image: url(http://s7.picofile.com/file/8247778368/theme_01.jpg);
+}
+.header-mid {
+	width: 800px;
+	margin-left: auto;
+	padding-top: 180px;
+	text-align: center;
+	margin-right: auto;
+}
+.header h1 {
+	font-family: Arial;
+	font-size: 28px;
+	font-weight: bold;
+	margin: 0px;
+}
+.header h3 {
+	font-family: Tahoma;
+	font-size: 12px;
+	margin: 0px;
+	padding-top: 20px;
+	color: #C77730;
+}
+.header A {
+	color: #CF8335;
+	text-decoration: none;
+}
+/****************** navbar ******************/
+.navbar {
+	height: 70px;
+	width: 980px;
+	text-align: center;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-image: url(http://s6.picofile.com/file/8247778400/theme_02.jpg);
+}
+.navbar-mid {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 20px;
+}
+.navbar ul {
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 50px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+.navbar li {
+	float: right;
+	list-style-type: none;
+	font-size: 9pt;
+	font-weight: bold;
+	margin-left: 40px;
+}
+.navbar li a:link {
+	color: #000000;
+	text-decoration: none;
+}
+.navbar li a:visited {
+	color: #000000;
+	text-decoration: none;
+}
+.navbar li a:hover {
+	color: #626262;
+	text-decoration: none;
+}
+/***************** content *******************/
+.main {
+	width: 980px;
+}
+.content {
+	float: right;
+	width: 540px;
+}
+.bodypost {
+	width: 540px;
+	margin-bottom: 15px;
+	background-image: url(http://s7.picofile.com/file/8247778442/theme_09.jpg);
+}
+.bodypost a:link {
+	color: #5B5E58;
+	text-decoration: none;
+}
+.bodypost a:visited {
+	color: #5B5E58;
+	text-decoration: none;
+}
+.bodypost a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+.ptitle {
+	height: 60px;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(http://s6.picofile.com/file/8247778426/theme_06.jpg);
+}
+.ptitle-mid {
+	text-align: right;
+	width: 440px;
+	margin-right: 80px;
+	margin-left: 20px;
+	padding-top: 20px;
+}
+.ptitle a:link {
+	color: #000;
+	text-decoration: none;
+}
+.ptitle a:visited {
+	color: #000;
+	text-decoration: none;
+}
+.ptitle a:hover {
+	color: #000;
+	text-decoration: none;
+}
+.ptitle h1 {
+	margin: 0px;
+	font-family: Arial;
+	font-size: 11pt;
+	font-weight: bold;
+}
+.ptext {
+	text-align: center;
+	font-family: Tahoma;
+	font-size: 9pt;
+}
+.ptext-mid {
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	text-align: right;
+}
+.ptext img {
+	max-width: 95%;
+	height: auto;
+}
+.ptext img:hover {
+}
+.pinfo {
+}
+.pinfo-mid {
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: right;
+	padding-bottom: 10px;
+}
+.author {
+	float: right;
+	width: 45%;
+}
+.date {
+	float: left;
+	width: 45%;
+}
+.pcat {
+}
+.pcat-mid {
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: right;
+	padding-top: 3px;
+	padding-bottom: 5px;
+}
+.pcomore {
+	font-size: 9pt;
+}
+.pcomore-mid {
+	text-align: right;
+	width: 95%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 12px;
+}
+.pcomore a:link {
+}
+.pcomore a:visited {
+}
+.pcomore a:hover {
+}
+.pmore {
+	float: right;
+	width: 40%;
+}
+.pcomment {
+	float: left;
+	width: 40%;
+}
+.p-bbg {
+	height: 20px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url(http://s7.picofile.com/file/8247778476/theme_11.jpg);
+}
+.paper {
+	width: 540px;
+	background-color: #F7F7F5;
+	border-radius: 10px;
+}
+.paper-tbg {
+	height: 10px;
+}
+.paper-text {
+	text-align: center;
+	font-family: Tahoma;
+	font-size: 9pt;
+	font-weight: bold;
+	background-repeat: repeat-y;
+	background-position: center;
+}
+.paper-text-mid {
+	width: 90%;
+	margin-top: auto;
+	margin-bottom: auto;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.paper-text a:link {
+	color: #000;
+	text-decoration: none;
+}
+.paper-text a:visited {
+	color: #000;
+	text-decoration: none;
+}
+.paper-text a:hover {
+	color: #81847C;
+	text-decoration: none;
+}
+.paper-text ul {
+	margin: 0px;
+	padding: 0px;
+}
+.paper-text li {
+	float: right;
+	margin-left: 20px;
+	list-style-type: none;
+}
+.paper-text li a:link {
+	color: #000;
+	text-decoration: none;
+}
+.paper-text li a:visited {
+	color: #000;
+	text-decoration: none;
+}
+.paper-text li a:hover {
+	color: #727372;
+	text-decoration: none;
+}
+.paper-bbg {
+	height: 10px;
+}
+.rpapers {
+	float: right;
+	width: 49%;
+}
+.lpapers {
+	float: left;
+	width: 49%;
+}
+/***************** rbar **********************/
+.right {
+	float: right;
+	width: 200px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.rm {
+	margin-bottom: 10px;
+}
+.rmtitle {
+	height: 60px;
+	text-align: center;
+	font-family: Arial;
+	font-size: 11pt;
+	font-weight: bold;
+	color: #000;
+	background-repeat: no-repeat;
+	background-image: url(http://s7.picofile.com/file/8247778418/theme_04.jpg);
+}
+.rmtitle-mid {
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 20px;
+	text-align: right;
+}
+.rmtext {
+	text-align: center;
+	background-repeat: repeat-y;
+	background-image: url(http://s7.picofile.com/file/8247778434/theme_08.jpg);
+}
+.rmtext-mid {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: right;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.rmtext a:link {
+	color: #000;
+	text-decoration: none;
+}
+.rmtext a:visited {
+	color: #000;
+	text-decoration: none;
+}
+.rmtext a:hover {
+	color: #666;
+	text-decoration: none;
+}
+.rmtext ul {
+	padding: 0px;
+	margin: 0px;
+}
+.rmtext li {
+	list-style-type: none;
+}
+.rmtext li a:link {
+	display: block;
+	width: 100%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: #000;
+	text-decoration: none;
+}
+.rmtext li a:visited {
+	display: block;
+	width: 100%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: #000;
+	text-decoration: none;
+}
+.rmtext li a:hover {
+	color: #666;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.rmtext img {
+	max-width: 98%;
+	height: auto;
+}
+.rmtext img:hover {
+}
+.rm-bbg {
+	height: 20px;
+	background-repeat: no-repeat;
+	background-image: url(http://s7.picofile.com/file/8247778450/theme_10.jpg);
+}
+/***************** lbar ***********************/
+.left {
+	float: left;
+	width: 200px;
+	margin-left: 10px;
+}
+.lm {
+	margin-bottom: 10px;
+}
+.lmtitle {
+	height: 60px;
+	text-align: center;
+	font-family: Arial;
+	font-size: 11pt;
+	font-weight: bold;
+	color: #000;
+	background-repeat: no-repeat;
+	background-image: url(http://s7.picofile.com/file/8247778418/theme_04.jpg);
+}
+.lmtitle-mid {
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 20px;
+	text-align: right;
+}
+.lmtext {
+	text-align: center;
+	background-repeat: repeat-y;
+	background-image: url(http://s7.picofile.com/file/8247778434/theme_08.jpg);
+}
+.lmtext-mid {
+	width: 90%;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: right;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+.lmtext a:link {
+	color: #000;
+	text-decoration: none;
+}
+.lmtext a:visited {
+	color: #000;
+	text-decoration: none;
+}
+.lmtext a:hover {
+	color: #666;
+	text-decoration: none;
+}
+.lmtext ul {
+	padding: 0px;
+	margin: 0px;
+}
+.lmtext li {
+	list-style-type: none;
+}
+.lmtext li a:link {
+	display: block;
+	width: 100%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: #000;
+	text-decoration: none;
+}
+.lmtext li a:visited {
+	display: block;
+	width: 100%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	color: #000;
+	text-decoration: none;
+}
+.lmtext li a:hover {
+	color: #666;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.lmtext img {
+	max-width: 98%;
+	height: auto;
+}
+.lmtext img:hover {
+}
+.lm-bbg {
+	height: 20px;
+	background-repeat: no-repeat;
+	background-image: url(http://s7.picofile.com/file/8247778450/theme_10.jpg);
+}
+/*************** footer **************************/
+.footer {
+	height: 100px;
+	width: 980px;
+	margin-top: 10px;
+	margin-bottom: 0px;
+	font-family: Tahoma;
+	font-size: 10pt;
+	color: #000;
+	background-repeat: no-repeat;
+	background-image: url(http://s7.picofile.com/file/8247778484/theme_13.jpg);
+}
+.footer-mid {
+	width: 80%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-top: 30px;
+	text-align: center;
+}
+.footer a:link {
+	color: #000;
+	text-decoration: none;
+	font-weight: normal;
+}
+.footer a:visited {
+	color: #000;
+	text-decoration: none;
+	font-weight: normal;
+}
+.footer a:hover {
+	color: #000;
+	text-decoration: none;
+	font-weight: normal;
+}
+/************** etc class **************************/
+.profile-img {
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+.profile-text {
+	text-align: justify;
+}
+
+
+
+</style>
+</head><body>
+<div class="page">
+  <div class="header">
+    <div class="header-mid"> <a href="../../../../../index.html">
+      <h1>کتابخانه عمومی شهید داننده بستان آباد</h1>
+      </a>
+      <h3>&quot;کتاب، بزرگ‌ترین اختراع بشر است. &quot;شکسپیر</h3>
+    </div>
+  </div>
+  <!--- e header --->
+  
+  <div class="navbar">
+    <div class="navbar-mid">
+      <ul>
+        <li><a href="../../../../../index.html">صفحه اصلی</a></li>
+        <li><a href="reyhaneh.khakzad@yahoo.com.html"> پست الکترونیک</a></li>
+        <li><a href="javascript:messageForm()">تماس با ما</a></li>
+        <li><a href="http://cafeskin.blogfa.com/">قالب وبلاگ</a></li>
+        <li><a href="../../../../rss/index.html">RSS</a></li>
+        <li><a href="../../../../atom/index.html">Atom</a></li>
+      </ul>
+    </div>
+  </div>
+  <!--- e navbar ---->
+  
+  <div class="main">
+    <div class="right">
+      <div class="rm">
+        <div class="rmtitle">
+          <div class="rmtitle-mid">درباره من</div>
+        </div>
+        <div class="rmtext">
+          <div class="rmtext-mid">
+            <div class="profile-img"> <img src="http://static.mihanblog.com//public/user_data/web_photo/460/1379566.jpg?9436"  /></div>
+            <div class="profile-text">کتابداری نه تنها یک حرفه بلکه یک ارزش است , شما هم با ما همگام شوید تا در جهت ارتقای این ارزش بکوشیم .<br />
+<br />
+کتابخانه شهید داننده در طول هفته  ( صبح و عصر) در تمامی زمینه های علمی وتحقیقی آماده ارائه خدمات به تمامی افراد علاقمند به کتاب و کتابخوانی می باشد.<br />
+<br />
+<br />
+                 *پرسنل اداره کتابخانه عمومی شهید داننده بستان آباد*<br />
+<br />
+<br />
+                مسئول و رئیس اداره شهرستان :آقای علیرضا آقا خانی <br />
+           <br />
+                      <br />
+                 کتابدار:خانم لیلا وجدانی <br />
+<br />
+<br />
+                کتابدار : خانم ریحانه خاکزاد<br />
+           <br />
+               <br />
+</div>
+          </div>
+        </div>
+        <div class="rm-bbg"></div>
+      </div>
+              <div class="rm">
+          <div class="rmtitle">
+            <div class="rmtitle-mid">موضوعات</div>
+          </div>
+          <div class="rmtext">
+            <div class="rmtext-mid">
+              <ul>
+                                  <li> <a href="../../../../category/11.html">نقد وبررسی کتاب(1) </a> </li>
+                                  <li> <a href="../../../../category/10.html">دیدار با خانوده محترم شهدا(1) </a> </li>
+                                  <li> <a href="../../../../category/9.html">تبریک به مناسبت ایام(2) </a> </li>
+                                  <li> <a href="../../../../category/8.html">نمایشگاه(1) </a> </li>
+                                  <li> <a href="../../../../category/7.html">معرفی نویسندگان کتاب(1) </a> </li>
+                                  <li> <a href="../../../../category/6.html">جلسه کارکنان کتابخانه(4) </a> </li>
+                                  <li> <a href="../../../../category/5.html">برگزاری برنامه های فرهنگی(31) </a> </li>
+                                  <li> <a href="../../../../category/4.html">افتتاح کتابخانه سیار روستایی بستان آباد(2) </a> </li>
+                                  <li> <a href="../../../../category/3.html">نمایشگاه کتاب(4) </a> </li>
+                                  <li> <a href="../../../../category/2.html">گزارش مراسم نشست کتابخوانی(9) </a> </li>
+                                  <li> <a href="../../../../category/1.html">معرفی کتاب(17) </a> </li>
+                              </ul>
+            </div>
+          </div>
+          <div class="rm-bbg"></div>
+        </div>
+                    <div class="rm">
+          <div class="rmtitle">
+            <div class="rmtitle-mid">نویسندگان</div>
+          </div>
+          <div class="rmtext">
+            <div class="rmtext-mid">
+              <ul>
+                                  <li><a href="../../../../author/1167750.html"><img src="http://static.mihanblog.com//public/user_data/user_photo/390/1167750.jpg" style="width:16px;" /></a> <a href="../../../../author/1167750.html" style="display:inline;"> ریحانه خاکزاد(124) 	            </a></li>
+                                  <li><a href="../../../../author/1441361.html"></a> <a href="../../../../author/1441361.html" style="display:inline;"> علیرضا آقا خانی (6) 	            </a></li>
+                                  <li><a href="../../../../author/1441362.html"></a> <a href="../../../../author/1441362.html" style="display:inline;"> لیلا وجدانی(1) 	            </a></li>
+                              </ul>
+            </div>
+          </div>
+          <div class="rm-bbg"></div>
+        </div>
+                          <div class="rm">
+          <div class="rmtitle">
+            <div class="rmtitle-mid">آرشیو</div>
+          </div>
+          <div class="rmtext">
+            <div class="rmtext-mid">
+              <ul>
+                                  <li><a href='../../../1396/2.html'> اردیبهشت 1396</a></li>
+                                  <li><a href='../../../1395/11.html'> بهمن 1395</a></li>
+                                  <li><a href='../../../1395/10.html'> دی 1395</a></li>
+                                  <li><a href='../../../1395/9.html'> آذر 1395</a></li>
+                                  <li><a href='../../../1395/8.html'> آبان 1395</a></li>
+                                  <li><a href='../../../1395/7.html'> مهر 1395</a></li>
+                                  <li><a href='../../../1395/5.html'> مرداد 1395</a></li>
+                                  <li><a href='../../../1395/3.html'> خرداد 1395</a></li>
+                                  <li><a href='../../../1395/2.html'> اردیبهشت 1395</a></li>
+                                  <li><a href='../../../1395/1.html'> فروردین 1395</a></li>
+                                  <li><a href='../../11.html'> بهمن 1394</a></li>
+                                  <li><a href='../../10.html'> دی 1394</a></li>
+                                <li><a href="../../../../archive.html"><b>کل آرشیوها</b></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="rm-bbg"></div>
+        </div>
+            <div class="rm">
+        <div class="rmtitle">
+          <div class="rmtitle-mid">جستجو در وبلاگ</div>
+        </div>
+        <div class="rmtext">
+          <div class="rmtext-mid">
+            <form id="frm-16080272145fd88c4eb3f80" method="get" action="http://shahiddanandehlib.mihanblog.com/post/search/fid/16080272145fd88c4eb3f80"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+              <input type="text" name="search_text"/>
+              <input type="submit" value="جستجو"/>
+            <input type="hidden" name="frm-id" value="16080272145fd88c4eb3f80" id="frm-id" /></form>          </div>
+        </div>
+        <div class="rm-bbg"></div>
+      </div>
+    </div>
+    <!--- e right --->
+    
+    <div class="content">
+              
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		          <div class="bodypost">
+            <div class="ptitle">
+              <div class="ptitle-mid"> <a href="../../../../99.html">
+                <h1>رویدادهای بهمن 1357</h1>
+                </a></div>
+            </div>
+            <div class="pinfo">
+              <div class="pinfo-mid">
+                <div class="author">نویسنده :<a href="../../../../author/1167750.html">ریحانه خاکزاد</a></div>
+                <div class="date">تاریخ: یکشنبه 11 بهمن 1394 03:07 ب.ظ</div>
+                <div style="clear:both"></div>
+              </div>
+            </div>
+            <div class="ptext">
+              <div class="ptext-mid">                 <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+<div class="CenterPost" style="width: 540px; direction: rtl; text-align: right; color: rgb(51, 51, 51); overflow: hidden; background-image: url(&quot%3Bpost2.gif&quot%3B.html); background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: 100% 50%; background-repeat: repeat-y;"><div class="CenterPost2" style="text-align: justify; padding: 10px 15px;"><span style="background-color: rgb(255, 255, 255);"><font face="Mihan-Koodak"><b><font size="4">دههٔ فجر انقلاب اسلامی</font></b><font size="3">&nbsp;به روزهای ۱۲ تا ۲۲ بهمن ۱۳۵۷ گفته می‌شود</font></font></span></div><div class="CenterPost2" style="text-align: justify; padding: 10px 15px;"><span style="background-color: rgb(255, 255, 255);"><font size="3" face="Mihan-Koodak">&nbsp;که طی&nbsp;</font></span><span style="font-family: Mihan-Koodak; font-size: medium;">آن&nbsp;</span><a title="سید روح‌الله خمینی" href="https://fa.wikipedia.org/wiki/%D8%B3%DB%8C%D8%AF_%D8%B1%D9%88%D8%AD%E2%80%8C%D8%A7%D9%84%D9%84%D9%87_%D8%AE%D9%85%DB%8C%D9%86%DB%8C" style="font-family: Mihan-Koodak; font-size: medium; text-decoration: none; color: rgb(16, 105, 197);">سید روح‌الله خمینی</a><span style="font-family: Mihan-Koodak; font-size: medium;">&nbsp;بعد از تبعید پانزده ساله </span></div><div class="CenterPost2" style="text-align: justify; padding: 10px 15px;"><span style="font-family: Mihan-Koodak; font-size: medium;">در دوازدهم بهمن سال ۱۳۵۷ به&nbsp;</span><a title="ایران" href="https://fa.wikipedia.org/wiki/%D8%A7%DB%8C%D8%B1%D8%A7%D9%86" style="font-family: Mihan-Koodak; font-size: medium; text-decoration: none; color: rgb(16, 105, 197);">ایران</a><span style="font-family: Mihan-Koodak; font-size: medium;">&nbsp;وارد</span><span style="font-family: Mihan-Koodak; font-size: medium;">و در نهایت&nbsp;</span></div><div class="CenterPost2" style="text-align: justify; padding: 10px 15px;"><span style="font-family: Mihan-Koodak; font-size: medium;">با اعلام بی‌طرفی ارتش شاهنشاهی،&nbsp;</span><a class="mw-redirect" title="سلطنت پهلوی" href="https://fa.wikipedia.org/wiki/%D8%B3%D9%84%D8%B7%D9%86%D8%AA_%D9%BE%D9%87%D9%84%D9%88%DB%8C" style="font-family: Mihan-Koodak; font-size: medium; text-decoration: none; color: rgb(16, 105, 197);">سلطنت پهلوی</a><span style="font-family: Mihan-Koodak; font-size: medium;">&nbsp;در بیست و دوم بهمن&nbsp;</span></div><div class="CenterPost2" style="text-align: justify; padding: 10px 15px;"><span style="font-family: Mihan-Koodak; font-size: medium;">ماه منقرض شد</span><span style="font-family: Mihan-Koodak; font-size: medium;">&nbsp;و&nbsp;</span><a class="mw-redirect" title="انقلاب اسلامی ایران" href="https://fa.wikipedia.org/wiki/%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8_%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86" style="font-family: Mihan-Koodak; font-size: medium; text-decoration: none; color: rgb(16, 105, 197);">انقلاب اسلامی ایران</a><span style="font-family: Mihan-Koodak; font-size: medium;">&nbsp;به پیروزی رسید.</span></div><div class="CenterPost2" style="padding: 10px 15px;"><h2 style="font-family: Tahoma; font-size: 8pt;"><span id=".DB.B1.DB.B2_.D8.A8.D9.87.D9.85.D9.86_.D8.B1.D9.88.D8.B2_.D9.88.D8.B1.D9.88.D8.AF_.D8.B1.D9.88.D8.AD.E2.80.8C.D8.A7.D9.84.D9.84.D9.87_.D8.AE.D9.85.DB.8C.D9.86.DB.8C_.D8.A8.D9.87_.D8.A7.DB.8C.D8.B1.D8.A7.D9.86" class="mw-headline" style="background-color: rgb(255, 255, 255);">۱۲ بهمن روز ورود حضرت امام خمینی(ره) به ایران</span></h2><p style="font-family: Tahoma; font-size: 8pt;"><span class="mw-headline" style="background-color: rgb(255, 255, 255);">در روز ۱۲ بهمن بزرگترین استقبال در تهران برگزار شد؛ بطوری که طول جمعیت&nbsp;</span></p><p style="font-family: Tahoma; font-size: 8pt;"><span class="mw-headline" style="background-color: rgb(255, 255, 255);">استقبال کننده از خمینی به ۳۳ کیلومتر رسیده بود. در ساعت ۹:۲۷ دقیقه بامداد</span></p><p style="font-family: Tahoma; font-size: 8pt;"><span class="mw-headline" style="background-color: rgb(255, 255, 255);">&nbsp;روز دوازدهم بهمن هواپیمای حامل خمینی در میان تدابیر شدید امنیتی&nbsp;</span></p><p style="font-family: Tahoma; font-size: 8pt;"><span class="mw-headline" style="background-color: rgb(255, 255, 255);">در&nbsp;<a class="mw-redirect" title="فرودگاه مهرآباد" href="https://fa.wikipedia.org/wiki/%D9%81%D8%B1%D9%88%D8%AF%DA%AF%D8%A7%D9%87_%D9%85%D9%87%D8%B1%D8%A2%D8%A8%D8%A7%D8%AF" style="text-decoration: none; color: rgb(16, 105, 197);">فرودگاه مهرآباد</a>&nbsp;برزمین نشست. او پس از ورود به فرودگاه و ایراد سخنرانی طبق</span></p><p style="font-family: Tahoma; font-size: 8pt;"><span class="mw-headline" style="background-color: rgb(255, 255, 255);">برنامه‌ای که از قبل تنظیم شده بود عازم&nbsp;<a class="mw-redirect" title="قبرستان بهشت زهرا" href="https://fa.wikipedia.org/wiki/%D9%82%D8%A8%D8%B1%D8%B3%D8%AA%D8%A7%D9%86_%D8%A8%D9%87%D8%B4%D8%AA_%D8%B2%D9%87%D8%B1%D8%A7" style="text-decoration: none; color: rgb(16, 105, 197);">قبرستان بهشت زهرا</a>&nbsp;شد و در میان استقبال گسترده&nbsp;</span></p><p style="font-family: Tahoma; font-size: 8pt;"><span class="mw-headline" style="background-color: rgb(255, 255, 255);">مردم تهران در ساعت یک بعد از ظهر وارد قطعه ۱۷ که مدفن شهدای انقلاب بود شد و&nbsp;</span></p><p style="font-family: Tahoma; font-size: 8pt;"><span class="mw-headline" style="background-color: rgb(255, 255, 255);">سخنرانی خود را ایراد نمود.</span></p><h2 style="font-family: Tahoma; font-size: 8pt;"><span id=".D8.B1.D9.88.DB.8C.D8.AF.D8.A7.D8.AF.D9.87.D8.A7.DB.8C_.DB.B1.DB.B3_.D8.A8.D9.87.D9.85.D9.86" class="mw-headline" style="background-color: rgb(255, 255, 255);">رویدادهای ۱۳ بهمن</span></h2><p style="font-family: Tahoma; font-size: 8pt;"><span style="background-color: rgb(255, 255, 255);">امام خمینی(ره) در جمع روحانیون سخرانی کرد. او در بخشی از این سخنرانی&nbsp;</span></p><p style="font-family: Tahoma; font-size: 8pt;"><span style="background-color: rgb(255, 255, 255);">گفت: رژیم سلطنتی از اول خلاف عقل بود... هر ملتی باید خودش سرنوشت&nbsp;</span></p><p style="font-family: Tahoma; font-size: 8pt;"><span style="background-color: rgb(255, 255, 255);">خودش را تعیین کند.</span></p><p style="font-family: Tahoma; font-size: 8pt;"><span style="background-color: rgb(255, 255, 255);">همچنین&nbsp;<a class="new" title="رادیو مسکو (صفحه وجود ندارد)" href="https://fa.wikipedia.org/w/index.php?title=%D8%B1%D8%A7%D8%AF%DB%8C%D9%88_%D9%85%D8%B3%DA%A9%D9%88&amp;action=edit&amp;redlink=1" style="text-decoration: none; color: rgb(16, 105, 197);">رادیو مسکو</a>&nbsp;گزارش کرد که دانشجویان ایرانی مقیم آمریکا علیه&nbsp;</span></p><p style="font-family: Tahoma; font-size: 8pt;"><span style="background-color: rgb(255, 255, 255);">آمریکایی‌ها در امور داخلی ایران، در برابر&nbsp;<a title="کاخ سفید" href="https://fa.wikipedia.org/wiki/%DA%A9%D8%A7%D8%AE_%D8%B3%D9%81%DB%8C%D8%AF" style="text-decoration: none; color: rgb(16, 105, 197);">کاخ سفید</a>&nbsp;تظاهرات کردند.</span></p><h2 style="font-family: Tahoma; font-size: 8pt;"><span style="background-color: rgb(255, 255, 255);">&nbsp;</span></h2><h2 style="font-family: Tahoma; font-size: 8pt;"><span style="background-color: rgb(255, 255, 255);"><span id=".D8.B1.D9.88.DB.8C.D8.AF.D8.A7.D8.AF.D9.87.D8.A7.DB.8C_.DB.B1.DB.B4_.D8.A8.D9.87.D9.85.D9.86" class="mw-headline">رویدادهای ۱۴ بهمن</span><span class="mw-editsection"><span class="mw-editsection-bracket"><br></span></span></span></h2><p style="font-family: Tahoma; font-size: 8pt;"><span style="background-color: rgb(255, 255, 255);">ساعت ۹ بامداد روز شنبه ۱۴ بهمن در محل مدرسه شماره ۲ علوی یک </span></p><p style="font-family: Tahoma; font-size: 8pt;"><span style="background-color: rgb(255, 255, 255);">مصاحبه مطبوعاتی با حضور قریب به ۳۰۰ خبرنگار ایرانی و خارجی برگزار شد که</span></p><p style="font-family: Tahoma; font-size: 8pt;"><span style="background-color: rgb(255, 255, 255);">&nbsp;در آن ابتدا خلاصه‌ای از نظریات خمینی خوانده شد؛ سپس سوالات خبرنگاران&nbsp;</span></p><p style="font-family: Tahoma; font-size: 8pt;"><span style="background-color: rgb(255, 255, 255);">آغاز گردید که خلاصه‌ای از پاسخ امام خمینی به این شرح بود:</span></p><blockquote class="templatequote" style="font-family: Tahoma; font-size: 8pt;"><p><span style="background-color: rgb(255, 255, 255);">کاری نکنند که مردم را به جهاد دعوت کنم، اگر موقع جهاد شد می‌توانیم&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">اسلحه تهیه کنیم. دولت را بزودی معرفی خواهیم کرد. اعضای شورای&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">انقلاب تعیین شده‌اند. از ارتش می‌خواهم هر چه زودتر به ما متصل شود.&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">ارتشیان فرزندان ما هستند، ما به آنها محبت داریم باید به دامان ملت بیایند.</span></p><p><span style="background-color: rgb(255, 255, 255);">&nbsp;قانون اساسی که تدوین شده به آراء عمومی گذاشته می‌شود تمام اتباع خارجی</span></p><p><span style="background-color: rgb(255, 255, 255);">&nbsp;بطور آزاد در ایران زندگی خواهند کرد</span></p><h2><span style="background-color: rgb(255, 255, 255);"><span id=".D9.88.D9.82.D8.A7.DB.8C.D8.B9_.DB.B1.DB.B5_.D8.A8.D9.87.D9.85.D9.86" class="mw-headline">وقایع ۱۵ بهمن</span><span class="mw-editsection"><span class="mw-editsection-bracket"><br></span></span></span></h2><p><span style="background-color: rgb(255, 255, 255);">۱- حضرت امام خمینی (ره) &nbsp;طی یک سخنرانی جوانان را به ادامه تظاهرات&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">اعتصابات فرا خواندند.</span></p><p><span style="background-color: rgb(255, 255, 255);">۲-&nbsp;<a class="mw-redirect" title="وزرای خارجه آمریکا" href="https://fa.wikipedia.org/wiki/%D9%88%D8%B2%D8%B1%D8%A7%DB%8C_%D8%AE%D8%A7%D8%B1%D8%AC%D9%87_%D8%A2%D9%85%D8%B1%DB%8C%DA%A9%D8%A7" style="text-decoration: none; color: rgb(16, 105, 197);">وزرای خارجه آمریکا</a>&nbsp;و انگلیس طی دیدار&nbsp;<a title="دیوید اوئن" href="https://fa.wikipedia.org/wiki/%D8%AF%DB%8C%D9%88%DB%8C%D8%AF_%D8%A7%D9%88%D8%A6%D9%86" style="text-decoration: none; color: rgb(16, 105, 197);">دیوید اوئن</a>&nbsp;از ژاپن، در مورد&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">اوضاع ایران به گفتگو نشستند. بغداد نیز با اعزام هیأتی به عربستان، به&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">اوضاع ایران و منطقه پرداخت.</span></p><p><span style="background-color: rgb(255, 255, 255);">۳- ژنرال هایزر، فرستاده ویژه آمریکا به ایران، با اتمام مأموریت حساس</span></p><p><span style="background-color: rgb(255, 255, 255);">خود و مذاکرات مکرر با مقامات ایرانی، عازم آمریکا شد. سخنگوی&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">وزرات خارجه آمریکا گفت: هایزر سعی کرد تا نظامیان ایران از بختیار حمایت کنند.&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">وی به این علت ایران را ترک کرد که اقامت وی به احساسات ضد آمریکایی&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">در ایران دامن می‌زد.</span></p><p><span style="background-color: rgb(255, 255, 255);">۴- همافران&nbsp;<a title="نیروی هوایی" href="https://fa.wikipedia.org/wiki/%D9%86%DB%8C%D8%B1%D9%88%DB%8C_%D9%87%D9%88%D8%A7%DB%8C%DB%8C" style="text-decoration: none; color: rgb(16, 105, 197);">نیروی هوایی</a>&nbsp;در بهبهان به عنوان طرفداری از خمینی،&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">به راهپیمایی زدند.</span></p><p><span style="background-color: rgb(255, 255, 255);">۵- سیدمحمدباقر صدر با ارسال نامه‌ای از عراق برای خمینی، از</span></p><p><span style="background-color: rgb(255, 255, 255);">اعتراضات ایران حمایت کرد.</span></p><p><span style="background-color: rgb(255, 255, 255);">۶- به مناسبت ورود خمینی به ایران، از سوی&nbsp;<a class="mw-redirect" title="مرعشی نجفی" href="https://fa.wikipedia.org/wiki/%D9%85%D8%B1%D8%B9%D8%B4%DB%8C_%D9%86%D8%AC%D9%81%DB%8C" style="text-decoration: none; color: rgb(16, 105, 197);">مرعشی نجفی</a>&nbsp;تلگرافی برای او ارسال شد.</span></p><p><span style="background-color: rgb(255, 255, 255);">تذکر: برژنف از سیزدهم تا هفدهم ژانویه ۱۹۷۹، مطابق با بیست و سوم&nbsp;<a class="mw-redirect" title="دی ماه" href="https://fa.wikipedia.org/wiki/%D8%AF%DB%8C_%D9%85%D8%A7%D9%87" style="text-decoration: none; color: rgb(16, 105, 197);">دی ماه</a>&nbsp;۱۳۵۷، در بلغارستان بسر می‌برده‌است.</span></p><p><span style="background-color: rgb(255, 255, 255);">۷-&nbsp;<a title="جواد شهرستانی (مهندس)" href="https://fa.wikipedia.org/wiki/%D8%AC%D9%88%D8%A7%D8%AF_%D8%B4%D9%87%D8%B1%D8%B3%D8%AA%D8%A7%D9%86%DB%8C_(%D9%85%D9%87%D9%86%D8%AF%D8%B3)" style="text-decoration: none; color: rgb(16, 105, 197);">جواد شهرستانی</a>، شهردار تهران در حضور خمینی استعفا کرد. خمینی سپس وی را مجدداً به عنوان شهردار منصوب کرد. جواد شهرستانی از سوی دولت بختیار ممنوع‌الخروج شد.</span></p><p><span style="background-color: rgb(255, 255, 255);">۸- گروهی از نمایندگان مستعفی&nbsp;<a class="mw-redirect" title="مجلس شورا" href="https://fa.wikipedia.org/wiki/%D9%85%D8%AC%D9%84%D8%B3_%D8%B4%D9%88%D8%B1%D8%A7" style="text-decoration: none; color: rgb(16, 105, 197);">مجلس شورا</a>&nbsp;با خمینی دیدار کردند.</span></p><h2><span style="background-color: rgb(255, 255, 255);"><span id=".D9.88.D9.82.D8.A7.DB.8C.D8.B9_.DB.B1.DB.B6_.D8.A8.D9.87.D9.85.D9.86" class="mw-headline">وقایع ۱۶ بهمن</span><span class="mw-editsection"><span class="mw-editsection-bracket"><br></span></span></span></h2><p><strong style="background-color: rgb(255, 255, 255);">تعیین دولت موقت</strong></p><p><span style="background-color: rgb(255, 255, 255);">حضرت امام در روز ۱۶ بهمن طی فرمانی&nbsp;<a title="مهدی بازرگان" href="https://fa.wikipedia.org/wiki/%D9%85%D9%87%D8%AF%DB%8C_%D8%A8%D8%A7%D8%B2%D8%B1%DA%AF%D8%A7%D9%86" style="text-decoration: none; color: rgb(16, 105, 197);">مهدی بازرگان</a>&nbsp;را به عنوان نخست&nbsp;<a class="mw-redirect" title="وزیر موقت" href="https://fa.wikipedia.org/wiki/%D9%88%D8%B2%DB%8C%D8%B1_%D9%85%D9%88%D9%82%D8%AA" style="text-decoration: none; color: rgb(16, 105, 197);">وزیر موقت</a>&nbsp;تعیین و معرفی کرد. عصر همان روز در سالن سخنرانی&nbsp;<a title="مدرسه علوی" href="https://fa.wikipedia.org/wiki/%D9%85%D8%AF%D8%B1%D8%B3%D9%87_%D8%B9%D9%84%D9%88%DB%8C" style="text-decoration: none; color: rgb(16, 105, 197);">مدرسه علوی</a>&nbsp;یک مصاحبه مطبوعاتی بین‌المللی ترتیب داده شد، در این جلسه بازرگان برنامه و وظایف&nbsp;<a title="دولت موقت" href="https://fa.wikipedia.org/wiki/%D8%AF%D9%88%D9%84%D8%AA_%D9%85%D9%88%D9%82%D8%AA" style="text-decoration: none; color: rgb(16, 105, 197);">دولت موقت</a>&nbsp;را تشریح کرد و افزود برگزاری همه پرسی درباره تغییر رژیم، برگزاری انتخابات&nbsp;<a class="mw-redirect" title="مجلس موسسان" href="https://fa.wikipedia.org/wiki/%D9%85%D8%AC%D9%84%D8%B3_%D9%85%D9%88%D8%B3%D8%B3%D8%A7%D9%86" style="text-decoration: none; color: rgb(16, 105, 197);">مجلس موسسان</a>&nbsp;و انجام انتخابات مجلس از وظایف این دولت است.</span></p><p><span style="background-color: rgb(255, 255, 255);">&nbsp;</span></p><h2><span style="background-color: rgb(255, 255, 255);"><span id=".DB.B1.DB.B7_.D8.A8.D9.87.D9.85.D9.86" class="mw-headline">۱۷ بهمن</span><span class="mw-editsection"><span class="mw-editsection-bracket"><br></span></span></span></h2><ol><li><span style="background-color: rgb(255, 255, 255);">خمینی در سخنان خود گفت: کار عاقلانه و مفید به حال کشور&nbsp;</span></li><li><span style="background-color: rgb(255, 255, 255);">است که بختیار و ارتش در مقابل انقلاب ۱۳۵۷، عکس‌العملی&nbsp;</span></li><li><span style="background-color: rgb(255, 255, 255);">مثبت داشته باشند.</span></li><li><span style="background-color: rgb(255, 255, 255);">در پاسخ به پیام‌های تشکر از سوی مردم و یا شخصیت‌ها و</span></li><li><span style="background-color: rgb(255, 255, 255);">&nbsp;گروه‌های مختلف به مناسبت ورود خمینی به کشور، از سوی&nbsp;</span></li><li><span style="background-color: rgb(255, 255, 255);">او پیام تشکری خطاب به عموم انتشار یافت.</span></li><li><span style="background-color: rgb(255, 255, 255);">بازرگان موقتاً از رهبری&nbsp;<a class="mw-redirect" title="نهضت آزادی" href="https://fa.wikipedia.org/wiki/%D9%86%D9%87%D8%B6%D8%AA_%D8%A2%D8%B2%D8%A7%D8%AF%DB%8C" style="text-decoration: none; color: rgb(16, 105, 197);">نهضت آزادی</a>&nbsp;کناره‌گیری نمود و به مدرسه علوی&nbsp;</span></li><li><span style="background-color: rgb(255, 255, 255);">نقل مکان کرد.</span></li></ol><p><span style="background-color: rgb(255, 255, 255);">تذکر: در حکم&nbsp;<a class="mw-redirect" title="نخست وزیری" href="https://fa.wikipedia.org/wiki/%D9%86%D8%AE%D8%B3%D8%AA_%D9%88%D8%B2%DB%8C%D8%B1%DB%8C" style="text-decoration: none; color: rgb(16, 105, 197);">نخست وزیری</a>&nbsp;خمینی از وی خواسته شده بود تا بدون واسبتگی&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">حزبی و گروهی به پست نخست وزیری اشتغال یابد.</span></p><ol><li><span style="background-color: rgb(255, 255, 255);">دکتر سعید، رییس مجلس شورا، در جلسه امروز مجلس&nbsp;</span></li><li><span style="background-color: rgb(255, 255, 255);">اظهار داشت: بازگشت خمینی، مرجع عالیقدر تشیع را به خاک وطن&nbsp;</span></li><li><span style="background-color: rgb(255, 255, 255);">از طرف خود و عموم نمایندگان خوش‌آمد می‌گویم.</span></li><li><span style="background-color: rgb(255, 255, 255);">دلوایح محاکمه وزرای سابق و انحلال ساواک، در&nbsp;</span></li><li><span style="background-color: rgb(255, 255, 255);">جلسه مجلس شورا به تصویب رسید.</span></li><li><span style="background-color: rgb(255, 255, 255);">در مراسم فارغ التحصیلی دانشجویان دانشکده افسری،</span></li><li><span style="background-color: rgb(255, 255, 255);">افسران جوان از سوگند وفاداری به شاه معاف شدند.</span></li><li><span style="background-color: rgb(255, 255, 255);">فلسفی پس از هشت سال ممنوعیت از سخنرانی، در</span></li><li><span style="background-color: rgb(255, 255, 255);">حضور خمینی و مردم دیدار کننده با او، سخنرانی کرد</span></li></ol><h2><span style="background-color: rgb(255, 255, 255);"><span id=".D9.88.D9.82.D8.A7.DB.8C.D8.B9_.DB.B1.DB.B8_.D8.A8.D9.87.D9.85.D9.86" class="mw-headline">وقایع ۱۸ بهمن</span><span class="mw-editsection"><span class="mw-editsection-bracket"><br></span></span></span></h2><ol><li><span style="background-color: rgb(255, 255, 255);">آیت الله خمینی در دیدار با روحانیون&nbsp;<a class="mw-redirect" title="شهر اهواز" href="https://fa.wikipedia.org/wiki/%D8%B4%D9%87%D8%B1_%D8%A7%D9%87%D9%88%D8%A7%D8%B2" style="text-decoration: none; color: rgb(16, 105, 197);">شهر اهواز</a></span></li><li><span style="background-color: rgb(255, 255, 255);">&nbsp;گفت: ادامه نهضت یک تکلیف است.</span></li><li><span style="background-color: rgb(255, 255, 255);">فرماندار نظامی تهران به این دلیل که مردم به&nbsp;</span></li><li><span style="background-color: rgb(255, 255, 255);">مقررات&nbsp;<a title="حکومت نظامی" href="https://fa.wikipedia.org/wiki/%D8%AD%DA%A9%D9%88%D9%85%D8%AA_%D9%86%D8%B8%D8%A7%D9%85%DB%8C" style="text-decoration: none; color: rgb(16, 105, 197);">حکومت نظامی</a>&nbsp;اهمیت نمی‌دهند، ساعات منع</span></li><li><span style="background-color: rgb(255, 255, 255);">&nbsp;عبور و مرور را کاهش داد.</span></li><li><span style="background-color: rgb(255, 255, 255);">سیزده نفر دیگر از نمایندگان مجلس استعفا دادند.</span></li><li><span style="background-color: rgb(255, 255, 255);"><a title="مجمع عمومی سازمان ملل متحد" href="https://fa.wikipedia.org/wiki/%D9%85%D8%AC%D9%85%D8%B9_%D8%B9%D9%85%D9%88%D9%85%DB%8C_%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86_%D9%85%D9%84%D9%84_%D9%85%D8%AA%D8%AD%D8%AF" style="text-decoration: none; color: rgb(16, 105, 197);">مجمع عمومی سازمان ملل متحد</a>&nbsp;از اوضاع ایران اظهار نگرانی کرد.</span></li></ol><h2><span id=".D8.B1.D8.A7.D9.87.E2.80.8C.D9.BE.DB.8C.D9.85.D8.A7.DB.8C.DB.8C_.DB.B1.DB.B9_.D8.A8.D9.87.D9.85.D9.86" class="mw-headline" style="background-color: rgb(255, 255, 255);">راه‌پیمایی ۱۹ بهمن &nbsp; &nbsp;</span></h2><p><span style="background-color: rgb(255, 255, 255);">روز نوزدهم بهمن ماه بزرگ‌ترین راه پیمایی انقلاب صورت گرفت.&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">در قطعنامه پایانی راه پیمایی نخست وزیری مهدی بازرگان&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">توسط تظاهرکنندگان تایید شد.<sup id="cite_ref-5" class="reference"><a href="https://fa.wikipedia.org/wiki/%D8%AF%D9%87%D9%87_%D9%81%D8%AC%D8%B1#cite_note-5" style="text-decoration: none; color: rgb(16, 105, 197);"><br></a></sup></span></p><h2><span style="background-color: rgb(255, 255, 255);"><span id=".D9.88.D9.82.D8.A7.DB.8C.D8.B9_.DB.B2.DB.B0_.D8.A8.D9.87.D9.85.D9.86" class="mw-headline">وقایع ۲۰ بهمن</span><span class="mw-editsection"><span class="mw-editsection-bracket"><br></span></span></span></h2><p><span style="background-color: rgb(255, 255, 255);">در روز ۲۰ بهمن ماه که مصادف با روز جمعه بود، مردم در&nbsp;<a title="دانشگاه تهران" href="https://fa.wikipedia.org/wiki/%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87_%D8%AA%D9%87%D8%B1%D8%A7%D9%86" style="text-decoration: none; color: rgb(16, 105, 197);">دانشگاه تهران</a>&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">اجتماع کرده بودند تا سخنرانی&nbsp;<a class="mw-redirect" title="رییس دولت" href="https://fa.wikipedia.org/wiki/%D8%B1%DB%8C%DB%8C%D8%B3_%D8%AF%D9%88%D9%84%D8%AA" style="text-decoration: none; color: rgb(16, 105, 197);">رییس دولت</a>&nbsp;موقت را استماع نمایند.&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">در همین هنگام در غرب تهران درگیری شدیدی صورت گرفت؛ عده زیادی&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">از افراد گارد شاهنشاهی به پادگان همافران نیروی هوایی حمله بردند و&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">به محض آغاز درگیری آنان عده زیادی از جوانان وابسته به جناح‌های مختلف&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">به نفع همافران وارد صحنه درگیری شدند. این درگیری خونین ده‌ها نفر&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">و مجروح بر جای گذاشت ولی در نهایت همافران توانستند حلقه محاصره&nbsp;</span></p><p><span style="background-color: rgb(255, 255, 255);">نیروهای گارد را بشکنند.<sup id="cite_ref-6" class="reference"><a href="https://fa.wikipedia.org/wiki/%D8%AF%D9%87%D9%87_%D9%81%D8%AC%D8%B1#cite_note-6" style="text-decoration: none; color: rgb(16, 105, 197);"><br></a></sup></span></p><h2><span id=".D9.88.D9.82.D8.A7.DB.8C.D8.B9_.DB.B2.DB.B1_.D8.A8.D9.87.D9.85.D9.86" class="mw-headline" style="background-color: rgb(255, 255, 255);">وقایع ۲۱ بهمن&nbsp;</span></h2><p><span class="mw-headline" style="background-color: rgb(255, 255, 255);">روز بیست و یکم بهمن ماه روز نبرد مسلحانه همه جانبه مردم و</span></p><p><span class="mw-headline" style="background-color: rgb(255, 255, 255);">نیروهای دولتی بود. درگیری خونین مردم و لشکر گارد در این روز</span></p><p><span class="mw-headline" style="background-color: rgb(255, 255, 255);">به اوج خود رسید؛ و جنگ تانک‌ها با مردم مسلح باعث کشته و زخمی شدن&nbsp;</span></p><p><span class="mw-headline" style="background-color: rgb(255, 255, 255);">صدها نفر شد. خمینی تهدید کرد در صورت عدم جلوگیری از کشتار لشکر گارد&nbsp;</span></p><p><span class="mw-headline" style="background-color: rgb(255, 255, 255);">جهاد خواهد داد.<sup id="cite_ref-7" class="reference"></sup>&nbsp;در اینروز چندین کلانتری توسط گروههای مسلح مردمی</span></p><p><span class="mw-headline" style="background-color: rgb(255, 255, 255);">تسخیر شدند که در نتیجه آن مقادیر زیادی اسلحه به دست مردم افتاد.&nbsp;</span></p><p><span class="mw-headline" style="background-color: rgb(255, 255, 255);">همین روز فرمانداری نظامی تهران اعلامیه شماره ۴۰ را انتشار داد؛&nbsp;</span></p><p><span class="mw-headline" style="background-color: rgb(255, 255, 255);">این اعلامیه رفت‌وآمد مردم از ساعت ۱۶:۳۰ تا ۵ بامداد ممنوع اعلام شد.&nbsp;</span></p><p><span class="mw-headline" style="background-color: rgb(255, 255, 255);">پی اعلامیه مزبور اعلامیه دیگری صادر و منع عبور و مرور تا ساعت ۱۲ بامداد تمدید شد.&nbsp;</span></p><p><span class="mw-headline" style="background-color: rgb(255, 255, 255);">مردم عملاً مقررات حکومت نظامی را باطل ساختند و تا صبح در خیابان‌ها با ایجاد حریق و راه بندان‌های متعدد مانع حرکت قوای نظامی می‌شدند.</span></p><h2><span style="background-color: rgb(255, 255, 255);"><span id=".D9.88.D9.82.D8.A7.DB.8C.D8.B9_.DB.B2.DB.B2_.D8.A8.D9.87.D9.85.D9.86" class="mw-headline">وقایع ۲۲ بهمن</span><span class="mw-editsection"><span class="mw-editsection-bracket"><br></span></span></span></h2><div class="thumb tleft"><div class="thumbinner"><a class="image" href="https://commons.wikimedia.org/wiki/File:Obverse_of_Iranian_20_Rials_coin_-_monument_of_3rd_anniversary_of_Islamic_revolution.jpg?uselang=fa" style="text-decoration: none; color: rgb(16, 105, 197); background-color: rgb(255, 255, 255);"><img class="thumbimage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Obverse_of_Iranian_20_Rials_coin_-_monument_of_3rd_anniversary_of_Islamic_revolution.jpg/250px-Obverse_of_Iranian_20_Rials_coin_-_monument_of_3rd_anniversary_of_Islamic_revolution.jpg" alt="" width="250" height="259" data-file-width="3440" data-file-height="3570"></a><div class="thumbcaption"><div class="magnify"><span style="background-color: rgb(255, 255, 255);">&nbsp;</span></div><span style="background-color: rgb(255, 255, 255);">۲۲&nbsp;<a class="mw-redirect" title="گل لاله" href="https://fa.wikipedia.org/wiki/%DA%AF%D9%84_%D9%84%D8%A7%D9%84%D9%87" style="text-decoration: none; color: rgb(16, 105, 197);">گل لاله</a>&nbsp;به پاسداشت ۲۲ بهمن ۱۳۵۷ روی<a title="سکه‌های ایران" href="https://fa.wikipedia.org/wiki/%D8%B3%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86" style="text-decoration: none; color: rgb(16, 105, 197);">سکه ۲۰ ریالی</a>&nbsp;ضرب شده </span></div><div class="thumbcaption"><span style="background-color: rgb(255, 255, 255);">سال ۱۳۶۰ به مناسبت سومین سالگرد&nbsp;<a title="انقلاب ۱۳۵۷ ایران" href="https://fa.wikipedia.org/wiki/%D8%A7%D9%86%D9%82%D9%84%D8%A7%D8%A8_%DB%B1%DB%B3%DB%B5%DB%B7_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86" style="text-decoration: none; color: rgb(16, 105, 197);">انقلاب ۱۳۵۷ ایران</a><br>در مرکز&nbsp;<a title="سکه" href="https://fa.wikipedia.org/wiki/%D8%B3%DA%A9%D9%87" style="text-decoration: none; color: rgb(16, 105, 197);">سکه</a>&nbsp;نوشته شده است:&nbsp;<a class="mw-redirect" title="جمهوری اسلامی ایران" href="https://fa.wikipedia.org/wiki/%D8%AC%D9%85%D9%87%D9%88%D8%B1%DB%8C_%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86" style="text-decoration: none; color: rgb(16, 105, 197);">جمهوری اسلامی ایران</a></span></div></div></div><div class="thumb tleft"><div class="thumbinner"><a class="image" href="https://commons.wikimedia.org/wiki/File:Reverse_of_Iranian_20_Rials_coin_-_monument_of_3rd_anniversary_of_Islamic_revolution.jpg?uselang=fa" style="text-decoration: none; color: rgb(16, 105, 197); background-color: rgb(255, 255, 255);"><img class="thumbimage" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Reverse_of_Iranian_20_Rials_coin_-_monument_of_3rd_anniversary_of_Islamic_revolution.jpg/250px-Reverse_of_Iranian_20_Rials_coin_-_monument_of_3rd_anniversary_of_Islamic_revolution.jpg" alt="" width="250" height="247" data-file-width="3428" data-file-height="3381"></a><div class="thumbcaption"><div class="magnify"><span style="background-color: rgb(255, 255, 255);">&nbsp;</span></div><span style="background-color: rgb(255, 255, 255);">۳&nbsp;<a class="mw-redirect" title="گل لاله" href="https://fa.wikipedia.org/wiki/%DA%AF%D9%84_%D9%84%D8%A7%D9%84%D9%87" style="text-decoration: none; color: rgb(16, 105, 197);">گل لاله</a>&nbsp;به پاسداشت سومین سالگرد انقلاب ۱۳۵۷ ایران پشت&nbsp;</span></div><div class="thumbcaption"><span style="background-color: rgb(255, 255, 255);"><a title="سکه‌های ایران" href="https://fa.wikipedia.org/wiki/%D8%B3%DA%A9%D9%87%E2%80%8C%D9%87%D8%A7%DB%8C_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86" style="text-decoration: none; color: rgb(16, 105, 197);">سکه ۲۰ ریالی</a>&nbsp;ضرب شده در سال ۱۳۶۰<br>در حاشیه&nbsp;<a title="سکه" href="https://fa.wikipedia.org/wiki/%D8%B3%DA%A9%D9%87" style="text-decoration: none; color: rgb(16, 105, 197);">سکه</a>&nbsp;نوشته شده است: سومین سالگرد پیروزی خون بر شمشیر</span></div></div></div><p><span style="background-color: rgb(255, 255, 255);">در این روز به ترتیب زندان اوین، ساواک، سلطنت آباد، مجلسین سنا و شورای ملی،</span></p><p><span style="background-color: rgb(255, 255, 255);">شهربانی، ژاندارمری و ساختمان زندان کمیته مشترک به تصرف مردم در آمد.&nbsp;در</span></p><p><span style="background-color: rgb(255, 255, 255);">تسخیر شهربانی سپهبد رحیمی فرماندار نظامی تهران به دست انقلابیون</span></p><p><span style="background-color: rgb(255, 255, 255);">مسلح افتاد. پادگان باغشاه و دانشکده افسری، دبیرستان نظام، زندان جمشیدیه،</span></p><p><span style="background-color: rgb(255, 255, 255);">پادگان عشرت آباد و پادگان عباس آباد یکی پس از دیگری تسلیم شدند و آخرین مرکزی که به تصرف درآمد رادیو و تلویزیون بود.<sup id="cite_ref-10" class="reference"><a href="https://fa.wikipedia.org/wiki/%D8%AF%D9%87%D9%87_%D9%81%D8%AC%D8%B1#cite_note-10" style="text-decoration: none; color: rgb(16, 105, 197);"><br></a></sup></span></p><p><span style="background-color: rgb(255, 255, 255);">&nbsp;</span></p><p style="text-align: left;"><a href="https://fa.wikipedia.org/wiki/%D8%AF%D9%87%D9%87_%D9%81%D8%AC%D8" style="text-decoration: none; color: rgb(16, 105, 197); background-color: rgb(255, 255, 255);">https://fa.wikipedia.org/wiki/</a></p></blockquote></div></div><div class="LowPost3" style="width: 540px; height: 68px; text-align: right; font-family: Tahoma; font-size: medium; background-image: url(&quot%3Bpost3.gif&quot%3B.html); background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: 100% 0%; background-repeat: no-repeat;"><div class="CPost3" style="padding: 33px 50px 0px 0px;"></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+ </div>
+            </div>
+            <div class="pcat">
+              <div class="pcat-mid">
+                                <br />
+                                <br />
+                              </div>
+            </div>
+            <div class="pcomore">
+              <div class="pcomore-mid">
+                <div class="plike"></div>
+                <div class="pmore">
+                  <more></more>
+                </div>
+                <div class="pcomment"> <a target="_self" href="javascript:newComment(99)"><b>نظرات : </b><script>setCommentCnt(99)</script> نظرات</a> </div>
+                <div style="clear:both"></div>
+              </div>
+            </div>
+            <div class="p-bbg"></div>
+          </div>
+                  <div class="bodypost">
+            <div class="ptitle">
+              <div class="ptitle-mid"> <a href="../../../../98.html">
+                <h1>                           بخشودگی جرائم</h1>
+                </a></div>
+            </div>
+            <div class="pinfo">
+              <div class="pinfo-mid">
+                <div class="author">نویسنده :<a href="../../../../author/1167750.html">ریحانه خاکزاد</a></div>
+                <div class="date">تاریخ: یکشنبه 11 بهمن 1394 03:01 ب.ظ</div>
+                <div style="clear:both"></div>
+              </div>
+            </div>
+            <div class="ptext">
+              <div class="ptext-mid">                 
+
+
+<strong style="color: rgb(51, 51, 51); text-align: -webkit-center; background-color: rgb(255, 255, 255);"><font color="#cc0099" size="3" face="Mihan-Koodak">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ضمن تبریك&nbsp;فرارسیدن &nbsp;ایام ا... دهه فجر و سالروز پیروزی انقلاب اسلامی،</font></strong><div><strong style="color: rgb(51, 51, 51); text-align: -webkit-center; background-color: rgb(255, 255, 255);"><font color="#cc0099" size="3" face="Mihan-Koodak">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;به اطلاع می‌رساند برابر</font></strong><strong style="color: rgb(51, 51, 51); text-align: -webkit-center;"><font color="#cc0099" size="3" face="Mihan-Koodak">&nbsp;موافقت دبیركل محترم نهاد ،&nbsp;<font color="#000000">جرایم دیركرد كلیه اعضاء</font></font></strong></div><div><strong style="color: rgb(51, 51, 51); text-align: -webkit-center;"><font color="#cc0099" size="3" face="Mihan-Koodak"><font color="#000000">كتابخانه‌های عمومی كه از(</font></font></strong><strong style="color: rgb(51, 51, 51); text-align: -webkit-center;"><font size="3" face="Mihan-Koodak"><font color="#cc0099"><font color="#000000">&nbsp;تاریخ دوشنبه 12/ 11/ 94&nbsp;تا&nbsp;</font><font color="#000000">پنجشنبه 22/ 11/ 94) اقدام نمایند</font></font><font color="#000000">،&nbsp;</font></font></strong></div><div><strong style="color: rgb(51, 51, 51); text-align: -webkit-center;"><font size="3" face="Mihan-Koodak"><font color="#000000">مورد بخشودگی قرار ‌می‌گیرد</font></font></strong></div>
+
+ </div>
+            </div>
+            <div class="pcat">
+              <div class="pcat-mid">
+                                <br />
+                                <br />
+                              </div>
+            </div>
+            <div class="pcomore">
+              <div class="pcomore-mid">
+                <div class="plike"></div>
+                <div class="pmore">
+                  <more></more>
+                </div>
+                <div class="pcomment"> <a target="_self" href="javascript:newComment(98)"><b>نظرات : </b><script>setCommentCnt(98)</script> نظرات</a> </div>
+                <div style="clear:both"></div>
+              </div>
+            </div>
+            <div class="p-bbg"></div>
+          </div>
+                  <div class="bodypost">
+            <div class="ptitle">
+              <div class="ptitle-mid"> <a href="../../../../97.html">
+                <h1>به مناسبت دهه فجرعضویت نیمه بها در کتابخانه های عمومی </h1>
+                </a></div>
+            </div>
+            <div class="pinfo">
+              <div class="pinfo-mid">
+                <div class="author">نویسنده :<a href="../../../../author/1167750.html">ریحانه خاکزاد</a></div>
+                <div class="date">تاریخ: یکشنبه 11 بهمن 1394 02:55 ب.ظ</div>
+                <div style="clear:both"></div>
+              </div>
+            </div>
+            <div class="ptext">
+              <div class="ptext-mid">                 
+
+
+<p align="center" style="color: rgb(51, 51, 51); font-family: Tahoma; font-size: 12px;"><strong><font size="5" style="background-color: rgb(255, 255, 255);">به مناسبت دهه فجر&nbsp;&nbsp;</font></strong></p><p align="center" style="color: rgb(51, 51, 51); font-family: Tahoma; font-size: 12px;"><span style="background-color: rgb(255, 255, 255);"><br></span></p><p align="center" style="color: rgb(51, 51, 51); font-family: Tahoma; font-size: 12px;"><strong><font size="5" style="background-color: rgb(255, 255, 255);">از تاریخ 12/11/94&nbsp;&nbsp;</font></strong></p><p align="center" style="color: rgb(51, 51, 51); font-family: Tahoma; font-size: 12px;"><strong><font size="5" style="background-color: rgb(255, 255, 255);">&nbsp;لغایت&nbsp; 22/11/94&nbsp;&nbsp; عضویت نیم بها میباشد .&nbsp;</font></strong></p><p align="center" style="color: rgb(51, 51, 51); font-family: Tahoma; font-size: 12px;"><span style="background-color: rgb(255, 255, 255);"><br></span></p><p align="center" style="color: rgb(51, 51, 51); font-family: Tahoma; font-size: 12px;"></p><p align="center" style="color: rgb(51, 51, 51); font-family: Tahoma; font-size: 12px;"><strong><font size="5" style="background-color: rgb(255, 255, 255);">علاقمندان میتوانند جهت عضویت اقدام کنند .</font></strong></p><div><strong><font size="5"><br></font></strong></div>
+
+
+
+
+
+
+
+ </div>
+            </div>
+            <div class="pcat">
+              <div class="pcat-mid">
+                                <br />
+                                <br />
+                              </div>
+            </div>
+            <div class="pcomore">
+              <div class="pcomore-mid">
+                <div class="plike"></div>
+                <div class="pmore">
+                  <more></more>
+                </div>
+                <div class="pcomment"> <a target="_self" href="javascript:newComment(97)"><b>نظرات : </b><script>setCommentCnt(97)</script> نظرات</a> </div>
+                <div style="clear:both"></div>
+              </div>
+            </div>
+            <div class="p-bbg"></div>
+          </div>
+                  <div class="bodypost">
+            <div class="ptitle">
+              <div class="ptitle-mid"> <a href="../../../../96.html">
+                <h1>معرفی کتاب </h1>
+                </a></div>
+            </div>
+            <div class="pinfo">
+              <div class="pinfo-mid">
+                <div class="author">نویسنده :<a href="../../../../author/1167750.html">ریحانه خاکزاد</a></div>
+                <div class="date">تاریخ: دوشنبه 5 بهمن 1394 12:14 ب.ظ</div>
+                <div style="clear:both"></div>
+              </div>
+            </div>
+            <div class="ptext">
+              <div class="ptext-mid">                 
+<div><br><div><br></div><div><p>انتشارات پنجره مجموعه کتابهای ترانه های شیمو شیمو را &nbsp;منتشر کرد:</p><p><b><font size="3" face="Mihan-Koodak">شیموی کوچک، شیموی بزرگ، شیموی کوتاه، شیموی بلند، شیموی خوشحال، شیموی غمگین، شیمو اینجا، شیمو آنجا، شیمو همه جا!</font></b></p><p><b><font size="3" face="Mihan-Koodak">شیموی
+ زبل همه چیزدان، دوست خوب کودک شماست. </font><font face="Mihan-Koodak" size="4">شیمو به کودک شما مهارتهای اجتماعی 
+را یاد می دهد</font><font size="3" face="Mihan-Koodak">. شما برای کودک کوچکتان شیمو می خوانید و به صورت غیرمستقیم 
+مفاهیم مهم زندگی را به او می آموزید. مهارتهای مهم فردی مثل دستشویی رفتن،
+ مسواک زدن، استقلال و کاهش وابستگی، اعتماد به نفس، خلاقیت های کوچک و 
+بزرگ، و نیز مهارتهای مهم اجتماعی مثل دوست یابی، همدلی، عشق به دوستان، 
+فرهنگ ترافیک و عبور و مرور، آشنایی با مشاغل و هزار و یک موضوع مهم دیگر 
+از این دست مواردند.</font></b></p><p><font face="Mihan-Koodak" size="4">زبان شعر، لحن کودکانه، تصاویر بکر، جذاب و دیدنی، از مجموعه کتابهای شیمو مجموعه ای خواندنی و پرمخاطب ساخته اند.</font></p><p><span style="font-size: large;">شما میتوانید با مراجعه به کتابخانه این کتابهای مفید رابرای کودکان خود تهیه کنید.&nbsp;</span></p><p><span style="font-size: large;"><br></span></p><p><span style="font-size: large;"><br></span></p><p>&nbsp; &nbsp;&nbsp;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHEQsGxWuav1IBX2vNhGTCuLRahb_pqIdj5OXx8giHz3S6SUc" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHEQsGxWuav1IBX2vNhGTCuLRahb_pqIdj5OXx8giHz3S6SUc" data-sz="f" name="1lPQ7V-Wpb79lM:" class="rg_i" alt="Image result for ‫مجموعه کتابهای شیمو‬‎" jsaction="load:str.tbn" style="width: 180px; height: 180px; margin-left: 0px; margin-right: 0px; margin-top: 0px;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="data:image/jpeg;base64,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" data-sz="f" name="PlB5s5TgVP-G_M:" class="rg_i" alt="Image result for ‫مجموعه کتابهای شیمو‬‎" jsaction="load:str.tbn" style="width: 184px; height: 180px; margin-left: 0px; margin-right: 0px; margin-top: 0px;"></p><p><br></p><p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYKgveh08WIXBZl5W2WTCXLrfeA9HBPmDAovQzhu1JMO1u9ONo" style="width:196px;height:180px;margin-left:0px;margin-right:0px;margin-top:0px" data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYKgveh08WIXBZl5W2WTCXLrfeA9HBPmDAovQzhu1JMO1u9ONo" data-sz="f" name="qoVAm4STLV1C0M:" class="rg_i" alt="Image result for ‫مجموعه کتابهای شیمو‬‎" jsaction="load:str.tbn"></p><p><span style="font-size: large;"><br></span></p></div>
+
+</div>
+
+
+
+
+
+
+
+ </div>
+            </div>
+            <div class="pcat">
+              <div class="pcat-mid">
+                 موضوع:
+                   <a href="../../../../category/1.html">معرفی کتاب</a>،                                 <br />
+                                <br />
+                              </div>
+            </div>
+            <div class="pcomore">
+              <div class="pcomore-mid">
+                <div class="plike"></div>
+                <div class="pmore">
+                  <more></more>
+                </div>
+                <div class="pcomment"> <a target="_self" href="javascript:newComment(96)"><b>نظرات : </b><script>setCommentCnt(96)</script> نظرات</a> </div>
+                <div style="clear:both"></div>
+              </div>
+            </div>
+            <div class="p-bbg"></div>
+          </div>
+                  <div class="bodypost">
+            <div class="ptitle">
+              <div class="ptitle-mid"> <a href="../../../../95.html">
+                <h1>معرفی کتاب </h1>
+                </a></div>
+            </div>
+            <div class="pinfo">
+              <div class="pinfo-mid">
+                <div class="author">نویسنده :<a href="../../../../author/1167750.html">ریحانه خاکزاد</a></div>
+                <div class="date">تاریخ: یکشنبه 4 بهمن 1394 06:05 ب.ظ</div>
+                <div style="clear:both"></div>
+              </div>
+            </div>
+            <div class="ptext">
+              <div class="ptext-mid">                 
+
+
+<font face="Mihan-Koodak" size="5">
+
+بچه بچه ها&nbsp;</font><div><span style="font-family: Mihan-Koodak; font-size: x-large;">مجموعه ی کتابهای کتی با محتوای زیباو آموزشی</span></div><div><b style="font-size: large; font-family: Mihan-Koodak;">در بخش کودک کتابخانه شهید داننده موجود است .</b></div><div><br></div><div><br></div><div><br></div><div><br></div><div><img hspace="0" border="0" align="baseline" vspace="0" src="http://8pic.ir/images/x5a2373ohgkd88or2xom.jpg" alt=""></div><div><br></div><div><br></div><div><br></div><div><img hspace="0" border="0" align="baseline" vspace="0" src="http://8pic.ir/images/7k7iqxd3fewx8pq0f51r.jpg" alt=""></div><div><br></div><div><img hspace="0" border="0" align="baseline" vspace="0" src="http://8pic.ir/images/f85nyvjzs57evi0plql2.jpg" alt=""></div>
+
+
+
+
+
+
+
+
+
+ </div>
+            </div>
+            <div class="pcat">
+              <div class="pcat-mid">
+                 موضوع:
+                   <a href="../../../../category/1.html">معرفی کتاب</a>،                                 <br />
+                                <br />
+                              </div>
+            </div>
+            <div class="pcomore">
+              <div class="pcomore-mid">
+                <div class="plike"></div>
+                <div class="pmore">
+                  <more></more>
+                </div>
+                <div class="pcomment"> <a target="_self" href="javascript:newComment(95)"><b>نظرات : </b><script>setCommentCnt(95)</script> نظرات</a> </div>
+                <div style="clear:both"></div>
+              </div>
+            </div>
+            <div class="p-bbg"></div>
+          </div>
+                  <div class="bodypost">
+            <div class="ptitle">
+              <div class="ptitle-mid"> <a href="../../../../93.html">
+                <h1>معرفی کتاب </h1>
+                </a></div>
+            </div>
+            <div class="pinfo">
+              <div class="pinfo-mid">
+                <div class="author">نویسنده :<a href="../../../../author/1167750.html">ریحانه خاکزاد</a></div>
+                <div class="date">تاریخ: یکشنبه 4 بهمن 1394 05:45 ب.ظ</div>
+                <div style="clear:both"></div>
+              </div>
+            </div>
+            <div class="ptext">
+              <div class="ptext-mid">                 
+
+
+<font size="4"><b>ژوزه ساراماگو، نویسندة پرتغالی، كه بارها نامزد جایزة نوبل ادبیات شده 
+بود، سرانجام ، و دیر هنگام – در سن 76 سالگی – موفق شد در سال 1998 این 
+جایزه را به خاطر خلق رمان کوری از آن خود وكشورش كند. آثار این رمان نویس و
+ شاعر كه به عبارتی رئالیسم جادویی را با انتقادات گزندة سیاسی می‌آمیزد به
+ 25 زبان ترجمه شده است.&nbsp;</b></font><div><font size="4"><b><br></b></font></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://8pic.ir/images/miyr9m2trw88o3i7wd1b.jpg" alt=""></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><p class="MsoNormal" dir="rtl" style="margin: 0in 0in 0pt; direction: rtl; line-height: 18pt; unicode-bidi: embed; text-align: right; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span lang="FA"><font face="Times New Roman"><b><font size="5">کوری</font></b><font size="3">
+ داستان جامعه ای است که دچار آفت میشود.این آفت که بطور ظاهری کورشدن چشم 
+انسانهاست از یک نفر شروع شده ،بصورت بیماری همه گیر درامده و کم کم همه 
+جامعه را دربرمیگیرد.در این میان تنها زنی حدوداً چهل ساله از آن در امان 
+می ماند و حاضر به ازخودگذشتگی های بسیاری می شود.<o:p></o:p></font></font></span></p>
+<p class="MsoNormal" dir="rtl" style="margin: 0in 0in 0pt; direction: rtl; line-height: 18pt; unicode-bidi: embed; text-align: right; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span style="COLOR: #009900; mso-bidi-language: FA; mso-ascii-font-family: AmdtSymbols; mso-hansi-font-family: AmdtSymbols" lang="FA"><font size="3"><font face="Times New Roman">زنی بینا در میان افرادی کور<o:p></o:p></font></font></span></p>
+<p class="MsoNormal" dir="rtl" style="margin: 0in 0in 0pt; direction: rtl; line-height: 18pt; unicode-bidi: embed; text-align: right; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span lang="FA"><font size="3"><font face="Times New Roman">این
+ زن که از ابتدا به حمایت از عشق خود(شوهرش،که کور شده و او را به همراه 
+سایر کسانیکه کور شده اند میخواهند به منطقه ی محافظت شده ای منتقل 
+میکنند)، خود را به کوری میزند و به قرنطینه می رود و داستان را حول دیده 
+هایش می چرخاند.<o:p></o:p></font></font></span></p>
+<p class="MsoNormal" dir="rtl" style="margin: 0in 0in 0pt; direction: rtl; line-height: 18pt; unicode-bidi: embed; text-align: right; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span lang="FA"><font size="3"><font face="Times New Roman">اما
+ وضعیت در منطقه ی قرنطینه به گونه ای است که کورها بدون پرستار ویا 
+مستخدمی میبایست زندگیشان را سپری کنند.طبیعتاً مشکلات عمده ای برایشان 
+بوجود می آید که همگی به تصویر کشیده میشود.<o:p></o:p></font></font></span></p>
+<p class="MsoNormal" dir="rtl" style="margin: 0in 0in 0pt; direction: rtl; line-height: 18pt; unicode-bidi: embed; text-align: right; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span lang="FA"><font size="3"><font face="Times New Roman">به نظر من به زیبایی تصویر زندگی رقت انگیز انسانهایی که خود را به کوری میزنند را نشان می دهد .<o:p></o:p></font></font></span></p>
+<p class="MsoNormal" dir="rtl" style="margin: 0in 0in 0pt; direction: rtl; line-height: 18pt; unicode-bidi: embed; text-align: right; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><span lang="FA"><font size="3"><font face="Times New Roman">اما
+ سرانجام روزی فرا میرسد که کورها متوجه میشوند دیگر از مامورانی که 
+برایشان آب و غذا در جایگاه مخصوصی قرار میدهند خبری نیست ، البته اطلاع از
+ این موضوع با جرات وجسارت یکی از کورها به دست میاید،بی خبر از اینکه همه 
+شهر به مرض کوری دچار شده اند.از آنجایی که دیگر از یکطرف آذوقه ای ندارند و
+ از طرف دیگر فضای محدودشان هم باعث بوجود آوردن مشکلاتی دیگر شده ، همه 
+طغیان کرده و فرار میکنند.</font></font></span></p><p class="MsoNormal" dir="rtl" style="margin: 0in 0in 0pt; direction: rtl; line-height: 18pt; unicode-bidi: embed; text-align: right; background-image: initial; background-attachment: initial; background-size: initial; background-origin: initial; background-clip: initial; background-position: initial; background-repeat: initial;"><font face="Times New Roman" size="3">برای خواندن بقیه داستان به کتابخانه مراجعه فرمایید.</font></p></div><div style="text-align: center;"><br></div>
+
+
+
+
+
+ </div>
+            </div>
+            <div class="pcat">
+              <div class="pcat-mid">
+                 موضوع:
+                   <a href="../../../../category/1.html">معرفی کتاب</a>،                                 <br />
+                                <br />
+                              </div>
+            </div>
+            <div class="pcomore">
+              <div class="pcomore-mid">
+                <div class="plike"></div>
+                <div class="pmore">
+                  <more></more>
+                </div>
+                <div class="pcomment"> <a target="_self" href="javascript:newComment(93)"><b>نظرات : </b><script>setCommentCnt(93)</script> نظرات</a> </div>
+                <div style="clear:both"></div>
+              </div>
+            </div>
+            <div class="p-bbg"></div>
+          </div>
+                    
+      <!--- e bodypost --->
+      
+            <!--- e barge ---->
+      
+              <div class="paper">
+          <div class="paper-tbg"></div>
+          <div class="paper-text">
+            <div class="paper-text-mid"> تعداد کل صفحات : 2               <a href="1.html"> <span>1</span></a>  <a href="2.html"> <b>2</b></a>               <div style="clear:both"></div>
+            </div>
+          </div>
+          <div class="paper-bbg"></div>
+        </div>
+            
+      <!--- e paper ---> 
+      
+    </div>
+    <!--- e content --->
+    
+    <div class="left">
+              <div class="lm">
+          <div class="lmtitle">
+            <div class="lmtitle-mid">تازه ترین مطالب</div>
+          </div>
+          <div class="lmtext">
+            <div class="lmtext-mid">
+              <ul>
+                                  <li><a href="../../../../178.html" title="دوشنبه 4 اردیبهشت 1396"> چهار کتاب کتابخوان ماه </a></li>
+                                  <li><a href="../../../../177.html" title="دوشنبه 4 اردیبهشت 1396"> برگزاری هفدهمین جشنواره رضوی </a></li>
+                                  <li><a href="../../../../176.html" title="شنبه 30 بهمن 1395"> پیام تسلیت  </a></li>
+                                  <li><a href="../../../../175.html" title="سه شنبه 26 بهمن 1395"> برگزاری مسابقه کاردستی  </a></li>
+                                  <li><a href="../../../../174.html" title="سه شنبه 26 بهمن 1395"> نشست کتاب و معرفی کتاب  </a></li>
+                                  <li><a href="../../../../173.html" title="سه شنبه 26 بهمن 1395"> برگزاری عصر شعر انقلاب </a></li>
+                                  <li><a href="../../../../172.html" title="سه شنبه 26 بهمن 1395"> برگزاری نمایشگاه صنایع دستی و توانمندیهای بانوان شهرستان بستان آباد  </a></li>
+                                  <li><a href="../../../../171.html" title="دوشنبه 11 بهمن 1395"> دهه فجر مبارک باد  </a></li>
+                                  <li><a href="../../../../170.html" title="دوشنبه 11 بهمن 1395"> ایام دهه فجر  </a></li>
+                                  <li><a href="../../../../169.html" title="دوشنبه 11 بهمن 1395"> ایبنا از ده کتاب پرفروش ادبیات در هفته اول بهمن‌ماه گزارش می‌دهد </a></li>
+                                  <li><a href="../../../../168.html" title="دوشنبه 11 بهمن 1395"> برگزاری نشست کتابخوان کتابخانه ای دی ماه 95 </a></li>
+                                  <li><a href="../../../../167.html" title="دوشنبه 11 بهمن 1395"> معرفی کتابخوان ماه بهمن ماه 95 </a></li>
+                                  <li><a href="../../../../166.html" title="پنجشنبه 9 دی 1395"> 9دیماه </a></li>
+                                  <li><a href="../../../../165.html" title="پنجشنبه 9 دی 1395"> کتابخوان ماه دی ماه  </a></li>
+                                  <li><a href="../../../../164.html" title="سه شنبه 7 دی 1395"> برنامه یک روز با مدرسه  </a></li>
+                                <li><a href="../../../../list.html">لیست تمام مطالب</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="lm-bbg"></div>
+        </div>
+                          <div class="lm">
+          <div class="lmtitle">
+            <div class="lmtitle-mid">دوستان</div>
+          </div>
+          <div class="lmtext">
+            <div class="lmtext-mid">
+              <ul>
+                <li><a href="http://cafeskin.blogfa.com/">قالب وبلاگ</a></li>
+                                  <li> <a href="http://irannamaye.ir" title=""  target="_blank"> ایران نمایه</a></li>
+                                  <li> <a href="http://hekmate.mihanblog.com/" title=""  target="_blank"> کتابخانه ی حکمت</a></li>
+                                  <li> <a href="http://shahidilib.mihanblog.com/" title=""  target="_blank"> کتابخانه آیت الله شهیدی</a></li>
+                                  <li> <a href="http://188.158.220.138/istgwebapp/firstpage/index.htm" title=""  target="_blank"> اتوماسیون اداری</a></li>
+                                  <li> <a href="http://iplf.ir/?browserEngin=IE" title=""  target="_blank"> جستجوی اینترنتی کتاب در سراسر کشور</a></li>
+                                  <li> <a href="http://booki.ir/" title=""  target="_blank"> شبکه کتابخوانان حرفه ای</a></li>
+                                  <li> <a href="http://ketabeman.iranpl.ir/" title=""  target="_blank"> سامانه ملی طرح کتاب من</a></li>
+                                  <li> <a href="http://tabriz.iranpl.ir/Portal/Home/" title=""  target="_blank"> نهاد کتابخانه های عمومی استان آذربایجان شرقی</a></li>
+                                  <li> <a href="http://bostanabadpl.blogfa.com/" title=""  target="_blank"> اداره کتابخانه های عمومی بستان آباد</a></li>
+                                <li><a href="../../../../../link/index.html"><b>همه لینکها</b></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="lm-bbg"></div>
+        </div>
+            <div class="lm">
+        <div class="lmtitle">
+          <div class="lmtitle-mid">لینک های مفید</div>
+        </div>
+        <div class="lmtext">
+          <div class="lmtext-mid"> 
+            <!--- Start links  ---->
+            <ul>
+              <li><a href="http://kiosk724.ir/" target="_blank" title="فروشگاه محصولات دیجیتال کتاب مجله والپیپر">کیوسک 724</a></li>
+              <li><a href="http://sitesetup.ir/" target="_blank" title="طراحی وب سایت شخصی شرکتی و مجله ای">طراحی سایت</a></li>
+              <li><a href="http://theme.sitesetup.ir/" target="_blank" title="قالب های حرفه ای وبلاگ">قالب وبلاگ حرفه ای</a></li>
+              <li><a href="http://cafeskin.blogfa.com/" target="_blank" title="قالب های متنوع وبلاگ">کافه اسکین</a></li>
+              <li><a href="http://blogbook.ir/" target="_blank" title="قالب های رسمی و کلاسیک وبلاگ">بلاگ بوک</a></li>
+              <li><a href="http://artskin.ir/" target="_blank" title="قالب های مشکی عاشقانه و دخترانه وبلاگ">آرت اسکینــ</a></li>
+            </ul>
+            <!--- End links  ----> 
+          </div>
+        </div>
+        <div class="lm-bbg"></div>
+      </div>
+      <div class="lm">
+        <div class="lmtitle">
+          <div class="lmtitle-mid">ابزارک های وبلاگ</div>
+        </div>
+        <div class="lmtext">
+          <div class="lmtext-mid"> <br>
+            <a href="http://cafeskin.blogfa.com/">قالب وبلاگ</a><br>
+            <br>
+                          <ul>
+                <li>کل بازدید:<script>getStatVar('total_view');</script></li>
+                <li>بازدید امروز :<script>getStatVar('today_view');</script></li>
+                <li>یازدید دیروز : <script>getStatVar('yesterday_view');</script></li>
+                <li>بازدید این ماه : <script>getStatVar('this_month_view');</script></li>
+                <li>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></li>
+                <li>تعداد نویسندگان : <script>getStatVar('total_author');</script></li>
+                <li>تعداد کل مطالب : <script>getStatVar('total_post');</script></li>
+                <li>آخرین بازدید : <script>getStatVar('last_view_date');</script></li>
+                <li>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></li>
+              </ul>
+                        <div style="text-align:center"> <br />
+              <br />
+              <script type='text/javascript' src='http://pIChaK.NEt/upper/jquery.min.js' ></script><div style='display:none'><h2><a title='قالب وبلاگ' href='http://pIChaK.NEt'>پیچک</a></h2></div>
+<script type='text/javascript' >document.write ("<scr"+"ipt type='text/javascript' src='http://pIChaK.NEt/upper/scrolltopcontrol.php?t=22' ></s"+"cript>");</script>
+
+<br />
+              <br />
+              
+		<form id="frm-16080272145fd88c4eb4f1e" method="post" action="http://shahiddanandehlib.mihanblog.com/poll/new/fid/16080272145fd88c4eb4f1e/atrty/1608027214/avrvy/0/key/3f609bde051dbd49334142ef756a2b88/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="292616" id="data[pollid]" />		
+                <li> میزان رضایت اعضا از خدمات كتابخانه و کارکنان کتابخانه چه میزان است ؟ <br>
+                   <label><input type="radio" name="data[answer]" value="v1">عالی </label><br>
+                   <label><input type="radio" name="data[answer]" value="v2">خوب</label><br>
+                   <label><input type="radio" name="data[answer]" value="v3">متوسط</label><br>
+                   <label><input type="radio" name="data[answer]" value="v4">ضعیف </label><br>
+                                    <input type="submit" value="نظرت رو ثبت کن "/>
+                </li>
+              
+		<input type="hidden" name="frm-id" value="16080272145fd88c4eb4f1e" id="frm-id" /></form>              <br />
+            </div>
+          </div>
+        </div>
+        <div class="lm-bbg"></div>
+      </div>
+      <div style="clear:both"></div>
+    </div>
+    <!--- e left --->
+    
+    <div style="clear:both"></div>
+  </div>
+  <!--- e main --->
+  
+  <div class="footer">
+    <div class="footer-mid">تمام حقوق وبلاگ متعلق به نویسنده‌ی آن می باشد :: <a href="http://cafeskin.blogfa.com/"> قالب وبلاگ: کافه اسکین</a> 
+      <!--- برای حفظ حقوق طراح قالب لطفا نام و آدرس طراح را تغییر نداده و پاک نفرمایید. سپاس ---> 
+    </div>
+  </div>
+  <!--- e footer ---> 
+  
+</div>
+<!--- e page --->
+
+</body>
+</html>
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'shahiddanandehlib.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

@@ -1,0 +1,1405 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://seigaku9.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1710211*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[7]='26';commentCnt[32]='20';commentCnt[35]='4';commentCnt[39]='2';commentCnt[43]='52';commentCnt[47]='18';commentCnt[49]='28';commentCnt[50]='15';commentCnt[52]='43';commentCnt[54]='52';commentCnt[60]='4';commentCnt[63]='4';commentCnt[65]='16';commentCnt[66]='10';commentCnt[67]='8';commentCnt[68]='13';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[7]='17';
+mihanblogDisLikeArrCnt[7]='0';
+mihanblogLikeArrCnt[32]='14';
+mihanblogDisLikeArrCnt[32]='0';
+mihanblogLikeArrCnt[35]='16';
+mihanblogDisLikeArrCnt[35]='0';
+mihanblogLikeArrCnt[39]='15';
+mihanblogDisLikeArrCnt[39]='0';
+mihanblogLikeArrCnt[43]='16';
+mihanblogDisLikeArrCnt[43]='0';
+mihanblogLikeArrCnt[47]='16';
+mihanblogDisLikeArrCnt[47]='0';
+mihanblogLikeArrCnt[49]='16';
+mihanblogDisLikeArrCnt[49]='0';
+mihanblogLikeArrCnt[50]='15';
+mihanblogDisLikeArrCnt[50]='0';
+mihanblogLikeArrCnt[52]='16';
+mihanblogDisLikeArrCnt[52]='0';
+mihanblogLikeArrCnt[54]='18';
+mihanblogDisLikeArrCnt[54]='0';
+mihanblogLikeArrCnt[60]='10';
+mihanblogDisLikeArrCnt[60]='0';
+mihanblogLikeArrCnt[63]='0';
+mihanblogDisLikeArrCnt[63]='0';
+mihanblogLikeArrCnt[65]='0';
+mihanblogDisLikeArrCnt[65]='0';
+mihanblogLikeArrCnt[66]='1';
+mihanblogDisLikeArrCnt[66]='0';
+mihanblogLikeArrCnt[67]='1';
+mihanblogDisLikeArrCnt[67]='0';
+mihanblogLikeArrCnt[68]='1';
+mihanblogDisLikeArrCnt[68]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://seigaku9.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://seigaku9.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','23');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','پنجشنبه 25 آذر 1395');
+	
+	setStatVar('today_view','0');
+	setStatVar('yesterday_view','2');
+	
+	setStatVar('this_month_view','204');
+	setStatVar('last_month_view','327');
+
+	setStatVar('total_view','23989');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (12:33)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://seigaku9.mihanblog.com/statupdate/?data[refereruri]=http://girlscity13412.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607826569&data[hash]=107b37cbe58aa3b454120a1733108d5a&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://seigaku9.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://seigaku9.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://seigaku9.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META NAME="description" CONTENT="">
+<META NAME="keywords" CONTENT="">
+<META NAME="DesignerUrl" CONTENT="http://Avazak.ir">
+<META NAME="Designer" CONTENT="AVAZAK">
+<link rel="alternate" type="application/rss+xml" title="شاهزاده خون اشام" href="http://seigaku9.mihanblog.com/post/rss/" />
+<title>شاهزاده خون اشام</title>
+<link href="http://avazak.ir/Theme/style/761.css" type="text/css" rel="stylesheet">
+</style>
+
+</head>
+
+<body>
+
+<div align="center">
+
+<div style="width:860px">	
+
+
+<div id="paper">
+
+<div class="contact">
+
+<div id="header">
+<div class="description">
+<h1 class="title">شاهزاده خون اشام</h1>
+<p class="subtitle"></p>
+</div></div>
+
+<!-- end header -->
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/7">پستی تا قیامت </a></h2>
+<div class="text">
+<div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div align="center"><font color="#6600CC"><font face="Mihan-Iransans">سلام من اومدم با قوانین وبلاگم همین طور كه هر وبلاگ یه سری قوانین داره این وبلاگ هم یه سری قوانین داره كه باید صد در صد رعایت شه<br><font color="#330000"><font color="#FF0000"><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/14.gif"> کپی ممنوووووووووووع <img src="http://mihanblog.com/public/public/rte/images_new/smiles/14.gif"><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/22.gif"><font color="#000000">انتقاد كنید اما نه زیادچون اونطوری من كاملا اعتمادبه نفسمو از دست میدم<img src="http://mihanblog.com/public/public/rte/images_new/smiles/22.gif"><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/22.gif"> و اگر اصلا انتقاد نكنید من </font></font></font><font color="#000000">ضعف های های وبلاگم را نمی فهمم<img src="http://mihanblog.com/public/public/rte/images_new/smiles/22.gif"><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/14.gif"><font color="#FF0000">توهین ممنوووووووووع <img src="http://mihanblog.com/public/public/rte/images_new/smiles/14.gif"><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"><font color="#000000">نظر هم زیاد باشه و بدون نظر از اینجا بیرون نرو<img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"><br><br><font color="#FF0000"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/14.gif">ورود پسر ها ممنووووووع<img src="http://mihanblog.com/public/public/rte/images_new/smiles/14.gif"><br></font><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/41.gif"><font color="#33CCFF"><font color="#3333FF">اگر قوانین را رعایت كنی میتونیم دوستای خیلی خوبی بشیم <img src="http://mihanblog.com/public/public/rte/images_new/smiles/41.gif"><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/25.gif"><font color="#33CC00">قوانین تموم شد حالا برو خوش بگذرون<img src="http://mihanblog.com/public/public/rte/images_new/smiles/25.gif"></font></font></font></font></font></font></font></font></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b></b><br/>
+<br><br>
+موضوع: <a title="متفرقه" href="http://seigaku9.mihanblog.com/post/category/7">متفرقه</a>، <br/>
+</div>
+<div class="footerpost">[ جمعه 13 شهریور 1394 ]  [ 02:55 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(7)">حرفای خوشگله شما (<script>setCommentCnt(7)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/68">توضیحی در باره ی رمان </a></h2>
+<div class="text">
+
+<font face="Mihan-Iransans" size="3">&nbsp;بازم سلام عزیزان من اومدم تا یه توضیح مختصر درباره ی رمان بدم خب پس با مااااا همرااااه باشید !!</font><div><font face="Mihan-Iransans" size="3"><br></font></div><div><font face="Mihan-Iransans" size="3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font></div><div><font face="Mihan-Iransans" size="3"><br></font></div><div><font face="Mihan-Iransans" size="3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ادامه ی مطلب پلیز&nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/3.gif"></div>
+
+<br/>
+<b><a href='http://seigaku9.mihanblog.com/post/68'>ادامه مطلب !!!!! -_@</a></b><br/>
+<br><br>
+موضوع: <a title="متفرقه" href="http://seigaku9.mihanblog.com/post/category/7">متفرقه</a>، <br/>
+</div>
+<div class="footerpost">[ چهارشنبه 24 آذر 1395 ]  [ 11:01 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(68)">!!!!!!!!!(<script>setCommentCnt(68)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/67">عشق یعنی دیوانگی 7</a></h2>
+<div class="text">
+
+
+
+
+<font size="4" face="Mihan-IransansLight">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font><div><font size="4" face="Mihan-IransansLight">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<font color="#33ccff">&nbsp; &nbsp;</font></font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/11.gif"><span style="color: rgb(51, 204, 255); font-family: Mihan-IransansLight; font-size: large;">&nbsp; سلام دوستان گلم اینم قسمت جدید &nbsp;</span><img src="http://mihanblog.com/public/public/rte/images_new/smiles/11.gif"></div><div><font color="#33ccff" size="4" face="Mihan-IransansLight">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font></div><div><font color="#33ccff" size="4" face="Mihan-IransansLight">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font><font color="#33ccff" size="4" face="Mihan-IransansLight">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/3.gif"><font color="#33cc00" size="4" face="Mihan-IransansLight">&nbsp; &nbsp;نانوكو خانوم اینم قسمت جدید نازنین &nbsp;</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/3.gif"></div><div><font color="#33ccff" size="4" face="Mihan-IransansLight">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</font></div><div><br></div><div><br></div><div><br></div><div><img src="http://s6.uplod.ir/i/00845/gpx5sgj7fc9g.png" alt="" width="605" vspace="0" hspace="0" height="492" align="bottom" border="0"></div>
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://seigaku9.mihanblog.com/post/67'>رمااااااااانههههههه هااااااااا </a></b><br/>
+<br><br>
+موضوع: <a title="رمان " href="http://seigaku9.mihanblog.com/post/category/5">رمان </a>، <br/>
+</div>
+<div class="footerpost">[ دوشنبه 22 آذر 1395 ]  [ 05:39 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(67)">نظررررررررررر مییییییخواممممممممم (<script>setCommentCnt(67)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/66">عشق یعنی دیوانگی ( 6 ) </a></h2>
+<div class="text">
+
+
+<font face="Mihan-IransansBold"><font size="5">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; سلام ادامه رمان رو اوردم بالاخره <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; بابت تاخیر ببخشید <br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; <img src="http://mihanblog.com/public/public/rte/images_new/smiles/1.gif"> برین ادامه <img src="http://mihanblog.com/public/public/rte/images_new/smiles/1.gif"><br><br>___________________________________________________________<br><br><img src="http://s6.uplod.ir/i/00819/i7vtf24qfpxu.png" alt="" align="bottom" border="0" height="405" hspace="0" vspace="0" width="678"><br></font></font>
+
+
+
+
+
+
+<br/>
+<b><a href='http://seigaku9.mihanblog.com/post/66'>كجا میری !! بیا ادامه </a></b><br/>
+</div>
+<div class="footerpost">[ یکشنبه 21 شهریور 1395 ]  [ 02:22 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(66)">نظظظظظظظظررررررررررر (<script>setCommentCnt(66)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/65">واقعا که .......</a></h2>
+<div class="text">
+
+
+<font size="4"><font face="Mihan-Iransans">سلام امدم یه اتمام حجت با تموم بازدیدکنندگان محترم بکنم&nbsp; که اگه اتمام حجته هم فایده <br><br><br><br>ای نداشته باشه مجبور میشم وبلاگ را ببندم <br><br><br>&nbsp; &nbsp; &nbsp;&nbsp; <br>&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; برو ادامه &gt;_&lt;<br></font></font>
+
+
+
+
+
+
+<br/>
+<b><a href='http://seigaku9.mihanblog.com/post/65'>بیا اینجا ببینمت </a></b><br/>
+<br><br>
+موضوع: <a title="متفرقه" href="http://seigaku9.mihanblog.com/post/category/7">متفرقه</a>، <br/>
+</div>
+<div class="footerpost">[ شنبه 19 تیر 1395 ]  [ 04:01 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(65)">۵ تا نظرررر یادت نرهههههه(<script>setCommentCnt(65)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/63">عشق یعنی دیوانگی ( 5 )</a></h2>
+<div class="text">
+
+
+
+
+<div align="center"><font size="5"><font face="Mihan-Iransans"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/6.gif"> سلام به همه دوستای خوبم <img src="http://mihanblog.com/public/public/rte/images_new/smiles/6.gif"></font></font><br></div><font size="5"><font face="Mihan-Iransans"><br><br></font></font><div align="center"><font size="5"><font face="Mihan-Iransans">&nbsp;<img src="http://mihanblog.com/public/public/rte/images_new/smiles/1.gif"> قسمت جدید رمان اومد <img src="http://mihanblog.com/public/public/rte/images_new/smiles/1.gif"></font></font><br></div><font size="5"><font face="Mihan-Iransans"><br><br></font></font><div align="center"><font size="5"><font face="Mihan-Iransans"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/2.gif">&nbsp; اما متاسفانه این میهن بلاگ&nbsp; <img src="http://mihanblog.com/public/public/rte/images_new/smiles/2.gif"></font></font></div><font size="5"><font face="Mihan-Iransans"><br><br></font></font><div align="center"><font size="5"><font face="Mihan-Iransans"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/20.gif"></font></font><font size="5"><font face="Mihan-Iransans"> را خدا بگم چیكارش نكنه </font></font><font size="5"><font face="Mihan-Iransans"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/20.gif"></font></font></div><font size="5"><font face="Mihan-Iransans"><br><br></font></font><div align="center"><font size="5"><font face="Mihan-Iransans">&nbsp;<img src="http://mihanblog.com/public/public/rte/images_new/smiles/13.gif"> كلی رمان تایپ كرده بودم <img src="http://mihanblog.com/public/public/rte/images_new/smiles/13.gif"></font></font></div><font size="5"><font face="Mihan-Iransans"><br><br></font></font><div align="center"><font size="5"><font face="Mihan-Iransans"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/14.gif"> كه به لطف میهن بلاگ همشون <img src="http://mihanblog.com/public/public/rte/images_new/smiles/14.gif"></font></font></div><font size="5"><font face="Mihan-Iransans"><br><br></font></font><div align="center"><font size="5"><font face="Mihan-Iransans"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"> پریدن البته یه شانسی كه اوردم <img src="http://mihanblog.com/public/public/rte/images_new/smiles/4.gif"></font></font></div><font size="5"><font face="Mihan-Iransans"><br><br></font></font><div align="center"><font size="5"><font face="Mihan-Iransans">^_^ یه جای دیگه كپی داشتم ^_^<br><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/26.gif"> خب حالا برین ادامه واسه خوندن رمان <img src="http://mihanblog.com/public/public/rte/images_new/smiles/26.gif"><br><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/27.gif"> اما قبلش یه چیزی بگم بعد برین <img src="http://mihanblog.com/public/public/rte/images_new/smiles/27.gif"><br><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"> اول اینكه همه نظر بدن و گرنه <img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"><br><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/14.gif">كلاهامون میره تو هم <img src="http://mihanblog.com/public/public/rte/images_new/smiles/14.gif"><br><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/22.gif"> دوم اینكه من رمان خیلی نوشته بودم <img src="http://mihanblog.com/public/public/rte/images_new/smiles/22.gif"><br><br><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/33.gif"> اما به خاطر حجم زیادش نشد همه ی <img src="http://mihanblog.com/public/public/rte/images_new/smiles/33.gif"><br><br><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/25.gif"> رمان را بزارم برای همین این قسمت <img src="http://mihanblog.com/public/public/rte/images_new/smiles/25.gif"><br><br><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/1.gif"> تعیین نمیكنم چندتا نظر اماااااا <img src="http://mihanblog.com/public/public/rte/images_new/smiles/1.gif"><br><br><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/3.gif"> همه نظر بزارن وسعی كنین نظرا <img src="http://mihanblog.com/public/public/rte/images_new/smiles/3.gif"><br><br><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/16.gif"> از 25 تا به بالا باشه <img src="http://mihanblog.com/public/public/rte/images_new/smiles/16.gif"><br><br><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/10.gif"> مرسی اه <img src="http://mihanblog.com/public/public/rte/images_new/smiles/10.gif"><br><br><br><br>^_^ خب برییییین اداااامههههه ^_^<br><br><br><br></font></font></div>
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://seigaku9.mihanblog.com/post/63'>رماااااااااانننننننننن </a></b><br/>
+<br><br>
+موضوع: <a title="رمان " href="http://seigaku9.mihanblog.com/post/category/5">رمان </a>، <br/>
+</div>
+<div class="footerpost">[ پنجشنبه 17 تیر 1395 ]  [ 07:52 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(63)">نظرت چیههههه ؟؟؟؟؟؟؟؟ (<script>setCommentCnt(63)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/60">یه موضوع خیلی مهم لطفا همه بخونن سؤ تفاهم نشه</a></h2>
+<div class="text">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div align="center"><font size="6"><font face="Mihan-Iransans">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; سلام دوستان یه موضوع </font></font><br></div><font size="6"><font face="Mihan-Iransans"><br><br><br></font></font><div align="center"><font size="6"><font face="Mihan-Iransans">خیلی مهم هست که باید</font></font><br></div><font size="6"><font face="Mihan-Iransans">&nbsp;<br><br><br></font></font><div align="center"><font size="6"><font face="Mihan-Iransans">برای همتون توضیح بدم </font></font><br></div><font size="6"><font face="Mihan-Iransans"><br><br><br></font></font><div align="center"><font size="6"><font face="Mihan-Iransans">تا سؤ تفاهم نشه </font></font><br></div><font size="6"><font face="Mihan-Iransans"><br><br><br></font></font><div align="center"><font size="6"><font face="Mihan-Iransans">خواهشا همه بخونن </font></font><br></div><font size="6"><font face="Mihan-Iransans"><br><br></font></font><div align="center"><font size="6"><font face="Mihan-Iransans">چون اگر کسی نخونه باعث </font></font><br></div><font size="6"><font face="Mihan-Iransans"><br><br><br></font></font><div align="center"><font size="6"><font face="Mihan-Iransans">میشه دو تا دوست از هم جدا بشن</font></font><br></div><div align="center"><font size="6"><font face="Mihan-Iransans"><br><br><br>&nbsp;پس حتما</font></font><font size="6"><font face="Mihan-Iransans">بخونین <img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"></font></font>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://seigaku9.mihanblog.com/post/60'>بیا اینجا تا بهت بگم موضوع چیه </a></b><br/>
+<br><br>
+موضوع: <a title="متفرقه" href="http://seigaku9.mihanblog.com/post/category/7">متفرقه</a>، <br/>
+</div>
+<div class="footerpost">[ یکشنبه 13 تیر 1395 ]  [ 11:00 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(60)">چیکار کنم ¿¿¿¿¿(<script>setCommentCnt(60)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/54">عشق یعنی دیوانگی ( 4 )</a></h2>
+<div class="text">
+
+
+
+<div align="justify">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font size="5"><font face="Mihan-Iransans">سلاااااااااام به دوستای گل خودم <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; من اوووومدم با قسمت جدید <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; چون میدونم خیییییلیییی عجله <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; دارین وقتتونو نمیگیرم فقط خییییلییییی <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; زوووووووووود بپرین ادااااااااامهههههههههه<br></font></font>&nbsp;&nbsp; &nbsp; <font face="Mihan-Iransans">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <img src="http://s6.uplod.ir/i/00785/rm7w0inlz3np.png" alt="" align="bottom" height="411" hspace="0" border="0" vspace="0" width="678"><font size="5"></font></font></div>
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://seigaku9.mihanblog.com/post/54'>اداااااااااامهههههههه </a></b><br/>
+<br><br>
+موضوع: <a title="رمان " href="http://seigaku9.mihanblog.com/post/category/5">رمان </a>، <br/>
+</div>
+<div class="footerpost">[ سه شنبه 18 خرداد 1395 ]  [ 05:45 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(54)">نظرتون چیههههههه (<script>setCommentCnt(54)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/52">عشق یعنی دیوانگی ( 3 )</a></h2>
+<div class="text">
+
+
+
+<span style="background-color: rgb(51, 204, 255);"><font color="#33CCFF"><span style="background-color: rgb(255, 255, 255);"><font size="6"><font style="direction: ltr;" face="Mihan-IransansLight">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span style="background-color: rgb(255, 255, 255);">&nbsp; سلام دوستای گلم من بالاخره <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; بعد از سال ها برگشتم <br><br><br></span><font color="#FF0000"><span style="background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; واقعا ببخشید اما به خدا <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; حجم درسا خیلی هست <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; هروقت میخواستم بیام <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;&nbsp; جور نمیشد <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; </span><font color="#33FF33"><span style="background-color: rgb(255, 255, 255);">توی عید هم یه چند بار اومدم <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ولی میهن بلاگ خراب بود <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; برای همین نمیشد پست بزاری <br><br><br></span><font color="#CC33CC"><span style="background-color: rgb(255, 255, 255);">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; در هر حال شرمنده ام <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; حالا هم برید برای ادامه ی رمان&nbsp; <br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; كه پس سالهابالاخره اومد<br><br><br></span><img src="http://s6.uplod.ir/i/00778/rr3aapipcj31.png" alt="" align="bottom" height="409" hspace="0" border="0" vspace="0" width="686"><br></font></font></font></font></font></span></font></span>
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://seigaku9.mihanblog.com/post/52'>بیا رمان اینجاست </a></b><br/>
+<br><br>
+موضوع: <a title="رمان " href="http://seigaku9.mihanblog.com/post/category/5">رمان </a>، <br/>
+</div>
+<div class="footerpost">[ پنجشنبه 30 اردیبهشت 1395 ]  [ 12:41 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(52)">حرفای قشنگتون (<script>setCommentCnt(52)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/50">( خییییلییییییییی خیییییلیییییییییی مهم ) همه بخونن</a></h2>
+<div class="text">
+
+
+
+<div align="center"><font color="#33CC00" size="2"><br><br><font size="3">سلام به همه دوستان خوبم</font> </font><font color="#FF0000">یه سو تفاهم پیش اومده كه من<br><br>باید این سو تفاهم را حل كنم دوستان عزیز این مدت من <br><br>نبودم كه جواب نظرات را میداد چون من رفته بودم مسافرت <br><br>و به یكی از دوستام رمز وبلاگ را دادم تا بیاد اینجا و به نظرات <br><br>جواب بده من دو تا معذرت خواهی به همه شما عزیزان بدهكارم <br><br>یكی برای اینكه خبر ندادم و رفتم مسافرت و<font size="3"> یكی هم به خانوم&nbsp; اسوكا</font></font> <br><br><font color="#FF0000" size="3">خانوم اسوكا واقعا ببخشید من منبع را ذكر كرده بودم اما چون تو این مدت <br><br>خودم نبودم و یكی از دوستام به جایه من بود تنظیمات قالب وبلاگ بهم ریخته <br><br>بود برای همین منبع را نشون نمیداد و الان اگر شما پایین نوع مطلب را نگاه كنید <br><br>میبینید كه نوشته دنبالك ها این دنبالك ها همون منبع هست به هر حال شما حق دارید <br><br>اما واقعا ببخشید این دوست من اصلا در جریان نبود و اگه بی احترامی چیزی پیش اومده <br><br>شما به خوبیه خودتون ببخشید شما كه خودتون وبلاگ دارید فكر كنم میتونید یكم منو درك <br><br>كنید خب بالاخره همه جا از این جور سو تفاهم ها پیش میاد و من اصلا دوست ندارم كه <br><br>كسی ناراحت از وبلاگ من بره بیرون بازم میگم خانوم اسوكا اشتباه از من بوده شما به <br>بزرگی و خوبیه خودتون <font size="7"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"> ببخشید <img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"><br><font color="#33CC00"><font size="2"><br><br></font></font> </font><br></font><br></div>
+
+
+
+
+
+
+
+
+<br/>
+<b></b><br/>
+<br><br>
+موضوع: <a title="متفرقه" href="http://seigaku9.mihanblog.com/post/category/7">متفرقه</a>، <br/>
+</div>
+<div class="footerpost">[ یکشنبه 3 آبان 1394 ]  [ 06:13 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(50)">حرفا(<script>setCommentCnt(50)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/49">بیوگرافی سانادا ( در خواستی )</a></h2>
+<div class="text">
+
+
+
+
+
+
+
+
+
+
+
+<div align="center">سلااااااااام دوستان گلم حالتون چه طوره ؟<br><br>من كه عاااااالیییییییی هستم <br><br>خب من دوباره اومدم با یه بیوگرافی <br><br>دیگه البته این یكی در خواستی هست <br><br>این<font size="3"> </font><font color="#33CC00" size="3">یك بیوگرافی كامل از سانادا </font>هست <br><br>كه تقدیمش میكنم به<font size="3"> </font><font color="#33CCFF"><font size="3">نانوكو </font><font color="#000000">عزیزم <br><br>خب برای دیدن بیوگرافی سانادا <br><br>بپرید<font color="#FF0000"> <font size="3">ادااااااااااااامههههههههههه<br><br><img src="http://uplod.ir/28v9qtqtqy38/سانادا.png.htm" alt="" align="bottom" border="0" hspace="0" vspace="0"><img src="http://uplod.ir/28v9qtqtqy38/سانادا.png.htm" alt="" align="bottom" border="0" hspace="0" vspace="0"><img src="http://s6.uplod.ir/i/00695/28v9qtqtqy38.png" alt="" align="bottom" border="0" height="252" hspace="0" vspace="0" width="488"></font></font></font></font></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://seigaku9.mihanblog.com/post/49'>ادااااااامهههههه اینجاست</a></b><br/>
+<br><br>
+موضوع: <a title="بیوگرافی" href="http://seigaku9.mihanblog.com/post/category/8">بیوگرافی</a>، <br/>
+دنبالک ها:
+<a title="قهرمانان تنیس" href="http://theprinceoftennis2001.persianblog.ir" target="_blank">قهرمانان تنیس</a>،	 <br/>
+</div>
+<div class="footerpost">[ جمعه 1 آبان 1394 ]  [ 11:39 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(49)">حرفای خوشگله شما(<script>setCommentCnt(49)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/47">بیوگرافی اتوبه</a></h2>
+<div class="text">
+
+
+
+
+
+
+
+<br>
+
+<div align="center"><font size="2">سلااااااااااااااام دوستان عزیزم امروز اومدم با <br><br>یه بیوگرافی از</font> <font size="3"><font color="#990000">اتوبه <font color="#000000"><font size="2">وااااااااااییییییییی <br><br>بیوگرافیش خیییییییلییییییییی جالب <br><br>هست حتما بخونید <br><font color="#009900"><font size="4"><br>برای خوندن بیوگرافی اتوبه <br><br>بپرید ادااااااااااامهههههههه <br><img src="http://s6.uplod.ir/i/00694/kk57bsatw6qh.png" alt="" align="bottom" border="0" height="274" hspace="0" vspace="0" width="520"><br><br></font></font></font></font></font></font></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://seigaku9.mihanblog.com/post/47'>ادااااااااااااااامههههههههه</a></b><br/>
+<br><br>
+موضوع: <a title="بیوگرافی" href="http://seigaku9.mihanblog.com/post/category/8">بیوگرافی</a>، <br/>
+دنبالک ها:
+<a title="prince of tennis" href="../theprinceaftennis.mihanblog.com/index.html" target="_blank">prince of tennis</a>،	 <br/>
+</div>
+<div class="footerpost">[ چهارشنبه 29 مهر 1394 ]  [ 03:01 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(47)">حرفای خوشگله شما(<script>setCommentCnt(47)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/43">عشق یعنی دیوانگی ( 2 )</a></h2>
+<div class="text">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div align="center">بازم سلاااااام دوستای گلم من اومدم با قسمت دوم رماااان <br></div><br><div align="center">میدونم كه همتون عجله دارید پس بدون هیچ حرفی بپرید ادامه <br></div><br><div align="center"><font color="#33FF33"><font size="5">راستی بابت كمك هایی كه كردین </font></font><br></div><font color="#33FF33"><font size="5"><br></font></font><div align="center"><font color="#33FF33"><font size="5">واقعا ممنون همه اسم هایی كه گفتین </font></font><br></div><font color="#33FF33"><font size="5"><br></font></font><div align="center"><font color="#33FF33"><font size="5">قشنگ بودن منم اومدم همه اسم ها را </font></font><br></div><font color="#33FF33"><font size="5"><br></font></font><div align="center"><font color="#33FF33"><font size="5">با هم جمع بستم و یه اسم خیلی كلی </font></font><br></div><font color="#33FF33"><font size="5"><br></font></font><div align="center"><font color="#33FF33"><font size="5">&nbsp;از توشون در اوردم و اسم رمان شد : </font></font><br></div><font color="#33FF33"><font size="5"><br></font></font><div align="center"><font color="#33FF33"><font size="5"><font color="#33FFFF">عشق یعنی دیوانگی<br><br><img src="http://s6.uplod.ir/i/00692/shqcbq5wzws7.png" alt="" align="bottom" border="0" height="305" hspace="0" vspace="0" width="524"><br></font></font></font></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://seigaku9.mihanblog.com/post/43'>بدو رمان اینجاست</a></b><br/>
+<br><br>
+موضوع: <a title="رمان " href="http://seigaku9.mihanblog.com/post/category/5">رمان </a>، <br/>
+</div>
+<div class="footerpost">[ جمعه 24 مهر 1394 ]  [ 09:54 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(43)">حرفای خوشگله شما(<script>setCommentCnt(43)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/39">نههههههههه .... </a></h2>
+<div class="text">
+
+
+
+
+<div align="center">بازم سلام دوستای گلم خوبین ؟ من كه افتضاحم حالم خیلی بده <br><br>چون تولد داداش گلم كنیمیتسو گذشت و من نبودم كه براش توی <br><br>وبلاگ پست بذارم<font color="#FF0000"> واااااااییییییی خیییییییلییییییییی </font><font color="#FF0000">خیییییییلیییییی<br><br>&nbsp;ناراحتم دارم دیوونه میشم <font color="#000000">ولی اشكالی نداره برای اینكه </font><font color="#000000">جبران كنم </font><br><br><font color="#33FF33"><font color="#000000">الان براش تولد میگیرم خیلی دلم برای كنیمیتسو سوخت چون رایا كه اصلا<br><br>یادش رفته بود یه دفعه یادش اومد ( البته همون روز یادش اومد و تونست جبرانش كنه ) <br><br>منم كه توی بیمارستان بودم حالا میخواهم براش تولد بگیرم انشا الله خدا بهم <br><br>یه حافظه ای بده الان 9 روز هست كه از تولد داداشم گذشته من تازه میخواهم <br><br>براش تولد بگیرم واقعا برای خودم متاسفم تازه تولد برادر زادم را هم یادم رفت <br><br>ببینید چه وضعیه یعنی كلا حافظه را از دست دادم حالا فعلا برید ادامه ببینید من چیكار كردم <br></font><br><br></font></font></div>
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b><a href='http://seigaku9.mihanblog.com/post/39'>ادامه اینجااااااااست</a></b><br/>
+<br><br>
+موضوع: <a title="تولد" href="http://seigaku9.mihanblog.com/post/category/6">تولد</a>، <br/>
+</div>
+<div class="footerpost">[ جمعه 24 مهر 1394 ]  [ 07:22 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(39)">حرفای خوشگله شما(<script>setCommentCnt(39)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/35">من اومدم </a></h2>
+<div class="text">
+
+
+
+<img src="http://s6.uplod.ir/i/00691/5gtw0nvoi3a6.png" alt="" align="bottom" border="0" height="255" hspace="0" vspace="0" width="475">
+
+<div align="center"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif">سلاااااااام دوستای عزیزم واقعا ببخشید<img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif">كه این چند وقت نبودم من به خاطر مریضیم<img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif">بیمارستان بودم پس ببخشید اگه رمان را نزاشتم<img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif">میبینم كه همه از دستم شاكی هستن ولی خب<img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif">حالم خیلی بد بود برای همین نتونستم حتی خبر بدم<img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif">دوستان خووووووبممممم ببخشیییییییییییییییییییید<img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"><br><br><img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif">این چند وقت همه بدبختی های دنیا ریخته بود روی سر من<img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"><br><br><font size="3"><font color="#FF0000"><font size="5"><img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif">بازم میگم ببخشییییییییییییید<img src="http://mihanblog.com/public/public/rte/images_new/smiles/63.gif"></font></font></font></div>
+
+
+
+
+
+
+
+
+
+
+
+
+<br/>
+<b></b><br/>
+<br><br>
+موضوع: <a title="متفرقه" href="http://seigaku9.mihanblog.com/post/category/7">متفرقه</a>، <br/>
+</div>
+<div class="footerpost">[ جمعه 24 مهر 1394 ]  [ 02:27 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(35)">حرفای خوشگله شما(<script>setCommentCnt(35)</script>)</a> ]</div>
+</div>
+<div class="post">
+<h2 class="posttitle"><a href="http://seigaku9.mihanblog.com/post/32">جریان رمان </a></h2>
+<div class="text">
+
+
+<div align="center">
+خب دوستان جریان رمان را نمیتونم بگم چون دیگه هیجان و جذابیت نداره ولی میتونم <br><br><div align="center">حالت های رمان را بگم رمانم چند حالت داره&nbsp;هم عاشقانه هست هم غمگین هم <br><br>عاشقانه غمگین هست اصلا خیلی پیچیده هست كلی حالت داره ولی <br><br>شما ها لطف كنید بیش تر همون عاشقانه را در نظر بگیرید<br><br>&nbsp;خودمم به یه جاهایی رسیدم ولی نمیدونم خوبه یا نه دلم میخواهد<br><br>&nbsp;نظر شما ها را هم بدونم بعد یه اسم انتخاب كنم <br><br><br></div></div>
+
+
+
+<br/>
+<b></b><br/>
+<br><br>
+موضوع: <a title="متفرقه" href="http://seigaku9.mihanblog.com/post/category/7">متفرقه</a>، <br/>
+</div>
+<div class="footerpost">[ شنبه 11 مهر 1394 ]  [ 08:37 ب.ظ ]  [ Linda  ] [ <a target="_self" href="javascript:newComment(32)">حرفای خوشگله شما(<script>setCommentCnt(32)</script>)</a> ]</div>
+</div>
+
+<!-- end post -->
+
+<div class="pagination">
+ .: تعداد کل صفحات 2 :. 
+<a href="http://seigaku9.mihanblog.com/page/1"><b>1</b></a>
+<a href="http://seigaku9.mihanblog.com/page/2"><span>2</span></a>
+</div>
+
+<div id="footer">
+<div class="space"></div>
+<a title="قالب وبلاگ" href="http://avazak.ir"><img src="http://Avazak.ir/Theme/style/image/761-8.png" title="قالب وبلاگ" /></a>
+</div>
+
+</div>
+
+
+<div class="sidebar">
+
+<div class="menu">
+<a href="index.html">صفحه اصلی</a>
+<a href="http://seigaku9.mihanblog.com/post/list">عناوین مطالب</a>
+<a title"ابزار تماس با ما" href="http://www.avazak.ir/abzar/contact1/mail/?email=javascript:messageForm()">تماس با من</a>
+<a title="قالب وبلاگ رایگان" href="http://avazak.ir/">قالب وبلاگ</a>
+</div>
+
+<h3 class="h3">درباره وبلاگ</h3>
+<div class="sidebar-y">
+<center>
+<img src="../static.mihanblog.com/public/user_data/web_photo/571/1710211.jpg@8192"  /></center><br><br>
+<div class="About">سلام به وبلاگ من خوش اومدین امیدوارم اینجا بهتون خوش بگذره من لیندا هستم<br />
+ یك دختر با استعداد های فوقه فوق العاده و با چشمای ابی و موهای خرمایی اخلاقم <br />
+خیلی شبیه تزوكا هست و حتی میشه گفت جدی تر هم هستم من عاشق قهرمانان تنیس و خون اشام هستم تویه قهرمانان تنیس ریوگا و ریوما و فوجی و تزوكا را دوست دارم یعنی همشون داداشام هستن <br />
+پس توهین بهشون ممنوع حواساتونو جمع كنید که یه موقع عاشق داداشام نشید<br />
+چون فقط مال خودم هستن و خیلی دوسشون دارم <br />
+</div>
+</div><div class="FooterSid"></div>
+
+<!--Design By : Avazak.ir-->
+
+<h3 class="h3">نویسندگان</h3>
+<div class="sidebar-y">
+<div class="Link"><a href="http://seigaku9.mihanblog.com/post/author/1417955">Linda </a></div>
+</div><div class="FooterSid"></div>
+
+<!--Design By : Avazak.ir-->
+
+<h3 class="h3">پیوندهای روزانه</h3>
+<div class="sidebar-y">
+<div class="Link"><a href="http://yon.ir/AA8ez" target="_blank" title="سلام. ممنونم که پرچم وبلاگ نویسی رو بالا نگه داشتید :)
+
+سایت نویسور راه اندازی شده تا پست های شما بیشتر خونده بشن، اپ موبایلمون هم تو راهه.
+
+دعوت میکنم تشریف بیارید به لینک زیر و فصل نو ی وبلاگ نویسی تون رو شروع کنید.
+yon.ir/AA8ez
+
+خوش حال می شیم با انتشار پست هاتون در نویسور، همدیگر رو همراهی کنیم :)
+
+لطفا این لینک را هم تایید کنید. متشکرم" >ــ وبـلاگ نویسی بهـترــ</a></div>
+<div class="Link"><a href="http://www.cafealone.com" target="_blank" title="شعر,مینیمال,جملات فلسفی,متن آهنگ" >کافه تنهایی</a></div>
+<div class="Link"><a href="http://www.notesara.com" target="_blank" title="مرجع دانلود نت و آکورد" >نت سرا</a></div>
+<div class="Link"><a href="http://7themes.ir" target="_blank" title="با سلام....
+ 
+خواهان تبادل لینک با وبلاگ زیبای شما هستیم.در صورت تمایل لینک رو تایید و اطلاع بدید.
+
+سون تم - مرجع تخصصی قالب وردپرس" >قالب وردپرس</a></div>
+<div class="Link"><a href="http://link.mikhak.net" target="_blank" title="با سلام تبادل لینک میکنی ؟" >تبادل لینک میکنی ؟</a></div>
+<div class="Link"><a href="http://senfit.ir" target="_blank" title="تبادل لینک" >اطلاعات اصناف ایران</a></div>
+<div class="Link"><a href="http://khande-vane.ir/fa/" target="_blank" title="وب سایت هواداران خندوانه" >خندوانه</a></div>
+<div class="Link"><a href="http://eheyat.com" target="_blank" title="مداحی صوتی" >مداحی صوتی</a></div>
+<div class="Link"><a href="http://arawebco.ir" target="_blank" title="وردپرس" >وردپرس</a></div>
+<div class="Link"><a href="http://uupload.ir" target="_blank" title="سلام ، خسته نباشید
+وبلاگ بسیار خوب و زیبایی دارید .
+پیشنهاد میکنم برای آپلود فایل و عکس از سایت یو آپلود استفاده کنید.
+به صورت رایگان ، دائمی و سرعت بالا 
+لطفا لینک رو تایید کنید تا هم آدرس سایت رو داشته باشید و هم یه حمایتی بشه از ما
+خیلی ممنون
+خدانگهدار" >آپلود فایل</a></div>
+<div class="Link"><a href="http://seigaku9.mihanblog.com/linkdaily/">آرشیو پیوندهای روزانه</a></div>
+</div><div class="FooterSid"></div>
+
+<!--Design By : Avazak.ir-->
+
+
+<!--Design By : Avazak.ir-->
+
+<h3 class="h3">آرشیو ماهانه</h3>
+<div class="sidebar-y">
+<div class="Link"><a href="http://seigaku9.mihanblog.com/post/archive/1395/9"> آذر 1395</a></div>
+<div class="Link"><a href="http://seigaku9.mihanblog.com/post/archive/1395/6"> شهریور 1395</a></div>
+<div class="Link"><a href="http://seigaku9.mihanblog.com/post/archive/1395/4"> تیر 1395</a></div>
+<div class="Link"><a href="http://seigaku9.mihanblog.com/post/archive/1395/3"> خرداد 1395</a></div>
+<div class="Link"><a href="http://seigaku9.mihanblog.com/post/archive/1394/8"> آبان 1394</a></div>
+<div class="Link"><a href="http://seigaku9.mihanblog.com/post/archive/1394/7"> مهر 1394</a></div>
+<div class="Link"><a href="http://seigaku9.mihanblog.com/post/archive">لیست آرشیوها</a></div>
+</div><div class="FooterSid"></div>
+
+<!--Design By : Avazak.ir-->
+
+<h3 class="h3">آرشیو موضوعی</h3>
+<div class="sidebar-y">
+<div class="Link"><a href="http://seigaku9.mihanblog.com/post/category/5">رمان  - 7</a></div>
+<div class="Link"><a href="http://seigaku9.mihanblog.com/post/category/7">متفرقه - 8</a></div>
+<div class="Link"><a href="http://seigaku9.mihanblog.com/post/category/6">تولد - 1</a></div>
+<div class="Link"><a href="http://seigaku9.mihanblog.com/post/category/8">بیوگرافی - 7</a></div>
+</div><div class="FooterSid"></div>
+
+<!--Design By : Avazak.ir-->
+
+<h3 class="h3">پیوندها</h3>
+<div class="sidebar-y">
+<div class="Link" style="font-size:7pt">
+<a title="قالب میهن بلاگ" href="http://avazak.ir/tag/قالب-میهن-بلاگ/" target="_blank">قالب میهن بلاگ</a>|<a href="http://tools.avazak.ir/theme/avazak/761/قالب-وبلاگ-دو-ستونه-عاشقانه.php" title="قالب وبلاگ عاشقانه" target="_blank">قالب وبلاگ عاشقانه</a></div>
+<div class="Link" style="font-size:7pt"><a href="http://www.stws.ir" title="خدمات مجالس" target="_blank">خدمات مجالس</a>|﻿<a href="http://www.sunglasses-biz.ir/" title="عینك آفتابی" target="_blank">عینك آفتابی</a></div>
+<div class="Link" style="font-size:7pt">﻿<a rel="follow" href="http://www.registercompany.ir/" title="ثبت شرکت" target="_blank">ثبت شرکت</a> | <a href="http://kosargasht.ir" title="چارتر" target="_blank">چارتر</a>|﻿<a href="http://www.puls1.ir" title="فروش طلایاب" target="_blank">فروش طلایاب</a></div>
+<div class="Link" style="font-size:7pt">﻿<a href="http://mihandocs.com" title="دانلود تحقیق" target="_blank">دانلود تحقیق</a> | ﻿<a href="http://kishnets.ir/" title=" تور کیش " target="_blank"> تور کیش </a>|﻿<a href="http://ketabsheer.blogsky.com/1394/06/01/post-10/" title="دیوان عنصری بلخی	" target="_blank">دیوان عنصری بلخی	</a></div>
+<div class="Link" style="font-size:7pt">﻿<a href="http://gogo.lineblog.ir/" title="بالشت گوگو پیلو" target="_blank">بالشت گوگو پیلو</a>|﻿<a href="http://www.chidaneh.com/pro/interior-design/curtain-fabric" title="پارچه رو مبلی" target="_blank">پارچه رو مبلی</a></div>
+<div class="Link" style="font-size:7pt">﻿<a href="http://concrete-admixtures.mihanblog.com/" title="افزودنی های بتن" target="_blank">افزودنی های بتن</a>
+
+ | <a href="http://avazak.ir/abzar/fal" title="فال حافظ" target="_blank">فال حافظ</a></div></div><div class="FooterSid"></div>
+
+<!--Design By : Avazak.ir-->
+
+
+		<form id="frm-16077117685fd3bc185cf89" method="post" action="http://seigaku9.mihanblog.com/poll/new/fid/16077117685fd3bc185cf89/atrty/1607711768/avrvy/0/key/090150463210b4df1c531fc6fc0aca3b/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="348351" id="data[pollid]" />		
+<h3 class="h3">نظر سنجی</h3>
+<div class="sidebar-y">
+<center>وبلاگم چه طوره ؟</center><br>
+<div style="text-align: Right;margin-right:10px" dir="rtl" ><label><input type="radio" name="data[answer]" value="v1">خیلی عالیه (اصلا نمیتونم توصیفش كنم )</label><br> 
+<label><input type="radio" name="data[answer]" value="v2">عالیه</label><br> 
+<label><input type="radio" name="data[answer]" value="v3">خیلی خوبه</label><br> 
+<label><input type="radio" name="data[answer]" value="v4">خوبه</label><br> 
+<label><input type="radio" name="data[answer]" value="v5">متوسطه</label><br> 
+</div>
+<center><input type="submit" value="نظرم اینه" class="btn"/></center>
+</div><div class="FooterSid"></div>
+
+		<input type="hidden" name="frm-id" value="16077117685fd3bc185cf89" id="frm-id" /></form>
+<!--Design By : Avazak.ir-->
+
+<h3 class="h3">سایت آوازک</h3>
+<div class="sidebar-y">
+<div class="Link" style="font-size:7pt"><a href="http://linkolink.ir/" title="" target="_blank">سایت تبادل لینک</a>|<a href="http://www.estekhdamiran.com" title="استخدام" target="_blank">استخدام</a></div>
+<div class="Link" style="font-size:7pt">﻿<a href="http://bagshop.ir" title="ساعت مچی" target="_blank">ساعت مچی</a>|﻿<a href="http://queenstudio.ir/category/%d8%af%da%a9%d9%88%d8%b1%d8%a7%d8%b3%db%8c%d9%88%d9%86-%d8%af%d8%a7%d8%ae%d9%84%db%8c/tejari/" title="طراحی داخلی تجاری" target="_blank">طراحی داخلی تجاری</a></div>
+<div class="Link" style="font-size:7pt"><a href="http://shomalbar.ir/west-furniture" rel="nofollow" title="اتوبار غرب" target="_blank">اتوبار غرب</a>|﻿<a href="http://www.bartarinha.ir/fa/list/3/4" title="لباس" target="_blank">لباس</a></div>
+<div class="Link" style="font-size:7pt">﻿<a href="http://iranarchitects.com/companies/switches-sockets" title="کلید و پریز" target="_blank">کلید و پریز</a>|﻿<a href="http://www.beytootechat.net" title="چت" target="_blank">چت</a>|﻿<a href="http://neginparvaz.com" title="خرید بلیط هواپیما" target="_blank">خرید بلیط هواپیما</a></div>
+<div class="Link" style="font-size:7pt">﻿<a href="http://sunglassshop.iranarena.com" title="عینكی آفتابی" target="_blank">عینكی آفتابی</a>|﻿<a href="http://efabner.ir" title="عینكی آفتابی" target="_blank">عینكی آفتابی</a></div>
+<div class="Link" style="font-size:7pt"><a rel="nofollow" href="http://asangem.com/" stitle="جم" target="_blank">جم</a>|<a rel="nofollow" href="http://1000gem.org/" stitle="خرید جم هزار جم" target="_blank">خرید جم هزار جم</a></div>
+<div class="Link" style="font-size:7pt">﻿|﻿</div></div><div class="FooterSid"></div>
+
+<!--Design By : Avazak.ir-->
+
+<h3 class="h3">دیگر امکانات</h3>
+<div class="sidebar-y">
+<center><!--
+End camusic.ir -->
+<div style="display: none"><a title="قالب وبلاگ" href="http://avazak.ir/"><h1>قالب وبلاگ</h1></a></div>
+<!-- End www.avazak.ir heartpop Tools -->
+</body>
+﻿</html></body>
+</html></style><p><a target="_blank" href="http://www.parandehgharib.ir/mouse-all/" rel="follow" ><font size="3" face="Andalus" color="#00ff00">  </font></a></p>
+<!-- www.parandehgharib.ir --><!-- Online Support by www.1abzar.com --->
+<script>
+ var offline_text="نیستم ولی بعدا میام ";
+ var online_text="هستم بیا تو ";
+ var first_text="عزیزم برای اینكه با من صحبت كنی اسم قشنگت را بنویس : G_G";
+ var rangbg="17FFFF"; var rangtxt="FFFFFF";
+</script><script type="text/javascript" src="http://online.1abzar.com/1abzar-mini.php?admin=44225&poz=left"></script><div style="display:none"><h3><a href="http://www.1abzar.com">&#1662;&#1588;&#1578;&#1740;&#1576;&#1575;&#1606;&#1740;</a></h3></div>
+<!-- Online Support by www.1abzar.com ---><!-- No right Click by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzaar.ir/abzar/tools/no-rightclick.js"></script><div style="display:none"><h2><a href="http://www.1abzar.com">&#1575;&#1576;&#1586;&#1575;&#1585; &#1608;&#1576;&#1605;&#1587;&#1578;&#1585;</a></h2></div>
+<!-- No right Click by www.1abzar.com ---><!-- Goto Top by http://princeoftennis.mihanblog.com/--->
+<script type="text/javascript" src="http://1abzaar.ir/abzar/tools/top-page/jquery.min.js"></script><script>var abzar = "<img src=http://s6.picofile.com/file/8198629184/tezuka_balbar.png/>";</script><script type="text/javascript" src="http://1abzaar.ir/abzar/tools/top-page/scrolltopcontrol.js"></script><div style="display:none"><h1><a href="http://princeoftennis.mihanblog.com/"> هدایت به بالا</a></h1></div>
+<!-- Goto Top by http://princeoftennis.mihanblog.com/--->
+<P><A href="http://princeoftennis.mihanblog.com/" target=_blank><SPAN
+style="">كد هدایت به بالا</FONT> </SPAN></A></P>
+
+<!-- Payam form by www.1abzar.com --->
+<script>window.onload=function() {alert("خوش اومدی بدون نظر بیرون نریا !!!!!! @_@")}
+</script><div style="display:none"><h2><a href="http://www.1abzar.com">&#1575;&#1576;&#1586;&#1575;&#1585; &#1608;&#1576;&#1604;&#1575;&#1711;</a></h2></div>
+<!-- Payam form by www.1abzar.com --->
+
+</center>
+</div><div class="FooterSid"></div>
+
+<!--Design By : Avazak.ir-->
+
+<h3 class="h3">طراح قالب: آوازک</h3>
+<div class="sidebar-y">
+<center>
+[ <a title="قالب" href="http://Avazak.ir/">طراح قالب: <a tite="قالب وبلاگ" href="http://Avazak.ir">آوازک</a> ]<br>
+</center>
+</div><div class="FooterSid"></div>
+
+</div></div>
+
+<!-- end sidebar -->
+
+</div></div>
+
+</body>
+
+</html>
+
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'seigaku9.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

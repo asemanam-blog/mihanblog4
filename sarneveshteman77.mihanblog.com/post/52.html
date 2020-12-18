@@ -1,0 +1,777 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc@rsd" />
+<script type="text/javascript" src="../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('یکشنبه 23 آذر 1399');
+		/*1898172*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','41');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','دوشنبه 24 تیر 1398');
+	
+	setStatVar('today_view','8');
+	setStatVar('yesterday_view','10');
+	
+	setStatVar('this_month_view','207');
+	setStatVar('last_month_view','218');
+
+	setStatVar('total_view','20690');
+	setStatVar('last_view_date','یکشنبه 23 آذر 1399 (06:01)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://sarneveshteman77.mihanblog.com/statupdate/?data[refereruri]=http://sarneveshteman77.mihanblog.com/&data[postid]=52&data[requesturi]=/post/52&data[sdate]=1607831542&data[hash]=456367d9154b44ff2bad142866033e8a&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[52]='1';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[52]='0';
+mihanblogDisLikeArrCnt[52]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://sarneveshteman77.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://sarneveshteman77.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://sarneveshteman77.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://sarneveshteman77.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<META NAME="description" CONTENT="♂♀دنیای جورواجور معصومه♂♀ - راهنمای استفاده از کدهای css و html - **هرکسی بخاطرظلمی که بهت میکنه مستحق مجازاته،اگه ببخشیش ازحقش محرومش میکنی**">
+<META NAME="keywords" CONTENT="♂♀دنیای جورواجور معصومه♂♀ - راهنمای استفاده از کدهای css و html,sarneveshteman77, Blog, Weblog, Persian,Iran, Iranian, Farsi, Weblogs, Blogs">
+<META NAME="DesignerUrl" CONTENT="http://Bia2skin.ir">
+<META NAME="Designer" CONTENT="Bia2skin">
+<link rel="alternate" type="application/rss+xml" title="♂♀دنیای جورواجور معصومه♂♀" href="rss/index.html" />
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<title>♂♀دنیای جورواجور معصومه♂♀ - راهنمای استفاده از کدهای css و html</title>
+<style>
+body {color:#818181;text-align:Center;margin:0px;padding-Left:15px;font-family: Tahoma; font-size: 8pt}
+body {background: #000000 url('http://www.bia2skin.ir/theme/445/header.jpg') no-repeat Fixed Bottom Center;}
+A, A:visited{color:#FFFFFF;text-decoration: none;text-shadow: 0px 0px 8px #FFFFFF;}a:visited {color:#FFFFFF;text-decoration: none}a:hover { color:#b26e87;text-decoration: none}
+.page{float:center;margin:0px auto;padding:0px;width:700px;}
+.space{padding-Top:0px}.Paper{float:Center;width:970px;text-direction:rtl}
+.Paper .h1{text-decoration:none;overflow:hidden}
+.Paper .h2{text-decoration:none;color:blue;background-attachment:scroll}
+.header{padding:10;margin:10;position:relative;box-shadow: 0px 0px 10px #b26e87;width:500px;border:3px #b26e87 dashed;border-radius:100px 100px 100px 100px; background-color:#; background-repeat:repeat; background-attachment:scroll}
+.header h1{position:relative;font-family: Arial;font-size:14pt;color:#696c5f;text-align:Center;margin:0px 0px 20px}
+.header .subtitle {font-family: Tahoma; font-size: 8pt;color:#b26e87;text-align:Center;margin:0px 0px 50px}
+.sidebar{background-position: top center; float:right;font-family: Tahoma; font-size:8pt;box-shadow: 0px 0px 10px #b26e87;width:170px;padding-top:0px;color:#b26e87;line-height:1.5em;text-align:right;border:3px dashed #b26e87;border-radius:0px 80px 0px 80px;  opacity:0.92;filter:alpha(opacity=80);text-align:Center;line-height:1.5em;margin-Right:10px}
+.sidebar  h1{margin-bottom:7px;font-family: Arial; font-size:8pt;font-weight:bold;text-align:Center;color:#474747;line-height:2em;}
+.About{color:#818181;line-height:1.5em;text-align: justify;padding-Right:10px;padding-Left:10px}
+.About img{text-align: Center;Padding-Top:3px;}
+.bodypost{float: left;text-align: right;width:480px;margin:0px}
+.post .Title{height:30px;font-size: 9pt;font-family: Tahoma;font-weight:bold;color:#b26e87;background:url('http://www.bia2skin.ir/theme/445/icon.png') no-repeat Top Right;margin-left:0px; margin-right:0px; margin-top:0px; margin-bottom:15px; padding-left:20px; padding-right:50px; padding-top:10px; padding-bottom:30px}
+.post{width:490px;padding:5px 8px;text-align:right;box-shadow: 0px 0px 10px #b26e87;border:3px #b26e87 dashed;margin:0 0 20px 0;}
+.post .date{width:470px;font-family: Tahoma; color:#61645d;margin:15px 2px 5px;font-size: 8pt}
+.custom{width:160px;color:#818181;margin:10px 0;text-align:center;direction:rtl}
+</style>
+<script  language="javascript">
+  function GetBC(lngPostid)
+   {
+       intTimeZone=<-BlogTimeZone->;
+       strBlogId="sarneveshteman77";
+       intCount=-1;
+       strResult="";
+       try {
+	  for (i=0;i<BlogComments.length;i+=2)
+	  {
+	       if (BlogComments[i]==lngPostid)
+	       intCount=BlogComments[i+1] ;
+	  }
+           }  catch( e) {
+           }
+if ( intCount==-1)  strResult="آرشیو ڪآمنتـ";
+if ( intCount==0)  strResult=" ڪآمنتـ";
+if ( intCount==1)  strResult=" یڪ ڪآمنتـ ";
+if ( intCount>1)  strResult=intCount + " ڪآمنتـ " ;
+  strUrl="http://commenting.blogfa.com/?blogid=" +strBlogId + "&postid=" + lngPostid + "&timezone=" + intTimeZone ;
+  strResult ="<a href="http://sarneveshteman77.mihanblog.com/post/\&quot;javascript:void(0)\&quot;" onclick=\"javascript:window.open('" + strUrl + "','blogfa_comments','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=500px')\" >" +  strResult + " </a>" ;
+  document.write ( strResult ) ;
+ }
+ 
+function OpenLD
+{
+  window.open('LinkDump.aspx','blogfa_ld','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=500px');
+  return true;
+}
+</script>
+</head>
+<body>
+<div align =center>
+<div class ="Top">
+<div class="page" dir="rtl" >
+<div class="bodypost">
+<div class="space">
+<div  class ="header" style="width: 480; height: 129" >
+<h1><font color="#FFFFFF" face="Tahoma" size="3">♂♀دنیای جورواجور معصومه♂♀</font></h1></a>
+<p class="subtitle">**هرکسی بخاطرظلمی که بهت میکنه مستحق مجازاته،اگه ببخشیش ازحقش محرومش میکنی**</p>
+<p class="subtitle"><b><font color="#FF66CC"><a href="../index.html">صفحه اصلی</a>
+</font>|<font color="#A08154"> </font> <font color="#FF66CC"> 
+<a href="../post.html">عناوین مطالب</a> </font>|<font color="#0066FF"> </font><font color="#FF66CC"> 
+<a title="تماس با ما" href="javascript:messageForm()">تماس با من</a> </font>
+|<font color="#D6802B"> </font><font color="#FF66CC"> 
+<a title="قالب رایگان بلاگفا" href="http://www.bia2skin.ir">قالب وبلاگ</a>
+</font> </b><font color="#FF66CC"></br>
+</p>
+</div>	
+	<!-- end header -->
+<!--Design By : Bia2skin.ir-->	
+</div>
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div class="post">
+<a name="52"></a>
+<h2 class="Title">راهنمای استفاده از کدهای css و html</a></h2>
+<div class="Content"><font color="#FFFFFF"><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+<div style="text-align: center;"><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none;"><font face="arial, helvetica, sans-serif" size="3" color="#ffffff">در این آموزش که&nbsp;راهنمای استفاده از کدهای css و html&nbsp; نام دارد،&nbsp;</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none;"><font face="arial, helvetica, sans-serif" size="3" color="#ffffff">خواهید آموخت که چگونه میتوان از کدهای css و html و یا پروژه های طراحی وب در سایت و یا وبلاگ خود استفاده کنید.&nbsp;</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none;"><font face="arial, helvetica, sans-serif" size="3" color="#ffffff">این آموزش صرفا جهت آشنایی شما با نحوه به کاربردن کدهای html و css در قالب وبلاگ و یا وبسایتتان میباشد.</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none;"><font face="arial, helvetica, sans-serif" size="3" color="#ffffff">اگر کد یا پروژه ای دارید که در آن از کدهای css و html استفاده شده ،</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none;"><font face="arial, helvetica, sans-serif" size="3" color="#ffffff">&nbsp;برای گذاشتن آن در وبسایت خود از روش های زیر استفاده کنید:</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-size: 13px;"><font face="arial, helvetica, sans-serif" color="#ffffff"><br></font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none;"><font color="#ffffff"><font size="5" face="arial, helvetica, sans-serif">ادامه مطلب</font><img src="http://mihanblog.com/public/public/rte/images_new/smiles/30.gif"></font></p></div>
+
+
+
+
+
+
+<p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">1.سطح حرفه ای</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">اول باید فایلهای مربوط به قالب سایتتان را شناسایی و کدهای مورد نظرتان را در بخش مناسبی از قالب قرار دهید.</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">اما این کار به چه صورت انجام خواهد گرفت؟</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">به طور مثال فرض کنید که یک پروژه طراحی وب دارید (مثلا این پروژه یک منوی افقی برای سایتتان است) و این منو از 2 فایل تشکیل شده است. یک فایل html و یک فایل css (برای تشخیص این که این فایل css است یا html فقط کافیست به فرمت فایل مورد نظر نگاه کنید) اگر بخواهید این منو را در وب سایتتان به کار ببرید باید کدهای مربوط به css پروژه را در قسمتی از فایل css اصلی قالب کپی کنید. به طور مثال فایل style.css که در اکثر قالبهای وبسایت به این نام است.</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">بعد از اینکه کدهای مربوط به سی اس اس را کپی کردید به قسمت اصلی ماجرا میرسیم. حالا باید کدهای html پروژه را در جای مناسبی از قالب قرار دهیم، برای اینکه بدانید کجای قالب جای موردنظر شماست یا اینکه این کد در کجا بهتر نمایش داده میشود یا در کجا میتوان قرار داد که قالب به هم نریزد نیاز به حداقل آشنایی شما با برنامه نویسی css و html میباشد. ولی حداقل به شما میگوییم که به طور معمول فایل header.php موجود در قالب مربوط به قسمت بالایی سایت که اصطلاحا به آن (هدر) گفته میشود ،میباشد. یا مثلا sidebar.php مربوط به ستون های کناری قالب شما و فایل footer.php مربوط به قسمت زیرین سایت (فوتر) میباشد. اگربعد از گذاشتن کد html در قالب، قالبتان به هم ریخت ممکن است 2 مشکل وجود داشته باشد:</font></p><ul style="padding: 0px; margin: 0px 10px 25px 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><li style="text-align: center; padding: 0px; margin: 0px 0px 5px 10px; outline: none; list-style: disc outside none; border: 0px none;"><font color="#ffffff">&nbsp;کدها را در جای مناسب وارد نکردید و باعث اختلال در قالب شده</font></li></ul><ul style="padding: 0px; margin: 0px 10px 25px 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><li style="text-align: center; padding: 0px; margin: 0px 0px 5px 10px; outline: none; list-style: disc outside none; border: 0px none;"><font color="#ffffff">یا هم نامی کلاس ها و آیدی های (class &amp; id) شما با class و id کد های موجود در قالب است که باعث بروز چنین مشکلاتی میشود</font></li></ul><ul style="padding: 0px; margin: 0px 10px 25px 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><li style="text-align: center; padding: 0px; margin: 0px 0px 5px 10px; outline: none; list-style: disc outside none; border: 0px none;"><font color="#ffffff">یا اینکه از تگ body و تگ های html نا به جا در css استفاده کرده باشید.</font></li></ul><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">پیشنهاد میکنیم با راهنمایی یک فرد که آشنایی به کدهای css و html دارد این کار را انجام دهید یا اینکه حداقل آشنایی با کدهای html و css داشته باشید، چون ممکن است اگر جایی را اشتباه کنید زمان لود شدن قالب زیاد شود و یا قالب از لحاظ سئو و اشکالات کدنویسی ایراد پیدا کند و یا آن طور که انتظار دارید کدهای html و css دلخواهتان درست عمل نکنند.به شما پیشنهاد میکنیم برای اینکه درست این مطالب را درک کنید حتما در این رابطه تمرین های زیادی انجام دهید.</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">به این نکته هم توجه داشته باشید که حتما قبل از انجام تغییرات در قالب سایت یا وبلاگ یک نسخه کپی از فایلها یا کدهایی که آن ها را تغییر میدهید داشته باشید یا به عبارتی از آن بک آپ بگیرید.</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">اما یک روش ساده تر هم برای این کار وجود دارد…</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">2.سطح ساده</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">برای این کار کافیست کدهای css قالب را بین تگ &lt;style&gt; &lt;style/&gt; قرار داده،با این کار این کدهای بدون نیاز به فایل css عمل میکنند حال کدهای مربوط به html پروژه را در مکان مناسبی از قالب قرار دهید. از این طریق شما میتوانید با راحت ترین روش این کار را انجام دهید.(توجه:1-این روش بیشتر در طراحی قالب وبلاگ کاربرد دارد 2- توجه داشته باشید که استفاده بیش از حد از این روش باعث بالا رفتن زمان لود شدن وب سایت شما میشود)</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><strong style="padding: 0px; margin: 0px; outline: none; list-style: none; border: 0px none;"><font color="#ffffff">اگر میخواهید از این کد در وبلاگ استفاده کنید:</font></strong></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">به طور کلی وبلاگ ها چون مانند سایت ها فایل جداگانه برای هر بخش ندارند، کدنویسی و تغییر در قالب وبلاگ فقط از 1 طریق انجام میشود. یعنی فقط 1 بخش وجود دارد که در آن میتوان از کدهای html و css را در کنار هم استفاده کرد.</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">به طور مثال اگر از&nbsp;<strong style="padding: 0px; margin: 0px; outline: none; list-style: none; border: 0px none;">بلاگفا</strong>&nbsp;استفاده میکنید:</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">کافیست از ستون ست راست مدیریتی روی نوشته “تنظیمات و دیگر امکانات” کلیک کنید و در صفحه باز شده بر روی&nbsp; “ویرایش قالب وبلاگ” کلیک کنید و وقتی کدهای قالب را مشاهده کردید از روش زیر استفاده کنید یعنی:</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">.(سطح ساده) برای این کار کافیست کدهای css مورد نظر را بین تگ &lt;style&gt; &lt;style/&gt; قرار دهید. با این کار این کدهای بدون نیاز به فایل css عمل میکنند حال کدهای مربوط به html پروژه را در مکان مناسبی از قالب قرار دهید.(توجه داشته باشید کدهای html را بین تگ &lt;style&gt; قرار ندهید.این بخش فقط مخصوص کدهای css میباشد)(توجه: استفاده بیش از حد از این روش باعث بالا رفتن زمان لود شدن وب سایت شما میشود)</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">به طور مثال من در این بخش میخواهم به شما نشان دهم که چگونه میتوان با کد css که در اختیار دارم، به عنوان های مطالب در قالب بلاگفا سایه داد. در واقع من این کد ساده را به تگ &lt;h2&gt; نسبت داده ام که نشان گر عنوان مطالب است وبلاگ است، شما میتوانید این روش را در دیگر سرویس دهندگان وبلاگ مانند: میهن بلاگ،پرشین بلاگ و.. هم انجام دهید.</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">کدهای قالب من به صورت زیر میباشد:</font></p><p style="text-align: right; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><a href="http://digital-art.ir/wp-content/uploads/put-css-html-01.jpg" style="text-align: center; padding: 0px; margin: 0px; outline: none; list-style: none; border: 0px none; text-decoration: none; transition: all 0.2s ease-in-out;"><font color="#ffffff"><img class="alignnone size-full wp-image-1664" alt="put-css-html-01" src="http://digital-art.ir/wp-content/uploads/put-css-html-01.jpg" width="520" height="382" srcset="http://digital-art.ir/wp-content/uploads/put-css-html-01.jpg 520w, http://digital-art.ir/wp-content/uploads/put-css-html-01-300x220.jpg 300w" sizes="(max-width: 520px) 100vw, 520px" style="padding: 0px; margin: 0px; outline: none; list-style: none; border: 0px none; max-width: 100%; height: auto; direction: rtl;"></font></a></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">حالا طبق گفته های قبلی من،کد css مورد نظر را زیر تگ &lt;style&gt; قرار میدهم.(همانند تصویر زیر)</font></p><p style="padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px; text-align: center;"><a href="http://digital-art.ir/wp-content/uploads/put-css-html-02.jpg" style="padding: 0px; margin: 0px; outline: none; list-style: none; border: 0px none; text-decoration: none; transition: all 0.2s ease-in-out;"><font color="#ffffff"><img class="alignnone size-full wp-image-1665" alt="put-css-html-02" src="http://digital-art.ir/wp-content/uploads/put-css-html-02.jpg" width="550" height="458" srcset="http://digital-art.ir/wp-content/uploads/put-css-html-02.jpg 550w, http://digital-art.ir/wp-content/uploads/put-css-html-02-300x250.jpg 300w" sizes="(max-width: 550px) 100vw, 550px" style="padding: 0px; margin: 0px; outline: none; list-style: none; border: 0px none; max-width: 100%; height: auto;"></font></a></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">حالا تغییراتی که داده ام را ذخیره میکنم.</font></p><p style="text-align: center; padding: 0px 0px 1em; margin: 0px; outline: none; list-style: none; border: 0px none; font-family: IRANSans, Tahoma; font-size: 13px;"><font color="#ffffff">همان طور که در تصویر پایین مشاهده میکنید عنوان های مطالب در وبلاگ سایه دار شدند</font></p>
+
+
+
+
+
+
+
+
+<br><br>
+  </font></p>
+</div>
+<div class ="date" style="width: 450; height: -9"><font color="#B26E87">[ جمعه 11 فروردین 1396 ]  [ 02:58 ب.ظ ]  [ معصومه ** ]
+  </font>
+<span dir="rtl" > <a target="_self" href="javascript:newComment(52)">
+  <font color="#B26E87">[ </font>نظرات(<script>setCommentCnt(52)</script>) ]</a></div></div>
+  <p>
+<br>
+</span>
+<span dir="rtl" > 
+	</font>
+</font>
+
+</p>
+<p align="center"></font><font face="Tahoma" style="font-size: 9pt">
+<font color="#FFFFFF">.: تعداد کل صفحات 0 :. </font><font color="#FF66CC"> <font color="#FFFFFF"><br>
+</p></font></font></font>
+	<font color="#FF66CC" face="Tahoma" style="font-size: 9pt"><font color="#FF66CC">
+	<!-- end post -->
+<!--Design By : Bia2skin.ir-->
+</div><div class="sidebar">
+<!--Design By : Bia2skin.ir-->
+<h1><font color="#B26E87" face="Tahoma">درباره وبلاگ</font></h1>
+<div class="About">
+<div style="text-align: justify"  >
+<p style="text-align: center"><font color="#FFFFFF"><img src="../../static.mihanblog.com/public/user_data/web_photo/633/1898172.jpg@2187"  /> </font></p>
+<font color="#FFFFFF">در زندگی ات سه چیز را تجربه کن<br />
+دوست داشتن را برای تجربه<br />
+عاشق شدن را برای هدف<br />
+فراموش کردن را برای قبول واقعیت . . .<br />
+*******************<br />
+من معصومم متولد17امین روز از 10امین ماه سال 77<br />
+........................<br />
+الان تو20سالگی معتقدم روزا خوب نمیان ..اتفاقایی ک فک میکنیم برامون خوبن دراخر حال بدمونو بهمون برمیگردونن..<br />
+............<br />
+این روزا دارم باخستگی تمام ب آخرمیرسونمشون<br />
+تا اینده چی بخواد پیش بیاد..........</font></div>  
+<!--Design By : Bia2skin.ir-->
+  
+<h1><font color="#B26E87" face="Tahoma">منوی اصلی</font></h1>
+<div style="text-align: Center"  >
+<a href="../index.html">صفحه اصلی وبلاگ</a><font color="#000000"><br>
+</font>
+<a href="javascript:messageForm()">ایمیل نویسنده</a><font color="#000000"><br>
+<a href="http://www.bia2skin.ir">طراح قالب</a><font color="#000000"><br>
+<a target="_blank" href="http://bia2skin.ir/forum">انجمن وبلاگ نویسان</a><br>
+</BlogProfileLinkBlock>
+<!--Design By : Bia2skin.ir-->
+<h1><font color="#B26E87" face="Tahoma">نویسند<span lang="fa">گان</span></font></h1>
+<a href="author/1565092.html"   >معصومه **</a><br>
+<!--Design By : Bia2skin.ir-->
+<h1><font color="#B26E87" face="Tahoma">لینک های روزانه</font></h1>
+<a href="../../mjorvajorm.mihanblog.com/index.html" target="_blank" title="" >joorvajoor</a><br>
+<a href="../../seyedlover71.mihanblog.com/index.html" target="_blank" title="" >S.M.N (مطلب از همه چیز)</a><br>
+<a href="http://saharnaaz2001.blogfa.com/" target="_blank" title="" >یاداشت های صورتی</a><br>
+<a href="http://alifakhimi76.mihanblog.com/" target="_blank" title="" >aloneboy</a><br>
+<a href="http://masoumeh144.rozblog.com/" target="_blank" title="" >دنیـــای عاشقـــς੭انه مـن</a><br>
+<a href="http://majidnahideh.blogfa.com/" target="_blank" title="" >˙·٠•✿ בو نفـــ♥ــــ♥ــــره ✿•٠·˙ </a><br>
+<a href="http://scorxw.blogfa.com/" target="_blank" title="" >بانواسکورپیو</a><br>
+<a href="http://dokhtaranesheytoon.blogfa.com/" target="_blank" title="" >*game over*</a><br>
+<a href="http://rominagood.blogfa.com/" target="_blank" title="" >هوای خودت رو داشته باشــ:)</a><br>
+<a href="../../baranitarin.mihanblog.com/index.html" target="_blank" title="" >عشق قیمت نداره.</a><br>
+<a href="../../www.kabusetalkh8.mihanblog.com/index.html" target="_blank" title="" >کابوس تلخ</a><br>
+<a href="http://kimia2003.blogfa.com/" target="_blank" title="" >همه چیزمخصوصاپرسپولیس</a><br>
+<a href="../../bia2tanz6.mihanblog.com/index.html" target="_blank" title="" >زیرگذرظنز</a><br>
+<a href="http://www.basafatarin.blogfa.com/" target="_blank" title="" >باصفاترین</a><br>
+<a href="../../zdki3.mihanblog.com/index.html" target="_blank" title="" >پرسپولیس</a><br>
+<a href="http://lindamohana.blogfa.com/" target="_blank" title="" >همه چی درهمه*ماهم قاطی پاتی*</a><br>
+<a href="http://didgah555club.blogfa.com/" target="_blank" title="" >باشگاه دیدگاه</a><br>
+<a href="http://khodavama.blogfa.com/" target="_blank" title="" >*خدا*</a><br>
+<a href="../../yona-laito.mihanblog.com/index.html" target="_blank" title="" >*خاطرات یک الهه کهکشانی*</a><br>
+<a href="http://sarayekta.mihanblog.com/" target="_blank" title="" >سارای موش موشی</a><br>
+<a href="http://nolove76.blogfa.com/" target="_blank" title="" >دلــــــنوشته هـــــای بــــارانـــا...☔</a><br>
+<a href="../../iran3sootdownload.mihanblog.com/index.html" target="_blank" title="" >♤♥♦♧wisdoℳ♠♡♢♣</a><br>
+<a href="http://girllllll.blogfa.com/" target="_blank" title="" >*ANSHERLI*</a><br>
+<a href="http://www.iranbatri.com/" target="_blank" title="فروشگاه باطری اتومبیل ایرانی و کره ای" >باطری ماشین</a><br>
+<a href="http://mimos.ir" target="_blank" title="سلام و عرض درود
+ممنون بابت محتوای خوب وبگاهتون.
+ما هم در میموس با آموزش بازاریابی اینترنتی به تمام علاقمندان به کسب و کار آنلاین کمک می کنیم ...
+ممنون میشم لینک ما رو برای ترویج این نوع کسب و کار انتشار بدید.
+با تشکر میموس.ای ار" >آموزش بازاریابی اینترنتی</a><br>
+<a href="http://downloadfarsi.xzn.ir/" target="_blank" title="سایت دانلود اهنگ" >دانلود اهنگ قدیمی و جدید</a><br>
+<a href="http://dokhtarooneh-2003.blogfa.com/" target="_blank" title="" >khodaye jazzabiat</a><br>
+<a href="../../zendeghimon-ghese-nist.mihanblog.com/index.html" target="_blank" title="" >زندگیمون قصه نیست و نبود</a><br>
+<a href="http://mimos.ir" target="_blank" title="سلام و عرض درود
+ممنون بابت محتوای خوب وبگاهتون.
+ما هم در میموس با آموزش بازاریابی اینترنتی به تمام علاقمندان به کسب و کار آنلاین کمک می کنیم ...
+ممنون میشم لینک ما رو برای ترویج این نوع کسب و کار انتشار بدید.
+با تشکر میموس.ای ار" >آموزش بازاریابی اینترنتی</a><br>
+<a href="http://daneshjo20.niloblog.com/" target="_blank" title="سلام وبلاگتون عالی بود لطفا لینک منو تایید کن و خبرم کن تا لینک شما را هم در وبلاگم قرار بدم با تشکر" >دانشجو</a><br>
+<a href="http://www.bia2skin.ir">قالب وبلاگ</a><font color="#000000"><br>
+<a target="_blank" href="http://bia2skin.ir/forum">انجمن وبلاگ نویسان</a><br>
+<a href="../linkdaily/index.html">آرشیو پیوندهای روزانه</a></font></font></font></span></li></ul>
+<!--Design By : Bia2skin.ir-->
+<h1><font color="#B26E87" face="Tahoma">آرشیو</font></h1>
+<span dir="ltr">
+<a href="archive/1398/4.html"> تیر 1398</a><br>
+<a href="archive/1397/6.html"> شهریور 1397</a><br>
+<a href="archive/1396/3.html"> خرداد 1396</a><br>
+<a href="archive/1396/2.html"> اردیبهشت 1396</a><br>
+<a href="archive/1396/1.html"> فروردین 1396</a><br>
+<a href="archive/1395/12.html"> اسفند 1395</a><br>
+<a href="archive/1395/6.html"> شهریور 1395</a><br>
+</span>
+<!--Design By : Bia2skin.ir-->
+<h1><font color="#B26E87" face="Tahoma">موضوعات</font></h1>
+<a href="category/2.html">دلنوشته/دست نوشته</a><br>
+<a href="category/1.html">تفریحی</a><br>
+	
+<!--Design By : Bia2skin.ir-->
+<h1><font color="#B26E87" face="Tahoma">لینک ها</font></h1>
+<a href="../../mjorvajorm.mihanblog.com/index.html" target="_blank" >joorvajoor</a><br>
+<a href="http://www.bia2skin.ir">قالب وبلاگ</a><font color="#000000"><br>
+<a target="_blank" href="http://bia2skin.ir/forum">انجمن وبلاگ نویسان</a><br>
+<!--Design By : Bia2skin.ir-->
+<h1>
+<font color="#B26E87" face="Tahoma">لینک های مفید</font></h1>
+</h1>
+<cb:block_link><cb:loop_link>
+<a target="_blank" href="http://bia2skin.ir/forum">انجمن وبلاگ نویسان</a><br>
+<a target="_blank" href="http://bia2skin.ir">قالب وبلاگ</a><div style="text-align: Center"  >
+<!--Design By : Bia2skin.ir-->
+</font>
+<div class="custom">	
+<!--Design By : Bia2skin.ir-->	
+<h1><font color="#B26E87" face="Tahoma">طراح قالب</font></h1>
+<font color="#000000">
+<span dir="ltr">
+		
+		
+		
+        <p align="center">
+<font color="">
+  <a href="http://bia2skin.ir" title="قالب وبلاگ" target="_blank" style="text-decoration: none">
+  طراح قالب</a></font></p>
+             
+        </span>
+</font>
+	    
+<p><font color="#000000">
+<span dir="ltr">
+		
+		
+		
+<FONT style="FONT-SIZE: 10pt" color="#717171" face="Tahoma">
+<a href="http://www.bia2skin.ir" target="_blank">
+       <img src="http://www.bia2skin.ir/theme/logo-theme.jpg" border="0"  title="قالب وبلاگ" width="89" height="16"></a></font></span></font></p>
+<center>
+<!--Design By : Bia2skin.ir-->	
+<center>
+<h1><font color="#B26E87" face="Tahoma">امکانات</font></h1>
+<div align="center"><span dir="rtl" > <font color="#FFFFFF"><center><audio controls autoplay preload="none" style="width:94%;margin:0% 3%;"><source type="audio/mpeg" id="player" src="http://dl.nex1music.ir/1397/08/15/Ashkan%20Tasaddi%20-%20Male%20Khode%20Man%20Bash%20[128].mp3">مرورگر شما از Player ساپورت نمی کند</audio><br /><a href="https://nex1music.ir/tag/دانلود-آهنگ/" target="_blank">دانلود آهنگ</a></center>
+
+<!-- Statistics by www.1abzar.com --->
+<script type="text/javascript" src="http://1abzar.ir/abzar/tools/stat/amar-v3.php?color=050204&bg=EDAAF7&kc=888888&kadr=1&amar=o4sos6j2get6oxsyyyo0ljk3j7zw2i&show=1|1|1|1|1|1|1"></script><div style="display:none"><h3><a href="http://www.1abzar.com/abzar/stat.php">&#1570;&#1605;&#1575;&#1585;&#1711;&#1740;&#1585; &#1608;&#1576;&#1604;&#1575;&#1711;</a></h3></div>
+<!-- Statistics by www.1abzar.com --->
+
+<script type="text/javascript" src="http://1abzaar.ir/abzar/tools/top-page/jquery.min.js"></script><script>var abzar = "<img src=http://s5.picofile.com/file/8131658400/%D8%A8%D8%A7%D9%84%D8%A7%D8%A8%D8%B1_%D8%AF%D8%AE%D8%AA%D8%B1%D9%88%D9%86%D9%87_17_.gif />";</script><script type="text/javascript" src="http://1abzaar.ir/abzar/tools/top-page/scrolltopcontrol.js"></script><div style="display:none"><h1><a href="http://www.1abzar.com">ابزار هدایت به بالای صفحه</a></h1></div>
+
+<p align='center'><script src="http://code.jquery.com/jquery-1.8.2.min.js"></script><script src="http://cafe-webniaz.ir/abzar/zibasaz/bgdark.js"></script></div></p>
+
+<p align='center'><script type='text/javascript' src='http://cafe-webniaz.ir/abzar/mouse/codmpasoor.js'></script></p>
+
+<p align='center'><script type='text/javascript' src='http://cafe-webniaz.ir/bmp/dey.js'></script></p></font></span></div>
+<p></p>
+</div>
+</div>
+</body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'sarneveshteman77.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

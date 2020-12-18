@@ -1,0 +1,1148 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*1215195*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[1321]='5';commentCnt[1330]='6';commentCnt[1331]='3';commentCnt[1355]='5';commentCnt[1358]='3';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[1321]='14';
+mihanblogDisLikeArrCnt[1321]='0';
+mihanblogLikeArrCnt[1330]='8';
+mihanblogDisLikeArrCnt[1330]='0';
+mihanblogLikeArrCnt[1331]='8';
+mihanblogDisLikeArrCnt[1331]='0';
+mihanblogLikeArrCnt[1355]='8';
+mihanblogDisLikeArrCnt[1355]='0';
+mihanblogLikeArrCnt[1358]='8';
+mihanblogDisLikeArrCnt[1358]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://sardareman-ahmad.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://sardareman-ahmad.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','521');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','جمعه 7 آذر 1399');
+	
+	setStatVar('today_view','62');
+	setStatVar('yesterday_view','92');
+	
+	setStatVar('this_month_view','2115');
+	setStatVar('last_month_view','2766');
+
+	setStatVar('total_view','237846');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (16:44)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://sardareman-ahmad.mihanblog.com/statupdate/?data[refereruri]=http://sardareman-ahmad.mihanblog.com/&data[postid]=&data[requesturi]=/post/archive/1397/8&data[sdate]=1607779477&data[hash]=74f2e2e744c56c9b2e1be1fc0000c010&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://sardareman-ahmad.mihanblog.com/post/archive/1397/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://sardareman-ahmad.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" content="en-us">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="Theme Designer" content="www.MyTheme.ir">
+    <style>
+
+
+        .clearfix {display: inline-block;}
+        .clearfix:after {
+            content: ".";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+
+
+
+        .cblike{
+            margin: 12px 0 4px;
+        }
+        .cblike a {
+            float:left;
+            padding:3px;
+            text-align:center;
+            font-size:12px;
+            color:#FFF;
+            display:block;
+            line-height:15px;
+            text-decoration: none;
+        }
+
+
+
+
+        .cblike a.clike_plus {
+            background-color:#009900 ; /*green #039B03*/
+
+            border-radius: 5px ;
+
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+
+            /*border:1px solid green;
+               border-right:0px;*/
+        }
+        .cblike a.clike_minus {
+            background-color:#CC0000;
+            border-radius: 5px ;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+
+            /*border:1px solid red;
+               border-left:0px;*/
+        }
+        .cblike a.clike_minus:hover {
+            background-color:red;
+            text-decoration: none;
+        }
+        .cblike a.clike_plus:hover {
+            background-color:green;
+            text-decoration: none;
+        }
+        .cblike a span{
+            font-weight:bold;
+            font-size:13px;
+
+            color:#fff;
+        }
+
+
+        .mihan_logo {
+            background: url("http://mihanblog.com/public/public/images/logo/poweredby.gif") no-repeat scroll center top transparent;
+            height: 131px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+    <meta name="description" content=""/>
+    <meta name="keywords" content="اینجا چراغی روشن است "/>
+    <link rel="alternate" type="application/rss+xml" title="سردار بی نشان" href="../../rss/index.html" />
+    <link rel="alternate" type="application/atom+xml" title="سردار بی نشان" href="../../atom/index.html" />
+    <link href="http://mihanblog.com/public/public/user_data/template/2098745/style.css" type="text/css" rel="stylesheet">
+
+    <title>سردار بی نشان - مطالب  آبان 1397</title>
+</head>
+
+<body>
+
+<div align="left">
+<table border="0" width="100%" cellspacing="0" cellpadding="0">
+<tr>
+<td class=div2 valign=top>
+<div class=div1>
+<div class=div8></div>
+<div class=div9></div>
+<div class=div10><font class=title>سردار بی نشان</font></div>
+<div class=div11></div>
+<div class=div12><font class=des>سردار برگرد ... در حوالی کسی منتظر توست ..</font></div>
+<div class=div13></div>
+
+<div class=div14></div>
+
+<div class=div20>
+
+    		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		<div>
+        <div class=div15>
+            <div class=div18><font class=text3><a href="http://sardareman-ahmad.mihanblog.com/post/1358">خلائی بنام تو ..</a></font></div>
+            <div class=div19><font class=text2>چهارشنبه 30 آبان 1397 :: نویسنده : <a href="../../author/1045004.html">دلداده </a></font></div></div>
+
+
+
+
+        <div class=div21><font class=text4><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+<div style="text-align: center;"><font color="#6633ff"><b><br></b></font></div><div style="text-align: center;"><font color="#6633ff"><b>در سکوت می نویسم فریادی که صدا ندارد&nbsp;</b></font></div><div style="text-align: center;"><font color="#6633ff"><b>مشتری این سیاره نیستم&nbsp;</b></font></div><div style="text-align: center;"><font color="#6633ff"><b>دلباخته مشتری کهکشانم&nbsp;</b></font></div><div style="text-align: center;"><font color="#6633ff"><b>تاجر زمین نیستم&nbsp;</b></font></div><div style="text-align: center;"><font color="#6633ff"><b>دلداده سیاره ای دیگرم&nbsp;</b></font></div><div style="text-align: center;"><br></div><div style="text-align: center;"><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b>...</b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b>از تصورت ، از تخیلت از تمام تو می گذرم&nbsp;</b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b>از نبودنت رد می شود&nbsp;</b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b>از بودنت که افسانه ای بیش نیست ، نیز ؛ می گذرم</b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b>می ماند : من و خلائی بنام تو !</b></font></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b>من لشگری بی سپاهم .</b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b>جنگجویی که از درون سلاح انداخته است&nbsp;</b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b>اما با خودم چه کنم که سراسر سلاحم !</b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b>من قابی بر روی طاقچه ام ، شاید !</b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b>قابی خالی که عکسی برای داشتن ندارد&nbsp;</b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b>اما برای دلخوشی طاقچه ترک خورده هنوز زنده ام&nbsp;</b></font></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><font color="#999900" face="Mihan-Nassim" size="4"><b>من تصوری بی تصویرم&nbsp;</b></font></div><div><font color="#999900" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#999900" face="Mihan-Nassim" size="4"><b>تصوری پاک و ساده که از دل پیچ و خم&nbsp;</b></font></div><div><font color="#999900" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#999900" face="Mihan-Nassim" size="4"><b>آدمهای پوشالی زنده بیرون آمده ام&nbsp;</b></font></div><div><font color="#999900" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#999900" face="Mihan-Nassim" size="4"><b>سیاوشی از دل آتش آدمهای نا نجیب !</b></font></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><font color="#cc33cc" face="Mihan-Nassim" size="4"><b>من خود بارانم که بر دل تفت زده قلبم می بارم&nbsp;</b></font></div><div><font color="#cc33cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#cc33cc" face="Mihan-Nassim" size="4"><b>و ضربان زنده شاهرگِ فرشته در گلویم متجلی است</b></font></div><div><font color="#cc33cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#cc33cc" face="Mihan-Nassim" size="4"><b>من خاکستر عشقم در بیابانی از غم ..</b></font></div><div><font color="#cc33cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#cc33cc" face="Mihan-Nassim" size="4"><b>...</b></font></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><font color="#009900" face="Mihan-Nassim" size="4"><b>اینجا کماکان چراغی از محبت بیادت روشن است .</b></font></div><div><img hspace="0" border="0" align="baseline" vspace="0" src="http://aks.roshd.ir/photos/23.6792.medium.aspx" alt=""></div><div><br></div></div>
+
+
+
+
+            <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+            <br><br><font color="#CC0000">نوع مطلب :</font>
+                        <br><font color="#CC0000">برچسب ها :</font>
+            <a href="../../tag/index.html#تاجر_زمین" class=text4>#تاجر_زمین</a>، <a href="../../tag/index.html#عشق" class=text4>#عشق</a>، <a href="../../tag/index.html#چراغ_محبت" class=text4>#چراغ_محبت</a>، <a href="../../tag/index.html#خلائی_بنام_تو" class=text4>#خلائی_بنام_تو</a>،             <br><font color="#CC0000">لینک های مرتبط :</font>
+                    </font></div>
+        <div class=div22></div>
+
+
+        <div class=div26>
+
+            <div class=div27>
+                <font  class=text6><a href="http://sardareman-ahmad.mihanblog.com/post/1358#commentlist">نظرات (<script>setCommentCnt(1358)</script>)</a></font>
+
+            </div>
+
+            <div style="float: left;margin-left: 7px;"> <script>mihanblogPostLike('1358','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:475px; float:left; background:#e6dbae; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 7px 0px 0px; padding:0 0 10px 0;}
+            .com1{ width:457px; float:left; background:#a30100; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:230px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:437px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:437px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:447px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div>
+        <div class=div15>
+            <div class=div18><font class=text3><a href="http://sardareman-ahmad.mihanblog.com/post/1355">+عشق ..</a></font></div>
+            <div class=div19><font class=text2>یکشنبه 27 آبان 1397 :: نویسنده : <a href="../../author/1045004.html">دلداده </a></font></div></div>
+
+
+
+
+        <div class=div21><font class=text4>
+
+
+
+
+<div><br></div><div><div style="text-align: center;"><font color="#666600"><b>ع شق آمدنی است یا آوردنی ؟!</b></font></div><div style="text-align: center;"><font color="#666600"><b>حکمت سوختن چیست ؛ ساختن ؟!</b></font></div><div style="text-align: center;"><font color="#666600"><b>مصالح ساختن چیست ؟!</b></font></div><div style="text-align: center;"><font color="#666600"><b>مملکت ع شق کجاست ؟!&nbsp;</b></font></div><div style="text-align: center;"><font color="#666600"><b>سفارتش کجاست ؟!</b></font></div><div style="text-align: center;"><font color="#666600"><b>من تابعیت مملکت ع شق را خواهانم .</b></font></div><div style="text-align: center;"><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b>...</b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b>عشق یعنی ؛</b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b>حرف برای گفتن داری اما واژه ها کمند برای سرودن</b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b>هر کدام از واژه ها می جنگند تا اخلاصشان ترک برندارد</b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#6600cc" face="Mihan-Nassim" size="4"><b>و در تور صیاد نیفتند و به قضاوت ننشینند .</b></font></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b>عشق یعنی ؛</b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b>سالها در تَرَک تنهایی در سرمای بیابان تکثر چشم بسته بنشینی</b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b>و در لحظه ای ناب گرمای فروغ بخشی جانت را متحد کند</b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#339999" face="Mihan-Nassim" size="4"><b>و تو بال دربیاوری و در آسمان معرفت پرواز کنی .</b></font></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><font color="#999900" face="Mihan-Nassim" size="4"><b>عشق یعنی ؛</b></font></div><div><font color="#999900" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#999900" face="Mihan-Nassim" size="4"><b>درد اول راه باشد و غم چاشنی رفتنت</b></font></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><font color="#6633ff" face="Mihan-Nassim" size="4"><b>عشق یعنی ؛</b></font></div><div><font color="#6633ff" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#6633ff" face="Mihan-Nassim" size="4"><b>از دل تعاریف سخیف بیرون آیی</b></font></div><div><font color="#6633ff" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#6633ff" face="Mihan-Nassim" size="4"><b>و موج سیاه هوسهای روزمره را بشکنی&nbsp;</b></font></div><div><font color="#6633ff" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#6633ff" face="Mihan-Nassim" size="4"><b>و سر به آسمان نجابت برافرازی&nbsp;</b></font></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><font color="#cc33cc" face="Mihan-Nassim" size="4"><b>عشق یعنی خودت وقتی منهای خودت باشی !</b></font></div><div><font color="#cc33cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#cc33cc" face="Mihan-Nassim" size="4"><b>و همه این تفریق ها می شود + عشق !</b></font></div><div><font color="#cc33cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div><font color="#cc33cc" face="Mihan-Nassim" size="4"><b>...</b></font></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><font color="#009900" face="Mihan-Nassim" size="4"><b>اینجا کماکان چراغی از محبت بیادت روشن است .</b></font></div></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="http://birgitmummu.vikki.fi/OnnitteluKORTIT/Animaatiot/Kukat/Kukka4a.gif" alt=""></div></div>
+
+
+
+            <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+            <br><br><font color="#CC0000">نوع مطلب :</font>
+                        <br><font color="#CC0000">برچسب ها :</font>
+            <a href="../../tag/index.html#چراغ_محبت" class=text4>#چراغ_محبت</a>، <a href="../../tag/index.html#+عشق" class=text4>#+عشق</a>، <a href="../../tag/index.html#آسمان_نجابت" class=text4>#آسمان_نجابت</a>، <a href="../../tag/index.html#مملکت_عشق" class=text4>#مملکت_عشق</a>، <a href="../../tag/index.html#سفارت_عشق" class=text4>#سفارت_عشق</a>، <a href="../../tag/index.html#موج_سیاه_هوس_های_روزمره" class=text4>#موج_سیاه_هوس_های_روزمره</a>،             <br><font color="#CC0000">لینک های مرتبط :</font>
+                    </font></div>
+        <div class=div22></div>
+
+
+        <div class=div26>
+
+            <div class=div27>
+                <font  class=text6><a href="http://sardareman-ahmad.mihanblog.com/post/1355#commentlist">نظرات (<script>setCommentCnt(1355)</script>)</a></font>
+
+            </div>
+
+            <div style="float: left;margin-left: 7px;"> <script>mihanblogPostLike('1355','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:475px; float:left; background:#e6dbae; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 7px 0px 0px; padding:0 0 10px 0;}
+            .com1{ width:457px; float:left; background:#a30100; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:230px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:437px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:437px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:447px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div>
+        <div class=div15>
+            <div class=div18><font class=text3><a href="http://sardareman-ahmad.mihanblog.com/post/1331">سده های اسیری</a></font></div>
+            <div class=div19><font class=text2>جمعه 25 آبان 1397 :: نویسنده : <a href="../../author/1045004.html">دلداده </a></font></div></div>
+
+
+
+
+        <div class=div21><font class=text4>
+<div style="text-align: center;"><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div style="text-align: center;"><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div style="text-align: center;"><font color="#6600cc" face="Mihan-Nassim" size="4"><b>...</b></font></div><div style="text-align: center;"><font color="#6600cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#6600cc" face="Mihan-Nassim" size="4"><b>کوتاهِ کوتاه ، مخاطبم تویی قمر یازده</b></font></div><div style="text-align: center;"><font color="#6600cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#6600cc" face="Mihan-Nassim" size="4"><b>&nbsp;از اقمار دوازده افلاک حق تعالی ،</b></font></div><div style="text-align: center;"><font color="#6600cc" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#6600cc" face="Mihan-Nassim" size="4"><b>که بردن نامت حق دلم نیست این روزها .</b></font></div><div style="text-align: center;"><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div style="text-align: center;"><font color="#339999" face="Mihan-Nassim" size="4"><b>می گویند : این روزها سخت می گذشت بر دلت</b></font></div><div style="text-align: center;"><font color="#339999" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#339999" face="Mihan-Nassim" size="4"><b>و کسی به اندازه تو منکسر از تنهایی پسر نبود</b></font></div><div style="text-align: center;"><font color="#339999" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#339999" face="Mihan-Nassim" size="4"><b>که گفتی : هر چه می تواند دورتر شود از نامردمان</b></font></div><div style="text-align: center;"><font color="#339999" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#339999" face="Mihan-Nassim" size="4"><b>که بعد رفتنت تنهاترین عالم می شود</b></font></div><div style="text-align: center;"><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div style="text-align: center;"><font color="#6633ff" face="Mihan-Nassim" size="4"><b>و گفتی : گویی آغاز گشته است سده های اسیری</b></font></div><div style="text-align: center;"><font color="#6633ff" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#6633ff" face="Mihan-Nassim" size="4"><b>و شروع شده است دوره ظلمانی !</b></font></div><div style="text-align: center;"><font color="#6633ff" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#6633ff" face="Mihan-Nassim" size="4"><b>که دستها از رسیدن به معرفتش کوتاه</b></font></div><div style="text-align: center;"><font color="#6633ff" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#6633ff" face="Mihan-Nassim" size="4"><b>و چشمها از درک حضورش بی بهره خواهند ماند.</b></font></div><div style="text-align: center;"><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div style="text-align: center;"><font color="#999900" face="Mihan-Nassim" size="4"><b>و تو در دل غربت شب چشمهایت را بستی و تک سیب سرخ</b></font></div><div style="text-align: center;"><font color="#999900" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#999900" face="Mihan-Nassim" size="4"><b>خانه دلت را به خدا سپردی و وصیتش کردی که&nbsp;</b></font></div><div style="text-align: center;"><font color="#999900" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#999900" face="Mihan-Nassim" size="4"><b>رهسپار بیابانها شود.</b></font></div><div style="text-align: center;"><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b>و از آدمهای خفته و پوشالی بپرهیزد&nbsp;</b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b>تا آن دم که مجوز آمدنش صادر شود.</b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b>&nbsp;تا عالم به نسخه نجاتبخشش دمی بیاساید</b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b>امشب هم می گذرد و این چندمین سحر است که&nbsp;</b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b>تنها در عالم مناجات می کند ؟ &nbsp;خدا میداند !</b></font></div><div style="text-align: center;"><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div style="text-align: center;"><font color="#336666" face="Mihan-Nassim" size="4"><b>ما که به کارش نیامدیم ، وزر و وبالی بیش نبودیم</b></font></div><div style="text-align: center;"><font color="#336666" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#336666" face="Mihan-Nassim" size="4"><b>و او یک تنه غصه عالم را در دل دارد !</b></font></div><div style="text-align: center;"><font color="#336666" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#336666" face="Mihan-Nassim" size="4"><b>و ما خفته جهلیم و او تنها رهسپار از صحرایی به صحرایی دیگر</b></font></div><div style="text-align: center;"><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div style="text-align: center;"><font color="#333399" face="Mihan-Nassim" size="4"><b>بیابانها می شناسند قدمهایش را&nbsp;</b></font></div><div style="text-align: center;"><font color="#333399" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#333399" face="Mihan-Nassim" size="4"><b>و آبها می دانند ساعت رفت و آمدش را&nbsp;</b></font></div><div style="text-align: center;"><font color="#333399" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#333399" face="Mihan-Nassim" size="4"><b>تمام شب بیدارند قطره ها تا دم سحر به پایش بیفتند</b></font></div><div style="text-align: center;"><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b>نسیم حسرت دیدار دارد و همواره دیر می رسد&nbsp;</b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b>دمی می رسد که ثانیه های قبلترش او رفته بود&nbsp;</b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b>و حسرتش سوغاتی است برای دل ما&nbsp;</b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b>ما همین را هم نداریم !</b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b><br></b></font></div><div style="text-align: center;"><font color="#993399" face="Mihan-Nassim" size="4"><b>...</b></font></div><div style="text-align: center;"><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div style="text-align: center;"><font color="#009900" face="Mihan-Nassim" size="4"><b>اینجا کماکان چراغی از محبت بیادت روشن است .</b></font></div>
+
+
+
+
+            <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+            <br><br><font color="#CC0000">نوع مطلب :</font>
+                        <br><font color="#CC0000">برچسب ها :</font>
+            <a href="../../tag/index.html#تک_سیب_سرخ" class=text4>#تک_سیب_سرخ</a>، <a href="../../tag/index.html#چراغ_محبت" class=text4>#چراغ_محبت</a>، <a href="../../tag/index.html#نسیم" class=text4>#نسیم</a>، <a href="../../tag/index.html#سده_های_اسیری" class=text4>#سده_های_اسیری</a>، <a href="../../tag/index.html#قمر_یازده_از_اقمار_دوازده" class=text4>#قمر_یازده_از_اقمار_دوازده</a>،             <br><font color="#CC0000">لینک های مرتبط :</font>
+                    </font></div>
+        <div class=div22></div>
+
+
+        <div class=div26>
+
+            <div class=div27>
+                <font  class=text6><a href="http://sardareman-ahmad.mihanblog.com/post/1331#commentlist">نظرات (<script>setCommentCnt(1331)</script>)</a></font>
+
+            </div>
+
+            <div style="float: left;margin-left: 7px;"> <script>mihanblogPostLike('1331','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:475px; float:left; background:#e6dbae; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 7px 0px 0px; padding:0 0 10px 0;}
+            .com1{ width:457px; float:left; background:#a30100; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:230px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:437px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:437px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:447px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div>
+        <div class=div15>
+            <div class=div18><font class=text3><a href="http://sardareman-ahmad.mihanblog.com/post/1330">عشق___زاده</a></font></div>
+            <div class=div19><font class=text2>یکشنبه 20 آبان 1397 :: نویسنده : <a href="../../author/1045004.html">دلداده </a></font></div></div>
+
+
+
+
+        <div class=div21><font class=text4>
+<div style="text-align: center;">( گاهی شبیه کسی هستم که هرگز ندیده ام&nbsp;</div><div style="text-align: center;">من عشق زاده ام ! )</div><div style="text-align: center;"><br></div><div style="text-align: center;"><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">...</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">تمام صحن های قلب من&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">به نگاه تو باز است .</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">&nbsp;شبستانی از محبت دارم ، پیشکش قدمهایت !</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">رواقهایی از غم که قفلند به نگاه تو&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">تا آزرده ات نسازند ..</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#999900"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#999900">پس در خلوت این رواقها می گریم&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#999900"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#999900">و چون یاد تو درآید&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#999900"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#999900">رواقها خواهند مرد ..</font></b></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff">حجره هایی از اخلاص ساخته ام&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff">تا هر صبح و شام به زیبایی آفرینش به پیشگاهت رسند ،</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff">و تعظیمی از مهر کنند ،</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff">و خشوعی از خوف !</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999">سنگ هایی که در آستانه این عشقزاده نشسته اند&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999">هر کدام عریضه ای دارند&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999">و راهی طولانی طی کرده اند&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999">فرسنگها التماس راه کرده اند و حالا امید دیدنت را دارند&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999">اینجا همه عریضه دارند !</font></b></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc">همه دستها شکسته اما به سویت آمده اند&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc">چه می کنی ؟!</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc">بمانیم یا باز هم بمانیم !</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc">رفتنی در کار نیست !</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc">اینها نیامده اند که بروند ..</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc">...</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#009900"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#009900">اینجا کماکان چراغی از محبت بیادت روشن است .</font></b></div></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0232Wv6k-q_EOnW4REqYpfzQCBmXTcmfkq3NycxOZ0il3O2mv" alt=""></div>
+
+
+
+
+            <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+            <br><br><font color="#CC0000">نوع مطلب :</font>
+                        <br><font color="#CC0000">برچسب ها :</font>
+            <a href="../../tag/index.html#چراغ_محبت" class=text4>#چراغ_محبت</a>، <a href="../../tag/index.html#شبستانی_از_محبت" class=text4>#شبستانی_از_محبت</a>، <a href="../../tag/index.html#عریضه" class=text4>#عریضه</a>، <a href="../../tag/index.html#عشق_زاده" class=text4>#عشق_زاده</a>، <a href="../../tag/index.html#رواق_هایی_از_غم" class=text4>#رواق_هایی_از_غم</a>، <a href="../../tag/index.html#حجره_هایی_از_اخلاص" class=text4>#حجره_هایی_از_اخلاص</a>،             <br><font color="#CC0000">لینک های مرتبط :</font>
+                    </font></div>
+        <div class=div22></div>
+
+
+        <div class=div26>
+
+            <div class=div27>
+                <font  class=text6><a href="http://sardareman-ahmad.mihanblog.com/post/1330#commentlist">نظرات (<script>setCommentCnt(1330)</script>)</a></font>
+
+            </div>
+
+            <div style="float: left;margin-left: 7px;"> <script>mihanblogPostLike('1330','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:475px; float:left; background:#e6dbae; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 7px 0px 0px; padding:0 0 10px 0;}
+            .com1{ width:457px; float:left; background:#a30100; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:230px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:437px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:437px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:447px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div><div>
+        <div class=div15>
+            <div class=div18><font class=text3><a href="http://sardareman-ahmad.mihanblog.com/post/1321">لیلایِ ملکوت</a></font></div>
+            <div class=div19><font class=text2>پنجشنبه 17 آبان 1397 :: نویسنده : <a href="../../author/1045004.html">دلداده </a></font></div></div>
+
+
+
+
+        <div class=div21><font class=text4>
+
+<div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">حق را بگو ، از حقیقت بنوش&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">راضی به رنج دل مرتضی نشو ..</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">راز رضا گفتن از حق مرتضی ست&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">راضی به اتحاد علیه علی نشو ..</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">...</font></b></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999">بگذار جامم سر برود !</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999">من کجا خانه محبت رضای سلسله النور کجا ؟!</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999">شاید به خاطر کودکیِ لگد خورده ام باشد&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#339999">که روزی گفتم با خانه ات قهرم .</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff">اما کدام ثانیه لجباز به یاد صحن آئینه دارت نبودم ؟!</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff">یاد کتابی افتادم که از انتشارات حَرَمَت خریدم&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff">غمگین عالم بودم و پی بهانه ای برای ماندن&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff">و شنیدن لبخندی از تو ،</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6633ff">ندیدم و لجبازتر شدم !</font></b></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#999900">گمان کردم کودکی گمشده ام ، نوجوانی طوفان زده ام&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#999900"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#999900">و جوانی پرپر شده ام را در گوشه ای از حرمت می یابم&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#999900"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#999900">پیدا که نکردم قهرم شروع شد.</font></b></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#663366">یادم رفت که اگر از خورشید قهر کنم می خشکم&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#663366"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#663366">از اضطراب از دست دادنت بیمار شدم&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#663366"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#663366">راهی شفاخانه ات شدم&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#663366"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#663366">لیلای ملکوت آنجا بود که جامم را بر زمین زدند ..</font></b></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">اشکهایم بی مادر شدند و ستاره های چشمم ریختند&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">بیرون که آمدم دلم تقی صدا کرد و شکست&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">کنار حوضچه ای از صحنت نشستم</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">همان دم به خودت قسم که باران گرفت&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">بارانی سخت و کسی دم گوشم گفت</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">باران حرم یعنی شنیدن و اجابت&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#003300">باور نکردم چون هنوز کودکیم را نیافته بودم</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#003300"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#003300">کتابی که خریدم کمی پول کم آوردم&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#003300"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#003300">یادت هست ؟!</font></b></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#3333ff">گفتم ؛ من دیگر شاید نتوانم راهی حرم شوم&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#3333ff"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#3333ff">حلال کنید ..</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#3333ff"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#3333ff">گفتم : مهمانم کنید .</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#3333ff"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#3333ff">گفتند : نمی شود ، می آیی می دانیم که می آیی !</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#3333ff"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#3333ff">خودت خواهی آورد !</font></b></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#666600">آمدم اما یادت هست که گفت نمی آورم چرا که نخواهم آمد&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#666600"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#666600">گفتم خداحافظی نمی کنم&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#666600"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#666600">سلامم را جوابی نشنیدم ، پس خداحافظی نمی کنم&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">حالا دلتنگ حرمت هستم !</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">این گوشه عالم چشمی از انتظار برایم مانده است&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">بی کودکی ، بی نوجوانی و بی جوانی&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">باشد نیافته همه فدای لبخند ندیده تو&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6600cc">جان مادرت لبخند نمی زنی ، &nbsp;فقط اخم نکن !</font></b></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6666cc">من سرمایه زندگیم محبت شماست&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6666cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6666cc">اهل تجارت نیستم ، می دانید !</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6666cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6666cc">شما سرمایه دارم کردید ..</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6666cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6666cc">حالا از اسب افتادن را یادم نداده اید !</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6666cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#6666cc">همیشه مرکبی به قدرت عشق داشته ام&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc">پس ؛</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc">سلام راز رضای مرتضی&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc">من دلم خوش است جواب سلام واجب است&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc">پس سلام شجر طوبای مهربان رضا&nbsp;</font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#cc33cc">...</font></b></div><div><b><font face="Mihan-Nassim" size="4"><br></font></b></div><div><b><font face="Mihan-Nassim" size="4" color="#009900">اینجا کماکان چراغی از محبت بیادت روشن است .</font></b></div></div><div style="text-align: center;"><br></div><div style="text-align: center;"><img hspace="0" border="0" align="baseline" vspace="0" src="data:image/jpeg;base64,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" alt=""></div>
+
+
+
+
+
+
+            <BlogExtendedPost><br><br><b></b></BlogExtendedPost>
+            <br><br><font color="#CC0000">نوع مطلب :</font>
+                        <br><font color="#CC0000">برچسب ها :</font>
+            <a href="../../tag/index.html#لیلای_ملکوت" class=text4>#لیلای_ملکوت</a>، <a href="../../tag/index.html#چراغ_محبت" class=text4>#چراغ_محبت</a>، <a href="../../tag/index.html#شفا_خانه" class=text4>#شفا_خانه</a>، <a href="../../tag/index.html#سلسله_النور" class=text4>#سلسله_النور</a>، <a href="../../tag/index.html#کودکی_لگد_خورده" class=text4>#کودکی_لگد_خورده</a>،             <br><font color="#CC0000">لینک های مرتبط :</font>
+                    </font></div>
+        <div class=div22></div>
+
+
+        <div class=div26>
+
+            <div class=div27>
+                <font  class=text6><a href="http://sardareman-ahmad.mihanblog.com/post/1321#commentlist">نظرات (<script>setCommentCnt(1321)</script>)</a></font>
+
+            </div>
+
+            <div style="float: left;margin-left: 7px;"> <script>mihanblogPostLike('1321','like')</script></div>
+
+
+        </div>
+        <style>
+
+
+
+
+
+
+
+            .text100 , .text100 a{color:#FFF; font-size:8pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+            .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+            .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+            .com{ width:475px; float:left; background:#e6dbae; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 7px 0px 0px; padding:0 0 10px 0;}
+            .com1{ width:457px; float:left; background:#a30100; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+            .com3{ width:230px; float:left; text-align:right; direction:rtl; line-height:27px;}
+            .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+            .com4{ width:437px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com5{ width:437px; float:left; background:#cfcfcf; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;}
+            .com6{ width:447px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+            .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+        </style>
+        
+    </div>
+    <div class=div29></div>
+    <div class=div28><font class=text4>
+                <br><br>
+        ( کل صفحات : 2 )&nbsp;&nbsp;&nbsp;
+            <a href="http://sardareman-ahmad.mihanblog.com/post/archive/1397/8/page/1" class=text4><b>1</b></a>&nbsp;&nbsp;&nbsp;<a href="http://sardareman-ahmad.mihanblog.com/post/archive/1397/8/page/2" class=text4><span>2</span></a>&nbsp;&nbsp;&nbsp;    </font>
+    </div>
+
+</div>
+
+<div class=div16></div>
+
+<div class=div17>
+
+    <div class=div23 style="width: 193px; height: 98px"></div>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div34></div>
+            <div class=div25><font class=text5>درباره وبلاگ</font></div></div>
+        <div class=div31><center><img src="../../../../static.mihanblog.com/public/user_data/web_photo/406/1215195.jpg@1961"  /></center><br>
+            <font class=text4>درخواست لینک پذیرفته نمی شود ... <br />
+<br />
+<br>
+                مدیر وبلاگ : <a href="../../author/1045004.html">دلداده </a></font></div>
+        <div class=div30></div>
+    </div>
+
+    <div class=div24>
+        <div class=div32><font class=text1><a href="../../../index.html">صفحه نخست</a></font></div>
+        <div class=div32><font class=text1><a href="javascript:messageForm()">تماس با مدیر</a></font></div>
+        <div class=div32><font class=text1><a href="mailto:niran.ahmar@yahoo.com">پست الکترونیک</a></font></div>
+        <div class=div32><font class=text1><a href="../../rss/index.html">RSS</a></font></div>
+        <div class=div32><font class=text1><a href="../../atom/index.html">ATOM</a></font></div>
+        <div class=div30></div>
+    </div>
+
+    <div class=div24>
+        <div class=div35>
+            <div class=div34></div>
+            <div class=div25><font class=text5>مطالب اخیر</font></div></div>
+        <div class=div33></div>
+        <div class=div32><font class=text1><a href="../../1759.html">دورهمی تنهایان </a></font></div><div class=div32><font class=text1><a href="../../1758.html">زمستان9*9</a></font></div><div class=div32><font class=text1><a href="../../1754.html">می مانم </a></font></div><div class=div32><font class=text1><a href="../../1743.html">از دل رنجها </a></font></div><div class=div32><font class=text1><a href="../../1735.html">ستارگان ِ مرده </a></font></div><div class=div32><font class=text1><a href="../../1728.html">از بلندی زمین </a></font></div><div class=div32><font class=text1><a href="../../1727.html">منهای انسانیت </a></font></div><div class=div32><font class=text1><a href="../../1723.html">آوارگی باغ های خیال</a></font></div><div class=div32><font class=text1><a href="../../1720.html">مثلث تنهایی </a></font></div><div class=div32><font class=text1><a href="../../1717.html">دل می ماند </a></font></div><div class=div32><font class=text1><a href="../../1706.html">پروانه </a></font></div><div class=div32><font class=text1><a href="../../1702.html">کتاب اوول</a></font></div><div class=div32><font class=text1><a href="../../1698.html">آه های کولی </a></font></div><div class=div32><font class=text1><a href="../../1690.html">ترانه سرزده </a></font></div><div class=div32><font class=text1><a href="../../1682.html">نای بریده </a></font></div>        <div class=div30></div>
+    </div>
+    
+    <div class=div24>
+        <div class=div35>
+            <div class=div34></div>
+            <div class=div25><font class=text5>آرشیو وبلاگ</font></div></div>
+        <div class=div33></div>
+        <div class=div32><font class=text1><a href="../1399/9.html"> آذر 1399</a></font></div><div class=div32><font class=text1><a href="../1399/8.html"> آبان 1399</a></font></div><div class=div32><font class=text1><a href="../1399/7.html"> مهر 1399</a></font></div><div class=div32><font class=text1><a href="../1399/6.html"> شهریور 1399</a></font></div><div class=div32><font class=text1><a href="../1399/5.html"> مرداد 1399</a></font></div><div class=div32><font class=text1><a href="../1399/4.html"> تیر 1399</a></font></div><div class=div32><font class=text1><a href="../1399/3.html"> خرداد 1399</a></font></div><div class=div32><font class=text1><a href="../1399/1.html"> فروردین 1399</a></font></div><div class=div32><font class=text1><a href="../1398/9.html"> آذر 1398</a></font></div><div class=div32><font class=text1><a href="../1398/7.html"> مهر 1398</a></font></div><div class=div32><font class=text1><a href="../1398/6.html"> شهریور 1398</a></font></div><div class=div32><font class=text1><a href="../1398/5.html"> مرداد 1398</a></font></div><div class=div32><font class=text1><a href="../1398/4.html"> تیر 1398</a></font></div><div class=div32><font class=text1><a href="../1398/3.html"> خرداد 1398</a></font></div><div class=div32><font class=text1><a href="../1398/1.html"> فروردین 1398</a></font></div><div class=div32><font class=text1><a href="11.html"> بهمن 1397</a></font></div><div class=div32><font class=text1><a href="9.html"> آذر 1397</a></font></div><div class=div32><font class=text1><a href="8.html"> آبان 1397</a></font></div><div class=div32><font class=text1><a href="7.html"> مهر 1397</a></font></div><div class=div32><font class=text1><a href="6.html"> شهریور 1397</a></font></div><div class=div32><font class=text1><a href="5.html"> مرداد 1397</a></font></div><div class=div32><font class=text1><a href="4.html"> تیر 1397</a></font></div><div class=div32><font class=text1><a href="3.html"> خرداد 1397</a></font></div><div class=div32><font class=text1><a href="2.html"> اردیبهشت 1397</a></font></div>        <div class=div32><font class=text1><a href="../../archive.html">آرشیو كل مطالب</a></font></div>
+        <div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div34></div>
+            <div class=div25><font class=text5>پیوندهای روزانه</font></div></div>
+        <div class=div33></div>
+        <div class=div32><font class=text1><a href="../../../../soyekhoda.mihanblog.com/index.html" title="" target="_blank">سوی خدا</a></font></div><div class=div32><font class=text1><a href="http://hajiahmad.blogfa.com" title="" target="_blank">انتهای افق</a></font></div><div class=div32><font class=text1><a href="http://amirmarjani956.mihanblog.com" title="" target="_blank">اهالی جدید میهن بلاگ</a></font></div>        <div class=div32><font class=text1><a href="../../../linkdaily/index.html">همه پیوندهای روزانه</a></font></div>
+        <div class=div32><font class=text1><a href="javascript:linkdailyForm()">ارسال پیوند روزانه</a></font></div>
+        <div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div34></div>
+            <div class=div25><font class=text5>پیوندها</font></div></div>
+        <div class=div33></div>
+        <div class=div32><font class=text1><a href="http://shabhayefatemieh.blogfa.com" title="" target="_blank">شبهای فاطمی</a></font></div><div class=div32><font class=text1><a href="../../../../parisnews.mihanblog.com/index.html" title="" target="_blank">پاریس نیوز</a></font></div>        <div class=div32><font class=text1><a target="_blank" href="http://www.mytheme.ir">بهترین قالب های وبلاگ</a></font></div>
+        <div class=div32><font class=text1><a href="../../../link/index.html">همه پیوندها</a></font></div>
+        <div class=div30></div>
+    </div>
+    <div class=div24>
+        <div class=div35>
+            <div class=div34></div>
+            <div class=div25><font class=text5>نویسندگان</font></div></div>
+        <div class=div33></div>
+        <div class=div32><font class=text1><a href="../../author/1045004.html">دلداده  (521)</a></font></div>        <div class=div30></div>
+    </div>
+    
+    
+		<form id="frm-16077597035fd477574dac8" method="post" action="http://sardareman-ahmad.mihanblog.com/poll/new/fid/16077597035fd477574dac8/atrty/1607759703/avrvy/0/key/dc1ca16fd8103d2b5a91071e6fdeec1b/"  onsubmit="window.open('', 'poll', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=505,height=315')" target="poll"><input type="hidden" name="data[pollid]" value="353830" id="data[pollid]" />		<div class=div24>
+        <div class=div35>
+            <div class=div34></div>
+            <div class=div25><font class=text5>نظرسنجی</font></div></div>
+        <div class=div33></div>
+        <div class=div32><font class=text1> در طول هفته چند بار امام زمان را یاد می کنید ؟<br>
+            <label><input type="checkbox"  name="data[v1]" id="v1" value="1" />زمانی نیست که به یادش نباشم</label><br><label><input type="checkbox"  name="data[v2]" id="v2" value="1" />جمعه ها</label><br><label><input type="checkbox"  name="data[v3]" id="v3" value="1" />هر گاه اسمش را بشنوم</label><br><label><input type="checkbox"  name="data[v4]" id="v4" value="1" />در غفلتم و یادش نمیکنم!</label><br><label><input type="checkbox"  name="data[v5]" id="v5" value="1" />جوانی ام وقف اوست...</label><br><label><input type="checkbox"  name="data[v6]" id="v6" value="1" />در اضطرار</label><br><label><input type="checkbox"  name="data[v7]" id="v7" value="1" />غروب ها</label><br><label><input type="checkbox"  name="data[v8]" id="v8" value="1" />سحرها</label><br><label><input type="checkbox"  name="data[v9]" id="v9" value="1" />مجالس روضه و دعا</label><br></font>
+            <div align="center"><br><input type="submit" value="یا صاحب الزمان" style="font-family: Tahoma; font-size: 9pt"><br><br></div></div>        <div class=div30></div>
+    </div>
+		<input type="hidden" name="frm-id" value="16077597035fd477574dac8" id="frm-id" /></form>
+    <div class=div24>
+        <div class=div35>
+            <div class=div34></div>
+            <div class=div25><font class=text5>برچسبها</font></div></div>
+        <div class=div33></div>
+        <div class=div32><font class=text1><a href="../../tag/%23باران.html">#باران</a></font></div><div class=div32><font class=text1><a href="../../tag/%23چراغ_محبت.html">#چراغ_محبت</a></font></div><div class=div32><font class=text1><a href="../../tag/روشن.html">روشن</a></font></div><div class=div32><font class=text1><a href="../../tag/%23دل.html">#دل</a></font></div><div class=div32><font class=text1><a href="../../tag/دل.html">دل</a></font></div><div class=div32><font class=text1><a href="../../tag/باران.html">باران</a></font></div><div class=div32><font class=text1><a href="../../tag/محبت.html">محبت</a></font></div><div class=div32><font class=text1><a href="../../tag/%23حوالی.html">#حوالی</a></font></div><div class=div32><font class=text1><a href="../../tag/چراغ.html">چراغ</a></font></div><div class=div32><font class=text1><a href="../../tag/%23روشن.html">#روشن</a></font></div>        <div class=div30></div>
+    </div>
+    <form id="frm-16077597035fd477574e29e" method="get" action="http://sardareman-ahmad.mihanblog.com/post/search/fid/16077597035fd477574e29e"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> <div class=div24>
+        <div class=div35>
+            <div class=div34></div>
+            <div class=div25><font class=text5>جستجو</font></div></div>
+        <div class=div33></div>
+        <div class=div32><center><input type="text" name="search_text"><br>
+            <input type="submit" value="جستجو" style="font-family: Tahoma; font-size: 9pt"></center></div>
+        <div class=div30></div>
+    </div><input type="hidden" name="frm-id" value="16077597035fd477574e29e" id="frm-id" /></form>
+    <div class=div24>
+        <div class=div35>
+            <div class=div34></div>
+            <div class=div25><font class=text5>آمار وبلاگ</font></div></div>
+        <div class=div33></div>
+        <div class=div32><font class=text1>کل بازدید : <script>getStatVar('total_view');</script></font></div>
+        <div class=div32><font class=text1>بازدید امروز :<script>getStatVar('today_view');</script></font></div>
+        <div class=div32><font class=text1>بازدید دیروز : <script>getStatVar('yesterday_view');</script></font></div>
+        <div class=div32><font class=text1>بازدید این ماه : <script>getStatVar('this_month_view');</script></font></div>
+        <div class=div32><font class=text1>بازدید ماه قبل : <script>getStatVar('last_month_view');</script></font></div>
+        <div class=div32><font class=text1>تعداد نویسندگان : <script>getStatVar('total_author');</script></font></div>
+        <div class=div32><font class=text1>تعداد کل پست ها : <script>getStatVar('total_post');</script></font></div>
+        <div class=div32><font class=text1>آخرین بازدید : <script>getStatVar('last_view_date');</script></font></div>
+        <div class=div32><font class=text1>آخرین بروز رسانی : <script>getStatVar('modify_date');</script></font></div>
+        <div class=div30></div>
+    </div>
+    <div class=div30></div>
+    <div class=div24>
+        <div class="mihan_logo"></div>
+        <center><!-- Eydad.com -->
+<script language="javascript" type="text/javascript" src="http://eydad.com/js/OOOO4LA.js"></script>
+<!-- Eydad.ir  -->
+
+<script type="text/javascript">
+var msg_box ="نکن عزیزم !";
+function dis_rightclickIE(){
+if (navigator.appName == 'Microsoft Internet Explorer' && (event.button == 2 || event.button == 3))
+alert(msg_box)
+}
+
+function dis_rightclickNS(e){
+if ((document.layers||document.getElementById&&!document.all) && (e.which==2||e.which==3))
+{
+alert(msg_box)
+return false;
+}
+}
+if (document.layers){
+document.captureEvents(Event.MOUSEDOWN);
+document.onmousedown=dis_rightclickNS;
+}
+else if (document.all&&!document.getElementById){
+document.onmousedown=dis_rightclickIE;
+}
+document.oncontextmenu=new Function("alert(msg_box);return false")
+</script><!-- Pichak -->
+...
+
+<center><audio controls autoplay preload="none" style="width:94%;margin:0% 3%;"><source type="audio/mpeg" id="player" src="http://dl.tabamusic.com/Music/1397/11/Hojat Ashrafzadeh - Cheshme To (128).mp3">مرورگر شما از Player ساپورت نمی کند</audio><br /><a href="http://tabamusic.com" target="_blank">دانلود آهنگ</a></center></center><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+
+</div>
+
+</div>
+</td>
+<td class=div3>&nbsp;</td>
+</tr>
+<tr>
+    <td class=div4 valign=top>
+        <div class=div5></div>
+        <div class=div6></div>
+        <div class=div7>
+            <a href="http://www.mytheme.ir" target="_blank">
+                <img src="http://mihanblog.com/public/public/user_data/template/2098745/blank.gif" border=0 width=269 height=41></a></div></td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+</div>
+<style>
+    img{
+        max-width : 464px;
+    }
+</style>
+</body>
+
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'sardareman-ahmad.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

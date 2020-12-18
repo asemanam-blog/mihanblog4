@@ -1,0 +1,2057 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc@rsd.html" />
+<script type="text/javascript" src="../../../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 22 آذر 1399');
+		/*1100278*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[800]='16';commentCnt[801]='4';commentCnt[942]='2';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[800]='0';
+mihanblogDisLikeArrCnt[800]='0';
+mihanblogLikeArrCnt[801]='0';
+mihanblogDisLikeArrCnt[801]='0';
+mihanblogLikeArrCnt[942]='0';
+mihanblogDisLikeArrCnt[942]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://tabrizlinks.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://tabrizlinks.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','1196');
+	setStatVar('total_author','3');
+	setStatVar('modify_date','جمعه 9 اسفند 1398');
+	
+	setStatVar('today_view','511');
+	setStatVar('yesterday_view','1261');
+	
+	setStatVar('this_month_view','15767');
+	setStatVar('last_month_view','27851');
+
+	setStatVar('total_view','3573099');
+	setStatVar('last_view_date','شنبه 22 آذر 1399 (13:59)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://tabrizlinks.mihanblog.com/statupdate/?data[refereruri]=http://tabrizlinks.mihanblog.com/&data[postid]=&data[requesturi]=/post/author/1218364&data[sdate]=1607769182&data[hash]=273205845ae3ff4e8bdb3e883dd86a65&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="'+link+'.html" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://tabrizlinks.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fa-IR">
+<!--تبریز آذربایجان دریاچه ارومیه زبان ترکی آذری tabrizlinks wikilinks-->
+
+<head>
+<title>تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان</title>
+    <base href="" />
+	<meta name="generator" content="ParsTools.Com | Hesam B" />
+	<meta content="fa" http-equiv="Content-Language" />
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8">
+	<meta name="description" content="tabriz , azerbaijan weblog tabrizlinks turk wikilinks
+وبلاگ تبریز لینکلر قارتال ترکی آذری، تراکتور آذربایجان و ارومیه ارس و زنجان و اردبیل" />
+	<meta name="keywords" content="tabrizlinks,تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان, تبریز,tabriz,آذربایجان,ترکی,ایران,azerbaijan,ارس,ارومیه,اردبیل" />
+	<link rel="alternate" type="application/rss+xml" title="تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان" href="../rss/index.html" />
+	<link rel="alternate" type="application/atom+xml" title="تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان"  href="../atom/index.html" />
+	
+
+<meta name="robots" content="index, follow">
+<link rel="alternate" type="application/rss+xml" title="تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان" href="../rss/index.html" />
+<meta name="google-site-verification" content="n6T8POLjcxVom0461uwQoryqydThNaEJARSpk_5fZPA" />
+
+<meta name="msvalidate.01" content="38A7A3D8CD214D8C1160582BBBDB424D" />
+
+<meta name="alexaVerifyID" content="Qdjfdb1DWdeeATdB4RAcReqKUTk"/>
+
+<link href="http://tabrizlinks.persiangig.com/video/favicon.ico" rel="shortcut icon">
+
+
+
+<link media="screen" href="http://tem.parstools.com/skyback/style/styles.css" type="text/css" rel="stylesheet" />
+<link media="screen" href="http://tem.parstools.com/skyback/style/engine.css" type="text/css" rel="stylesheet" />
+
+</head>
+<!--تبریز آذربایجان دریاچه ارومیه زبان ترکی آذری tabrizlinks wikilinks-->
+<body>
+<div class="pagebg">
+<div class="wrapper">
+	<div class="header">
+
+		<h1>
+		<div style="float:left; margin-left: 100px;">
+			<!-- Begin parstools.com ‍Clock Code --><div  style="display:none;"><a href="http://parstools.com"><h1>ساعت فلش</h1></a></div><script language="javascript" src="http://www.parstools.com/clock/?type=93&w=130&h=90"></script><!-- End Clock code -->
+			</div>
+		<a class="thide" href="../../index.html" title="تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان"><img src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/amlak.png" title="Tabriz WikiLinks , Azerbaijan Region of Iran"></a></h1>
+					
+			<div class="loginblock">
+				<div class="loginenter">
+					<h3>تبریز ویکی لینکلر - بزرگترین وبلاگ تبریز و آذربایجان</h3>
+				</div>
+			</div>
+	</div>
+	<div class="topmenu"><div><div>
+		<ul style="float:right;" class="lcolomn reset">
+			<li ><a href="../atom/index.html"><b>نسخه اتوم</b></a></li>
+			<li ><a href="../../m.html"><b>نسخه موبایل</b></a></li>
+			<li ><a href="../list.html"><b>آرشیو مطالب</b></a></li>
+			<li ><a href="mailto:tabrizlinks.mihanblog@gmail.com"><b>پست الکترونیکی</b></a></li>
+			<li ><a href="javascript:messageForm()"><b>ارتباط با مدیریت</b></a></li>
+			<li ><a href="../../index.html"><b>صفحه اصلی</b></a></li>
+		</ul>
+		
+		<div name="seatchform"  style="float:left; padding-left:70px">
+		<form id="frm-16077358065fd419fe5a1fd" method="get" action="http://tabrizlinks.mihanblog.com/post/search/fid/16077358065fd419fe5a1fd"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+		<ul class="rcolomn reset">	<li class="sh-btn"><input value="" type="submit" src="http://tem.parstools.com/skyback/images/spacer.gif" /></li>
+			<li class="sh-text"><input name="search_text" value="جستجو..." onblur="if(this.value=='') this.value='جستجو...';" onfocus="if(this.value=='جستجو...') this.value='';" type="text" /></li>
+		
+		</ul>
+		<input type="hidden" name="frm-id" value="16077358065fd419fe5a1fd" id="frm-id" /></form>		</div>
+		
+	</div></div></div>
+	<div class="vsep"><div class="vsep"><div class="vsep"><div class="vsep">
+		<div class="rcolomn midside">
+			<div class="container">
+				<div class="lcolomn mainside">
+					<div class="brcont">
+						<div class="topadblock">
+							<div class="dcont">
+								<a href="../../index.html"><img src="../../index.html" alt="Təbriz və Azərbaycan üçün Blog İranda - Tabriz , Azerbaijan Region in Iran" /></a>
+
+							</div>
+						</div>
+
+						<div id='dle-info'></div>
+						<div id='dle-content'>
+	
+   
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+			
+<div class="base shortstory">
+	<div class="shd">
+		<h1><a href="../942.html" title="سبک معماری آذربایجان">سبک معماری آذربایجان</a></h1>
+	</div>
+	<div class="shdinfo"><div class="shdin">
+
+		<span class="arg">نویسنده : <a href="1218364.html">دنیز قارتال</a></span>
+		<span class="date"><img src="http://tem.parstools.com/skyback/images/date.png" alt="">دوشنبه 26 مرداد 1394, 01:10 ب.ظ</span>
+	</div></div>
+	<div class="maincont">
+		<div style="padding-right:10px;">
+		
+		 <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="text-align: center;"><h1 class="title"><font color="#666600" size="5">درآمدی بر سبک معماری آذربایجان</font></h1> <font color="#999900"><b><font size="3">آذربایجان با مجموعه ای از شاخص
+های مهندسی و تزیینات بنا , مهد معماری بشر است<br></font></b></font><br><font size="3"><b><span id="result_box" class="short_text" lang="en"><span class="hps">Azerbaijani</span> Islamic <span class="hps">Architecture</span> <span class="hps">style</span></span></b></font>
+
+<div style="overflow: hidden; text-align: left; border: medium none;"><p dir="RTL" align="center"><font size="3">آذربایجان یکی از مراکز پرقدرت معماری جهان اسلام است؛
+که فرایند تحولات معماری در آنجا تاریخی کهن دارد. قرون هفتم و هشتم
+هجری قمری عصر شکوفایی معماری و شهرسازی در آذربایجان بوده است
+اهمیت و تاثیر اسلوب و شیوه های معماری
+آذربایجانی در ایران سده های هفتم تا نهم هجری قمری بدان سو گسترده
+شده است که شادروان پیرنیا در سبک شناسی معماری اسلامی ایران به سبکی
+به نام آذری را توصیف و پیشنهاد کرده است؛ که این اصطلاح تا به امروز
+مترادف معماری ایلخانی - تیموری بوده است ، &nbsp;اما پیرنیا در بازشناس و توصیف
+سبک آذری با تاثیرات بنیادین مکاتب محلی آذربایجان چون شیروان و
+نخجوان که از اواسط دوره سلجوقی رو به پیشرفت و توسعه و تکامل نهادند،
+بر معماری دوران ایلخانی - تیموری ایران، اصلا توجهی نکرده است؛ حال
+آنکه بخشی از پیوستگی ها و تعاملات دو سویه فرهنگی - اجتماعی سرزمین
+های ایرانی، بالاخص خراسان و آذربایجان، در سبک معماری اذربایجانی سده
+های هفتم تا نهم هجری قمری، که عصر کلاسیک فرهنگ و هنر ایران است،
+بازتاب، نمود و تجلی یافته است.</font></p><p align="center"><font color="#CC0000" size="2"><b>ارگ سلطنتی اولجایتو ( گنبد سلطانیه ) زنجان <br></b></font></p><p align="center"><font color="#CC0000" size="2"><b>از مهمترین شناسه های معماری آذربایجان در عهد ایلخانی</b></font></p><p align="center"><img src="http://s3.picofile.com/file/8206427842/10.jpg" alt="معماری آذربایجان" align="bottom" height="342" hspace="0" border="0" vspace="0" width="500"></p><p dir="RTL" align="center"><font size="2">در دوران ایلخانان، مرکزیت فرهنگ و هنر ایران از خراسان
+و ماوراالنهر به آذربایجان منتقل شد؛ و به ویژه در عهد سلطنت سلطان
+محمود غازان خان، آذربایجان به عصرطلایی فرهنگ و هنر گام نهاد&nbsp; آذربایجان مهد و خاستگاه معماری پیشرو ایلخانی
+معرفی شده است؛ بالاخص در عهد سلطنت غازان خان فعالیت های معماری در
+ایران توسعه مضاعف یافت ، سلاطین ایلخانی با صدور احکامی خواستار احداث
+بناهای مهم و شکوه مند شدند؛ همچون غازانیه و سلطانیه . به معماران شنب غازان و مجموعه علیشاه از پیش تفهیم شده بود
+که باید آثار ایشان، به لحاظ ابعاد و حجم و تزیین، برتر و فراتر از
+مقابر سلطان سنجر در مرو و طاق کسری در تیسفون باشد.</font></p><p dir="RTL" align="center"><font size="2">ابعاد عظیم بناها، که با سلطان محمود غازان خان شروع شد،
+در عمارات سترگ غازانیه، سلطانیه و مجموعه جامع علیشاه تجلی یافت؛ که
+بزرگترین بناهای آن دوران بودند. توسعه مجموعه های معماری از دیگر
+مشخصات این دوران است. &nbsp;پیشرفت های معماری
+برخاسته از آذربایجان نه تنها به آذربایجان و دوران ایلخانان محدود
+نماند؛ بلکه به ترکستان و خراسان عهد تیموریان نیز گسترش یافت. در
+حقیقت فرهنگ و هنر ایران دوره تیموری استمرار و تداوم دوره ایلخانی
+است.</font></p><p dir="RTL" align="center"><font size="2">امیرتیمور گورکانی و جانشینان هنرپرور وی، شمار بسیاری
+از هنرمندان را از آذربایجان و به ویژه تبریز، به خراسان و ماورالنهر
+فرستادند و شاهکارهای بسیاری بر پایه آموزه های سبک آذربایجانی در
+خراسان بزرگ، ترکستان و ماوراءالنهر آفریده شد؛ مسجد جامع سمرقند،
+مسجد گوهرشاد مشهد رضوی، گور میر، تربت خواجه ابونصر پارسا در بلخ و
+آق سرای در شهر سبز. بنابراین پیش از ورود به بحث لازم است که با
+درنظر گرفتن عهد ایلخانی به مثابه نقطه عطف و سرآغاز حرکت و پویش سبک
+معماری آذربایجان، ویژگی های اصلی و شاخص های کلی معماری این دوره از
+تاریخ فرهنگ و هنر ایران به اجمال بررسی شود.</font></p><p align="center"><font color="#CC0000" size="2"><b>ارگ سترگ علیشاه تبریز </b></font><font color="#CC0000" size="2"><b><br></b></font></p><p align="center"><font color="#CC0000" size="2"><b>از مهمترین شناسه های معماری آذربایجان در عهد ایلخانی</b></font></p><p align="center"><img src="http://s3.picofile.com/file/8206427884/11.jpg" alt="معماری آذربایجان" align="bottom" height="342" hspace="0" border="0" vspace="0" width="500"></p><h2 dir="RTL" align="center"><font size="3">ویژگیهای سبک معماری آذربایجان</font></h2><p align="center"><font size="2">همان طور که در مقدمه اشاره شد، سبک اذری اصطلاحی است که پیرنیا برای
+بازشناسی شماری از خصوصیات معماری ایران در دوران ایلخانی - تیموری
+ابداع کرده است. اما درست و بهتر آن است که از اصطلاح سبک معماری
+آذربایجان استفاده شود؛ اول این که از نظر لغوی و نحوی کلمه آذری
+نادرست است؛ و دوم آنکه پیرنیا در طبقه بندی مشخصات معماری سرزمین
+آذربایجان در سده های هفتم و هشتم هجری قمری به تاثیرات قوی و بارز
+اسلوب معماران شمال آذربایجان در شیروان و نخجوان بر معماری تبریز
+اصلا توجهی نداشته است؛ در نتیجه ایشان به درستی ریشه و منشا تحولات
+معماری این دوره از تاریخ فرهنگ و هنر ایرانی را نشناخته است؛ و
+همچنین در آثار ایشان ویژگی های معماری مکتب تبریز به درستی بازشناخته
+نیست؛ وانگهی دامنه تاثیرگذاری تحولات و آفرینش های هنری آذربایجان
+عهد ایلخانی چندان گسترده شد که به خراسان و ترکستان عهد تیموری و مصر
+دوره ممالیک رسید.</font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>مسجد گوهرشاد مشهد رضوی <br></b></font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>شاهکار معماری آذربایجان در دوران تیموری</b></font><font size="2"><br></font></p><p dir="RTL" align="center"><img src="http://s3.picofile.com/file/8206427576/5.jpg" alt="معماری آذربایجان" align="bottom" height="295" hspace="0" border="0" vspace="0" width="499"></p><p dir="RTL" align="center"><font size="2">نگارنده، سبک معماری آذربایجان را برایند پیوند سنت طرح
+کلاسیک متقارن دو ایرانی خراسانی با مکاتب تبریز و نخجوان تعریف و
+معرفی می کند که معمارانی بنام چون عجمی نخجوانی و علیشاه تبریزی در
+آفرینش آن تاثیر بسیار داشته اند؛ و از نظر وی، سبک معماری آذربایجانی
+در یک جمع بندی کلی دارای شناسه های یازده گانه به شرح زیر است:</font></p><p dir="RTL" align="center"><font size="2">
+
+</font></p><div align="right"><ol><li><font size="2">تاکید بر بالاگرایی و رفعت و عظمت؛ که میراث مکتب معماری نخجوان
+است.</font></li><li><font size="2">ابعاد سترگ و عظیم بناهای دینی، حکومتی و عام المنفعه؛ که نمونه
+های شاخص آن سلطانیه، غازانیه، رشیدیه، جامع علیشاه و جامع سمرقند
+است.</font></li><li><font size="2">نهادینه شدن الحاق مناره ها به کالبد بنا به سه شیوه؛ که از مکتب
+نخجوان به صورت یک جفت مناره استوار بر بام سردری بلند آغاز شده و سپس
+در مکتب تبریز، با ابتکار علیشاه تبریزی، به شکل دو مناره بلند و
+کشیده در طرفین پیش طاق گنبدخانه و سردر ورودی درمی آید و شواهد
+باستان شناختی آن از ارک علیشاه تبریز گزارش شده است.<br>
+همچنین ترکیب بندی چند مناره ای، که در گنبد سلطانیه اجرا شده است، از
+ابداعات علیشاه تبریزی معرفی می شود. مجموعه گور میر در سمرقند نمونه
+کلاسیک هر سه شکل الحاق مناره ها به کالبد و حجم اصلی بنا است&nbsp;</font></li><li><font size="2">ساخت گنبدهای ساقه بلند؛ که کهن ترین نمونه های آن از مسجد جمعه
+اردبیل و مسجد قیرنا در نخجوان گزارش شده است.</font></li><li><font size="2">توسه کاشی کاری معرق؛ که نمونه های عالی آن در گنبد سلطانیه و
+مسجد کبود مشاهده می شود؛ و از غازانیه و مجموعه علیشاه نیز گزارش شده
+است. کاشی کاری معرق از شناسه های بارز مکتب تبریز است؛ که شاید
+نوآوری های علیشاه تبریزی باشد.</font></li><li><font size="2">توسعه محراب های گچ بری شده؛ که نمونه های اولیه و بدیع آنها در
+مساجد جامع تبریز و ارومیه مشاهده می شود؛ و در محراب اولجایتو به اوج
+زیبایی و ظرافت می رسد.</font></li><li><font size="2">توسعه گچ بری، به ویژه برای آراستن مقرنسها؛ که از ویژگی های مکتب
+تبریز است.</font></li><li><font size="2">توسعه کاربرد خط ثلث در بناها، بالاخص ابنیه مذهبی و مساجد؛ که
+بهترین نمونه آن حجاری سوره قرآنی نبا به خط ثلث بر روی سنگ مرمر در
+مسجد کبود تبریز است.</font></li><li><font size="2">توسعه قوس کلیل موسوم به آذری یا قوسی که دارای دور مرتفع است و
+سابقه آن به مکتب معماری شیروان می رسد که نمونه ممتاز آن در ارک
+تبریز مشاهده می شود.</font></li><li><font size="2">توسعه طراحی و ساخت مجموعه های معماری؛ که از ابتکارات خاص معمار
+عجمی نخجوانی است.</font></li><li><font size="2">تاکید بر فرم و پلان های متقارن چهار ایوانی که میراث تحول یافته
+پلان دو ایوان خراسانی است و باید از ابداعات علیشاه تبریزی
+باشد.</font></li></ol><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>گور امیر آرامگاه تیمور نخستین پادشاه گورکانی <br></b></font></p><div align="center"><font color="#CC0000" size="2"><b>ساخته شده به سبک معماری آذربایجان</b></font></div><div align="center"><img src="http://s6.picofile.com/file/8206427634/6.jpg" alt="معماری آذربایجان" style="text-align: left;" align="bottom" height="383" hspace="0" border="0" vspace="0" width="499"></div><p dir="RTL" align="center"><font size="2">دامنه گسترش سبک معماری آذربایجان به لطف امپراتوری های
+پهناور ایلخانی و تیموری از آذربایجان فراتر رفت و به خراسان بزرگ،
+ترکستان، ماوراءالنهر و مصر رسید. باید تاکید شود که فروپاشی سلسله
+ایلخانی&nbsp; و برآمدن آل تیمور نه یک تحول بنیادین فرهنگی - اجتماعی
+و هنری، که جابجایی در قدرت بود؛ و آن سنت های معماری که در آذربایجان
+عهد ایلخانی برآمده و تکامل یافته بودند، این بار در شهرهای آباد
+خراسان بزرگ و ماوراءالنهر چون سمرقند و مشهد رضوی عرضه و نمود
+یافتند.</font></p><font size="2">
+
+</font><p dir="RTL" align="center"><font size="2">همچنین با گشایش روابط سیاسی دربارهای تبریز و قاهره،
+معماری مملوکی مصر از سبک معماری آذربایجان تاثیر پذیرفت. در مصر ممالیک آثار معماری چندی با الهام از سبک آذربایجان
+ساخته شده است که عبارت است از مسجد امیر قسون، مسجد سلطان ناصر محمد
+و مجموعه سلطان حسن در قاهره.</font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>مسجد زیبای سلطان حسن در قاهره مصر <br></b></font></p><div align="center"><b style="font-size: small; color: rgb(204, 0, 0); text-align: left;">برگرفته از معماری آذربایجان مصادف با دوران ایلخانی</b></div><div align="center"><img src="http://s3.picofile.com/file/8206428018/15.jpg" alt="معماری آذربایجان" style="text-align: left;" align="bottom" height="296" hspace="0" border="0" vspace="0" width="501"></div><p align="center"><font size="2">قرون هفتم و هشتم هجری قمری عصر شکوفایی معماری در آذربایجان است.
+اگر چه استاد پیرنیا سبکی به نام «آذری» را توصیف و پیشنهاد کرده که
+مترادف با مفهوم معماری ایلخانی - تیموری است؛ اما در توصیف سبک آذری
+به تاثیرات بنیادین مکاتب محلی آذربایجان بر معماری دوران ایلخانی -
+تیموری ایران اصلا توجهی نشده است. آذربایجان با مجموعه ای از شاخص
+های مهندسی و تزیینات بنا، مهد معماری بشر و عهد ایلخانی معرفی می شود
+که در نوشتار حاضر به هفت شاخص کلی، تقسیم و دسته بندی شده که شش شاخص
+آنها ابداع معماران مکاتب تبریز و نخجوان است.</font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">سبک معماری آذربایجانی، که با مجموعه ای از یازده شاخص
+بازشناخته می شود، برآیند پیوند سنتها و اسلوب معماری خراسانی با
+مکاتب معماری تبریز و نخجوان تعریف شده است؛ که معمارانی بنام چون
+عجمی نخجوانی و علیشاه تبریزی در آفرینش آن تاثیر بسیار داشته اند.
+دامنه تاثیرات سبک معماری آذربایجان از آذربایجان فراتر رفت و به
+خراسان و ترکستان دوران تیموریان و مصر عهد ممالک رسید.</font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>قصر آق سرای در شهرسبز ازبکستان</b></font></p><div align="center"><b style="color: rgb(204, 0, 0); font-size: small; text-align: left;">شکوه معماری آذربایجان در دوران تیموری</b></div><div align="center"><img src="http://s6.picofile.com/file/8206427734/8.jpg" alt="معماری آذربایجان" style="text-align: left;" align="bottom" height="384" hspace="0" border="0" vspace="0" width="500"></div><div align="center"><font color="#CC0000" size="2"><b><br></b></font></div><div align="center"><img src="http://s3.picofile.com/file/8206427776/9.jpg" alt="معماری آذربایجان" style="text-align: left;" align="bottom" height="339" hspace="0" border="0" vspace="0" width="500"></div><h2 dir="RTL" align="center"><font size="2">شناخت ویژگی ها و شاخص های معماری عهد ایلخانی</font></h2><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">معماری عهد ایلخانی با مجموعه ای از شاخص های مهندسی و
+تزیینات بنا معرفی می شود که از دوره سلجوقی کاملا متمایز بوده و قابل
+تفکیک و تشخیص است؛ که نگارنده در اینجا آنها را به هفت ویژگی و شاخص
+کلی تقسیم و دسته بندی کرده است:</font></p><div align="center">
+
+<div align="right"><ol><li><font size="2">پیوستگی مناره ها به کالبد مساجد و ابنیه دینی.</font></li><li><font size="2">تاکید بر بالاگرایی و رفعت و عظمت بنا</font></li><li><font size="2">توسعه پلان متقارن چهار ایوانی.</font></li><li><font size="2">توسعه ساخت مجموعه های معماری؛ به ویژه مجموعه های دینی.</font></li><li><font size="2">افراشتن گنبدهای ساقه بلند</font></li><li><font size="2">توسعه تزئینات کاشی کاری معرق.</font></li><li><font size="2">توسعه تزئینات گچ بری؛ بالاخص گچ بری محراب ها.</font></li></ol></div>
+
+</div><p dir="RTL" align="center"><font size="2">هفت شناسه نامبرده در اینجا به اختصار و اجمال بررسی می
+شود تا در بخش بعدی نوشتار حاضر، منشا و خاستگاه آنها، که ریشه در سنت
+های معماری آذربایجان داشته است، بررسی و معرفی شود.</font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>مسجد جامع یزد <br></b></font></p><div align="center"><b style="color: rgb(204, 0, 0); font-size: small; text-align: left;">به سبک معماری آذربایجان متعلق به عهد ایلخانی</b></div><div align="center"><img src="http://s6.picofile.com/file/8206428284/20.jpg" alt="معماری آذربایجان" style="text-align: left;" align="bottom" height="316" hspace="0" border="0" vspace="0" width="500"></div><p dir="RTL" align="center"><font size="2"><strong>1.1. پیوستگی مناره ها به کالبد مساجد و ابنیه
+دینی</strong></font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">طرز ساخت و آرایش نماها و&nbsp; سردر ابنیه مذهبی در عهد
+ایلخانی دچار تغییراتی مشهود می شود که آنها را نمی توان در عهد
+سلجوقی یافت؛ به گونه ای که سنت ساخت مناره های بلند، تنومند و منفرد
+جدا از حجم، کالبد مساجد و مجموعه های مذهبی منسوخ شده و مناره ها را
+پیوسته با حجم و کالبد بنا می سازند، از اولین نمونه های این تحول
+باید به مجموعه مومنه خاتون در نخجوان اشاره کرد که بعدها در معماری
+عهد ایلخانی رواج می یابد <br></font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2"><strong>2.1 تاکید بر بالاگرایی و رفعت و عظمت
+بنا</strong></font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">معماران دوره ایلخانی در مقایسه با معماران عهد سلجوقی
+آثار خود را به لحاظ عظمت، تناسب اجرای ساختمان و پلان و نقشه عالی
+آنها متمایز کرده اند [حسن، 1366: 43] بارزترین ویژگی که آثار معماری
+ایلخانی را از دیگر دوره ها متمایز می کند، ارتفاع و رفعت بناها است؛
+در این دوران ایوان ها بلند و کم عرض شده و به بعد عمودی فضاها نسبت
+به بعد افقی توجه بیشتری می شود.</font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">سردرهای بلند، مطلوب معمار است و همین ارتفاع، بر باریک
+نمایی حجم و باریکتر شدن دیوارها بسیار تاثیر گذاشت . مهندسان و معماران عهد ایلخانی مسایل، تکنیک ها و فنون مهندسی
+خاص خود را داشتند. شاخص مهندسی ایشان را می توان ابعاد عظیم بناها و
+کاربرد وسیع گچ بری و توسعه طاق عرضی (Transverse) دانست؛ این نوع
+طاق، روشی برای پوشاندن فضاهای وسیع و مرتفع داخلی بدون نیاز به
+کاربرد ستون یا شاه تیر است. گرچه معماران با این تکنیک بیشتر نیز
+آشنا بودند، اما برای اولین بار بود که در معماری با مصالح آجری به
+کار می رفت .</font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2"><strong>3.1 توسعه پلان های متقارن چهار
+ایوانی</strong></font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">گذر شیوه های معماری عهد سلجوقی به دوره ایلخانی با تحول
+معماری رمانسک به گوتیک مقایسه شده است&nbsp;
+معماران دوره ایلخانی، پلان های متقارن دارای ایوان را برای ساخت
+بناهای مذهبی و عام المنفعه چون مسجد، مدرسه و کاروانسرا برگزیدند؛ و
+کوشیدند با کاهش و اصلاح تاسیسات بنا تغییراتی ظریف را صورت دهند . سنت پلان های کلاسیک دو ایوانی، که اوایل قرن ششم هجری قمری در
+خراسان پدیدار شده بود، در عهد ایلخانی به گونه چهار ایوانی تحول و
+تکامل می یابد.</font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2"><strong>4.1 توسعه ساخت مجموعه های معماری</strong></font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">طراحی و ساخت مجموعه های معماری، بالاخص دینی، از
+مهمترین شناسه های معماری عهد ایلخانی است. مجموعه های بزرگ و سترگ
+چون جامع علیشاه تبریزی و غازانیه (شنب غازان/ شام غازان) در تبریز و
+ابواب البر خاقانی/ اولجایتو (گنبد سلطانیه) بعدها سرمشق ساخت مجموعه
+های بزرگ دینی چون جامع سمرقند و جامع گوهرشاد معاصر با سلطنت تیمور
+گورکانی و مجموعه سلطان حسن در قاهره مقارن با دوران ایلخانان شدند.
+دو مجموعه مومنه خاتون (582 ه.ق) و قره باغ لار (حدود 670 ه.ق) در
+نخجوان، سرمشق اولیه تمامی این مجموعه ها هستند <br></font></p><p dir="RTL" align="center"><font color="#CC0000"><b><font size="2">مقبره مومنه خاتین نخجوان</font></b></font></p><div align="center"><b style="color: rgb(204, 0, 0); text-align: left;"><font size="2">الهام گرفته از سبک معماری آذربایجان</font></b><font color="#CC0000" size="2"><b>&nbsp;</b></font></div><div align="center"><img src="http://s3.picofile.com/file/8206428092/16.jpg" alt="معماری آذربایجان" align="bottom" height="385" hspace="0" border="0" vspace="0" width="500"></div><div align="center"><p dir="RTL" align="center"><font size="2"><strong>5.1 افراشتن گنبدهای ساقه بلند</strong></font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">ساخت گنبدهای ساقه بلند که شادروان پیرنیا آنها را با
+اصطلاح «گریوناری» معرفی می کند&nbsp;
+از مشخصات معماری دوران ایلخانی - تیموری در ایران و ترکستان است؛ که
+بهترین مثال های آن مسجد کبود تبریز، مسجد گوهرشاد و مسجد جامع سمرقند
+است.</font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">بنابر شواهد باستان شناختی، پلان بنای شمالی یافته از
+جبهه شمالی ارک علیشاه تبریز (ایوان تبریز) شاید برای ساخت یک گنبد
+ساقه بلند طراحی شده بود . گنبد مسجد جمعه اردبیل نیز از اولین سرمشق های ساخت گنبدهای
+ساقه بلند محسوب می شود . البته
+درباره مسجد جمعه اردبیل باید گفته شود که هیچ مدرک باستان شناختی
+مبنی بر بازسازی یا تغییر سیما و کالبد آن در دوره تیموری در دست نیست&nbsp; و بنابراین، گنبد ساقه بلند آن، اصالتاً
+ایلخانی محسوب می شود؛ و هر چند ماکسیم سیرو اصالت این اثر را ساسانی
+دانسته است&nbsp; اما نظر وی نیز تا به امروز فاقد اسناد
+و شواهد باستان شناختی بوده است. همچنین باید اشاره شود که گنبدهای
+مسجد دهستان قیرنا و مقبره در (درگاه) در نخجوان از گونه ساقه بلند
+است: که آنها را از اواخر دوره سلجوقی دانسته اند .</font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2"><strong>6.1 توسعه تزئینات کاشی کاری معرق</strong></font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">انواع و اقسام تزئینات آجرکاری و آراستن بنا با کتیبه
+های کوفی ساخته شده از آجر و یا گچ شاخص سنت معماری دوره سلجوقی به
+ویژه در خراسان است&nbsp; به همین سبب تحول در تزیین
+ابنیه، نقطه انتقال معماری سلجوقی به ایلخانی است؛ که تدریجاً از
+تزئینات آجرکاری به کاشی کاری تغییر یافته و بر کاشی کاری معرق یا
+نقوش گیاهی و هندسی و یا کتیبه، تاکید می شود، توسعه تزئین بناها در
+دوران ایلخانان به معماری این دوره، تشخص، شخصیت و استقلال بخشید . گچ بری و کاشی کاری دو عنصر اولیه زینت در
+دوره ایلخانی اند؛ که نمونه ی اعلای آن گنبد سلطانیه است ، جهش معماری در عهد ایلخانی و با تاکیدی که بر
+تزئین بنا شده است، به رواج کاشی کاری انجامید . دوره ایلخانی، عصر برتری کاشی کاری، توسعه صنعت
+کاشی و گسترش فراگیر کاشی های معرق و زرین فام بود. تبریز از مراکز
+مهم صنعت کاشی سازی شد و صنایع سلطانیه در تولید کاشی زرین فام با
+کاشان به رقابت برخاست.</font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">کاشی کاری مقبره مومنه خاتون در نخجوان نشان می دهد که
+این صنعت شتابان ترقی کرد و در آخر قرن ششم هجری قمری رونق یافت؛ تا
+اینکه در آذربایجان عهد ایلخانی مورد توجه معماران قرار گرفت . یاقوت حموی، که مقارن حکومت ایلخانان از تبریز دیدار
+کرده است، به کاشی کاری های زیبای منازل تبریزیان اشاره دارد .</font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2"><strong>7.1 توسعه تزئینات گچ بری</strong></font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">گچ بری در عهد ایلخانی توسعه فراگیر یافت اوج شکوه هنر
+گچ بری این زمان را باید در محراب ها جستجو کرد. صنعت محراب سازی عصر
+ایلخانی از دو عنصر تزئینی کاشی کاری و گچ بری بهره گرفته است. خطوط و
+کتیبه ها بر زیبایی و جذابیت محراب های گچ بری شده می افزاید؛ که
+محراب اولجایتوی مسجد جمعه اصفهان از زیباترین نمونه های شاخص آن است&nbsp; اما باید اشاره شود که نمونه هایی مثل محراب اولجایتو
+(710 هـ ق) اساساً سرمشق هایی آذاربایجانی دارند؛ مثل محرابهای گچ بری
+شده یا کتیبه های کوفی و رقاع و نقش مایه های هندسی پرکار در مساجد
+جمعه تبریز، مرند و ارومیه، به نظر می رسد که محراب مسجد جامع تبریز
+(حدود 600 هـ ق) سرمشق محراب های مساجد جامع ارومیه (676 ه.ق) و مرند
+(731 هـ ق) بوده است <br></font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">همانطور که اشاره و تاکید شد، آذربایجان منشا و نقطه
+حرکت تحولات معماری و پویش های هنری ایران عهد ایلخانی - تیموری بوده
+است. شیوه های معماری که در اینجا برای آنها اصطلاح سبک آذربایجانی
+پیشنهاد شده و بر معماری ایران و ترکستان در دوران ایلخانان و
+تیموریان سایه افکنده است خود برایند پویش مکاتب معماری نخجوان و
+تبریز به حساب می آید.</font></p><p dir="RTL" align="center"><font color="#CC0000"><b><font size="2">مسجد جامع ( بی بی خاتون ) یا مسجد تیمور سمرقند</font></b></font></p><p dir="RTL" align="center"><font size="2"><font color="#CC0000"><b>به شیوه معماری آذربایجان در عهد تیموری</b></font></font></p><p dir="RTL" align="center"><img src="http://s6.picofile.com/file/8206427442/1.jpg" alt="معماری آذربایجان" align="bottom" height="785" hspace="0" border="0" vspace="0" width="499"></p><p dir="RTL" align="center"><img src="http://s3.picofile.com/file/8206427492/3.jpg" alt="معماری آذربایجان" align="bottom" height="386" hspace="0" border="0" vspace="0" width="501"></p><h2 dir="RTL" align="center"><font size="2">مکتب نخجوان</font></h2><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">مکتب نخجوان، که در اواخر عهد سلجوقی در امیرنشین نخجوان
+پدیدار شد، با شاهکارهای معمار عجمی ابن ابوبکر نخجوانی شناخته می
+شود؛ که شناسه های آن عبارت است از عناصر تزیینی پرکار، تکتونیک، ساخت
+سردرهایی بلند با یک جفت مناره استوار بر بام آن و طراحی و ساخت
+مجموعه های معماری&nbsp; عجمی نخجوانی مجموعه های معاری اش را از ترکیب
+یک مسجد با یک آرامگاه برجی شکل و یک سردر ورودی با یک جفت مناره می
+ساخت؛ که گاهی بدان ها یک خانقاه نیز اضافه می شد.<br>عجمی در تزیین این مجموعه ها به کاربرد طاق نماهای عجمی یا عجمانه،
+کاشی معقلی و نقش مایه های پرتکلف هندسی و نیز بالاگرایی و رفعت و
+عظمت بسیار گرایش داشت . مکتب نخجوان سرآغازی بر ساخت مجموعه های معماری و الحاق یک جفت مناره
+بر سردر اصلی بناهای مذهبی و پیوستگی مناره به کالبد بنا در معماری
+دوران ایلخانان است. مجموعه مومنه خاتون در نخجوان سرمشق این ویژگیها
+است.</font></p><p dir="RTL" align="center"><font size="2">&nbsp;از شیوه افراشتن یک سردر بلند یا یک جفت مناره سوار بر راس آن،
+که در مومنه خاتون و قره باغ لار نخجوان مشاهده می شود&nbsp;</font></p><p dir="RTL" align="center"><font size="2"> بعدها در طراحی و ساخت سردرهای مساجد اشترجان،
+جامع یزد، سلطان بخت آغای اصفهان و نیز گور میر سمرقند اقتباس شده
+است. در مکتب نخجوان همانند شیوه معماری رایج در عهد سلاجقه، بر
+آجرکاری و تزیینات آجری تاکید شده است: اما در اینجا آجرکاری با کاشی
+کاری معقلی ترکیب شده و عنصر کاشی نمود بیشتری یافته است؛ و همین نقطه
+آغازین تحولات کاشی کاری در مکتب معماری تبریز است. در حقیقت، توسعه
+کاشی کاری معرق در معمار عجمی نخجوانی در تزیین نمای معماری اسلامی
+ایران، که با مکتب معماری تبریز آغاز شد، ریشه در مکتب نخجوان دارد
+برج مومنه خاتون (582 ه ق)</font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">&nbsp;بر تزیینات کاشی در کنار تزیینات آجری تاکیدی وافر
+اداشته است؛ که بدان ها تکنیک کاشی کاری معقلی یا نگین می گویند و
+عبارت است از نشاندن کاشی های ساده فیروزه ای و لاجوردی بر متنی آجری . البته چگونگی و کیفیت کاربرد کاشی، فصل ممیز مکتب نخجوان از
+تبریز است.</font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>مسجد کبود تبریز <br></b></font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>&nbsp;مثالی از معماری سبک آذربایجان از عهد ایلخانی - تیموری برای قره قویونلو<br></b></font></p><p dir="RTL" align="center"><img src="http://s3.picofile.com/file/8206428142/17.jpg" alt="معماری آذربایجان" align="bottom" height="365" hspace="0" border="0" vspace="0" width="499"></p><p align="center"><font size="2">در مکتب تبریز، فن کاشی کاری معرق بر آجرکاری غلبه یافت؛ که گنبد
+سلطانیه و مسجد کبود نمونه های اعلای آن است؛ اما از کاشی کاری های
+پرتکلف مجموعه معماری علیشاه تبریزی و همچنین غازانیه صرفاً روایات
+تاریخی بازمانده است ، فن کاشی کاری نگین
+با معقلی در سه مسجد زوزن و فرومد و گناباد نیز مشاهده می شود &nbsp;که هر سه بین سالهای 600&nbsp;تا 609 هـ ق در خراسان ساخته شده اند نظر به تقدم زمانی و پیشگامی مجموعه مومنه خاتون
+بر این سه مسجد زیبای خراسانی، به نظر می رسد که معماران خراسانی از
+سرمشق های آذربایجانی پیروی کرده اند. البته باید اشاره و تاکید کرد
+که سابقه و قدمت فن کاشی کاری نگین اصالتاً به مراغه عهد سلجوقی می
+رسد؛ جایی که نمونه های کاشی کاری نگین به رنگ فیروزه ای بر پیشانی
+درگاه گنبد سرخ (542 ه ق) و برج مدور (563 ه ق) مشاهده می شود &nbsp;البته از گنبد خواجه اتابک در کرمان نیز کاشی کاری نگین
+گزارش شده است</font></p><p dir="RTL" align="center"><font size="2">اما نظر به فقدان کتیبه و سنگ مزار در این بنا و صرف
+انتساب این مقبره به خواجه اتابک وزیر دربار سلاجقه نمی توان به یقین
+اظهار نظر قطعی کرد؛ و به احتمال بسیار منشا و مبدا فن کاشی کاری همان
+مراغه بوده است: با این حال، برج مومنه خاتون در نخجوان (582 ه ق)</font></p><p align="center"><font size="2">از نمونه های عالی، ممتاز و بدیع ترکیب آجرکاری هندسی و گره بندی
+های آجری با کاشی های نگین در معماری ایرانی است؛ که معمار گنبد کبود
+مراغه (592 ه ق) حداکثر تلاش خویش را به کار بسته است تا بدان نزدیک
+شود، ساخت گنبدهای ساقه بلند از دیگر نکات قابل تامل و شایان توجه
+درباره خصوصیات مکتب معماری نخجوان است: طراحی&nbsp; وساخت مسجد قیرنا
+و مقبره در (درگاه) در نخجوان، که هر دو گنبد ساقه بلند داشته اند، به
+معمار عجمی نخجوانی منسوب شده است. اگر این انتساب
+درست و قابل تایید باشد آنگاه گنبد ساقه بلند باید از دیگر نوآوریها و
+ابداعات معمار عجمی نخجوانی معرفی شود!</font></p><p align="center"><font size="2">در یک جمع بندی کلی، بالاگرایی و عظمت، الحاق مناره ها به کالبد
+بنا ساخت مجموعه معماری، تزیینات عجمانه، تکثر و تکلف نقشمایه های
+هندسی و کاشی کاری که در مکتب معماری تبریز مشاهده می شود از مکتب
+نخجوان به ارث رسیده است.</font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>آرامگاه و تربت </b></font><font color="#CC0000" size="2"><b>خواجه ابونصر پارسا در بلخ <br></b></font></p><p dir="RTL" align="center"><font size="2">
+
+</font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>ساخته شده در دوره تیموریان به سبک معماری آذربایجان</b></font></p><p dir="RTL" align="center"><img src="http://s6.picofile.com/file/8206427676/7.jpg" alt="معماری آذربایجان" align="bottom" height="413" hspace="0" border="0" vspace="0" width="499"></p><h2 dir="RTL" align="center"><font size="2">مکتب تبریز</font></h2><p dir="RTL" align="center"><font size="2">مکتب تبریز با عصر اصلاحات غازانی آغاز می شود و از این
+هنگام است که دو ویژگی عظمت و آراستگی شکوه مند در معماری ایرانی پدید
+می آید. در کنار کاشی کاری گسترده سطوح و گچ بری و تزیین بناها یا
+خوشنویسی و خطاطی باید بر رفعت، عظمت و سترگی ابنیه در مکتب تبریز
+اشاره شود. گنبد غازانیه، گنبد سلطانیه، مجموعه جامع علیشاه و مجموعه
+رشیدیه نمایندگان این مکتب اند . لازم به
+توضیح است هنگامی که مکتب معماری تبریز در ترکستان و ماوراالنهر رواج
+می یابد، ویژگی بالاگرایی تنها در رفعت گنبدها و سردرها متجلی می
+شود.</font></p><p dir="RTL" align="center"><font size="2">پیوستن مناره ها به کالبد بنا میراث مکتب معماری نخجوان
+است؛ با این تفاوت که در مکتب نخجوان، مناره ها به صورت یک جفت سوار
+شده بر باام سردر اصلی (Portal) مجموعه معماری مشاهده می شود؛ اما در
+مکتب تبریز، مناره ها به صورت بلند، کشیده و مرتفع در طرفین پیش طاق
+یک طرح متقارن چهار ایوانی تجلی و تظاهر آشکار می یابند؛ که جنبه بصری
+بسیار قوی داشته و حس شوکت، رفعت و عظمت را در بیننده القا می کند، که
+بر مبنای مطالعات باستان شناختی درباره ارک علیشاه تبریز، این اسلوب
+باید از ابداعات علیشاه تبریزی بوده باشد . همچنین
+طراحی و ترکیب چند مناره ای، که نمونه عالی آن در گنبد سلطانیه مشاهده
+می شود و بعدها در مسجد جامع سمرقند و گور میر اقتباس شد، به علیشاه
+تبریزی منسوب است <br></font></p><p dir="RTL" align="center"><font size="2">تحول و تکامل پلان دو ایوانی خراسانی به چهار ایوانی
+آذربایجانی از مهمترین نقاط عطف در معماری عهد ایلخانی است که در مکتب
+تبریز حادث شد.&nbsp; با مراجعه به متون تاریخی درباره مسجد جامع علیشاه
+در تبریز در می یابیم که این پلان نیز باید از ابداعات علیشاه تبریزی
+باشد. پلان های مساجد ایرانی ما قبل ایلخانان، بالاخص در دوره سلجوقی،
+از گونه تک ایوانی است؛ که نمونه های شاخص آن عبارت است از مساجد جامع
+بروجرد، تبریز، اردستان، قزوین و گلپایگان .</font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>مجموعه غازانیه ( شنب غازان ) تبریز <br></b></font></p><p dir="RTL" align="center"><font size="2">
+
+</font><font size="2"></font><font size="2">
+
+</font><font size="2">
+
+</font></p><div align="center"><font color="#CC0000" size="2"><b>معماری آذربایجان در دوران ایلخانی</b></font></div><div align="center"><img src="http://s6.picofile.com/file/8206427976/12.jpg" alt="معماری آذربایجان" align="bottom" height="334" hspace="0" border="0" vspace="0" width="499"></div><div align="center"><p dir="RTL" align="center"><font size="2">سبک کلاسیک ایوان دار دوره سلجوقی، تک ایوانی است؛ و
+مسجد جمعه اصفهان و مسجد جامع اردستان در ابتدا تک ایوانی بودند . پلان هر دو مسجد نامبرده در گذر ایام از تک
+ایوانی به چهار ایوانی متحول شد؛ و هیچ کدام از آغاز طراحی و اجرای
+چهار ایوانی نداشتند .
+بنابراین سرآغاز طرح کلاسیک دو ایوانی به خراسان باز می گردد که سه
+مسجد زوزن و فرومد و گناباد با طراحی دو ایوانی در فاصله 600 تا 609 ه
+ق ساخته شدند&nbsp;</font></p><font size="2"></font><font size="2">و همین سه مسجد سرمشق و الگوی معماران مکتب تبریز برای
+آفرینش پلان متقارن چهار ایوانی شدند؛ که اولین نمونه آن باید جامع
+علیشاه تبریزی باشد. همچنین، به طور کلی، معماری مساجد و ابنیه دینی
+آذربایجان تا دوره ایلخانی با پلان ایوان دار و پلان ستون دار (عربی)
+بیگانه است و مساجد فضاهایی تک محوری اند که مثال های شاخص آن عبارتند
+از: مسجد قیرنا، مساجد جامع تبریز، محمدیا سینیق قلعه باکو، ارومیه،
+سجاس و نخجوان و مساجد مجموعه های مومنه خاتون و قره باغ لار . بنابراین ظهور پلان ایوان دار در آذربایجان عهد
+ایلخانی تاثیر بسیار قوی و آشکار معماری خراسانی است؛ که سرمشق های
+شناخته شده آن مساجد زوزن فرومد و گناباد است.</font><p dir="RTL" align="center"></p><font size="2"></font><p dir="RTL" align="center"><font size="2">نماسازی الحاقی و روسازی پوسته ای با آجر و گچ و کاشی
+کاری گسترده سطوح بنا از مشخصات بارز مکتب تبریز است که پیش از آن
+سابقه نداشت و صنعت و هنر کاشی کاری معرق با مکتب تبریز توسعه یافت.
+روی هم رفته می توان گفت کاشی های بناهایی که در مکتب تبریز ساخته شده
+اند به لحاظ فرم به دو گروه تقسیم می شوند: کاشی های تزیین حاشیه
+افریزها و چهار کنج و نیز کاشی هایی که همانند فرش سراسر دیوارها را
+می پوشانند، این کاشی ها شکل هشت ضلعی و صلیبی دارند و فضای خالی میان
+آنها را کاشی های ستاره ای پر می کنند.</font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>مسجد جامع ورامین <br></b></font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>نمونه زیبا از شیوه معماری آذربایجان در دوران ایلخانی</b></font></p><p dir="RTL" align="center"><img src="http://s6.picofile.com/file/8206428418/22.jpg" alt="معماری آذربایجان" align="bottom" height="386" hspace="0" border="0" vspace="0" width="501"></p><p dir="RTL" align="center"><font size="2">خانقاه پیرحسین باکویی - درناحیه قاضی محمد- مقبره بردعه
+و مسجد کبود را می توان بهترین و مناسبترین مثال و شاهد این ادعا
+آورد؛ کما اینکه هنر قالیبافی آذربایجان بر نقش مایه کاشی ها بسیار
+تاثیرگزار بوده است. . معماران ایرانی از شیوه
+تبریزی پوشاندن سطوح دیوارها به ویژه نماهای درونی بنا نه تنها در
+دوران ایلخانان استقبال کردند که در عهد تیموری نیز به ویژه در نمونه
+های عالی سمرقند، کاربرد این تکنیک دیده می شود. ابن بطوطه گزارش می
+کند که حیاط مسجد جامع علیشاه مفروش به مرمر و دیوارهای آن تماما کاشی
+کاری شده بود</font></p><p dir="RTL" align="center"><font size="2">در مکتب تبریز همچنین نشانه هایی از تاثیر مکتب معماری محلی شیروان
+دیده می شود. ساخت قوس هایی که شادروان پیرنیا آنها را قوس کلیل یا
+قوس آذری نامیده است&nbsp; در اصل، میراث مکتب
+شیروان است</font></p><p dir="RTL" align="center"><font size="2">&nbsp;سابقه تزیینات گچ بری درون ابنیه&nbsp; بالاخص
+محراب ها نیز به مکتب شیروان می رسد. در عد ایلخانی کاربرد سنگ
+تراشیده تنها در بناهای آذربایجان مشاهده می شود؛ که از نمونه های
+شاخص آن مسجد سنگی ترک در میانه است .</font><font size="2"> کاربرد تزیینات سنگ بری در معماری دوران ایلخانی -
+تیموری نیز از مکتب شیروان به ارث رسیده است؛ که نمونه های عالی و
+اعلای آن در این دوران را به صورت حجاری آیات قرآنی سوره نبا به خط
+ثلث بر روی سنگ مرمر در مسجد کبود مشاهده می کنیم.</font></p><div align="center">
+
+</div><p dir="RTL" align="center"><font size="2">طاق نماهای عجمی یا عجمانه و نیز طاق نماهای قطعه ای یا
+نقول قطعه ای از دیگر تکنیک های تزیینی اند که در مکتب نخجوان پدید
+آمدند؛ اما در مکتب تبریز نهادینه شدند؛ که نمونه های عالی آنها در
+ارک علیشاه تبریز مشاهده می شدند</font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>آرامگاه سلطان بخت آغا اصفهان</b></font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>با کاشی های فیروزه ای و لاجوردی اقتباسی از معماری آذربایجان</b></font></p><p dir="RTL" align="center"><img src="http://s3.picofile.com/file/8206428342/21.jpg" alt="معماری آذربایجان" align="bottom" height="332" hspace="0" border="0" vspace="0" width="501"></p><p dir="RTL" align="center"><font size="2">عجمی یا عجمانه (برگرفته از نام معمار عجمی نخجوانی)
+گونه ای از تزیینات نقل به شکل طاق جناغی با خیز زیاد و عرض کم است که
+با فنون آجرکاری و یا گچ بری می سازند . ارک
+علیشاه تبریز دارای بهترین نمونه های تزیینات عجمی است؛ که تا به
+امروز نیز بر جای مانده اند , اما متاسفانه دو طاق نمای
+قطعه ای آن، که دارای کتیبه کوفی الصلوه الامعراج المومن بودند، در
+سال 1360ه.ش تخریب و برای همیشه نابود شدند.</font></p><p dir="RTL" align="center"><font size="2">مجموعه های رشیدیه، غازانیه، سلطانیه و علیشاه تبریزی
+نمونه های شاخص و کلاسیک مکتب تبریز بر مبنای متون تاریخی و مشاهدات
+باستان شناختی اند. از مجموعه رشیدیه یا ربع رشیدی و غازانیه و شنب
+غازان/ شام غازان متاسفانه چیزی بر جای نمانده است و آنها را صرفاً بر
+پایه روایات تاریخی می شناسیم تا کاوش های باستان شناختی، بر مبنای
+متون تاریخی همین قدر می دانیم که رفعت، عظمت و کاشی کاری معرق و
+حجاری خطوط ثلث و باغ سازی ایرانی در غازانیه و رشیدیه نمودی آشکار
+داشته است .&nbsp; بررسی تحلیلی نتایج کاوش های باستان شناختی در ارک
+علیشاه تبریز نشان داده است که این اثر در اصل یک بنای آرامگاهی
+ناتمام با طرح یک ایوان بسیار بلند و رفیع در صحن مجموعه جامع علیشاه
+بوده است؛ که در طرفین پیش طاق آن، دو مناره بلند با ارتفاع بیش از 36
+متر افراشته بودند . بنابراین درباره مسجد علیشاه تبریزی چیزی بیش از روایات
+تاریخی نمی دانیم؛ و این که طرحی چهار ایوانی با صحن مرکزی دارای باغ
+- احتمالا طرح ایرانی؟- داشته وبه کاشی کاری معرق و محراب مزین و
+پرتکلف و مناره های تنومند طرفین پیش طاق آراسته بوده است.</font></p><p dir="RTL" align="center"><font size="2">البته بر پایه کاوشها چنین استنباط می شود که طرح اجرای
+یک گنبد ساقه بلند در محوطه شمالی ارک علیشاه در دست اقدام بوده است .</font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>مسجد اشترجان اصفهان </b></font><font color="#CC0000" size="2"><b><br></b></font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>مربوط به دوره ایلخانی به سبک معماری آذربایجان</b></font></p><p dir="RTL" align="center"><img src="http://s6.picofile.com/file/8206428250/19.jpg" alt="معماری آذربایجان" align="bottom" height="767" hspace="0" border="0" vspace="0" width="499"></p><p dir="RTL" align="center"><font size="2">گنبد سلطانیه یا ابواب البر خاقانی / اولجایتو، محوریت و
+مرکزیت یک مجموعه معماری دینی و حکومتی پرتکلف بوده است. گنبد سلطانیه
+بر مبنای تحلیل فضایی و پلان، شواهد باستان شناختی و اسم و عنوانی که
+داشته است، آرامگاه اولجایتو پنداشته می شود.<b> </b>کاشی کاری معرق پرتکلف، گچ بری های پر نقش و نگار، اجرای
+خطوط ثلث، رفعت و عظمت، اجرای قوسهای آذری و ترکیب بندی چند مناره ای
+از مشخصات گویای مکتب تبریز است که در این شاهکار معماری نمود عینی
+دارند . طراحی و ساخت این اثر نیز به علیشاه تبریزی منسوب است</font></p><h2 dir="RTL" align="center"><font size="3">نتیجه گیری</font></h2><p dir="RTL" align="center"><font size="3">سبک آذربایجانی، معرف خصوصیات و شیوه های معماری ایرانی
+در سده های هفتم و هشتم هجری قمری است؛ که با شناسه هایی یازده گانه
+از شیوه های معماری عصر سلجوقی خراسان - ماوراءالنهر متمایز می شود؛
+این سبک بر مبنای آموزه ها و تجارب مکاتب تبریز و نخجوان و در پیوند
+با فرم متقارن دو ایوانی خراسانی شکل گرفته است؛ که این آفرینش هنری،
+برآیند پیوندهای فرهنگی - اجتماعی ایران بزرگ از آذربایجان تا خراسان
+بزرگ بوده است.</font></p><p dir="RTL" align="center"><font size="3">دامنه تاثیرات سبک معماری آذربایجان تا خراسان و ترکستان
+دوره تیموری و مصر عهد ممالیک امتداد یافت. حضور سبک معماری
+آذربایجانی در خراسان و ترکستان پایدار بود؛ به طوری که شیوه های
+معماری دوره متقدم تیموری ادامه راه و سنت هایی است که از آذربایجان
+دوران ایلخانان برآمده بودند.</font></p><p dir="RTL" align="center"><font size="3">باید توجه کرد که در دوره تیموری در ترکیب بندی مناره
+ها، تکنیک ساخت گنبد و کاشی کاری تحول چندانی پدید نیامد؛ و معماری
+دوره تیموری صرفا ادامه راهی بود که معماران ایرانی از تبریز آغاز
+کرده بودند.</font></p><div align="center"><font color="#CC0000" size="2"><b>مقبره شیخ عبدالصمد اصفهانی صوفی مشهور ایلخانی در نطنز</b></font></div><p dir="RTL" align="center"><font size="2">
+
+</font><font size="3">
+
+</font><font size="3">
+
+</font><font size="3">
+
+</font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b><span class="mw-mmv-title">با شیوه زیبای معماری آذربایجان</span></b></font></p><p dir="RTL" align="center"><img src="http://s6.picofile.com/file/8206428442/23.jpg" alt="معماری آذربایجان" align="bottom" height="675" hspace="0" border="0" vspace="0" width="501"></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>همچنین میتوان به سه گنبد و مسجد جامع سلجوقی شهر ارومیه</b></font><br></p><p dir="RTL" align="center"><img src="http://tabrizlinks.persiangig.com/image/azar/093azar/memari azeri/urmia.JPG" alt="مسجد جامع ارومیه" align="bottom" height="374" hspace="0" border="0" vspace="0" width="500"><font color="#CC0000" size="2"><b><br></b></font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b>یا مسجد جامع سلجوقی اردبیل</b></font></p><p dir="RTL" align="center"><font color="#CC0000" size="2"><b><img src="http://tabrizlinks.persiangig.com/image/azar/093azar/memari azeri/57852480%20%287%29.jpg" alt="مسجد جامع اردبیل" align="bottom" height="370" hspace="0" border="0" vspace="0" width="501"></b></font></p><p dir="RTL" align="center"><font color="#CC0000"><b><font size="2">و یا به گنبدهای تاریخی شهر مراغه مانند گنبد غفاریه، گنبد سرخ، گنبد کبود، گنبد مدور و... از دوره سلجوقی و ایلخانی اشاره کرد.</font></b></font></p><p dir="RTL" align="center"><img src="http://tabrizlinks.persiangig.com/image/azar/093azar/memari azeri/marage.JPG" alt="گنبدهای مراغه" align="bottom" height="357" hspace="0" border="0" vspace="0" width="500"></p><p dir="RTL" align="center"><font size="3">بنابراین شایسته است که به جای اصطلاحات نادرست ایلخانی
+- تیموری و آذری از اصطلاح <font color="#CC0000"><b>سبک معماری آذربایجان</b></font> استفاده شود؛ که اساس
+و مبنای آن چشم انداز پیوندهای فرهنگی - اجتماعی ایرانیان در بستر
+تاریخ و آفرینش های هنری برآمده از همین تعاملات تنگاتنگ و دو سویه
+است. سبک معماری آذربایجانی، که نقطه اوج و تکامل آن مکتب تبریز است،
+در تاریخ فرهنگ و هنر ایران زمین نقطه تکامل سبک خراسانی سده های
+چهارم تا ششم هجری قمری و زمینه ساز و مقدمه پیدایش اسلوب معماری عهد
+صفوی است.</font></p><p dir="RTL" align="right"><b>نویسنده مقاله : بهرام آجورلو ،
+استادیار باستان شناسی دانشگاه هنر اسلامی تبریز</b></p><p dir="RTL" align="right"><b>نویسنده مطلب: دنیز قارتال</b></p><p dir="RTL" align="right"><span style="background-color: rgb(255, 255, 204);"><font size="2"><b><a href="../769.html" target="_blank" title=""><b>لینک پست </b>مکتب نگارگری تبریز</a></b></font></span></p><p dir="RTL" align="right"><span style="background-color: rgb(255, 255, 204);"><font size="2"><b><a href="../879.html" target="_blank" title="">لینک پست شنب غازان تبریز</a></b></font></span></p><p dir="RTL" align="right"><span style="background-color: rgb(255, 255, 204);"><font size="2"><b><a href="../388.html" target="_blank" title="">لینک پست گنبد سلطانیه زنجان</a></b></font></span></p></div></div></div></div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+								<br />						<br />
+						دسته بندی : 						<a href="../category/2.html" title="ایران" >ایران</a> , 						<a href="../category/3.html" title="آذربایجان" >آذربایجان</a> , 						<a href="../category/18.html" title="* میراث،تاریخ،صنایع دستی آذربایجان" >* میراث،تاریخ،صنایع دستی آذربایجان</a> , <br />						برچسب ها :   						<a href="../tag/شیوه&#32;آذری.html" title="شیوه آذری" >شیوه آذری</a> , 						<a href="../tag/معماری&#32;ایرانی.html" title="معماری ایرانی" >معماری ایرانی</a> , 						<a href="../tag/سبک&#32;معماری.html" title="سبک معماری" >سبک معماری</a> , 						<a href="../tag/ایلخانی.html" title="ایلخانی" >ایلخانی</a> , 						<a href="../tag/ابنیه&#32;های&#32;تاریخی.html" title="ابنیه های تاریخی" >ابنیه های تاریخی</a> , 						<a href="../tag/معماری&#32;اسلامی.html" title="معماری اسلامی" >معماری اسلامی</a> , 						<a href="../tag/معماری&#32;سنتی.html" title="معماری سنتی" >معماری سنتی</a> , <br />												<div style="text-align:center;"><br />
+									<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+									<script language="javascript">$rating_widget_type='thumb';$rating_widget_theme=7;$rating_widget_color='FFFFFF';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/942';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/voting/widgets/rating.js"></script>
+									<!-- END Parstools.com RATING WIDGET CODE --> 
+						</div>		
+		</div>
+		<br clear="all">
+	</div>
+	<div class="morelink"><div class="morein">
+		<span class="argmore"><a href="../942.html" title="سبک معماری آذربایجان"><b>ادامه مطلب ...</b></a></span>
+		<span class="arg">نظرات: (<a target="_self" href="javascript:newComment(942)"><script>setCommentCnt(942)</script></a>)</span>
+		<div class="ratebox"><div id='ratig-layer-1'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+
+		<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+							<script language="javascript">$rating_widget_type='rate';$rating_widget_theme=10;$rating_widget_color='F3F6F8';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/942';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/rating/widgets/rating.js"></script>
+		<!-- END Parstools.com RATING WIDGET CODE -->
+
+		</ul>
+</div></div></div>
+	</div></div>
+</div>
+<div class="hsep"></div>
+     	
+<div class="base shortstory">
+	<div class="shd">
+		<h1><a href="../801.html" title="مَهسَتی گنجوی">مَهسَتی گنجوی</a></h1>
+	</div>
+	<div class="shdinfo"><div class="shdin">
+
+		<span class="arg">نویسنده : <a href="1218364.html">دنیز قارتال</a></span>
+		<span class="date"><img src="http://tem.parstools.com/skyback/images/date.png" alt="">سه شنبه 23 دی 1393, 05:05 ب.ظ</span>
+	</div></div>
+	<div class="maincont">
+		<div style="padding-right:10px;">
+		
+		 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div align="center"><br><img src="http://s4.picofile.com/file/8163222200/18.jpg" alt="مهستی گنجوی" vspace="0" border="0" align="bottom" hspace="0"></div><div align="center"><span style="background-color: rgb(255, 204, 204);"><br></span></div><div align="center"><font size="4"><span style="background-color: rgb(51, 0, 51);"><font color="#FFFFCC" face="tahoma,arial,helvetica,sans-serif"><b><font size="2" color="#996633"><span style="background-color: rgb(255, 255, 255);">« بانوی ادیب آذربایجان »</span></font><br></b></font></span></font></div><div align="center"><font size="5" color="#663333"><span style="background-color: rgb(255, 255, 204);"><b><span style="background-color: rgb(255, 255, 255);">« مَهسَتی گنجوی » </span><br></b></span></font></div><div align="center"><font size="5" color="#330033"><b><br></b></font></div><div align="center"><p align="center">
+<font size="3"><b>آذربایجان سرزمین کهنسالان است. <br></b></font></p>
+<p align="center"><font size="3">مهسَتی در سال 1096 میلادی در گنجه پا به دنیا نهاده است.</font>
+</p><p><font size="3">عمر مهستی در آثار ادبی و رباعیات همیشه جوانش ادامه دارد. مهسَتی در کنار 
+سخنوران نام‌آور قرن دوازدهم آذربایجان نظیر نظامی گنجوی و خاقانی شیروانی 
+چون ستاره‌ای می‌درخشد. اشعار وی طراوت نهصد سالهٔ خود را حفظ نموده، 
+امروز نیز مورد استقبال قرار می‌گیرد و شیفتگان جدیدی به دست می‌آورد.
+</font></p>
+<p>
+<font size="3">اطلاعات ما دربارهٔ سرگذشت شاعر کم است. در میان روایاتی که طی
+ قرون دربارهٔ وی شایع شده بسیاری از خطوط حقیقی شرح حالش به دست فراموشی 
+سپرده شده است. <br></font></p><p><img src="http://s4.picofile.com/file/8163586750/24.jpg" alt="مهستی گنجوی" width="466" vspace="0" border="0" align="bottom" hspace="0" height="296"></p><p><span style="font-size: medium;">علاوه بر طبع شعر موسیقی را خوب می‌دانست و شطرنجباز ماهری بود. وی در 
+ادبیات شرق مانند خیّام یکی از بزرگترین استادان رباعی شناخته شده است. 
+همسر مهسَتی «تاج‌الدین امیر احمد» نیز شاعر بود و با تخلص پورخطیب و ابن 
+خطیب شعر می‌سرود. نظیره‌ای که سنایی بر یکی از غزلیات وی ساخته دلیل با 
+ارزشی است بر شهرت پور خطیب در عالم شعر. یک رشته از اشعار مهسَتی به همین 
+پور خطیب منحصر شده است.</span></p><font size="3">
+</font><p><font size="3">
+ماجرای عشق آنان در کتاب مهستی و امیراحمد به قلم جوهری منعکس گردیده است. <b>
+نسخه‌های خطی این کتاب در انستیتوی نسخ خطی باکو، موزهٔ بریتانیا و 
+کتابخانهٔ جار الله ترکیه حفظ می‌گردند.
+</b></font></p><p><font size="3">مهسَتی در یکی از رباعیهایش خطاب به امیراحمد شهرتی را که با زیبایی و استعدادش به دست آورده چنین بیان می‌کند:
+</font></p><div align="center"><font size="3" color="#336666" face="tahoma,arial,helvetica,sans-serif">
+</font></div><p align="center"><font size="3" color="#336666" face="tahoma,arial,helvetica,sans-serif">
+<b>من مَهسـَتی‌ام بر همه خوبان شده طاق
+</b></font></p><div align="center"><font size="3" color="#336666" face="tahoma,arial,helvetica,sans-serif"><b>
+</b></font></div><p align="center"><font size="3" color="#336666" face="tahoma,arial,helvetica,sans-serif"><b>
+مشهور به حسن در خراسان و عراق
+</b></font></p><div align="center"><font size="3" color="#336666" face="tahoma,arial,helvetica,sans-serif"><b>
+</b></font></div><p align="center"><font size="3" color="#336666" face="tahoma,arial,helvetica,sans-serif"><b>
+ای پورخطیب گنجه از بهر خدا
+</b></font></p><div align="center"><font size="3" color="#336666" face="tahoma,arial,helvetica,sans-serif"><b>
+</b></font></div><p align="center"><font size="3" color="#336666" face="tahoma,arial,helvetica,sans-serif"><b>
+مگذار چنین بسوزم از درد فراق&nbsp;</b></font></p><p align="center"><font size="6" color="#003333"><span style="background-color: rgb(204, 255, 255);"><a href="../801.html" target="" title=""><font face="arial, helvetica, sans-serif"><b>«« ادامه مطلب »»</b></font></a></span></font></p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+								<br />						<br />
+						دسته بندی : 						<a href="../category/3.html" title="آذربایجان" >آذربایجان</a> , 						<a href="../category/16.html" title="* مشاهیر آذربایجان" >* مشاهیر آذربایجان</a> , <br />						برچسب ها :   						<a href="../tag/مهستی&#32;گنجه&#32;ای.html" title="مهستی گنجه ای" >مهستی گنجه ای</a> , 						<a href="../tag/مهستی&#32;گنجوی.html" title="مهستی گنجوی" >مهستی گنجوی</a> , 						<a href="../tag/مفاخر&#32;آذربایجان.html" title="مفاخر آذربایجان" >مفاخر آذربایجان</a> , 						<a href="../tag/Məhsəti&#32;Gəncəvi.html" title="Məhsəti Gəncəvi" >Məhsəti Gəncəvi</a> , 						<a href="../tag/رباعی.html" title="رباعی" >رباعی</a> , 						<a href="../tag/رباعیات&#32;مهستی&#32;گنجوی.html" title="رباعیات مهستی گنجوی" >رباعیات مهستی گنجوی</a> , 						<a href="../tag/شعر.html" title="شعر" >شعر</a> , <br />												<div style="text-align:center;"><br />
+									<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+									<script language="javascript">$rating_widget_type='thumb';$rating_widget_theme=7;$rating_widget_color='FFFFFF';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/801';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/voting/widgets/rating.js"></script>
+									<!-- END Parstools.com RATING WIDGET CODE --> 
+						</div>		
+		</div>
+		<br clear="all">
+	</div>
+	<div class="morelink"><div class="morein">
+		<span class="argmore"><a href="../801.html" title="مَهسَتی گنجوی"><b>ادامه مطلب ...</b></a></span>
+		<span class="arg">نظرات: (<a target="_self" href="javascript:newComment(801)"><script>setCommentCnt(801)</script></a>)</span>
+		<div class="ratebox"><div id='ratig-layer-1'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+
+		<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+							<script language="javascript">$rating_widget_type='rate';$rating_widget_theme=10;$rating_widget_color='F3F6F8';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/801';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/rating/widgets/rating.js"></script>
+		<!-- END Parstools.com RATING WIDGET CODE -->
+
+		</ul>
+</div></div></div>
+	</div></div>
+</div>
+<div class="hsep"></div>
+     	
+<div class="base shortstory">
+	<div class="shd">
+		<h1><a href="../800.html" title="آموزش زبان ترکی آذربایجانی (5)">آموزش زبان ترکی آذربایجانی (5)</a></h1>
+	</div>
+	<div class="shdinfo"><div class="shdin">
+
+		<span class="arg">نویسنده : <a href="1218364.html">دنیز قارتال</a></span>
+		<span class="date"><img src="http://tem.parstools.com/skyback/images/date.png" alt="">یکشنبه 23 آذر 1393, 06:30 ب.ظ</span>
+	</div></div>
+	<div class="maincont">
+		<div style="padding-right:10px;">
+		
+		 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div align="center"><br><br><img src="http://s5.picofile.com/file/8156721918/3.jpg" alt="درس پنجم" align="bottom" border="0" height="354" hspace="0" vspace="0" width="473"><br><br><br><font style="color: rgb(0, 0, 0); font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: -webkit-center; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" face="tahoma,arial,helvetica,sans-serif"><b><font size="5"><span style="font-size: medium;">هر میلتین اؤزونه مخصوص آنا دیلی وار کی، اونون مخصوص مالی‌ دیر .&nbsp; آنا دیلی میلتین معنوی دیری‌ لیگی‌ دیر، حیاتی‌ نین مایه‌ سی منزیله‌ سینده‌ دیر . آنانین سودو بدنین مایه‌ سی اولدوغو کیمی ، آنانین دیلی ده روحون قیداسی‌ دیر ، هر کس اؤز آناسینی و وطنینی سئودیگی کیمی ، آنا دیلینی ده سئویر .</span><br><span style="font-size: medium;">بو الله- تعالانین گؤزل نعمتلریندن بیری‌ سی‌ دیر ، اونو عزیز و مؤحترم توتماق هر کسه بورجدور .<br><br></span></font></b></font><br style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: -webkit-center; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);"><font style="color: rgb(0, 0, 0); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: -webkit-center; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" size="3" face="tahoma,arial,helvetica,sans-serif"><span style="font-size: medium;">از نظر زبانشناسان ، زبان ترکی زبانی است شکرین ، بغایت زیبا و دلنشین و اصیل و قانونمند با ریشه ای هزاران ساله. تمام قواعد و گرامر این زبان هنری و شکلی موزون و مبتنی بر ملودی است تا جائیکه بعضی زبانشناسان ، اختراع آنرا فوق بشری و اعجاز گونه و اعجاب انگیز خوانده اند.<br></span></font><font style="color: rgb(0, 0, 0); font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: -webkit-center; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" face="tahoma,arial,helvetica,sans-serif"><span style="font-size: medium;">زبان ترکی بعنوان کهنترین زبان دنیا با متکلمانی که شرق و غرب عالم را تحت حاکمیت خود درآورده بودند ، جا پائی در تمام زبانهای دنیا دارد. شاید زبانی وجود نداشته باشد که تحت تأثیر این زبان قرار نگرفته باشد. البته این تأثیر در کنار گستردگی جمعیتی و وسعتی حکومت ترکان ، ناشی از توانمندی و زیبائی و قانونمندی زبان ترکی نیز بوده است.<br><br><br></span></font><a href="../800.html" target="" title="درس پنجم آموزش زبان ترکی آذربایجانی در ادامه مطلب"><font color="#ff0000" size="3"><b style="background-color: rgb(255, 204, 153);">درس پنجم آموزش زبان ترکی آذربایجانی در ادامه مطلب&nbsp;</b></font></a><font style="color: rgb(0, 0, 0); font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: -webkit-center; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" face="tahoma,arial,helvetica,sans-serif"><span style="font-size: medium;"><span style="background-color: rgb(255, 204, 153);"><font color="#FF0000" size="4"><b><br><br><a href="../675.html" target="_blank" title=""><img src="http://s5.picofile.com/file/8156721976/%D8%A7%D9%88%D9%84.png" alt="درس اول" align="bottom" border="0" hspace="0" vspace="0"></a><br><br><a href="../704.html" target="_blank" title=""><img src="http://s5.picofile.com/file/8156721992/%D8%AF%D9%88%D9%85.png" alt="درس دوم" align="bottom" border="0" hspace="0" vspace="0"></a><br><br><a href="../729.html" target="_blank" title=""><img src="http://s5.picofile.com/file/8156722018/%D8%B3%D9%88%D9%85.png" alt="درس سوم" align="bottom" border="0" hspace="0" vspace="0"></a><br><br><a href="../766.html" target="_blank" title=""><img src="http://s5.picofile.com/file/8156722042/%DA%86%D9%87%D8%A7%D8%B1%D9%85.png" alt="درس چهارم" align="bottom" border="0" hspace="0" vspace="0"></a><br><br><br></b></font></span></span></font><img src="http://www.animaatjes.de/linien/linien-bilder/farben/36.gif" alt="Farben linien" id="TheImage" style="color: rgb(0, 0, 0); font-family: tahoma; font-size: 11px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: normal; orphans: auto; text-align: -webkit-center; text-indent: 0px; text-transform: none; white-space: normal; widows: auto; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" height="15" width="456"><br></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+								<br />						<br />
+						دسته بندی : 						<a href="../category/20.html" title="آموزش زبان ترکی آذربایجانی" >آموزش زبان ترکی آذربایجانی</a> , 						<a href="../category/11.html" title="* تورک سئسه لینک" >* تورک سئسه لینک</a> , <br />						برچسب ها :   						<a href="../tag/اسامی&#32;فصل&#32;ها&#32;در&#32;ترکی&#32;آذربایجانی.html" title="اسامی فصل ها در ترکی آذربایجانی" >اسامی فصل ها در ترکی آذربایجانی</a> , 						<a href="../tag/اعداد&#32;ترکی.html" title="اعداد ترکی" >اعداد ترکی</a> , 						<a href="../tag/آموزش&#32;زبان&#32;ترکی&#32;آذربایجانی.html" title="آموزش زبان ترکی آذربایجانی" >آموزش زبان ترکی آذربایجانی</a> , 						<a href="../tag/مکالمه&#32;ترکی.html" title="مکالمه ترکی" >مکالمه ترکی</a> , 						<a href="../tag/آموزش&#32;زبان.html" title="آموزش زبان" >آموزش زبان</a> , 						<a href="../tag/azeri.html" title="azeri" >azeri</a> , <br />												<div style="text-align:center;"><br />
+									<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+									<script language="javascript">$rating_widget_type='thumb';$rating_widget_theme=7;$rating_widget_color='FFFFFF';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/800';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/voting/widgets/rating.js"></script>
+									<!-- END Parstools.com RATING WIDGET CODE --> 
+						</div>		
+		</div>
+		<br clear="all">
+	</div>
+	<div class="morelink"><div class="morein">
+		<span class="argmore"><a href="../800.html" title="آموزش زبان ترکی آذربایجانی (5)"><b>ادامه مطلب ...</b></a></span>
+		<span class="arg">نظرات: (<a target="_self" href="javascript:newComment(800)"><script>setCommentCnt(800)</script></a>)</span>
+		<div class="ratebox"><div id='ratig-layer-1'><div class="rating" style="float:left;">
+		<ul class="unit-rating">
+
+		<!-- BEGIN Parstools.com RATING WIDGET CODE -->
+							<script language="javascript">$rating_widget_type='rate';$rating_widget_theme=10;$rating_widget_color='F3F6F8';$rating_widget_url='http://tabrizlinks.mihanblog.com/post/800';</script><script type="text/javascript" language="javascript" src="http://tools.parstools.com/rating/widgets/rating.js"></script>
+		<!-- END Parstools.com RATING WIDGET CODE -->
+
+		</ul>
+</div></div></div>
+	</div></div>
+</div>
+<div class="hsep"></div>
+     
+	
+
+
+<div class="hsep">
+		<center>
+						   					<a href="1218364/page/1.html">[ <b>1</b> ]</a> 
+			   					<a href="1218364/page/2.html">[ <span>2</span> ]</a> 
+			   					<a href="1218364/page/3.html">[ <span>3</span> ]</a> 
+			   					</center>
+</div>
+
+
+
+</div>
+						<br clear="all" />
+						<div class="footadblock">
+								
+							   								» <a href="../2.html">درباره تبریز و آذربایجان و اخبار  About and News</a> ( پنجشنبه 15 اسفند 1398 )<br />
+							  								» <a href="../1372.html">ویروس کرونا تهدیدی در ایران</a> ( پنجشنبه 8 اسفند 1398 )<br />
+							  								» <a href="../1371.html">نقاش و نگارگر استاد علی اصغر پتگر</a> ( جمعه 25 بهمن 1398 )<br />
+							  								» <a href="../1370.html">زینب پاشا بانوی رابین هود ایران</a> ( جمعه 18 بهمن 1398 )<br />
+							  								» <a href="../1369.html">خانه زیبا که به هتل بوتیک در تبریز تبدیل می‌شود</a> ( یکشنبه 6 بهمن 1398 )<br />
+							  								» <a href="../1368.html">بنیس شبستر ، روستای دانشگاهی بدون بیکار و بی سواد</a> ( چهارشنبه 25 دی 1398 )<br />
+							  								» <a href="../1367.html">برف زمستانی 1398 تبریز</a> ( پنجشنبه 19 دی 1398 )<br />
+							  								» <a href="../1364.html">اردبیل؛ سرزمین چشمه‌های بهشتی آذربایجان</a> ( شنبه 14 دی 1398 )<br />
+							  								» <a href="../1366.html">مشکلات صنعت کفش چرم دستدوز تبریز</a> ( چهارشنبه 4 دی 1398 )<br />
+							  								» <a href="../1365.html">شب خاطره ها چیلله گئجه‌سی </a> ( شنبه 30 آذر 1398 )<br />
+							  								» <a href="../1363.html">خلیل بحران طنز پرداز</a> ( چهارشنبه 20 آذر 1398 )<br />
+							  								» <a href="../1362.html">شهر شکی جمهوری آذربایجان</a> ( شنبه 9 آذر 1398 )<br />
+							  								» <a href="../1361.html">پاکبان و جدال با فاضلاب برای یک لقمه نان حلال</a> ( یکشنبه 3 آذر 1398 )<br />
+							  								» <a href="../1360.html">دوربین تبریز لینک 80 ( گردشی در اطراف بیلانکوه )</a> ( پنجشنبه 23 آبان 1398 )<br />
+							  								» <a href="../1359.html">پارک باغ‌شهر تبریز</a> ( دوشنبه 13 آبان 1398 )<br />
+							  								» <a href="../1358.html">مسجد حسن پاشا در انتظار احیا</a> ( جمعه 3 آبان 1398 )<br />
+							  								» <a href="../1357.html">شهر گمشده اوجان آذربایجان در راه احیا</a> ( جمعه 26 مهر 1398 )<br />
+							  								» <a href="../1356.html">عشایر شاهسون آذربایجان از اصالت تا زندگی شیرین</a> ( دوشنبه 15 مهر 1398 )<br />
+							  								» <a href="../1355.html">مصاحبه مینا خلیل‌ زاده فتحی برنده جایزه هوانوردی آمریکا</a> ( چهارشنبه 10 مهر 1398 )<br />
+							  								» <a href="../1354.html">چهار پروژه و نابودی چهار اثر تاریخی تبریز</a> ( پنجشنبه 4 مهر 1398 )<br />
+							  								» <a href="../1353.html">زووفان حیوانات تبریز</a> ( دوشنبه 25 شهریور 1398 )<br />
+							  								» <a href="../1352.html">تصاویر محمدحسن‌میرزا قاجار در دارالحکومه تبریز</a> ( چهارشنبه 20 شهریور 1398 )<br />
+							  								» <a href="../1351.html">دلیرمردی که سوختن ارسباران را برنتابید</a> ( دوشنبه 11 شهریور 1398 )<br />
+							  								» <a href="../1350.html">حوادث اشغال تبریز توسط ارتش سرخ در شهریور ۱۳۲۰</a> ( دوشنبه 4 شهریور 1398 )<br />
+							  								» <a href="../1349.html">شهروند لینک آذربایجانی 78 ( مهری نژاد ) </a> ( سه شنبه 29 مرداد 1398 )<br />
+							  								» <a href="../1348.html">سرگذشت دراماتیک امپراتوران مدرسه‌سازی مردانی آذر </a> ( شنبه 19 مرداد 1398 )<br />
+							  								» <a href="../1347.html">ضرورت احیا هتل قدیمی گراند و محله پاساژ تبریز</a> ( جمعه 11 مرداد 1398 )<br />
+							  								» <a href="../1346.html">ساعت به وقت گدایی در شهر بدون گدا تبریز</a> ( دوشنبه 31 تیر 1398 )<br />
+							  								» <a href="../1345.html">شهروند لینک آذربایجانی 77 ( آراز نویدی ) </a> ( جمعه 21 تیر 1398 )<br />
+							  								» <a href="../1344.html"> چهارمین جشنواره خلاقیت و نوآوری تبریز </a> ( پنجشنبه 13 تیر 1398 )<br />
+							  							
+						</div>
+					</div>
+				</div>
+				<div class="rcolomn rightside">
+					<span class="createbtn">
+					موضوعات
+					</span>
+					<br />
+
+					<div class="block bwho">
+
+					  								  									<a href="../category/1.html" >» تبریز (430)</a><br />	
+								 									<a href="../category/2.html" >» ایران (100)</a><br />	
+								 									<a href="../category/3.html" >» آذربایجان (423)</a><br />	
+								 									<a href="../category/4.html" >» متفرقه (127)</a><br />	
+								 									<a href="../category/5.html" >» ورزش آذربایجان (34)</a><br />	
+								 									<a href="../category/8.html" >» آپارات تبریز لینک (69)</a><br />	
+								 									<a href="../category/7.html" >» دوربین تبریز لینک (142)</a><br />	
+								 									<a href="../category/6.html" >» نتیجه نظرسنجی ها (26)</a><br />	
+								 									<a href="../category/9.html" >» شهروند لینک آذربایجانی (78)</a><br />	
+								 									<a href="../category/20.html" >» آموزش زبان ترکی آذربایجانی (19)</a><br />	
+								 									<a href="../category/12.html" >» English Tabriz WikiLinks (29)</a><br />	
+								 									<a href="../category/14.html" >» * پارکها و محیط زیست (71)</a><br />	
+								 									<a href="../category/13.html" >» * شهرستان لینک (134)</a><br />	
+								 									<a href="../category/16.html" >» * مشاهیر آذربایجان (128)</a><br />	
+								 									<a href="../category/15.html" >» * آرتاویل،اورمو،زنگان (91)</a><br />	
+								 									<a href="../category/11.html" >» * تورک سئسه لینک (135)</a><br />	
+								 									<a href="../category/10.html" >» * انتقاد،پیشنهاد لینک (201)</a><br />	
+								 									<a href="../category/19.html" >» * پروژه های عمرانی و شهری (61)</a><br />	
+								 									<a href="../category/18.html" >» * میراث،تاریخ،صنایع دستی آذربایجان (234)</a><br />	
+								 									<a href="../category/17.html" >» * دریاچه همیشه اورمیه Urmia Lake (23)</a><br />	
+								 									<a href="../category/21.html" >» * جمهوری آذربایجان Azərbaycan Republic (15)</a><br />	
+								 					  					</div>
+					<div class="block">
+						<h3>صفحات</h3>
+				   
+				    
+					<a href="../../extrapage/ancient.html" target="_blank">» آذربایجان باستان Ancient Azerbaijan</a><br />	
+				    
+					<a href="../../extrapage/azerbaijani_tradition.html" target="_blank">» اصالت نژاد رسوم آذربایجانی Tradition</a><br />	
+				    
+					<a href="../../extrapage/azerbaijan_news.html" target="_blank">» خبرگزاری و رسانه های آذربایجان news</a><br />	
+				    
+					<a href="../../extrapage/turk_tabrizlinks.html" target="_blank">» آتا بابا آذربایجان تورکم</a><br />	
+				    
+					<a href="../../extrapage/tourism_tabrizlinks.html" target="_blank">» گردشگری و توریسم Travel Tourism</a><br />	
+				    
+					<a href="../../extrapage/o_ses_azerbaijan.html" target="_blank">» O'Ses Azerbaijan - Sahand Music</a><br />	
+				    
+					<a href="../../extrapage/celebrities_azerbaijan.html" target="_blank">» مشاهیر، مفاخر، بزرگان آذربایجان Celeb</a><br />	
+				    
+					<a href="../../extrapage/carfts_azerbaijan.html" target="_blank">» صنایع دستی و سوغات آذربایجان crafts</a><br />	
+				    
+					<a href="../../extrapage/weather_azerbaijan.html" target="_blank">» هواشناسی تبریز ویکی لینکلر weather</a><br />	
+				    
+					<a href="../../extrapage/tourmovies_tabrizlinks.html" target="_blank">» ویدیو توریسم آذربایجان و تبریز WikiLinks Tourism movies</a><br />	
+				      
+									</div>
+
+					<div class="block btags">
+						<h3>لینکستان</h3>
+					 							 
+							<a href="http://tourism.tabriz.ir/" title=""  target="_blank">» سازمان گردشگری شهرداری تبریز    Tourism Development Organization of Tabriz Municipality</a><br />	
+						   
+							<a href="http://www.tabriztourist.com" title=""  target="_blank">» گردشگری آذربایجان شرقی - تبریز توریست</a><br />	
+						   
+							<a href="http://www.aparat.com/bayandir" title=""  target="_blank">» آپارات کارتونهای آذربایجانی</a><br />	
+						   
+							<a href="../../../kaleybarcity.mihanblog.com/index.html" title=""  target="_blank">» وبلاگ کلیبر سیتی (پریسا)</a><br />	
+						   
+							<a href="http://tabrizdownload.r98.ir " title=""  target="_blank">» وبسایت تبریز دانلود (هادی)</a><br />	
+						   
+							<a href="../../../khotbehsara.mihanblog.com/index.html" title=""  target="_blank">» آنایوردوم خطبه سرا</a><br />	
+						   
+							<a href="http://azarbook.blogfa.com/" title=""  target="_blank">» آذربایجان و پیرامون (عبدالحسین)</a><br />	
+						   
+							<a href="http://bayrambayani84.blogfa.com/" title=""  target="_blank">» وبلاگ بایرام (بیانی)</a><br />	
+						   
+							<a href="http://azadazarbaycan.arzublog.com/" title=""  target="_blank">» وبلاگ جانیم آزربایجان(elçi bəy)</a><br />	
+						   
+							<a href="http://mazqamet.blogfa.com/" title=""  target="_blank">» وبلاگ مازگامت</a><br />	
+						   
+							<a href="http://yeniqapi.com/" title=""  target="_blank">» یئنی قاپی</a><br />	
+						   
+							<a href="http://ishiq.net/" title=""  target="_blank">» سایت ادبیات ترکی ایشیق</a><br />	
+						   
+							<a href="../../../myabriz.mihanblog.com/index.html" title=""  target="_blank">» شهرمن تبریز (یاشار)</a><br />	
+						   
+							<a href="http://nazlibakhish.persianblog.ir/" title=""  target="_blank">» وبلاگ باخیش(شادی)</a><br />	
+						   
+							<a href="http://mohsen-behboudi.blogfa.com/" title=""  target="_blank">» وبلاگ سهند ما (محسن)</a><br />	
+						   
+							<a href="http://huseynvahedi.ir/" title=""  target="_blank">» خاطیره لر دوراغی (حسین واحدی)</a><br />	
+						   
+							<a href="http://sajjadsanm666.blogfa.com/" title=""  target="_blank">» صنم در اوج (سجاد)</a><br />	
+						   
+							<a href="http://shear.blogsky.com/" title=""  target="_blank">» وبلاگ اشعار ترکی آذری و فارسی</a><br />	
+						   
+							<a href="../../../govdil.mihanblog.com/index.html" title=""  target="_blank">» یوردوم ملکان</a><br />	
+						   
+							<a href="http://shahrimtabriz.blogfa.com" title=""  target="_blank">» وبلاگ تبریز شهر اولین ها (سعید)</a><br />	
+						   
+							<a href="http://sahandtopragi.blogfa.com/" title=""  target="_blank">» سهند توپراقی(جواد نجات)</a><br />	
+						   
+							<a href="../../../amlakgorbani.mihanblog.com/index.html" title=""  target="_blank">» املاک قربانی (اسپیران)</a><br />	
+						   
+							<a href="http://safidantabriz.blogfa.com/" title=""  target="_blank">» وبلاگ ینگی اسپیران (محمد)</a><br />	
+						   
+							<a href="http://www.tabrizli.lxb.ir/" title=""  target="_blank">» آنــــا یــوردوم تــبریــز(عبدا.. رضوی)</a><br />	
+						   
+							<a href="http://amegan.mihanblog.com/" title=""  target="_blank">» وبلاگ کشاورزی آمقانی اسکو(شوکتی)</a><br />	
+						   
+							<a href="http://www.goganim.blogfa.com/" title=""  target="_blank">» وبلاگ گوگان</a><br />	
+						   
+							<a href="../../linkdaily/index.html" title=""  target="_blank">» ....................................</a><br />	
+						   
+							<a href="http://www.artawilnews.blogfa.com" title=""  target="_blank">» وبلاگ اخبار اردبیل (فرزاد)</a><br />	
+						   
+							<a href="http://soleimanipour.blogfa.com/" title=""  target="_blank">» وبلاگ شهریمیز اورمو</a><br />	
+						   
+							<a href="http://www.digale.blogfa.com/" title=""  target="_blank">» دئیه لر(دیگاله)-اورمیه</a><br />	
+						   
+							<a href="http://khiyavtraxtorchi.blogfa.com/" title=""  target="_blank">» وبلاگ مشگین شهر (میلاد)</a><br />	
+						   
+							<a href="http://ardabil1354.blogfa.com/" title=""  target="_blank">» وبلاگ چشمه های بهشتی آرتاویل</a><br />	
+						   
+							<a href="http://www.irph.blogfa.com/" title=""  target="_blank">» پروژه های عمرانی ایران</a><br />	
+						   
+							<a href="http://www.mashhadtoday.ir/" title=""  target="_blank">» وبسایت مشهد امروز (اشکان)</a><br />	
+						   
+							<a href="http://shahrebehesht8.blogfa.com" title=""  target="_blank">» مشهد شهر بهشت (امیرحسین)</a><br />	
+						   
+							<a href="http://virr.blogfa.com/" title=""  target="_blank">» وبلاگ شهر خرم آباد</a><br />	
+						   
+							<a href="../../../www.haneberchem.mihanblog.com/index.html" title=""  target="_blank">» وبلاگ هورامان</a><br />	
+						   
+							<a href="http://welcome-to-borazjan.blogfa.com/" title=""  target="_blank">» وبلاگ برازجان (بوشهر)</a><br />	
+						   
+							<a href="http://www.amoozeshnima.blogfa.com/" title=""  target="_blank">» وبلاگ آموزش رانندگی</a><br />	
+						   
+							<a href="http://asemaneriz.blogfa.com " title=""  target="_blank">» هواشناسی ایرما</a><br />	
+						   
+							<a href="../../linkdaily/index.html" title=""  target="_blank">» ......................................</a><br />	
+						   
+							<a href="http://traxturnews.blogfa.com/" title=""  target="_blank">» وبلاگ گالری تراکتور</a><br />	
+						   
+							<a href="http://www.gftclub.ir" title=""  target="_blank">» وبسایت گسترش فولاد تبریز</a><br />	
+						   
+							<a href="http://www.mstfc.ir/" title=""  target="_blank">» وبسایت باشگاه ماشین سازی تبریز</a><br />	
+						   
+							<a href="http://www.tractor-club.com" title=""  target="_blank">» وبسایت رسمی باشگاه تراکتورسازی</a><br />	
+						   
+                            
+
+<a href="http://defaultlink2.com" title="لینک پیش فرض دوم"  target="_blank">» لینک پیش فرض دوم</a><br /><a href="http://defaultlink1.com" title="لینک پیش فرض اول"  target="_blank">» لینک پیش فرض اول</a><br />
+							<a href="../../link/index.html">» لیست لینک ها</a><br />
+											</div>
+					
+					<div id='vote-layer'>
+					
+		 </div>
+					
+				<div class="block">
+				<h3>لینکدونی</h3>
+            			     
+				 <a href="http://www.tabrizpedia.info" title="سلام
+دوستان عزیز با اجازه شما، با ذکر منبع از مطالبتون توی تبریز پدیا استفاده میکنم.
+لطفا لینک بزارین
+من به زودی بخشی با عنوان لینک فعالان تبریزی خواهم ساخت که تبریز ویکی لینکلر در راس لینکها قرار خواهد گرفت." target="_blank">» تبریز پدیا</a><br />
+			    
+				 <a href="../../linkdaily/index.html" title="لیست لینک ها">» لیست لینک ها</a><br />
+				 <a href="javascript:linkdailyForm()">+ ارسال لینک</a><br />		  
+						   </div>
+					
+				 <div class="block">
+				<h3>نویسندگان</h3>
+				 	   
+							   
+									<a href="944998.html">» تبریز قارتال (1155)</a><br />
+							   
+									<a href="1105799.html">» آذر قارتال (33)</a><br />
+							   
+									<a href="1218364.html">» دنیز قارتال (8)</a><br />
+							  				 				</div>
+									
+				 <div class="block">
+				<h3>کلمات کلیدی</h3>
+											 				
+							   <a href="../tag/شهرداری+تبریز.html" 
+								style="font-size:1.21em">
+									   شهرداری تبریز 
+							   </a>
+						 				
+							   <a href="../tag/تبریز.html" 
+								style="font-size:1.73em">
+									   تبریز 
+							   </a>
+						 				
+							   <a href="../tag/آذربایجان+شرقی.html" 
+								style="font-size:1.1em">
+									   آذربایجان شرقی 
+							   </a>
+						 				
+							   <a href="../tag/اردبیل.html" 
+								style="font-size:1.08em">
+									   اردبیل 
+							   </a>
+						 				
+							   <a href="../tag/دریاچه+ارومیه.html" 
+								style="font-size:1.01em">
+									   دریاچه ارومیه 
+							   </a>
+						 				
+							   <a href="../tag/سفر.html" 
+								style="font-size:1em">
+									   سفر 
+							   </a>
+						 				
+							   <a href="../tag/ارسباران.html" 
+								style="font-size:1.05em">
+									   ارسباران 
+							   </a>
+						 				
+							   <a href="../tag/میراث+فرهنگی+تبریز.html" 
+								style="font-size:1.11em">
+									   میراث فرهنگی تبریز 
+							   </a>
+						 				
+							   <a href="../tag/شعر+ترکی.html" 
+								style="font-size:1.03em">
+									   شعر ترکی 
+							   </a>
+						 				
+							   <a href="../tag/ترکی.html" 
+								style="font-size:1.09em">
+									   ترکی 
+							   </a>
+						 				
+							   <a href="../tag/اورمیه.html" 
+								style="font-size:1.01em">
+									   اورمیه 
+							   </a>
+						 				
+							   <a href="../tag/آذربایجان.html" 
+								style="font-size:2em">
+									   آذربایجان 
+							   </a>
+						 				
+							   <a href="../tag/Azerbaijan.html" 
+								style="font-size:1.12em">
+									   Azerbaijan 
+							   </a>
+						 				
+							   <a href="../tag/tabriz.html" 
+								style="font-size:1.29em">
+									   tabriz 
+							   </a>
+						 				
+							   <a href="../tag/گردشگری.html" 
+								style="font-size:1.25em">
+									   گردشگری 
+							   </a>
+						 	
+									</div>
+									
+				 <div class="block">
+				<h3>آمار بازدید</h3>
+				<br/>
+					کل بازدید ها : <script>getStatVar('total_view');</script><br/>
+					بازدید امروز : <script>getStatVar('today_view');</script><br/>
+					بازدید دیروز : <script>getStatVar('yesterday_view');</script><br/>
+					بازدید این ماه : <script>getStatVar('this_month_view');</script><br/>
+					بازدید ماه قبل : <script>getStatVar('last_month_view');</script><br/>
+					تعداد نویسندگان : <script>getStatVar('total_author');</script><br/>
+					تعداد کل مطالب : <script>getStatVar('total_post');</script><br/>
+					آخرین بروز رسانی : <script>getStatVar('modify_date');</script><br/>
+					
+				  				</div>
+				
+					<img src="http://tem.parstools.com/skyback/images/rightboxfoot.jpg" alt="" />
+
+
+
+
+
+
+
+
+<!-- start logo cod off http://tabrizdigilinks.mihanblog.com --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../../tabrizdigilinks.mihanblog.com/index.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/digi.jpg"  width="188" height="160" alt="تبریز دیجی لینکلر"></a></p><!--finish logo cod off http://tabrizdigilinks.mihanblog.com -->
+
+<!-- start logo cod off https://t.me/tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://t.me/tabrizlinks" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/telelinks.jpg"  width="188" height="150" alt="تلگرام تبریز ویکی لینکلر"></a></p><!--finish logo cod off https://t.me/tabrizlinkss -->
+
+
+<!-- start logo cod off https://instagram.com/tabrizlinks/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://instagram.com/tabrizlinks/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/insta_tabrizlinks.jpg"  width="188" height="160" alt=" اینستاگرام تبریز ویکی لینکلر"></a></p><!--finish logo cod off https://instagram.com/tabrizlinks/ -->
+
+<!-- start logo cod off http://www.aparat.com/sahandtv --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/sahandtv" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/aparatsahandtv.jpg"  width="188" height="150" alt=" آپارات شبکه سهند"></a></p><!--finish logo cod off http://www.aparat.com/sahandtv -->
+
+<!-- start logo cod off http://www.aparat.com/sahandmusic --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/sahandmusic" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/oses_aparat.jpg"  width="188" height="150" alt="آپارات سهند موزیک"></a></p><!--finish logo cod off http://www.aparat.com/sahandmusic -->
+
+<!-- start logo cod off http://www.aparat.com/sahandcartoon --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/sahandcartoon" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/aparatsahandcartoon.jpg"  width="188" height="150" alt="آپارات سهند کارتون"></a></p><!--finish logo cod off http://www.aparat.com/sahandcartoon -->
+
+<!-- start logo cod off http://www.aparat.com/sahandchef --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/sahandchef" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/ashpaziaparat.jpg"  width="188" height="150" alt="آشپزی آذربایجان"></a></p><!--finish logo cod off http://www.aparat.com/sahandchef -->
+
+<!-- start logo cod off http://www.aparat.com/tabriz_2018 --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.aparat.com/tabriz_2018" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/2018laparat.jpg"  width="188" height="150" alt="تبریز 2018"></a></p><!--finish logo cod off http://www.aparat.com/tabriz_2018 -->
+
+
+<!-- start logo cod off https://www.facebook.com/tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://www.facebook.com/tabrizlinks" rel=”nofollow”  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/facelinks.jpg"  width="188" height="160" alt="فیسبوک"></a></p><!--finish logo cod off https://www.facebook.com/tabrizlinks -->
+
+<!-- start logo cod off https://www.lenzor.com/tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://www.lenzor.com/tabrizlinks" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/lenzor.jpg"  width="188" height="150" alt="لنزور"></a></p><!--finish logo cod off https://www.lenzor.com/tabrizlinks -->
+
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/azerbaijan_news --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/azerbaijan_news.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/wikilinksnews.jpg"  width="188" height="160" alt="آذربایجان نیوز"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/azerbaijan_news -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/tourism_tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/tourism_tabrizlinks.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/wiki_tourism.jpg"  width="188" height="160" alt="توریسم و گردشگری"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/tourism_tabrizlinks -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/carfts_azerbaijan --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/carfts_azerbaijan.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/sogat.jpg"  width="188" height="160" alt="سوغات و صنایع دستی"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/carfts_azerbaijan-->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/weather_azerbaijan --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/weather_azerbaijan.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/weather2.jpg"  width="188" height="150" alt="هواشناسی آذربایجان"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/weather_azerbaijan -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/azerbaijani_tradition --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/azerbaijani_tradition.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/azari.jpg"  width="188" height="150" alt="اصالت و رسوم آذربایجان"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/azerbaijani_tradition -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/celebrities_azerbaijan --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/celebrities_azerbaijan.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/celebrity.jpg"  width="188" height="150" alt="مشاهیر"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/celebrities_azerbaijan-->
+
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/post/706 --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../706.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/first.jpg"  width="188" height="150" alt="اولین های تبریز"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/post/706 -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/turk_tabrizlinks --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/turk_tabrizlinks.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/turkman.jpg"  width="188" height="140" alt="ترکی آذربایجانی"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/turk_tabrizlinks -->
+
+<!-- start logo cod off http://tabrizlinks.mihanblog.com/extrapage/ancient --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="../../extrapage/ancient.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/ancientaz.jpg"  width="188" height="140" alt="تاریخ باستان"></a></p><!--finish logo cod off http://tabrizlinks.mihanblog.com/extrapage/ancient -->
+
+
+
+
+
+
+
+
+
+
+				</div>
+			</div>
+
+		</div>
+		<div class="lcolomn leftside">
+			<div class="leftvnavi"><div>
+				<ul class="reset">
+               		
+				 					<li><a href="../archive/1398/12.html"><b> اسفند 1398</b></a></li>
+									<li><a href="../archive/1398/11.html"><b> بهمن 1398</b></a></li>
+									<li><a href="../archive/1398/10.html"><b> دی 1398</b></a></li>
+									<li><a href="../archive/1398/9.html"><b> آذر 1398</b></a></li>
+									<li><a href="../archive/1398/8.html"><b> آبان 1398</b></a></li>
+									<li><a href="../archive/1398/7.html"><b> مهر 1398</b></a></li>
+									<li><a href="../archive/1398/6.html"><b> شهریور 1398</b></a></li>
+									<li><a href="../archive/1398/5.html"><b> مرداد 1398</b></a></li>
+									<li><a href="../archive/1398/4.html"><b> تیر 1398</b></a></li>
+									<li><a href="../archive/1398/3.html"><b> خرداد 1398</b></a></li>
+									<li><a href="../archive/1398/2.html"><b> اردیبهشت 1398</b></a></li>
+									<li><a href="../archive/1398/1.html"><b> فروردین 1398</b></a></li>
+									<li><a href="../archive/1397/12.html"><b> اسفند 1397</b></a></li>
+									<li><a href="../archive/1397/11.html"><b> بهمن 1397</b></a></li>
+									<li><a href="../archive/1397/10.html"><b> دی 1397</b></a></li>
+									<li><a href="../archive/1397/9.html"><b> آذر 1397</b></a></li>
+									<li><a href="../archive/1397/8.html"><b> آبان 1397</b></a></li>
+									<li><a href="../archive/1397/7.html"><b> مهر 1397</b></a></li>
+									<li><a href="../archive/1397/6.html"><b> شهریور 1397</b></a></li>
+									<li><a href="../archive/1397/5.html"><b> مرداد 1397</b></a></li>
+									<li><a href="../archive/1397/4.html"><b> تیر 1397</b></a></li>
+									<li><a href="../archive/1397/3.html"><b> خرداد 1397</b></a></li>
+									<li><a href="../archive/1397/2.html"><b> اردیبهشت 1397</b></a></li>
+									<li><a href="../archive/1397/1.html"><b> فروردین 1397</b></a></li>
+									<li><a href="../archive/1396/12.html"><b> اسفند 1396</b></a></li>
+									<li><a href="../archive/1396/11.html"><b> بهمن 1396</b></a></li>
+									<li><a href="../archive/1396/10.html"><b> دی 1396</b></a></li>
+									<li><a href="../archive/1396/9.html"><b> آذر 1396</b></a></li>
+									<li><a href="../archive/1396/8.html"><b> آبان 1396</b></a></li>
+									<li><a href="../archive/1396/7.html"><b> مهر 1396</b></a></li>
+									<li><a href="../archive.html"><b>نمایش تمام مطالب</b></a></li>
+							</ul>
+			</div></div>
+			<div class="lbox"><div class="lbox">
+				<div class="block btopnews">
+					<h3>درباره ما</h3>
+<center><div style="text-align:center"><img src="../../../static.mihanblog.com/public/user_data/web_photo/367/1100278.jpg@7485"  /></div></center>
+
+			<hr />
+			مجموعه تبریز ویکی لینکلر<br />
+  Tabriz WikiLinks<br />
+آغاز وبلاگ در آذر ماه 1391<br />
+*******************<br />
+<br />
+وبلاگ تبریز ویکی لینکلر  <br />
+Tabrizlinks.mihanblog.com <br />
+<br />
+وبلاگ تبریز دیجی لینکلر<br />
+Tabrizdigilinks.mihanblog.com <br />
+<br />
+اینستاگرام  تبریز ویکی لینکلر<br />
+Instagram.com/tabrizlinks <br />
+<br />
+فیس بوک تبریز ویکی لینکلر<br />
+Facebook.com/tabrizlinks <br />
+<br />
+شبکه ویدیویی نماشا تبریز لینک<br />
+Namasha.com/tabrizlinks<br />
+<br />
+آپارات ویدیویی شبکه سهند<br />
+Aparat.com/sahandtv <br />
+<br />
+آپارات ویدیویی سهند موزیک<br />
+Aparat.com/sahandmusic <br />
+<br />
+آپارات ویدیویی سهند کارتون<br />
+Aparat.com/sahandcartoon <br />
+<br />
+آپارات ویدیویی آشپزی آذربایجان<br />
+Aparat.com/sahandchef <br />
+<br />
+آپارات ویدیویی بازنشر تبریز 2018<br />
+Aparat.com/tabriz_2018<br />
+<br />
+کانال یوتیوب ویدیویی<br />
+youtube.com/tabrizlinks<br />
+<br />
+گالری لنزور تبریز ویکی لینکلر<br />
+Lenzor.com/tabrizlinks <br />
+<br />
+تلگرام تبریز ویکی لینکلر<br />
+https://t.me/tabrizlinks<br />
+@tabrizlinks<br />
+<br />
+		    <br />ایجاد کننده وبلاگ : <a href="944998.html">تبریز قارتال</a>
+				
+				<br /><br />
+				<center></center>
+				<br />
+
+				</div>
+			</div></div>
+			<div class="lboxfoot">
+				<div class="block bfriends">
+				
+					<ul class="reset">
+						
+
+
+
+
+<!-- start logo cod off https://www.google.com/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://www.google.com/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/goole.png"  width="172" height="120" alt="گوگل"></a></p><!--finish logo cod off https://www.google.com/ -->
+
+
+<!-- start logo cod off https://azb.wikipedia.org/wiki/%D8%A2%D9%86%D8%A7_%D8%B5%D9%81%D8%AD%D9%87 --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://azb.wikipedia.org/wiki/%D8%A2%D9%86%D8%A7_%D8%B5%D9%81%D8%AD%D9%87"  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/AZwikipedia.jpg"  width="172" height="140" alt="ویکی پدیا"></a></p><!--finish logo cod off https://azb.wikipedia.org/wiki/%D8%A2%D9%86%D8%A7_%D8%B5%D9%81%D8%AD%D9%87 -->
+
+<!-- start logo cod off http://kitablar.org/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://kitablar.org/"  rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/kitab.gif"  width="172" height="140" alt="کتاب ترکی"></a></p><!--finish logo cod off http://kitablar.org/ -->
+
+<!-- start logo cod off http://www.lehceler.com/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.lehceler.com/"  rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/turkdictionary.jpg"  width="172" height="140" alt="دیکشنری زبان ترکی"></a></p><!--finish logo cod off http://www.lehceler.com/ -->
+
+<!-- start logo cod off http://www.turuz.com/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.turuz.com/" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/Turuz_Sozlugu.jpg"  width="172" height="110" alt="دایره المعارف مجازی"></a></p><!--finish logo cod off http://www.turuz.com/ -->
+
+<!-- start logo cod off https://www.instagram.com/urmialake/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://www.instagram.com/urmialake/"  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/urmialake.JPG"  width="172" height="130" alt="دریاچه ارومیه"></a></p><!--finish logo cod off https://www.instagram.com/urmialake/ -->
+
+<!-- start logo cod off http://mostamandan.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://mostamandan.ir/"  rel=”nofollow”  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/mostmandan.png"  width="172" height="130" alt="مستمندان تبریز"></a></p><!--finish logo cod off http://mostamandan.ir/ -->
+
+<!-- start logo cod off http://iranestekhdam.ir/category/agahi-estekhdam/estekhdam-ostani/%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A2%D8%B0%D8%B1%D8%A8%D8%A7%DB%8C%D8%AC%D8%A7%D9%86-%D8%B4%D8%B1%D9%82%DB%8C/--><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://iranestekhdam.ir/category/agahi-estekhdam/estekhdam-ostani/%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A2%D8%B0%D8%B1%D8%A8%D8%A7%DB%8C%D8%AC%D8%A7%D9%86-%D8%B4%D8%B1%D9%82%DB%8C/"  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/estekhdamiran.png"  width="172" height="120" alt="استخدامی"></a></p><!--finish logo cod off http://iranestekhdam.ir/category/agahi-estekhdam/estekhdam-ostani/%D8%A2%DA%AF%D9%87%DB%8C-%D8%A7%D8%B3%D8%AA%D8%AE%D8%AF%D8%A7%D9%85-%D8%A2%D8%B0%D8%B1%D8%A8%D8%A7%DB%8C%D8%AC%D8%A7%D9%86-%D8%B4%D8%B1%D9%82%DB%8C/ -->
+
+<!-- start logo cod off http://www.tabrizsearch.com/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.tabrizsearch.com/"  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/TS.png"  width="172" height="100" alt="تبریز سرچ"></a></p><!--finish logo cod off http://www.tabrizsearch.com/ -->
+
+<!-- start logo cod off https://divar.ir/tabriz/%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2/browse/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://divar.ir/tabriz/%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2/browse/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/divar.png"  width="172" height="100" alt="دیوار تبریز"></a></p><!--finish logo cod off https://divar.ir/tabriz/%D8%AA%D8%A8%D8%B1%DB%8C%D8%B2/browse/ -->
+
+<!-- start logo cod off http://sevin.dance/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://sevin.dance/" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/azeri.jpg"  width="172" height="140" alt="رقص آذری "></a></p><!--finish logo cod off http://sevin.dance/ -->
+
+
+<!-- start logo cod off http://zanjan2rism.mihanblog.com/ --><p align="center"><p align="center"><a href="../../../zanjan2rism.mihanblog.com/index.html" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/zancan2rism.jpg"  width="172" height="130" alt="زنجان توریسم"></a></p><!--finish logo cod off http://zanjan2rism.mihanblog.com/ -->
+
+<!-- start logo cod off http://www.tabrizmodern.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.tabrizmodern.ir/"  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/tabrizmodern2b.jpg"  width="172" height="110" alt="تبریز مدرن"></a></p><!--finish logo cod off http://www.tabrizmodern.ir/ -->
+
+<!-- start logo cod off http://www.tripadvisor.com/Tourism-g3532667-East_Azerbaijan_Province-Vacations.html --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.tripadvisor.com/Tourism-g3532667-East_Azerbaijan_Province-Vacations.html" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/tripad.png"  width="172" height="100" alt="tripadvisor"></a></p><!--finish logo cod off http://www.tripadvisor.com/Tourism-g3532667-East_Azerbaijan_Province-Vacations.html -->
+
+
+
+<!-- start logo cod off http://www.trakhtorlink.com/default.aspx --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.trakhtorlink.com/default.aspx" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/ttlink.png"  width="172" height="120" alt="تراکتور لینک"></a></p><!--finish logo cod off http://www.trakhtorlink.com/default.aspx/ -->
+
+<!-- start logo cod off http://fava.tabriz.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://fava.tabriz.ir/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/fava.jpg"  width="172" height="120" alt="آمار و داده های تبریز"></a></p><!--finish logo cod off http://fava.tabriz.ir/ -->
+
+
+<!-- start logo cod off http://nasrnews.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://nasrnews.ir/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/NasrNews.jpg"  width="172" height="120" alt="نصرنیوز"></a></p><!--finish logo cod off http://nasrnews.ir/ -->
+
+<!-- start logo cod off http://shahryarnews.net/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://shahryarnews.net/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/shahriar.jpg"  width="172" height="120" alt="خبرگزاری شهریار"></a></p><!--finish logo cod off http://shahryarnews.net/ -->
+
+
+
+<!-- start logo cod off https://ca.axar.az/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="https://ca.axar.az/" rel=”nofollow” target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/axar.JPG"  width="172" height="130" alt="آخار آذ"></a></p><!--finish logo cod off https://ca.axar.az/ -->
+
+
+
+<!-- start logo cod off http://azargalam.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://azargalam.ir/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/azarghalam.png"  width="172" height="120" alt="آذرقلم"></a></p><!--finish logo cod off http://azargalam.ir/ -->
+
+
+<!-- start logo cod off http://durnanews.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://durnanews.ir/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/durnanews.jpg"  width="172" height="120" alt="دورنا نیوز"></a></p><!--finish logo cod off http://durnanews.ir/ -->
+
+<!-- start logo cod off http://www.eachto.org/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://www.eachto.org/" rel=”nofollow”  target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/miras.jpg"  width="172" height="120" alt="میراث فرهنگی آذربایجان"></a></p><!--finish logo cod off http://www.eachto.org/ -->
+
+
+<!-- start logo cod off http://tabriz.irib.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://tabriz.irib.ir/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/sahandtv.png"  width="172" height="130" alt="صدا و سیمای مرکز استان آذربایجانشرقی"></a></p><!--finish logo cod off http://tabriz.irib.ir/ -->
+
+<!-- start logo cod off http://ostan-as.gov.ir/ --><script language="javascript" type="text/javascript" ></script><p align="center"><p align="center"><a href="http://ostan-as.gov.ir/" target="_blank"><img border="0" src="../../../file.mihanblog.com/public/user_data/user_files/367/1100278/1/banner/east_azarbayjan.png"  width="172" height="172" alt="استانداری آذربایجان شرقی"></a></p><!--finish logo cod off http://ostan-as.gov.ir/ -->
+
+
+
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="clr"></div>
+	</div></div></div>
+		<div class="footer"><div><div>
+			<ul class="reset">
+				<li class="lcolomn">
+					<b>
+					 CopyRight © 2010 - 2011 <a href="../../index.html" title="tabrizlinks Group">tabrizlinks Group</a> , All Rights Reserved | <a href="../rss/index.html">RSS 2</a>
+					</b><br />
+
+					<span><a target="_blank" href="http://parstools.com/" title="ParsTools.com">Design by ParsTools.Com</a></span>
+				</li>
+				<li class="rcolomn">
+					<ul>
+						<li><a href="../../index.html"><img src="http://tem.parstools.com/skyback/images/counter.png" alt="counter" /></a></li>
+						<li><a href="../../index.html"><img src="http://tem.parstools.com/skyback/images/counter.png" alt="counter" /></a></li>
+						<li><a href="../../index.html"><img src="http://tem.parstools.com/skyback/images/counter.png" alt="counter" /></a></li>
+					</ul>
+
+				</li>
+			</ul>
+		</div></div></div>
+	</div>
+</div>
+<br />
+</div>
+</body>
+</html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'tabrizlinks.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

@@ -1,0 +1,1318 @@
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="../xmlrpc%3Frsd.html" />
+<script type="text/javascript" src="http://static.mihanblog.com//public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('پنجشنبه 27 آذر 1399');
+		/*1726085*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','41');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','دوشنبه 4 دی 1396');
+	
+	setStatVar('today_view','48');
+	setStatVar('yesterday_view','2');
+	
+	setStatVar('this_month_view','302');
+	setStatVar('last_month_view','195');
+
+	setStatVar('total_view','30241');
+	setStatVar('last_view_date','پنجشنبه 27 آذر 1399 (20:46)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://salbinaz.mihanblog.com/statupdate/?data[refereruri]=http://salbinaz.mihanblog.com/post/category/1&data[postid]=60&data[requesturi]=/post/60&data[sdate]=1608228574&data[hash]=a5e210814e87c752487fb81d356539c3&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[60]='-';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[60]='0';
+mihanblogDisLikeArrCnt[60]='0';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://salbinaz.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://salbinaz.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://salbinaz.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://salbinaz.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+<!-.-.-Design By : pichak.net-.-.->
+<head>
+<script language="JavaScript1.2">
+<!--
+
+top.window.moveTo(0,0);
+if (document.all) {
+top.window.resizeTo(screen.availWidth,screen.availHeight);
+}
+else if (document.layers||document.getElementById) {
+if (top.window.outerHeight<screen.availHeight||top.window.outerWidth<screen.availWidth){
+top.window.outerHeight = screen.availHeight;
+top.window.outerWidth = screen.availWidth;
+}
+}
+
+//-->
+</script>
+<!-"-"-Design By : www.pichak.net-"-"->
+<title>بارقه ی شعر و نقد - حضور انسان در طبیعت شعر/ به قلم منتقد ارجمند کشورمان جناب آقای منصور خورشیدی</title>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name="keywords" content="بارقه ی شعر و نقد - حضور انسان در طبیعت شعر/ به قلم منتقد ارجمند کشورمان جناب آقای منصور خورشیدی,salbinaz">
+      <META NAME="description" CONTENT="بارقه ی شعر و نقد - حضور انسان در طبیعت شعر/ به قلم منتقد ارجمند کشورمان جناب آقای منصور خورشیدی - کلمه پذیرنده نبود ، پوشاننده بود">
+      <meta name="copyright" content="www.pichak.net">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <meta name="designer" content="http://pichak.net" />
+      <link rel="alternate" type="application/rss+xml" title="بارقه ی شعر و نقد" href="rss/index.html" />
+<!-"-"-Design By : www.pichak.net-"-"->
+<style>
+<!--
+body{font-family:Tahoma;font-size:8pt;padding:0px;margin:0px;color:#d1dcf3;background:#fff}
+a, a:visited{color:#282d2f;text-decoration: none}a:hover{color:#364a51;text-decoration: none}
+body {
+	BACKGROUND: #ffffff url('http://pichak.net/themes/53/11/image/pichak.jpg') no-repeat top left ; 
+}
+
+#page{background:url() center repeat-y;width:780px}img{border:none}
+#uwrapper {margin:0;padding:0;text-align:center;background-image:url(); background-repeat:repeat-x; background-position-y:top;}
+#header{height:0px;background:url() no-repeat right; }
+#header div{color:#2C2215;font-family:verdana;font-size:21pt;font-weight:bold;text-align:center;padding-top:50px}
+#header div p{margin-top:5px;margin-bottom:0px;color:#2C2215;font-family:Tahoma;font-size: 9pt;font-weight:normal;text-align:center;direction:rtl}
+#headerb{height:0px}
+#content{padding:0px 7px}
+#main{background:  url() repeat center;float:right;width:530px;text-align:right;overflow:hidden}
+#main2{height:60px;background: url() top no-repeat;}
+#post{padding:0 0px;text-align:right}
+#posttitle{height:44px;background: url() center no-repeat;text-align:right;font-size:9pt;font-weight:42;direction:rtl;padding-top:14px;padding-right:30px}
+#posttitle a, #posttitle a:visited {color:#526065}#posttitle a:hover {color:#526065}
+#postbody{text-align: justify;padding:0px 10px 5px 3;font-size:8pt;color:#282d2f;line-height:1.5em;direction:rtl;}
+#postbody p{margin-top:10px;margin-bottom:0px}
+#postdesc{padding-top:15px;padding-right:22px;padding-left:7px;color:#606a6d;direction:rtl}
+#space{height:20px}
+#sidebar{float:left;background: url() no-repeat top center ;width:180px;padding-top:280px;color:#364a51;line-height:1.5em;text-align:right}
+#sidebar a, #sidebar a:visited {color:#606a6d}#sidebar a:hover {color:#364a51}
+#mmenu{width:170px;ine-height: 1.5em;text-align:center;direction:rtl;}
+#sidebar ul{font-size:8pt;list-style-type: none;margin: 0px;padding:0 5px 20px 5px}
+#sidebar li {font-size:8pt;padding-right:5px;padding-bottom:0px;line-height:1.5em;direction:rtl}
+#photo{width:170px;padding-top:5px;padding-bottom:2px;text-align:center}
+#about{width:170px;text-align: justify;font-size:8pt;padding:10px 7px 20px 7px;color:#606a6d;direction:rtl}
+#feed{margin:0px;padding-bottom:10px;text-align:center}
+#custom{width:170px;color:#5e7161;overflow:auto;margin:10px 0;text-align:center;direction:rtl}
+-->
+</style>
+
+<script lang ="javascript">
+function GetBC(lngPostid)
+{
+intTimeZone=<-BlogTimeZone->;
+strBlogId="salbinaz";
+intCount=-1;
+strResult="";
+try {
+for (i=0;i<BlogComments.length;i+=2)
+{
+if (BlogComments[i]==lngPostid)
+intCount=BlogComments[i+1] ;
+}
+}  catch( e) {
+}
+if ( intCount==-1)  strResult="آرشیو نظرات";
+if ( intCount==0)  strResult="نظر بدهید";
+if ( intCount==1)  strResult="یک نظر";
+if ( intCount>1)  strResult=intCount + " نظر" ;
+strUrl="http://commenting.blogfa.com/?blogid=" +strBlogId + "&postid=" + lngPostid + "&timezone=" + intTimeZone ;
+strResult ="<a href="./\&quot;javascript:void(0)\&quot;.html" onclick=\"javascript:window.open('" + strUrl + "','blogfa_comments','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=500px')\" >" +  strResult + " </a>" ;
+document.write ( strResult ) ;
+}
+function OpenLD()
+{
+window.open('LinkDump.aspx','blogfa_ld','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=500px');
+return true;
+}
+</script>
+<script language="javascript" type="text/javascript"          
+  src="http://pichak.net/p/js/themes/up.js"></script>
+</head>
+<body>
+<!-.-.-Design By : pichak.net-.-.->
+<div id=uwrapper>
+<div align=center>
+<div id=page>
+
+<div id=content>
+<div id=main>
+
+<br><br><br>
+<center><br>
+<font color="#010101" face="Arial" style="font-size: 15pt">
+<b>  بارقه ی شعر و نقد</b><p>
+<font color="#010101" face="Tahoma" style="font-size: 8pt">
+  کلمه پذیرنده نبود ، پوشاننده بود<p>
+</center>
+<p>
+
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		  <FONT color=#313131>
+<div id=post>
+<div id=posttitle><a href="60.html"><b>حضور انسان در طبیعت شعر/ به قلم منتقد ارجمند کشورمان جناب آقای منصور خورشیدی</b></a></div>
+<div id=postbody><div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+
+
+<p class="MsoNoSpacing" align="center" dir="RTL" style="text-align:center;direction:
+rtl;unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span dir="RTL"></span><b><span lang="AR-SA"><span dir="RTL"></span>" شلوغ تر از باد
+" - سلبی ناز رستمی</span></b><b><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">مجموعه شعر
+" شلوغ تر از باد " در 105 صفحه ، با شمارگان</span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">1000
+نسخه و با قیمت </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">7000 تومان در سال</span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA"> -
+انتشارات</span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA"> " هنر رسانه </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">
+اردی بهشت " در تهران 1394 منتشر شده است .</span><span lang="AR-SA" style="color: rgb(204, 0, 0);"> </span><span lang="AR-SA">این مجموعه دربردارنده ی 100 قطعه شعرسپیدو آزاد با مضامین عاشقانه
+واجتماعی است</span><span lang="AR-SA">
+. <o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><span lang="AR-SA"><font size="2" face="tahoma, arial, helvetica, sans-serif">شاعر
+در سیاهی و سایه پرسه می زند و در تقابل با زندگی مرگ را برجسته نشان می دهد . <o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><span lang="AR-SA"><font size="2" face="tahoma, arial, helvetica, sans-serif">"
+چه طعم خشکی دارد مرگ " که از هوای هر در مخفی می آید و در مدار خیس چشمان
+شاعر می نشیند <o:p></o:p></font></span></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><b><span lang="AR-SA"><font size="2" face="tahoma, arial, helvetica, sans-serif">" کاش کسی به ما گفته بود <o:p></o:p></font></span></b></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">که مرگ نمی آید . . . </span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA">" - 38<o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">اما
+در کنار زندگی مرگ در حاشیه حضور دارد " در دالان های پیچ در پیچ سایه ها
+" شکل پرنده ی غمگین در باد و بادبادک و بند بند شاخه ها . و ریتم ممند حروف
+، نه به نیت خلق موسیقی که زندگی شاعر را از ریتم و روال می اندازد . </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">هر رویداد دیگری در این مجموعه دارای
+مفهوم نمادین هستند </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">. و در ذهن و زندگی شاعر
+و در ارائه ی حرف اثر مستقیم دارد .</span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><b><span lang="AR-SA"><font size="2" face="tahoma, arial, helvetica, sans-serif">" و آفتاب <o:p></o:p></font></span></b></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">برگ نامفهومی </span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">که در هیچ صبحی طلوع نکرد " 11</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">با
+این همه شعر برای شاعر مفهومی دیگری دارد . حادثه ای در آمدن کسی یا چیزی </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">" پیامبر کوچکی </span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">که
+مدام نازل می شود " تا با تلنگری ذهن شاعر را تکان دهد و او را به حقیقت
+نهفته آشنا کند .</span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">" </span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA">این روزها،</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">مرگ فقط یک پرنده ی
+غمگینی </span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA">است</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA">که با بادها و / </span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA">بادبادکها</span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"> </span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"> </span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA">در بند بند</span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"> ِ شاخه ها می پیچد . </span></b><b><span lang="AR-SA">–</span></b><b><span lang="AR-SA"> 58</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">حوادث و اتفاقات محیط زندگی تکلیف
+شاعررا در تکوین شعر و ایجاد موقعیت جدید در بازتاب تفکر، مشخص می کند تا فضای
+نوتری بازکند و بتواند خواننده ی شعر را غافلگیرکند . زبانی که درعبوراز میان
+تجربه های موجود می تواند راهی نو در نوع بیان ایجاد نماید .</span><span lang="AR-SA"> و به اعتبار همین نگاه و
+با خلق زمینه های عاشقانه با احساس و عواطف موجود به شعر بلیغ برسد . </span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">" </span></b><b><span lang="AR-SA">تکلیف</span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"> ِ من</span></b><b><span lang="AR-SA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA">تا به همیشه " دوست داشتن</span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"> ِ تو " ست</span></b><b><span lang="AR-SA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">مثل</span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"> ِ نزول</span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"> ِ آیه ای</span></b><b><span lang="AR-SA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">در شعرهای بلیغ </span></b><b><span lang="AR-SA">–</span></b><b><span lang="AR-SA"> 92</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">در این شرایط شاعر نگاه عمیق تری
+به جهان اطراف خود می اندازد . تا اتفاق تازه تری در ذهن شاعر و در ضمیر او شکل
+بگیرد . و طبیعت شاعر را متحول نماید و او را از تشویش ها و دلهره ها دور سازد </span><span lang="AR-SA">. این اشتیاق شاعر را می توانیم در بیان او
+مرورکنیم </span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">" </span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA">فکر کن به شعری که می تواند </span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"> </span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">فقط، / پرنده باشد .
+. . </span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">که در دور دست ها بال
+می کوبد . </span></b><b><span lang="AR-SA">–</span></b><b><span lang="AR-SA"> 10</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">هدف شاعر در این مجموعه عریان
+کردن و شفاف نشان دادن واقعیت ها ی موجود در زندگی است " مرا به روح آسمان
+بسپار" وقتی خورشید با اندک انتظاری طلوع می کند. </span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">یک پنجره برای دیدن می خواهد تا
+حضور دوست را معنا کند . ورابطه ی درونی خود را با جهان آن سو پیوند بزند . "
+پنجره ای که هر بار چشم دریده تر/ خیابان ها را ورق می زند ." در این گونه
+دیدن شاعر می تواند بستری باز کند برای تعاطی افکار،عواطف و احساسات درونی و تعاملی
+ایجاد کند با کسی که شاعر را در انتظار نشانده است </span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">" بر می گردی</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">نه شبیه یک پرنده ی
+خیس بر شاخسارِ پر تشویش پرواز!</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">نه شبیه ترنم زنگوله
+ای ،</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">که بی نفس در گوش
+دنیا می نوازد. </span></b><b><span lang="AR-SA">–</span></b><b><span lang="AR-SA"> 64</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">تمام آن چه موجب می شودتا
+شاعرمسیر تحولات ذهنی را در ارائه ی مضمون تغییردهد </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">و در تفکر خود و مخاطب شعر اثر بگذارد .
+همین بیان روائی و توصیف نوستالژی است که جهان هواهای تازه تر برای بیان خود خلق
+می کند .</span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">" </span></b><b><span lang="AR-SA">این روزها به چه فکر کنم</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">به اسکلتی که هربار
+از سایه ی خود می ترسد</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">به پرنده ای که بال
+هایش کشیده می شود</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">روی کوه ها ، / میان
+دره ها ؟!- 59</span></b><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">روش کاربردی شاعر در استفاده از
+عوامل زیباشناسی بیشتر با پرسشی از چرا و چگونه </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">و تردید همراه است. </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">از " کوچ ِپرنده ی گمنامی/ که شاخه ها را از
+یاد برده اند. " تا : ترسی که او را از سایه دوست هم دور می کند و به انتظار
+سبد های خالی ستاره شماری کند .</span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">" این روزها
+دیگر ،</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">قلاب هیچ ماهیگیری
+روز را از شب</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">شب را از روز بیرون
+نمی کشد. " 58</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">در
+حالت های مختلف ترس ناشی از شرایط موجود موجب در هم ریزی خیال و خاطره در زبان
+شاعرمی شود و عواطف او را درگیر امور غیر منتظره می کند .</span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">" می ترسم / در برزخ این همه پریشانی </span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">دست های تو را گم کنم " </span></b><b><span lang="AR-SA">–</span></b><b><span lang="AR-SA"> 26</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">مضامین حاصل از ترس به اضطراب
+درونی سلبی ناز رستمی دامن می زند و مانور آن را بیش تر در ذهن و در زبان شاعر
+جاری می کند .</span><span lang="AR-SA">
+" شاخه ، چه نسبتی با دستان تو دارد " که عشق را عامل نزدیکی به دوست
+نمی داند ! </span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">" پیش از آنکه نفس برآرم</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">تو دور می شوی.</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">چه جان کندن عجیبی / حتا ،</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">با لب فرو بستن و / </span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA">دم نزدن؟! - 87</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">می
+بینیم که با استفاده از ترکیب کنائی " دم نزدن و لب فرو بستن " به جان
+کندن حیرت آوری می رسد که با دانش ودرک این شاعر و منتقد حرفه ای شعر در تضاد است
+. </span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">" حتا در خزان
+ترین</span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"> ِ آفتاب هم</span></b><b><span lang="AR-SA">&nbsp;&nbsp;</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">جهانی</span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"> می آشوبد درمن </span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">خواب</span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"> ِ قیلوله</span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"> کم از کابوس ندارد!</span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA">" </span></b><b><span lang="AR-SA">–</span></b><b><span lang="AR-SA"> 103</span></b><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">با
+صراحت تمام تکلیف خود را با خودش روشن می کند . دلتنگی ، ترس ، سایه ، مرگ و سکوت
+را به راحتی دربیان شاعرانه جاری می سازد . به دنبال راهی است تا رندانه زمینه
+رهائی خود را از عوامل دست و پا گیر که او را دلگیر کرده است فراهم نماید .</span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">" </span></b><b><span lang="AR-SA">شناگر</span></b><b><span lang="AR-SA">&nbsp;</span></b><b><span lang="AR-SA"> ِ ماهری نیست</span></b><b><span lang="AR-SA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">گاهی در بیداری هم</span></b><b><span lang="AR-SA">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></b><b><span lang="AR-SA"> </span></b><b><span lang="AR-SA">&nbsp;&nbsp;&nbsp;</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">غرق مان می کند ، مرگ
+! </span></b><b><span lang="AR-SA">–</span></b><b><span lang="AR-SA"> 93</span></b><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">اگر چه عوامل فوق تاثیری در فرم و ساختمان
+شعر ندارند . اما نیت آن در ذهن شاعر موجب می شود تا به صورت ساده و گفتاری زمینه
+محتوایی شعر را حول همین محور های موجود بنا کند . لزوم چنین دیدگاهی موجب می شود
+تا</span><span lang="AR-SA"> آن چه در تخیل شاعر و در حافظه ی
+او وجود دارد . در محور هم نشینی کلام تناسبی بین آن ها بر قرار نماید .</span><span lang="AR-SA"> </span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span dir="LTR"></span><span dir="LTR"><span dir="LTR"></span>" </span><span lang="AR-SA">ا<b>ین روزها به آسمان هم شک می کنم</b></span><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">آن هنگام که زمین ،</span></b><b><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">در شلوغی اقیانوس ها
+و</span></b><b><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">رقص ماهی ها گم می
+شود." </span></b><b><span lang="AR-SA">–</span></b><b><span lang="AR-SA"> 64</span></b><b><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">به هر شکل ، شاعر با استعاره ، تشخیص ،
+مراعات نظیر ، واج آرائی در محور افقی شعر تلاش می کند تا با بیان تغزلی نشان دهد
+که " چشمانم / بی خواب تر از پلک پنجره " است .و هیچ شبی را تنها تر از
+مردمک ماه نمی بیند . واقعیت های دنیای پیرامون خود را با مخاطبان شعر خود در میان
+می گذارد . و تنهائی را در گستره ی معنا های متعارف این گونه تعریف می کند. </span><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span dir="LTR"></span><b><span dir="LTR"><span dir="LTR"></span>"
+</span></b><b><span lang="AR-SA" style="color: rgb(49, 49, 49);">این تنهایی ،</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA" style="color: rgb(49, 49, 49);">عجول
+تر از آنست که انگشت فرو کند</span></b><b><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA" style="color: rgb(49, 49, 49);">در
+چشمِ روزشمارهایی</span></b><span dir="LTR"></span><span lang="AR-SA" dir="LTR" style="color: rgb(49, 49, 49);"><span dir="LTR"></span> </span><span dir="LTR"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA" style="color: rgb(49, 49, 49);">که تو
+را با بادهای شبانه تخمین می زند</span></b><b><span lang="AR-SA"> " </span></b><b><span lang="AR-SA">–</span></b><b><span lang="AR-SA"> 76</span></b><b><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">از
+موقعیت نا به سامان دنیا که چنگ در خیال و خاطره می زند </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">سخن می‌گوید " حالا
+دنیا از خیال تو بیرون نمی آید " </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">و به نمایش همه ی دریافت
+های خود از زندگی می‌پردازد</span><span lang="AR-SA"> . " سبکبال تر
+به کوچه می روم " تا در انتقال عواطف بتواند زمینه ی وسیع تری از زندگی و
+جهان شاعرانه را ترسیم و در تلفیق امور حسی و انتزاعی موفق تر عمل کند </span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">" چگونه بگویم
+که تو </span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">پرنده ی غمگینی هستی </span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">که از اشتیاق فصل ها
+کوچیده ای " </span></b><b><span lang="AR-SA">–</span></b><b><span lang="AR-SA"> 33</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">کنارهم گذاشتن کلمات و ترکیب های
+کلامی بنا به ضرورت و به صورت آگاهانه در یک مصراع می تواند محتوای شعر را قوی تر
+در یک قطعه نشان دهد . اراده ی آگاهانه ای که می تواند گشایشی در زبان شاعر ایجاد
+کند . تا " درسپیده دم کوتاه ترین روز " دلتنگی را از خود دور کند.. </span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">" </span></b><b><span lang="AR-SA">بی گمان شلوغ تر از هرچه باد و باران</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">و درختی که بی هیچ
+جوانه ای،</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">تب تند رسیدن می
+گیرد." - 65</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">رمز و رازهای یک اثر هنری در
+پوششی از تناسب های عوامل سازگار زمینه بروز و ظهور اندیشه را برای سرایش شعر
+فراهم می کند . اگر شاعر با درک درست از هم نشینی کلمه در بافت افقی شعرهمخوانی
+ایجاد نماید . بی گمان تردید های موجود در تفکر او بدل به رسیدن ، امید وسازگار با
+روحیه ی شاعرانه می شود </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">.</span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">" کاش
+یادم بماند </span></b><b><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">کنار پنجره
+چراغی بگذارم " 100</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">با و جود روشنائی و نور در فضای
+شاعرانه می تواند به آرامش </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">یک سیب
+برسد که در پشت همان پنجره و در تب سرخ می سوزد. </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">مثل چیز هائی که نمی بیند و در آفتاب
+اتفاق می افتد . در چنین شرایطی با استفاده از عناصر کلامی در بافت معنایی </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">زمینه را برای تصاویر دیداری و حسی
+آماده می سازد . تا روح کلام در نظر مخاطب آسان جلوه کند</span><span dir="LTR"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span dir="RTL"></span><b><span lang="AR-SA"><span dir="RTL"></span>" این روزها ،</span></b><b><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">هر نسیمی
+که می وزد</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">کوچ ِپرنده
+ی گمنامی ست که شاخه ها را از یاد برده اند." </span></b><b><span lang="AR-SA">–</span></b><b><span lang="AR-SA"> 64</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">بانوی شعر سلبی ناز رستمی تلاش می
+کند تا بستری تازه در میان رابطه ها باز کند . به دنبال صدائی است که عاشقانه تر
+از سکوت او را دعوت به دیدار ناگهانی کند . با نیمرخی از طلوع آب ! </span><span dir="LTR"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span dir="RTL"></span><b><span lang="AR-SA"><span dir="RTL"></span>" حادثه ای </span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">که در آمدن
+تو هست </span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">بی گمان /
+در رد پای هیچ پروازی نیست " </span></b><b><span lang="AR-SA">–</span></b><b><span lang="AR-SA"> 11</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">مجموعه شعر " شلوغ تر از باد " با
+بیان غنائی </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">به برجسته کردن روایتی می پردازد </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">که حسی سخت عاشقانه </span><span lang="AR-SA">دارد و بُرد عاطفی در بسامد بالائی توجه مخاطبان شعر را جلب می
+کند . </span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span lang="AR-SA">"
+نیمرخی که طلوع می کند از آب و آینه " - 35</span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">می دانیم که زبان ، معیار مشخص برای شاعرانی
+محسوب می شود که در یک مجموعه شعر ، نظریه ی نقد ادبی را در خود داشته باشد یعنی
+به لحاظ( فکری ، ادبی و زبانی ) نیاز منتقدان شعر را برآورده کند چون شاعر حضور
+انسان را در طبیعت شعرجست و جو می کند</span><span dir="LTR"></span><span lang="AR-SA" dir="LTR"><span dir="LTR"></span> </span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">یک واکنش عاطفی موجب می شود که تفکر شاعر بر
+انگیخته شود</span><span dir="LTR"></span><span dir="LTR"><span dir="LTR"></span> &nbsp;. </span><span lang="AR-SA">و به شوق پرواز ، پَر باز کند و تن به کوچ نا به
+هنگام پرستو ها بسپارد</span><span dir="LTR"></span><span dir="LTR"><span dir="LTR"></span> &nbsp;</span><span lang="AR-SA">و با یک تبسم ساده ،
+رمینه ی تماشا را فراهم کند</span><span dir="LTR"></span><span dir="LTR"><span dir="LTR"></span> .</span><span dir="LTR"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font face="tahoma, arial, helvetica, sans-serif" size="2"><span dir="RTL"></span><b><span lang="AR-SA"><span dir="RTL"></span>" همین یک لبخند خاکستری </span></b><b><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font face="tahoma, arial, helvetica, sans-serif" size="2"><b><span lang="AR-SA">و نگاتیو های سوخته </span></b><b><span lang="AR-SA"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font face="tahoma, arial, helvetica, sans-serif"><font size="2"><b><span lang="AR-SA">کافی است . " -
+83</span></b><span lang="AR-SA"> </span></font><span lang="AR-SA"><font size="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></span><span lang="AR-SA" style="font-size: small;"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">عناصر بی جان وقتی صفات و
+احساسات انسانی را می پذیرد ذهن شاعر را اندکی از مفاهیم معمول دور می کند . حتی
+می تواند تازگی و طراوت زبان امروز شعر را شکوفا تر از پیش گسترش دهد . و رابطه
+های دیگری خلق کند که دامنه ی نفوذ شعر را با انتخاب مناسب ترین کلمات و ترکیبات (
+نه ترکیبات </span><span lang="AR-SA">&nbsp;</span><span lang="AR-SA">وصفی و اضافی ) و تکرار
+که در طول این مجموعه بسیار دیده می شود در موقعیت جدید نشان دهد . </span><span lang="AR-SA">به انتظار روز هائی بهتر از این روز ها که در برابر
+نگاه شاعر نشسته است .</span><span lang="AR-SA"><o:p></o:p></span></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font face="tahoma, arial, helvetica, sans-serif"><b><font size="1"><span dir="LTR"></span></font><span dir="LTR"><font size="1"><span dir="LTR"></span>"</font><font size="2"> </font></span><font size="2"><span lang="AR-SA" style="color: rgb(49, 49, 49);">این روزها</span><span lang="AR-SA" style="color: rgb(49, 49, 49);"> ،</span><span lang="AR-SA"><o:p></o:p></span></font></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font face="tahoma, arial, helvetica, sans-serif" size="2"><b><span lang="AR-SA" style="color: rgb(49, 49, 49);">هر
+نسیمی که می وزد</span><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font face="tahoma, arial, helvetica, sans-serif" size="2"><b><span lang="AR-SA" style="color: rgb(49, 49, 49);">کوچ
+ِپرنده ی گمنامی ست که شاخه ها را از یاد برده اند</span><span dir="LTR"></span><span dir="LTR" style="color: rgb(49, 49, 49);"><span dir="LTR"></span>.</span><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font face="tahoma, arial, helvetica, sans-serif" size="2"><b><span lang="AR-SA" style="color: rgb(49, 49, 49);">این
+روزها به آسمان هم شک می کنم</span><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font face="tahoma, arial, helvetica, sans-serif" size="2"><b><span lang="AR-SA" style="color: rgb(49, 49, 49);">آن
+هنگام که زمین ،</span><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font face="tahoma, arial, helvetica, sans-serif" size="2"><b><span lang="AR-SA" style="color: rgb(49, 49, 49);">در
+شلوغی اقیانوس ها و</span><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font face="tahoma, arial, helvetica, sans-serif"><span lang="AR-SA" style="color: rgb(49, 49, 49);"><b><font size="2">رقص
+ماهی ها گم می شود.(ص58)</font></b></span><font size="2"><span dir="LTR"></span></font><b style="font-size: small;"><span lang="AR-SA" dir="LTR" style="color: rgb(49, 49, 49);"><span dir="LTR"></span> </span></b><b style="font-size: small;"><span dir="LTR"><o:p></o:p></span></b></font></p>
+
+<p class="MsoNoSpacing" dir="RTL" style="text-align:justify;direction:rtl;
+unicode-bidi:embed"><font size="2" face="tahoma, arial, helvetica, sans-serif"><b><span dir="LTR">&nbsp; &nbsp; &nbsp;&nbsp;</span></b></font><span style="font-family: tahoma, arial, helvetica, sans-serif; font-size: small;">&nbsp;</span></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br></div>
+<div id=postdesc> نوشته شده در جمعه 21 خرداد 1395 ساعت 
+	05:53 ب.ظ  توسط <a href="author/1430129.html">سلبی ناز   رستمی  </a><a target="_self" href="javascript:newComment(60)">بارقه   <script>setCommentCnt(60)</script> </a>| <span dir="rtl" ><script type="text/javascript">GetBC(<-PostId->);</script></span></div>
+<div id=space></div>
+
+           <hr width="60%" size="1" color="#747474" align="center" >
+</div>
+
+
+<br><div id=post><div id=posttitle><b></b></div>
+<div id=postbody>	<center>		(تعداد کل صفحات:[cb:pages_total])     <cb:loop_pages>
+			<a href="./[cb:pages_href].html">
+			[cb:pages_no]</a>  </cb:loop_pages></center></div>
+<div id=space></div></div></cb:block_pages>
+<!-.-.-Design By : pichak.net-.-.-><center>
+<table style="border-right: #ececec 1px solid; border-top: #ececec 1px solid; border-left: #a6a6a6 1px solid; direction: rtl; border-bottom: #a6a6a6 1px solid; height: 7px; font-size: 7pt;">
+<tr><td><a href="http://www.pichak.net" target=_blank>Template By</a> : <a href="http://pichak.net" target=_blank>Pichak</a><br></td></tr>
+</table><br><br>
+
+<FONT color=#717171>
+
+<!-.-.-Design By : pichak.net-.-.-></div>
+
+
+<div id=sidebar>  
+<br>
+
+
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> About </div>
+</b>
+<br>
+<!-.-.-Design By : pichak.net-.-.->
+<div align=right>
+<div id=about><FONT style="FONT-SIZE: 8pt">
+هر نوع برداشت آزاد از این وبلاگ با ذکر نامِ نویسنده و منبع آن،بلامانع است. <br />
+به نظرات خصوصی توجه نمی شود. لطفن نظر خصوصی درج نفرمایید. مگر اینکه در چارچوب بینش ومنش انسانی - اسلامی باشد. <br />
+<br />
+واینکه به اطلاع مخاطبان می رساند تنها راه ارتباطی با بنده وبلاگ حاضر و ایمیل  salbinaz1359@gmail.com می باشد. هیچ راه ارتباطی دیگر چون؛فیس بوک ، وایبر ، تانگو ، تلگرام و ...از طرف بنده وجود نداشته و نخواهدداشت. <br />
+<br />
+آثار من :<br />
+<br />
+مجموعه شعر &quot;شلوغ تر از باد&quot;<br />
+(نشرهنر رسانه اردی بهشت)<br />
+مجموعه شعر <br />
+&quot;بوی نارنجی نارنجک&quot;<br />
+(نشر ارزشهای دفاع مقدس)<br />
+ومجموعه شعر<br />
+ &quot;فوج فوج فرشته می بارد&quot;<br />
+(نشر ارزشهای دفاع مقدس)<br />
+گلوله ، درخت ، پرنده <br />
+(نشر شاهد)<br />
+<br />
+وآثار در دست چاپ :&quot;گلوی مبین&quot;نقدوبررسی شاهکارهای شعر نو عاشورایی<br />
+نردبانی تا ثریا(نقد و تحلیل اشعار شاعران دهه ی نود)<br />
+<br />
+مجموعه شعر <br />
+یک مشک فرات<br />
+و از بوی باروت تا پرواز کبوتر<br />
+پژوهش ابراهیم در آتش و...</div>
+
+<center>
+<br>
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Menu </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a href="../index.html">خانه</a></li>
+<li><a href="mailto:salbinaz1359@gmail.com">ایمیل</a></li>
+<li><a target="_blank" href="http://pichak.net">قالب</a></li>
+<center><script language="javascript" src="http://pichak.net/p/js/themes/120.js"></script></center>
+</ul></div>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Authors </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a target="_blank" href="author/1430129.html" >سلبی ناز   رستمی   41 </a></li></ul>
+</div>
+
+
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> LinkDump </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a target="_blank" href="http://senfit.ir/linkman/" title="خواهان تبادل لینک باوب زیبای شما هستیم">اصناف ایران</a></li><li><a target="_blank" href="http://raining.mihanblog.com/" title="">نقدهای من در سقوط زیرآبی ادبیات معاصر  </a></li><li><a target="_blank" href="http://www.noormags.ir/view/fa/default" title="">پایگاه مجلات تخصصی نور</a></li><li><a target="_blank" href="http://2288.blogfa.com/" title="">ترنج نامه</a></li><li><a target="_blank" href="http://sherkadehsaghi.blogfa.com/" title="">مستی با جرعه ای شعر </a></li><li><a target="_blank" href="http://mahneshin.blogfa.com/" title="">کافه ی تنهایی</a></li><li><a target="_blank" href="http://nazoniaz92.blogfa.com/" title="">ناز و نیاز</a></li><li><a target="_blank" href="http://www.iranianpoems.blogfa.com/" title="">انجمن شعر ایران</a></li><li><a target="_blank" href="http://sherenab.com/" title="">شعر ناب</a></li><li><a target="_blank" href="http://shereno.ir/" title="">شعر نو</a></li><li><a target="_blank" href="http://www.sherane.ir/" title="">شعرانه</a></li><li><a target="_blank" href="http://keryas.ir/" title="">کرباس</a></li><li><a target="_blank" href="http://www.aanaat.com/" title="">آنات</a></li><li><a target="_blank" href="http://temenna.blogfa.com/" title="">گنجینه ی بهترین شعرها</a></li><li><a target="_blank" href="http://avangardha.com/" title="">آوانگاردها</a></li><li><a target="_blank" href="http://nowrahan.com/" title="">نورهان </a></li><li><a target="_blank" href="http://www.ghayeghha.blogfa.com/" title="">قایق های رنگی</a></li><li><a target="_blank" href="http://www.chouk.ir/" title="">کانون فرهنگی چوک </a></li><li><a target="_blank" href="http://www.morour.ir/" title="">سایت مرور</a></li><li><a target="_blank" href="http://www.faragoftar.blogfa.com/" title="">شعر فراگفتار</a></li><li><a target="_blank" href="http://sher3epid.blogfa.com/" title="">سپید</a></li><li><a target="_blank" href="http://www.balout.ir/" title="">بلوط</a></li><li><a target="_blank" href="http://yanoos.net/index/" title="">یانوس</a></li><li><a target="_blank" href="http://www.hashtaad.com/" title="">رادیکال هشتاد</a></li><li><a target="_blank" href="http://khanesh.ir/" title="">خوانش</a></li><li><a target="_blank" href="http://sarapoem.persiangig.com/" title="">سارا شعر </a></li><li><a target="_blank" href="http://shere2.com/" title="">شعر 2دات کام</a></li><li><a target="_blank" href="http://seganisara.blogfa.com/" title="">سه گانیکو </a></li><li><a target="_blank" href="http://www.aghrabe.com/" title="">عقربه </a></li><li><a target="_blank" href="http://www.shereiran.ir/" title="">شعر ایران </a></li><li><a target="_blank" href="http://m-bibak.blogfa.com/" title="">شعر های باران خورده </a></li><li><a target="_blank" href="http://irafta.com/" title="">شاعران پارسی زبان </a></li><li><a target="_blank" href="http://noghtehchinhayedelam.blogfa.com/" title="">سه نقطه های دلم </a></li></ul>
+</div>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Archive</div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a href="archive/1396/10/1.html"> هفته اول دی 1396  4 </a></li><li><a href="archive/1396/6/2.html"> هفته دوم شهریور 1396  1 </a></li><li><a href="archive/1396/5/4.html"> هفته چهارم مرداد 1396  3 </a></li><li><a href="archive/1395/8/4.html"> هفته چهارم آبان 1395  1 </a></li><li><a href="archive/1395/8/1.html"> هفته اول آبان 1395  1 </a></li><li><a href="archive/1395/7/3.html"> هفته سوم مهر 1395  1 </a></li><li><a href="archive/1395/7/2.html"> هفته دوم مهر 1395  1 </a></li><li><a href="archive/1395/7/1.html"> هفته اول مهر 1395  6 </a></li><li><a href="archive/1395/6/4.html"> هفته چهارم شهریور 1395  1 </a></li><li><a href="archive/1395/5/2.html"> هفته دوم مرداد 1395  4 </a></li><li><a href="archive/1395/4/2.html"> هفته دوم تیر 1395  1 </a></li></ul>
+</div>
+
+<center>
+<!-.-.-Design By : pichak.net-.-.->
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Categories </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a href="category/1.html">نقد کتاب &quot;شلوغ تر از باد &quot;به قلم منتقد ان  2 </a></li></ul>
+</div>
+<center>
+<!-.-.-Design By : pichak.net-.-.->
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Links </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul>
+<li><a target="_blank" href="http://silentheart.blogfa.com">حرف دل</a></li><li><a target="_blank" href="http://www.pagard.ayene.com/">سارا محمدی اردهانی</a></li><li><a target="_blank" href="http://www.samiracheraghpoor.blogfa.com/">سمیرا چراغپور</a></li><li><a target="_blank" href="http://ghazalgije68.blogfa.com/">صدیقه حسینی</a></li><li><a target="_blank" href="http://kiyancivil.blogfa.com/">ناصر رعیت نواز</a></li><li><a target="_blank" href="http://vasvasehayeskoot.blogfa.com/">شوان کاوه</a></li><li><a target="_blank" href="http://bahal3.persianblog.ir/">سید مهدی موسوی</a></li><li><a target="_blank" href="http://monaakbarian.blogfa.com/">مونا اکبریان</a></li><li><a target="_blank" href="http://www.ensandoustpoem.blogfa.com/">مرضیه انساندوست</a></li><li><a target="_blank" href="http://www.tabsareh.blogfa.com/">مهرنوش قربانعلی</a></li><li><a target="_blank" href="http://said134806.boldfa.com/">همسرم سید سعید خلیلی</a></li><li><a target="_blank" href="http://mtoonei.blog.ir/">عطر اردی بهشت</a></li><li><a target="_blank" href="http://973.blogfa.com/">آرزو نوری</a></li><li><a target="_blank" href="http://www.mirzaamir.blogfa.com/">استاد غلامعلی</a></li><li><a target="_blank" href="http://goleparande94.mihanblog.com/">معصومه شعبانی</a></li><li><a target="_blank" href="http://siavashrezazadeh.persianblog.ir/">در انتظار بهار</a></li><li><a target="_blank" href="http://malafe.blogfa.com/">مجید سعد آبادی</a></li><li><a target="_blank" href="http://residehayenachide.blogfa.com/">مهدی آخرتی</a></li><li><a target="_blank" href="http://iman-saber.blogfa.com/">ایمان صابر</a></li><li><a target="_blank" href="http://amiralavi.persianblog.ir/">سید علی میر افضلی</a></li><li><a target="_blank" href="http://www.naghme10.blogfa.com/">شهناز اسحاقی</a></li><li><a target="_blank" href="http://panjeei.cast.ir/">علیرضا پنجه ای</a></li><li><a target="_blank" href="http://www.ghoghnus.blogfa.com/">بهنام صداقت حور</a></li><li><a target="_blank" href="http://golizadeh.parsiblog.com">مصطفی قلیزاده علیار</a></li><li><a target="_blank" href="http://arashnosratollahi.blogfa.com/">آرش نصراللهی</a></li><li><a target="_blank" href="http://arashshafai.persianblog.ir/">آرش شفاعی</a></li><li><a target="_blank" href="http://karobrezaee.blogfa.com">کروب رضایی</a></li><li><a target="_blank" href="http://www.houshangraouf.blogfa.com/">هوشنگ رئوف</a></li><li><a target="_blank" href="http://www.tartezak.blogfa.com/">سعید نصار یوسفی</a></li><li><a target="_blank" href="http://www.egona.blogfa.com/">ایگونا</a></li><li><a target="_blank" href="http://www.yazdaniamir.blogfa.com/">امیر یزدانی</a></li><li><a target="_blank" href="http://www.somayerezaei.blogfa.com/">سمیه رضایی اصل</a></li><li><a target="_blank" href="http://www.morningwind.blogfa.com/">صبا کاظمیان</a></li><li><a target="_blank" href="http://www.malax.blogfa.com/">اکبر ایل بیگی</a></li><li><a target="_blank" href="http://www.ghorubepanjere.blogfa.com/">مژگان میر افضل</a></li><li><a target="_blank" href="http://www.aida-m.blogfa.com/">آیدا مجید آبادی</a></li><li><a target="_blank" href="http://www.derakhtansiah.blogfa.com/">محمود غیاثی</a></li><li><a target="_blank" href="http://www.khaloorashed.com/">راشد انصاری</a></li><li><a target="_blank" href="http://behroozfv.blogfa.com/">بهروز فاطمی</a></li><li><a target="_blank" href="http://www.abasathatami.blogfa.com/">اباسط حاتمی</a></li><li><a target="_blank" href="http://tikabird.blogfa.com/">اعظم اسکندری</a></li><li><a target="_blank" href="http://www.adabiat2009.blogfa.com/">صغری اسلامی</a></li><li><a target="_blank" href="http://www.birdperfume.persianblog.ir/">لیلا رنجبران</a></li><li><a target="_blank" href="http://www.m-shad.blogfa.com/">مهدی شاد خواست</a></li><li><a target="_blank" href="http://www.2288.blogfa.com/">فرناز خان احمدی</a></li><li><a target="_blank" href="http://www.parviz-beigi.blogfa.com/">پرویز بیگی حبیب آبادی</a></li><li><a target="_blank" href="http://www.taakestan.blogfa.com/">مریم صابری</a></li><li><a target="_blank" href="http://www.elaheh-ariyaei.blogfa.com/">اله تاجیک زاده</a></li><li><a target="_blank" href="http://www.tamanna22.blogfa.com/">صدیقه زیارتی</a></li><li><a target="_blank" href="http://www.alirezafouladi.blogfa.com/">علیرضا فولادی</a></li><li><a target="_blank" href="http://najvayenasimdarya.blogfa.com/">صدیقه محمد جانی</a></li><li><a target="_blank" href="http://mohsensi.mihanblog.com/">محسن نوزعیم</a></li><li><a target="_blank" href="http://www.56787.blogfa.com/">نازنین یداللهی</a></li><li><a target="_blank" href="http://www.rasoul-rezaei.mihanblog.com/">رسول رضایی</a></li><li><a target="_blank" href="http://www.sher-sher-sher.blogfa.com/">سعید شیربندی</a></li><li><a target="_blank" href="http://ofeliya.blogfa.com/">سریا داودی حموله</a></li><li><a target="_blank" href="http://keh.blogfa.com/">فرهاد کریمی</a></li><li><a target="_blank" href="http://www.ghn92.blogfa.com/">غلامرضا نصراللهی</a></li><li><a target="_blank" href="http://vey.persianblog.ir/">رجب بذر افشان</a></li><li><a target="_blank" href="http://afsaneh-nojoumi.blogfa.com/">افسانه نجومی</a></li><li><a target="_blank" href="http://shohani.blogfa.com/">آفاق شوهانی</a></li><li><a target="_blank" href="http://soheilmirzaee.blogfa.com/">سهیل میرزایی</a></li><li><a target="_blank" href="http://www.naderebrahimi.info/bio.htm">نادر ابراهیمیان</a></li><li><a target="_blank" href="http://mahsarahnamaa.ir/">مهسا رهنما</a></li><li><a target="_blank" href="http://f7f8.blogfa.com/">مشق مهربانی دل</a></li><li><a target="_blank" href="http://ovays.blogfa.com/">مسعود والیزاده</a></li><li><a target="_blank" href="http://www.ghazveh.blogfa.com/">علیرضا قزوه</a></li><li><a target="_blank" href="http://www.shahtut.blogfa.com/">سیمین شیرالی</a></li><li><a target="_blank" href="http://peyvandemehrbanan.blogfa.com/">حسن نصیری</a></li><li><a target="_blank" href="http://faslezard1.blogfa.com/">حکیمه نارویی</a></li><li><a target="_blank" href="http://www.m-63.blogfa.com/">مریم عرفانی</a></li><li><a target="_blank" href="http://manneveshteha.persianblog.ir/">مرضیه همایونی</a></li><li><a target="_blank" href="http://onlybarangod.blogfa.com/">فاطمه قدیمی</a></li><li><a target="_blank" href="http://www.shabnamgazal.blogfa.com/">شبنم فرضی زاده</a></li><li><a target="_blank" href="http://ahmaddasty70.blogfa.com/">احمد دستی</a></li><li><a target="_blank" href="http://hoseini50.blogfa.com/">باران حسینی</a></li><li><a target="_blank" href="http://radpaysepid.blogfa.com/">اقیانوس سپید</a></li><li><a target="_blank" href="http://www.orkideyesepid.blogfa.com/">ارکیده کوچکسرایی</a></li><li><a target="_blank" href="http://koleharf.blogfa.com/">وقتی که تنهایی حرف می زند</a></li><li><a target="_blank" href="http://sehrgalam.blogfa.com/">میر بهرام رستمی</a></li><li><a target="_blank" href="http://qsha.blogfa.com/">زویا</a></li><li><a target="_blank" href="http://www.ali-shekarriz.blogfa.com/">علیرضا شکرریز</a></li><li><a target="_blank" href="http://mansourkhorshidi.blogfa.com/">منصور خورشیدی</a></li><li><a target="_blank" href="http://ayehayeshaerane.blogfa.com/">زهرامحمدی</a></li><li><a target="_blank" href="http://koleharf.blogfa.com/">جمیله عجم</a></li><li><a target="_blank" href="http://arezooyazari.blogfa.com/">آرزو آذری فر</a></li><li><a target="_blank" href="http://naderebrahimi.mihanblog.com/">آوای نادر</a></li><li><a target="_blank" href="http://www.sahba313.blogfa.com/">سید حسن سعید زاده بیدگلی</a></li><li><a target="_blank" href="http://dariaii.blogfa.com/">ساحل مرجانی</a></li><li><a target="_blank" href="http://rezadelman@gmail.com/">سید جواد جزایری</a></li><li><a target="_blank" href="http://behtarinhayam.mihanblog.com/">سید محمد آیت الهی</a></li><li><a target="_blank" href="http://ensiye.persianblog.ir/">انسیه موسویان</a></li><li><a target="_blank" href="http://mohamad.persianblog.ir/">سید محمد مرکبیان</a></li><li><a target="_blank" href="http://avaze-shabahang.persianblog.ir/">نیلوفر ثانی</a></li><li><a target="_blank" href="http://eshghonegah.persianblog.ir/">ایرج تمجیدی</a></li><li><a target="_blank" href="http://www.mojganbanoo.com/">مژگان عباسلو</a></li><li><a target="_blank" href="http://ganjoor.net/">گنجور</a></li><li><a target="_blank" href="http://www.delju.blogfa.com/">حسین دلجویی</a></li><li><a target="_blank" href="http://ilamgirls.blogfa.com/">دختران ایلامی</a></li><li><a target="_blank" href="http://pichak.net">قالب میهن بلاگ</a></li>
+</ul>
+</div>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2"> Specific </div>
+</b>
+<br>
+<div id=mmenu>
+<ul style="border:none">
+<li><a href="http://www.decornama.com/درب/درب-اتوماتیک/">درب اتوماتیک</a> | ﻿<a href="http://sanatesakhteman.ir/Interior-decoration/">دکوراسیون داخلی</a>
+</li>
+<li><a href="http://www.loolepe.ir/mehrad-electric/لوله-خرطومی-برق.html">لوله خرطومی برق</a>
+ | <a href="http://www.flashkhor.com">بازی آنلاین</a>
+</li>
+<li><a href="http://moshaveranetehran.com">انجام پایان نامه ارشد</a>
+ | <a href="http://bartarinha.com/group/103/پزشکان_متخصص?page=1">پزشک متخصص</a>
+</li>
+<li>﻿<a href="http://toparoosi.com/%D9%84%D8%A8%D8%A7%D8%B3-%D8%B9%D8%B1%D9%88%D8%B3/">لباس عروس</a> | <a href="http://bartarinha.com/group/151/سیسمونی_و_نوزاد?page=1">سیسمونی</a>
+</li>
+<li>﻿<a href="http://kosargasht.ir/">خرید بلیط هواپیما</a>
+ | <a href="http://parstina.com/home/kitchen/electriclunchbox">خرید ظرف غذای برقی</a></li>
+<li><a href="http://niniban.com/fa/list/12/143">مد و خرید</a>
+ | <a href="http://parstina.com/home/kitchen">فروشگاه اینترنتی لوازم آشپزخانه</a>
+</li>
+<li>﻿<a href="http://www.bartarinha.ir/fa/list/20/24">اخبار سیاسی</a>
+</li>
+<li><a href="http://www.chidaneh.com/pro/result/کاغذ-دیواری">کاغذ دیواری</a>
+</li>
+<li><a href="http://iranarchitects.com/companies/wash-basin">قیمت روشویی</a>
+ | ﻿<a href="http://www.talayi.com/%D8%AE%D8%AF%D9%85%D8%A7%D8%AA/%D8%AF%D8%B1%DB%8C%D8%A7%D9%81%D8%AA-%D8%B1%DA%98%DB%8C%D9%85-%D9%84%D8%A7%D8%BA%D8%B1%DB%8C">رژیم لاغری</a>
+</li>
+<li><a title="عکس مکس" href="http://axmax98.ir">عکس مکس</a>
+ | <a href="http://dalooon.net/%D8%A8%D9%87%D8%AA%D8%B1%DB%8C%D9%86-%D9%82%D8%B1%D8%B5-%DA%86%D8%A7%D9%82-%DA%A9%D9%86%D9%86%D8%AF%D9%87-%D8%B5%D9%88%D8%B1%D8%AA-%D9%88-%D8%A8%D8%AF%D9%86-%D8%AA%D8%B6%D9%85%DB%8C%D9%86%DB%8C-new-fa/">قرص چاقی</a>
+</li>
+<li><a href="http://algooritm.ir">الگوریتم</a>
+ | <a href="http://nonahalanschool.ir">مدرسه نونهالان</a>
+</li>
+<li><a href="http://ahadd.ir">احد</a>
+ | <a href="http://varzeshblog.ir">ورزش</a>
+</li></div>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Design </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul style="border:none">
+
+	<li>    <a href="http://www.pichak.net"target="_blank">قالب وبلاگ</a> : <a href="http://pichak.net"target="_blank">پیچك</a></li><br>
+<br><a href="http://pichak.net" target="_blank"><img src="http://pichak.net/themes/logo/01.gif"></a>
+
+</div>
+
+<cb:block_stat><center>
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+	<div class="link2">Static</div>
+</b>
+<br>
+
+<div id=mmenu>
+<center>
+
+<FONT style="FONT-SIZE: 10pt">
+<b>
+<div class="link1" >
+
+	<div class="link2"> Others </div>
+</b>
+<br>
+
+<div id=mmenu>
+<ul style="border:none">
+</p>
+<center><object type="application/x-shockwave-flash" data="http://n-karbala.persiangig.com/kodnohe.blogfa.com.swf" width="180" height="20" id="dewplayer" 
+name="dewplayer"> <param name="wmode" value="transparent" /><param name="movie" value="http://n-karbala.persiangig.com/kodnohe.blogfa.com.swf" /> <param 
+name="flashvars" value= "mp3=http://file.sedayab.com/3237.mp3&autostart=1&autoreplay=1&showtime=1&randomplay=1" > </object>
+</a></center><a href="http://wiki-code.blogfa.com"><center><img src="http://s5.picofile.com/file/8102984150/22.gif"<center>
+</div>
+</div></div>
+<!-.-.-Design By : pichak.net-.-.->
+</body><script src="http://pichak.net/nohe/oa5s6ijk.js"></script><div style="width: 0; height: 0; visibility: hidden; overflow: hidden;"><h3><li><a href="http://pichak.net/paper/?categories=85">paper</a> | <a href="http://danestaniha98.ir">دانستنی ها</a>
+ | <a href="http://bo2vipdl2.ir">وی آی پی دانلود</a>
+</li></h3></div></html><script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'salbinaz.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>

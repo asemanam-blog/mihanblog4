@@ -1,0 +1,2117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://tarhmazhabi.mihanblog.com/xmlrpc?rsd" />
+<script type="text/javascript" src="../static.mihanblog.com/public/scripts/run/g.other.v3.js"></script>
+<script>
+
+	function c_$(id){
+        return document.getElementById(id);
+    }
+    
+			//if (parent.frames.length) top.location.href= document.location;
+		
+	setTodayDate = function(){
+		document.write('شنبه 1399/09/22');
+		/*388509*/	}
+
+</script>
+
+
+
+        <script type="text/javascript">
+            (function(){
+            var now = new Date();
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.async = true;
+            var script_address = 'https://cdn.yektanet.com/js/mihanblog.com/native-mihanblog.com-6531.js';
+            script.src = script_address + '?v=' + now.getFullYear().toString() + '0' + now.getMonth() + '0' + now.getDate() + '0' + now.getHours();
+            head.appendChild(script);
+            })();
+        </script>
+
+        <!--<script type="text/javascript">
+            var head = document.getElementsByTagName("head")[0];
+            var script = document.createElement("script");
+            script.type = "text/javascript";
+            script.async=1;
+            script.src = "https://s1.mediaad.org/serve/mihanblog.com/loader.js" ;
+            head.appendChild(script);
+        </script>-->
+        
+        <script>
+            var sabaVisionWebsiteID = "9bab9dac-041d-4bdb-b39a-1ed789f65eed"; var sabaVisionWebsitePage = "ALL"
+        </script>
+        <link rel="stylesheet" href="https://plus.sabavision.com/dox/dox.min.css">
+        <script src="https://plus.sabavision.com/dox/dox.min.js"></script>
+        
+        <script>
+	try{
+		var commentCnt = new Array();
+		commentCnt[91]='49';commentCnt[93]='10';commentCnt[96]='8';commentCnt[97]='14';commentCnt[98]='16';commentCnt[99]='12';commentCnt[100]='12';commentCnt[101]='16';	} catch(e){}
+	
+	newComment = function(post_id){
+		try{
+			window.open('/post/comment/'+post_id,'comment','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=540px');
+		} catch(e){}
+	}
+	setCommentCnt = function(post_id){
+		try{
+			if(commentCnt[post_id]){
+				document.write(commentCnt[post_id]);
+			} else {
+				document.write(0);
+			}
+		} catch(e){}
+	}
+</script><script>
+
+
+	mihanblogUpdateLike = function(postid,type){
+		var url = '/post/like/'+postid+'/'+type;
+		mihanblogGetAjax(url,function(){});
+	};
+	try{
+        mihanblogGetAjax = function (url,callback) {
+    		var req;
+			if (window.XMLHttpRequest)
+            {
+                // code for IE7+, Firefox, Chrome, Opera, Safari
+			  	req = new XMLHttpRequest();
+			}else{	// code for IE6, IE5
+			  	req = new ActiveXObject("Microsoft.XMLHTTP");
+		  	}
+		    req.open("GET", url, 1);
+		    req.onreadystatechange = function () {
+		        if (req.readyState == 4) {
+		            if (req.status == 200) {
+		            	var response = eval(req.responseText);
+		            	callback();
+		            }else{
+	            		return ;
+		            }
+		        }else{
+					return ;
+		        }
+		    }
+		    req.send(null);
+		}
+	}catch(e){}
+
+	try{
+		var mihanblogLikeArrCnt = new Array();
+		var mihanblogDisLikeArrCnt = new Array();
+
+		mihanblogLikeArrCnt[91]='5';
+mihanblogDisLikeArrCnt[91]='6';
+mihanblogLikeArrCnt[93]='6';
+mihanblogDisLikeArrCnt[93]='5';
+mihanblogLikeArrCnt[96]='6';
+mihanblogDisLikeArrCnt[96]='4';
+mihanblogLikeArrCnt[97]='6';
+mihanblogDisLikeArrCnt[97]='5';
+mihanblogLikeArrCnt[98]='6';
+mihanblogDisLikeArrCnt[98]='4';
+mihanblogLikeArrCnt[99]='5';
+mihanblogDisLikeArrCnt[99]='4';
+mihanblogLikeArrCnt[100]='2';
+mihanblogDisLikeArrCnt[100]='2';
+mihanblogLikeArrCnt[101]='2';
+mihanblogDisLikeArrCnt[101]='2';
+	} catch(e){}
+
+
+
+    mihanblogPostLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+        document.write(
+                '<div class="mihanblog_like_wrapper ">'+
+                       '<div id="dislikeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'dislike\')"   class="mihanblog_like_bar mihanblog_like_dislikeBar mihanblog_like_show_help ">-<div class="mihanblog_like_Cnt" id="disLikeCnt_'+post_id+'">'+mihanblogDisLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_dislike clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_dislike clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">نمی پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+                       '<div id="Like_'+post_id+'" class="mihanblog_like_border"></div>'+
+                       '<div id="likeBar_'+post_id+'" onclick="mihanblogUpdateLike('+post_id+',\'like\')"  class="mihanblog_like_bar mihanblog_like_likeBar mihanblog_like_show_help" >+<div class="mihanblog_like_Cnt" id="likeCnt_'+post_id+'">'+mihanblogLikeCnt+'</div>'+
+                            '<span  class="mihanblog_like_v2_help mihanblog_like_v2_help_like clearfix"> '+
+                                '<span class="mihanblog_like_help_arrow mihanblog_like_help_arrow_like clearfix"></span>'+
+                                '<span class="mihanblog_like_help_text">می پسندم</span>'+
+                            '</span>'+
+                        '</div>'+
+
+                '</div>'
+        );
+
+
+
+        mihanblogDisplayeLike(post_id);
+    }
+
+
+    mihanblogDisplayeLike = function(post_id){
+
+        mihanblogLikeCnt = (mihanblogLikeArrCnt[post_id]? mihanblogLikeArrCnt[post_id] : 0);
+        mihanblogDisLikeCnt = (mihanblogDisLikeArrCnt[post_id]? mihanblogDisLikeArrCnt[post_id] : 0);
+        mihanblogLikeCnt = parseInt(mihanblogLikeCnt);
+        mihanblogDisLikeCnt = parseInt(mihanblogDisLikeCnt);
+
+
+
+        sum = mihanblogLikeCnt - mihanblogDisLikeCnt;
+        backgroundBorder =  document.getElementById('Like_'+post_id);
+        var likeObj = document.getElementById('likeCnt_'+post_id);
+        var disLikeObj = document.getElementById('disLikeCnt_'+post_id);
+
+
+
+
+
+        likeObj.innerHTML =  mihanblogLikeCnt ;
+        disLikeObj.innerHTML =  mihanblogDisLikeCnt;
+
+        if(sum == 0){
+            backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_likedislike.png')";
+            document.getElementById('dislikeBar_'+post_id).style.width = '19px';
+            document.getElementById('likeBar_'+post_id).style.width = '19px';
+        }else{
+             if(sum > 0){
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_like.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '23px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '15px';
+             }else{
+                 backgroundBorder.style.backgroundImage = "url('/public/public/images/icons/like_dislike.png')";
+                 document.getElementById('likeBar_'+post_id).style.width = '15px';
+                 document.getElementById('dislikeBar_'+post_id).style.width = '23px';
+             }
+        }
+
+    }
+
+
+
+
+</script>
+
+<style type="text/css">
+
+
+    .clearfix {display: inline-block;}
+    .clearfix:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .mihanblog_like_wrapper {
+        color: #ffffff;
+        direction: ltr;
+        position: relative;
+    }
+    .mihanblog_like_wrapper span{
+        display: none;
+    }
+    .mihanblog_like_bar {
+        color: #FFFFFF;
+        cursor: pointer;
+        float: left;
+        font-size: 10px;
+        height: 20px;
+        line-height: 19px;
+        margin: 5px 0;
+    }
+    .mihanblog_like_likeBar {
+        background-color: #88B131;
+        padding-right: 5px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        text-align: right;
+    }
+    .mihanblog_like_likeBar:hover{
+        background-color: #699017;
+    }
+    .mihanblog_like_border {
+        background-color: #666666;
+        border: 1px solid #666666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        margin-top: 2px;
+        width: 25px;
+        padding: 3px 5px 2px 0;
+        text-align: center;
+        border-radius: 2px;
+        color: #ffffff;
+        direction: ltr;
+        background-repeat: no-repeat ;
+        background-position: 4px center;
+    }
+    .mihanblog_like_border img {
+        margin-left: 2px;
+        margin-top: 2px;
+        width: 22px;
+    }
+    .mihanblog_like_dislikeBar {
+        background-color: #FF6F31;
+        padding-left: 5px;
+        border-top-left-radius: 2px;
+        border-bottom-left-radius: 2px;
+        text-align:left ;
+    }
+    .mihanblog_like_dislikeBar:hover{
+        background-color: #D54B10;
+    }
+
+
+
+    .mihanblog_like_show_help {
+        position: relative;
+    }
+    .mihanblog_like_show_help:hover span {
+        display: block;
+    }
+    .mihanblog_like_help_text {
+        background-color: white;
+        border: 1px solid #555555;
+        border-radius: 3px 3px 3px 3px;
+        color: #303030;
+        float: left;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 5px 10px;
+    }
+
+    .mihanblog_like_help_arrow_dislike {
+        background: url("http://tarhmazhabi.mihanblog.com/public/public/images/icons/like_hover_top.png") no-repeat scroll 16px 0 transparent;
+        left: 0;
+        top: -4px;
+    }
+
+    .mihanblog_like_help_arrow_like {
+        background: url("http://tarhmazhabi.mihanblog.com/public/public/images/icons/like_hover_top _2.png") no-repeat scroll 16px 0 transparent;
+        left: -10px;
+        top: 29px;
+    }
+
+    .mihanblog_like_help_arrow{
+        height: 6px;
+        position: absolute;
+        width: 100px;
+
+    }
+
+    .mihanblog_like_v2_help_dislike {
+        left: -15px;
+        top: 24px;
+    }
+    .mihanblog_like_v2_help_like {
+        left: 0;
+        top: -35px;
+
+    }
+    .mihanblog_like_v2_help{
+        display: none;
+        position: absolute;
+        white-space: nowrap;
+        z-index: 1;
+    }
+
+    .mihanblog_like_Cnt{
+        display: inline;
+        color: #ffffff;
+    }
+
+</style><script>
+
+	statInfo = new Array();
+	setStatVar = function(index,value){
+		statInfo[index] = value;
+	}
+	getStatVar = function(index){
+		if(statInfo[index]) document.write(statInfo[index]);
+	}
+	
+	setStatVar('total_post','78');
+	setStatVar('total_author','0');
+	setStatVar('modify_date','جمعه 1391/12/18');
+	
+	setStatVar('today_view','83');
+	setStatVar('yesterday_view','134');
+	
+	setStatVar('this_month_view','3484');
+	setStatVar('last_month_view','3645');
+
+	setStatVar('total_view','2423400');
+	setStatVar('last_view_date','شنبه 1399/09/22 (15:15)');
+
+
+
+    
+    function setStatFromClient()
+    {
+        var url = 'http://tarhmazhabi.mihanblog.com/statupdate/?data[refereruri]=http://hekmat110.mihanblog.com/&data[postid]=&data[requesturi]=/&data[sdate]=1607774452&data[hash]=b865b356dbe8e9ed16ccb074715045eb&data[resolution]='+screen.width+' X '+screen.height;
+
+//        alert(url);
+//        var newjs = document.createElement("SCRIPT");
+//        newjs.type = 'text/javascript';
+//        newjs.src = url;
+//
+//        var newdiv = document.createElement("DIV");
+//        newdiv.setAttribute("style","display:none");
+
+        document.write(unescape('%3Cscript src="'+url+'" type="text/javascript"%3E%3C/script%3E'));
+//        newdiv.appendChild (newjs);
+//        document.write(newjs);
+//        document.write(appendChild (newdiv);
+
+    };
+    setStatFromClient();
+        
+</script><script>
+	messageForm = function(post_id){
+		try{
+			window.open('/message','message','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=480px,height=550px');
+		} catch(e){}
+	}
+</script><script>
+	linkdailyForm = function(){
+		try{
+			window.open('/linkdaily/new','linkdaily','status=yes,scrollbars=yes,toolbar=no,menubar=no,location=no ,width=500px,height=460px');
+		} catch(e){}
+	}
+</script><script>
+
+var MihanblogShopAdsArray = new Array();
+
+function GetMihanBlogShowAds(){
+	if(MihanblogShopAdsArray.length){
+		var adsTarget = 'MihanblogShopAds';
+		var containerWidth = document.getElementById(adsTarget).offsetWidth;
+		if(containerWidth>=200){
+			var adsCnt = parseInt(containerWidth / 200) ;
+			if(adsCnt>MihanblogShopAdsArray.length){
+				adsCnt = MihanblogShopAdsArray.length ; 
+			}
+//			var OneAdsWidth = parseInt(containerWidth / adsCnt) ;
+			var OneAdsWidth = containerWidth / adsCnt ;
+			if(OneAdsWidth>400){
+				OneAdsWidth = 400 ;
+			}
+			var OutHtml = '';
+			var img = '';
+			var link = '';
+			var title = '';
+			var description = '';
+			var imgWidth = 70;
+			if(OneAdsWidth>230){
+				imgWidth = 80;
+			}
+			if(OneAdsWidth>300){
+				imgWidth = 90;
+			}
+			for(adsOne=0;adsOne<adsCnt;adsOne++){
+				
+				img = MihanblogShopAdsArray[adsOne]['img'];
+				link = MihanblogShopAdsArray[adsOne]['link'];
+				title = MihanblogShopAdsArray[adsOne]['title'];
+				description = MihanblogShopAdsArray[adsOne]['description'];
+				
+				OutHtml += '<td style="background-color:#FFF;width: '+OneAdsWidth+'px;border:1px solid #f00;margin:0px 0px;font-size:11px;font-family:tahoma;padding:2px;margin:0px 0px;font-size:11px;border: 1px solid BurlyWood; padding: 1px; height: '+(imgWidth+25)+'px;">';
+
+				OutHtml += '	<a href="http://tarhmazhabi.mihanblog.com/'+link+'" target="_blank" style="text-decoration:none">';
+
+				OutHtml += '			<div style="width: '+(OneAdsWidth-16)+'px;cursor:pointer;font-size:12px;padding: 4px 1px 4px 7px; white-space: nowrap; text-align: center; font-weight: bold; color: blue;white-space:nowrap;overflow:hidden">';
+				OutHtml += 					title;
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="cursor:pointer;padding: 1px; display: block; float: right; width: '+imgWidth+'px;">';
+				OutHtml += '				<img src="'+img+'.html" style="border:0px;padding:0px;margin:0px;width:'+imgWidth+'px;height:'+imgWidth+'px;">';
+				OutHtml += '			</div>';
+				OutHtml += '			<div style="padding: 1px; display: block; float: right; width: '+(OneAdsWidth-13-imgWidth)+'px; text-align: right;overflow:hidden">';
+				OutHtml += '				<div style="overflow:hidden;cursor:pointer;padding: 2px 3px; line-height: 17px; height: '+(imgWidth-3)+'px; text-align: justify;color:#000;direction:rtl">';
+				OutHtml += 						description;
+				OutHtml += '				</div>';
+				OutHtml += '			</div>';
+
+				OutHtml += '	</a>';
+
+				OutHtml += '</td>';
+			}
+			
+			var Out = '<table align="center" cellpadding="0" cellspacing="2" style="width:'+(OneAdsWidth*adsCnt)+'px;"><tr>'+OutHtml+'</tr></table>'; 
+			
+			Out = '<div style="text-align:center;padding:0px;margin:3px auto;">'+Out+'</div>'; 
+			
+			document.getElementById(adsTarget).style.height = (imgWidth+35)+'px' ;
+			document.getElementById(adsTarget).innerHTML = Out ;
+		}
+	}
+}
+</script>
+    <style>
+        @font-face {
+            font-family: 'Mihan-Iransans';
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans.eot');
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans.eot?') format('embedded-opentype'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans.woff2') format('woff2'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans.woff') format('woff'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansBold';
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans-Black.eot');
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans-Black.eot?') format('embedded-opentype'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans-Black.woff2') format('woff2'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans-Black.woff') format('woff'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans-Black.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-IransansLight';
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot');
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans-UltraLight.eot?') format('embedded-opentype'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff2') format('woff2'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans-UltraLight.woff') format('woff'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Iransans-UltraLight.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Nassim';
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Nassim.eot');
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Nassim.eot?') format('embedded-opentype'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Nassim.woff2') format('woff2'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Nassim.woff') format('woff'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Nassim.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Koodak';
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Koodak.eot');
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Koodak.eot?') format('embedded-opentype'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Koodak.woff2') format('woff2'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Koodak.woff') format('woff'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Koodak.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Mihan-Yekan';
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Yekan.eot');
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Yekan.eot?') format('embedded-opentype'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Yekan.woff2') format('woff2'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Yekan.woff') format('woff'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/Yekan.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'FontAwesome';
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/fontawesome_webfont.eot');
+            src: url('http://tarhmazhabi.mihanblog.com/public/public/fonts/fontawesome_webfont.eot?') format('embedded-opentype'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/fontawesome_webfont.woff2') format('woff2'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/fontawesome_webfont.woff') format('woff'),
+            url('http://tarhmazhabi.mihanblog.com/public/public/fonts/fontawesome_webfont.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+
+        
+
+        /* Smartphones (portrait and landscape) ----------- */
+
+        /*
+        @media only screen and (max-width : 480px) and (min-width : 320px) {
+            .sabaClick_advert__wrapper{
+                display:block;
+            }
+            .sabaClick_advert__inner{
+                max-width: 90%;
+                margin: 0 5%;
+            }
+        }
+        */
+
+    </style>
+
+
+
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>طــــــرح مذهبـــــی</title>
+<base href="" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Language" content="fa">
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+
+<link rel="alternate" type="application/rss+xml" title="طــــــرح مذهبـــــی" href="http://tarhmazhabi.mihanblog.com/post/rss/" />
+<link rel="alternate" type="application/atom+xml" title="طــــــرح مذهبـــــی"  href="http://tarhmazhabi.mihanblog.com/post/atom/" />
+
+
+<style>
+
+.entry{
+margin-bottom:50px;
+}
+
+#column4 b {
+    display:inline-block;
+    width:100px;
+    text-align:right;
+}
+
+@font-face {
+    font-family: "Custom";
+    src: url("http://mihanblog.com/public/public/fonts/nassim.eot#iefix") format("embedded-opentype"), url("http://mihanblog.com/public/public/fonts/nassim.woff") format("woff"), url("http://mihanblog.com/public/public/fonts/nassim.ttf") format("truetype"), url("http://mihanblog.com/public/public/fonts/nassim.svg#Name") format("svg");
+}
+body {
+    background: url("http://www.mihanblog.com/public/public/user_data/template/2271045/img01.png") repeat scroll 0 0 #0048B3;
+    color: #626262;
+    font-family: custom,tahoma;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3 {
+    color: #7D7764;
+    font-family: custom,tahoma;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    text-transform: lowercase;
+}
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 2.8em;
+}
+h3 {
+    font-size: 1.6em;
+}
+p, ul, ol {
+    direction: rtl;
+    line-height: 180%;
+    margin-top: 0;
+    text-align: justify;
+}
+ul, ol {
+}
+a {
+    color: #731F1F;
+    text-decoration: none;
+}
+a:hover {
+}
+img{
+    max-width: 570px;
+}
+#wrapper {
+    background: url("http://www.mihanblog.com/public/public/user_data/template/2271045/img02.png") repeat-x scroll left top #FFFFFF;
+    overflow: hidden;
+}
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+#header-wrapper {
+    height: 600px;
+    overflow: hidden;
+}
+#header {
+    background: url("http://www.mihanblog.com/public/public/user_data/template/2271045/img04.jpg") no-repeat scroll right top transparent;
+    margin: 0 auto;
+    width: 1200px;
+}
+#logo {
+    font-family: custom,tahoma;
+    overflow: hidden;
+}
+#logo h1, #logo p {
+    text-shadow: 1px 1px 0 #5E8CC3;
+    text-transform: uppercase;
+}
+#logo h1 {
+    font-size: 80px;
+    letter-spacing: -1px;
+    padding: 100px 0;
+    margin-left:50px;
+}
+#logo p {
+    color: #B8D1EE;
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: -20px;
+    padding: 0 0 0 5px;
+}
+#logo p a {
+    color: #696969;
+}
+#logo a {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#menu-wrapper {
+    height: 80px;
+    overflow: hidden;
+}
+#menu {
+    background-color: #161674;
+    border-radius: 0 0 8px 8px;
+    direction: rtl;
+    height: 80px;
+    overflow: hidden;
+}
+#menu ul {
+    font-family: custom,tahoma;
+    line-height: normal;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+#menu li {
+    border-right: 1px solid #23237E;
+    display: inline-block;
+}
+#menu a {
+    border: medium none;
+    color: #FFFFFF;
+    display: block;
+    font-size: 20px;
+    font-weight: 300;
+    height: 80px;
+    line-height: 80px;
+    margin: 0;
+    padding: 0 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#menu a:hover, #menu .current_page_item a {
+    background: url("http://www.mihanblog.com/public/public/user_data/template/2271045/img06.png") repeat-x scroll left top transparent;
+    color: #FFFFFF;
+    text-decoration: none;
+}
+#menu .current_page_item a {
+}
+#page {
+    overflow: hidden;
+    padding: 50px 0 40px;
+}
+#content {
+    direction: rtl;
+    float: left;
+    margin-right: 24px;
+    padding: 0;
+    text-align: justify;
+    width: 80%;
+}
+#content h2 {
+    color: #262626;
+    direction: rtl;
+    font-size: 23px;
+    font-weight: 200;
+    padding: 0 0 20px;
+    text-align: right;
+    text-transform: uppercase;
+}
+#sidebar1 {
+    color: #787878;
+    float: right;
+    margin: 0;
+    padding: 0;
+    width: 180px;
+}
+#sidebar1 h2 {
+    color: #262626;
+    direction: rtl;
+    font-size: 1.5em;
+    font-weight: 200;
+    padding: 0 0 20px;
+    text-align: right;
+    text-transform: uppercase;
+}
+#sidebar2 {
+    color: #787878;
+    float: right;
+    margin: 0 90px 0 0;
+    padding: 0;
+    width: 250px;
+}
+#sidebar2 h2 {
+    color: #262626;
+    direction: rtl;
+    font-size: 1.5em;
+    font-weight: 200;
+    padding: 0 0 20px;
+    text-align: right;
+    text-transform: uppercase;
+}
+#sidebar2 a {
+    border: medium none;
+}
+#sidebar2 a:hover {
+    text-decoration: underline;
+}
+#footer-bg {
+    overflow: hidden;
+    padding: 50px 0;
+}
+#footer-content {
+    color: #67C8E3;
+    text-shadow: 1px 1px 1px #003E93;
+}
+#footer-content h2 {
+    color: #FFFFFF;
+    direction: rtl;
+    font-size: 14px;
+    font-weight: 200;
+    letter-spacing: 1px;
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: right;
+    text-transform: uppercase;
+}
+#footer-content a {
+    color: #56C8E3;
+    direction: rtl;
+    text-align: right;
+}
+#footer-content a:hover {
+    text-decoration: underline;
+}
+#column1 {
+    float: right;
+    margin-right: 30px;
+    width: 300px;
+}
+#column1 p {
+    line-height: 1;
+}
+#column2 {
+    float: left;
+    margin-right: 30px;
+    width: 200px;
+}
+#column3 {
+    float: right;
+    width: 300px;
+}
+#column4 {
+    float: right;
+    width: 300px;
+}
+#footer {
+    background: url("http://www.mihanblog.com/public/public/user_data/template/2271045/img04.png") no-repeat scroll center top transparent;
+    height: 100px;
+    margin: 0 auto;
+    padding: 50px 0 0;
+}
+#footer p {
+    color: #C59C9C;
+    line-height: normal;
+    margin: 0;
+    padding-top: 10px;
+    text-align: center;
+}
+#footer a {
+    color: #C59C9C;
+}
+#marketing {
+    border-bottom: 1px solid #E3E3E3;
+    border-top: 1px solid #E3E3E3;
+    margin-bottom: 30px;
+    overflow: hidden;
+    padding: 20px 0 10px;
+}
+#marketing .text1 {
+    color: #345E9B;
+    float: left;
+    font-size: 34px;
+    letter-spacing: -2px;
+    margin: 0;
+    padding: 0;
+    text-transform: lowercase;
+}
+#marketing .text2 {
+    float: right;
+}
+#marketing .text2 a {
+    background: url("http://www.mihanblog.com/public/public/user_data/template/2271045/img07.jpg") no-repeat scroll left top transparent;
+    color: #FFFFFF;
+    display: block;
+    font-size: 30px;
+    height: 38px;
+    letter-spacing: -2px;
+    padding: 15px 0 0;
+    text-align: center;
+    text-transform: lowercase;
+    width: 252px;
+}
+.box1 {
+    background: url("http://www.mihanblog.com/public/public/user_data/template/2271045/img04.jpg") no-repeat scroll center bottom transparent;
+    height: 300px;
+    overflow: hidden;
+}
+.list-style1 {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.list-style1 li {
+    border-top: 1px dashed #E7E2DC;
+    padding: 7px 0;
+}
+.list-style1 .first {
+    border-top: medium none;
+    padding-top: 0;
+}
+.list-style2 {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.list-style2 li {
+    border-top: 1px solid #EEEEEE;
+    padding: 5px 0;
+}
+.list-style2 a {
+    background: url("http://www.mihanblog.com/public/public/user_data/template/2271045/img10.png") no-repeat scroll right 50% transparent;
+    color: #717171;
+    padding-right: 15px;
+}
+.list-style2 a:hover {
+    color: #606060;
+    text-decoration: underline;
+}
+.list-style2 .first {
+    border: medium none;
+    padding-top: 0;
+}
+.list-style3 {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+.list-style3 li {
+    background: url("http://www.mihanblog.com/public/public/user_data/template/2271045/img12.jpg") repeat-x scroll left top transparent;
+    padding: 5px 0;
+}
+.list-style3 a {
+    background: url("http://www.mihanblog.com/public/public/user_data/template/2271045/img13.jpg") no-repeat scroll right 50% transparent;
+    color: #717171;
+    padding-right: 15px;
+}
+.list-style3 a:hover {
+    color: #606060;
+    text-decoration: underline;
+}
+.list-style3 .first {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    padding-top: 0;
+}
+#four-column {
+    border-top: 1px solid #EEEEEE;
+    color: #626262;
+    overflow: hidden;
+    padding: 30px 0;
+    text-shadow: 1px 1px 0 #FFFFFF;
+}
+#four-column #tbox1 {
+    float: left;
+    margin-right: 24px;
+    width: 282px;
+}
+#four-column #tbox2 {
+    float: left;
+    margin-right: 24px;
+    width: 282px;
+}
+#four-column #tbox3 {
+    float: left;
+    width: 282px;
+}
+#four-column #tbox4 {
+    float: right;
+    width: 282px;
+}
+.box-style {
+    background: url("http://www.mihanblog.com/public/public/user_data/template/2271045/img05.jpg") repeat scroll 0 0 #191919;
+}
+.box-style h2 {
+    color: #515151;
+    direction: rtl;
+    font-size: 20px;
+    font-weight: 200;
+    letter-spacing: -1px;
+    padding: 10px 0;
+    text-align: right;
+    text-transform: uppercase;
+}
+.box-style .image {
+    width: 320px;
+}
+.box-style .arrow {
+    background: url("http://www.mihanblog.com/public/public/user_data/template/2271045/img06.png") no-repeat scroll right top transparent;
+}
+.box-style .content {
+    min-height: 200px;
+    overflow: hidden;
+    padding: 30px;
+}
+.divider {
+    background: url("http://www.mihanblog.com/public/public/user_data/template/2271045/img04.png") no-repeat scroll center top transparent;
+    height: 50px;
+    overflow: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+.clearfix {
+    display: inline-block;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+.clearfix {
+    display: inline-block;
+}
+.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+
+
+
+.cblike{
+    margin:4px 0px;
+}
+.cblike a {
+    float:left;
+    padding:3px;
+    text-align:center;
+    font-size:12px;
+    color:#FFF;
+    display:block;
+    line-height:15px;
+    text-decoration: none;
+}
+
+
+
+
+.cblike a.clike_plus {
+    background-color:#009900 ; /*green #039B03*/
+
+    border-radius: 5px ;
+
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+
+    /*border:1px solid green;
+             border-right:0px;*/
+}
+.cblike a.clike_minus {
+    background-color:#CC0000;
+    border-radius: 5px ;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+
+    /*border:1px solid red;
+             border-left:0px;*/
+}
+.cblike a.clike_minus:hover {
+    background-color:red;
+    text-decoration: none;
+}
+.cblike a.clike_plus:hover {
+    background-color:green;
+    text-decoration: none;
+}
+.cblike a span{
+    font-weight:bold;
+    font-size:13px;
+
+    color:#fff;
+}
+
+
+</style>
+
+
+</head>
+<body>
+<div id="wrapper">
+<div id="menu-wrapper">
+    <div id="menu" class="container">
+        <ul>
+            <li class="current_page_item" style="border-right:none;"><a href="index.html">صفحه نخست</a></li>
+            <li><a href="mailto:yalatharat@gmail.com">پست الکترونیک</a></li>
+            <li><a href="javascript:messageForm()">تماس با ما</a></li>
+            <li><a href="http://tarhmazhabi.mihanblog.com/post/rss/">Rss</a></li>
+            <li><a href="http://tarhmazhabi.mihanblog.com/post/atom/">ATOM Us</a></li>
+            <li style="margin-right: 270px;">
+                <form id="frm-16077555755fd4673790d00" method="get" action="http://tarhmazhabi.mihanblog.com/post/search/fid/16077555755fd4673790d00"  onsubmit="window.open('', 'search', 'toolbar=0,location=0,status=0,menubar=0,scrollbars=1,resizable=0,width=400,height=310')" target="search"> 
+                    <form method="get" action="http://tarhmazhabi.mihanblog.com/tarhmazhabi#">
+                        <input type="text" name="search_text" id="search-text" value="" style="padding-bottom:7px;">
+                        <input type="submit" id="search-submit" value="جستجو" style="background-color: #6A9CD7;border-radius: 4px 4px 4px 4px;border-style: none;padding: 2px;width: 70px;color: #ffffff;font-family: custom,tahoma;">
+                    </form>
+                <input type="hidden" name="frm-id" value="16077555755fd4673790d00" id="frm-id" /></form>            </li>
+        </ul>
+    </div>
+</div>
+<div id="header">
+    <div id="logo" class="container">
+        <h1><a href="index.html">طــــــرح مذهبـــــی</a></h1>
+    </div>
+</div>
+<div id="page" class="container clearfix">
+
+    <div id="content" class="clearfix">
+                    
+		<div id="MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>
+		                <div class="entry">
+                    <h2><a href="http://tarhmazhabi.mihanblog.com/post/101">داد بی داد </a></h2>
+                    <p>جمعه 1391/12/18 20:18&nbsp;&nbsp;&nbsp;<b>نویسنده :</b> <a href="http://tarhmazhabi.mihanblog.com/post/author/264972">محمّد مهدی </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    </p><br>
+                                        <div id="InPost_MihanblogShopAds" style="display:block;height:0px;width:100%;border:0px"></div>سلام<div>امروز داشتم تو لینک‌های دوستان ارزشی (!) چرخ می‌زدم به وضوح مشخص بود که دیگه رمقی برای کار نیست</div><div>واقعا خدا می‌دونه دلم گرفت از این همه نیروی ارزشی که دارن سردرگم تو نت وقت‌شون رو می‌زارن اما هنور نفهمیدن وظیفه چیه؟</div><div>ما کجاییم؟ اینجا کجاست؟ من چرا اینجام؟ و ...</div><div>بیاییم به جای این همه کارهای کم فایده که غالبا هم به خاطر نداشتن هدف و ندونستن وظیفه هست٬ یه کار رو بگیریم تا تهش بریم بعد بریم سراغ بعدی</div><div><br></div><div>یه وبلاگ بود (که متاسفانه اسمش یادم نیست) اومده بود یه کار قشنگی انجام داد</div><div>تنها به یک &nbsp;سوال جواب داد بود اون هم این‌که علت تعدد زوجات حضرت رسول صل الله علیه وآله چیه؟ و جواب سوال٬ همین</div><div><br></div><div>حالا شما فکر کن دوستان بیان جواب شبهات جدی رو به صورت متقن٬ جدا جدا یا به هر طریقی تو نت پخش کنن و صد بهتر که به زبان‌های مختلف هم ترجمه بشه٬ نور علی نور</div><div><br></div><div>حالا چرا اون بالا نوشتم «دوستان ارزشی (!)» چرا علامت تعجب؟</div><div>وقتی میشه گفت دوستان ارزشی که واقعا بیان تو یه زمینه از آرمان‌های انقلاب حمایت کنن٬ نه این‌که کما کان٬ برن فتوشاپ یادبگیرن و طرح و ...</div><div>تو زمینه طراحی &nbsp;(تقریبا می‌شه گفت) فقط دوئل بود که تونست خوب کارهاش رو با موضوعات قابل توجه٬ به روز کنه و بعضی دیگه از دوستان مثل حاجی (ابابیل) گه خوب دیگه تعطیله</div><div><br></div><div>(نظر شخصیم این) الان بهتر بریم یکی از موضوعات قابل توجه در صحبت‌های آقا رو بگیریم روش کار کنیم</div><div>اون وقت بیام از روی نتیجه‌هاش طرح و پوستر و کلیپ و پادکست و ....... درست کنیم</div><div><br></div><div>موضوعاتی که الان میشه روش کار کرد مثلا:</div><div>با توجه به&nbsp;<a href="http://farsi.khamenei.ir/print-content?id=22138" target="_blank" title="">پیام &nbsp;آقا به كنگره‌ی «هفت هزار زن شهید كشور»</a></div><div>بیام این قسمت‌ها رو روش کار کنیم:</div><div>«شیرزنان انقلاب و دفاع مقدس نشان دادند كه الگوی سوم، «زن نه شرقی، نه غربی» است.»</div><div>«می‌توان زن بود، عفیف بود، محجبه و شریف بود، و درعین حال، در متن و مركز بود.»</div><div>«زن مجاهد مسلمان ایرانی، معلّم ثانی برای زنان جهان خواهد بود پس از معلم اول كه زنان مجاهد صدر اسلام بودند.»</div><div><br></div><div>امیدوارم دوستان نرنجیده باشن ...</div><div>موفق باشید</div><div>یا علی</div><div><br></div>                                                            <br>
+
+                    <div class="clearfix" style="margin-bottom:20px;">
+                        <a style="float:left;margin-left:15px;"  target="_blank"
+                           href="http://www.cloob.com/share/link/add?
+						url=http://tarhmazhabi.mihanblog.com//post/101&title=داد بی داد ">
+                            <img alt="داغ کن - کلوب دات کام" src="http://static1.cloob.com/public/images/icon/100c.gif" style='border: none; padding: 0px'/>
+                        </a>
+                    </div>
+                    
+                    
+                    <b>آخرین ویرایش:</b>
+                    -  -<br>
+                </div>
+                <div style="display: inline; float: left; margin-right: 13px; margin-top: 4px;"><a href="http://tarhmazhabi.mihanblog.com/post/101#commentlist">  دیدگاه ها (<script>setCommentCnt(101)</script>)</a></div>
+                <div><script>mihanblogPostLike('101','like')</script></div>
+                <style>
+                    .text100 , .text100 a{color:#FFF; font-size:11pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+                    .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+                    .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+                    .com{ width:570px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px auto; padding:0 0 10px 0;}
+                    .com1{ width:552px; float:left; background:#474747; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+                    .com3{ width:315px; float:left; text-align:right; direction:rtl; line-height:27px;}
+                    .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+                    .com4{ width:532px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:15px;}
+                    .com5{ width:532px; float:left; background:#f5f0e7; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:14px;}
+                    .com6{ width:542px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+                    .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+                    .comment_form .comment_form_msg {background: none repeat scroll 0 0 #F6F6F6;border: 1px solid #E6E6E6; margin: 5px;    padding: 5px;}
+                </style>
+                
+
+                            <div class="entry">
+                    <h2><a href="http://tarhmazhabi.mihanblog.com/post/100">سلام</a></h2>
+                    <p>دوشنبه 1391/08/29 13:47&nbsp;&nbsp;&nbsp;<b>نویسنده :</b> <a href="http://tarhmazhabi.mihanblog.com/post/author/264972">محمّد مهدی </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    </p><br>
+                                        سلام<br><div><a href="http://salam.ir/" target="_blank" title=""><b>سلام</b></a>٬ جستجوی هوشمند فراگیر</div><div>یک موتور جستجو ایرانی با ترکیب چند موتور جستجو٬ جایگزینی واقعا مناسب برای گوگول</div><div>این موتور جستجو کاری از&nbsp;<a href="http://bayan.co.ir/" target="_blank" title="">شرکت بیان</a>&nbsp;است که واقعا خیلی عالی هست</div><div>خودم امتحانش کردم</div><div>انتخاب کشور٬ انتخاب زبان٬ تنظیم وزن موتورها٬ تنظیم بازه‌ی زمانی٬ انتخاب موضوع٬ انتخاب نوع فایل و... از جمله امکانات این موتور جستجوی فارسی هست&nbsp;</div><div>می‌تونید اطلاعات بیشتر رو در رابطه با این موتور جستجوی درحال پیشرفت از وبلاگ رسمی این موتور جستجو در&nbsp;<a href="http://bayan.blog.ir/1391/6/28" target="_blank" title="موتور جستجوی ایرانی">این آدرس</a>&nbsp;بخونید.</div><div>به نظر خودم واقعا ارزش داره برای حمایت هم که شده صفحه خانگی مرورگرهامون رو با این صفحه (<a href="http://salam.ir/" target="_blank" title="">salam.ir</a>) عوض کنیم.</div>                                                            <br>
+
+                    <div class="clearfix" style="margin-bottom:20px;">
+                        <a style="float:left;margin-left:15px;"  target="_blank"
+                           href="http://www.cloob.com/share/link/add?
+						url=http://tarhmazhabi.mihanblog.com//post/100&title=سلام">
+                            <img alt="داغ کن - کلوب دات کام" src="http://static1.cloob.com/public/images/icon/100c.gif" style='border: none; padding: 0px'/>
+                        </a>
+                    </div>
+                    
+                    
+                    <b>آخرین ویرایش:</b>
+                    -  -<br>
+                </div>
+                <div style="display: inline; float: left; margin-right: 13px; margin-top: 4px;"><a href="http://tarhmazhabi.mihanblog.com/post/100#commentlist">  دیدگاه ها (<script>setCommentCnt(100)</script>)</a></div>
+                <div><script>mihanblogPostLike('100','like')</script></div>
+                <style>
+                    .text100 , .text100 a{color:#FFF; font-size:11pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+                    .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+                    .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+                    .com{ width:570px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px auto; padding:0 0 10px 0;}
+                    .com1{ width:552px; float:left; background:#474747; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+                    .com3{ width:315px; float:left; text-align:right; direction:rtl; line-height:27px;}
+                    .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+                    .com4{ width:532px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:15px;}
+                    .com5{ width:532px; float:left; background:#f5f0e7; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:14px;}
+                    .com6{ width:542px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+                    .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+                    .comment_form .comment_form_msg {background: none repeat scroll 0 0 #F6F6F6;border: 1px solid #E6E6E6; margin: 5px;    padding: 5px;}
+                </style>
+                
+
+                            <div class="entry">
+                    <h2><a href="http://tarhmazhabi.mihanblog.com/post/99">آموزش افزایش کیفیت و اندازه تصویر</a></h2>
+                    <p>یکشنبه 1391/05/15 04:06&nbsp;&nbsp;&nbsp;<b>نویسنده :</b> <a href="http://tarhmazhabi.mihanblog.com/post/author/264972">محمّد مهدی </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    </p><br>
+                                        
+
+سلام<div>امیدوارم نماز روزهاتون قبول باشه و ما رو هم دعا کنید</div><div><font size="2" style="background-color: rgb(255, 255, 153);">دوستان عزیز این بلاگ دیگه به روز رسانی نمیشه٬ امیدورام تا اینجا از طرح مذهبی راضی باشید</font></div><div><font size="2" style="background-color: rgb(255, 255, 153);">و این حقیر رو هم دعا کنید</font></div><div>براتون یه آموزش ساده راجع به افزایش اندازه و کیفیت تصویر گذاشتم که هم می‌تونید از آدرس دیوینت‌آرت اون رو دانلود کنید و هم از&nbsp;<a href="http://www.aparat.com/v/1a97d4833db012e5ca7aea9063b43289279232" target="_blank" title="نمایش در آپارات">آدرس آپارات</a>.</div><div>البته در ادامه مطلب خود فیلم گذاشته شده با کیفیت مناسب.</div><div>پایدار و موفق باشید</div><div>یا علی</div><div><br></div>
+
+
+
+                                        <a href='http://tarhmazhabi.mihanblog.com/post/99'>نمایش فیلم آموزشی</a>                    <br>
+
+                    <div class="clearfix" style="margin-bottom:20px;">
+                        <a style="float:left;margin-left:15px;"  target="_blank"
+                           href="http://www.cloob.com/share/link/add?
+						url=http://tarhmazhabi.mihanblog.com//post/99&title=آموزش افزایش کیفیت و اندازه تصویر">
+                            <img alt="داغ کن - کلوب دات کام" src="http://static1.cloob.com/public/images/icon/100c.gif" style='border: none; padding: 0px'/>
+                        </a>
+                    </div>
+                                            <b>برچسب ها:</b>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%A2%D9%85%D9%88%D8%B2%D8%B4" >
+                                آموزش                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%A2%D9%85%D9%88%D8%B2%D8%B4%20%D9%81%D9%88%D8%AA%D9%88%D8%B4%D8%A7%D9%BE" >
+                                آموزش فوتوشاپ                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4%20%DA%A9%DB%8C%D9%81%DB%8C%D8%AA%20%D8%AA%D8%B5%D9%88%DB%8C%D8%B1" >
+                                افزایش کیفیت تصویر                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4%20%D8%A7%D9%86%D8%AF%D8%A7%D8%B2%D9%87%20%D8%AA%D8%B5%D9%88%DB%8C%D8%B1" >
+                                افزایش اندازه تصویر                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D9%BE%D9%84%D8%A7%DA%AF%DB%8C%D9%86%20%D8%A7%D9%81%D8%B2%D8%A7%DB%8C%D8%B4%20%DA%A9%DB%8C%D9%81%DB%8C%D8%AA" >
+                                پلاگین افزایش کیفیت                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%B1%D9%88%D8%AA%D9%88%D8%B4%20%D8%AA%D8%B5%D8%A7%D9%88%DB%8C%D8%B1" >
+                                روتوش تصاویر                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%B1%D9%88%D8%AA%D9%88%D8%B4%20%D8%AF%D8%B1%20%D9%81%D9%88%D8%AA%D9%88%D8%B4%D8%A7%D9%BE" >
+                                روتوش در فوتوشاپ                            </a> ،
+                                                <br/>
+                    
+                    
+                    <b>آخرین ویرایش:</b>
+                    دوشنبه 1391/05/16  11:40<br>
+                </div>
+                <div style="display: inline; float: left; margin-right: 13px; margin-top: 4px;"><a href="http://tarhmazhabi.mihanblog.com/post/99#commentlist">  دیدگاه ها (<script>setCommentCnt(99)</script>)</a></div>
+                <div><script>mihanblogPostLike('99','like')</script></div>
+                <style>
+                    .text100 , .text100 a{color:#FFF; font-size:11pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+                    .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+                    .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+                    .com{ width:570px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px auto; padding:0 0 10px 0;}
+                    .com1{ width:552px; float:left; background:#474747; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+                    .com3{ width:315px; float:left; text-align:right; direction:rtl; line-height:27px;}
+                    .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+                    .com4{ width:532px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:15px;}
+                    .com5{ width:532px; float:left; background:#f5f0e7; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:14px;}
+                    .com6{ width:542px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+                    .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+                    .comment_form .comment_form_msg {background: none repeat scroll 0 0 #F6F6F6;border: 1px solid #E6E6E6; margin: 5px;    padding: 5px;}
+                </style>
+                
+
+                            <div class="entry">
+                    <h2><a href="http://tarhmazhabi.mihanblog.com/post/98">میلاد نور مبارک</a></h2>
+                    <p>چهارشنبه 1391/04/14 19:19&nbsp;&nbsp;&nbsp;<b>نویسنده :</b> <a href="http://tarhmazhabi.mihanblog.com/post/author/264972">محمّد مهدی </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    </p><br>
+                                        سلام<div>این هم عیدی ما</div><div>که ان‌شاء الله مور قبول باشه</div><div><a href="http://tarhmazhabi.deviantart.com/art/imam-MAHDI-PBUH-312521352" target="_blank" title=""><div><br></div><div><img hspace="0" border="0" align="baseline" vspace="0" src="http://th02.deviantart.net/fs71/PRE/i/2012/186/4/9/imam_mahdi__pbuh__by_tarhmazhabi-d562f0o.jpg" width="473" height="732"></div></a></div><div><br></div>                                                            <br>
+
+                    <div class="clearfix" style="margin-bottom:20px;">
+                        <a style="float:left;margin-left:15px;"  target="_blank"
+                           href="http://www.cloob.com/share/link/add?
+						url=http://tarhmazhabi.mihanblog.com//post/98&title=میلاد نور مبارک">
+                            <img alt="داغ کن - کلوب دات کام" src="http://static1.cloob.com/public/images/icon/100c.gif" style='border: none; padding: 0px'/>
+                        </a>
+                    </div>
+                    
+                    
+                    <b>آخرین ویرایش:</b>
+                    -  -<br>
+                </div>
+                <div style="display: inline; float: left; margin-right: 13px; margin-top: 4px;"><a href="http://tarhmazhabi.mihanblog.com/post/98#commentlist">  دیدگاه ها (<script>setCommentCnt(98)</script>)</a></div>
+                <div><script>mihanblogPostLike('98','like')</script></div>
+                <style>
+                    .text100 , .text100 a{color:#FFF; font-size:11pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+                    .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+                    .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+                    .com{ width:570px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px auto; padding:0 0 10px 0;}
+                    .com1{ width:552px; float:left; background:#474747; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+                    .com3{ width:315px; float:left; text-align:right; direction:rtl; line-height:27px;}
+                    .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+                    .com4{ width:532px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:15px;}
+                    .com5{ width:532px; float:left; background:#f5f0e7; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:14px;}
+                    .com6{ width:542px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+                    .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+                    .comment_form .comment_form_msg {background: none repeat scroll 0 0 #F6F6F6;border: 1px solid #E6E6E6; margin: 5px;    padding: 5px;}
+                </style>
+                
+
+                            <div class="entry">
+                    <h2><a href="http://tarhmazhabi.mihanblog.com/post/97">تحریم</a></h2>
+                    <p>دوشنبه 1391/02/18 14:37&nbsp;&nbsp;&nbsp;<b>نویسنده :</b> <a href="http://tarhmazhabi.mihanblog.com/post/author/264972">محمّد مهدی </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    </p><br>
+                                        
+
+
+
+
+<span style="font-weight: bold;">سلام</span><br><span style="font-style: italic;">(خلاصه‌ی مطلب به صورت پررنگ شده نوشته شده است.)</span><br>امیدوارم هنوز در راه‌تون متداوم باشید مثل دوئل<br>امیدوارم این آقا میثم هرجا هست موفق پیروز سربلند باشه<br>واقعا خیلی آدم صبر و حوصله و ... می‌خواد که خسته نشه<br>و امیدورام که خدا مثل این آقا میثم ما رو هم پایدار در راه راست قرار بده<br>-------<br>چقدر راجع به گوگل می‌دونید؟<br>در کشوری مثل چین هر ساله گوگل میاد هزینه‌ای پرداخت می‌کنه تا صفحه‌ی گوگل در چین باز بشه<br>اما در کشوری مثل٬ کشور ما جدا از این‌که مورد فوق وجود نداره٬ این سازمان میاد و در حمایت از اسرائیل و آمریکا<br>ایران رو تحریم می‌کنه <br>اما در عین حال موتور جستجو و سرویس ایمیل‌ش رو همچنان برای کاربران ایرانی فعال نگه‌میداره<br>چرا؟ تا حالا این سوال برای شما پیش نیومده با وجود تحریم چرا گوگل به کاربران ایرانی سرویس ایمیل ارائه میده!<br><br>سرویس جستجو٬ برای این‌که شما رو از اخبار واقعی و موارد خاص دور نگه داره <br>و در این اواخر که شخصی‌سازی‌ها هم شروع شده٬ باعث افزایش درصد سانسور اخبار شده<br><br>سرویس ایمیل هم که خوب معلوم! جای سوال نداره<br>اطلاعات شما رو تا ابد برای خودشون دخیره می کنند٬ سرویس جدیدش هم (برای خیلی وقت پیش هست) این‌که<br>این امکان ایمیل‌دهی رو برای شرکت‌ها با نام اون‌ها قرار میده<br>یعنی اینکه دیگه آخر آدرس ایمیل به جای gmail نام شرکت وجود داره<br>خوب این هم دیگه کاملا قضیه رو روشن می‌کنه<br><br>این‌ها تنها قسمتی از فعالیت‌ها این شرکت هست باقی ماجراها تو اینترنت هست بگردید یافت می‌کنید<br><br>اما خوب تکلیف ما چیه؟<br>بیاییم دست در دست هم کشور خویش را کنیم آباد<br>در حد توان خودمون <span style="font-weight: bold;">گوگل رو تحریم کنیم</span><br>(برای شمای کاربر) یه لطفی در حق کشورت انجام بده<br>کشوری که برات امنیت و آرامش رو مفت و مجانی داره فراهم می‌کنه<br>کشوری که ... (و از این نوع جمله‌ها)<br>اما چه‌کار کنیم٬ این‌که صفحه خانگی‌تون رو یا همون home page رو به iran.ir تغییر بدید<br>همین! نه بیشتر٬ فقط<br><span style="font-weight: bold;">تغییر صفحه خانه‌گی با iran.ir</span><br>نمی‌گم از جستجوی اون استفاده کنید فقط صفحه‌ی خانگی‌تون رو تغییر بدید تا وقتی مرورگرتون رو باز می‌کنید <br>ریخت گوگل بالا نیاد و تعداد نمایش اون در همین سطح کم بشه٬ که همین هم خیلی تاثیر داره<br><br>اگر هم می‌خواهید بیشتر گوگل رو تحریم کنید:<br>از موتور جستجو yahoo که در سایت‌های  yahoo.com و ask.com , ping.com , msn.com<br>مشترکا وجود داره استفاده کنید<br>از سرویس ایمیل mailfa.com استفاده کنید که هم فارسی هست و هم زیبا و هم ملی و اطلاعات نمی‌خواد(!)<br>و ...<br>(برای شمای مسئول) اول خداییش این موتور جستجوی که شما دارید (iran.ir) <br>خودتون دنبال چیزی باشید ازش استفاده می‌کنید٬ که حالا گذاشتید برای استفاده مردم<br>بابا چند سال هست که سایت iran.ir فعال هست با پیج‌رنک ۷! اما هنوز یه موتور جستجوی حسابی نداره<br><br>اون هم سرویس ایمیل mail.iran.ir/register/?module=new که همه‌چی از آدم می‌خواد<br>ببخشیدها !<br>بچه‌خودتون از این سرویس استفاده می‌کنه؟<br>اینم بگم خودم دومرتبه با تمام مشخصات نام‌نویس کردم اما هنوز نام کاربری ندارم!!!؟<br>-----<br>یه نکته دیگه٬ چنتا پست پایین‌تر راجع به wot توضیخاتی نوشته شده<br>خوشبختانه بعد از این پست تحولی صورت گرفت و متاسفانه این تحول چند روزی بیش دوام نیاورد<br>لطفا اون رو هم مورد عنایت خودتون قرار بدید.<br>
+
+
+
+
+
+
+
+
+
+
+
+
+                                                            <br>
+
+                    <div class="clearfix" style="margin-bottom:20px;">
+                        <a style="float:left;margin-left:15px;"  target="_blank"
+                           href="http://www.cloob.com/share/link/add?
+						url=http://tarhmazhabi.mihanblog.com//post/97&title=تحریم">
+                            <img alt="داغ کن - کلوب دات کام" src="http://static1.cloob.com/public/images/icon/100c.gif" style='border: none; padding: 0px'/>
+                        </a>
+                    </div>
+                                            <b>برچسب ها:</b>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%DA%AF%D9%88%DA%AF%D9%84" >
+                                گوگل                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%AA%D8%AD%D8%B1%DB%8C%D9%85" >
+                                تحریم                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%AA%D8%AD%D8%B1%DB%8C%D9%85%20%DA%AF%D9%88%DA%AF%D9%84" >
+                                تحریم گوگل                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%AF%D8%B2%D8%AF%20%D8%B3%D8%A7%DB%8C%D8%A8%D8%B1%DB%8C" >
+                                دزد سایبری                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%B3%D8%B1%D9%88%DB%8C%20%D8%A7%DB%8C%D9%85%DB%8C%D9%84" >
+                                سروی ایمیل                            </a> ،
+                                                <br/>
+                    
+                    
+                    <b>آخرین ویرایش:</b>
+                    چهارشنبه 1391/02/20  17:45<br>
+                </div>
+                <div style="display: inline; float: left; margin-right: 13px; margin-top: 4px;"><a href="http://tarhmazhabi.mihanblog.com/post/97#commentlist">  دیدگاه ها (<script>setCommentCnt(97)</script>)</a></div>
+                <div><script>mihanblogPostLike('97','like')</script></div>
+                <style>
+                    .text100 , .text100 a{color:#FFF; font-size:11pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+                    .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+                    .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+                    .com{ width:570px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px auto; padding:0 0 10px 0;}
+                    .com1{ width:552px; float:left; background:#474747; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+                    .com3{ width:315px; float:left; text-align:right; direction:rtl; line-height:27px;}
+                    .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+                    .com4{ width:532px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:15px;}
+                    .com5{ width:532px; float:left; background:#f5f0e7; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:14px;}
+                    .com6{ width:542px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+                    .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+                    .comment_form .comment_form_msg {background: none repeat scroll 0 0 #F6F6F6;border: 1px solid #E6E6E6; margin: 5px;    padding: 5px;}
+                </style>
+                
+
+                            <div class="entry">
+                    <h2><a href="http://tarhmazhabi.mihanblog.com/post/96">نمی‌دونم اسم این پست رو چی بزارم</a></h2>
+                    <p>جمعه 1391/02/8 19:46&nbsp;&nbsp;&nbsp;<b>نویسنده :</b> <a href="http://tarhmazhabi.mihanblog.com/post/author/264972">محمّد مهدی </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    </p><br>
+                                        
+سلام<div>خیلی دوست دارم دوباره طراحی شروع کنم</div><div>البته در چند روز آینده احتمالا چنتا طرح براتون بزارم</div><div>این مطلب زیر رو حدودا یک ماه پیش نوشته بودم ولی یادم نیست چرا ارسالش نکردم</div><div>اما حالا با کمی اصلاحات اون رو ارسال می‌کنم</div><div>امیدوارم از دست من ناراحت نشید</div><div>که هرچه تقصیر هست از این قلم بی‌پروا و ... هست</div><div>---------------------------------------------------------------------</div><div>سلام<br>(این‌جاش سانسور شده)<br>اگه نظر من برای دوستان مهم کسانی که میخوان تو اینترنت فعال ارزشی باشن<br>تو رو خدا دیگه سراغ طراحی نرین<br>والا بلاّ بسه دیگه تو این زمینه خیلی ها دارن کار میکنن<br>بی خیال طراحی و طرح زدن بشین برید سراغ یه قسمت دیگه جبهه<br>بابا جبهه همش که خط مقدم نیست پشتیبانی هم داره<br>آبدارچی هم میخواد نظافت چی میخواد، یکی میخواد آشپز باشه<br>اگه همه تو خط مقدم اسلحه دس بگیرن کی میخواد واسه اینا مهمات برسونه ...<br>واسه خدا و پیغمبر کار کردن خیلی هم خوبه<br>ولی خداییش ببینین اون قسمتی که دارین کار میکنین واقعا نیاز هست یا نه<br>کس دیگه اون قسمت رو پر نکرده<br>...<br>من خودم وقتی بخوام یه طرح بزنم خوب و با کیفیت هم باشه حداقل دو سه ساعت وقت میزام<br>حالا شما بیا یه حساب سر انگشتی بکن<br>حداقل سی تا وبلاگ و وبسایت و ... دارن تو قسمت طراحی کار میکنن<br>از نظر خودم فقط ده دوازده تا شون خوب کار میکنن<br>اصلا شما بگو همه خوب کار میکنن در سطح خیلی عالی<br>ولی این همه طراح تو اینترنت لازم نداریم که، حداکثر ده تاشون لازمه؛&nbsp;<br>میانگین، وبلاگ ها هفته ای یک طرح، طراحی می کنن<br>یه طرح خوب هم حداقل دو ساعت کار میبره و میشه هفته ای چهل ساعت<br>خوب حالا شما حساب کن ما این چهل ساعت رو تو قسمت هایی دیگه به کار بگیریم<br>مثلا چند نفر بیان کار نویسندگی حرفه ای رو یاد بگیرن، چند نفر مدیریت محتوا حرفه ای<br>چند نفر امنیت و هک و ....... خیلی چیزهای دیگه که ما از اونها غافلیم<br><br>وای بر ما (خودم رو می‌گم) که دم از وظیفه و وظیفه شناسی میزنیم و روزی هزار بار از دیگران عیب و ایراد میگیرم<br>ولی هنوز که هنوز وظیفه اصلی خودمون رو نمیدونیم، اینجاست که باید گفت این عمار؟<br><br>کار طراحی خیلی ها بعد از قتنه شروع شد و خوب تو همون بازه زمانی هم خوب جواب داد<br>خیلی ها دیگه هم تو قسمت کلیپ تو همون موقع فعالیت می کردن<br>یکیش مبارز کلیپ، واقعا جا داره بهش احس گفت، وقتی دید دیگه موقع مبارز کلیپ سر اومده رفت سراغ یه قسمت دیگه<br>بعضی کارها مدت داره، این طور نباشه ما بیایم یه قسمت رو که معلوم نیست نیاز هست یا نه شروع کنیم دیگه همون رو تا قیام قیامت ادامه بدیم<br>وقت شناس باشیم مثل عمار فکر کنیم، موقع رو خوب تشخیص بدیم<br>ببینید دشمن خودمون چقدر دقیق کار میکنه،<br><br>&nbsp;اگر هم ما تو قسمت طراحی میخواهیم کار کنیم همین طوری دلی کار نکینم، بیایم یه قسمت رو دست بگیریم همون رو تا تهش بریم بعد بریم قسمت بعد<br>مثلا همین سی تا وبلاگی که طرح میزنن، بیاین همفکری کنن نیاز زمان رو بسنجن، متناسب با اون طرح بزنن و بعد مورد بعدی<br>خیلی دیگه حرف هست،<br>&nbsp;ولی چه کنم گوش اگر گوش تو و ناله اگر ناله من انچه البته به جایی نرسد فریاد است<br></div><div>...</div><div><br></div><div>راستی قرار یه‌کار در قالب موبایل شروع بشه به طور رسمی</div><div>دوستانی که می تونند در زمینه‌های مختلف موبایل کار کنند&nbsp;</div><div>صوت تصویر کلیپ&nbsp;</div><div>یا حداقل می‌تونند هفته‌ای چند ساعت وقت بزارن لطف کنند تو قسمت نظرات یه خبری بدن</div><div>که ما خیلی نیاز به نیرو داریم و این رو هم بگم خداییش کاری که قرار شروع بشه تک</div><div>موفق باشید</div><div>یا علی</div>
+
+                                                            <br>
+
+                    <div class="clearfix" style="margin-bottom:20px;">
+                        <a style="float:left;margin-left:15px;"  target="_blank"
+                           href="http://www.cloob.com/share/link/add?
+						url=http://tarhmazhabi.mihanblog.com//post/96&title=نمی‌دونم اسم این پست رو چی بزارم">
+                            <img alt="داغ کن - کلوب دات کام" src="http://static1.cloob.com/public/images/icon/100c.gif" style='border: none; padding: 0px'/>
+                        </a>
+                    </div>
+                    
+                    
+                    <b>آخرین ویرایش:</b>
+                    جمعه 1391/02/8  19:55<br>
+                </div>
+                <div style="display: inline; float: left; margin-right: 13px; margin-top: 4px;"><a href="http://tarhmazhabi.mihanblog.com/post/96#commentlist">  دیدگاه ها (<script>setCommentCnt(96)</script>)</a></div>
+                <div><script>mihanblogPostLike('96','like')</script></div>
+                <style>
+                    .text100 , .text100 a{color:#FFF; font-size:11pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+                    .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+                    .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+                    .com{ width:570px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px auto; padding:0 0 10px 0;}
+                    .com1{ width:552px; float:left; background:#474747; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+                    .com3{ width:315px; float:left; text-align:right; direction:rtl; line-height:27px;}
+                    .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+                    .com4{ width:532px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:15px;}
+                    .com5{ width:532px; float:left; background:#f5f0e7; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:14px;}
+                    .com6{ width:542px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+                    .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+                    .comment_form .comment_form_msg {background: none repeat scroll 0 0 #F6F6F6;border: 1px solid #E6E6E6; margin: 5px;    padding: 5px;}
+                </style>
+                
+
+                            <div class="entry">
+                    <h2><a href="http://tarhmazhabi.mihanblog.com/post/93">به روزرسانی</a></h2>
+                    <p>پنجشنبه 1390/11/6 13:52&nbsp;&nbsp;&nbsp;<b>نویسنده :</b> <a href="http://tarhmazhabi.mihanblog.com/post/author/264972">محمّد مهدی </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    </p><br>
+                                        سلام<br>امیدوارم حالتون خوب باشه<br>تمام لینک ها به روز شدن٬ البته لینک های خراب<br>اگر بازهم دیدید لینکی مشکلی داره لطف کنید پیام بزارید<br><br>تعجب میکنم از این همه بازدید٬ با اینکه تقریبا چند ماهی هست<br>که طرحی زده نشده ولی باز هم تعداد بازدید قابل توجهی هست<br>که همین بازدید و نظرات دوستان باعث شد تا دوباره همتی کنم و تمام لینکها<br>رو تصحیح کنم.<br><br>بسیار بسیار نگران هستم برای مسافر کربلا و البته بی خبر از مشکلات این استاد و دوست گرامی<br>و همین طور ابابیل که هنوز سنگرش خالی هست و منتظر صاحب خود<br>از همین جا خدمت دوست گرامم حاجی میگم شهادت نصیبتون بابت این همه زحمت<br>و برای مسافر کربلا هم دعا میکنم همواره در راه کربلا که همان صراط مستقیم هست باشی<br>اگر هم از دست من کاری برمیاد بگید٬ ما که خبری از شما نداریم ...<br><br>موفق باشید<br>یا علی<br>
+
+
+                                                            <br>
+
+                    <div class="clearfix" style="margin-bottom:20px;">
+                        <a style="float:left;margin-left:15px;"  target="_blank"
+                           href="http://www.cloob.com/share/link/add?
+						url=http://tarhmazhabi.mihanblog.com//post/93&title=به روزرسانی">
+                            <img alt="داغ کن - کلوب دات کام" src="http://static1.cloob.com/public/images/icon/100c.gif" style='border: none; padding: 0px'/>
+                        </a>
+                    </div>
+                    
+                    
+                    <b>آخرین ویرایش:</b>
+                    -  -<br>
+                </div>
+                <div style="display: inline; float: left; margin-right: 13px; margin-top: 4px;"><a href="http://tarhmazhabi.mihanblog.com/post/93#commentlist">  دیدگاه ها (<script>setCommentCnt(93)</script>)</a></div>
+                <div><script>mihanblogPostLike('93','like')</script></div>
+                <style>
+                    .text100 , .text100 a{color:#FFF; font-size:11pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+                    .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+                    .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+                    .com{ width:570px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px auto; padding:0 0 10px 0;}
+                    .com1{ width:552px; float:left; background:#474747; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+                    .com3{ width:315px; float:left; text-align:right; direction:rtl; line-height:27px;}
+                    .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+                    .com4{ width:532px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:15px;}
+                    .com5{ width:532px; float:left; background:#f5f0e7; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:14px;}
+                    .com6{ width:542px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+                    .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+                    .comment_form .comment_form_msg {background: none repeat scroll 0 0 #F6F6F6;border: 1px solid #E6E6E6; margin: 5px;    padding: 5px;}
+                </style>
+                
+
+                            <div class="entry">
+                    <h2><a href="http://tarhmazhabi.mihanblog.com/post/91">این وصیت نامه ها انسان را می لرزاند و بیدار می کند</a></h2>
+                    <p>سه شنبه 1390/09/15 18:42&nbsp;&nbsp;&nbsp;<b>نویسنده :</b> <a href="http://tarhmazhabi.mihanblog.com/post/author/264972">محمّد مهدی </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    </p><br>
+                                        
+
+
+<p style="text-align: right; ">سلام</p><p style="text-align: right; ">به لطف <a href="http://www.ammarname.ir/" target="_blank" title="">عمارنامه</a> و وبلاگ <a href="http://davodabadi.persianblog.ir/" target="_blank" title="">خاطرات جبهه</a></p><p style="text-align: right; ">اگر شما هم مطلبی دارید که قابلیت طرح زدن رو داره از بزرگان٬ شهدا و ... ارسال کنید.</p><p style="text-align: right; "><a href="http://fc06.deviantart.net/fs71/f/2011/340/b/5/shahid_vasiatnameh_1_by_tarhmazhabi-d4ibqla.jpg" target="_blank" title=""><img src="http://s2.picofile.com/file/7204843438/vasiat_name_1.jpg" alt="این وصیت نامه ها انسان را می لرزاند و بیدار می کند" border="0" hspace="0" vspace="0" align="bottom"></a></p><p style="text-align: right; ">هر چه فکر کردم، نتوانستم درباره زندگی و وصیت نامه 
+سردار شهید صادق مزدستان؛ فرمانده گردان صاحب الزمان و تیپ دوم لشکر 25 
+کربلا چیزی بنویسم.<br>واگذار می کنم به خودتان.<br>به قول امام عزیز:<br>" این وصیت نامه ها انسان را می لرزاند و بیدار می کند."</p><div style="text-align: right; ">
+</div><p style="text-align: right; ">فقط گوشه هایی اندک از یادداشت های این شهید عزیز را می آورم.<br>متن کامل زندگی و نوشته های آن عزیز را در این سایت ارزشمند بخوانید:</p><span style="font-weight: bold; "><font size="2"><span style="font-family: tahoma,arial,helvetica,sans-serif;">مادرم، می دانم اگر سر بریده ام را هم برایت بیاورند به جبهه های نبرد پرتاب می کنی.</span><br style="font-family: tahoma,arial,helvetica,sans-serif;"><span style="font-family: tahoma,arial,helvetica,sans-serif;">برادرم! وقتی تابوتم از کوچه‌ها می‌گذرد مبادا که به تشییع من بیایی وقت تنگ است به جبهه برو تا سنگرم خالی نماند.</span><br style="font-family: tahoma,arial,helvetica,sans-serif;"><span style="font-family: tahoma,arial,helvetica,sans-serif;">هر گاه دلم هوای بهشت می کرد از فراز خاکریز افق را می نگریستم.</span><br style="font-family: tahoma,arial,helvetica,sans-serif;"><span style="font-family: tahoma,arial,helvetica,sans-serif;">ای امام! بر من ببخش که فقط یکبار به فرمانت شهید شدم.</span><br style="font-family: tahoma,arial,helvetica,sans-serif;"><span style="font-family: tahoma,arial,helvetica,sans-serif;">بی من اگر به کربلا رفتید از آن تربت مشتی همراه بیاورید و بر گورم بپاشید، شاید به حرمت این خاک خدا مرا بیامرزد.</span><br style="font-family: tahoma,arial,helvetica,sans-serif;"><span style="font-family: tahoma,arial,helvetica,sans-serif;">بار الها! اگر لایق بهشت هستم به جای بهشت کربلا نصیبم کن تا تربت پاک حسین سلام‌الله‌علیه را در آغوش گیرم.</span></font></span><br>
+
+
+
+
+
+
+
+
+                                                            <br>
+
+                    <div class="clearfix" style="margin-bottom:20px;">
+                        <a style="float:left;margin-left:15px;"  target="_blank"
+                           href="http://www.cloob.com/share/link/add?
+						url=http://tarhmazhabi.mihanblog.com//post/91&title=این وصیت نامه ها انسان را می لرزاند و بیدار می کند">
+                            <img alt="داغ کن - کلوب دات کام" src="http://static1.cloob.com/public/images/icon/100c.gif" style='border: none; padding: 0px'/>
+                        </a>
+                    </div>
+                                            <b>برچسب ها:</b>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%B4%D9%87%DB%8C%D8%AF" >
+                                شهید                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D9%88%D8%B5%DB%8C%D8%AA%20%D9%86%D8%A7%D9%85%D9%87" >
+                                وصیت نامه                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D9%BE%D9%88%D8%B3%D8%AA%D8%B1%20%D8%B4%D9%87%D8%AF%D8%A7" >
+                                پوستر شهدا                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D9%BE%D9%88%D8%B3%D8%AA%D8%B1%20%D8%B4%D9%87%DB%8C%D8%AF" >
+                                پوستر شهید                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%B4%D9%87%D8%A7%D8%AF%D8%AA" >
+                                شهادت                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D9%BE%D9%88%D8%B3%D8%AA%D8%B1%20%D9%85%D8%B0%D9%87%D8%A8%DB%8C" >
+                                پوستر مذهبی                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D9%85%D8%B0%D9%87%D8%A8%DB%8C" >
+                                مذهبی                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D9%BE%D9%88%D8%B3%D8%AA%D8%B1%20%D8%A7%D8%B3%D9%84%D8%A7%D9%85%DB%8C" >
+                                پوستر اسلامی                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D9%88%D8%B5%DB%8C%D8%AA%20%D9%86%D8%A7%D9%85%D9%87%20%D8%B4%D9%87%DB%8C%D8%AF" >
+                                وصیت نامه شهید                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%B5%D8%A7%D8%AF%D9%82%20%D9%85%D8%B2%D8%AF%D8%B3%D8%AA%D8%A7%D9%86" >
+                                صادق مزدستان                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1%20%D8%B4%D9%87%DB%8C%D8%AF%20%D8%B5%D8%A7%D8%AF%D9%82%20%D9%85%D8%B2%D8%AF%D8%B3%D8%AA%D8%A7%D9%86" >
+                                سردار شهید صادق مزدستان                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D9%88%D8%B5%DB%8C%D8%AA%20%D9%86%D8%A7%D9%85%D9%87%20%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1%20%D8%B4%D9%87%DB%8C%D8%AF%20%D8%B5%D8%A7%D8%AF%D9%82%20%D9%85%D8%B2%D8%AF%D8%B3%D8%AA%D8%A7%D9%86" >
+                                وصیت نامه سردار شهید صادق مزدستان                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D9%BE%D9%88%D8%B3%D8%AA%D8%B1%20%D9%88%D8%B5%DB%8C%D8%AA%20%D9%86%D8%A7%D9%85%D9%87%20%D8%B3%D8%B1%D8%AF%D8%A7%D8%B1%20%D8%B4%D9%87%DB%8C%D8%AF%20%D8%B5%D8%A7%D8%AF%D9%82%20%D9%85%D8%B2%D8%AF%D8%B3%D8%AA%D8%A7%D9%86" >
+                                پوستر وصیت نامه سردار شهید صادق مزدستان                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D9%BE%D9%88%D8%B3%D8%AA%D8%B1%20%D8%B4%D9%87%DB%8C%D8%AF%20%D8%B5%D8%A7%D8%AF%D9%82%20%D9%85%D8%B2%D8%AF%D8%B3%D8%AA%D8%A7%D9%86" >
+                                پوستر شهید صادق مزدستان                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D9%88%D8%A7%D9%84%D9%BE%DB%8C%D9%BE%D8%B1" >
+                                والپیپر                            </a> ،
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/tag/%D9%88%D8%A7%D9%84%D9%BE%DB%8C%D9%BE%D8%B1%20%D9%85%D8%B0%D9%87%D8%A8%DB%8C" >
+                                والپیپر مذهبی                            </a> ،
+                                                <br/>
+                    
+                    
+                    <b>آخرین ویرایش:</b>
+                    پنجشنبه 1390/11/6  12:14<br>
+                </div>
+                <div style="display: inline; float: left; margin-right: 13px; margin-top: 4px;"><a href="http://tarhmazhabi.mihanblog.com/post/91#commentlist">  دیدگاه ها (<script>setCommentCnt(91)</script>)</a></div>
+                <div><script>mihanblogPostLike('91','like')</script></div>
+                <style>
+                    .text100 , .text100 a{color:#FFF; font-size:11pt;-moz-text-shadow: #444 1px 1px 0px;-webkit-text-shadow: #444 1px 1px 0px;text-shadow: #444 1px 1px 0px;}
+                    .text101 , .text101 a{color:#444444; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+                    .text102 , .text102 a{color:#000; font-size:8pt;-moz-text-shadow: #fff 1px 1px 0px;-webkit-text-shadow: #fff 1px 1px 0px;text-shadow: #fff 1px 1px 0px;}
+
+                    .com{ width:570px; float:left; background:#e6e6e6; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px auto; padding:0 0 10px 0;}
+                    .com1{ width:552px; float:left; background:#474747; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 10px 20px 0 10px; padding:0 0 3px 0;}
+                    .com3{ width:315px; float:left; text-align:right; direction:rtl; line-height:27px;}
+                    .com2{ width:190px; float:left; height:30px; text-align:left; direction:rtl; line-height:27px; padding-left:10px; opacity:0.6;}
+                    .com4{ width:532px; float:left; background:#FFF; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow: inset #444 0px 0px 5px;-webkit-box-shadow:inset  #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:15px;}
+                    .com5{ width:532px; float:left; background:#f5f0e7; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin:  3px 3px 0 3px; padding: 7px; direction:rtl; text-align:right; -moz-box-shadow:inset  #444 0px 0px 5px;-webkit-box-shadow: inset #444 0px 0px 5px;box-shadow: inset #444 0px 0px 5px;font-size:14px;}
+                    .com6{ width:542px; float:left; background:#fff; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; margin: 5px 20px 0 10px; padding: 5px 5px 5px 5px; direction:rtl; }
+                    .com7{width:25px; padding:5px 0 0 0; float:right; text-align:center;}
+                    .comment_form .comment_form_msg {background: none repeat scroll 0 0 #F6F6F6;border: 1px solid #E6E6E6; margin: 5px;    padding: 5px;}
+                </style>
+                
+
+                    
+        <br>
+        
+                    تعداد کل صفحات ( 10  )
+                            <a href="http://tarhmazhabi.mihanblog.com/page/1"> <b>1</b></a>
+                            <a href="http://tarhmazhabi.mihanblog.com/page/2"> <span>2</span></a>
+                            <a href="http://tarhmazhabi.mihanblog.com/page/3"> <span>3</span></a>
+                            <a href="http://tarhmazhabi.mihanblog.com/page/4"> <span>4</span></a>
+                            <a href="http://tarhmazhabi.mihanblog.com/page/5"> <span>5</span></a>
+                            <a href="http://tarhmazhabi.mihanblog.com/page/6"> <span>6</span></a>
+                            <a href="http://tarhmazhabi.mihanblog.com/page/7"> <span>7</span></a>
+                            <a href="http://tarhmazhabi.mihanblog.com/page/8"> <i>...</i></a>
+                        </div>
+
+    <!-- end #content -->
+    <div id="sidebar1">
+        <div>
+            <h2>درباره وبلاگ</h2>
+            <ul class="list-style2">
+                <li class="first"><p>
+                                        <br>
+                    سلام؛<br />
+اللهم صلّ علی محمّد و آل محمّد و عجّل فرجهم<br />
+در این وبلاگ سعی شده پست هایی با محوریت مسائل و مناسبت های روز قرار بگیره که امیدوارم مورد رضایت خدای متعال باشه<br />
+موفق باشید<br />
+یاعلی</p></li>
+            </ul>
+        </div>
+
+        
+            <div>
+                <h2>نویسندگان</h2>
+                <ul class="list-style2">
+                    <li class="first">
+                                                    <p><a class="clearfix" href="http://tarhmazhabi.mihanblog.com/post/author/264972" ><a href="http://tarhmazhabi.mihanblog.com/post/author/264972"></a>	محمّد مهدی(78)</a>	</p>
+                                            </li>
+                </ul>
+            </div>
+        
+
+    </div>
+
+    <div id="sidebar2">
+
+                    <div>
+                <h2>آرشیو موضوعی</h2>
+                <ul class="list-style1">
+                    <li class="first">
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/28">الله جل جلاله و عظم شانه(1)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/27">قرآن کریم(4)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/26">پیامبر صلی الله علیه و آله(8)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/25">حضرت زهرا سلام الله علیها(3)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/24">امام علی سلام الله علیه(4)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/23">امام حسن سلام الله علیه(1)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/22">امام حسین سلام الله علیه(9)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/21">امام سجاد علیه السلام(1)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/19">امام جعفر صادق علیه السلام(3)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/17">امام رضا علیه السلام(5)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/16">امام جواد علیه السلام(1)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/12">حضرت ابالفضل العباس علیه السلام(1)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/29">حضرت معصومه سلام الله علیها(1)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/10">امام زمان عجل الله تعالی فرجه(7)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/31">امام زادگان علیهم السلام(1)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/9">امام خمینی رحمة الله علیه(4)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/8">مقام معظم رهبری حفظه الله(21)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/7">علما و صالحین(23)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/6">شهدا(4)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/32">نصایح(7)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/5">مقاوت اسلامی(11)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/4">شعر(7)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/3">کاشی کاری و تذهیب(40)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/2">خطاطی و خوشنویسی(51)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/1">PSD باز(7)</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/category/30">دست نوشته(2)</a><br>
+                        
+                    </li>
+                </ul>
+            </div>
+        
+
+                    <div>
+                <h2>صفحات جانبی</h2>
+                <ul class="list-style1">
+                    <li class="first">
+                                                    <a href="http://tarhmazhabi.mihanblog.com/extrapage/video">ویدئو</a><br/>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/extrapage/em">امکانات</a><br/>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/extrapage/moharam">گوشه نمای</a><br/>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/extrapage/haram">haram</a><br/>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/extrapage/habas">حضرت عباس علیه السلام</a><br/>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/extrapage/ereza">امام رضا سلام الله علیه</a><br/>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/extrapage/ehossin">امام حسین سلام الله علیه</a><br/>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/extrapage/player">player</a><br/>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/extrapage/logo">logo</a><br/>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/extrapage/imageflash">Imageflash</a><br/>
+                                            </li>
+                </ul>
+            </div>
+        
+
+    </div>
+
+
+
+
+    <!-- end #sidebar -->
+</div>
+<!-- end #page -->
+<div id="four-column" class="container">
+            <div id="tbox1">
+            <div class="box-style">
+                <div class="image"></div>
+                <div class="arrow"></div>
+                <div class="content">
+                    <h2>لینکستان</h2>
+                    <p>
+                                                    <a href="http://www.imam-khomeini.com/" title=""  target="_blank">
+                                آیت الله العظمی سید روح الله خمینی (سلام الله علیه)                            </a><br/>
+                                                    <a href="http://www.khamenei.ir" title=""  target="_blank">
+                                آیت الله العظمی سید علی خامنه ای (حفظه الله)                            </a><br/>
+                                                    <a href="http://www.mtb.ir/fa/" title=""  target="_blank">
+                                آیت الله العظمی محمّد تقی بهجت (سلام الله علیه)                            </a><br/>
+                                                    <a href="http://www.sistani.org/" title=""  target="_blank">
+                                آیت الله العظمی سید علی سیستانی (حفظه الله)                            </a><br/>
+                                                    <a href="http://www.vahid-khorasani.ir/web/index.php?lang=fa" title=""  target="_blank">
+                                آیت الله العظمی حسین وحید (حفظه الله)                            </a><br/>
+                                                    <a href="http://www.makaremshirazi.org/" title=""  target="_blank">
+                                آیت الله العظمی ناصر مکارم (حفظه الله)                            </a><br/>
+                                                    <a href="http://www.tohid.ir/" title=""  target="_blank">
+                                آیت الله العظمی جعفر سبحانی (حفظه الله)                            </a><br/>
+                                                    <a href="http://www.esraco.net/" title=""  target="_blank">
+                                آیت الله العظمی عبدالله جوادی (حفظه الله)                            </a><br/>
+                                                <a href="http://tarhmazhabi.mihanblog.com/link/"><b>همه لینکها</b></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+    
+        <div id="tbox2">
+            <div class="box-style">
+                <div class="image"></div>
+                <div class="arrow"></div>
+                <div class="content">
+                    <h2>لینکدونی</h2>
+                    <p>
+                                                    <a href="http://yaran57.ir/" title="«پایگاه اطلاع رسانی نهضت عدالتخواهان ولایتمدار»" target="_blank">
+                                «پایگاه اطلاع رسانی نهضت عدالتخواهان ولایتمدار»                            </a><br/>
+                                                    <a href="http://e-hasan.ir" title="" target="_blank">
+                                پایگاه خبری مسجد ومجمع امام حسن مجتبی(ع)شهرستان سرخه                            </a><br/>
+                                                    <a href="http://v-e110.blogfa.com" title="بسمه تعالی
+سلام سعی دارم همراهی کنم با عدالتخواهان
+«بنده حاضرم با تمام وبلاگها وسایت ها تبادل لینک کنم.»
+بیایید و یاری کنید: تا اخبار عدالتخواهان ،طلبه سیرجانی و محسن شیرازی وقیام یاران ولایت رو توی اینترنت و هرجایی دیگه ای می تونیم انتشار بدیم.
+یا علی
+http://v-e110.blogfa.com/" target="_blank">
+                                طلبه سیرجانی-محسن شیرازی-عدالتخواهی                            </a><br/>
+                                                    <a href="http://ad-s.ir/host/ma" title="" target="_blank">
+                                هاست مارال                            </a><br/>
+                                                    <a href="http://ad-s.ir/host/mw" title="" target="_blank">
+                                هاست میهن                            </a><br/>
+                                                    <a href="http://mohebinolhosein.blog.ir/" title="" target="_blank">
+                                هیئت دانشجویی محبین الحسین                             </a><br/>
+                                                    <a href="http://fawzolazim.mihanblog.com/" title="" target="_blank">
+                                فوزالعظیم                            </a><br/>
+                                                    <a href="http://atrmandegar.mihanblog.com" title="سلام محمد مهدی جان خسته نباشی بردار 
+خوشحال میشم به وبم سر بزنی و اگه وبم به دلت نشست با هم تبادل لینک کنیم.
+یا علی" target="_blank">
+                                عطر ماندگار                            </a><br/>
+                                                    <a href="http://beyrag.samenblog.com" title="سلام 
+وبلاگ خیلی زیبایی دارید 
+از شما در خواست تبادل لینک داریم 
+اگه وقت کردید به ما هم سری بزنید 
+منتظر جواب شا هستیم 
+
+یا حسین" target="_blank">
+                                بیرق عزا                             </a><br/>
+                                                    <a href="http://honarayenekari.loxblog.com/" title="" target="_blank">
+                                آینه کاری و هنر آینه کاری                            </a><br/>
+                                                    <a href="http://yalasaratalhussein.persianblog.ir" title="یالثارات الحسین (مرکز دانلود جدیدترین مداحی ها)نشرشعائر حسینیه" target="_blank">
+                                یالثارات الحسین                            </a><br/>
+                                                    <a href="http://yamahdi.blog.ir" title="" target="_blank">
+                                یـ ـا مـ ـهدی                            </a><br/>
+                                                    <a href="http://directory.blogfa.com" title="" target="_blank">
+                                دایرکتوری 12گانه افســــــــــران ارزشــــــــــی                            </a><br/>
+                                                    <a href="http://ghiame-yaran.ir/" title="قیام یاران ولایت(وبگاه رسمی اخبار طلبه سیرجانی)" target="_blank">
+                                قیام یاران ولایت(وبگاه رسمی اخبار طلبه سیرجانی)                            </a><br/>
+                                                    <a href="http://mohemat-art.ir/" title="" target="_blank">
+                                مهمات                            </a><br/>
+                                                    <a href="http://montazeran-k.blogfa.com/" title="" target="_blank">
+                                منتظران ظهور                            </a><br/>
+                                                    <a href="http://www.he-ma.blogfa.com/" title="" target="_blank">
+                                چشمه‌های معرفت                            </a><br/>
+                                                    <a href="http://www.dineeslami.mihanblog.com" title="" target="_blank">
+                                و خدایی که همین نزدیکیست                            </a><br/>
+                                                    <a href="http://seratmostagim.mihanblog.com/" title="" target="_blank">
+                                صراط مستقیم                            </a><br/>
+                                                    <a href="http://khademshohada.persianblog.ir/" title="" target="_blank">
+                                خادم الشهدا                            </a><br/>
+                                                    <a href="http://www.siyasikhoramdare.blogfa.com" title="اخبار داغ و ناب سیاسی جهان" target="_blank">
+                                اخبار سیاسی روز جهان                            </a><br/>
+                                                    <a href="http://zarbshast.blogfa.com/" title="سید علی عشقه" target="_blank">
+                                طلایه داران فجر                            </a><br/>
+                                                    <a href="http://eshghali3.persianblog.ir" title="9دی((بیرق حسین را برافراشتیم))" target="_blank">
+                                9دی((بیرق حسین را برافراشتیم))                            </a><br/>
+                                                    <a href="http://aqeedah.ir" title="بزرگترین وبا کیفیت ترین تصاویر مذهبی" target="_blank">
+                                گالری تصاویر مذهبی                            </a><br/>
+                                                    <a href="http://www.omid-entezar.com" title="سیاسی.اهل بیت.دفاع مقدس.مهدویت.گنجینه صوتی تصویری.حجاب" target="_blank">
+                                پایگاه اطلاع رسانی امیدوانتظار                            </a><br/>
+                                                    <a href="http://dar-jostejoye-khodam.blogfa.com/" title="" target="_blank">
+                                در جستجوی خدایم                            </a><br/>
+                                                    <a href="http://www.mohammadpazhohesh.mihanblog.com" title="لطفا اگه براتون مقدوره تایید فرمایید ممنونتون میشم" target="_blank">
+                                كار های عملی                            </a><br/>
+                                                    <a href="http://nazre.blogfa.com/" title="نذر شهدا" target="_blank">
+                                نذری                            </a><br/>
+                                                    <a href="http://news-science.mihanblog.com" title="خواهشا در صورت امکان تایید فرمایید. ممنونتون میشم." target="_blank">
+                                خبرهای روز ایران                            </a><br/>
+                                                    <a href="http://www.beyat.blogfa.com" title="با عرض سلام و خسته نباشید
+اگر آدرس وبلاگم رو در سایت شما ببینم خوشحال میشم.
+باتشکر:رضا زراعت پیشه" target="_blank">
+                                در لینک در سایت                            </a><br/>
+                                                    <a href="http://mohemat.blogfa.com/" title="" target="_blank">
+                                مهمات                            </a><br/>
+                                                    <a href="http://www.dialame.com/" title="" target="_blank">
+                                گروه فرهنگی شهید دیالمه                            </a><br/>
+                                                    <a href="http://www.psd1.blogfa.com/" title="" target="_blank">
+                                پی‌اس‌دس۱                            </a><br/>
+                                                    <a href="http://www.hooseinieh.ir/" title="" target="_blank">
+                                حسینیه                            </a><br/>
+                                                    <a href="http://zainabie.com/" title="بزرگترین تارنمای تصاویر مذهبی زینبیه" target="_blank">
+                                گالری تصاویر مذهبی                            </a><br/>
+                                                    <a href="http://www.sm3h.blogfa.com" title="" target="_blank">
+                                پاگاه اینتار نتی رجعت                            </a><br/>
+                                                    <a href="http://www.pm313.ir" title="" target="_blank">
+                                -پایگاه مقاومت یاران بقیه الله                             </a><br/>
+                                                    <a href="http://www.article.mihanmall.com" title="جالب ترین و جذاب ترین مقالات وب در بانک مقالات MihanMall" target="_blank">
+                                خواندنی ترین مقالات                            </a><br/>
+                                                    <a href="http://www.vahedfarhangi.blogfa.com/" title="" target="_blank">
+                                فدائیان سد علی خامنه ای                            </a><br/>
+                                                    <a href="http://ahl-ol-bayt.mihanblog.com" title="" target="_blank">
+                                وبلاگ جامع اهل بیت                            </a><br/>
+                                                    <a href="http://salavat72.blogfa.com/" title="" target="_blank">
+                                صلواتی                            </a><br/>
+                                                    <a href="http://www.alghadirsis.blogfa.com" title="" target="_blank">
+                                کانون الغدیرسیس                            </a><br/>
+                                                    <a href="http://www.keyfari.com" title="فتوشاپ - طراحی گرافیک - طراحی وب سایت" target="_blank">
+                                آموزش طراحی و آموزش گرافیک                            </a><br/>
+                                                    <a href="../www.basirat313.mihanblog.com/index.html" title="" target="_blank">
+                                بصیرت 313                            </a><br/>
+                                                    <a href="../www.velayatphoto.mihanblog.com/index.html" title="" target="_blank">
+                                ولایت فوتو                            </a><br/>
+                                                    <a href="http://www.abamahdi.com" title="هیئت محبین امام حسن عسکری (ع)شهرستان بهبهان-دانلود مداحی-جبهه و جنگ-طرح مذهبی-مطالب سیاسی ولایی-شهداء-پیامک مذهبی-" target="_blank">
+                                جبهه مجازی هیئتی                            </a><br/>
+                                                    <a href="http://mahdimouood313.persianblog.ir" title="فیلم-صدا-عکس-کتاب-مطلب و.... هم (( کامپیوتر/موبایل ))" target="_blank">
+                                مهدی موعود (عج)                            </a><br/>
+                                                    <a href="http://www.emameasr-aj.blogfa.com/" title="سلام دوست عزیز
+به این وبلاگ ما هم سری بزنید:
+باتشکر
+http://www.emameasr-aj.blogfa.com/" target="_blank">
+                                آشتی با امام عصر                            </a><br/>
+                                                    <a href="../montazer-designed.mihanblog.com/index.html" title="" target="_blank">
+                                منتظر دیزاین                            </a><br/>
+                                                    <a href="http://basir.bloghaa.com/" title="" target="_blank">
+                                بصیرت                            </a><br/>
+                                                    <a href="http://karanehaye-arsh.blogfa.com/" title="" target="_blank">
+                                 بصیرت گمشده                             </a><br/>
+                                                    <a href="http://meratdesign.blogfa.com" title="" target="_blank">
+                                طرح های رضا توکلی                            </a><br/>
+                                                    <a href="http://sainapic.blogfa.com/" title="" target="_blank">
+                                رویال تمپ                            </a><br/>
+                                                    <a href="http://monjiebashariat.parsiblog.com/" title="" target="_blank">
+                                پرهیزگاران، جوانمردان واقعی ...                            </a><br/>
+                                                    <a href="http://www.ghalametalkh.mihanblog.com" title="تلخ های شعر و ادب در فراق یار(عج)" target="_blank">
+                                قلم تلخ                            </a><br/>
+                                                    <a href="http://www.momivand.com/" title="" target="_blank">
+                                مصطفی معمی وند                            </a><br/>
+                                                    <a href="http://mazhabiwallpaper.blogfa.com/" title="" target="_blank">
+                                مذهبی والپیپر                            </a><br/>
+                                                    <a href="http://tanhadesign.mihanblog.com/" title="" target="_blank">
+                                تنها گرافیک                            </a><br/>
+                                                    <a href="http://tarikhe-eslam.mihanblog.com/" title="" target="_blank">
+                                وبلاگ تاریخ اسلام                            </a><br/>
+                                                    <a href="http://www.omid-va-entezar.blogfa.com" title="وبلاگی سیاسی. مذهبی. فرهنگی. اجتماعی" target="_blank">
+                                امید و انتظار                            </a><br/>
+                                                    <a href="http://www.shia-book.blogsky.com/" title="" target="_blank">
+                                دانلود کتب شیعی                            </a><br/>
+                                                    <a href="http://www.qom-photos.ir/" title="" target="_blank">
+                                شهر قم از نگاه دوربین                            </a><br/>
+                                                    <a href="http://www.ghadiany.com" title="" target="_blank">
+                                قطعه 26                            </a><br/>
+                                                    <a href="http://hiatbaner.mihanblog.com/" title="" target="_blank">
+                                هیات بنر                            </a><br/>
+                                                    <a href="http://takay.mihanblog.com" title="" target="_blank">
+                                تا کی                            </a><br/>
+                                                    <a href="http://www.jahadgar.ir" title="" target="_blank">
+                                جـــهـــادگــر                            </a><br/>
+                                                    <a href="http://sardargom16.blogfa.com/" title="" target="_blank">
+                                شهید گمنام                            </a><br/>
+                                                    <a href="http://shourabad.blogfa.com/" title="" target="_blank">
+                                شور آباد                            </a><br/>
+                                                    <a href="http://hazratekhamenei.blogfa.com " title="عشق سید علی ما را کشت" target="_blank">
+                                ☽ حضرت ماه                            </a><br/>
+                                                    <a href="http://eshghali.pelakfa.com" title="9دی (بیرق حسین را برافراشتیم)" target="_blank">
+                                9دی (بیرق حسین را برافراشتیم)                            </a><br/>
+                                                    <a href="http://eshghali.pelakfa.com/" title="" target="_blank">
+                                9 دی                            </a><br/>
+                                                    <a href="http://shamimeneynava.blogspot.com/" title="" target="_blank">
+                                شمیم نینوا                            </a><br/>
+                                                    <a href="http://ahlolbait-00.blogfa.com/" title="" target="_blank">
+                                هیات اهل البیت                            </a><br/>
+                                                    <a href="http://www.astanehgroup.blogfa.com/" title="" target="_blank">
+                                گروه فرهنگی آستانه                            </a><br/>
+                                                    <a href="http://www.yafteha.mihanblog.com/" title="" target="_blank">
+                                یاقته ها                            </a><br/>
+                                                    <a href="http://www.m-abazar.com" title="" target="_blank">
+                                پایگاه اطلاع رسانی مسجد اباذر دولت آباد                            </a><br/>
+                                                    <a href="../133alamdar.mihanblog.com/index.html" title="" target="_blank">
+                                حضرت سقاء                            </a><br/>
+                                                    <a href="http://www.emamkhamenei.com" title="" target="_blank">
+                                امام خامنه ای                            </a><br/>
+                                                    <a href="../www.saeeidshiroodi.mihanblog.com/index.html" title="عشق فقط یک کلام" target="_blank">
+                                عشق فقط یک کلام                            </a><br/>
+                                                    <a href="http://www.sejjil.ir/" title="" target="_blank">
+                                سجـــــــیل                            </a><br/>
+                                                    <a href="http://barut.bloghaa.com/" title="" target="_blank">
+                                باروت                            </a><br/>
+                                                    <a href="http://hamedasadollahzadeh.blogfa.com" title="" target="_blank">
+                                وبلاگ یک طلبه                             </a><br/>
+                                                    <a href="http://www.qasemok.com/" title="" target="_blank">
+                                خدا خوشگل‌ها رو خواسته                            </a><br/>
+                                                    <a href="http://yaran-h88.blogfa.com/" title="فارغ التحصیلان اتحادیه انجمن های اسلامی دانش آموزان استان همدان" target="_blank">
+                                همکلاسی آسمانی                            </a><br/>
+                                                    <a href="http://etesabphoto.blogfa.com/" title="" target="_blank">
+                                پوستر منتظر                            </a><br/>
+                                                    <a href="http://www.roze.ir/weblog/" title="" target="_blank">
+                                روضه                            </a><br/>
+                                                    <a href="http://koopeh.parsiblog.com/" title="" target="_blank">
+                                کوپه                            </a><br/>
+                                                    <a href="http://www.grenade.ir/" title="" target="_blank">
+                                نارنجک                            </a><br/>
+                                                    <a href="http://www.fanuse.net/" title="" target="_blank">
+                                فانوس گرافیک                            </a><br/>
+                                                    <a href="http://shiabook.blogfa.com/" title="" target="_blank">
+                                کتابهای مذهبی مخصوص موبایل                             </a><br/>
+                                                    <a href="../www.mabarcyberi.mihanblog.com/index.html" title="" target="_blank">
+                                معبر سایبری                            </a><br/>
+                                                    <a href="http://moqavematgraphic.blogfa.com/" title="" target="_blank">
+                                گرافیک مقاومت                            </a><br/>
+                                                    <a href="http://haramphoto.blogfa.com/" title="" target="_blank">
+                                حرم فوتو                            </a><br/>
+                                                    <a href="http://kabeyeshgh.blogspot.com/" title="" target="_blank">
+                                کعبه عشق                            </a><br/>
+                                                    <a href="http://www.almobin.ir/fa/index.php/" title="" target="_blank">
+                                سایت قرآنی مبین                            </a><br/>
+                                                    <a href="http://www.alvadossadegh.com/fa/index.php/" title="" target="_blank">
+                                پایگاه تخصصی مهدویت و فراماسونری                            </a><br/>
+                                                    <a href="http://www.sabokbalan.com/" title="" target="_blank">
+                                سبک بالان                            </a><br/>
+                                                    <a href="http://www.bachehayeghalam.com/" title="" target="_blank">
+                                بچه های قلم                            </a><br/>
+                                                    <a href="../www.rahimgraph.mihanblog.com/index.html" title="" target="_blank">
+                                رحیم گراف                            </a><br/>
+                                                <a href="http://tarhmazhabi.mihanblog.com/linkdaily/"><b>همه لینکها</b></a><br>
+                        <a href="javascript:linkdailyForm()"><b>ارسال لینک</b></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+    
+		
+    
+
+
+
+</div>
+</div>
+<div id="footer-content" class="container">
+    <div id="footer-bg">
+
+
+                    <div id="column1">
+                <h2>آمار وبلاگ</h2>
+                <ul class="list-style3" style="line-height:15px;">
+                    <li class="first">
+                        <b>  کل بازدید : </b>
+                        <script>getStatVar('total_view');</script>                    </li>
+
+                    <li class="first">
+                        <b>  بازدید امروز :</b><script>getStatVar('today_view');</script>                    </li class="first">
+
+                    <li class="first">
+                        <b>  بازدید دیروز : </b><script>getStatVar('yesterday_view');</script>                    </li>
+
+                    <li class="first">
+                        <b>   بازدید این ماه :</b> <script>getStatVar('this_month_view');</script>                    </li>
+
+                    <li class="first">
+                        <b>بازدید ماه قبل :</b> <script>getStatVar('last_month_view');</script>                    </li>
+                    <li class="first">
+                        <b> تعداد نویسندگان : </b><script>getStatVar('total_author');</script>                    </li>
+                    <li class="first">
+                        <b>  تعداد کل پست ها : </b><script>getStatVar('total_post');</script>                    </li>
+                    <li class="first">
+                        <b>     آخرین بازدید : </b><script>getStatVar('last_view_date');</script>                    </li>
+                    <li class="first">
+                        <b>  آخرین بروز رسانی :</b> <script>getStatVar('modify_date');</script>                    </li>
+                </ul>
+            </div>
+                            <div id="column1">
+                <h2> مطالب پیشین</h2>
+                <ul class="list-style3">
+                    <li class="first">
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/101"  target="_blank">
+                                    داد بی داد &nbsp;
+                                    (جمعه 1391/12/18)
+                                </a>
+                            </h2>
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/100"  target="_blank">
+                                    سلام&nbsp;
+                                    (دوشنبه 1391/08/29)
+                                </a>
+                            </h2>
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/99"  target="_blank">
+                                    آموزش افزایش کیفیت و اندازه تصویر&nbsp;
+                                    (یکشنبه 1391/05/15)
+                                </a>
+                            </h2>
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/98"  target="_blank">
+                                    میلاد نور مبارک&nbsp;
+                                    (چهارشنبه 1391/04/14)
+                                </a>
+                            </h2>
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/97"  target="_blank">
+                                    تحریم&nbsp;
+                                    (دوشنبه 1391/02/18)
+                                </a>
+                            </h2>
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/96"  target="_blank">
+                                    نمی‌دونم اسم این پست رو چی بزارم&nbsp;
+                                    (جمعه 1391/02/8)
+                                </a>
+                            </h2>
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/93"  target="_blank">
+                                    به روزرسانی&nbsp;
+                                    (پنجشنبه 1390/11/6)
+                                </a>
+                            </h2>
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/91"  target="_blank">
+                                    این وصیت نامه ها انسان را می لرزاند و بیدار می کند&nbsp;
+                                    (سه شنبه 1390/09/15)
+                                </a>
+                            </h2>
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/90"  target="_blank">
+                                    امام حسین علیه السلام&nbsp;
+                                    (سه شنبه 1390/08/24)
+                                </a>
+                            </h2>
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/86"  target="_blank">
+                                    اهالی فایر فاکس&nbsp;
+                                    (جمعه 1389/12/20)
+                                </a>
+                            </h2>
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/84"  target="_blank">
+                                    17 ربیع الاول&nbsp;
+                                    (دوشنبه 1389/12/2)
+                                </a>
+                            </h2>
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/81"  target="_blank">
+                                    22 بهمن&nbsp;
+                                    (پنجشنبه 1389/11/21)
+                                </a>
+                            </h2>
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/79"  target="_blank">
+                                    28 صفر&nbsp;
+                                    (یکشنبه 1389/11/10)
+                                </a>
+                            </h2>
+                                                    <h2>    
+                                <a href="http://tarhmazhabi.mihanblog.com/post/78"  target="_blank">
+                                    السلام علیک یا علی بن الحسین&nbsp;
+                                    (جمعه 1389/10/10)
+                                </a>
+                            </h2>
+                                                <a href="http://tarhmazhabi.mihanblog.com/post/list" style="width:130px;"><b>لیست کامل مطالب ارسالی</b></a>
+                    </li>
+                </ul>
+            </div>
+        
+
+
+        
+            <div id="column3">
+                <h2>آرشیو</h2>
+                <ul class="list-style3">
+                    <li class="first">
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/archive/1391/12"> اسفند 1391</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/archive/1391/8"> آبان 1391</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/archive/1391/5"> مرداد 1391</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/archive/1391/4"> تیر 1391</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/archive/1391/2"> اردیبهشت 1391</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/archive/1390/11"> بهمن 1390</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/archive/1390/9"> آذر 1390</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/archive/1390/8"> آبان 1390</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/archive/1390/4"> تیر 1390</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/archive/1390/1"> فروردین 1390</a><br>
+                                                    <a href="http://tarhmazhabi.mihanblog.com/post/archive/1389/12"> اسفند 1389</a><br>
+                        
+                        <b><a href="http://tarhmazhabi.mihanblog.com/post/archive">آرشیو كل مطالب</a></b>
+                    </li>
+
+                </ul>
+            </div>
+        
+
+
+
+
+        <br>
+    </div>
+</div>
+<!-- end #footer -->
+</body>
+</html>
+
+
+
+
+<script>
+
+    var string = window.location.href;
+
+    var pairs = string.split('com/');
+
+    if( pairs[1] != '' ){
+        window.scrollTo(100,400)
+    }
+
+</script>
+<script>
+//    setTimeout(function () {
+//        GetMihanBlogShowAds();
+//    }, 1000);
+</script>
+<!--NEW SERVER--><!--;)-->
+
+<!--SabaVision Ads Handler--><!--<script type="text/javascript">(function (d) {var url =   location.protocol+'//api.sabavision.com/pox/poxjs.js';d.write('<script type="text/javascript" src="' + url + '" async></scri' + 'pt>');})(document);</script>-->
+
+
+<script type="text/javascript">
+
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-153829-9']);
+    _gaq.push(['_setDomainName', 'tarhmazhabi.mihanblog.com']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+</script>
+
+
+<div id='mediaad-Kvcm'></div>
+<meta name="sabavision_zone" content="2500-Z499" />
+<center>
+    <div style="background-color:white;width:90%;padding:20px;margin-top:50px;margin-bottom:50px;">
+        <a href="https://www.cloob.com">شبکه اجتماعی فارسی کلوب</a> | <a href="https://www.seo25.com/product/buy-mobile-traffic-and-get-cheap-targeted-mobile-traffic/" target="_blank">Buy Mobile Traffic</a> | <a href="https://www.soalaat.com">سایت سوالات</a>
+    </div>
+</center>
